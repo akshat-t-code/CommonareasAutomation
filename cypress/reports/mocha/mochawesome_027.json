@@ -1,0 +1,228 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-03-24T12:22:25.828Z",
+    "end": "2020-03-24T12:23:42.621Z",
+    "duration": 76793,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d768d9df-94f9-40ec-adae-1007cdadccf4",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\misc.spec.js",
+      "file": "cypress\\integration\\examples\\misc.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "84f25ef4-20d4-4f5c-aa17-9b7b32d46e6c",
+          "title": "Misc",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": ".end() - end the command chain",
+              "fullTitle": "Misc .end() - end the command chain",
+              "timedOut": null,
+              "duration": 2846,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/end\n// cy.end is useful when you want to end a chain of commands\n// and force Cypress to re-query from the root element\ncy.get('.misc-table').within(function () {\n  // ends the current chain and yields null\n  cy.contains('Cheryl').click().end(); // queries the entire table again\n  cy.contains('Charles').click();\n});",
+              "err": {},
+              "uuid": "286e412f-26ae-4361-9553-8dc1e3aad008",
+              "parentUUID": "84f25ef4-20d4-4f5c-aa17-9b7b32d46e6c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.exec() - execute a system command",
+              "fullTitle": "Misc cy.exec() - execute a system command",
+              "timedOut": null,
+              "duration": 61868,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// execute a system command.\n// so you can take actions necessary for\n// your test outside the scope of Cypress.\n// https://on.cypress.io/exec\n// we can use Cypress.platform string to\n// select appropriate command\n// https://on.cypress/io/platform\ncy.log(\"Platform \".concat(Cypress.platform, \" architecture \").concat(Cypress.arch)); // on CircleCI Windows build machines we have a failure to run bash shell\n// https://github.com/cypress-io/cypress/issues/5169\n// so skip some of the tests by passing flag \"--env circle=true\"\nvar isCircleOnWindows = Cypress.platform === 'win32' && Cypress.env('circle');\nif (isCircleOnWindows) {\n  return;\n}\ncy.exec('echo Jane Lane').its('stdout').should('contain', 'Jane Lane');\nif (Cypress.platform === 'win32') {\n  cy.exec('print cypress.json').its('stderr').should('be.empty');\n} else {\n  cy.exec('cat cypress.json').its('stderr').should('be.empty');\n  cy.exec('pwd').its('code').should('eq', 0);\n}",
+              "err": {
+                "message": "CypressError: cy.exec('print cypress.json') timed out after waiting 60000ms.",
+                "estack": "CypressError: cy.exec('print cypress.json') timed out after waiting 60000ms.\n    at cypressErr (https://example.cypress.io/__cypress/runner/cypress_runner.js:138036:9)\n    at throwErr (https://example.cypress.io/__cypress/runner/cypress_runner.js:137969:11)\n    at Object.throwErrByPath (https://example.cypress.io/__cypress/runner/cypress_runner.js:138017:3)\n    at https://example.cypress.io/__cypress/runner/cypress_runner.js:125604:26\n    at tryCatcher (https://example.cypress.io/__cypress/runner/cypress_runner.js:164895:23)\n    at https://example.cypress.io/__cypress/runner/cypress_runner.js:160036:41\n    at tryCatcher (https://example.cypress.io/__cypress/runner/cypress_runner.js:164895:23)\n    at Promise._settlePromiseFromHandler (https://example.cypress.io/__cypress/runner/cypress_runner.js:162831:31)\n    at Promise._settlePromise (https://example.cypress.io/__cypress/runner/cypress_runner.js:162888:18)\n    at Promise._settlePromise0 (https://example.cypress.io/__cypress/runner/cypress_runner.js:162933:10)\n    at Promise._settlePromises (https://example.cypress.io/__cypress/runner/cypress_runner.js:163008:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (https://example.cypress.io/__cypress/runner/cypress_runner.js:159620:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://example.cypress.io/__cypress/runner/cypress_runner.js:159630:10)\n    at Async.drainQueues (https://example.cypress.io/__cypress/runner/cypress_runner.js:159504:14)",
+                "diff": null
+              },
+              "uuid": "0383636f-2775-4c3d-ac00-e42fed09fe91",
+              "parentUUID": "84f25ef4-20d4-4f5c-aa17-9b7b32d46e6c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.focused() - get the DOM element that has focus",
+              "fullTitle": "Misc cy.focused() - get the DOM element that has focus",
+              "timedOut": null,
+              "duration": 2184,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/focused\ncy.get('.misc-form').find('#name').click();\ncy.focused().should('have.id', 'name');\ncy.get('.misc-form').find('#description').click();\ncy.focused().should('have.id', 'description');",
+              "err": {},
+              "uuid": "44c226de-a1e7-4d0f-801c-666eb02d4635",
+              "parentUUID": "84f25ef4-20d4-4f5c-aa17-9b7b32d46e6c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.wrap() - wrap an object",
+              "fullTitle": "Misc cy.wrap() - wrap an object",
+              "timedOut": null,
+              "duration": 982,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/wrap\ncy.wrap({\n  foo: 'bar'\n}).should('have.property', 'foo').and('include', 'bar');",
+              "err": {},
+              "uuid": "ed1af912-9155-4523-aaa2-1ff9ccf0475c",
+              "parentUUID": "84f25ef4-20d4-4f5c-aa17-9b7b32d46e6c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "7ff0c122-810d-4a34-8fa6-85c2d1132db2",
+              "title": "Cypress.Screenshot",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "cy.screenshot() - take a screenshot",
+                  "fullTitle": "Misc Cypress.Screenshot cy.screenshot() - take a screenshot",
+                  "timedOut": null,
+                  "duration": 3725,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// https://on.cypress.io/screenshot\ncy.screenshot('my-image');",
+                  "err": {},
+                  "uuid": "0e7c5681-d338-4d11-ba76-52cb973f8960",
+                  "parentUUID": "7ff0c122-810d-4a34-8fa6-85c2d1132db2",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Cypress.Screenshot.defaults() - change default config of screenshots",
+                  "fullTitle": "Misc Cypress.Screenshot Cypress.Screenshot.defaults() - change default config of screenshots",
+                  "timedOut": null,
+                  "duration": 978,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "Cypress.Screenshot.defaults({\n  blackout: ['.foo'],\n  capture: 'viewport',\n  clip: {\n    x: 0,\n    y: 0,\n    width: 200,\n    height: 200\n  },\n  scale: false,\n  disableTimersAndAnimations: true,\n  screenshotOnRunFailure: true,\n  beforeScreenshot: function beforeScreenshot() {},\n  afterScreenshot: function afterScreenshot() {}\n});",
+                  "err": {},
+                  "uuid": "46e99771-f852-4a50-b19e-e744d3be8ea4",
+                  "parentUUID": "7ff0c122-810d-4a34-8fa6-85c2d1132db2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "0e7c5681-d338-4d11-ba76-52cb973f8960",
+                "46e99771-f852-4a50-b19e-e744d3be8ea4"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 4703,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "286e412f-26ae-4361-9553-8dc1e3aad008",
+            "44c226de-a1e7-4d0f-801c-666eb02d4635",
+            "ed1af912-9155-4523-aaa2-1ff9ccf0475c"
+          ],
+          "failures": [
+            "0383636f-2775-4c3d-ac00-e42fed09fe91"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 67880,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": "true",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

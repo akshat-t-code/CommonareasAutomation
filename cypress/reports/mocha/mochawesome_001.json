@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-03-24T09:35:29.770Z",
+    "end": "2020-03-24T09:37:18.398Z",
+    "duration": 108628,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7b166ad2-87b8-46f6-9e0b-083e0f7c478b",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\PageObjectDemo.spec.js",
+      "file": "cypress\\integration\\examples\\PageObjectDemo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3303043a-97a9-41ca-aace-5a78c804f302",
+          "title": "Page Object demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login",
+              "fullTitle": "Page Object demo Login",
+              "timedOut": null,
+              "duration": 108401,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var lp = new _LoginPage[\"default\"]();\nlp.visit();\nlp.EnterEmail('kstanley@commonareas.work.dev');\nlp.EnterPassword('1234567Aa');\nlp.Submit();",
+              "err": {
+                "message": "CypressError: Timed out after waiting '100000ms' for your remote page to load.\n\nYour page did not fire its 'load' event within '100000ms'.\n\nYou can try increasing the 'pageLoadTimeout' value in 'cypress.json' to wait longer.\n\nBrowsers will not fire the 'load' event until all stylesheets and scripts are done downloading.\n\nWhen this 'load' event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting '100000ms' for your remote page to load.\n\nYour page did not fire its 'load' event within '100000ms'.\n\nYou can try increasing the 'pageLoadTimeout' value in 'cypress.json' to wait longer.\n\nBrowsers will not fire the 'load' event until all stylesheets and scripts are done downloading.\n\nWhen this 'load' event occurs, Cypress will continue running commands.\n    at cypressErr (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:138036:9)\n    at throwErr (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:137969:11)\n    at Object.throwErrByPath (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:138017:3)\n    at timedOutWaitingForPageLoad (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:126147:20)\n    at https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:126379:14\n    at tryCatcher (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:164895:23)\n    at https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:160036:41\n    at tryCatcher (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:164895:23)\n    at Promise._settlePromiseFromHandler (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:162831:31)\n    at Promise._settlePromise (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:162888:18)\n    at Promise._settlePromise0 (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:162933:10)\n    at Promise._settlePromises (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:163008:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:159620:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:159630:10)\n    at Async.drainQueues (https://serviceproviders.ca-test.com/__cypress/runner/cypress_runner.js:159504:14)",
+                "diff": null
+              },
+              "uuid": "f294afd6-5e0f-434e-a3f0-55cd8db416d7",
+              "parentUUID": "3303043a-97a9-41ca-aace-5a78c804f302",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f294afd6-5e0f-434e-a3f0-55cd8db416d7"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 108401,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": "true",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-03-26T08:19:19.972Z",
+    "end": "2020-03-26T08:19:40.080Z",
+    "duration": 20108,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bfffd29f-e9bb-4b10-ae3e-e5472421b9ec",
+      "title": "",
+      "fullFile": "cypress\\integration\\MyProject\\WebInteraction.spec.js",
+      "file": "cypress\\integration\\MyProject\\WebInteraction.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5ab225b4-2bc6-4627-a298-bc662b4ae5b4",
+          "title": "Web interaction",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dropdown",
+              "fullTitle": "Web interaction Dropdown",
+              "timedOut": null,
+              "duration": 8340,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#dropdown').select('Option 1');\ncy.get('#dropdown').children().first().then(function ($dropdownEle) {\n  cy.log($dropdownEle.text());\n});",
+              "err": {},
+              "uuid": "05e97cbe-8a6b-48af-af86-637a000d9fc9",
+              "parentUUID": "5ab225b4-2bc6-4627-a298-bc662b4ae5b4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "05e97cbe-8a6b-48af-af86-637a000d9fc9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8340,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": "true",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

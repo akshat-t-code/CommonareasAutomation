@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-03-24T12:20:14.138Z",
+    "end": "2020-03-24T12:20:40.786Z",
+    "duration": 26648,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "14a84811-0628-4028-b4f0-28c699e05859",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\FirstTest.js",
+      "file": "cypress\\integration\\examples\\FirstTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "308f19fb-514e-448d-a6e7-49bf2c286161",
+          "title": "My first suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verifying title of the page-Positive",
+              "fullTitle": "My first suite Verifying title of the page-Positive",
+              "timedOut": null,
+              "duration": 11518,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Write-your-first-test');\ncy.title().should('eq', 'Writing Your First Test | Cypress Documentation'); //cy.screenshot()",
+              "err": {},
+              "uuid": "09776110-954d-49b8-980a-fb409fc199c7",
+              "parentUUID": "308f19fb-514e-448d-a6e7-49bf2c286161",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifying title of the page-Negative",
+              "fullTitle": "My first suite Verifying title of the page-Negative",
+              "timedOut": null,
+              "duration": 10032,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Write-your-first-test');\ncy.title().should('eq', 'Your First Test | Cypress Documentation'); // cy.screenshot()",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected 'Writing Your First Test | Cypress Documentation' to equal 'Your First Test | Cypress Documentation'",
+                "estack": "CypressError: Timed out retrying: expected 'Writing Your First Test | Cypress Documentation' to equal 'Your First Test | Cypress Documentation'\n    at cypressErr (https://docs.cypress.io/__cypress/runner/cypress_runner.js:138036:9)\n    at throwErr (https://docs.cypress.io/__cypress/runner/cypress_runner.js:137969:11)\n    at Object.throwErrByPath (https://docs.cypress.io/__cypress/runner/cypress_runner.js:138017:3)\n    at retry (https://docs.cypress.io/__cypress/runner/cypress_runner.js:132299:19)\n    at onFailFn (https://docs.cypress.io/__cypress/runner/cypress_runner.js:120514:16)\n    at tryCatcher (https://docs.cypress.io/__cypress/runner/cypress_runner.js:164895:23)\n    at Promise._settlePromiseFromHandler (https://docs.cypress.io/__cypress/runner/cypress_runner.js:162831:31)\n    at Promise._settlePromise (https://docs.cypress.io/__cypress/runner/cypress_runner.js:162888:18)\n    at Promise._settlePromise0 (https://docs.cypress.io/__cypress/runner/cypress_runner.js:162933:10)\n    at Promise._settlePromises (https://docs.cypress.io/__cypress/runner/cypress_runner.js:163008:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (https://docs.cypress.io/__cypress/runner/cypress_runner.js:159620:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://docs.cypress.io/__cypress/runner/cypress_runner.js:159630:10)\n    at Async.drainQueues (https://docs.cypress.io/__cypress/runner/cypress_runner.js:159504:14)",
+                "diff": null
+              },
+              "uuid": "086cc4c6-4e07-4373-b0a6-4a71c212eced",
+              "parentUUID": "308f19fb-514e-448d-a6e7-49bf2c286161",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "09776110-954d-49b8-980a-fb409fc199c7"
+          ],
+          "failures": [
+            "086cc4c6-4e07-4373-b0a6-4a71c212eced"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 21550,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": "true",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

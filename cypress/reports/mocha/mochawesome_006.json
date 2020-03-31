@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-03-24T10:16:34.560Z",
+    "end": "2020-03-24T10:17:00.326Z",
+    "duration": 25766,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c8e938c4-f3ec-4ba6-b64a-4d9e5db71e47",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\PageObjectDemo.spec.js",
+      "file": "cypress\\integration\\examples\\PageObjectDemo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1b17be2b-d268-4310-a5d1-2574c9b14af7",
+          "title": "Page Object demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login",
+              "fullTitle": "Page Object demo Login",
+              "timedOut": null,
+              "duration": 25625,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var lp = new _LoginPage[\"default\"]();\nlp.visit();\nlp.EnterEmail('kstanley@commonareas.work.dev');\nlp.EnterPassword('1234567Aa');\nlp.Submit();",
+              "err": {},
+              "uuid": "cbdfc915-e470-49e9-b825-3c08c02dd3f1",
+              "parentUUID": "1b17be2b-d268-4310-a5d1-2574c9b14af7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cbdfc915-e470-49e9-b825-3c08c02dd3f1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25625,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": "true",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

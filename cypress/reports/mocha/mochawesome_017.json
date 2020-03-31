@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-03-24T12:18:10.289Z",
+    "end": "2020-03-24T12:18:31.135Z",
+    "duration": 20846,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d91d7345-cffe-4cd0-acd6-b58d15002be5",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Example.spec.js",
+      "file": "cypress\\integration\\examples\\Example.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0bde3d91-e04f-4b34-afb5-2c88ba5f67fc",
+          "title": "Dynamic Elements",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Welcome admin",
+              "fullTitle": "Dynamic Elements Welcome admin",
+              "timedOut": null,
+              "duration": 16051,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://opensource-demo.orangehrmlive.com/');\ncy.get('#txtUsername').type(\"Admin\");\ncy.get('#txtPassword').type(\"admin123\");\ncy.get('#btnLogin').click();\ncy.get('.panelTrigger').then(function ($welcomeEle) {\n  var Weltxt = $welcomeEle.text();\n  cy.log(Weltxt);\n  var UserName = 'Admin';\n  expect(Weltxt).to.match(/Welcome .*/); //expect(Weltxt).eq('Welcome' + UserName)   \n  //expect(Weltxt).eq('Welcome Admin')\n  cy.contains(/Welcome .+/).click();\n  cy.contains('Logout').click();\n});",
+              "err": {},
+              "uuid": "cb42d67c-7cd0-453b-ae0b-c74bd3b66d30",
+              "parentUUID": "0bde3d91-e04f-4b34-afb5-2c88ba5f67fc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cb42d67c-7cd0-453b-ae0b-c74bd3b66d30"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16051,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": "true",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

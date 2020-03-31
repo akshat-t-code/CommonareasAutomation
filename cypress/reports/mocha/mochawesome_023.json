@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-03-24T12:20:58.459Z",
+    "end": "2020-03-24T12:20:59.214Z",
+    "duration": 755,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "768ae063-617c-4055-a42e-32f0520ca391",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\FixturesDemo.spec.js",
+      "file": "cypress\\integration\\examples\\FixturesDemo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cd99e130-28e3-4347-bb3c-a14753136fb0",
+          "title": "Fixtures Example",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Reading the data from json file",
+              "fullTitle": "Fixtures Example Reading the data from json file",
+              "timedOut": null,
+              "duration": 683,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('#UserName').click();\ncy.get('#UserName').type(this.data.email);\ncy.get('#Password').type(this.data.Password);\ncy.get('#login_button').click();\ncy.log('Login successfully');",
+              "err": {
+                "message": "Error: 'example' is not valid JSON.\nParse error on line 4:\n...ord\": \"1234567Aa\",}\n---------------------^\nExpecting 'STRING', got '}'\n\nBecause this error occurred during a 'before all' hook we are skipping the remaining tests in the current suite: 'Fixtures Example'",
+                "estack": "Error: 'example' is not valid JSON.\nParse error on line 4:\n...ord\": \"1234567Aa\",}\n---------------------^\nExpecting 'STRING', got '}'\n\nBecause this error occurred during a 'before all' hook we are skipping the remaining tests in the current suite: 'Fixtures Example'\n    at Object.<anonymous> (C:\\Users\\akash\\AppData\\Local\\Cypress\\Cache\\4.1.0\\Cypress\\resources\\app\\packages\\server\\lib\\fixture.js:136:15)\n    at Object.tryCatcher (C:\\Users\\akash\\AppData\\Local\\Cypress\\Cache\\4.1.0\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\util.js:16:23)\n    at Promise._settlePromiseFromHandler (C:\\Users\\akash\\AppData\\Local\\Cypress\\Cache\\4.1.0\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\promise.js:547:31)\n    at Promise._settlePromise (C:\\Users\\akash\\AppData\\Local\\Cypress\\Cache\\4.1.0\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\promise.js:604:18)\n    at Promise._settlePromise0 (C:\\Users\\akash\\AppData\\Local\\Cypress\\Cache\\4.1.0\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\promise.js:649:10)\n    at Promise._settlePromises (C:\\Users\\akash\\AppData\\Local\\Cypress\\Cache\\4.1.0\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\promise.js:725:18)\n    at _drainQueueStep (C:\\Users\\akash\\AppData\\Local\\Cypress\\Cache\\4.1.0\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\async.js:93:12)\n    at _drainQueue (C:\\Users\\akash\\AppData\\Local\\Cypress\\Cache\\4.1.0\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\async.js:86:9)\n    at Async._drainQueues (C:\\Users\\akash\\AppData\\Local\\Cypress\\Cache\\4.1.0\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\async.js:102:5)\n    at Immediate.Async.drainQueues [as _onImmediate] (C:\\Users\\akash\\AppData\\Local\\Cypress\\Cache\\4.1.0\\Cypress\\resources\\app\\packages\\server\\node_modules\\bluebird\\js\\release\\async.js:15:14)\n    at processImmediate (internal/timers.js:439:21)\n",
+                "diff": null
+              },
+              "uuid": "39ce0129-ea2e-4f64-ad08-4c78f3890ad0",
+              "parentUUID": "cd99e130-28e3-4347-bb3c-a14753136fb0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "39ce0129-ea2e-4f64-ad08-4c78f3890ad0"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 683,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": "true",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}
