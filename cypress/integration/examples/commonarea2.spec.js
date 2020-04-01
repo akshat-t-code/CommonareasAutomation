@@ -34,6 +34,10 @@ describe('Navigating to Common Aera', function () {
         cy.wait(5000)
         cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click()
 
+
+        
+
+
     })
 
 })

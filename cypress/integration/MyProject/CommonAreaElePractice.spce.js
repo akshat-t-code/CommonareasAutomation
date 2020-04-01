@@ -16,7 +16,10 @@ describe('Scrolling and POM on common area appn in cypress', function () {
 
      //   cy.xpath('//div[contains(text(),providers)]').click() 
      //not working
-     cy.contains('Hanta Virus, #2').click()
+     cy.contains('Hanta Virus, #2').scrollIntoView().as('Hanta Virus, #2')
+     cy.get('@Hanta Virus, #2').click({force:true})
+
+    // cy.contains('Hanta Virus, #2').click()
      cy.get('.navi-bar--button .inline-svg').click();
 
      cy.contains('Hanta Virus, #1').scrollIntoView().as('Hanta Virus, #1')
@@ -25,10 +28,21 @@ describe('Scrolling and POM on common area appn in cypress', function () {
      //cy.get('#\34 7d6258b-a039-4208-9b96-81ca1c9526a6')
     cy.get('[name="Name"]').clear().type('19')
 
-    cy.get('.ma-2 .v-btn__content').contains('LINK ITEM').click()
-    cy.get('.ma-2 .v-btn__content',{timeout:3000}).contains('NEW ITEM').click()
+    
+    cy.get('.ma-2 .v-btn__content').contains('LINK ITEM').scrollIntoView().as('LinkItem')
+    cy.get('@LinkItem').click({force:true})
+
+    cy.get('.ma-2 .v-btn__content',{timeout:3000}).contains('NEW ITEM').scrollIntoView().as('NewItem')
+    cy.get('@NewItem').click({force:true})
+
+   // cy.get('.ma-2 .v-btn__content').contains('LINK ITEM').click()
+   //cy.get('.ma-2 .v-btn__content',{timeout:3000}).contains('NEW ITEM').click()
     cy.wait(6000)
     cy.get('.navi-bar--button .v-icon').click();
+
+    cy.get('.fill-height > .v-btn .btn-nav > #Layer_1').click();
+    cy.get('.vue-check-box').contains('Creator').check()
+
 
 
 
@@ -55,6 +69,8 @@ describe('Scrolling and POM on common area appn in cypress', function () {
 
         //cy.get('span').contains('Worksheet, #1').should('be.visible').click()
         //not working
+
+
 
     })
 
