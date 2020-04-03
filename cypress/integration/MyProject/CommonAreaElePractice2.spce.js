@@ -30,6 +30,8 @@ describe('Scrolling and POM on common area appn in cypress', function () {
 
 
        // cy.get('.flex collaboration-inbox__caption').contains('Parental, #3').click()
+       cy.window().as('win')
+       cy.get('@win').scrollTo('bottom')
       cy.contains('Parental, #3').scrollIntoView().as('Parental')
        cy.get('@Parental').click({force:true})
        cy.get('#9cb320ed-5914-4702-a5ff-d178879c3e6f').clear().type('Hi')

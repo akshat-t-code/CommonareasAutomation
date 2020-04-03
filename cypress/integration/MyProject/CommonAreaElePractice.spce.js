@@ -41,8 +41,6 @@ describe('Scrolling and POM on common area appn in cypress', function () {
     cy.get('.navi-bar--button .v-icon').click();
 
     cy.get('.fill-height > .v-btn .btn-nav > #Layer_1').click();
-    cy.get('.vue-check-box').contains('Creator').check()
-
 
 
 
@@ -70,6 +68,7 @@ describe('Scrolling and POM on common area appn in cypress', function () {
         //cy.get('span').contains('Worksheet, #1').should('be.visible').click()
         //not working
 
+        
 
 
     })

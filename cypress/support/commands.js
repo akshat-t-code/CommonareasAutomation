@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 import 'cypress-file-upload';
+//import '@applitools/eyes-cypress/commands'
 
 //My customize command for login
 Cypress.Commands.add("login", (email, password) => { 
