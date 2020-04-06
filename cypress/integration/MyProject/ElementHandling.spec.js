@@ -14,7 +14,8 @@ describe('Element Handling', function () {
         lp.EnterPassword('1234567Aa')
         lp.Submit()
         cy.wait(10000)
-        cy.contains('Meerut, Meerut, United States').click()
+        cy.contains('Meerut, Meerut, United States').scrollIntoView().as('M')
+        cy.get('@M').click({force:true})
       cy.get('[placeholder="State"]').click({force:true})
       cy.contains('Alabama',{timeout:3000}).click({force:true})
       cy.contains('LINK ITEM').scrollIntoView({force:true})
@@ -24,6 +25,7 @@ describe('Element Handling', function () {
       cy.get('@Date').click({force:true})
       cy.contains('24').click()
       cy.get('.btnBorder:nth-child(1) > .v-btn__content').click()
+      //cy.get('E_V')
 
 
 

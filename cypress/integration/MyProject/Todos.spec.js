@@ -1,5 +1,5 @@
 
-
+require('dotenv').config()
 
 describe('Filtering todo items', function () {
 
