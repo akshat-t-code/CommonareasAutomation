@@ -37,7 +37,7 @@ for(let i=0; i<=num.length-1; i++){
    console.log( num[i])
 
 }
-
+//********************************************************************************** */
 //for/of loop
 for(ele of num){
     console.log(ele)

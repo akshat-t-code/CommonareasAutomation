@@ -13,6 +13,7 @@ printcolor(){
 
 }
 
+
 class Dog extends Animal{
 
     constructor(color,food){

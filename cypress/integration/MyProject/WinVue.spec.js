@@ -15,6 +15,11 @@ lp.Submit()
 
 cy.window().then(function(win){
 
+    cy.get('@win').should('have.class')
+
+    
+
+
 
 })
 

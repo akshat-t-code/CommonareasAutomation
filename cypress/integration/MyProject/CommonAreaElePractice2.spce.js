@@ -15,7 +15,14 @@ describe('Scrolling and POM on common area appn in cypress', function () {
         lp.Submit()
         cy.wait(10000)
 
-        cy.get('.fill-height > .v-btn .btn-nav > #Layer_1').click();
+       
+        cy.contains('Location, #262').should('be.visible').click()
+
+
+
+
+
+      /*  cy.get('.fill-height > .v-btn .btn-nav > #Layer_1').click();
         cy.get('.vue-check-box').contains('Creator').click()
         cy.contains('Coordinator').click()
         cy.contains('Contributor').click()
@@ -44,6 +51,8 @@ describe('Scrolling and POM on common area appn in cypress', function () {
 
 
      //  cy.get('#\39 cb320ed-5914-4702-a5ff-d178879c3e6f').type('Namedfs');
+
+     */
 
     })
 })
