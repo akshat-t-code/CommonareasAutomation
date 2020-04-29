@@ -1,0 +1,20 @@
+{
+  "specName": "Todo.spec.js",
+  "title": "adds a todo items",
+  "suiteName": "Dubugging todo items",
+  "testId": "r3",
+  "testName": "Dubugging todo items adds a todo items",
+  "testError": "Timed out retrying: Expected to find element: '.new-todduo', but never found it.",
+  "testCommands": [
+    "visit http://todomvc-app-for-testing.surge.sh/",
+    "title ",
+    "assert expected **TodoMVC** to equal **TodoMVC**",
+    "get .new-todo",
+    "type sorry{enter}",
+    "type Helloo{enter}",
+    "type New{enter}",
+    "get .new-todo",
+    "get .new-todduo"
+  ],
+  "screenshot": "adds-a-todo-items (failed).png"
+}

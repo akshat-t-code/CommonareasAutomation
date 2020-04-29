@@ -5,6 +5,14 @@ describe('Fixtures Example for reading the data inside a test data folder', func
 
     this.beforeEach('Mulitple Fixtures block',function () {
 
+
+        cy.eyesOpen({
+            appName: 'Fixtures Demo',
+            testName: 'Reading data from fixtures files',
+           // browser: { width: 800, height: 600 },
+          })
+
+
         cy.visit('https://serviceproviders.ca-test.com/Public/Login?ReturnUrl=%2F')
         
         
@@ -33,11 +41,14 @@ describe('Fixtures Example for reading the data inside a test data folder', func
         // cy.get('#UserName').type(this.data.email)
         //cy.get('#Password').type(this.data.Password)
         cy.get('#login_button').click()
+               // cy.eyesCheckWindow()
+
         //debugger;
         cy.title().should('eq', 'Common Areas')
         cy.log('Login successfully')
         cy.log('We can read data from multiple fixtures file in our TC')
         cy.wait(10000)
+        cy.eyesCheckWindow()
 
 
     })
@@ -55,10 +66,16 @@ describe('Fixtures Example for reading the data inside a test data folder', func
             .contains('Invalid username or password.', { timeout: 5000 })
             .should('be.visible')
 
+            cy.eyesCheckWindow()
+
     })
 
 
+    afterEach(()=> 
+    {
+      cy.eyesClose()
 
+    })
 
 
 })

@@ -17,7 +17,7 @@ describe('Fixtures Example for reading the data', function(){
 
 
 
-    it('Reading the data from json file', function(){
+    it.only('Reading the data from json file', function(){
       //  cy.visit('/')
       
         cy.get('#UserName').click()

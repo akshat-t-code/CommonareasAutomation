@@ -117,5 +117,6 @@ context('Traversal', () => {
     // https://on.cypress.io/siblings
     cy.get('.traversal-pills .active')
       .siblings().should('have.length', 2)
+      
   })
 })

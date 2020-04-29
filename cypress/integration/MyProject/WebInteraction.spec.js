@@ -14,6 +14,7 @@ describe('Web interaction', function () {
             var getText = $gettingText.text()
             cy.log(getText)
             Console.log('I am inside')
+            debugger;
         })
 
 

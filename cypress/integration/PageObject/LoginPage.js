@@ -3,7 +3,7 @@
 class LoginPage {
 
     visit() {
-        cy.visit('/')
+        cy.visit('https://serviceproviders.ca-test.com/?localdev=true')
     }
 
     EnterEmail(value) {

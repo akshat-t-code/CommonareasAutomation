@@ -29,13 +29,18 @@ describe('Navigating to Common Aera', function () {
         cy.wait(5000)
         cy.get('.row:nth-child(1) .truncate:nth-child(2)').click()
         cy.wait(3000)
-
+        debugger
         cy.get('.mb-2:nth-child(1) .v-radio:nth-child(2) .v-input--selection-controls__ripple').click()
+        // .then(($ele)=>{
+
+        //     debugger;
+        // })
+        
+       // .debug()
+        //debugger;
         cy.wait(5000)
         cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click()
 
-
-        
 
 
     })

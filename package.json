@@ -16,7 +16,8 @@
   "devDependencies": {
     "@applitools/eyes-cypress": "^3.9.21",
     "@types/node": "^13.9.3",
-    "cypress": "^4.1.0",
+    "cypress": "^4.4.1",
+    "cypress-failed-log": "^2.6.2",
     "cypress-file-upload": "^3.5.3",
     "cypress-multi-reporters": "^1.2.4",
     "cypress-xpath": "^1.4.0",
