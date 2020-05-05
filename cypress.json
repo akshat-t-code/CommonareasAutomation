@@ -1,23 +1,22 @@
 {
 
   
-  "$schema": "https://on.cypress.io/cypress.schema.json",
-  "pageLoadTimeout": 300000,
-  "defaultCommandTimeout": 20000,
-  "chromeWebSecurity": false,
-  "video": true,
-  "screenshotsFolder": "cypress/screenshots",
-  "baseUrl": "https://serviceproviders.ca-test.com/Public/Login?ReturnUrl=%2F",
-  "reporter": "cypress-multi-reporters",
-  "reporterOptions": {
-    "reporterEnabled": "mochawesome",
-    "mochawesomeReporterOptions": {
-      "reportDir": "cypress/reports/mocha",
-      "quite": "true",
-      "overwrite": false,
-      "html": true,
-      "json": true
-    }
-  },
-  "projectId": "v7yv2n"
-}
+    "$schema": "https://on.cypress.io/cypress.schema.json",
+    "pageLoadTimeout": 300000,
+    "defaultCommandTimeout": 20000,
+    "chromeWebSecurity": false,
+    "video": true,
+    "screenshotsFolder": "cypress/screenshots",
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+      "reporterEnabled": "mochawesome",
+      "mochawesomeReporterOptions": {
+        "reportDir": "cypress/reports/mocha",
+        "quite": "true",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      }
+    },
+    "projectId": "v7yv2n"
+  }

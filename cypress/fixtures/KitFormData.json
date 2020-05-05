@@ -1,0 +1,16 @@
+{
+    "KitName": "Work Request",
+    "Name":"Cypress Data",
+    "Description":"Hello this is form Cypress",
+    "Currency":"976766",
+    "LocationName":"Delhi",
+    "Address":"NSP",
+    "City":"PPT",
+    "ZipCode":"201002",
+
+    "TestName":"Test",
+    "TestStatus":"Hold",
+    "Email":"abc@gmail.com"
+
+  
+}

@@ -15,11 +15,18 @@ cy.get('#UserName').type('kstanley@commonareas.work.dev')
         cy.get('#login_button').click()
 
         //cy.wait(10000)
+         
+
+       
+
 
 
         cy.url().should('include', 'serviceproviders.ca-test').then(async () => {
             const window = await cy.window();
-            console.log("this is window objetc we are getting "+window);
+            console.log(window);
+
+
+            //cy.window().its('.vue')
 
             //cy.get('#3414ac2b-b497-4c50-a1a6-6d3a1970686e').click({force:true})
 
@@ -31,6 +38,7 @@ cy.get('#UserName').type('kstanley@commonareas.work.dev')
             //cy.get(EL.__vue__)
         });
 
+
         //cy.get(window).its('$0.__vue__').should('be.exist')
 
         cy.document().then(function(doc){
@@ -39,23 +47,24 @@ cy.get('#UserName').type('kstanley@commonareas.work.dev')
 
           //cy.get('#action_items_list').should('be.visible')
 
-        // cy.document().as('Doc').then(function(){
+         cy.document().as('Doc').then(function(){
 
-        //   cy.get('@Doc').its('this.props')
+           cy.get('@Doc')
 
         // })
         debugger
         cy.document().as('Doc')
-         cy.get('@Doc').within(function(){
+         cy.get('html').within(function(){
                 
                 //cy.document().as('Doc')
-                cy.get('#3414ac2b-b497-4c50-a1a6-6d3a1970686e').click({force:true})
+                //cy.get('#71334cd1-3ffb-4183-88c7-09f0957daa98').click({force:true})
 
-           cy.get('@Doc').its("EL.__vue__").should('be.visible')
+           cy.get('html').its("EL.__vue__").should('be.visible')
 
 
          })
 
+           
 
 
         //  doc1.getElementById('action_items_list')
@@ -76,8 +85,6 @@ cy.get('#UserName').type('kstanley@commonareas.work.dev')
             console.log(win)
           
             //cy.get(win).should('have.class','tenant-theme-green').should('be.visible')
-
-
           })
 
 //         cy.window().find('underfined-0000')
@@ -94,6 +101,7 @@ cy.get('#UserName').type('kstanley@commonareas.work.dev')
 
 })
 
+// 
 
-
+})
 })

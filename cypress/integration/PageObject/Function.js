@@ -32,3 +32,14 @@ const car = {
         return "Hi good evn"
     }
     console.log(greetings())
+
+
+    const person={
+
+      name:"xyx",
+      age:87,
+      LastName:'ujh'
+
+    };
+
+    var person=new Person()

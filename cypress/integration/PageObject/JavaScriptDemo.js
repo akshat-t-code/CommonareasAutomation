@@ -8,6 +8,9 @@ class Student {
 
     }
 
+
+    
+
   /*  setDeatils(sname,sid,grade) {
 
         this.sname=sname;
