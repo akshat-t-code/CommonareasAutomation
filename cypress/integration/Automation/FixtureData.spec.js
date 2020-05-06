@@ -3,7 +3,7 @@
 import LoginPage from '../PageObject/LoginPage'
 
 
-describe('Basic Test Case', function(){
+describe('Basic Test Case for accessing the data from json file', function(){
 
 
     this.beforeAll(function() {
@@ -26,7 +26,7 @@ Cypress.Cookies.preserveOnce('.AspNet.ApplicationCookie','ASP.NET_SessionId','ca
     })
 
 
-    it('Second Test case for Test KitType',function(){
+    it('Reading the data form fixtures file in Test kitType',function(){
 
         cy.wait(10000)
     
@@ -61,7 +61,7 @@ Cypress.Cookies.preserveOnce('.AspNet.ApplicationCookie','ASP.NET_SessionId','ca
 
 
 
-it('KitItem Form to Get data from Fixtures', function(){
+it('Reading the data form fixtures file in WorkRequest kitType', function(){
 
 
 cy.wait(10000)

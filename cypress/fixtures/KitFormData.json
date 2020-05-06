@@ -10,7 +10,9 @@
 
     "TestName":"Test",
     "TestStatus":"Hold",
-    "Email":"abc@gmail.com"
+    "Email":"abc@gmail.com",
+
+    "Location":"WI"
 
   
 }

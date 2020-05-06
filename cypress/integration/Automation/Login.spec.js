@@ -59,10 +59,15 @@ cy.get('.button-pop-ups > .v-btn__content').click();
 //cy.get('[placeholder=Name]').type('Tiger And Lion')
 cy.get('[placeholder=Name]').type('TP1')
 
+//Priority
+cy.get('#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div > i')
+.click({force:true})
+cy.get('.v-list-item:nth-child(3) > .v-list-item__content:nth-child(1)').click({force:true});
+
 
 //status
 cy.get('#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div:nth-child(5) > div > div > div.v-input__slot').click({force:true})
-cy.get('.v-list-item:nth-child(4) > .v-list-item__content:nth-child(1)').click({force:true});
+cy.get('[aria-labelledby="in-progress-list-item-1420"] > .v-list-item__content').click({force:true});
 
 //Assigning
  cy.get('.searchSelectNone .v-select__selections').click();

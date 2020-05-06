@@ -12,6 +12,7 @@ lp.visit("https://serviceproviders.ca-test.com/?localdev=true")
  lp.EnterPassword('1234567Aa')
  lp.Submit()
 
+
     cy.fixture('KitFormData').then(function(data){
 
         this.data=data
@@ -34,19 +35,34 @@ lp.visit("https://serviceproviders.ca-test.com/?localdev=true")
       cy.get('[placeholder="name "]').type(this.data.TestName)
       cy.get('[placeholder="Status"]').type(this.data.TestStatus)
       cy.get('[placeholder="Please Enter Email"]').type(this.data.Email)
+
+
+      //Add Contributor
+cy.get('.v-tab:nth-child(5)').click();
+cy.get('.addBtn > .v-btn__content').click();
+cy.get('.col:nth-child(3) .v-input--selection-controls__ripple').click();
+cy.get('.v-list-item:nth-child(2) > .list-item-search > .v-list-item__title').click();
+cy.get('.button-pop-ups--size > .v-btn__content').click();
+
+
   
       //Click on save
       cy.get('.v-select__selections > .v-btn').click();
 
+      cy.wait(10000)
       
       //Refresh
-      cy.get('#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div.base-layout-second-header.header-box-border.col.col-12 > div > div > div.fill-height.col.col-md-5.col-lg-4.col-xl-3 > div > div > div > div > div.d-flex.align-center.justify-end.col.app-secondary-header-left--buttons.fill-height.gray-divider > button').click({force:true})
+      cy.get('#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div.base-layout-second-header.header-box-border.col.col-12 > div > div > div.fill-height.col.col-md-5.col-lg-4.col-xl-3 > div > div > div > div > div.d-flex.align-center.justify-end.col.app-secondary-header-left--buttons.fill-height.gray-divider > button')
+      .click({force:true})
   
+      //KitInbox
       cy.get('#action_items_list > div.fill-height.col > div > div > div.fill-height > div:nth-child(1)').click({force:true})
    
       cy.get('.kitname-account-id').should('have.text',this.data.TestName)
 
       cy.wait(3000)
+
+
 
       //file
       cy.get('.link-icon--green > path').click();
@@ -72,6 +88,20 @@ cy.get('[placeholder="City"]').click().type('NYY')
 
 //ZipCode
 cy.get('[name="Zip/Postal Code"]').type(786775)
+
+//State DD
+cy.get('#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div.row.content-wrapper.fill-width.fill-height > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div.row.kit-details-wrapper--content > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-check-list.kit-control-address.kit-control--no-fixed-height.pa-3.col.col-12.px-3 > div > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div')
+.click({force:true})
+//cy.get('[aria-labelledby="alabama-list-item-2261"] > .v-list-item__content').click({force:true})
+cy.contains('Alabama').click()
+
+
+//country DD
+//cy.get('#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div.row.content-wrapper.fill-width.fill-height > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div.row.kit-details-wrapper--content > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-check-list.kit-control-address.kit-control--no-fixed-height.pa-3.col.col-12.px-3 > div > div:nth-child(6) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div')
+//.click({force:true})
+//cy.get('[aria-labelledby="afghanistan-list-item-2841"] > .v-list-item__content').click({force:true})
+cy.contains('Afghanistan').click()
+
 
 //currency
 cy.get('#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div.row.content-wrapper.fill-width.fill-height > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div.row.kit-details-wrapper--content > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-currency.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-currency--right.ma-0.pa-0.col > div > div > div.v-input__slot').type(76788)
@@ -122,10 +152,18 @@ cy.get('#inspire > div.v-dialog__content.v-dialog__content--active > div > div >
 // cy.get('.v-picker__title__btn--active:nth-child(1)').click();
 // cy.get('.btnBorder:nth-child(1) > .v-btn__content').click();
 
+//NewKit save btn
 cy.get('#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.navi-bar.fill-height.d-flex.px-6.header-box-border.col.col-12 > div.fill-height.d-flex.align-center.justify-end.px-4.col-md-5.col-lg-7.col-xl-4.col-8 > div.navi-bar-dropdown.fill-height.align-center.overflow-max-width.col-md-9.col-lg-8.col-10 > div > div > div.v-input__slot > div.v-select__slot > div.v-select__selections > button')
 .click({force:true})
 
-cy.get('.navi-bar-dropdown:nth-child(2) .v-btn__content').eq(1).click();
+cy.wait(4000)
+
+
+cy.wait(4000)
+//Kit Save btn
+//cy.get('.navi-bar-dropdown:nth-child(2) .v-btn__content').eq(1).click();
+cy.get('.v-select__selections > .v-btn').click({force:true})
+
 
   })
 
