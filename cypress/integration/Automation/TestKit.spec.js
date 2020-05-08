@@ -1,7 +1,7 @@
 import LoginPage from '../PageObject/LoginPage'
 
 
-describe('Error finding', function(){
+describe('Interaction with the common area Data Types', function(){
 
 
   this.beforeAll(function() {
@@ -21,7 +21,7 @@ lp.visit("https://serviceproviders.ca-test.com/?localdev=true")
      
 })
 
-    it.only('First Test case for Test KitType',function(){
+    it.only('Test case  for accessing and locating the all DT in Test KitType',function(){
 
       cy.wait(10000)
   

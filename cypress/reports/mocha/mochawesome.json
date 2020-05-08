@@ -1,15 +1,15 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 1,
-    "passes": 0,
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
     "pending": 0,
-    "failures": 1,
-    "start": "2020-03-24T09:34:23.637Z",
-    "end": "2020-03-24T09:34:24.215Z",
-    "duration": 578,
-    "testsRegistered": 1,
-    "passPercent": 0,
+    "failures": 0,
+    "start": "2020-05-08T12:52:59.490Z",
+    "end": "2020-05-08T12:54:28.005Z",
+    "duration": 88515,
+    "testsRegistered": 2,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,46 +18,80 @@
   },
   "results": [
     {
-      "uuid": "0a47dfb1-5e0b-4d47-a298-b66b08d07ddb",
+      "uuid": "d2a50f17-3e61-42a7-95a6-a8de9809b635",
       "title": "",
-      "fullFile": "cypress\\integration\\examples\\PageObjectDemo.spec.js",
-      "file": "cypress\\integration\\examples\\PageObjectDemo.spec.js",
+      "fullFile": "cypress\\integration\\SignUpTestCases\\NewUserSignUp.spec.js",
+      "file": "cypress\\integration\\SignUpTestCases\\NewUserSignUp.spec.js",
       "beforeHooks": [],
       "afterHooks": [],
-      "tests": [
+      "tests": [],
+      "suites": [
         {
-          "title": "An uncaught error was detected outside of a test",
-          "fullTitle": " An uncaught error was detected outside of a test",
-          "timedOut": null,
-          "duration": 543,
-          "state": "failed",
-          "speed": null,
-          "pass": false,
-          "fail": true,
-          "pending": false,
-          "context": null,
-          "code": "throw err;",
-          "err": {
-            "message": "Uncaught TypeError: invalid reporter 'mochawesome'\n\nThis error originated from your test code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.",
-            "estack": "Uncaught TypeError: invalid reporter 'mochawesome'\n\nThis error originated from your test code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n",
-            "diff": null
-          },
-          "uuid": "cdf2ca30-b9b9-45e5-9a9e-8cddf02ba248",
-          "parentUUID": "0a47dfb1-5e0b-4d47-a298-b66b08d07ddb",
-          "isHook": false,
-          "skipped": false
+          "uuid": "35b17741-dd64-4eab-b22a-38c87c61d483",
+          "title": "Sign up for a New User",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign Up for a new User",
+              "fullTitle": "Sign up for a New User Sign Up for a new User",
+              "timedOut": null,
+              "duration": 45772,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var sp = new _SignUpPage[\"default\"]();\nsp.visit();\ncy.wait(3000);\ncy.url().should('include', 'app.ca-test.com/Public/Login?ReturnUrl=%2F');\nsp.SignUpbtn();\ncy.url().should('include', 'Register/Create'); //Sign Up detalis data coming from command.js\ncy.SignUpUserFirstName(this.data.FirstName);\ncy.SignUpUserLastName(this.data.LastName);\ncy.SignUpUserEmail(this.data.UserEmail);\ncy.ConfirmEmailAddress(this.data.UserEmail);\ncy.SignUpUserPassword(this.data.Password);\ncy.ConfirmPassword(this.data.Password);\ncy.get('[name=\"ContactInformation.CompanyType\"]').scrollIntoView({\n  force: true\n});\ncy.wait(5000);\ncy.get('[name=\"ContactInformation.CompanyType\"]').select('Facility Management'); //Click on Submit to Create the user\ncy.get('.icon:nth-child(1)').click();\ncy.wait(5000); //Assertion\ncy.get('.login-message').should('have.text', 'An email has been sent to you to verify the email address you provided with a link to activate your account.');\ncy.wait(5000);\ncy.get('.icon').click();\ncy.url().should('include', '/Public/Login');",
+              "err": {},
+              "uuid": "0b12edb8-f7ca-476d-83bb-a4926644a8ac",
+              "parentUUID": "35b17741-dd64-4eab-b22a-38c87c61d483",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifying the New user Email Id for New User on Mailinator site",
+              "fullTitle": "Sign up for a New User Verifying the New user Email Id for New User on Mailinator site",
+              "timedOut": null,
+              "duration": 23973,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var sp = new _SignUpPage[\"default\"]();\nsp.mailinatorSite();\ncy.url().should('include', 'mailinator.com');\nsp.EnterMailinatorEmail(this.data.UserEmail); //Click on Go\ncy.get('#go-to-public').click();\ncy.wait(3000);\ncy.contains('Common Areas - Account Activation').click();\ndebugger; // cy.contains('Activate Account').should('be.visible')\n//cy.get('body > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(9) > td > table > tbody > tr > td > a')\n// cy.get('body > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(9) > td')\n// .click({force:true})\n//sp.ActiveAccount()\n// cy.xpath('/html/body/table/tbody/tr[1]/td/table/tbody/tr[2]/td/table/tbody/tr[9]/td/table/tbody/tr/td/a')\n// .click({force:true})\n//  cy.get('body > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(9) > td > table > tbody').contains('Activate Account')\n//.click()",
+              "err": {},
+              "uuid": "74dabd32-a04c-4dda-9f9b-d815b8c47ae2",
+              "parentUUID": "35b17741-dd64-4eab-b22a-38c87c61d483",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0b12edb8-f7ca-476d-83bb-a4926644a8ac",
+            "74dabd32-a04c-4dda-9f9b-d815b8c47ae2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 69745,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
         }
       ],
-      "suites": [],
       "passes": [],
-      "failures": [
-        "cdf2ca30-b9b9-45e5-9a9e-8cddf02ba248"
-      ],
+      "failures": [],
       "pending": [],
       "skipped": [],
-      "duration": 543,
+      "duration": 0,
       "root": true,
-      "rootEmpty": false,
+      "rootEmpty": true,
       "_timeout": 2000
     }
   ],
@@ -69,7 +103,7 @@
       "options": {
         "quiet": false,
         "reportFilename": "mochawesome",
-        "saveHtml": false,
+        "saveHtml": true,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -83,7 +117,7 @@
         "reportDir": "cypress/reports/mocha",
         "quite": "true",
         "overwrite": false,
-        "html": false,
+        "html": true,
         "json": true
       },
       "version": "4.1.0"

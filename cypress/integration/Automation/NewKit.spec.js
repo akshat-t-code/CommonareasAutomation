@@ -1,7 +1,7 @@
 import LoginPage from '../PageObject/LoginPage'
 
 
-describe('Error finding', function(){
+describe('Interaction with Common area Data Types', function(){
 
 
   this.beforeAll(function() {

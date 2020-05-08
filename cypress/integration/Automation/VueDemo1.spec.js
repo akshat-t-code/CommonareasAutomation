@@ -17,6 +17,32 @@ describe('Window object with vue', function(){
 
     })
 
+it.only('connection',function(){
+
+cy.wait(5000)
+//Hm icon
+cy.get('.fill-height > .v-btn > .v-btn__content > .v-icon').click({force:true})
+
+//Click on Connection
+cy.get('.v-list-item:nth-child(3) > .v-list-item__content').click();
+
+cy.wait(3000)
+
+   //new Array=cy.get('.row list-item-wrapper contactContainer')
+
+//cy.get('#12815').click()
+cy.get('#action_items_list > div.fill-height.col > div > div > div > div > div:nth-child(1)')
+.click({force:true})
+
+
+})
+
+
+
+
+
+
+
 
     it('Trying to get vue ele by Window object', function(){
     
@@ -49,7 +75,7 @@ describe('Window object with vue', function(){
     })
 
 
-    it.only('By Document object',function(){
+    it('By Document object',function(){
 
     
 

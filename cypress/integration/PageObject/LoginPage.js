@@ -31,6 +31,19 @@ class LoginPage {
 
     }
 
+    PlusIcon(){
+
+        const btn=cy.get('.fill-height > .plus-button > .v-btn__content > .icon > .inline-svg')
+        btn.click()
+
+    }
+
+    ConnectionIcon(){
+        const btn=cy.get('.new-contact #Layer_1')
+        btn.click();
+
+    }
+
 }
 
 export default LoginPage
