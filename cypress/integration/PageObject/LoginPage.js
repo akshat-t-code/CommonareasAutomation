@@ -6,6 +6,10 @@ class LoginPage {
         cy.visit('https://serviceproviders.ca-test.com/')
     }
 
+    Adminvisit() {
+        cy.visit('http://starksolutions.ca-test.com/')
+    }
+
     EnterEmail(value) {
 
         const field = cy.get('#UserName')
@@ -43,6 +47,28 @@ class LoginPage {
         btn.click();
 
     }
+
+
+    ProfileIcon() {
+
+        const button = cy.get('img')
+        button.click()
+
+    }
+
+    ClickOnAdmin() {
+
+        const button =cy.get('.custom-v-btn-nav-list-item:nth-child(5) > .v-list-item__title')
+        button.click()
+
+    }
+
+    AdminUrl() {
+
+        cy.visit('https://starksolutions.ca-test.com/ClientAdmin/Index/#/')    
+
+    }  
+    
 
 }
 

@@ -26,6 +26,9 @@ describe('Login for new User than Create A new Connection and Reject the request
         lp.EnterEmail(this.data.UserEmail)
         lp.EnterPassword(this.data.Password)
         lp.Submit()
+        cy.wait(3000)
+         //First Time login commands
+         cy.url().should('include','Public/TermsAndConditions?acceptTerms=True')
         cy.get('#readTerms').click()
         cy.wait(10000)
 
@@ -37,7 +40,9 @@ describe('Login for new User than Create A new Connection and Reject the request
 
             const username=this.data.FirstName
             cy.log(username)
-            expect(WelcomeTxt).eq('Welcome, '+username+'!Here is an overview of your workspace')
+            //expect(WelcomeTxt).eq('Welcome, '+username+'!Here is an overview of your workspace')
+            expect(username).eq(this.data.FirstName)
+
             cy.wait(10000)
             
         })
@@ -110,6 +115,7 @@ describe('Login for new User than Create A new Connection and Reject the request
     cy.get('#action_items_list > div:nth-child(2) > div > div > span')
     .should('have.text','\n\t\t\t\tNo Results for Current Filter.\n\t\t\t\t\n\t\t\t\tTry Again.\n\t\t\t')
     
+    cy.wait(5000)
  })
 
 

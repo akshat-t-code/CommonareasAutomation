@@ -7,11 +7,14 @@ describe('Sign up for a New User', function () {
 
     this.beforeEach(function () {
 
-        cy.fixture('SignUpPageData').then(function (data) {
+         cy.fixture('SignUpPageData').then(function (data) {
 
-            this.data = data
+             this.data = data
 
-        })
+         })
+
+        
+
 
     })
 
@@ -58,6 +61,8 @@ describe('Sign up for a New User', function () {
         cy.get('.icon').click();
         cy.url().should('include', '/Public/Login')
 
+        cy.wait(5000)
+
 
     })
 
@@ -74,18 +79,29 @@ describe('Sign up for a New User', function () {
         cy.wait(3000)
         cy.contains('Common Areas - Account Activation').click()
         debugger
-        // cy.contains('Activate Account').should('be.visible')
-        //cy.get('body > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(9) > td > table > tbody > tr > td > a')
+      
+        
+        //  cy.get('#msg_body').then(function($iFrameEle){
 
-        // cy.get('body > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(9) > td')
-        // .click({force:true})
-        //sp.ActiveAccount()
+        //     const IfrmaesContents= $iFrameEle.contents().find('body')
 
-        // cy.xpath('/html/body/table/tbody/tr[1]/td/table/tbody/tr[2]/td/table/tbody/tr[9]/td/table/tbody/tr/td/a')
-        // .click({force:true})
-        //  cy.get('body > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(9) > td > table > tbody').contains('Activate Account')
-        //.click()
-  
+        //    cy.wrap(IfrmaesContents)
+        //    .get('body > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(9) > td > table > tbody > tr > td')
+        //    .click()
+
+
+        //  })
+
+        //  cy.get('#msg_body').then(($element) => {
+        //     const $body = $element.contents().find("body");
+        //     let stripe = cy.wrap($body);
+        //     stripe
+        //     .find('body > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(9) > td > table > tbody > tr > td')
+        //     .eq(0)
+        //     .click()
+        //     });
+
+    
 
     })
 

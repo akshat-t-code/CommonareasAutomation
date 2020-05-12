@@ -35,6 +35,7 @@ it('Creating a new connection ',function(){
    cy.ConnectionEmail(this.data.ConnectionEmail)
    //click on DropDown
     cy.get('#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div.row.position-relative.contact-detail-wrapper.md11.fill-height.new-connection > div.base-layout-main-content.d-flex.pa-0.fill-height.px-8.col > div.row.wrapper-content.px-8.py-4.pb-4 > div > div.v-input.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select.v-select--chips.v-select--is-multi > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div').click({force:true})
+    //Select Checkbox out of three listed below
     cy.contains('Meeting').click()
     //cy.contains('02').click()
     //cy.contains('LOL').click()
@@ -97,7 +98,7 @@ it('Verifying the Email Id for New User on Mailinator site',function(){
     cy.get('#go-to-public').click()
     cy.wait(3000)
     cy.contains('Common Areas - Account Activation').click()
-    cy.wait(6000)
+    cy.wait(10000)
     
 })
 
@@ -110,7 +111,7 @@ it('First time Login into the appLication for New User',function(){
     lp.EnterEmail(this.data.ConnectionEmail)
     lp.EnterPassword(this.data.ConnectionPassword)
     lp.Submit()
-    //cy.get('#readTerms').click()
+    cy.get('#readTerms').click()
     cy.wait(20000)
 
     cy.get('#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div > div.px-4.col.col-12 > div').then(function($WelEle){
@@ -120,8 +121,9 @@ it('First time Login into the appLication for New User',function(){
 
         const username=this.data.ConnectionFirstName
         cy.log(username)
-        expect(WelcomeTxt).eq('Welcome, '+username+'!Here is an overview of your workspace')
-        cy.wait(3000)
+       // expect(WelcomeTxt).eq('Welcome, '+username+'!Here is an overview of your workspace')
+        expect(username).eq(this.data.ConnectionFirstName)
+        cy.wait(3000)  
         
     })
 
@@ -155,10 +157,8 @@ cy.get('.v-list-item:nth-child(3) .v-list-item__title').click()
 
 cy.wait(5000)
 
-//cy.get('#action_items_list > div.fill-height.col > div > div > div > div > div.row.list-item-wrapper.contactContainer > div > div.list-item-col-right.col.row-list-item-details > div > div > div.v-list-item__title.truncate')
-//.should('have.text','Kallu Stanley')
-
 //Click On Created Connection
+//Assertion
 cy.get('.company_container:nth-child(1)').should('be.visible').click()
 
 
