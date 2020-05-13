@@ -17,36 +17,33 @@ describe("User Login into the application ", function () {
     lp.EnterPassword(this.data.Password);
     lp.Submit();
 
+    cy.title().should('eq', 'Common Areas')
+    cy.log('You have logged in successfully')
+    cy.wait(10000);
+
     //login vailidation
     debugger;
-    //  if(cy.get('.field-validation-error').should('be.visible')){
+    //   cy.get('body').then(($body)=>{
 
-    //     cy.get('#passErrorMessage > span').should('have.text','Invalid username or password.')
-    //     cy.log('Invalid username or password.Please enter Valid UserName or Password')
-    //  }
-
-    //  else {
-
-    //         cy.title().should('eq', 'Common Areas')
-
-    //         cy.log('You have logged in successfully')
-
-    //          }
-
-    // cy.get('.field-validation-error').then(($btn) => {
-    //     if ($btn.css('#passErrorMessage > span')) {
-    //       // do something if it's active
-    //       cy.log('Invalid username or password.Please enter Valid UserName or Passwoed')
-    //     }
-    //      else {
-
-    //         cy.title().should('eq', 'Common Areas')
-
-    //         cy.log('You have logged in successfully')
+    //     if($body.get('.field-validation-error')){
+    //         cy.log('Invalid username or password.Please enter Valid UserName or Password')
 
     //     }
+
     //   })
+        
+    // cy.get('body').then(($body)=>{
 
-    cy.wait(10000);
-  });
-});
+    //    else{ cy.title().should('eq', 'Common Areas')
+
+    //         cy.log('You have logged in successfully')
+    //         cy.wait(10000);
+    // }
+    //     })
+
+    
+  
+})
+})
+
+  

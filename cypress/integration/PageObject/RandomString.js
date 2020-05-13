@@ -19,12 +19,12 @@ class RandomString {
         
       }
 
-       getRandomPeopel(){
-        return {
-        // email:getRandomEmail(),
-         FirstName:this.generate_random_string(5),
-         LastName:this.generate_random_string(5)
-      
+       getRandomUser(){
+        var lName=this.generate_random_string(5)
+   return {
+   Useremail:lName+"@mailinator.com",
+   UserFirstName:this.generate_random_string(5),
+   UserLastName:lName
           
         };
      
