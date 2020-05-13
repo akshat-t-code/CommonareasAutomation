@@ -1,7 +1,7 @@
 import LoginPage from '../PageObject/LoginPage'
 
 
-describe('Create user from admin and log in with the new user', function(){
+describe('Create user from admin and login with the new user', function(){
 
 
     this.beforeEach(function(){
@@ -12,9 +12,10 @@ describe('Create user from admin and log in with the new user', function(){
 
          })
 
+         cy.viewport(1280, 720)
+
 
     })
-
 
     it('Create user form admin',function(){
 
@@ -61,24 +62,27 @@ describe('Create user from admin and log in with the new user', function(){
      cy.get('[name="AccountUser.UserContact.State"]').select('Alabama')
 
      cy.AddUser()
+     cy.log("user has been add successfully")
 
+
+   
+     cy.wait(5000)
      //Assertion
      cy.url().should('include','ClientAdmin/UserDetails/')
     
      cy.SaveUserDetails()
+     cy.log("users's Detalis has been saved successfully")
 
      //Assertion
      cy.get('body > div.ns-box.ns-bar.ns-effect-slidetop.ns-type-success.success.ns-hide > div > p')
      .contains('User details updated successfully.').should('be.visible')
-
-     //cy.get('.ns-box-inner > p')
 
      cy.wait(10000)
 
 
     })
 
-    it.only('First time New Add user login into the appliction',function(){
+    it('First time New Add user login into the appliction',function(){
 
         const lp=new LoginPage()
         lp.Adminvisit()
@@ -114,9 +118,5 @@ describe('Create user from admin and log in with the new user', function(){
 
 
     })
-
-
-
-
 
 })

@@ -1,7 +1,6 @@
 import SignUpPage from "../PageObject/SignUpPage";
 import LoginPage from "../PageObject/LoginPage";
 import RandomString from "../PageObject/RandomString";
-import "cypress-iframe";
 
 describe("Sign up for a New User", function () {
   this.beforeEach(function () {
@@ -11,8 +10,12 @@ describe("Sign up for a New User", function () {
   });
 
   it.only("Sign Up for a new User", function () {
-    
 
+    const Rs=new RandomString()
+    var UserEmaill=Rs.getRandomUserEmail()
+    cy.log(UserEmaill)
+
+   
     const sp = new SignUpPage();
     sp.visit();
     cy.wait(3000);
@@ -22,11 +25,14 @@ describe("Sign up for a New User", function () {
     cy.url().should("include", "Register/Create");
 
     //Sign Up detalis data coming from command.js
-    cy.SignUpUserFirstName(this.data.FirstName);
+    //cy.SignUpUserFirstName(this.data.FirstName);
+    //cy.SignUpUserFirstName(ramdata.FirstName);
 
-   cy.SignUpUserLastName(this.data.LastName);
+   // cy.SignUpUserLastName(this.data.LastName);
+   //cy.SignUpUserLastName(ramdata.LastName);
 
-    cy.SignUpUserEmail(this.data.UserEmail)
+   // cy.SignUpUserEmail(email);
+    // cy.SignUpUserEmail(this.data.UserEmail)
 
     cy.ConfirmEmailAddress(this.data.UserEmail);
 

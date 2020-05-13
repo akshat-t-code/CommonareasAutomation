@@ -72,6 +72,8 @@ describe('Login into the application for a new User ', function(){
         lp.Submit()
         cy.get('#readTerms').click()
         cy.wait(10000)
+        cy.log("New Users has been logged in first time successfully")
+
 
         cy.get('#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div > div.px-4.col.col-12 > div').then(function($WelEle){
 

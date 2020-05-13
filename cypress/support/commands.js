@@ -2,6 +2,8 @@
 import '@percy/cypress';
 import 'cypress-file-upload';
 import '@applitools/eyes-cypress/commands'
+import 'cypress-iframe';
+
 
 //My customize command for login
 Cypress.Commands.add("login", (email, password) => { 

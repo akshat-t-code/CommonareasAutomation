@@ -95,14 +95,17 @@ it('Verifying the Email Id for New User on Mailinator site',function(){
     cy.url().should('include','mailinator.com')
     sp.EnterMailinatorEmail(this.data.ConnectionEmail)
     //Click on Go
-    cy.get('#go-to-public').click()
+    sp.Go()
     cy.wait(3000)
     cy.contains('Common Areas - Account Activation').click()
+    cy.wait(10000)
+    //New Sign up user Account Verification on mailinator
+    sp.ActiveAccount()
     cy.wait(10000)
     
 })
 
-it('First time Login into the appLication for New User',function(){
+it.only('First time Login into the appLication for New User',function(){
 
     const sp=new SignUpPage()
     const lp=new LoginPage()
@@ -113,6 +116,8 @@ it('First time Login into the appLication for New User',function(){
     lp.Submit()
     cy.get('#readTerms').click()
     cy.wait(20000)
+    cy.log("New Users has been logged in first time successfully")
+
 
     cy.get('#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div > div.px-4.col.col-12 > div').then(function($WelEle){
 
@@ -123,7 +128,7 @@ it('First time Login into the appLication for New User',function(){
         cy.log(username)
        // expect(WelcomeTxt).eq('Welcome, '+username+'!Here is an overview of your workspace')
         expect(username).eq(this.data.ConnectionFirstName)
-        cy.wait(3000)  
+        cy.wait(7000)  
         
     })
 
@@ -160,6 +165,51 @@ cy.wait(5000)
 //Click On Created Connection
 //Assertion
 cy.get('.company_container:nth-child(1)').should('be.visible').click()
+
+cy.wait(10000)
+
+
+})
+
+
+
+
+it.only('Login Again to appLication for Rejecting the Request',function(){
+
+    const sp=new SignUpPage()
+    const lp=new LoginPage()
+
+    sp.visit()
+    lp.EnterEmail(this.data.ConnectionEmail)
+    lp.EnterPassword(this.data.ConnectionPassword)
+    lp.Submit()
+    cy.wait(10000)
+
+//Click On Connection Request notification Icon
+cy.get('.menu-items-icon:nth-child(2) > path').click()
+cy.wait(5000)
+
+//Assertion For getting connection Request
+cy.get(':nth-child(3) > .v-btn > .v-btn__content > .v-icon').should('be.visible')
+cy.wait(5000)
+
+//Reject the Request
+cy.get(':nth-child(3) > .v-btn > .v-btn__content > .v-icon').first().click()
+cy.wait(3000)
+
+cy.reload()
+cy.wait(10000)
+
+//Click on HMB Icon
+cy.get('.v-btn__content > .v-icon').click();
+//Click On Connections
+cy.get('.v-list-item:nth-child(3) .v-list-item__title').click();
+
+//Assertion
+cy.get('#action_items_list > div:nth-child(2) > div > div > span')
+.should('have.text','\n\t\t\t\tNo Results for Current Filter.\n\t\t\t\t\n\t\t\t\tTry Again.\n\t\t\t')
+
+cy.wait(10000)
 
 
 })

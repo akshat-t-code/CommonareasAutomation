@@ -28,7 +28,24 @@ class SignUpPage{
 
     }
 
+    Go(){
+
+        const go=cy.get('#go-to-public')
+        go.click()
+
+    }
+
     ActiveAccount(){
+
+        cy.get('#msg_body')
+        .then(($iframe) => {
+          const $body = $iframe.contents().find('body')
+      
+          cy.wrap($body)
+            .contains('Activate Account')
+            .click()
+
+        })
         
     }
 
