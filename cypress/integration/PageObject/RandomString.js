@@ -26,9 +26,9 @@ class RandomString {
          LastName:this.generate_random_string(5)
       
           
-        }
+        };
      
-    
+       }
 }
 
 export default RandomString;
