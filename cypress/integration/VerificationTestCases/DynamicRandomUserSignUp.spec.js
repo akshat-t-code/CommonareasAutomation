@@ -2,12 +2,11 @@ import SignUpPage from "../PageObject/SignUpPage";
 import LoginPage from "../PageObject/LoginPage";
 import RandomString from "../PageObject/RandomString";
 
-//Global Variable
 let UserData;
 let UserEmailID;
 let UserFirstName;
 let UserLastName;
-//Randomly Generated UserData coming from PageObject(RandomString Class)
+//Randomly Generated UserData coming from PageObject
 const Rs = new RandomString();
 UserData = Rs.getRandomUser();
 UserEmailID = UserData.Useremail;
@@ -18,7 +17,7 @@ describe("Sign up for a New User", function () {
   this.beforeAll(() => {
     debugger;
     //Generating Dynamic Json file at RumTime
-    cy.writeFile("cypress/fixtures/DynamicData/UserCredentials.json", {
+    cy.writeFile("cypress/fixtures/VerificationTestCasesData/UserData.json", {
       Fname: UserFirstName,
       Lname: UserLastName,
       UserEmail: UserEmailID,
@@ -34,7 +33,7 @@ describe("Sign up for a New User", function () {
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
       debugger;
-      cy.fixture("DynamicData/UserCredentials").then(function (JsonData) {
+      cy.fixture("VerificationTestCasesData/UserData").then(function (JsonData) {
         this.Credentials = JsonData;
         cy.log(this.Credentials.UserEmail);
         cy.log(this.Credentials.Fname);

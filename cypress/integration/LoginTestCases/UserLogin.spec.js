@@ -1,49 +1,37 @@
 import SignUpPage from "../PageObject/SignUpPage";
 import LoginPage from "../PageObject/LoginPage";
 
-describe("User Login into the application ", function () {
+describe("Login into the application for a new User ", function () {
   this.beforeEach(function () {
-    cy.fixture("SignUpPageData").then(function (data) {
-      this.data = data;
+    debugger;
+    cy.fixture("LoginTestData/UserLogin").then(function (LoginData) {
+      this.Credentials = LoginData;
     });
   });
 
-  it("Login into appLication", function () {
+  it("Login into the appLication for New User", function () {
+    //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-
     sp.visit();
-    lp.EnterEmail(this.data.UserEmail);
-    lp.EnterPassword(this.data.Password);
+    lp.EnterEmail(this.Credentials.UserEmail);
+    lp.EnterPassword(this.Credentials.Password);
     lp.Submit();
-
-    cy.title().should('eq', 'Common Areas')
-    cy.log('You have logged in successfully')
     cy.wait(10000);
-
-    //login vailidation
-    debugger;
-    //   cy.get('body').then(($body)=>{
-
-    //     if($body.get('.field-validation-error')){
-    //         cy.log('Invalid username or password.Please enter Valid UserName or Password')
-
-    //     }
-
-    //   })
-        
-    // cy.get('body').then(($body)=>{
-
-    //    else{ cy.title().should('eq', 'Common Areas')
-
-    //         cy.log('You have logged in successfully')
-    //         cy.wait(10000);
-    // }
-    //     })
-
-    
-  
-})
-})
-
-  
+    cy.log("New Users has been logged in first time successfully");
+    //Assertion
+    cy.get(
+      "#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div.row.content-wrapper.fill-width.fill-height > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div > div.px-4.col.col-12 > div > span"
+    ).should("have.text", "Home Page Overview");
+    cy.get(
+      "#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div > div.px-4.col.col-12 > div"
+    ).then(function ($WelEle) {
+      const WelcomeTxt = $WelEle.text();
+      cy.log(WelcomeTxt);
+      const username = this.Credentials.FirstName;
+      cy.log(username);
+      expect(username).eq(this.Credentials.FirstName);
+      cy.wait(3000);
+    });
+  });
+});

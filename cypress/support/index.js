@@ -23,3 +23,11 @@ import './commands'
 // require('./commands')
 require('cypress-xpath')
 
+let faker = require('faker');
+before(() => {
+  global.EMAIL1 = getRandomUserEmail();
+
+  function getRandomUserEmail() {
+    return faker.internet.email();
+  }
+})

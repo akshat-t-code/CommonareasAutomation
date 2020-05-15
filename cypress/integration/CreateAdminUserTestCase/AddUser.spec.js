@@ -1,122 +1,152 @@
-import LoginPage from '../PageObject/LoginPage'
+import SignUpPage from "../PageObject/SignUpPage";
+import LoginPage from "../PageObject/LoginPage";
+import RandomString from "../PageObject/RandomString";
 
+//Global Variables
+let UserData;
+let UserEmailID;
+let UserFirstName;
+let UserLastName;
+let UserPhn;
+let Telephone;
+//Randomly Generated UserData coming from PageObject(RandomString Class)
+const Rs = new RandomString();
+UserPhn=Rs.getRandomPhoneNo()
+Telephone=Rs.getRandomPhoneNo()
+UserData = Rs.getRandomUser();
+UserEmailID = UserData.Useremail;
+UserFirstName = UserData.UserFirstName;
+UserLastName = UserData.UserLastName;
 
-describe('Create user from admin and login with the new user', function(){
+describe("Create user from admin and login with the new user", function () {
+  this.beforeAll(() => {
+    debugger;
+    //Generating Dynamic Json file at RumTime
+    cy.writeFile("cypress/fixtures/DynamicData/AddUserCredentials.json", {
+      FirstName: UserFirstName,
+      LastName: UserLastName,
+      UserEmail: UserEmailID,
+      UserPhoneNo: UserPhn,
+      UserTelephone: Telephone,
+    });
+    cy.log("Data has been write to json file");
+    cy.log(UserEmailID);
+    cy.log(UserFirstName);
+    cy.log(UserLastName);
+    cy.log(UserPhn)
+    cy.log(Telephone)
+  });
 
+  this.beforeEach(
+    "Getting the Dynmaically Generated data through Fixtures file",
+    function () {
+      //Dynamic taking data form this fixtures file(1)
+      cy.fixture("DynamicData/AddUserCredentials").then(function (JsonData) {
+        this.Credentials = JsonData;
+        cy.log(this.Credentials.UserEmail);
+        cy.log(this.Credentials.FirstName);
+        cy.log(this.Credentials.LastName);
+      });
+      //2nd Fixture file(Static) for Adding User
+      cy.fixture("AdminUserdata").then(function (data) {
+        this.data = data;
+      });
+      cy.viewport(1280, 720);
+    }
+  );
 
-    this.beforeEach(function(){
+  it("Create user form admin", function () {
+    //PageObject
+    const lp = new LoginPage();
+    lp.Adminvisit();
+    lp.EnterEmail("starksolutions@commonareas.work.dev");
+    lp.EnterPassword("1234567Aa");
+    lp.Submit();
+    cy.wait(5000);
+    cy.log("User has been Logged in successfully");
+    cy.title().should("eq", "Common Areas");
+    cy.wait(10000);
+    lp.AdminUrl();
+    cy.ClickOnAddUser();
+    //Assertion
+    cy.get("#content > div.right > h2")
+      .contains("Add User")
+      .should("be.visible");
+    cy.wait(20000);
 
-        cy.fixture('AdminUserdata').then(function(data){
+    //Adding User form Admin commands coming from command.js
     
-            this.data=data
+    cy.UserFirstName(this.Credentials.FirstName);
+    cy.UserLastName(this.Credentials.LastName);
 
-         })
-
-         cy.viewport(1280, 720)
-
-
-    })
-
-    it('Create user form admin',function(){
-
-      const lp=new LoginPage()
-      lp.Adminvisit()
-      lp.EnterEmail('starksolutions@commonareas.work.dev')
-      lp.EnterPassword('1234567Aa')
-      lp.Submit()
-      cy.title().should('eq', 'Common Areas')
-      cy.wait(10000)
-      lp.AdminUrl()
-     cy.ClickOnAddUser()
-     cy.get('#content > div.right > h2').contains('Add User').should('be.visible')
-     cy.wait(20000)
-
-     //Adding user detalis data coming from command.js
-
-     cy.UserFirstName(this.data.UserFirstName)
-
-     cy.UserLastName(this.data.UserLastName)
-
-     cy.Tittle(this.data.Tittle)
-
-     cy.UserEmail(this.data.UserEmail)
-
-     cy.UserPassword(this.data.UserPassword)
-
-     cy.UserConfirmPassword(this.data.UserPassword)
-
-     cy.UserTelephone(this.data.UserTelephone)
-
-     cy.UserMobilePhone(this.data.UserMobilePhone)
-
-     cy.UserAddress1(this.data.UserAddress1)
-
-     cy.UserAddress2(this.data.UserAddress2)
-
-     cy.UserZipCode(this.data.UserZipCode)
-
-     cy.UserCity(this.data.UserCity)
-     //Select State
-     cy.get('[name="AccountUser.UserContact.Country"]').select('United States')
-     //Select State
-     cy.get('[name="AccountUser.UserContact.State"]').select('Alabama')
-
-     cy.AddUser()
-     cy.log("user has been add successfully")
-
-
-   
-     cy.wait(5000)
-     //Assertion
-     cy.url().should('include','ClientAdmin/UserDetails/')
+    cy.Tittle(this.data.Tittle);
     
-     cy.SaveUserDetails()
-     cy.log("users's Detalis has been saved successfully")
+    cy.UserEmail(this.Credentials.UserEmail);
 
-     //Assertion
-     cy.get('body > div.ns-box.ns-bar.ns-effect-slidetop.ns-type-success.success.ns-hide > div > p')
-     .contains('User details updated successfully.').should('be.visible')
+    cy.UserPassword(this.data.UserPassword);
+    cy.UserConfirmPassword(this.data.UserPassword);
 
-     cy.wait(10000)
+    cy.UserTelephone(this.Credentials.UserTelephone);
+    cy.UserMobilePhone(this.Credentials.UserPhoneNo);
 
+    cy.UserAddress1(this.data.UserAddress1);
+    cy.UserAddress2(this.data.UserAddress2);
+    cy.UserZipCode(this.data.UserZipCode);
+    cy.UserCity(this.data.UserCity);
+    //Select State
+    cy.get('[name="AccountUser.UserContact.Country"]').select("United States");
+    //Select State
+    cy.get('[name="AccountUser.UserContact.State"]').select("Alabama");
+    cy.log("All details has been entered for Admin user");
 
-    })
+    cy.AddUser();
+    cy.log("user has been add successfully");
 
-    it('First time New Add user login into the appliction',function(){
+    cy.wait(5000);
+    //Assertion
+    cy.url().should("include", "ClientAdmin/UserDetails/");
 
-        const lp=new LoginPage()
-        lp.Adminvisit()
-        lp.EnterEmail(this.data.UserEmail)
-        lp.EnterPassword(this.data.UserPassword)
-        lp.Submit()
+    cy.SaveUserDetails();
+    cy.log("users's Detalis has been saved successfully");
 
-        cy.wait(3000)
+    //Assertion
+    cy.get(
+      "body > div.ns-box.ns-bar.ns-effect-slidetop.ns-type-success.success.ns-hide > div > p"
+    )
+      .contains("User details updated successfully.")
+      .should("be.visible");
 
-        //First Time login commands
-        cy.url().should('include','Public/TermsAndConditions?acceptTerms=True')
-        cy.get('#readTerms').click()
+    cy.wait(10000);
+  });
 
-        cy.wait(10000)
-
-        cy.title().should('eq', 'Common Areas')
-
-        cy.wait(5000)
-        //Profile Assertion
-        cy.get('#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div > div.px-4.col.col-12 > div')
-        .then(function($WelEle){
-
-            const WelcomeTxt=$WelEle.text()
-            cy.log(WelcomeTxt)
-    
-            const username=this.data.UserFirstName
-            cy.log(username)
-            //expect(WelcomeTxt).eq('Welcome, '+username+'!Here is an overview of your workspace')
-            expect(username).eq(this.data.UserFirstName)
-            cy.wait(3000)  
-
-        })
-
-
-    })
-
-})
+  it("First time New Add user login into the appliction", function () {
+    //PageObject
+    const lp = new LoginPage();
+    lp.Adminvisit();
+    //fixtures file(1)
+    lp.EnterEmail(this.Credentials.UserEmail);
+    lp.EnterPassword(this.data.UserPassword);
+    lp.Submit();
+    cy.wait(3000);
+    //First Time login commands
+    cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
+    cy.get("#readTerms").click();
+    cy.wait(10000);
+    cy.log("New User has been logged in successfully");
+    //Assertion
+    cy.title().should("eq", "Common Areas");
+    cy.wait(5000);
+    //Profile Assertion
+    cy.get(
+      "#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div > div.px-4.col.col-12 > div"
+    ).then(function ($WelEle) {
+      const WelcomeTxt = $WelEle.text();
+      cy.log(WelcomeTxt);
+      const username = this.Credentials.FirstName;
+      cy.log(username);
+      //expect(WelcomeTxt).eq('Welcome, '+username+'!Here is an overview of your workspace')
+      expect(username).eq(this.Credentials.FirstName);
+      cy.wait(3000);
+    });
+  });
+});

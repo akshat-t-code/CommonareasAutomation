@@ -63,6 +63,7 @@ describe('Login for new User than Create A new Connection and Accept the request
          cy.wait(5000)
          cy.log("Users has been logged in successfully")
 
+
        lp.PlusIcon()
        lp.ConnectionIcon()
     
