@@ -4,13 +4,11 @@
   "description": "",
   "author": "Akshat",
   "scripts": {
-    "after:tests": "npm run merge-report; npm run generate-report",
-    "clean-report": "npm run clean-reports; npm run test; npm run after:tests",
-    "clean-reports": "rm -rf cypress/reports",
     "cypress": "npx cypress open",
     "generate-report": "merge mochareports/*.json -f report -o mochareports",
     "merge-report": "mochawesome-merge --reportDir cypress/reports/mocha > mochareports/report",
-    "test": "npx cypress run"
+    "test": "npx cypress run",
+    "Cmd": "node_modules\\.bin\\cypress run"
   },
   "main": "index.js",
   "dependencies": {
@@ -33,7 +31,8 @@
     "mocha": "^7.1.1",
     "mochawesome": "^5.0.0",
     "mochawesome-merge": "^4.0.3",
-    "mochawesome-report-generator": "^4.1.0"
+    "mochawesome-report-generator": "^4.1.0",
+    "start-server-and-test": "^1.11.0"
   },
   "license": "ISC"
 }

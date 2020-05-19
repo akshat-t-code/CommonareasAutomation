@@ -16,7 +16,6 @@ class LoginPage {
         field.clear()
         field.type(value)
         return this
-
     }
 
     EnterPassword(value) {
@@ -69,7 +68,6 @@ class LoginPage {
 
     }  
     
-
 }
 
 export default LoginPage

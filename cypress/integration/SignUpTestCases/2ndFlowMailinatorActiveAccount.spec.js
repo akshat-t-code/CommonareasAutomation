@@ -1,22 +1,21 @@
 import SignUpPage from "../PageObject/SignUpPage";
 import LoginPage from "../PageObject/LoginPage";
 
-describe("Activation Mailinator Account for Random New Sign up User ", function () {
+describe("Activation Mailinator Account(Second Flow TC) for Random New Sign up User ", function () {
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
-      cy.eyesOpen({
-        appName: "Common Aera UI Automation",
-        testName: "Mailinator Account Verification",
+        cy.eyesOpen({
+            appName: "Common Aera UI Automation",
+            testName: "Mailinator Account Verification for Second Flow",
+          });
+      //debugger;
+      cy.fixture(
+        "ConnectionsDynamicTestData/Connection2ndFlowUserCredentials"
+      ).then(function (JsonData) {
+        this.Credentials = JsonData;
+        cy.log(this.Credentials.UserEmail);
       });
-
-      debugger;
-      cy.fixture("ConnectionsDynamicTestData/ConnectionUserCredentials").then(
-        function (JsonData) {
-          this.Credentials = JsonData;
-          cy.log(this.Credentials.UserEmail);
-        }
-      );
     }
   );
 
@@ -40,9 +39,7 @@ describe("Activation Mailinator Account for Random New Sign up User ", function 
     sp.ActiveAccount();
     cy.wait(5000);
     cy.log("New user Account has been verified successfully on Mailinator");
-    
   });
-
   this.afterAll(function () {
     cy.eyesClose();
   });

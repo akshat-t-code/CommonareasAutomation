@@ -2,8 +2,8 @@
 
   
     "$schema": "https://on.cypress.io/cypress.schema.json",
-    "pageLoadTimeout": 300000,
-    "defaultCommandTimeout": 20000,
+    "pageLoadTimeout": 500000,
+    "defaultCommandTimeout": 50000,
     "chromeWebSecurity": false,
     "video": true,
     "screenshotsFolder": "cypress/screenshots",
