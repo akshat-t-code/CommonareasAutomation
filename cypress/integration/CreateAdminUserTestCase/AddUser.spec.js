@@ -43,10 +43,10 @@ describe("Create user from admin and login with the new user", function () {
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
-      cy.eyesOpen({
-        appName: "Common Aera UI Automation",
-        testName: "Adding New User From Admin",
-      });
+      // cy.eyesOpen({
+      //   appName: "Common Aera UI Automation",
+      //   testName: "Adding New User From Admin",
+      // });
       //Dynamic taking data form this fixtures file(1)
       cy.fixture("AddUserDynamicTestData/AddUserCredentials").then(function (
         JsonData
@@ -70,21 +70,21 @@ describe("Create user from admin and login with the new user", function () {
     lp.Adminvisit();
     lp.EnterEmail("starksolutions@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
-    cy.eyesCheckWindow("Logging into the Application");
+    //cy.eyesCheckWindow("Logging into the Application");
     lp.Submit();
     cy.wait(5000);
     cy.log("User has been Logged in successfully");
-    cy.eyesCheckWindow("Logged In");
+    //cy.eyesCheckWindow("Logged In");
     cy.title().should("eq", "Common Areas");
     cy.wait(10000);
     lp.AdminUrl();
-    cy.eyesCheckWindow();
+    //cy.eyesCheckWindow();
     cy.ClickOnAddUser();
     //Assertion
     cy.get("#content > div.right > h2")
       .contains("Add User")
       .should("be.visible");
-    cy.eyesCheckWindow();
+    //cy.eyesCheckWindow();
     cy.wait(10000);
 
     //Adding User form Admin Custom Commands coming from command.js
@@ -94,34 +94,34 @@ describe("Create user from admin and login with the new user", function () {
     cy.Tittle(this.data.Tittle);
 
     cy.UserEmail(this.Credentials.UserEmail);
-    cy.eyesCheckWindow("User Details");
+    //cy.eyesCheckWindow("User Details");
 
     cy.UserPassword(this.data.UserPassword);
     cy.UserConfirmPassword(this.data.UserPassword);
 
     cy.UserTelephone(this.Credentials.UserTelephone);
     cy.UserMobilePhone(this.Credentials.UserPhoneNo);
-    cy.eyesCheckWindow("User Details");
+    //cy.eyesCheckWindow("User Details");
 
     cy.UserAddress1(this.data.UserAddress1);
     cy.UserAddress2(this.data.UserAddress2);
     cy.UserZipCode(this.data.UserZipCode);
     cy.UserCity(this.data.UserCity);
-    cy.eyesCheckWindow("User Details");
+    //cy.eyesCheckWindow("User Details");
     //Select State
     cy.get('[name="AccountUser.UserContact.Country"]').select("United States");
     //Select State
     cy.get('[name="AccountUser.UserContact.State"]').select("Alabama");
     cy.log("All details has been entered for Admin user");
-    cy.eyesCheckWindow("User Details");
+    //cy.eyesCheckWindow("User Details");
 
     cy.AddUser();
     cy.log("user has been add successfully");
-    cy.eyesCheckWindow();
+    //cy.eyesCheckWindow();
     cy.wait(5000);
     //Assertion
     cy.url().should("include", "ClientAdmin/UserDetails/");
-    cy.wait(2000).eyesCheckWindow();
+    //cy.wait(2000).eyesCheckWindow();
     cy.SaveUserDetails();
     cy.log("users's Detalis has been saved successfully");
 
@@ -131,7 +131,7 @@ describe("Create user from admin and login with the new user", function () {
     )
       .contains("User details updated successfully.")
       .should("be.visible");
-    cy.eyesCheckWindow();
+    //cy.eyesCheckWindow();
     cy.wait(10000);
   });
 
@@ -142,16 +142,16 @@ describe("Create user from admin and login with the new user", function () {
     //fixtures file(1)
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.data.UserPassword);
-    cy.eyesCheckWindow("First time user logging into the application");
+    //cy.eyesCheckWindow("First time user logging into the application");
     lp.Submit();
     cy.wait(3000);
     //First Time login commands
     cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
     cy.get("#readTerms").click();
-    cy.eyesCheckWindow("New User");
+    //cy.eyesCheckWindow("New User");
     cy.wait(10000);
     cy.log("New User has been logged in successfully");
-    cy.eyesCheckWindow("Logged In");
+    //cy.eyesCheckWindow("Logged In");
     //Assertion
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
@@ -168,7 +168,7 @@ describe("Create user from admin and login with the new user", function () {
     });
   });
 
-  this.afterAll(function () {
-    cy.eyesClose();
-  });
+  // this.afterAll(function () {
+  //   cy.eyesClose();
+  // });
 });

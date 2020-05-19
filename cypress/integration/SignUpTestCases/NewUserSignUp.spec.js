@@ -36,10 +36,10 @@ describe("Sign up for a New User", function () {
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
-      cy.eyesOpen({
-        appName: "Common Aera UI Automation",
-        testName: "Sign Up for a new User",
-      });
+      // cy.eyesOpen({
+      //   appName: "Common Aera UI Automation",
+      //   testName: "Sign Up for a new User",
+      // });
 
       //debugger;
       cy.fixture("ConnectionsDynamicTestData/ConnectionUserCredentials").then(
@@ -58,11 +58,12 @@ describe("Sign up for a New User", function () {
     const sp = new SignUpPage();
     sp.visit();
     cy.wait(3000);
-    cy.eyesCheckWindow()
+   // cy.eyesCheckWindow()
+  
     cy.url().should("include", "app.ca-test.com/Public/Login?ReturnUrl=%2F");
     sp.SignUpbtn();
     cy.url().should("include", "Register/Create");
-    cy.eyesCheckWindow('Sign Up Page')
+    //cy.eyesCheckWindow('Sign Up Page')
     //Sign Up detalis Custom Commands coming from command.js
     cy.SignUpUserFirstName(this.Credentials.Fname);
     cy.SignUpUserLastName(this.Credentials.Lname);
@@ -78,7 +79,7 @@ describe("Sign up for a New User", function () {
     cy.get('[name="ContactInformation.CompanyType"]').select(
       "Facility Management"
     );
-    cy.eyesCheckWindow("Getting User Details");
+    //cy.eyesCheckWindow("Getting User Details");
     //Click on Submit to Create the user
     cy.get(".icon:nth-child(1)").click();
     cy.wait(5000);
@@ -88,15 +89,15 @@ describe("Sign up for a New User", function () {
       "have.text",
       "An email has been sent to you to verify the email address you provided with a link to activate your account."
     );
-    cy.eyesCheckWindow("New user Signed Up");
+   // cy.eyesCheckWindow("New user Signed Up");
     cy.wait(5000);
     cy.get(".icon").click();
     cy.url().should("include", "/Public/Login");
     cy.wait(3000);
-    cy.eyesCheckWindow();
+    //cy.eyesCheckWindow();
   });
 
-  this.afterAll(function () {
-    cy.eyesClose();
-  });
+  // this.afterAll(function () {
+  //   cy.eyesClose();
+  // });
 });

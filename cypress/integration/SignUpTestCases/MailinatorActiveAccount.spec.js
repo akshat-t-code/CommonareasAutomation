@@ -5,10 +5,10 @@ describe("Activation Mailinator Account for Random New Sign up User ", function 
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
-      cy.eyesOpen({
-        appName: "Common Aera UI Automation",
-        testName: "Mailinator Account Verification",
-      });
+      // cy.eyesOpen({
+      //   appName: "Common Aera UI Automation",
+      //   testName: "Mailinator Account Verification",
+      // });
 
       debugger;
       cy.fixture("ConnectionsDynamicTestData/ConnectionUserCredentials").then(
@@ -27,15 +27,15 @@ describe("Activation Mailinator Account for Random New Sign up User ", function 
     cy.url().should("include", "mailinator.com");
     sp.EnterMailinatorEmail(this.Credentials.UserEmail);
     cy.log("User Email has been Entered");
-    cy.eyesCheckWindow("User Mail");
+   // cy.eyesCheckWindow("User Mail");
     //Click on Go
     sp.Go();
     cy.wait(3000);
-    cy.eyesCheckWindow("Common Aera Mail in the inbox");
+    //cy.eyesCheckWindow("Common Aera Mail in the inbox");
     cy.contains("Common Areas - Account Activation").click();
     //debugger
     cy.wait(5000);
-    cy.eyesCheckWindow();
+    //cy.eyesCheckWindow();
     //New Sign up user Account Verification on mailinator
     sp.ActiveAccount();
     cy.wait(5000);
@@ -43,7 +43,7 @@ describe("Activation Mailinator Account for Random New Sign up User ", function 
     
   });
 
-  this.afterAll(function () {
-    cy.eyesClose();
-  });
+  // this.afterAll(function () {
+  //   cy.eyesClose();
+  // });
 });

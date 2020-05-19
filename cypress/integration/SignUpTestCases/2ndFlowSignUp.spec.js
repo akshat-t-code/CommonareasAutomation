@@ -36,10 +36,10 @@ describe("Create Connection(Second Flow of Accept and Reject Request and Sign up
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
-        cy.eyesOpen({
-            appName: "Common Aera UI Automation",
-            testName: "Sign Up for a new User for Second Flow",
-          });
+        // cy.eyesOpen({
+        //     appName: "Common Aera UI Automation",
+        //     testName: "Sign Up for a new User for Second Flow",
+        //   });
 
      // debugger;
       cy.fixture(
@@ -58,20 +58,20 @@ describe("Create Connection(Second Flow of Accept and Reject Request and Sign up
     lp.visit();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
-    cy.eyesCheckWindow('Logging into the application')
+   //cy.eyesCheckWindow('Logging into the application')
     lp.Submit();
     cy.wait(10000);
     cy.log("Users has been logged in successfully");
-    cy.eyesCheckWindow('Logged into the application')
+    //cy.eyesCheckWindow('Logged into the application')
     lp.PlusIcon();
     lp.ConnectionIcon();
     cy.wait(2000);
-    cy.eyesCheckWindow()
+    //cy.eyesCheckWindow()
     //Connection Custom Commands coming from commands.js
     cy.ConnectionFirstName(this.Credentials.Fname);
     cy.ConnectionLastName(this.Credentials.Lname);
     cy.ConnectionEmail(this.Credentials.UserEmail);
-    cy.eyesCheckWindow('Connection Details')
+    //cy.eyesCheckWindow('Connection Details')
     cy.log("Connection detalis has been Entered");
     //click on DropDown
     cy.get(
@@ -80,7 +80,7 @@ describe("Create Connection(Second Flow of Accept and Reject Request and Sign up
     cy.contains("Meeting").click();
     cy.contains("02").click();
     cy.contains("LOL").click();
-    cy.eyesCheckWindow()
+    //cy.eyesCheckWindow()
     //Click on Save btn
     cy.get(".button-pop-ups--size").click();
     cy.log("Connection Request has been sent successfully");
@@ -92,11 +92,11 @@ describe("Create Connection(Second Flow of Accept and Reject Request and Sign up
     const sp = new SignUpPage();
     sp.visit();
     cy.wait(3000);
-    cy.eyesCheckWindow()
+    //cy.eyesCheckWindow()
     cy.url().should("include", "app.ca-test.com/Public/Login?ReturnUrl=%2F");
     sp.SignUpbtn();
     cy.url().should("include", "Register/Create");
-    cy.eyesCheckWindow('Sign Up Page')
+    //cy.eyesCheckWindow('Sign Up Page')
     //Sign Up detalis Custom Commands coming from command.js
     cy.SignUpUserFirstName(this.Credentials.Fname);
     cy.SignUpUserLastName(this.Credentials.Lname);
@@ -111,7 +111,7 @@ describe("Create Connection(Second Flow of Accept and Reject Request and Sign up
     cy.get('[name="ContactInformation.CompanyType"]').select(
       "Facility Management"
     );
-    cy.eyesCheckWindow("Getting User Details");
+    //cy.eyesCheckWindow("Getting User Details");
     //Click on Submit to Create the user
     cy.get(".icon:nth-child(1)").click();
     cy.wait(5000);
@@ -121,14 +121,14 @@ describe("Create Connection(Second Flow of Accept and Reject Request and Sign up
       "have.text",
       "An email has been sent to you to verify the email address you provided with a link to activate your account."
     );
-    cy.eyesCheckWindow("New user Signed Up");
+    //cy.eyesCheckWindow("New user Signed Up");
     cy.wait(5000);
     cy.get(".icon").click();
     cy.url().should("include", "/Public/Login");
     cy.wait(3000);
-    cy.eyesCheckWindow()
+    //cy.eyesCheckWindow()
   });
-  this.afterAll(function () {
-    cy.eyesClose();
-  });
+  // this.afterAll(function () {
+  //   cy.eyesClose();
+  // });
 });
