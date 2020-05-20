@@ -5,10 +5,10 @@ describe("Login for new User and Accept the Connection request(Second Flow TC)",
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
-      cy.eyesOpen({
-        appName: "Common Aera UI Automation",
-        testName: "Accept the New User Connection Request",
-      });
+      // cy.eyesOpen({
+      //   appName: "Common Aera UI Automation",
+      //   testName: "Accept the New User Connection Request",
+      // });
       //debugger;
       cy.fixture(
         "ConnectionsDynamicTestData/Connection2ndFlowUserCredentials"

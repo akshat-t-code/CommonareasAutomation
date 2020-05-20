@@ -32,7 +32,6 @@ describe("Login into the application for a new User ", function () {
       cy.log(WelcomeTxt);
       const username = this.Credentials.FirstName;
       cy.log(username);
-      //expect(WelcomeTxt).eq('Welcome, '+username+'!Here is an overview of your workspace')
       expect(username).eq(this.Credentials.FirstName);
       cy.wait(3000);
     });
