@@ -23,6 +23,7 @@ describe("Sign up for a New User", function () {
       UserEmail: UserEmailID,
       Password: "1234567Aa",
     });
+    
     cy.log("Data has been write to json");
     cy.log(UserEmailID);
     cy.log(UserFirstName);
@@ -33,7 +34,9 @@ describe("Sign up for a New User", function () {
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
       debugger;
-      cy.fixture("VerificationTestCasesData/UserData").then(function (JsonData) {
+      cy.fixture("VerificationTestCasesData/UserData").then(function (
+        JsonData
+      ) {
         this.Credentials = JsonData;
         cy.log(this.Credentials.UserEmail);
         cy.log(this.Credentials.Fname);

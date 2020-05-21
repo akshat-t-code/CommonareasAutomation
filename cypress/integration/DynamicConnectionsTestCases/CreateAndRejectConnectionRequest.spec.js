@@ -124,7 +124,7 @@ describe("Login for new User than Create A new Connection and Reject the Request
     //Click On Connections
     cy.get(".v-list-item:nth-child(3) .v-list-item__title").click();
     //Assertion
-    cy.wait(3000);
+    cy.wait(3000)
     //cy.eyesCheckWindow("NO Connections here");
     cy.contains("Kali Stanley").should("not.be.visible");
     cy.contains(

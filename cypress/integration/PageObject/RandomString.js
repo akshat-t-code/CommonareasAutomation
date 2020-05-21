@@ -26,6 +26,15 @@ class RandomString {
     };
   }
 
+  getRandomUser1() {
+    var lName = this.generate_random_string(5);
+    return {
+      Useremail1: lName + "@mailinator.com",
+      UserFirstName1: this.generate_random_string(5),
+      UserLastName1: lName,
+    };
+  }
+
     getRandomPhoneNo() {
     return Math.floor(Math.random() * 9000000000) + 1000000000;
   }

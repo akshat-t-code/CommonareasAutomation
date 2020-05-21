@@ -17,7 +17,7 @@ UserLastName = UserData.UserLastName;
 describe("Sign up for a New User", function () {
   this.beforeAll(() => {
     debugger;
-    //Generating Dynamic Json file at RumTime
+    //Creating Dynamic Json file at RumTime for Request TestCase
     cy.writeFile(
       "cypress/fixtures/ConnectionsDynamicTestData/ConnectionUserCredentials.json",
       {
@@ -27,6 +27,7 @@ describe("Sign up for a New User", function () {
         Password: "1234567Aa",
       }
     );
+    
     cy.log("Data has been write to json");
     cy.log(UserEmailID);
     cy.log(UserFirstName);
@@ -58,8 +59,8 @@ describe("Sign up for a New User", function () {
     const sp = new SignUpPage();
     sp.visit();
     cy.wait(3000);
-   // cy.eyesCheckWindow()
-  
+    // cy.eyesCheckWindow()
+
     cy.url().should("include", "app.ca-test.com/Public/Login?ReturnUrl=%2F");
     sp.SignUpbtn();
     cy.url().should("include", "Register/Create");
@@ -76,9 +77,9 @@ describe("Sign up for a New User", function () {
       force: true,
     });
     cy.wait(3000);
-    cy.get('[name="ContactInformation.CompanyType"]').select(
-      "Facility Management"
-    );
+    cy.get(
+      '[name="ContactInformation.CompanyType"]'
+    ).select("Facility Management", { force: true });
     //cy.eyesCheckWindow("Getting User Details");
     //Click on Submit to Create the user
     cy.get(".icon:nth-child(1)").click();
@@ -89,7 +90,7 @@ describe("Sign up for a New User", function () {
       "have.text",
       "An email has been sent to you to verify the email address you provided with a link to activate your account."
     );
-   // cy.eyesCheckWindow("New user Signed Up");
+    // cy.eyesCheckWindow("New user Signed Up");
     cy.wait(5000);
     cy.get(".icon").click();
     cy.url().should("include", "/Public/Login");

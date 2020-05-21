@@ -5,6 +5,7 @@
     "pageLoadTimeout": 500000,
     "defaultCommandTimeout": 50000,
     "chromeWebSecurity": false,
+    "trashAssetsBeforeRuns":false,
     "video": true,
     "screenshotsFolder": "cypress/screenshots",
     "reporter": "cypress-multi-reporters",

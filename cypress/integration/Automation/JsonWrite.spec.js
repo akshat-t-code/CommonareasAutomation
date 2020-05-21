@@ -5,6 +5,11 @@ describe("Json file write", function () {
       email: "eliza@example.com",
       Password: "1234567Aa",
     });
+    cy.writeFile("cypress/fixtures/data1.json", {
+      name: "he",
+      email: "eliza@example.com",
+      Password: "1234567Aa",
+    });
     cy.log("Data has been write to json");
     
   });

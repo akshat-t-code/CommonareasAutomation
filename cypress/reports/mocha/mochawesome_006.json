@@ -1,0 +1,154 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2020-05-20T09:09:43.323Z",
+    "end": "2020-05-20T09:23:17.531Z",
+    "duration": 814208,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6a68d47c-f5f9-43aa-b83e-a9b3a5be426d",
+      "title": "",
+      "fullFile": "cypress\\integration\\DynamicConnectionsTestCases\\CreateAndAcceptConnectionRequest.spec.js",
+      "file": "cypress\\integration\\DynamicConnectionsTestCases\\CreateAndAcceptConnectionRequest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0725b95a-f1b0-4daf-a024-8d01fab70107",
+          "title": "Login for new User than Create A new Connection and Accept the request ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "First Time Login into the appLication for New User",
+              "fullTitle": "Login for new User than Create A new Connection and Accept the request  First Time Login into the appLication for New User",
+              "timedOut": null,
+              "duration": 71065,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//PageObjects\nvar sp = new _SignUpPage[\"default\"]();\nvar lp = new _LoginPage[\"default\"]();\nsp.visit();\nlp.EnterEmail(this.Credentials.UserEmail);\nlp.EnterPassword(\"1234567Aa\"); //cy.eyesCheckWindow(\"First time user logging into the application\");\nlp.Submit(); //First Time login commands\ncy.url().should(\"include\", \"Public/TermsAndConditions?acceptTerms=True\");\ncy.get(\"#readTerms\").click(); //cy.eyesCheckWindow();\ncy.wait(15000);\ncy.log(\"New Users has been logged in first time successfully\"); //cy.eyesCheckWindow(\"Logged In\");\n//Welcome User Assertion\ncy.get(\"#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div.row.content-wrapper.fill-width.fill-height > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div > div.px-4.col.col-12 > div > span\").should(\"have.text\", \"Home Page Overview\");\ncy.get(\"#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div > div.px-4.col.col-12 > div\").then(function ($WelEle) {\n  var WelcomeTxt = $WelEle.text();\n  cy.log(WelcomeTxt);\n  var username = this.Credentials.Fname;\n  cy.log(username);\n  expect(username).eq(this.Credentials.Fname);\n  cy.wait(3000);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of `50000ms` exceeded.\n\nBecause this error occurred during a `after all` hook we are skipping all of the remaining tests.",
+                "estack": "Error: Cypress command timeout of `50000ms` exceeded.\n\nBecause this error occurred during a `after all` hook we are skipping all of the remaining tests.\n    at https://app.ca-test.com/__cypress/runner/cypress_runner.js:148042:25",
+                "diff": null
+              },
+              "uuid": "97fd560b-1555-42b4-8591-6ee7936a0f91",
+              "parentUUID": "0725b95a-f1b0-4daf-a024-8d01fab70107",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Creating a new Connection ",
+              "fullTitle": "Login for new User than Create A new Connection and Accept the request  Creating a new Connection ",
+              "timedOut": null,
+              "duration": 161175,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var lp = new _LoginPage[\"default\"]();\nlp.visit();\nlp.EnterEmail(\"kstanley@commonareas.work.dev\");\nlp.EnterPassword(\"1234567Aa\"); //cy.eyesCheckWindow(\"Logging into the application\");\nlp.Submit();\ncy.wait(10000);\ncy.log(\"Users has been logged in successfully\"); //cy.eyesCheckWindow(\"Logged into the application\");\nlp.PlusIcon();\nlp.ConnectionIcon();\ncy.wait(2000); //cy.eyesCheckWindow();\n//Connection Custom Commands coming from commands.js\ncy.ConnectionFirstName(this.Credentials.Fname);\ncy.ConnectionLastName(this.Credentials.Lname);\ncy.ConnectionEmail(this.Credentials.UserEmail); //cy.eyesCheckWindow(\"Connection Details\");\ncy.log(\"Connection detalis has been Entered\"); //click on DropDown\ncy.get(\"#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div.row.position-relative.contact-detail-wrapper.md11.fill-height.new-connection > div.base-layout-main-content.d-flex.pa-0.fill-height.px-8.col > div.row.wrapper-content.px-8.py-4.pb-4 > div > div.v-input.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select.v-select--chips.v-select--is-multi > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div\").click({\n  force: true\n});\ncy.contains(\"Meeting\").click();\ncy.contains(\"02\").click();\ncy.contains(\"LOL\").click(); //cy.eyesCheckWindow();\n//Click on Save btn\ncy.get(\".button-pop-ups--size\").click();\ncy.log(\"Connection Request has been sent successfully\");\ncy.wait(10000);",
+              "err": {},
+              "uuid": "b573c259-cf74-4415-b35c-008996fbea0d",
+              "parentUUID": "0725b95a-f1b0-4daf-a024-8d01fab70107",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login Again to appLication for Accepting the Request",
+              "fullTitle": "Login for new User than Create A new Connection and Accept the request  Login Again to appLication for Accepting the Request",
+              "timedOut": null,
+              "duration": 506231,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//PageObjects\nvar sp = new _SignUpPage[\"default\"]();\nvar lp = new _LoginPage[\"default\"]();\nsp.visit();\nlp.EnterEmail(this.Credentials.UserEmail);\nlp.EnterPassword(\"1234567Aa\"); //cy.eyesCheckWindow(\"Logging into the application for new User\");\nlp.Submit();\ncy.wait(10000);\ncy.log(\"Users has been logged in successfully\"); //cy.eyesCheckWindow(\"Getting connection Request\");\n//Click On Connection Request notification Icon\ncy.get(\".menu-items-icon:nth-child(2) > path\").click(); //cy.eyesCheckWindow(\"Connection Request\");\ncy.wait(5000); //click to Accept the Request\ncy.get(\".green--text\").click(); //cy.get(':nth-child(4) > .v-btn > .v-btn__content > .v-icon').click()\ncy.log(\"Connection Request has been accepted\"); //cy.eyesCheckWindow(\"Request Accepted\");\n//Click On HMB icon\ncy.get(\".v-btn__content > .theme--dark\").click(); //Click on Connection\ncy.get(\".v-list-item:nth-child(3) .v-list-item__title\").click(); //cy.eyesCheckWindow(\"Connection has been added\");\ncy.wait(5000); //Assertion and Click On Created Connection\ncy.contains(\"Kali Stanley\").should(\"be.visible\").click({\n  force: true\n});\ncy.log(\"Connection Created\"); //cy.eyesCheckWindow();\ncy.wait(7000);",
+              "err": {
+                "message": "CypressError: Timed out after waiting `500000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `500000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting `500000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `500000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at cypressErr (https://app.ca-test.com/__cypress/runner/cypress_runner.js:146621:16)\n    at cypressErrByPath (https://app.ca-test.com/__cypress/runner/cypress_runner.js:146630:10)\n    at Object.throwErrByPath (https://app.ca-test.com/__cypress/runner/cypress_runner.js:146593:11)\n    at timedOutWaitingForPageLoad (https://app.ca-test.com/__cypress/runner/cypress_runner.js:134041:20)\n    at https://app.ca-test.com/__cypress/runner/cypress_runner.js:134851:16\n    at tryCatcher (https://app.ca-test.com/__cypress/runner/cypress_runner.js:9065:23)\n    at https://app.ca-test.com/__cypress/runner/cypress_runner.js:4187:41\n    at tryCatcher (https://app.ca-test.com/__cypress/runner/cypress_runner.js:9065:23)\n    at Promise._settlePromiseFromHandler (https://app.ca-test.com/__cypress/runner/cypress_runner.js:7000:31)\n    at Promise._settlePromise (https://app.ca-test.com/__cypress/runner/cypress_runner.js:7057:18)\n    at Promise._settlePromise0 (https://app.ca-test.com/__cypress/runner/cypress_runner.js:7102:10)\n    at Promise._settlePromises (https://app.ca-test.com/__cypress/runner/cypress_runner.js:7178:18)\n    at _drainQueueStep (https://app.ca-test.com/__cypress/runner/cypress_runner.js:3772:12)\n    at _drainQueue (https://app.ca-test.com/__cypress/runner/cypress_runner.js:3765:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://app.ca-test.com/__cypress/runner/cypress_runner.js:3781:5)\n    at Async.drainQueues (https://app.ca-test.com/__cypress/runner/cypress_runner.js:3651:14)",
+                "diff": null
+              },
+              "uuid": "9e21e670-ffd0-4591-ac54-8fe3f79f0903",
+              "parentUUID": "0725b95a-f1b0-4daf-a024-8d01fab70107",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b573c259-cf74-4415-b35c-008996fbea0d"
+          ],
+          "failures": [
+            "97fd560b-1555-42b4-8591-6ee7936a0f91",
+            "9e21e670-ffd0-4591-ac54-8fe3f79f0903"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 738471,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": "true",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

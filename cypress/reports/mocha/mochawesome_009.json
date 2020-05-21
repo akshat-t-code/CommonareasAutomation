@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-05-20T12:36:08.054Z",
+    "end": "2020-05-20T12:44:04.754Z",
+    "duration": 476700,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "48dcff05-6045-4fac-ae9a-009299b5329d",
+      "title": "",
+      "fullFile": "cypress\\integration\\SignUpTestCases\\NewUserSignUp.spec.js",
+      "file": "cypress\\integration\\SignUpTestCases\\NewUserSignUp.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2d96748f-044c-459a-9aa2-3e79c5972654",
+          "title": "Sign up for a New User",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "New User Sign up",
+              "fullTitle": "Sign up for a New User New User Sign up",
+              "timedOut": null,
+              "duration": 451822,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//PageObject\nvar sp = new _SignUpPage[\"default\"]();\nsp.visit();\ncy.wait(3000); // cy.eyesCheckWindow()\ncy.url().should(\"include\", \"app.ca-test.com/Public/Login?ReturnUrl=%2F\");\nsp.SignUpbtn();\ncy.url().should(\"include\", \"Register/Create\"); //cy.eyesCheckWindow('Sign Up Page')\n//Sign Up detalis Custom Commands coming from command.js\ncy.SignUpUserFirstName(this.Credentials.Fname);\ncy.SignUpUserLastName(this.Credentials.Lname);\ncy.SignUpUserEmail(this.Credentials.UserEmail);\ncy.ConfirmEmailAddress(this.Credentials.UserEmail);\ncy.SignUpUserPassword(this.Credentials.Password);\ncy.ConfirmPassword(this.Credentials.Password);\ncy.get('[name=\"ContactInformation.CompanyType\"]').scrollIntoView({\n  force: true\n});\ncy.wait(3000);\ncy.get('[name=\"ContactInformation.CompanyType\"]').select(\"Facility Management\", {\n  force: true\n}); //cy.eyesCheckWindow(\"Getting User Details\");\n//Click on Submit to Create the user\ncy.get(\".icon:nth-child(1)\").click();\ncy.wait(5000);\ncy.log(\"New User has been signed up successfully\"); //Assertion\ncy.get(\".login-message\").should(\"have.text\", \"An email has been sent to you to verify the email address you provided with a link to activate your account.\"); // cy.eyesCheckWindow(\"New user Signed Up\");\ncy.wait(5000);\ncy.get(\".icon\").click();\ncy.url().should(\"include\", \"/Public/Login\");\ncy.wait(3000); //cy.eyesCheckWindow();",
+              "err": {
+                "message": "CypressError: Timed out retrying: `cy.click()` failed because the center of this element is hidden from view:\n\n`<span class=\"icon\"></span>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying: `cy.click()` failed because the center of this element is hidden from view:\n\n`<span class=\"icon\"></span>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at cypressErr (https://app.ca-test.com/__cypress/runner/cypress_runner.js:146621:16)\n    at cypressErrByPath (https://app.ca-test.com/__cypress/runner/cypress_runner.js:146630:10)\n    at Object.throwErrByPath (https://app.ca-test.com/__cypress/runner/cypress_runner.js:146593:11)\n    at Object.ensureDescendents (https://app.ca-test.com/__cypress/runner/cypress_runner.js:137740:26)\n    at ensureDescendents (https://app.ca-test.com/__cypress/runner/cypress_runner.js:127254:8)\n    at ensureDescendentsAndScroll (https://app.ca-test.com/__cypress/runner/cypress_runner.js:127261:14)\n    at ensureElIsNotCovered (https://app.ca-test.com/__cypress/runner/cypress_runner.js:127390:5)\n    at runAllChecks (https://app.ca-test.com/__cypress/runner/cypress_runner.js:127527:52)\n    at retryActionability (https://app.ca-test.com/__cypress/runner/cypress_runner.js:127542:16)\n    at tryCatcher (https://app.ca-test.com/__cypress/runner/cypress_runner.js:9065:23)\n    at Function.Promise.attempt.Promise.try (https://app.ca-test.com/__cypress/runner/cypress_runner.js:6339:29)\n    at tryFn (https://app.ca-test.com/__cypress/runner/cypress_runner.js:140680:21)\n    at whenStable (https://app.ca-test.com/__cypress/runner/cypress_runner.js:140715:12)\n    at https://app.ca-test.com/__cypress/runner/cypress_runner.js:140259:16\n    at tryCatcher (https://app.ca-test.com/__cypress/runner/cypress_runner.js:9065:23)\n    at Promise._settlePromiseFromHandler (https://app.ca-test.com/__cypress/runner/cypress_runner.js:7000:31)",
+                "diff": null
+              },
+              "uuid": "3ad0d740-3723-4329-82da-39648dda4175",
+              "parentUUID": "2d96748f-044c-459a-9aa2-3e79c5972654",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3ad0d740-3723-4329-82da-39648dda4175"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 451822,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "5.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": "true",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

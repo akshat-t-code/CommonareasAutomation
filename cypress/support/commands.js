@@ -61,8 +61,7 @@ Cypress.Commands.add("ConfirmPassword",(ConfirmPassword)=>{
 
 
 
-//Create Admin User =>Add User
-
+//Create Admin User =>Add User(https://starksolutions.ca-test.com/ClientAdmin/Index/#/)
 
 Cypress.Commands.add("ClickOnAddUser",()=>{
     cy.get('li:nth-child(2) li:nth-child(2) > .nav__link').click()

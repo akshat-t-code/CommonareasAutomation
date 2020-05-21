@@ -39,7 +39,9 @@ describe("Activation Mailinator Account(Second Flow TC) for Random New Sign up U
     sp.ActiveAccount();
     cy.wait(5000);
     cy.log("New user Account has been verified successfully on Mailinator");
+    
   });
+
   // this.afterAll(function () {
   //   cy.eyesClose();
   // });
