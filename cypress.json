@@ -1,6 +1,5 @@
 {
 
-  
     "$schema": "https://on.cypress.io/cypress.schema.json",
     "pageLoadTimeout": 500000,
     "defaultCommandTimeout": 50000,
@@ -16,7 +15,7 @@
         "quite": "true",
         "overwrite": false,
         "html": true,
-        "json": true
+        "json": false
       }
     },
     "projectId": "v7yv2n"

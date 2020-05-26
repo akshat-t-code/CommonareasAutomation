@@ -22,12 +22,6 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 require('cypress-xpath')
+import 'cypress-xpath'
 
-let faker = require('faker');
-before(() => {
-  global.EMAIL1 = getRandomUserEmail();
 
-  function getRandomUserEmail() {
-    return faker.internet.email();
-  }
-})
