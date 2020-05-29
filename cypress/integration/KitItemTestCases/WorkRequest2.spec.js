@@ -24,7 +24,7 @@ describe("Basic Test Case for Element interaction for Work Request kit type", fu
     });
   });
 
-  it("New Form of Work Request", function () {
+  it.only("New Form of Work Request", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     //Assert
@@ -37,7 +37,7 @@ describe("Basic Test Case for Element interaction for Work Request kit type", fu
     //cy.contains("No Thanks").click({ force: true });
 
     //Name
-    cy.get('[placeholder="Name"]').type("Work Request");
+    cy.get('[placeholder="Name"]').type(this.data.Name);
 
     //Assiging
     cy.get(".searchIcon > .inline-svg").click({ force: true });
@@ -59,9 +59,7 @@ describe("Basic Test Case for Element interaction for Work Request kit type", fu
     //  cy.get('.btnBorder:nth-child(1) > .v-btn__content').click({force:true});
 
     //Description
-    cy.get('[placeholder="Description"]').type(
-      "Testing for Work Request Kit type on build"
-    );
+    cy.get('[placeholder="Description"]').type(this.data.Description);
 
     cy.get(".v-btn--depressed > .v-btn__content > .inline-svg").scrollIntoView({
       force: true,
@@ -75,13 +73,16 @@ describe("Basic Test Case for Element interaction for Work Request kit type", fu
     });
     cy.get(".button-pop-ups > .v-btn__content").click({ force: true });
 
-    cy.contains("currency").click({ force: true })
+    cy.contains("currency").click({ force: true });
     //.type('6767674674')
-    
+
     //Test Date
     //cy.get('[placeholder="Test Date"]').eq(1).click({force:true})
 
-   
+    //Work Request save btn
+    //save
+    //  cy.get('.navi-bar-dropdown:nth-child(2) .v-btn__content')
+    //   .click({ force: true });
   });
 
   it("Work Request all tabs", function () {
@@ -160,16 +161,15 @@ describe("Basic Test Case for Element interaction for Work Request kit type", fu
     //Add Group
     cy.get(".v-list-item:nth-child(2) > .pl-2 > .v-list-item__title").click();
     cy.wait(3000);
-
   });
 
-  it.only("Related New form(Location(Child) Kit type)", function () {
+  it("Related New form(Location(Child) Kit type)", function () {
     const lp = new LoginPage();
     //Assert
     cy.title().should("eq", "Common Areas");
-     lp.PlusIcon()
-     //Click on Work Request
-     cy.get('.my-3:nth-child(48) > .flex').click();
+    lp.PlusIcon();
+    //Click on Work Request
+    cy.get(".my-3:nth-child(48) > .flex").click();
     cy.wait(3000);
     cy.contains("Details").click({ force: true });
     cy.wait(2000);
@@ -250,13 +250,16 @@ describe("Basic Test Case for Element interaction for Work Request kit type", fu
     //Add Group
     cy.get(".v-list-item:nth-child(2) > .pl-2 > .v-list-item__title").click();
 
-    // //Location save button
-    // cy.get('#inspire > div:nth-child(2) > div > div > div > div:nth-child(2) > div.navi-bar.fill-height.d-flex.px-6.header-box-border.col.col-12 > div.fill-height.d-flex.align-center.justify-end.px-4.col-md-5.col-lg-7.col-xl-4.col-8 > div.navi-bar-dropdown.fill-height.align-center.overflow-max-width.col-md-9.col-lg-8.col-10 > div > div > div.v-input__slot > div.v-select__slot > div.v-select__selections > button')
-    // .click({ force: true });
+    //Location save button
+    // cy.get('#inspire > div:nth-child(2) > div > div > div > div:nth-child(2) > div.navi-bar.fill-height.d-flex.px-6.header-box-border.col.col-12 > div.fill-height.d-flex.align-center.justify-end.px-4.col-md-5.col-lg-7.col-xl-4.col-8 > div.navi-bar-dropdown.fill-height.align-center.overflow-max-width.col-md-9.col-lg-8.col-10 > div > div > div.v-input__slot > div.v-select__slot')
+    cy.get(".navi-bar-dropdown:nth-child(2) .v-btn__content")
+      .eq(1)
+      .click({ force: true });
     // cy.wait(2000)
-    // //Close Location Kit
-    // cy.get('.navi-bar--button .v-icon').click();
-    // cy.wait(3000)
+
+    //Close Location Kit
+    cy.get(".navi-bar--button .v-icon").click();
+    cy.wait(3000);
 
     // //Save Work Request
     // cy.get(
@@ -273,6 +276,5 @@ describe("Basic Test Case for Element interaction for Work Request kit type", fu
     // cy.get(
     //   "#action_items_list > div.fill-height.col > div > div > div.fill-height > div:nth-child(1)"
     // ).click({ force: true });
-
   });
 });
