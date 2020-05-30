@@ -1,8 +1,10 @@
 
 import '@percy/cypress';
 import 'cypress-file-upload';
-import '@applitools/eyes-cypress/commands'
+import '@applitools/eyes-cypress/commands';
 import 'cypress-iframe';
+import '@4tw/cypress-drag-drop';
+
 
 
 //My customize command for login
@@ -137,7 +139,7 @@ Cypress.Commands.add("SaveUserDetails",()=>{
 
 })
 
-//Kit Builder Commands
+//Kit Builder Commands for Creatin a new kit type
 
 Cypress.Commands.add("KitLabel",(KitLabel)=>{
     cy.get('#app > div.v-dialog__content.v-dialog__content--active > div > div > div.container > div > div > form > div:nth-child(1) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div').click({force:true}).type(KitLabel)
@@ -148,7 +150,8 @@ Cypress.Commands.add("KitName",(KitName)=>{
 })
 
 Cypress.Commands.add("KitDescription",(KitDescription)=>{
-    cy.get('#app > div.v-dialog__content.v-dialog__content--active > div > div > div.container > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div').click({force:true}).type(KitDescription)
+    cy.get('#app > div.v-dialog__content.v-dialog__content--active > div > div > div.container > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div')
+    .click({force:true}).type(KitDescription)
 })
 
 Cypress.Commands.add("KitIcon",()=>{
@@ -165,50 +168,270 @@ Cypress.Commands.add("CreateKit",()=>{
 
 //New View Form Detalis
 Cypress.Commands.add("NewViewLabel",(NewViewLabel)=>{
-    cy.get('#tab-ui-configuration > div > div:nth-child(3) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div').click({force:true}).type(NewViewLabel)
+    cy.get('#tab-ui-configuration > div > div:nth-child(3) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(NewViewLabel)
 })
 
 Cypress.Commands.add("NewViewIcon",()=>{
 
-    cy.get('#tab-ui-configuration > div > div:nth-child(3) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div').click({force:true})
+    cy.get('#tab-ui-configuration > div > div:nth-child(3) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
     cy.get('.v-list-item:nth-child(1) .v-list-item__title').click({force:true})
 })
 
 
 Cypress.Commands.add("NewViewDescription",(NewViewDescription)=>{
-    cy.get('#tab-ui-configuration > div > div:nth-child(3) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div').click({force:true}).type(NewViewDescription)
+    cy.get('#tab-ui-configuration > div > div:nth-child(3) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(NewViewDescription)
     
 })
 
 Cypress.Commands.add("SaveNewForm",()=>{
+    //Click on Save btn
     cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+    //Click on Assertion to close msg
+    cy.get(".v-btn__content > .theme--dark").click();
 })
-
-
 
 
 //Edit View Form
 Cypress.Commands.add("EditViewLabel",(EditViewLabel)=>{
-    cy.get('#tab-ui-configuration > div > div:nth-child(3) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div').click({force:true}).type(EditViewLabel)
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(EditViewLabel)
 })
 
 Cypress.Commands.add("EditViewIcon",()=>{
 
-    cy.get('#tab-ui-configuration > div > div:nth-child(3) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div').click({force:true})
-    cy.get('.v-list-item:nth-child(1) .v-list-item__title').click({force:true})
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title')
+    .click({force:true})
 })
 
 
 Cypress.Commands.add("EditViewDescription",(EditViewDescription)=>{
-    cy.get('#tab-ui-configuration > div > div:nth-child(3) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div').click({force:true}).type(EditViewDescription)
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(EditViewDescription)
     
 })
 
 Cypress.Commands.add("SaveEditForm",()=>{
-    
+    //Click on Save btn
     cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+    //Click on Assertion to close msg
+    cy.get('.v-btn__content > .theme--dark').click();
 
 })
+
+//Shared View Form
+Cypress.Commands.add("SharedViewLabel",(SharedViewLabel)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(SharedViewLabel)
+})
+
+Cypress.Commands.add("SharedViewIcon",()=>{
+
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title')
+    .click({force:true})
+})
+
+
+Cypress.Commands.add("SharedViewDescription",(SharedViewDescription)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(SharedViewDescription)
+    
+})
+
+Cypress.Commands.add("SaveSharedForm",()=>{
+    //Click on Save btn
+    cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+    //Click on Assertion to close msg
+    cy.get('.v-btn__content > .theme--dark').click();
+
+})
+
+//Email View Form
+Cypress.Commands.add("EmailViewLabel",(EmailViewLabel)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(EmailViewLabel)
+})
+
+Cypress.Commands.add("EmailViewIcon",()=>{
+
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title')
+    .click({force:true})
+})
+
+
+Cypress.Commands.add("EmailViewDescription",(EmailViewDescription)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(EmailViewDescription)
+    
+})
+
+Cypress.Commands.add("SaveEmailForm",()=>{
+    //Click on Save btn
+    cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+    //Click on Assertion to close msg
+    cy.get('.v-btn__content > .theme--dark').click();
+
+})
+
+
+//Map View Form
+Cypress.Commands.add("MapViewLabel",(MapViewLabel)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(MapViewLabel)
+})
+
+Cypress.Commands.add("MapViewIcon",()=>{
+
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title')
+    .click({force:true})
+})
+
+
+Cypress.Commands.add("MapViewDescription",(MapViewDescription)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(MapViewDescription)
+    
+})
+
+Cypress.Commands.add("SaveMapForm",()=>{
+    //Click on Save btn
+    cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+    //Click on Assertion to close msg
+    cy.get('.v-btn__content > .theme--dark').click();
+
+})
+
+
+//Schedule View Form
+Cypress.Commands.add("ScheduleViewLabel",(ScheduleViewLabel)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(ScheduleViewLabel)
+})
+
+Cypress.Commands.add("ScheduleViewIcon",()=>{
+
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title')
+    .click({force:true})
+})
+
+
+Cypress.Commands.add("ScheduleViewDescription",(ScheduleViewDescription)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(ScheduleViewDescription)
+    
+})
+
+Cypress.Commands.add("SaveScheduleForm",()=>{
+    //Click on Save btn
+    cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+    //Click on Assertion to close msg
+    cy.get('.v-btn__content > .theme--dark').click();
+
+})
+
+
+//CommonPlan View Form
+Cypress.Commands.add("CommonPlanViewLabel",(CommonPlanViewLabel)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(CommonPlanViewLabel)
+})
+
+Cypress.Commands.add("CommonPlanViewIcon",()=>{
+
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title')
+    .click({force:true})
+})
+
+
+Cypress.Commands.add("CommonPlanViewDescription",(CommonPlanViewDescription)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(CommonPlanViewDescription)
+    
+})
+
+Cypress.Commands.add("SaveCommonPlanForm",()=>{
+    //Click on Save btn
+    cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+    //Click on Assertion to close msg
+    cy.get('.v-btn__content > .theme--dark').click();
+
+})
+
+
+//RelatedNew View Form
+Cypress.Commands.add("RelatedNewViewLabel",(RelatedNewViewLabel)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(RelatedNewViewLabel)
+})
+
+Cypress.Commands.add("RelatedNewViewIcon",()=>{
+
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title')
+    .click({force:true})
+})
+
+
+Cypress.Commands.add("RelatedNewViewDescription",(RelatedNewViewDescription)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(RelatedNewViewDescription)
+    
+})
+
+Cypress.Commands.add("SaveRelatedNewForm",()=>{
+    //Click on Save btn
+    cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+    //Click on Assertion to close msg
+    cy.get('.v-btn__content > .theme--dark').click();
+
+})
+
+
+//RelatedEdit View Form
+Cypress.Commands.add("RelatedEditViewLabel",(RelatedEditViewLabel)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(RelatedEditViewLabel)
+})
+
+Cypress.Commands.add("RelatedEditViewIcon",()=>{
+
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(2) > div:nth-child(2) > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title')
+    .click({force:true})
+})
+
+
+Cypress.Commands.add("RelatedEditViewDescription",(RelatedEditViewDescription)=>{
+    cy.get('#tab-ui-configuration > div > div:nth-child(6) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(RelatedEditViewDescription)
+    
+})
+
+Cypress.Commands.add("SaveRelatedEditForm",()=>{
+    //Click on Save btn
+    cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+    //Click on Assertion to close msg
+    cy.get('.v-btn__content > .theme--dark').click();
+
+})
+
+
 
 
 //List View details Commands
@@ -232,6 +455,66 @@ Cypress.Commands.add("TableListViewIcon",()=>{
 })
 
 Cypress.Commands.add("SaveTableList",()=>{ 
+    //Click on Checkbox
+    cy.contains('Default View for Kit').click({force:true})
+    //Click on Save
+   cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+   //Click on Assertion msg for save
+   cy.get('.v-btn__content > .theme--dark').click();
+
+})
+
+
+//SearchList View details Commands
+Cypress.Commands.add("SearchListViewLabel",(SearchListViewLabel)=>{
+    cy.get('#tab-list-views > div > div:nth-child(5) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(SearchListViewLabel)
+})
+
+Cypress.Commands.add("SearchListViewDescription",(SearchListViewDescription)=>{
+    cy.get('#tab-list-views > div > div:nth-child(5) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(SearchListViewDescription)
+})
+
+Cypress.Commands.add("SearchListViewIcon",()=>{
+
+    cy.get('#tab-list-views > div > div:nth-child(5) > div > div > div > div.container > div > div > form > div:nth-child(4) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title').click({force:true})
+
+})
+
+Cypress.Commands.add("SaveSearchList",()=>{ 
+    //Click on Checkbox
+    cy.contains('Default View for Kit').click({force:true})
+    //Click on Save
+   cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
+   //Click on Assertion msg for save
+   cy.get('.v-btn__content > .theme--dark').click();
+
+})
+
+
+//TimelineList View details Commands
+Cypress.Commands.add("TimelineListViewLabel",(TimelineListViewLabel)=>{
+    cy.get('#tab-list-views > div > div:nth-child(5) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true}).type(TimelineListViewLabel)
+})
+
+Cypress.Commands.add("TimelineListViewDescription",(TimelineListViewDescription)=>{
+    cy.get('#tab-list-views > div > div:nth-child(5) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true}).type(TimelineListViewDescription)
+})
+
+Cypress.Commands.add("TimelineListViewIcon",()=>{
+
+    cy.get('#tab-list-views > div > div:nth-child(5) > div > div > div > div.container > div > div > form > div:nth-child(4) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title').click({force:true})
+
+})
+
+Cypress.Commands.add("SaveTimelineList",()=>{ 
     //Click on Checkbox
     cy.contains('Default View for Kit').click({force:true})
     //Click on Save

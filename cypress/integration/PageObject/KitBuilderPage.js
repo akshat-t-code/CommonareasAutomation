@@ -19,7 +19,7 @@ class KitBuilder {
   }
 
   ClickOnEditForm() {
-    const btn = cy.get('.col:nth-child(2) > .v-responsive:nth-child(1) .v-icon:nth-child(1)')
+    const btn = cy.get('.col:nth-child(1) > .v-responsive:nth-child(1) .v-icon:nth-child(1)')
     btn.click({force:true});
   }
 
@@ -54,7 +54,7 @@ class KitBuilder {
   }
 
   ClickOnRelatedEditForm() {
-    const btn = cy.get('.col:nth-child(1) > .v-responsive:nth-child(1) .v-icon:nth-child(1)')
+    const btn = cy.get('.col:nth-child(2) > .v-responsive:nth-child(1) .v-icon:nth-child(1)')
     btn.click();
   }
 
@@ -66,12 +66,12 @@ class KitBuilder {
   }
 
   ClickOnSearchList() {
-    const btn = cy.get('.col:nth-child(2) .list-view-block:nth-child(1) .v-icon:nth-child(1)')
+    const btn = cy.get('.col:nth-child(3) .list-view-block .v-btn__content')
     btn.click();
   }
 
   ClickOnTimelineList() {
-    const btn = cy.get('.col:nth-child(2) .list-view-block:nth-child(1) .v-icon:nth-child(1)')
+    const btn = cy.get('.col:nth-child(1) .list-view-block:nth-child(1) .v-icon:nth-child(1)')
     btn.click();
   }
 

@@ -5,7 +5,16 @@
     "KitDescription":"AutomationKit",
     "NewView":"NewView",
     "EditView":"EditView",
-    "TableView":"TableView"
+    "TableView":"TableView",
+    "SearchView":"SearchView",
+    "TimelineView":"TimelineView",
+    "SharedView":"SharedView",
+    "EmailView":"EmailView",
+    "MapView":"MapView",
+    "ScheduleView":"ScheduleView",
+    "CommonPlanView":"CommonPlanView",
+    "RelatedNewView":"RelatedNewView",
+    "RelatedEditView":"RelatedEditView"
 
 
 }
