@@ -15,6 +15,9 @@ describe("Create New Kit type", function () {
     cy.fixture("KitBuilderTestData/CreateNewKitData").then(function (data) {
       this.data = data;
     });
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
+      this.data1 = data1;
+    });
   });
 
   it("Create A New Kit Type", function () {
@@ -28,10 +31,10 @@ describe("Create New Kit type", function () {
 
     kb.ClickOnCreateNewKit();
     cy.wait(5000);
-    //For Creating New Kit commands coming form Command.js
-    cy.KitLabel(this.data.KitLabel);
-    cy.KitName(this.data.KitName);
-    cy.KitDescription(this.data.KitDescription);
+    //For Creating New Kit type commands coming form Command.js
+    cy.KitLabel(this.data1.KitLabel);
+    cy.KitName(this.data1.KitName);
+    cy.KitDescription(this.data1.KitDescription);
     cy.KitIcon();
     cy.CreateKit();
   });
@@ -39,7 +42,7 @@ describe("Create New Kit type", function () {
   it.only("New View Form", function () {
     cy.wait(10000);
     const kb = new KitBuilderPage();
-    //cy.wait(5000)
+    cy.wait(5000)
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
     kb.AdminUrl();
@@ -47,33 +50,49 @@ describe("Create New Kit type", function () {
     kb.ClickOnKitBuilder();
     cy.wait(5000);
 
-    cy.contains(this.data.KitName).click({ force: true });
+    cy.contains(this.data1.KitName).click({ force: true });
     cy.wait(3000);
 
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     
-    //Click On New Form
-    kb.ClickOnNewForm();
-    //New Form View Detalis commands coming form command.js
-    cy.NewViewLabel(this.data.NewView);
-    cy.NewViewIcon();
-    cy.NewViewDescription(this.data.NewView);
-    cy.SaveNewForm();
+    // //Click On New Form
+    // kb.ClickOnNewForm();
+    // //New Form View Detalis commands coming form command.js
+    // cy.NewViewLabel(this.data.NewView);
+    // cy.NewViewIcon();
+    // cy.NewViewDescription(this.data.NewView);
+    // cy.SaveNewForm();
     
     
+     cy.wait(3000);
+     cy.contains("NewView").click({ force: true });
+     cy.wait(5000);
+
+    //Elements
+    cy.contains("Inputs").click({ force: true });
+    cy.wait(2000)
+
+
+    // cy.get('.gjs-frame')
+    // //cy.get('[allowfullscreen="allowfullscreen"]')
+    // .then(($iframe) => {
+    //   const $body = $iframe.contents().find('body')
+  
+    //     cy.wrap($body).get('div#v-mount.fill-height')
+
+    // })
 
 
 
-    // cy.wait(10000);
-    // cy.contains("NewView").click({ force: true });
-    // cy.wait(5000);
+     cy.get('#v-mount').click({force:true})
+   // cy.get('[title="Url"]').drag('.v-application--wrap')
+    //cy.get('.v-application--wrap').last().click({force:true})
 
-    // //Elements
-    // cy.contains("Inputs").click({ force: true });
-    // cy.wait(2000)
-    
     // cy.get('#v-mount').click({force:true})
+    //cy.get('#wrapper').eq(1).click({force:true})
+    //cy.get('#canvas-panel').click({force:true})
+
     // //cy.get('[title="Url"]').trigger('mousedown')
     // cy.get('[title="Url"]').drag('#v-mount')
     // cy.get('[title="Url"]').trigger('mousedown',{which:1});
@@ -83,22 +102,12 @@ describe("Create New Kit type", function () {
     //  .trigger('mouseup')
     
 
-    // cy.contains('Date & Time').click({ force: true });
-    // cy.wait(2000)
-    // cy.contains('Date & Time').click({ force: true });
-    // cy.wait(2000)
-    // cy.contains('Choice Pickers').click({ force: true });
-    // cy.wait(2000)
-    // cy.contains('Choice Pickers').click({ force: true });
-    // cy.wait(2000)
-    // cy.contains('Content').click({ force: true });
-    // cy.wait(2000)
-    // cy.contains('Content').click({ force: true });
+    
     
   });
 
 
-  it.only("Edit View Form", function () {
+  it("Edit View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On Edit Form
@@ -110,7 +119,7 @@ describe("Create New Kit type", function () {
     cy.SaveEditForm();
   });
 
-  it.only("Shared View Form", function () {
+  it("Shared View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On Shared Form
@@ -122,7 +131,7 @@ describe("Create New Kit type", function () {
     cy.SaveSharedForm();
   });
 
-  it.only("Email View Form", function () {
+  it("Email View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On Email Form
@@ -134,7 +143,7 @@ describe("Create New Kit type", function () {
     cy.SaveEmailForm();
   });
 
-  it.only("Map View Form", function () {
+  it("Map View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On Map Form
@@ -146,7 +155,7 @@ describe("Create New Kit type", function () {
     cy.SaveMapForm();
   });
 
-  it.only("Schedule View Form", function () {
+  it("Schedule View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On Schedule Form
@@ -158,7 +167,7 @@ describe("Create New Kit type", function () {
     cy.SaveScheduleForm();
   });
 
-  it.only("CommonPlan View Form", function () {
+  it("CommonPlan View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On CommonPlan Form
@@ -170,7 +179,7 @@ describe("Create New Kit type", function () {
     cy.SaveCommonPlanForm();
   });
 
-  it.only("RelatedNew View Form", function () {
+  it("RelatedNew View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On RelatedNew Form
@@ -182,7 +191,7 @@ describe("Create New Kit type", function () {
     cy.SaveRelatedNewForm();
   });
 
-  it.only("RelatedEdit View Form", function () {
+  it("RelatedEdit View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On RelatedEdit Form
@@ -192,11 +201,12 @@ describe("Create New Kit type", function () {
     cy.RelatedEditViewIcon();
     cy.RelatedEditViewDescription(this.data.RelatedEditView);
     cy.SaveRelatedEditForm();
+    cy.contains('RelatedEditView').scrollIntoView({force:true})
   });
 
 
 
-  it.only("List Views(TableList,SearchList,TimelineList)", function () {
+  it("List Views(TableList,SearchList,TimelineList)", function () {
 
     const kb = new KitBuilderPage();
     // cy.title().should("eq", "Common Areas");

@@ -1,8 +1,5 @@
 {
 
-    "KitLabel":"AutomationKit",
-    "KitName":"AutomationKit",
-    "KitDescription":"AutomationKit",
     "NewView":"NewView",
     "EditView":"EditView",
     "TableView":"TableView",

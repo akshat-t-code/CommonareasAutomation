@@ -139,7 +139,10 @@ Cypress.Commands.add("SaveUserDetails",()=>{
 
 })
 
-//Kit Builder Commands for Creatin a new kit type
+
+
+//Kit Builder Commands
+//Creating a new kit type
 
 Cypress.Commands.add("KitLabel",(KitLabel)=>{
     cy.get('#app > div.v-dialog__content.v-dialog__content--active > div > div > div.container > div > div > form > div:nth-child(1) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div').click({force:true}).type(KitLabel)
@@ -161,7 +164,12 @@ Cypress.Commands.add("KitIcon",()=>{
 })
 
 Cypress.Commands.add("CreateKit",()=>{
+    //Create btn
     cy.get('.ca-button-green > .v-btn__content').click();
+    //Assertion msg close
+    cy.get('.v-btn__content > .theme--dark').click();
+
+
 })
 
 
