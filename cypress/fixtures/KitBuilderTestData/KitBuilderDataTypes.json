@@ -1,6 +1,6 @@
 {
 
-    "Url":"Url5464",
+    "Url":"Url",
     "Text":"Text",
     "File":"File",
     "Telephone":"Telephone",
@@ -10,6 +10,12 @@
     "Measure":"Measure",
     "Email":"Email",
     "Address":"Address",
-    "Number":"Number"
+    "Number":"Number",
+    "Time":"Time",
+    "Date":"Date",
+    "Toggle":"Toggle",
+    "SelectList":"SelectList",
+    "RadioSelect":"RadioSelect",
+    "CheckboxSelect":"CheckboxSelect"
 
 }

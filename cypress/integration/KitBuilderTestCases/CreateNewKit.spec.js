@@ -78,12 +78,74 @@ describe("Create New Kit type", function () {
     cy.wait(5000);
 
     //Elements
-    cy.contains("Inputs").click({ force: true });
+    //cy.contains("Inputs").click({ force: true });
+    cy.contains('Date & Time').click({ force: true });
     cy.wait(2000);
+
+    
+
+   //kitBuilder Data Type 
    const DataType=new KitBuilderDataTypes()
-   DataType.Url(this.DataType.Url)
+  //  DataType.Url(this.DataType.Url)
+  //  cy.wait(5000)
+
+  //  DataType.Text(this.DataType.Text)
+  //  cy.wait(5000)
+
+  //  DataType.File(this.DataType.File)
+  //  cy.wait(5000)
+
+  //  DataType.Telephone(this.DataType.Telephone)
+  //  cy.wait(5000)
+
+  //  DataType.TextAera(this.DataType.TextAera)
+  //  cy.wait(5000)
+
+  //  DataType.Slider(this.DataType.Slider)
+  //  cy.wait(5000)
+
+  //  DataType.Currency(this.DataType.Currency)
+  //  cy.wait(5000)
+
+  //  DataType.Measure(this.DataType.Measure)
+  //  cy.wait(5000)
+
+  //  DataType.Email(this.DataType.Email)
+  //  cy.wait(5000)
+
+  //  DataType.Address(this.DataType.Address)
+  //  cy.wait(5000)
+
+  //  DataType.Number(this.DataType.Number)
+  //  cy.wait(5000)
 
   
+
+  //  DataType.Time(this.DataType.Time)
+  //  cy.wait(5000)
+
+  //  DataType.Date(this.DataType.Date)
+  //  cy.wait(5000)
+
+  // DataType.Toggle(this.DataType.Toggle)
+  // cy.wait(5000)
+
+   DataType.SelectList(this.DataType.SelectList)
+   cy.wait(5000)
+
+  //  DataType.RadioSelect(this.DataType.RadioSelect)
+  //  cy.wait(5000)
+
+  //  DataType.CheckboxSelect(this.DataType.CheckboxSelect)
+  //  cy.wait(5000)
+
+
+
+
+
+
+
+
     //Drag n Drop
     // cy.getIframeBody().find("#wrapper").click().as("Target");
     // cy.get('[title="Url"]').drag("@Target");
@@ -117,6 +179,16 @@ describe("Create New Kit type", function () {
 
 
     //   //Click on Text DT
+
+    // cy.getIframeBody().contains('Select List').click({force:true})
+    // cy.wait(3000)
+
+    // cy.getIframeBody().contains('Radio Select').click({force:true})
+    // cy.wait(3000)
+
+    // cy.getIframeBody().contains('Checkbox Select').click({force:true})
+    
+    //cy.getIframeBody().contains('Toggle').click({force:true})
     
     // cy.getIframeBody().find('[placeholder="Number"]').click({force:true})
     // cy.wait(3000)
