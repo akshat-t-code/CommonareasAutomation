@@ -24,4 +24,15 @@ import './commands'
 require('cypress-xpath')
 import 'cypress-xpath'
 
+// cypress/support/index.js
+Cypress.Commands.add('getIframeBody', () => {
+    return cy
+    .get('.gjs-frame')
+    .its('0.contentDocument.body').should('not.be.empty')
+    // wraps "body" DOM element to allow
+    // chaining more Cypress commands, like ".find(...)"
+    // https://on.cypress.io/wrap
+    .then(cy.wrap)
+  })
+
 
