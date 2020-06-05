@@ -16,6 +16,11 @@
     "Toggle":"Toggle",
     "SelectList":"SelectList",
     "RadioSelect":"RadioSelect",
-    "CheckboxSelect":"CheckboxSelect"
+    "CheckboxSelect":"CheckboxSelect",
+    "UserSelector":"UserSelector",
+    "ContactSelector":"ContactSelector",
+    "Assigning":"Assigning",
+    "Stepper":"Stepper",
+    "Icon":"Icon"
 
 }

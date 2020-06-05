@@ -79,8 +79,11 @@ describe("Create New Kit type", function () {
 
     //Elements
     //cy.contains("Inputs").click({ force: true });
-    cy.contains('Date & Time').click({ force: true });
-    cy.wait(2000);
+    //cy.contains('Date & Time').click({ force: true });
+    //cy.wait(2000);
+    //cy.contains('Choice Pickers').click({ force: true });
+    cy.contains('Content').click({ force: true });
+     cy.wait(2000)
 
     
 
@@ -130,14 +133,31 @@ describe("Create New Kit type", function () {
   // DataType.Toggle(this.DataType.Toggle)
   // cy.wait(5000)
 
-   DataType.SelectList(this.DataType.SelectList)
-   cy.wait(5000)
+  // DataType.SelectList(this.DataType.SelectList)
+   //cy.wait(5000)
 
   //  DataType.RadioSelect(this.DataType.RadioSelect)
   //  cy.wait(5000)
 
-  //  DataType.CheckboxSelect(this.DataType.CheckboxSelect)
-  //  cy.wait(5000)
+    //DataType.CheckboxSelect(this.DataType.CheckboxSelect)
+    //cy.wait(5000)
+
+    // DataType.UserSelector(this.DataType.UserSelector)
+    // cy.wait(5000)
+
+    // DataType.ContactSelector(this.DataType.ContactSelector)
+    // cy.wait(5000)
+
+    // DataType.Assigning(this.DataType.Assigning)
+    // cy.wait(5000)
+
+    //  DataType.Stepper(this.DataType.Stepper)
+    //  cy.wait(5000)
+
+    DataType.Icon(this.DataType.Icon)
+     cy.wait(5000)
+
+
 
 
 
@@ -179,6 +199,17 @@ describe("Create New Kit type", function () {
 
 
     //   //Click on Text DT
+
+
+    // cy.getIframeBody().find('[placeholder="Tooltip for User Selector"]').click({force:true})
+    //  cy.wait(3000)
+
+    //  cy.getIframeBody().find('[placeholder="Tooltip for Contact Selector"]').click({force:true})
+    //  cy.wait(3000)
+
+
+    // cy.getIframeBody().find('[placeholder="Tooltip for Assigning"]').click({force:true})
+    //  cy.wait(3000)
 
     // cy.getIframeBody().contains('Select List').click({force:true})
     // cy.wait(3000)
@@ -241,5 +272,8 @@ describe("Create New Kit type", function () {
     //cy.contains('Element Friendly Description').click({force:true}).type('Text')
     //Click on Save
     //cy.get('.v-btn--text:nth-child(2)').click();
+
+   
+           
   });
 });
