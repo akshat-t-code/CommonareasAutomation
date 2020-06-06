@@ -14,13 +14,55 @@
     "Time":"Time",
     "Date":"Date",
     "Toggle":"Toggle",
+
     "SelectList":"SelectList",
+    "SelectListName":"SelectListName",
+    "SelectListValue1":"Value1",
+    "SelectListValue2":"Value2",
+    "SelectListValue3":"Value3",
+    "SelectListValue4":"Value4",
+    "SelectListValue5":"Value5",
+
     "RadioSelect":"RadioSelect",
+    "RadioSelectName":"RadioSelectName",
+    "RadioSelectValue1":"Value1",
+    "RadioSelectValue2":"Value2",
+    "RadioSelectValue3":"Value3",
+    "RadioSelectValue4":"Value4",
+    "RadioSelectValue5":"Value5",
+
     "CheckboxSelect":"CheckboxSelect",
+    "CheckboxSelectName":"CheckboxSelectName",
+    "CheckboxSelectValue1":"Value1",
+    "CheckboxSelectValue2":"Value2",
+    "CheckboxSelectValue3":"Value3",
+    "CheckboxSelectValue4":"Value4",
+    "CheckboxSelectValue5":"Value5",
+
     "UserSelector":"UserSelector",
     "ContactSelector":"ContactSelector",
     "Assigning":"Assigning",
+
+
     "Stepper":"Stepper",
-    "Icon":"Icon"
+    "StepperName":"StepperName",
+    "StepperValue1":"Value1",
+    "StepperValue2":"Value2",
+    "StepperValue3":"Value3",
+    "StepperValue4":"Value4",
+    "StepperValue5":"Value5",
+
+    "Icon":"Icon",
+
+    "Inspection":"Inspection",
+    "InspectionName":"InspectionName",
+    "InspectionValue1":"Value1",
+    "InspectionValue2":"Value2",
+    "InspectionValue3":"Value3",
+    "InspectionValue4":"Value4",
+    "InspectionValue5":"Value5",
+
+    "OneToOneRelation":"1-1 Relation"
+    
 
 }

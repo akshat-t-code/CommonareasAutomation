@@ -13,9 +13,11 @@ describe("Create New Kit type", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
+
     cy.fixture("KitBuilderTestData/CreateNewKitData").then(function (data) {
       this.data = data;
     });
+
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
       this.data1 = data1;
     });
@@ -133,14 +135,32 @@ describe("Create New Kit type", function () {
   // DataType.Toggle(this.DataType.Toggle)
   // cy.wait(5000)
 
-  // DataType.SelectList(this.DataType.SelectList)
-   //cy.wait(5000)
+  //  DataType.SelectList(this.DataType.SelectList,
+  //   this.DataType.SelectListName,
+  //   this.DataType.SelectListValue1,
+  //   this.DataType.SelectListValue2,
+  //   this.DataType.SelectListValue3,
+  //   this.DataType.SelectListValue4,
+  //   this.DataType.SelectListValue5)
+  //   cy.wait(5000)
 
-  //  DataType.RadioSelect(this.DataType.RadioSelect)
-  //  cy.wait(5000)
+  // DataType.RadioSelect(this.DataType.RadioSelect,
+  //   this.DataType.RadioSelectName,
+  //   this.DataType.RadioSelectValue1,
+  //   this.DataType.RadioSelectValue2,
+  //   this.DataType.RadioSelectValue3,
+  //   this.DataType.RadioSelectValue4,
+  //   this.DataType.RadioSelectValue5)
+  //   cy.wait(5000)
 
-    //DataType.CheckboxSelect(this.DataType.CheckboxSelect)
-    //cy.wait(5000)
+  //   DataType.CheckboxSelect(this.DataType.CheckboxSelect,
+  //   this.DataType.CheckboxSelectName,
+  //   this.DataType.CheckboxSelectValue1,
+  //   this.DataType.CheckboxSelectValue2,
+  //   this.DataType.CheckboxSelectValue3,
+  //   this.DataType.CheckboxSelectValue4,
+  //   this.DataType.CheckboxSelectValue5)
+  //   cy.wait(5000)
 
     // DataType.UserSelector(this.DataType.UserSelector)
     // cy.wait(5000)
@@ -151,12 +171,38 @@ describe("Create New Kit type", function () {
     // DataType.Assigning(this.DataType.Assigning)
     // cy.wait(5000)
 
-    //  DataType.Stepper(this.DataType.Stepper)
+      // DataType.Stepper(this.DataType.Stepper,
+      // this.DataType.StepperName,
+      // this.DataType.StepperValue1,
+      // this.DataType.StepperValue2,
+      // this.DataType.StepperValue3,
+      // this.DataType.StepperValue4,
+      // this.DataType.StepperValue5)
+      // cy.wait(5000)
+
+    //  DataType.Icon(this.DataType.Icon)
     //  cy.wait(5000)
 
-    DataType.Icon(this.DataType.Icon)
-     cy.wait(5000)
+      // DataType.Inspection(this.DataType.Inspection,
+      // this.DataType.InspectionName,
+      // this.DataType.InspectionValue1,
+      // this.DataType.InspectionValue2,
+      // this.DataType.InspectionValue3,
+      // this.DataType.InspectionValue4,
+      // this.DataType.InspectionValue5)
+      //cy.wait(5000)
 
+      //Kit Builder Save
+      // cy.get('.ca-button-green:nth-child(1)').click();
+      // cy.get('.v-btn__content > .theme--dark').click();
+      // //Click on  Publish
+      // cy.contains('Publish').click({force:true})
+      // cy.get('.v-btn__content > .theme--dark').click();
+
+
+
+     DataType.OneToOneRelation(this.DataType.OneToOneRelation)
+    // cy.wait(5000)
 
 
 
