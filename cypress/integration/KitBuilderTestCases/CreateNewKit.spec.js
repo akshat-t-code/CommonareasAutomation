@@ -91,17 +91,7 @@ describe("Create New Kit type", function () {
 
    //kitBuilder Data Type 
    const DataType=new KitBuilderDataTypes()
-  //  DataType.Url(this.DataType.Url)
-  //  cy.wait(5000)
-
-  //  DataType.Text(this.DataType.Text)
-  //  cy.wait(5000)
-
-  //  DataType.File(this.DataType.File)
-  //  cy.wait(5000)
-
-  //  DataType.Telephone(this.DataType.Telephone)
-  //  cy.wait(5000)
+  
 
   //  DataType.TextAera(this.DataType.TextAera)
   //  cy.wait(5000)
@@ -201,124 +191,15 @@ describe("Create New Kit type", function () {
 
 
 
-     DataType.OneToOneRelation(this.DataType.OneToOneRelation)
+    //  DataType.OneToOneRelation(this.DataType.OneToOneRelation,
+    //   this.DataType.KitToBeRelate)
     // cy.wait(5000)
 
+    // DataType.OneToManyRelation(this.DataType.OneToManyRelation,
+    //   this.DataType.KitToBeRelated)
 
-
-
-
-
-
-
-
-    //Drag n Drop
-    // cy.getIframeBody().find("#wrapper").click().as("Target");
-    // cy.get('[title="Url"]').drag("@Target");
-
-    
-
-    //  getIframeBody().find('#wrapper')
-    //  .as('Target')
-
-    //   //cy.get('.control-text > img').drag('@Target')
-    //    //getIframeBody().find('#v-mount').as('Target')
-
-    //  // getIframeBody().get('[title="Url"]').drag('[data-gjs-type="wrapper"]')
-    //   cy.wait(5000)
-    //     cy.get('[title="Text"]')
-    //     .drag('@Target')
-    //cy.get('.control-text > img').drag('@Target')
-
-    //getIframeBody().find('.layout ').should('exist')
-    //getIframeBody().find('#v-mount').should('exist')
-    // getIframeBody().find('.v-application--wrap').should('exist')
-    // getIframeBody().find('[data-gjs-type="wrapper"]').should('exist')
-    // getIframeBody().find('#v-app').should('exist')
-    //getIframeBody().find('[title="Url"]').should('exist')
-
-    
-
-
-
-
-
-
-    //   //Click on Text DT
-
-
-    // cy.getIframeBody().find('[placeholder="Tooltip for User Selector"]').click({force:true})
-    //  cy.wait(3000)
-
-    //  cy.getIframeBody().find('[placeholder="Tooltip for Contact Selector"]').click({force:true})
-    //  cy.wait(3000)
-
-
-    // cy.getIframeBody().find('[placeholder="Tooltip for Assigning"]').click({force:true})
-    //  cy.wait(3000)
-
-    // cy.getIframeBody().contains('Select List').click({force:true})
-    // cy.wait(3000)
-
-    // cy.getIframeBody().contains('Radio Select').click({force:true})
-    // cy.wait(3000)
-
-    // cy.getIframeBody().contains('Checkbox Select').click({force:true})
-    
-    //cy.getIframeBody().contains('Toggle').click({force:true})
-    
-    // cy.getIframeBody().find('[placeholder="Number"]').click({force:true})
-    // cy.wait(3000)
-    // cy.getIframeBody().find('[placeholder="Address"]').click({force:true})
-    // cy.wait(3000)
-
-    // cy.getIframeBody().find('[placeholder="Email"]').click({force:true})
-    // cy.wait(3000)
-
-    // cy.getIframeBody().find('[placeholder="Measure"]').click({force:true})
-    // cy.wait(3000)
-
-    // cy.getIframeBody().find('[placeholder="Currency"]').click({force:true})
-    // cy.wait(3000)
-
-    // cy.getIframeBody().contains('Slider').click({force:true})
-    //    cy.wait(3000)
-
-    // cy.getIframeBody().contains('Text Area').click({force:true})
-    //    cy.wait(3000)
-
-    //   cy.getIframeBody().find('[placeholder="Text"]').click({force:true})
-    //    cy.wait(3000)
-    //    cy.getIframeBody().find('[placeholder="Url"]').click({force:true})
-    //    cy.wait(3000)
-    //    cy.getIframeBody().find('[placeholder="Telephone"]').click({force:true})
-    //    cy.wait(3000)
-    //    cy.getIframeBody().find('[placeholder="Tooltip for File"]').click({force:true})
-
-
-
-
-    // cy.getIframeBody().find('[placeholder="Url"]').click({force:true})
-    //   //Click on Lable
-    //   cy.get('.gjs-trt-trait__wrp:nth-child(1) input').click().type('Text')
-    //   //Click on Name
-    //    cy.get('.gjs-trt-trait__wrp:nth-child(2) input').click();
-    //   //Select a Value
-    //    cy.get('.gjs-trt-trait__wrp:nth-child(3) select').select('Select a value')
-    //   //Select New Kit Element
-    //   cy.get('.gjs-trt-trait__wrp:nth-child(3) select').select('New Kit Element');
-
-    // cy.contains('Element Label').click({force:true})
-
-    // cy.contains('Element Name').click({force:true})
-
-    // cy.get('#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot')
-    // .click({force:true}).type('Text')
-
-    //cy.contains('Element Friendly Description').click({force:true}).type('Text')
-    //Click on Save
-    //cy.get('.v-btn--text:nth-child(2)').click();
-
+    // DataType.SquareCard(this.DataType.SquareCardName,
+    // this.DataType.CardKitToBeRelated)
    
            
   });

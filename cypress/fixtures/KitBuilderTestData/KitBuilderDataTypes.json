@@ -62,7 +62,14 @@
     "InspectionValue4":"Value4",
     "InspectionValue5":"Value5",
 
-    "OneToOneRelation":"1-1 Relation"
-    
+    "OneToOneRelation":"1-1 Relation",
+    "KitToBeRelate":"AAKit",
+
+    "OneToManyRelation":"1-N Relation",
+    "KitToBeRelated":"AAKit",
+
+    "SquareCardName":"SquareCard",
+    "CardKitToBeRelated":"AAKit"
+
 
 }
