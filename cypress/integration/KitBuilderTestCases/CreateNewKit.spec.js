@@ -14,7 +14,7 @@ describe("Create New Kit type", function () {
 
   this.beforeEach("Fixtures file data", function () {
 
-    cy.fixture("KitBuilderTestData/CreateNewKitData").then(function (data) {
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
       this.data = data;
     });
 
@@ -152,35 +152,35 @@ describe("Create New Kit type", function () {
   //   this.DataType.CheckboxSelectValue5)
   //   cy.wait(5000)
 
-    // DataType.UserSelector(this.DataType.UserSelector)
-    // cy.wait(5000)
+  //   DataType.UserSelector(this.DataType.UserSelector)
+  //   cy.wait(5000)
 
-    // DataType.ContactSelector(this.DataType.ContactSelector)
-    // cy.wait(5000)
+  //   DataType.ContactSelector(this.DataType.ContactSelector)
+  //   cy.wait(5000)
 
-    // DataType.Assigning(this.DataType.Assigning)
-    // cy.wait(5000)
+  //   DataType.Assigning(this.DataType.Assigning)
+  //   cy.wait(5000)
 
-      // DataType.Stepper(this.DataType.Stepper,
-      // this.DataType.StepperName,
-      // this.DataType.StepperValue1,
-      // this.DataType.StepperValue2,
-      // this.DataType.StepperValue3,
-      // this.DataType.StepperValue4,
-      // this.DataType.StepperValue5)
-      // cy.wait(5000)
+    //   DataType.Stepper(this.DataType.Stepper,
+    //   this.DataType.StepperName,
+    //   this.DataType.StepperValue1,
+    //   this.DataType.StepperValue2,
+    //   this.DataType.StepperValue3,
+    //   this.DataType.StepperValue4,
+    //   this.DataType.StepperValue5)
+    //   cy.wait(5000)
 
     //  DataType.Icon(this.DataType.Icon)
     //  cy.wait(5000)
 
-      // DataType.Inspection(this.DataType.Inspection,
-      // this.DataType.InspectionName,
-      // this.DataType.InspectionValue1,
-      // this.DataType.InspectionValue2,
-      // this.DataType.InspectionValue3,
-      // this.DataType.InspectionValue4,
-      // this.DataType.InspectionValue5)
-      //cy.wait(5000)
+    //   DataType.Inspection(this.DataType.Inspection,
+    //   this.DataType.InspectionName,
+    //   this.DataType.InspectionValue1,
+    //   this.DataType.InspectionValue2,
+    //   this.DataType.InspectionValue3,
+    //   this.DataType.InspectionValue4,
+    //   this.DataType.InspectionValue5)
+    //   cy.wait(5000)
 
       //Kit Builder Save
       // cy.get('.ca-button-green:nth-child(1)').click();

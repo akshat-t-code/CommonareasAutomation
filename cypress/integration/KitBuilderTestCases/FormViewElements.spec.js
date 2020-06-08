@@ -13,7 +13,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/CreateNewKitData").then(function (data) {
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
       this.data = data;
     });
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
@@ -26,7 +26,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     });
   });
 
-  it.only("Navigating to New Form of Created Kittype", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -43,42 +43,58 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     cy.wait(5000);
   });
 
-  it("Building the New Form", function () {
+  it.only("Building the New Form", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
-    //    DataType.Url(this.DataType.Url)
-    //    cy.wait(5000)
+       DataType.Url(this.DataType.Url)
+       cy.wait(5000)
 
-    //    DataType.Text(this.DataType.Text)
-    //    cy.wait(5000)
+       DataType.Text(this.DataType.Text)
+       cy.wait(5000)
 
-    //    DataType.File(this.DataType.File)
-    //    cy.wait(5000)
+       DataType.File(this.DataType.File)
+       cy.wait(5000)
 
-    //    DataType.Telephone(this.DataType.Telephone)
-    //    cy.wait(5000)
+       DataType.Telephone(this.DataType.Telephone)
+       cy.wait(5000)
 
-    DataType.TextAera(this.DataType.TextAera);
-    cy.wait(5000);
+    // DataType.TextAera(this.DataType.TextAera);
+    // cy.wait(5000);
 
-    DataType.Slider(this.DataType.Slider);
-    cy.wait(5000);
+    // DataType.Slider(this.DataType.Slider);
+    // cy.wait(5000);
 
-    DataType.Currency(this.DataType.Currency);
-    cy.wait(5000);
+    // DataType.Currency(this.DataType.Currency);
+    // cy.wait(5000);
 
-    DataType.Measure(this.DataType.Measure);
-    cy.wait(5000);
+    // DataType.Measure(this.DataType.Measure);
+    // cy.wait(5000);
 
-    DataType.Email(this.DataType.Email);
-    cy.wait(5000);
+    // DataType.Email(this.DataType.Email);
+    // cy.wait(5000);
 
-    DataType.Address(this.DataType.Address);
-    cy.wait(5000);
+    // DataType.Address(this.DataType.Address);
+    // cy.wait(5000);
 
-    DataType.Number(this.DataType.Number);
-    cy.wait(5000);
+    // DataType.Number(this.DataType.Number);
+    // cy.wait(5000);
+
+//      DataType.SelectList(this.DataType.SelectList,
+//     this.DataType.SelectListName,
+//     this.DataType.SelectListValue1,
+//     this.DataType.SelectListValue2,
+//     this.DataType.SelectListValue3,
+//     this.DataType.SelectListValue4,
+//     this.DataType.SelectListValue5)
+//     cy.wait(5000)
+
+//    DataType.Time(this.DataType.Time)
+//    cy.wait(5000)
+
+//    DataType.Date(this.DataType.Date)
+//    cy.wait(5000)
+
 
   });
 
@@ -107,7 +123,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     cy.wait(2000);
   });
 
-  it.only("Copy the Elements into Related New form", function () {
+  it("Copy the Elements into Related New form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -133,7 +149,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     cy.wait(2000);
   });
 
-  it.only("Copy the Elements into Related Edit form", function () {
+  it("Copy the Elements into Related Edit form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -159,7 +175,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     cy.wait(2000);
   });
 
-  it.only("Copy the Elements into Shared View form", function () {
+  it("Copy the Elements into Shared View form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -185,7 +201,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     cy.wait(2000);
   });
 
-  it.only("Copy the Elements into ScheduleView form", function () {
+  it("Copy the Elements into ScheduleView form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -211,7 +227,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     cy.wait(2000);
   });
 
-  it.only("Copy the Elements into CommonPlanView form", function () {
+  it("Copy the Elements into CommonPlanView form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -237,7 +253,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     cy.wait(2000);
   });
 
-  it.only("Copy the Elements into EmailView form", function () {
+  it("Copy the Elements into EmailView form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -263,7 +279,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     cy.wait(2000);
   });
 
-  it.only("Copy the Elements into MapView form", function () {
+  it("Copy the Elements into MapView form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(

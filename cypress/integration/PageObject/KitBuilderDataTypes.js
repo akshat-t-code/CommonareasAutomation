@@ -21,7 +21,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(UrlName);
@@ -53,7 +53,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(TextName);
@@ -87,7 +87,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(FileName);
@@ -119,7 +119,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(Telephone);
@@ -151,7 +151,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(TextAera);
@@ -183,7 +183,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(Slider);
@@ -215,7 +215,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(Currency);
@@ -247,7 +247,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(Measure);
@@ -279,7 +279,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(Email);
@@ -311,7 +311,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(Address);
@@ -343,7 +343,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_6295be85-df16-4441-b51d-215a8209b5f9 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(Number);
@@ -375,7 +375,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
     )
       .click({ force: true })
       .type(Time);
@@ -407,7 +407,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
     )
       .click({ force: true })
       .type(Date);
@@ -439,7 +439,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
     )
       .click({ force: true })
       .type(Toggle);
@@ -448,8 +448,6 @@ class KitBuilderDataTypes {
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
   }
-
-  //
 
   SelectList(
     SelectList,
@@ -481,7 +479,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
     )
       .click({ force: true })
       .type(SelectList);
@@ -491,7 +489,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     //write customize SelectList Name
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(SelectListName);
@@ -533,7 +531,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 2nd Value to SelectList
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 2
     cy.get(
@@ -557,7 +555,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 3rd Value to SelectList
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 3
     cy.get(
@@ -580,7 +578,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 4th Value to SelectList
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 4
     cy.get(
@@ -603,7 +601,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 5th Value to SelectList
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 5
     cy.get(
@@ -659,7 +657,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(RadioSelect);
@@ -669,7 +667,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     //write customize RadioSelectName
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(RadioSelectName);
@@ -711,7 +709,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 2nd Value to RadioSelect
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 2
     cy.get(
@@ -735,7 +733,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 3rd Value to RadioSelect
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 3
     cy.get(
@@ -758,7 +756,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 4th Value to RadioSelect
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 4
     cy.get(
@@ -781,7 +779,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 5th Value to RadioSelect
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 5
     cy.get(
@@ -839,7 +837,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(CheckboxSelect);
@@ -849,7 +847,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     //write customize CheckboxSelect Name
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(CheckboxSelectName);
@@ -891,7 +889,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 2nd Value to CheckboxSelect
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 2
     cy.get(
@@ -915,7 +913,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 3rd Value to CheckboxSelect
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 3
     cy.get(
@@ -938,7 +936,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 4th Value to CheckboxSelect
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 4
     cy.get(
@@ -961,7 +959,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 5th Value to CheckboxSelect
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 5
     cy.get(
@@ -1011,7 +1009,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(UserSelector);
@@ -1047,7 +1045,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(ContactSelector);
@@ -1081,7 +1079,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(Assigning);
@@ -1115,7 +1113,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
     )
       .click({ force: true })
       .type(Stepper);
@@ -1125,7 +1123,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     //write customize StepperName
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(StepperName);
@@ -1167,7 +1165,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 2nd Value to Stepper
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 2
     cy.get(
@@ -1191,7 +1189,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 3rd Value to Stepper
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 3
     cy.get(
@@ -1214,7 +1212,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 4th Value to Stepper
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 4
     cy.get(
@@ -1237,7 +1235,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 5th Value to Stepper
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 5
     cy.get(
@@ -1287,7 +1285,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
     )
       .click({ force: true })
       .type(Icon);
@@ -1327,7 +1325,7 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
     )
       .click({ force: true })
       .type(Inspection);
@@ -1337,7 +1335,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     //write customize Inspection Name
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(InspectionName);
@@ -1379,7 +1377,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 2nd Value to Inspection
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 2
     cy.get(
@@ -1403,7 +1401,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 3rd Value to Inspection
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 3
     cy.get(
@@ -1426,7 +1424,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 4th Value to Inspection
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 4
     cy.get(
@@ -1449,7 +1447,7 @@ class KitBuilderDataTypes {
 
     //Click on + to Add 5th Value to Inspection
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
+      "div.v-dialog__container.option-set-dialog > div > div > div.row.d-flex.pa-0.ma-0 > div > div.d-flex.pa-0.col.col-4 > button > span"
     ).click();
     //Click on Lable 5
     cy.get(
@@ -1497,14 +1495,14 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
     )
       .click({ force: true })
       .type(RelationName);
 
     //Click on DropDown to Select Kit type to Relate with 1-1 Relation
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
@@ -1571,14 +1569,14 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
     )
       .click({ force: true })
       .type(RelationName);
 
     //Click on DropDown to Select Kit type to Relate with 1-N Relation
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
@@ -1586,7 +1584,7 @@ class KitBuilderDataTypes {
 
     //Select 1-N Realtion
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
     ).click({ force: true });
     cy.contains("More Than One");
 
@@ -1632,13 +1630,14 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
   }
 
-
   SquareCard(SquareCardName, CardKitToBeRelated) {
     //Click on Icon
     cy.getIframeBody().contains("SquareCard").click({ force: true });
     cy.wait(3000);
     //Click on Lable
-    cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(SquareCardName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input")
+      .click()
+      .type(SquareCardName);
     //Click on Name
     cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
     //Select a Value
@@ -1655,14 +1654,14 @@ class KitBuilderDataTypes {
 
     //cy.contains("Element Friendly Description")
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
     )
       .click({ force: true })
       .type(SquareCardName);
 
     //Click on DropDown to Select Kit type to Relate with SquareCard
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
@@ -1670,7 +1669,7 @@ class KitBuilderDataTypes {
 
     //Select SquareCard Realtion
     cy.get(
-      "#gjs-editor_557fb96f-febb-416c-a0ab-1492c8d11be8 > div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
     ).click({ force: true });
     cy.contains("More Than One");
 
@@ -1686,51 +1685,37 @@ class KitBuilderDataTypes {
 
     //CreateView(Related New)
     cy.get(".gjs-trt-trait__wrp:nth-child(15) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(15) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
+    cy.get(".gjs-trt-trait__wrp:nth-child(15) select").select(
+      "6079df7a-5f2a-4361-a5b7-fac092b04537"
+    );
     cy.wait(1000);
 
     //DetailView(Related Edit)
     cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
+    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select(
+      "26df3dc5-f483-4857-8c85-4d61bd0d3b8b"
+    );
     cy.wait(1000);
 
     //MapView
     cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(
+      "7440b850-515f-40ad-bfd8-f66b53570da1"
+    );
     cy.wait(1000);
 
     //SearchView
     cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(
+      "9d2f7838-0074-459c-b3e3-dd35a035118c"
+    );
     cy.wait(1000);
 
     //Click on Configure
     cy.get(".v-size--small:nth-child(1)").click();
 
-    //Select the Elements for 1-N Realtion
-  
+    //Select the Elements for SquareCard
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 export default KitBuilderDataTypes;

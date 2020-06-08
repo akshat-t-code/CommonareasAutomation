@@ -11,8 +11,9 @@ describe("Create New Kit type", function () {
     cy.wait(10000);
   });
 
+
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/CreateNewKitData").then(function (data) {
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
       this.data = data;
     });
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
