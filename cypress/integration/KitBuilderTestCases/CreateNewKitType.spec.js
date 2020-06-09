@@ -29,7 +29,7 @@ describe("Create New Kit type", function () {
     kb.AdminUrl();
     cy.wait(5000);
     kb.ClickOnKitBuilder();
-
+    cy.log('Here we are on Kit Builder')
     kb.ClickOnCreateNewKit();
     cy.wait(5000);
     //For Creating New Kit type commands coming form Command.js
@@ -38,6 +38,7 @@ describe("Create New Kit type", function () {
     cy.KitDescription(this.data1.KitDescription);
     cy.KitIcon();
     cy.CreateKit();
+    cy.log('New Kit Type has been Created')
   });
 
   it("New View Form", function () {
@@ -56,6 +57,7 @@ describe("Create New Kit type", function () {
     cy.NewViewIcon();
     cy.NewViewDescription(this.data.NewView);
     cy.SaveNewForm();
+    cy.log('New View Form has been Created')
      cy.wait(3000);
   });
 
@@ -70,6 +72,7 @@ describe("Create New Kit type", function () {
     cy.EditViewIcon();
     cy.EditViewDescription(this.data.EditView);
     cy.SaveEditForm();
+    cy.log('Edit View Form has been Created')
   });
 
   it("Shared View Form", function () {
@@ -82,6 +85,7 @@ describe("Create New Kit type", function () {
     cy.SharedViewIcon();
     cy.SharedViewDescription(this.data.SharedView);
     cy.SaveSharedForm();
+    cy.log('Shared View Form has been Created')
   });
 
   it("Email View Form", function () {
@@ -94,6 +98,7 @@ describe("Create New Kit type", function () {
     cy.EmailViewIcon();
     cy.EmailViewDescription(this.data.EmailView);
     cy.SaveEmailForm();
+    cy.log('Email View Form has been Created')
   });
 
   it("Map View Form", function () {
@@ -106,6 +111,7 @@ describe("Create New Kit type", function () {
     cy.MapViewIcon();
     cy.MapViewDescription(this.data.MapView);
     cy.SaveMapForm();
+    cy.log('Map View Form has been Created')
   });
 
   it("Schedule View Form", function () {
@@ -118,6 +124,7 @@ describe("Create New Kit type", function () {
     cy.ScheduleViewIcon();
     cy.ScheduleViewDescription(this.data.ScheduleView);
     cy.SaveScheduleForm();
+    cy.log('Schedule View Form has been Created')
   });
 
   it("CommonPlan View Form", function () {
@@ -130,34 +137,36 @@ describe("Create New Kit type", function () {
     cy.CommonPlanViewIcon();
     cy.CommonPlanViewDescription(this.data.CommonPlanView);
     cy.SaveCommonPlanForm();
+    cy.log('CommonPlan View Form has been Created')
   });
 
   it("RelatedNew View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On RelatedNew Form
-    kb.ClickOnCommonPlanForm();
+    kb.ClickOnRelatedNewForm();
     //RelatedNew Form View Detalis commands coming form command.js
     cy.RelatedNewViewLabel(this.data.RelatedNewView);
     cy.RelatedNewViewIcon();
     cy.RelatedNewViewDescription(this.data.RelatedNewView);
     cy.SaveRelatedNewForm();
+    cy.log('RelatedNew View Form has been Created')
   });
 
   it("RelatedEdit View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On RelatedEdit Form
-    kb.ClickOnCommonPlanForm();
+    kb.ClickOnRelatedEditForm()
     //RelatedEdit Form View Detalis commands coming form command.js
     cy.RelatedEditViewLabel(this.data.RelatedEditView);
     cy.RelatedEditViewIcon();
     cy.RelatedEditViewDescription(this.data.RelatedEditView);
     cy.SaveRelatedEditForm();
+    cy.log('RelatedEdit View Form has been Created')
     cy.contains('RelatedEditView').scrollIntoView({force:true})
+
   });
-
-
 
   it("List Views(TableList,SearchList,TimelineList)", function () {
 
@@ -186,6 +195,7 @@ describe("Create New Kit type", function () {
     cy.TableListViewDescription(this.data.TableView);
     cy.TableListViewIcon();
     cy.SaveTableList();
+    cy.log('Table List View has been Created')
     cy.wait(5000)
 
     //Search ListView Detalis commands coming form command.js
@@ -194,14 +204,16 @@ describe("Create New Kit type", function () {
      cy.SearchListViewDescription(this.data.SearchView)
      cy.SearchListViewIcon()
      cy.SaveSearchList()
+     cy.log('Search List View has been Created')
      cy.wait(5000)
 
-     //Search ListView Detalis commands coming form command.js
+     //Timeline ListView Detalis commands coming form command.js
      kb.ClickOnTimelineList()
      cy.TimelineListViewLabel(this.data.TimelineView)
      cy.TimelineListViewDescription(this.data.TimelineView)
      cy.TimelineListViewIcon()
      cy.SaveTimelineList()
+     cy.log('Timeline List View has been Created')
      cy.wait(3000)
      cy.contains('TimelineView').scrollIntoView({force:true})
 

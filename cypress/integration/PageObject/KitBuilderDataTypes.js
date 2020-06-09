@@ -1,4 +1,9 @@
 class KitBuilderDataTypes {
+
+//getIframeBody() 
+//this is coming from support/index.js from accessing the frame to interact the Data Types on Canvas(Kit Builder)
+
+
   Url(UrlName) {
     //Click on Url
     cy.getIframeBody().find('[placeholder="Url"]').click({ force: true });
