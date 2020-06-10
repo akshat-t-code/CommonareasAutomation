@@ -1558,55 +1558,54 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
   }
 
-  OneToManyRelation(RelationName, KitToBeRelated) {
+  OneToManyRelation(RelationName, KitToBeRelated,Ele1,Ele2,Ele3,Ele4,Ele5) {
     //Click on Icon
-    //cy.getIframeBody().contains("Relation 1-N").click({ force: true });
-    cy.getIframeBody().contains("1-N Relation").click({ force: true });
+    cy.getIframeBody().contains("Relation 1-N").click({ force: true });
     cy.wait(3000);
-    // //Click on Lable
-    // cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RelationName);
-    // //Click on Name
-    // cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
-    // //Select a Value
-    // cy.wait(2000);
-    // cy.get(".gjs-trt-trait__wrp:nth-child(3) select").select("Select a value");
-    // //Select New Kit Element
-    // cy.wait(1000);
-    // cy.get(".gjs-trt-trait__wrp:nth-child(3) select").select("New Kit Element");
-    // cy.wait(2000);
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RelationName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    //Select a Value
+    cy.wait(2000);
+    cy.get(".gjs-trt-trait__wrp:nth-child(3) select").select("Select a value");
+    //Select New Kit Element
+    cy.wait(1000);
+    cy.get(".gjs-trt-trait__wrp:nth-child(3) select").select("New Kit Element");
+    cy.wait(2000);
 
-    // cy.contains("Element Label").click({ force: true });
+    cy.contains("Element Label").click({ force: true });
 
-    // cy.contains("Element Name").click({ force: true });
+    cy.contains("Element Name").click({ force: true });
 
-    // //cy.contains("Element Friendly Description")
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
-    // )
-    //   .click({ force: true })
-    //   .type(RelationName);
+    //cy.contains("Element Friendly Description")
+    cy.get(
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+    )
+      .click({ force: true })
+      .type(RelationName);
 
-    // //Click on DropDown to Select Kit type to Relate with 1-N Relation
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
-    // ).click({ force: true });
-    // //Select Kit type
-    // //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    // cy.contains(KitToBeRelated).click({ force: true });
+    //Click on DropDown to Select Kit type to Relate with 1-N Relation
+    cy.get(
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
+    ).click({ force: true });
+    //Select Kit type
+    //Value is comming form KitBuilderDataTypes.json(Fixtures file)
+    cy.contains(KitToBeRelated).click({ force: true });
 
-    // //Select 1-N Realtion
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
-    // ).click({ force: true });
-    // cy.contains("More Than One");
+    //Select 1-N Realtion
+    cy.get(
+      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    ).click({ force: true });
+    cy.contains("More Than One");
 
-    // //Click on Save
-    // cy.get(".v-btn--text:nth-child(2)").click();
-    // //Assertion to close
-    // cy.get(".v-btn__content > .theme--dark").click();
+    //Click on Save
+    cy.get(".v-btn--text:nth-child(2)").click();
+    //Assertion to close
+    cy.get(".v-btn__content > .theme--dark").click();
 
     //Click on Allow Delete
-    cy.get(".gjs-trt-trait__wrp:nth-child(13) input").click();
+    //cy.get(".gjs-trt-trait__wrp:nth-child(13) input").click();
     //Click on Allow View Details
     cy.get(".gjs-trt-trait__wrp:nth-child(14) .gjs-chk-icon").click();
 
@@ -1630,7 +1629,7 @@ class KitBuilderDataTypes {
     cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
     cy.wait(1000);
 
-    
+    //Table View
     cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select("Select View");
     cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select("New Table View");
 
@@ -1659,15 +1658,27 @@ class KitBuilderDataTypes {
     cy.get('.v-btn__content > .theme--dark').click();
 
     cy.wait(3000)
-    cy.contains('Edit').last().click({force:true})
-
-
+    //Click on Edit btn to add Elements
+    cy.get('.editKitElementBtn').click();
+    //Add List Results
+    cy.contains("Add List Results").click({ force: true });
+    cy.wait(2000);
+    //Add List Results Values coming from json file
+    cy.contains(Ele1).click({force:true})
+    cy.contains(Ele2).click({force:true})
+    cy.contains(Ele3).click({force:true})
+    cy.contains(Ele4).click({force:true})
+    cy.contains(Ele5).click({force:true})
+    cy.wait(1000)
+    cy.contains('Add Selected').click({force:true})
+    //Save
+    cy.get('.v-toolbar__items:nth-child(4) > .justify-end .v-btn__content').click();
 
 
     
   }
 
-  SquareCard(SquareCardName, CardKitToBeRelated) {
+  SquareCard(SquareCardName, CardKitToBeRelated,Ele1,Ele2,Ele3,Ele4,Ele5) {
     //Click on Icon
     cy.getIframeBody().contains("SquareCard").click({ force: true });
     cy.wait(3000);
@@ -1740,9 +1751,51 @@ class KitBuilderDataTypes {
     //cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("9d2f7838-0074-459c-b3e3-dd35a035118c");
     cy.wait(1000);
 
+    
+    //Table View
+    cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select("Select View");
+    cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select("New Table View");
 
+   //Creating New Table List View for the Kit(Child Kit) which is to be Related
+    
+   //ListView Lable
+    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true})
+    .type('TableListView')
 
+    //ListView Description
+    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true})
+    .type('TableListView')
 
+    //Icon
+    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(4) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title').click();
+    //Checkbox
+    cy.contains('Default View for Kit').click({force:true})
+    
+    //Click on Save
+    cy.get('.v-btn--text:nth-child(2) > .v-btn__content').first().click();
+    //Assertion Close
+    cy.get('.v-btn__content > .theme--dark').click();
+
+    cy.wait(3000)
+    //Click on Edit btn to add Elements
+    cy.get('.editKitElementBtn').click();
+    //Add List Results
+    cy.contains("Add List Results").click({ force: true });
+    cy.wait(2000);
+    //Add List Results Values coming from json file
+    cy.contains(Ele1).click({force:true})
+    cy.contains(Ele2).click({force:true})
+    cy.contains(Ele3).click({force:true})
+    cy.contains(Ele4).click({force:true})
+    cy.contains(Ele5).click({force:true})
+    cy.wait(1000)
+    cy.contains('Add Selected').click({force:true})
+    //Save
+    cy.get('.v-toolbar__items:nth-child(4) > .justify-end .v-btn__content').click();
 
 
     

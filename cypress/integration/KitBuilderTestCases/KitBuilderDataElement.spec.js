@@ -491,18 +491,23 @@ describe("Kit Builder Data Types Details", function () {
 
     DataType.OneToManyRelation(
       this.DataType.OneToManyRelation,
-      this.DataType.KitToBeRelated
+      this.DataType.KitToBeRelated,
+      this.DataType.RelatedEle_1,
+      this.DataType.RelatedEle_2,
+      this.DataType.RelatedEle_3,
+      this.DataType.RelatedEle_4,
+      this.DataType.RelatedEle_5,
     );
 
     //Kit Builder Save
-    // cy.get(".ca-button-green:nth-child(1)").click();
-    // cy.get(".v-btn__content > .theme--dark").click();
-    // cy.log("Kit builder(New Form) has been Saved");
-    // //Click on  Publish
-    // cy.contains("Publish").click({ force: true });
-    // //cy.get(".v-btn__content > .theme--dark").click();
-    // cy.log("Kit builder(New Form) has been Published");
-    // cy.wait(2000);
+    cy.get(".ca-button-green:nth-child(1)").click();
+    cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Kit builder(New Form) has been Saved");
+    //Click on  Publish
+    cy.contains("Publish").click({ force: true });
+    //cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Kit builder(New Form) has been Published");
+    cy.wait(2000);
   });
 
   it("SquareCard Data Type", function () {
@@ -511,7 +516,13 @@ describe("Kit Builder Data Types Details", function () {
 
     DataType.SquareCard(
       this.DataType.SquareCardName,
-      this.DataType.CardKitToBeRelated
+      this.DataType.CardKitToBeRelated,
+      this.DataType.RelateEle_1,
+      this.DataType.RelateEle_2,
+      this.DataType.RelateEle_3,
+      this.DataType.RelateEle_4,
+      this.DataType.RelateEle_5,
+
     );
   });
 

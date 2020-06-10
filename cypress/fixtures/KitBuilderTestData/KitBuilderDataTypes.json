@@ -68,8 +68,20 @@
     "OneToManyRelation":"1-N Relation",
     "KitToBeRelated":"AAKit",
 
+    "RelatedEle_1":"Url",
+    "RelatedEle_2":"Name",
+    "RelatedEle_3":"tel",
+    "RelatedEle_4":"file",
+    "RelatedEle_5":"slider",
+
+     
     "SquareCardName":"SquareCard",
-    "CardKitToBeRelated":"AAKit"
+    "CardKitToBeRelated":"AAKit",
+    "RelateEle_1":"Url",
+    "RelateEle_2":"Name",
+    "RelateEle_3":"tel",
+    "RelateEle_4":"file",
+    "RelateEle_5":"slider"
 
 
 }
