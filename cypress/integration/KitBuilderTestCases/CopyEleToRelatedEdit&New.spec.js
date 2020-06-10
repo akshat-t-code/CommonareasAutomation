@@ -39,7 +39,7 @@ describe("Copy New Form Elements to the RelatedNew and RelatedEdit form View", f
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
-    cy.contains("NewView").click({ force: true });
+    cy.contains(this.data.NewView).click({ force: true });
     cy.wait(5000);
   });
 

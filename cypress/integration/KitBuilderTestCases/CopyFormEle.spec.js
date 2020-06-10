@@ -2,7 +2,8 @@ import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 
-describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Email View Forms", function () {
+describe("Copy New Form Elements in All Forms", function () {
+    
   this.beforeAll(function () {
     const lp = new LoginPage();
     cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
@@ -303,4 +304,5 @@ describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Emai
     cy.log("Kit builder(Edit Form) has been Published");
     cy.wait(2000);
   });
+
 });

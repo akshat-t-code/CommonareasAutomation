@@ -2,7 +2,7 @@ import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 
-describe("Copy the Kit Elemets into Another all forms", function () {
+describe("Kit Builder Data Types Details", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
     cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
@@ -39,7 +39,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
-    cy.contains("NewView").click({ force: true });
+    cy.contains(this.data.NewView).click({ force: true });
     cy.wait(5000);
   });
 
@@ -50,8 +50,8 @@ describe("Copy the Kit Elemets into Another all forms", function () {
      DataType.Url(this.DataType.Url)
      cy.wait(5000)
 
-     DataType.Text(this.DataType.Text)
-     cy.wait(5000)
+      DataType.Text(this.DataType.Text)
+      cy.wait(5000)
 
     //  DataType.File(this.DataType.File)
     //  cy.wait(5000)
@@ -71,11 +71,11 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     // DataType.Measure(this.DataType.Measure);
     // cy.wait(5000);
 
-    // DataType.Email(this.DataType.Email);
-    // cy.wait(5000);
+     DataType.Email(this.DataType.Email);
+     cy.wait(5000);
 
-    // DataType.Address(this.DataType.Address);
-    // cy.wait(5000);
+     DataType.Address(this.DataType.Address);
+     cy.wait(5000);
 
     // DataType.Number(this.DataType.Number);
     // cy.wait(5000);
@@ -89,14 +89,14 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     // DataType.Toggle(this.DataType.Toggle)
     // cy.wait(5000)
 
-    //  DataType.SelectList(this.DataType.SelectList,
-    //   this.DataType.SelectListName,
-    //   this.DataType.SelectListValue1,
-    //   this.DataType.SelectListValue2,
-    //   this.DataType.SelectListValue3,
-    //   this.DataType.SelectListValue4,
-    //   this.DataType.SelectListValue5)
-    //   cy.wait(5000)
+     DataType.SelectList(this.DataType.SelectList,
+      this.DataType.SelectListName,
+      this.DataType.SelectListValue1,
+      this.DataType.SelectListValue2,
+      this.DataType.SelectListValue3,
+      this.DataType.SelectListValue4,
+      this.DataType.SelectListValue5)
+      cy.wait(5000)
 
     // DataType.RadioSelect(this.DataType.RadioSelect,
     //   this.DataType.RadioSelectName,
@@ -125,14 +125,14 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     //   DataType.Assigning(this.DataType.Assigning)
     //   cy.wait(5000)
 
-    //   DataType.Stepper(this.DataType.Stepper,
-    //   this.DataType.StepperName,
-    //   this.DataType.StepperValue1,
-    //   this.DataType.StepperValue2,
-    //   this.DataType.StepperValue3,
-    //   this.DataType.StepperValue4,
-    //   this.DataType.StepperValue5)
-    //   cy.wait(5000)
+      DataType.Stepper(this.DataType.Stepper,
+      this.DataType.StepperName,
+      this.DataType.StepperValue1,
+      this.DataType.StepperValue2,
+      this.DataType.StepperValue3,
+      this.DataType.StepperValue4,
+      this.DataType.StepperValue5)
+      cy.wait(5000)
 
     //  DataType.Icon(this.DataType.Icon)
     //  cy.wait(5000)
@@ -162,7 +162,7 @@ describe("Copy the Kit Elemets into Another all forms", function () {
     cy.log("Kit builder(New Form) has been Saved");
     //Click on  Publish
     cy.contains("Publish").click({ force: true });
-    cy.get(".v-btn__content > .theme--dark").click();
+    //cy.get(".v-btn__content > .theme--dark").click();
     cy.log("Kit builder(New Form) has been Published");
     cy.wait(2000);
   });

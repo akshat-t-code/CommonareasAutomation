@@ -39,19 +39,18 @@ describe("Copy New Form Elements to the Edit View", function () {
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
-    cy.contains("NewView").click({ force: true });
+    cy.contains(this.data.NewView).click({ force: true });
     cy.wait(5000);
   });
 
 
 
   it("Copy the Elements into Edit form", function () {
-    cy.wait(5000);
-    //Click on Forms Drop down
-    cy.get(
-      "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    ).click({ force: true });
-    //View Name coming form json file
+    
+    //Close the Kit forms
+    cy.get('.v-btn--text .v-icon').first().click({force:true})
+    //cy.get('div:nth-child(1) > div > button > span > i').click({force:true})
+    cy.wait(4000)
     cy.contains(this.data.EditView).click({ force: true });
     cy.wait(5000);
     //Copy from
