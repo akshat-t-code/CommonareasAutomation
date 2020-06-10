@@ -66,10 +66,10 @@
     "KitToBeRelate":"Accounts Details",
 
     "OneToManyRelation":"1-N Relation",
-    "KitToBeRelated":"CommonFather",
+    "KitToBeRelated":"AAKit",
 
     "SquareCardName":"SquareCard",
-    "CardKitToBeRelated":"AAKit "
+    "CardKitToBeRelated":"AAKit"
 
 
 }

@@ -494,7 +494,7 @@ Cypress.Commands.add("SearchListViewIcon",()=>{
 
 Cypress.Commands.add("SaveSearchList",()=>{ 
     //Click on Checkbox
-    cy.contains('Default View for Kit').click({force:true})
+    cy.contains('Search View popup').click({force:true})
     //Click on Save
    cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
    //Click on Assertion msg for save

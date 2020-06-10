@@ -1560,49 +1560,50 @@ class KitBuilderDataTypes {
 
   OneToManyRelation(RelationName, KitToBeRelated) {
     //Click on Icon
-    cy.getIframeBody().contains("Relation 1-N").click({ force: true });
+    //cy.getIframeBody().contains("Relation 1-N").click({ force: true });
+    cy.getIframeBody().contains("1-N Relation").click({ force: true });
     cy.wait(3000);
-    //Click on Lable
-    cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RelationName);
-    //Click on Name
-    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
-    //Select a Value
-    cy.wait(2000);
-    cy.get(".gjs-trt-trait__wrp:nth-child(3) select").select("Select a value");
-    //Select New Kit Element
-    cy.wait(1000);
-    cy.get(".gjs-trt-trait__wrp:nth-child(3) select").select("New Kit Element");
-    cy.wait(2000);
+    // //Click on Lable
+    // cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RelationName);
+    // //Click on Name
+    // cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    // //Select a Value
+    // cy.wait(2000);
+    // cy.get(".gjs-trt-trait__wrp:nth-child(3) select").select("Select a value");
+    // //Select New Kit Element
+    // cy.wait(1000);
+    // cy.get(".gjs-trt-trait__wrp:nth-child(3) select").select("New Kit Element");
+    // cy.wait(2000);
 
-    cy.contains("Element Label").click({ force: true });
+    // cy.contains("Element Label").click({ force: true });
 
-    cy.contains("Element Name").click({ force: true });
+    // cy.contains("Element Name").click({ force: true });
 
-    //cy.contains("Element Friendly Description")
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
-    )
-      .click({ force: true })
-      .type(RelationName);
+    // //cy.contains("Element Friendly Description")
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(2) > div > div > div > div.v-input__slot"
+    // )
+    //   .click({ force: true })
+    //   .type(RelationName);
 
-    //Click on DropDown to Select Kit type to Relate with 1-N Relation
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
-    ).click({ force: true });
-    //Select Kit type
-    //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    cy.contains(KitToBeRelated).click({ force: true });
+    // //Click on DropDown to Select Kit type to Relate with 1-N Relation
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
+    // ).click({ force: true });
+    // //Select Kit type
+    // //Value is comming form KitBuilderDataTypes.json(Fixtures file)
+    // cy.contains(KitToBeRelated).click({ force: true });
 
-    //Select 1-N Realtion
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
-    ).click({ force: true });
-    cy.contains("More Than One");
+    // //Select 1-N Realtion
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    // ).click({ force: true });
+    // cy.contains("More Than One");
 
-    //Click on Save
-    cy.get(".v-btn--text:nth-child(2)").click();
-    //Assertion to close
-    cy.get(".v-btn__content > .theme--dark").click();
+    // //Click on Save
+    // cy.get(".v-btn--text:nth-child(2)").click();
+    // //Assertion to close
+    // cy.get(".v-btn__content > .theme--dark").click();
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(13) input").click();
@@ -1611,38 +1612,59 @@ class KitBuilderDataTypes {
 
     //CreateView(Related New)
     cy.get(".gjs-trt-trait__wrp:nth-child(15) select").select("Select View");
-    //cy.get('.gjs-trt-trait__wrp:nth-child(15) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
+    cy.get('.gjs-trt-trait__wrp:nth-child(15) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
     cy.wait(1000);
 
     //DetailView(Related Edit)
     cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
+    cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
     cy.wait(1000);
 
     //MapView
     cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    //cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
+    cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
     cy.wait(1000);
 
     //SearchView
     cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    //cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
+    cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
     cy.wait(1000);
 
-    //Click on Configure
-    cy.get(".v-size--small:nth-child(1)").click();
+    
+    cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select("Select View");
+    cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select("New Table View");
 
-    //Select the Elements for 1-N Realtion
-    cy.get(
-      ".d-flex:nth-child(1) > .d-flex .v-input--selection-controls__ripple"
-    ).click();
-    cy.get(".d-flex:nth-child(2) .v-input--selection-controls__ripple").click();
-    cy.get(".d-flex:nth-child(3) .v-input--selection-controls__ripple").click();
-    // cy.get(".d-flex:nth-child(4) .v-input--selection-controls__ripple").click();
-    // cy.get(".d-flex:nth-child(5) .v-input--selection-controls__ripple").click();
+   //Creating New Table List View for the Kit(Child Kit) which is to be Related
+    
+   //ListView Lable
+    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
+    .click({force:true})
+    .type('TableListView')
 
-    //Save Relation
-    cy.get(".v-btn--text:nth-child(2)").click();
+    //ListView Description
+    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
+    .click({force:true})
+    .type('TableListView')
+
+    //Icon
+    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(4) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
+    cy.get('.v-list-item:nth-child(1) .v-list-item__title').click();
+    //Checkbox
+    cy.contains('Default View for Kit').click({force:true})
+    
+    //Click on Save
+    cy.get('.v-btn--text:nth-child(2) > .v-btn__content').first().click();
+    //Assertion Close
+    cy.get('.v-btn__content > .theme--dark').click();
+
+    cy.wait(3000)
+    cy.contains('Edit').last().click({force:true})
+
+
+
+
+    
   }
 
   SquareCard(SquareCardName, CardKitToBeRelated) {
@@ -1718,20 +1740,12 @@ class KitBuilderDataTypes {
     //cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("9d2f7838-0074-459c-b3e3-dd35a035118c");
     cy.wait(1000);
 
-    //Click on Configure
-    cy.get(".v-size--small:nth-child(1)").click();
 
-    //Select the Elements for SquareCard
-    cy.get(
-      ".d-flex:nth-child(1) > .d-flex .v-input--selection-controls__ripple"
-    ).click();
-    cy.get(".d-flex:nth-child(2) .v-input--selection-controls__ripple").click();
-    cy.get(".d-flex:nth-child(3) .v-input--selection-controls__ripple").click();
-    // cy.get(".d-flex:nth-child(4) .v-input--selection-controls__ripple").click();
-    // cy.get(".d-flex:nth-child(5) .v-input--selection-controls__ripple").click();
 
-    //Save Relation
-    cy.get(".v-btn--text:nth-child(2)").click();
+
+
+
+    
   }
 }
 

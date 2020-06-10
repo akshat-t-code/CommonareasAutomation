@@ -303,6 +303,7 @@ describe("Copy New Form Elements in All Forms", function () {
     //cy.get(".v-btn__content > .theme--dark").click();
     cy.log("Kit builder(Edit Form) has been Published");
     cy.wait(2000);
+    
   });
 
 });
