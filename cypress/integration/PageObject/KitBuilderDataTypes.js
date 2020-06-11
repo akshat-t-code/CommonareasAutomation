@@ -1477,7 +1477,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click();
   }
 
-  OneToOneRelation(RelationName, KitToBeRelate) {
+  OneToOneRelation(RelationName, KitToBeRelate,ElementToBeRelate) {
     //Click on Icon
     cy.getIframeBody().contains("Relation 1-1").click({ force: true });
     cy.wait(3000);
@@ -1517,46 +1517,42 @@ class KitBuilderDataTypes {
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
 
+    
     //Click on Allow Delete
-    cy.get(".gjs-trt-trait__wrp:nth-child(13) input").click();
+    cy.get('.gjs-trt-trait__wrp:nth-child(14) input').click({force:true});
+
     //Click on Allow View Details
-    cy.get(".gjs-trt-trait__wrp:nth-child(14) .gjs-chk-icon").click();
+    cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({ force: true });
 
     //CreateView(Related New)
-    cy.get(".gjs-trt-trait__wrp:nth-child(15) select").select("Select View");
-    //cy.get('.gjs-trt-trait__wrp:nth-child(15) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
+    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
+    cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
     cy.wait(1000);
 
     //DetailView(Related Edit)
-    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
     cy.wait(1000);
 
     //MapView
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    //cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
+    cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
     cy.wait(1000);
 
     //SearchView
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    //cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
     cy.wait(1000);
 
     //Click on Configure
     cy.get(".v-size--small:nth-child(1)").click();
 
     //Select the Elements for 1-N Realtion
-    cy.get(
-      ".d-flex:nth-child(1) > .d-flex .v-input--selection-controls__ripple"
-    ).click();
-    cy.get(".d-flex:nth-child(2) .v-input--selection-controls__ripple").click();
-    cy.get(".d-flex:nth-child(3) .v-input--selection-controls__ripple").click();
-    // cy.get(".d-flex:nth-child(4) .v-input--selection-controls__ripple").click();
-    // cy.get(".d-flex:nth-child(5) .v-input--selection-controls__ripple").click();
-
+    cy.contains(ElementToBeRelate).click({force:true})
     //Save Relation
     cy.get(".v-btn--text:nth-child(2)").click();
   }
+  
 
   OneToManyRelation(RelationName, KitToBeRelated,RelatedTableView,Ele1,Ele2,Ele3,Ele4,Ele5) {
     //Click on Icon

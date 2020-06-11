@@ -63,7 +63,9 @@
     "InspectionValue5":"Value5",
 
     "OneToOneRelation":"1-1 Relation",
-    "KitToBeRelate":"Accounts Details",
+    "KitToBeRelate":"AAKit",
+
+    "ElementToBeRelate":"url",
 
     "OneToManyRelation":"1-N Relation",
     "KitToBeRelated":"AAKit",

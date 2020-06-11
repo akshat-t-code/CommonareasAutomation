@@ -464,13 +464,14 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(2000);
   });
 
-  it("OneToOneRelation Data Type", function () {
+  it.only("OneToOneRelation Data Type", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
     DataType.OneToOneRelation(
       this.DataType.OneToOneRelation,
-      this.DataType.KitToBeRelate
+      this.DataType.KitToBeRelate,
+      this.DataType.ElementToBeRelate
     );
     cy.wait(5000);
 
@@ -478,6 +479,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();
     cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000)
     //Click on  Publish
     cy.contains("Publish").click({ force: true });
     //cy.get(".v-btn__content > .theme--dark").click();
@@ -512,10 +514,10 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(2000);
   });
 
-  it.only("SquareCard Data Type", function () {
+  it("SquareCard Data Type", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
-
+    
     DataType.SquareCard(
       this.DataType.SquareCardName,
       this.DataType.CardKitToBeRelated,
@@ -525,6 +527,7 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType.RelateEle_3,
       this.DataType.RelateEle_4,
       this.DataType.RelateEle_5,
+
     );
      
     cy.wait(5000)
@@ -532,7 +535,7 @@ describe("Kit Builder Data Types Details", function () {
 
   });
 
-  it.only("Kit Builder Save and Publish", function () {
+  it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();

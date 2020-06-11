@@ -29,7 +29,7 @@ lp.visit("https://serviceproviders.ca-test.com/?localdev=true")
 
 })
 
-    it('Visual Testing Demo ',function(){
+    it.only('Visual Testing Demo ',function(){
 
       cy.wait(5000)
   
@@ -38,7 +38,7 @@ lp.visit("https://serviceproviders.ca-test.com/?localdev=true")
       cy.wait(5000)
       cy.eyesCheckWindow('+icon clicked')
       //Click on Test KitType
-      cy.get('.my-3:nth-child(29) use').click()
+     // cy.get('.my-3:nth-child(29) use').click()
       cy.wait(5000)
       cy.eyesCheckWindow('1st TC kitype open')
       
@@ -46,7 +46,7 @@ lp.visit("https://serviceproviders.ca-test.com/?localdev=true")
 
 
       //Cross btn
-      cy.get('div:nth-child(2) > .navi-bar path').click();
+      //cy.get('div:nth-child(2) > .navi-bar path').click();
 
    
   })
