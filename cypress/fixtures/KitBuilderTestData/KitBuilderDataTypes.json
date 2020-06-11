@@ -67,21 +67,24 @@
 
     "OneToManyRelation":"1-N Relation",
     "KitToBeRelated":"AAKit",
+    "RelatedTableView":"1-N-TableListView",
 
-    "RelatedEle_1":"Url",
-    "RelatedEle_2":"Name",
-    "RelatedEle_3":"tel",
-    "RelatedEle_4":"file",
-    "RelatedEle_5":"slider",
+    "RelatedEle_1":"tetxarea",
+    "RelatedEle_2":"email",
+    "RelatedEle_3":"file",
+    "RelatedEle_4":"currency",
+    "RelatedEle_5":"Name",
 
      
     "SquareCardName":"SquareCard",
     "CardKitToBeRelated":"AAKit",
-    "RelateEle_1":"Url",
-    "RelateEle_2":"Name",
-    "RelateEle_3":"tel",
-    "RelateEle_4":"file",
-    "RelateEle_5":"slider"
+    "SquareCardTableView":"Card-TableListView",
+
+    "RelateEle_1":"tetxarea",
+    "RelateEle_2":"email",
+    "RelateEle_3":"file",
+    "RelateEle_4":"currency",
+    "RelateEle_5":"Name"
 
 
 }
