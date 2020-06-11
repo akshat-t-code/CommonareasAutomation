@@ -68,25 +68,25 @@
     "ElementToBeRelate":"url",
 
     "OneToManyRelation":"1-N Relation",
-    "KitToBeRelated":"AAKit",
+    "KitToBeRelated":"Children",
     "RelatedTableView":"1-N-TableListView",
 
-    "RelatedEle_1":"tetxarea",
+    "RelatedEle_1":"url",
     "RelatedEle_2":"email",
     "RelatedEle_3":"file",
     "RelatedEle_4":"currency",
-    "RelatedEle_5":"Name",
+    "RelatedEle_5":"measure",
 
      
     "SquareCardName":"SquareCard",
-    "CardKitToBeRelated":"AAKit",
+    "CardKitToBeRelated":"Children",
     "SquareCardTableView":"Card-TableListView",
 
-    "RelateEle_1":"tetxarea",
+    "RelateEle_1":"url",
     "RelateEle_2":"email",
     "RelateEle_3":"file",
     "RelateEle_4":"currency",
-    "RelateEle_5":"Name"
+    "RelateEle_5":"measure"
 
 
 }

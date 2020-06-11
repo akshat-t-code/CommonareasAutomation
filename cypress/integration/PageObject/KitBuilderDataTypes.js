@@ -1552,11 +1552,12 @@ class KitBuilderDataTypes {
     //Save Relation
     cy.get(".v-btn--text:nth-child(2)").click();
   }
-  
+
 
   OneToManyRelation(RelationName, KitToBeRelated,RelatedTableView,Ele1,Ele2,Ele3,Ele4,Ele5) {
     //Click on Icon
     cy.getIframeBody().contains("Relation 1-N").click({ force: true });
+   // cy.getIframeBody().contains("1-N Relation").click({ force: true });
     cy.wait(3000);
     //Click on Lable
     cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RelationName);
@@ -1608,22 +1609,22 @@ class KitBuilderDataTypes {
 
     //CreateView(Related New)
     cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
+    //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
     cy.wait(1000);
 
     //DetailView(Related Edit)
     cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
+   // cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
     cy.wait(1000);
 
     //MapView
     cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
+    //cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
     cy.wait(1000);
 
     //SearchView
     cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
+   // cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
     cy.wait(1000);
 
     //Table View
@@ -1658,8 +1659,22 @@ class KitBuilderDataTypes {
     //Click on Edit btn to add Elements
     cy.get('.editKitElementBtn').click({force:true})
     //Add List Results
-    //cy.contains("Add List Results").click({ force: true });
-    cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
+    cy.contains("Add List Results").click({ force: true });
+    //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
+
+    cy.wait(3000)
+    //Click on Close Window of Add Elements
+    //cy.get('div.v-dialog__container.editListViewDialog > div > div > div > div.v-overlay.v-overlay--active.theme--dark > div.v-overlay__content > div > div > div > div.row.d-flex.ma-0.pa-0 > div > div.d-flex.align-center.pa-0.col.col-auto > button > span')
+    //.click({force:true});
+    //OR 2nd Css of cross icon
+    cy.get('.grey--text .v-icon').click({force:true});
+    cy.wait(2000)
+    //Click on Add List Results Again
+    cy.contains("Add List Results").click({ force: true });
+    //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
+
+
+
     cy.wait(2000);
     //Add List Results Values coming from json file
     cy.contains(Ele1).click({force:true})
@@ -1733,22 +1748,22 @@ class KitBuilderDataTypes {
 
     //CreateView(Related New)
     cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
+    //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
     cy.wait(1000);
 
     //DetailView(Related Edit)
     cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
+    //cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
     cy.wait(1000);
 
     //MapView
     cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
+   // cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
     cy.wait(1000);
 
     //SearchView
     cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
+    //cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
     cy.wait(1000);
 
     //Table View
@@ -1783,8 +1798,20 @@ class KitBuilderDataTypes {
     //Click on Edit btn to add Elements
     cy.get('.editKitElementBtn').click({force:true})
     //Add List Results
-   // cy.contains("Add List Results").click({ force: true });
-    cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
+    cy.contains("Add List Results").click({ force: true });
+    //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
+
+    cy.wait(3000)
+    //Click on Close Window of Add Elements
+    cy.get('div.v-dialog__container.editListViewDialog > div > div > div > div.v-overlay.v-overlay--active.theme--dark > div.v-overlay__content > div > div > div > div.row.d-flex.ma-0.pa-0 > div > div.d-flex.align-center.pa-0.col.col-auto > button > span')
+    .click({force:true});
+    //OR 2nd Css of cross icon
+    cy.get('.grey--text .v-icon').click({force:true});
+
+    cy.wait(2000)
+    //Click on Add List Results Again
+    cy.contains("Add List Results").click({ force: true });
+    //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
 
     cy.wait(2000);
     //Add List Results Values coming from json file

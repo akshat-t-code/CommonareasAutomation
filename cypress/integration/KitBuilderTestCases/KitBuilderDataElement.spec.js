@@ -464,7 +464,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(2000);
   });
 
-  it.only("OneToOneRelation Data Type", function () {
+  it("OneToOneRelation Data Type", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
@@ -487,7 +487,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(2000);
   });
 
-  it("OneToManyRelation Data Type", function () {
+  it.only("OneToManyRelation Data Type", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
@@ -535,7 +535,7 @@ describe("Kit Builder Data Types Details", function () {
 
   });
 
-  it("Kit Builder Save and Publish", function () {
+  it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();
