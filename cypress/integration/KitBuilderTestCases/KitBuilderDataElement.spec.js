@@ -43,146 +43,6 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("Building the New Form", function () {
-    //Page Object
-    const DataType = new KitBuilderDataTypes();
-
-    // DataType.Url(this.DataType.Url);
-    // cy.wait(5000);
-
-    // DataType.Text(this.DataType.Text);
-    // cy.wait(5000);
-
-    // DataType.File(this.DataType.File);
-    // cy.wait(5000);
-
-    // DataType.Telephone(this.DataType.Telephone);
-    // cy.wait(5000);
-
-    // DataType.TextAera(this.DataType.TextAera);
-    // cy.wait(5000);
-
-    // DataType.Slider(this.DataType.Slider);
-    // cy.wait(5000);
-
-    // DataType.Currency(this.DataType.Currency);
-    // cy.wait(5000);
-
-    // DataType.Measure(this.DataType.Measure);
-    // cy.wait(5000);
-
-    // DataType.Email(this.DataType.Email);
-    // cy.wait(5000);
-
-    // DataType.Address(this.DataType.Address);
-    // cy.wait(5000);
-
-    // DataType.Number(this.DataType.Number);
-    // cy.wait(5000);
-
-    // DataType.Time(this.DataType.Time);
-    // cy.wait(5000);
-
-    // DataType.Date(this.DataType.Date);
-    // cy.wait(5000);
-
-    // DataType.Toggle(this.DataType.Toggle);
-    // cy.wait(5000);
-
-    // DataType.SelectList(
-    //   this.DataType.SelectList,
-    //   this.DataType.SelectListName,
-    //   this.DataType.SelectListValue1,
-    //   this.DataType.SelectListValue2,
-    //   this.DataType.SelectListValue3,
-    //   this.DataType.SelectListValue4,
-    //   this.DataType.SelectListValue5
-    // );
-    // cy.wait(5000);
-
-    // DataType.RadioSelect(
-    //   this.DataType.RadioSelect,
-    //   this.DataType.RadioSelectName,
-    //   this.DataType.RadioSelectValue1,
-    //   this.DataType.RadioSelectValue2,
-    //   this.DataType.RadioSelectValue3,
-    //   this.DataType.RadioSelectValue4,
-    //   this.DataType.RadioSelectValue5
-    // );
-    // cy.wait(5000);
-
-    // DataType.CheckboxSelect(
-    //   this.DataType.CheckboxSelect,
-    //   this.DataType.CheckboxSelectName,
-    //   this.DataType.CheckboxSelectValue1,
-    //   this.DataType.CheckboxSelectValue2,
-    //   this.DataType.CheckboxSelectValue3,
-    //   this.DataType.CheckboxSelectValue4,
-    //   this.DataType.CheckboxSelectValue5
-    // );
-    // cy.wait(5000);
-
-    // DataType.UserSelector(this.DataType.UserSelector);
-    // cy.wait(5000);
-
-    // DataType.ContactSelector(this.DataType.ContactSelector);
-    // cy.wait(5000);
-
-    // DataType.Assigning(this.DataType.Assigning);
-    // cy.wait(5000);
-
-    // DataType.Stepper(
-    //   this.DataType.Stepper,
-    //   this.DataType.StepperName,
-    //   this.DataType.StepperValue1,
-    //   this.DataType.StepperValue2,
-    //   this.DataType.StepperValue3,
-    //   this.DataType.StepperValue4,
-    //   this.DataType.StepperValue5
-    // );
-    // cy.wait(5000);
-
-    // DataType.Icon(this.DataType.Icon);
-    // cy.wait(5000);
-
-    // DataType.Inspection(
-    //   this.DataType.Inspection,
-    //   this.DataType.InspectionName,
-    //   this.DataType.InspectionValue1,
-    //   this.DataType.InspectionValue2,
-    //   this.DataType.InspectionValue3,
-    //   this.DataType.InspectionValue4,
-    //   this.DataType.InspectionValue5
-    // );
-    // cy.wait(5000);
-
-    // DataType.OneToOneRelation(
-    //   this.DataType.OneToOneRelation,
-    //   this.DataType.KitToBeRelate
-    // );
-    // cy.wait(5000);
-
-    // DataType.OneToManyRelation(
-    //   this.DataType.OneToManyRelation,
-    //   this.DataType.KitToBeRelated
-    // );
-
-    // DataType.SquareCard(
-    //   this.DataType.SquareCardName,
-    //   this.DataType.CardKitToBeRelated
-    // );
-
-    //Kit Builder Save
-    // cy.get(".ca-button-green:nth-child(1)").click();
-    // cy.get(".v-btn__content > .theme--dark").click();
-    // cy.log("Kit builder(New Form) has been Saved");
-    // //Click on  Publish
-    // cy.contains("Publish").click({ force: true });
-    // //cy.get(".v-btn__content > .theme--dark").click();
-    // cy.log("Kit builder(New Form) has been Published");
-    // cy.wait(2000);
-  });
-
   it("Url Data Type", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
@@ -500,21 +360,25 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType.RelatedEle_3,
       this.DataType.RelatedEle_4,
       this.DataType.RelatedEle_5,
+      this.DataType.OneToManyRelatedNew,
+      this.DataType.OneToManyRelatedEdit,
+      this.DataType.OneToManyMapView,
+      this.DataType.OneToManySearchView,
     );
 
     cy.wait(5000)
-    //Kit Builder Save
-    cy.get(".ca-button-green:nth-child(1)").click();
-    cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Saved");
-    //Click on  Publish
-    cy.contains("Publish").click({ force: true });
-    //cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Published");
-    cy.wait(2000);
+    // // //Kit Builder Save
+    // cy.get(".ca-button-green:nth-child(1)").click();
+    // cy.get(".v-btn__content > .theme--dark").click();
+    // cy.log("Kit builder(New Form) has been Saved");
+    // //Click on  Publish
+    // cy.contains("Publish").click({ force: true });
+    // //cy.get(".v-btn__content > .theme--dark").click();
+    // cy.log("Kit builder(New Form) has been Published");
+    // cy.wait(2000);
   });
 
-  it("SquareCard Data Type", function () {
+  it.only("SquareCard Data Type", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
     
@@ -527,7 +391,10 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType.RelateEle_3,
       this.DataType.RelateEle_4,
       this.DataType.RelateEle_5,
-
+      this.DataType.CardRelatedNew,
+      this.DataType.CardRelatedEdit,
+      this.DataType.CardMapView,
+      this.DataType.CardSearchView,
     );
      
     cy.wait(5000)

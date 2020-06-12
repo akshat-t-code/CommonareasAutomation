@@ -69,7 +69,14 @@
 
     "OneToManyRelation":"1-N Relation",
     "KitToBeRelated":"Children",
+
+    "OneToManyRelatedNew":"related new",
+    "OneToManyRelatedEdit":"related edit",
+    "OneToManyMapView":"MapView",
+    "OneToManySearchView":"SearchList",
+
     "RelatedTableView":"1-N-TableListView",
+    
 
     "RelatedEle_1":"url",
     "RelatedEle_2":"email",
@@ -80,6 +87,12 @@
      
     "SquareCardName":"SquareCard",
     "CardKitToBeRelated":"Children",
+
+    "CardRelatedNew":"related new",
+    "CardRelatedEdit":"related edit",
+    "CardMapView":"MapView",
+    "CardSearchView":"SearchList",
+
     "SquareCardTableView":"Card-TableListView",
 
     "RelateEle_1":"url",

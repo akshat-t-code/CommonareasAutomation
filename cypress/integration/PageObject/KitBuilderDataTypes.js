@@ -1296,7 +1296,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     //cy.get(".v-btn__content > .theme--dark").click();
-    cy.wait(2000)
+    cy.wait(2000);
   }
 
   Inspection(
@@ -1477,7 +1477,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click();
   }
 
-  OneToOneRelation(RelationName, KitToBeRelate,ElementToBeRelate) {
+  OneToOneRelation(RelationName, KitToBeRelate, ElementToBeRelate) {
     //Click on Icon
     cy.getIframeBody().contains("Relation 1-1").click({ force: true });
     cy.wait(3000);
@@ -1517,47 +1517,68 @@ class KitBuilderDataTypes {
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
 
-    
     //Click on Allow Delete
-    cy.get('.gjs-trt-trait__wrp:nth-child(14) input').click({force:true});
+    cy.get(".gjs-trt-trait__wrp:nth-child(14) input").click({ force: true });
 
     //Click on Allow View Details
-    cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({ force: true });
+    cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
+      force: true,
+    });
 
     //CreateView(Related New)
     cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
+    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select(
+      "6079df7a-5f2a-4361-a5b7-fac092b04537"
+    );
     cy.wait(1000);
 
     //DetailView(Related Edit)
     cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(
+      "26df3dc5-f483-4857-8c85-4d61bd0d3b8b"
+    );
     cy.wait(1000);
 
     //MapView
     cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(
+      "7440b850-515f-40ad-bfd8-f66b53570da1"
+    );
     cy.wait(1000);
 
     //SearchView
     cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(
+      "9d2f7838-0074-459c-b3e3-dd35a035118c"
+    );
     cy.wait(1000);
 
     //Click on Configure
     cy.get(".v-size--small:nth-child(1)").click();
 
     //Select the Elements for 1-N Realtion
-    cy.contains(ElementToBeRelate).click({force:true})
+    cy.contains(ElementToBeRelate).click({ force: true });
     //Save Relation
     cy.get(".v-btn--text:nth-child(2)").click();
   }
 
-
-  OneToManyRelation(RelationName, KitToBeRelated,RelatedTableView,Ele1,Ele2,Ele3,Ele4,Ele5) {
+  OneToManyRelation(
+    RelationName,
+    KitToBeRelated,
+    RelatedTableView,
+    Ele1,
+    Ele2,
+    Ele3,
+    Ele4,
+    Ele5,
+    RelatedNewName,
+    RelatedEditName,
+    MapViewName,
+    SearchViewName
+  ) {
     //Click on Icon
     cy.getIframeBody().contains("Relation 1-N").click({ force: true });
-   // cy.getIframeBody().contains("1-N Relation").click({ force: true });
+    //cy.getIframeBody().contains("1-N Relation").click({ force: true });
     cy.wait(3000);
     //Click on Lable
     cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RelationName);
@@ -1602,96 +1623,119 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
 
     //Click on Allow Delete
-    cy.get(".gjs-trt-trait__wrp:nth-child(14) .gjs-chk-icon").click({ force: true });
-    
+    cy.get(".gjs-trt-trait__wrp:nth-child(14) .gjs-chk-icon").click({
+      force: true,
+    });
+
     //Click on Allow View Details
-    cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({ force: true });
+    cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
+      force: true,
+    });
 
     //CreateView(Related New)
     cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
+    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select(RelatedNewName);
     cy.wait(1000);
 
     //DetailView(Related Edit)
     cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-   // cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedEditName);
     cy.wait(1000);
 
     //MapView
     cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    //cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(MapViewName);
     cy.wait(1000);
 
     //SearchView
     cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-   // cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(SearchViewName);
     cy.wait(1000);
 
     //Table View
-    cy.get('.gjs-trt-trait__wrp:nth-child(20) select').select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(20) select').select("New Table View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("New Table View");
 
-   //Creating New Table List View for the Kit(Child Kit) which is to be Related
-    
-   //ListView Lable
-    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
-    .click({force:true})
-    .type(RelatedTableView)
+    //Creating New Table List View for the Kit(Child Kit) which is to be Related
+
+    //ListView Lable
+    cy.get(
+      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div"
+    )
+      .click({ force: true })
+      .type(RelatedTableView);
 
     //ListView Description
-    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
-    .click({force:true})
-    .type(RelatedTableView)
+    cy.get(
+      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div"
+    )
+      .click({ force: true })
+      .type(RelatedTableView);
 
     //Icon
-    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(4) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div > div')
-    .click({force:true})
-    cy.get('.v-list-item:nth-child(1) .v-list-item__title').click({ force: true });
+    cy.get(
+      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(4) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div > div"
+    ).click({ force: true });
+    cy.get(".v-list-item:nth-child(1) .v-list-item__title").click({
+      force: true,
+    });
     //Checkbox
-    cy.contains('Default View for Kit').click({force:true})
-    
-    //Click on Save
-    cy.get('.v-btn--text:nth-child(2) > .v-btn__content').first().click({force:true})
-    //Assertion Close
-    cy.get('.v-btn__content > .theme--dark').click({force:true})
+    cy.contains("Default View for Kit").click({ force: true });
 
-    cy.wait(3000)
+    //Click on Save
+    cy.get(".v-btn--text:nth-child(2) > .v-btn__content")
+      .first()
+      .click({ force: true });
+    //Assertion Close
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+
+    cy.wait(3000);
     //Click on Edit btn to add Elements
-    cy.get('.editKitElementBtn').click({force:true})
+    cy.get(".editKitElementBtn").click({ force: true });
     //Add List Results
     cy.contains("Add List Results").click({ force: true });
     //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
 
-    cy.wait(3000)
+    cy.wait(3000);
     //Click on Close Window of Add Elements
     //cy.get('div.v-dialog__container.editListViewDialog > div > div > div > div.v-overlay.v-overlay--active.theme--dark > div.v-overlay__content > div > div > div > div.row.d-flex.ma-0.pa-0 > div > div.d-flex.align-center.pa-0.col.col-auto > button > span')
     //.click({force:true});
     //OR 2nd Css of cross icon
-    cy.get('.grey--text .v-icon').click({force:true});
-    cy.wait(2000)
+    cy.get(".grey--text .v-icon").click({ force: true });
+    cy.wait(2000);
     //Click on Add List Results Again
     cy.contains("Add List Results").click({ force: true });
     //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
 
-
-
     cy.wait(2000);
     //Add List Results Values coming from json file
-    cy.contains(Ele1).click({force:true})
-    cy.contains(Ele2).click({force:true})
-    cy.contains(Ele3).click({force:true})
-    cy.contains(Ele4).click({force:true})
-    cy.contains(Ele5).click({force:true})
-    cy.wait(1000)
-    cy.contains('Add Selected').click({force:true})
+    cy.contains(Ele1).click({ force: true });
+    cy.contains(Ele2).click({ force: true });
+    cy.contains(Ele3).click({ force: true });
+    cy.contains(Ele4).click({ force: true });
+    cy.contains(Ele5).click({ force: true });
+    cy.wait(1000);
+    cy.contains("Add Selected").click({ force: true });
     //Save
-    cy.get('.v-toolbar__items:nth-child(4) > .justify-end .v-btn__content').click({force:true})
-
-
-    
+    cy.get(
+      ".v-toolbar__items:nth-child(4) > .justify-end .v-btn__content"
+    ).click({ force: true });
   }
 
-  SquareCard(SquareCardName, CardKitToBeRelated,SquareCardTableView,Ele1,Ele2,Ele3,Ele4,Ele5) {
+  SquareCard(
+    SquareCardName,
+    CardKitToBeRelated,
+    SquareCardTableView,
+    Ele1,
+    Ele2,
+    Ele3,
+    Ele4,
+    Ele5,
+    RelatedNewName,
+    RelatedEditName,
+    MapViewName,
+    SearchViewName
+  ) {
     //Click on Icon
     cy.getIframeBody().contains("SquareCard").click({ force: true });
     cy.wait(3000);
@@ -1735,98 +1779,113 @@ class KitBuilderDataTypes {
     cy.contains("More Than One");
 
     //Click on Save
-    cy.get(".v-btn--text:nth-child(2)").click({force:true})
+    cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     //Assertion to close
-    cy.get(".v-btn__content > .theme--dark").click({force:true})
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
 
-    
     //Click on Allow Delete
-    cy.get(".gjs-trt-trait__wrp:nth-child(14) .gjs-chk-icon").click({force:true})
-    
+    cy.get(".gjs-trt-trait__wrp:nth-child(14) .gjs-chk-icon").click({
+      force: true,
+    });
+
     //Click on Allow View Details
-    cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({force:true})
+    cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
+      force: true,
+    });
 
     //CreateView(Related New)
     cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select(RelatedNewName);
     //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
     cy.wait(1000);
 
     //DetailView(Related Edit)
     cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedEditName);
     //cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
     cy.wait(1000);
 
     //MapView
     cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-   // cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(MapViewName);
+    // cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
     cy.wait(1000);
 
     //SearchView
     cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(SearchViewName);
     //cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
     cy.wait(1000);
 
     //Table View
-    cy.get('.gjs-trt-trait__wrp:nth-child(20) select').select("Select View");
-    cy.get('.gjs-trt-trait__wrp:nth-child(20) select').select("New Table View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("New Table View");
 
-   //Creating New Table List View for the Kit(Child Kit) which is to be Related
-    
-   //ListView Lable
-    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')
-    .click({force:true})
-    .type(SquareCardTableView)
+    //Creating New Table List View for the Kit(Child Kit) which is to be Related
+
+    //ListView Lable
+    cy.get(
+      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div"
+    )
+      .click({ force: true })
+      .type(SquareCardTableView);
 
     //ListView Description
-    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div')
-    .click({force:true})
-    .type(SquareCardTableView)
+    cy.get(
+      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div.v-input__slot > div"
+    )
+      .click({ force: true })
+      .type(SquareCardTableView);
 
     //Icon
-    cy.get('div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(4) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div > div')
-    .click({force:true})
-    cy.get('.v-list-item:nth-child(1) .v-list-item__title').click({force:true})
+    cy.get(
+      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(4) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div > div"
+    ).click({ force: true });
+    cy.get(".v-list-item:nth-child(1) .v-list-item__title").click({
+      force: true,
+    });
     //Checkbox
-    cy.contains('Default View for Kit').click({force:true})
-    
-    //Click on Save
-    cy.get('.v-btn--text:nth-child(2) > .v-btn__content').first().click({force:true})
-    //Assertion Close
-    cy.get('.v-btn__content > .theme--dark').click({force:true})
+    cy.contains("Default View for Kit").click({ force: true });
 
-    cy.wait(3000)
+    //Click on Save
+    cy.get(".v-btn--text:nth-child(2) > .v-btn__content")
+      .first()
+      .click({ force: true });
+    //Assertion Close
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+
+    cy.wait(3000);
     //Click on Edit btn to add Elements
-    cy.get('.editKitElementBtn').click({force:true})
+    cy.get(".editKitElementBtn").click({ force: true });
     //Add List Results
     cy.contains("Add List Results").click({ force: true });
     //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
 
-    cy.wait(3000)
+    cy.wait(3000);
     //Click on Close Window of Add Elements
-    cy.get('div.v-dialog__container.editListViewDialog > div > div > div > div.v-overlay.v-overlay--active.theme--dark > div.v-overlay__content > div > div > div > div.row.d-flex.ma-0.pa-0 > div > div.d-flex.align-center.pa-0.col.col-auto > button > span')
-    .click({force:true});
+    //cy.get('div.v-dialog__container.editListViewDialog > div > div > div > div.v-overlay.v-overlay--active.theme--dark > div.v-overlay__content > div > div > div > div.row.d-flex.ma-0.pa-0 > div > div.d-flex.align-center.pa-0.col.col-auto > button > span')
+    // .click({force:true});
     //OR 2nd Css of cross icon
-    cy.get('.grey--text .v-icon').click({force:true});
+    cy.get(".grey--text .v-icon").click({ force: true });
 
-    cy.wait(2000)
+    cy.wait(2000);
     //Click on Add List Results Again
     cy.contains("Add List Results").click({ force: true });
     //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
 
     cy.wait(2000);
     //Add List Results Values coming from json file
-    cy.contains(Ele1).click({force:true})
-    cy.contains(Ele2).click({force:true})
-    cy.contains(Ele3).click({force:true})
-    cy.contains(Ele4).click({force:true})
-    cy.contains(Ele5).click({force:true})
-    cy.wait(1000)
-    cy.contains('Add Selected').click({force:true})
+    cy.contains(Ele1).click({ force: true });
+    cy.contains(Ele2).click({ force: true });
+    cy.contains(Ele3).click({ force: true });
+    cy.contains(Ele4).click({ force: true });
+    cy.contains(Ele5).click({ force: true });
+    cy.wait(1000);
+    cy.contains("Add Selected").click({ force: true });
     //Save
-    cy.get('.v-toolbar__items:nth-child(4) > .justify-end .v-btn__content').click({force:true})
-
-
-    
+    cy.get(
+      ".v-toolbar__items:nth-child(4) > .justify-end .v-btn__content"
+    ).click({ force: true });
   }
 }
 
