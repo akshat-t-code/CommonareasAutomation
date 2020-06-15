@@ -52,7 +52,6 @@ describe("Kit Builder Data Types Details", function () {
   });
 
   it("Text Data Type", function () {
-
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
@@ -324,14 +323,18 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(2000);
   });
 
-  it("OneToOneRelation Data Type", function () {
+  it.only("OneToOneRelation Data Type", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
     DataType.OneToOneRelation(
       this.DataType.OneToOneRelation,
       this.DataType.KitToBeRelate,
-      this.DataType.ElementToBeRelate
+      this.DataType.ElementToBeRelate,
+      this.DataType.OneToOneRelatedNew,
+      this.DataType.OneToOneRelatedEdit,
+      this.DataType.OneToOneMapView,
+      this.DataType.OneToOneSearchView
     );
     cy.wait(5000);
 
@@ -339,7 +342,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();
     cy.log("Kit builder(New Form) has been Saved");
-    cy.wait(3000)
+    cy.wait(3000);
     //Click on  Publish
     cy.contains("Publish").click({ force: true });
     //cy.get(".v-btn__content > .theme--dark").click();
@@ -347,7 +350,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(2000);
   });
 
-  it.only("OneToManyRelation Data Type", function () {
+  it("OneToManyRelation Data Type", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
@@ -363,10 +366,10 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType.OneToManyRelatedNew,
       this.DataType.OneToManyRelatedEdit,
       this.DataType.OneToManyMapView,
-      this.DataType.OneToManySearchView,
+      this.DataType.OneToManySearchView
     );
 
-    cy.wait(5000)
+    cy.wait(5000);
     // // //Kit Builder Save
     // cy.get(".ca-button-green:nth-child(1)").click();
     // cy.get(".v-btn__content > .theme--dark").click();
@@ -378,10 +381,10 @@ describe("Kit Builder Data Types Details", function () {
     // cy.wait(2000);
   });
 
-  it.only("SquareCard Data Type", function () {
+  it("SquareCard Data Type", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    
+
     DataType.SquareCard(
       this.DataType.SquareCardName,
       this.DataType.CardKitToBeRelated,
@@ -394,12 +397,10 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType.CardRelatedNew,
       this.DataType.CardRelatedEdit,
       this.DataType.CardMapView,
-      this.DataType.CardSearchView,
+      this.DataType.CardSearchView
     );
-     
-    cy.wait(5000)
 
-
+    cy.wait(5000);
   });
 
   it.only("Kit Builder Save and Publish", function () {
@@ -407,7 +408,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();
     cy.log("Kit builder(New Form) has been Saved");
-    cy.wait(3000)
+    cy.wait(3000);
     //Click on  Publish
     cy.contains("Publish").click({ force: true });
     //cy.get(".v-btn__content > .theme--dark").click();

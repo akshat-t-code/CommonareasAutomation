@@ -64,20 +64,20 @@
 
     "OneToOneRelation":"1-1 Relation",
     "KitToBeRelate":"AAKit",
-
+    "OneToOneRelatedNew":"related new",
+    "OneToOneRelatedEdit":"RealtedEdit",
+    "OneToOneMapView":"MapView",
+    "OneToOneSearchView":"SerachList",
     "ElementToBeRelate":"url",
 
+
     "OneToManyRelation":"1-N Relation",
-    "KitToBeRelated":"Children",
-
+    "KitToBeRelated":"AAkit",
     "OneToManyRelatedNew":"related new",
-    "OneToManyRelatedEdit":"related edit",
+    "OneToManyRelatedEdit":"RealtedEdit",
     "OneToManyMapView":"MapView",
-    "OneToManySearchView":"SearchList",
-
+    "OneToManySearchView":"SerachList",
     "RelatedTableView":"1-N-TableListView",
-    
-
     "RelatedEle_1":"url",
     "RelatedEle_2":"email",
     "RelatedEle_3":"file",
@@ -87,14 +87,11 @@
      
     "SquareCardName":"SquareCard",
     "CardKitToBeRelated":"Children",
-
     "CardRelatedNew":"related new",
-    "CardRelatedEdit":"related edit",
+    "CardRelatedEdit":"RealtedEdit",
     "CardMapView":"MapView",
-    "CardSearchView":"SearchList",
-
+    "CardSearchView":"SerachList",
     "SquareCardTableView":"Card-TableListView",
-
     "RelateEle_1":"url",
     "RelateEle_2":"email",
     "RelateEle_3":"file",

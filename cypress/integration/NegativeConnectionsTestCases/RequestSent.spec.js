@@ -30,13 +30,13 @@ describe("Connection Request has Already been Sent for this User", function () {
     cy.ConnectionLastName(this.Credentials.Lname);
     cy.ConnectionEmail(this.Credentials.UserEmail);
     cy.log("Connection detalis has been Entered");
-    //click on DropDown
-    cy.get(
-      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div.row.position-relative.contact-detail-wrapper.md11.fill-height.new-connection > div.base-layout-main-content.d-flex.pa-0.fill-height.px-8.col > div.row.wrapper-content.px-8.py-4.pb-4 > div > div.v-input.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select.v-select--chips.v-select--is-multi > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
-    ).click({ force: true });
-    cy.contains("Meeting").click();
-    cy.contains("02").click();
-    cy.contains("LOL").click();
+    //click on DropDown feature has been removed form the application
+    // cy.get(
+    //   "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div.row.position-relative.contact-detail-wrapper.md11.fill-height.new-connection > div.base-layout-main-content.d-flex.pa-0.fill-height.px-8.col > div.row.wrapper-content.px-8.py-4.pb-4 > div > div.v-input.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select.v-select--chips.v-select--is-multi > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    // ).click({ force: true });
+    // cy.contains("Meeting").click();
+    // cy.contains("02").click();
+    // cy.contains("LOL").click();
     //Click on Save btn
     cy.get(".button-pop-ups--size").click();
     //Assertion For Connection Request has already been sent

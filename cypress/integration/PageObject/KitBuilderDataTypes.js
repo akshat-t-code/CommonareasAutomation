@@ -32,6 +32,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Url Data Type has been Created");
   }
 
   Text(TextName) {
@@ -64,6 +65,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Text Data Type has been Created");
   }
 
   File(FileName) {
@@ -98,6 +100,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("File Data Type has been Created");
   }
 
   Telephone(Telephone) {
@@ -130,6 +133,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Telephone Data Type has been Created");
   }
 
   TextAera(TextAera) {
@@ -162,6 +166,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("TextAera Data Type has been Created");
   }
 
   Slider(Slider) {
@@ -194,6 +199,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Slider Data Type has been Created");
   }
 
   Currency(Currency) {
@@ -226,6 +232,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Currency Data Type has been Created");
   }
 
   Measure(Measure) {
@@ -258,6 +265,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Measure Data Type has been Created");
   }
 
   Email(Email) {
@@ -290,6 +298,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Email Data Type has been Created");
   }
 
   Address(Address) {
@@ -322,6 +331,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Address Data Type has been Created");
   }
 
   Number(Number) {
@@ -354,6 +364,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Number Data Type has been Created");
   }
 
   Time(Time) {
@@ -386,6 +397,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Time Data Type has been Created");
   }
 
   Date(Date) {
@@ -418,6 +430,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Date Data Type has been Created");
   }
 
   Toggle(Toggle) {
@@ -450,6 +463,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Toggle Data Type has been Created");
   }
 
   SelectList(
@@ -505,9 +519,11 @@ class KitBuilderDataTypes {
     cy.wait(1000);
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
+    cy.log("SelectList Data Type has been Created");
     //Assertion to close msg
     //cy.get('.v-btn__content > .theme--dark').click();
     cy.wait(5000);
+
     //Click on Configure the SelectList to Add Values
     cy.get(".v-size--small:nth-child(1)").click();
 
@@ -628,6 +644,7 @@ class KitBuilderDataTypes {
     cy.get(".col-2 .v-btn__content").click();
     //Assetion to close msg
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("SelectList has been created with its Value");
   }
 
   RadioSelect(
@@ -683,6 +700,7 @@ class KitBuilderDataTypes {
     cy.wait(1000);
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
+    cy.log("RadioSelect Data type has been Created");
     //Assertion to close msg
     //cy.get('.v-btn__content > .theme--dark').click();
     cy.wait(5000);
@@ -806,6 +824,7 @@ class KitBuilderDataTypes {
     cy.get(".col-2 .v-btn__content").click();
     //Assetion to close msg
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("RadioSelect has been created with its Value");
   }
 
   CheckboxSelect(
@@ -863,6 +882,7 @@ class KitBuilderDataTypes {
     cy.wait(1000);
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
+    cy.log("CheckboxSelect Data Type has been created");
     //Assertion to close msg
     //cy.get('.v-btn__content > .theme--dark').click();
     cy.wait(5000);
@@ -986,6 +1006,7 @@ class KitBuilderDataTypes {
     cy.get(".col-2 .v-btn__content").click();
     //Assetion to close msg
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("CheckboxSelect has been created with its Value");
   }
 
   UserSelector(UserSelector) {
@@ -1020,6 +1041,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("UserSelector Data Type has been Created");
   }
 
   ContactSelector(ContactSelector) {
@@ -1056,6 +1078,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("ContactSelector Data Type has been Created");
   }
 
   Assigning(Assigning) {
@@ -1090,6 +1113,7 @@ class KitBuilderDataTypes {
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Assigning Data Type has been Created");
   }
 
   Stepper(Stepper, StepperName, Value1, Value2, Value3, Value4, Value5) {
@@ -1139,6 +1163,8 @@ class KitBuilderDataTypes {
     cy.wait(1000);
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
+    cy.log("Stepper Data Type has been Created");
+
     //Assertion to close msg
     //cy.get('.v-btn__content > .theme--dark').click();
     cy.wait(5000);
@@ -1262,6 +1288,7 @@ class KitBuilderDataTypes {
     cy.get(".col-2 .v-btn__content").click();
     //Assetion to close msg
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Stepper Data Type has been Created with its Values");
   }
 
   Icon(Icon) {
@@ -1294,6 +1321,7 @@ class KitBuilderDataTypes {
       .type(Icon);
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
+    cy.log("Icon Data Type has been Created");
     //Assertion to close
     //cy.get(".v-btn__content > .theme--dark").click();
     cy.wait(2000);
@@ -1352,6 +1380,7 @@ class KitBuilderDataTypes {
     cy.wait(1000);
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
+    cy.log("Inspection Data Type has been Created");
     //Assertion to close msg
     //cy.get('.v-btn__content > .theme--dark').click();
     cy.wait(5000);
@@ -1475,9 +1504,18 @@ class KitBuilderDataTypes {
     cy.get(".col-2 .v-btn__content").click();
     //Assetion to close msg
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Inspection Data Type has been Created with its Values");
   }
 
-  OneToOneRelation(RelationName, KitToBeRelate, ElementToBeRelate) {
+  OneToOneRelation(
+    RelationName,
+    KitToBeRelate,
+    ElementToBeRelate,
+    RelatedNewName,
+    RelatedEditName,
+    MapViewName,
+    SearchViewName
+  ) {
     //Click on Icon
     cy.getIframeBody().contains("Relation 1-1").click({ force: true });
     cy.wait(3000);
@@ -1514,6 +1552,7 @@ class KitBuilderDataTypes {
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
+    cy.log("OneToOne Relation Data Type has been created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
 
@@ -1527,30 +1566,22 @@ class KitBuilderDataTypes {
 
     //CreateView(Related New)
     cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select(
-      "6079df7a-5f2a-4361-a5b7-fac092b04537"
-    );
+    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select(RelatedNewName);
     cy.wait(1000);
 
     //DetailView(Related Edit)
     cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(
-      "26df3dc5-f483-4857-8c85-4d61bd0d3b8b"
-    );
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedEditName);
     cy.wait(1000);
 
     //MapView
     cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(
-      "7440b850-515f-40ad-bfd8-f66b53570da1"
-    );
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(MapViewName);
     cy.wait(1000);
 
     //SearchView
     cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(
-      "9d2f7838-0074-459c-b3e3-dd35a035118c"
-    );
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(SearchViewName);
     cy.wait(1000);
 
     //Click on Configure
@@ -1558,8 +1589,12 @@ class KitBuilderDataTypes {
 
     //Select the Elements for 1-N Realtion
     cy.contains(ElementToBeRelate).click({ force: true });
+    cy.log("OneToOne's Related kitType Element has been Selected");
     //Save Relation
     cy.get(".v-btn--text:nth-child(2)").click();
+    cy.log(
+      "OneToOne Relation Data Type has been created with its Configuration"
+    );
   }
 
   OneToManyRelation(
@@ -1619,6 +1654,7 @@ class KitBuilderDataTypes {
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
+    cy.log("OneToMany Relation Data Type has been Created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
 
@@ -1715,11 +1751,15 @@ class KitBuilderDataTypes {
     cy.contains(Ele4).click({ force: true });
     cy.contains(Ele5).click({ force: true });
     cy.wait(1000);
+    cy.log("OneToMany's Related kitTypes Elements has been Selected");
     cy.contains("Add Selected").click({ force: true });
     //Save
     cy.get(
       ".v-toolbar__items:nth-child(4) > .justify-end .v-btn__content"
     ).click({ force: true });
+    cy.log(
+      "OneToMany Relation Data Type has been created with its Configuration"
+    );
   }
 
   SquareCard(
@@ -1780,6 +1820,7 @@ class KitBuilderDataTypes {
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
+    cy.log("Square Card Relation Data Type has been Created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
 
@@ -1880,12 +1921,16 @@ class KitBuilderDataTypes {
     cy.contains(Ele3).click({ force: true });
     cy.contains(Ele4).click({ force: true });
     cy.contains(Ele5).click({ force: true });
+    cy.log("Square Card's Related kittype Elements has been Selected");
     cy.wait(1000);
     cy.contains("Add Selected").click({ force: true });
     //Save
     cy.get(
       ".v-toolbar__items:nth-child(4) > .justify-end .v-btn__content"
     ).click({ force: true });
+    cy.log(
+      "Square Card Relation Data Type has been Created with its all Configuration"
+    );
   }
 }
 
