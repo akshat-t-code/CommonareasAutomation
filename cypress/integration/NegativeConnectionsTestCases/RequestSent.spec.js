@@ -1,6 +1,5 @@
 import SignUpPage from "../PageObject/SignUpPage";
 import LoginPage from "../PageObject/LoginPage";
-import RandomString from "../PageObject/RandomString";
 
 describe("Connection Request has Already been Sent for this User", function () {
   this.beforeEach("Getting data from Fixtures file", function () {
@@ -14,7 +13,7 @@ describe("Connection Request has Already been Sent for this User", function () {
     });
   });
 
-  it("This User Sent Connection Request Already", function () {
+  it("This User Already Sent Connection Request", function () {
     const lp = new LoginPage();
     lp.visit();
     lp.EnterEmail("kstanley@commonareas.work.dev");
@@ -45,5 +44,6 @@ describe("Connection Request has Already been Sent for this User", function () {
     ).should("be.visible");
     cy.log("Connection Request has Already been sent with this user");
     cy.wait(5000);
+    
   });
 });

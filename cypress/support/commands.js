@@ -168,8 +168,12 @@ Cypress.Commands.add("CreateKit",()=>{
     cy.get('.ca-button-green > .v-btn__content').click();
     //Assertion msg close
     cy.get('.v-btn__content > .theme--dark').click();
+})
 
-
+Cypress.Commands.add("CreateKitType",()=>{
+    //Create btn
+    cy.get('.ca-button-green > .v-btn__content').click();
+    
 })
 
 

@@ -36,10 +36,12 @@ describe("KitTypeName already exists.", function () {
     cy.KitName(this.KT.KitName);
     cy.KitDescription(this.KT.KitDescription);
     cy.KitIcon();
-    cy.CreateKit();
-    cy.contains('Unable to create kit type').should('be.visible')
-    
+    cy.CreateKitType();
+    cy.contains('Unable to create kit type').should('be.visible') 
     cy.log('KitTypeName already exists.Can not create Kit Type')
+    //Assertion msg close
+    cy.wait(5000)
+    cy.get('.v-btn__content > .theme--dark').click();
     
   });
 
