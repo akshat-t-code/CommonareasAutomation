@@ -46,9 +46,11 @@ describe("List Views Elements", function () {
     cy.wait(3000);
     cy.contains("List Views").click({ force: true });
     cy.wait(5000);
+
   });
 
   it("Table List", function () {
+
     //View Name coming form json file
     cy.contains(this.data.TableView).click({ force: true });
     cy.wait(3000);
@@ -100,6 +102,7 @@ describe("List Views Elements", function () {
       "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
     ).click({ force: true });
     cy.wait(2000);
+    
     //View Name coming form json file
     cy.contains(this.data.SearchView).click({ force: true });
     cy.wait(3000);
@@ -175,7 +178,6 @@ describe("List Views Elements", function () {
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
 
-
     cy.contains("Filters").click({ force: true });
     cy.wait(2000);
     //Add List Filters
@@ -187,7 +189,6 @@ describe("List Views Elements", function () {
     // cy.contains(this.ListView.AddTimelineListFilters_4).click({ force: true });
     // cy.contains(this.ListView.AddTimelineListFilters_5).click({ force: true });
     cy.wait(2000);
-
     //Click on Save Selected
     cy.contains("Save Selected").click({ force: true });
     //Click on Save
@@ -195,7 +196,6 @@ describe("List Views Elements", function () {
     cy.get(".mr-2 > .v-btn__content").click();
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
-
     
   });
 });

@@ -37,6 +37,7 @@ describe("KitTypeName already exists.", function () {
     cy.KitDescription(this.KT.KitDescription);
     cy.KitIcon();
     cy.CreateKitType();
+    //Assertion for Existing Kit type with same Name in Kit Builder
     cy.contains('Unable to create kit type').should('be.visible') 
     cy.log('KitTypeName already exists.Can not create Kit Type')
     //Assertion msg close

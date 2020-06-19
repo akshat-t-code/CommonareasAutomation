@@ -116,6 +116,7 @@ describe("Create New Kit type", function () {
 // cy.get('[title="Url"]')
 //     .trigger("mousedown", { which: 1 })
 
+
 //     getIframeBody().find("#wrapper")
 //     .trigger("mousemove")
 //     .trigger("mouseup")

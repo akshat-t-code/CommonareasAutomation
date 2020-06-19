@@ -1,57 +1,35 @@
+class SignUpPage {
+  visit() {
+    cy.visit("https://app.ca-test.com/Public/Login?ReturnUrl=%2F");
+  }
 
-class SignUpPage{
+  SignUpbtn() {
+    const sb = cy.get(".button-sign-up > a");
+    sb.click();
+  }
 
-    visit() {
+  mailinatorSite() {
+    cy.visit("https://www.mailinator.com/");
+  }
 
-        cy.visit('https://app.ca-test.com/Public/Login?ReturnUrl=%2F')
-    }
+  EnterMailinatorEmail(value) {
+    const field = cy.get('[placeholder="Enter Public Mailinator Inbox"]');
+    field.type(value);
+    return this;
+  }
 
-    SignUpbtn(){
+  Go() {
+    const go = cy.get("#go-to-public");
+    go.click();
+  }
 
-        const sb=cy.get('.button-sign-up > a')
-        sb.click()
+  ActiveAccount() {
+    cy.get("#msg_body").then(($iframe) => {
+      const $body = $iframe.contents().find("body");
 
-    }
-
-    //
-    mailinatorSite(){
-
-        cy.visit('https://www.mailinator.com/')
-    }
-
-    
-    EnterMailinatorEmail(value) {
-
-        const field = cy.get('[placeholder="Enter Public Mailinator Inbox"]')
-        field.type(value)
-        return this
-
-    }
-
-    Go(){
-
-        const go=cy.get('#go-to-public')
-        go.click()
-
-    }
-
-    ActiveAccount(){
-
-        cy.get('#msg_body')
-        .then(($iframe) => {
-          const $body = $iframe.contents().find('body')
-      
-          cy.wrap($body)
-            .contains('Activate Account')
-            .click()
-
-        })
-        
-    }
-
-
-
-
+      cy.wrap($body).contains("Activate Account").click();
+    });
+  }
 }
 
-export default SignUpPage
+export default SignUpPage;

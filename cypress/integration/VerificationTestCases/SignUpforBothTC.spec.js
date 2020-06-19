@@ -157,5 +157,6 @@ describe("Sign up for a New Users for", function () {
     cy.get(".icon").click();
     cy.url().should("include", "/Public/Login");
     cy.wait(3000);
+    
   });
 });
