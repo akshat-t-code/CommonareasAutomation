@@ -36,9 +36,10 @@ describe("List Views Elements", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.AdminUrl();
-    cy.wait(5000);
-    kb.ClickOnKitBuilder();
+    kb.KitBuilderUrl();
+    // kb.AdminUrl();
+    // cy.wait(5000);
+    // kb.ClickOnKitBuilder();
     cy.wait(3000);
     cy.contains(this.data1.KitName).click({ force: true });
     cy.wait(3000);

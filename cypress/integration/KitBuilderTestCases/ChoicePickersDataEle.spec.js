@@ -31,7 +31,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    cy.visit('http://serviceproviders.ca-build.com/ClientAdmin/KitBuilder/?localdev=true')
+    kb.KitBuilderUrl();
     //kb.AdminUrl();
     //cy.wait(5000);
     //kb.ClickOnKitBuilder();

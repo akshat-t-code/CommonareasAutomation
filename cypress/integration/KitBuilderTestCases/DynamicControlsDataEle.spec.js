@@ -30,10 +30,10 @@ describe("Dynmamic Control Data Elements Configuration", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
-    //cy.wait(5000);
-    cy.visit('http://serviceproviders.ca-build.com/ClientAdmin/KitBuilder/?localdev=true')
-    //kb.AdminUrl();
     cy.wait(5000);
+    kb.KitBuilderUrl();
+    //kb.AdminUrl();
+    //cy.wait(5000);
     //kb.ClickOnKitBuilder();
     cy.wait(3000);
     cy.contains(this.data1.KitName).click({ force: true });
