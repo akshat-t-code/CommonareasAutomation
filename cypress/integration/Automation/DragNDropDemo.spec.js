@@ -26,7 +26,7 @@ describe("Copy New Form Elements to the Edit View", function () {
     });
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -44,9 +44,33 @@ describe("Copy New Form Elements to the Edit View", function () {
     cy.wait(5000);
   });
 
+  it.only("Input Section Data Elements", function () {
+    cy.contains("Inputs").click({ force: true });
+    cy.wait(2000);
+  });
+
+  it.only("Url Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Url"]').dblclick({force:true})
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+
+    DataType.Url(this.DataType.Url);
+    cy.wait(5000);
+  });
+
+  it.only("Section Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Section"]').dblclick({force:true})
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Section(this.DataType.Section);
+    cy.wait(5000);
+  });
+
   it("Drag n Drop Demo", function () {
     //Drag n Drop
-    // cy.contains('Inputs').click({force:true})
+    cy.contains('Inputs').click({force:true})
     // cy.wait(2000)
     // cy.getIframeBody().find("#wrapper").should('exist')
     // cy.wait(2000)
@@ -54,100 +78,100 @@ describe("Copy New Form Elements to the Edit View", function () {
     // cy.get('[title="Url"]').drag("@Target");
     // cy.get('[title="Url"]').dblclick({force:true})
 
-    // cy.wait(2000)
+    cy.wait(2000)
 
     
-    // cy.get('[title="Text"]').dblclick({force:true})
+    cy.get('[title="Text"]').dblclick({force:true})
 
-    // cy.wait(2000)
-
-    
-    // cy.get('[title="File"]').dblclick({force:true})
-
-    // cy.wait(2000)
+    cy.wait(2000)
 
     
-    // cy.get('[title="Telephone"]').dblclick({force:true})
+    cy.get('[title="File"]').dblclick({force:true})
 
-
-    // cy.wait(2000)
-
-    
-    // cy.get('[title="Text Area"]').dblclick({force:true})
-
-
-    // cy.wait(2000)
+    cy.wait(2000)
 
     
-    // cy.get('[title="Slider"]').dblclick({force:true})
+    cy.get('[title="Telephone"]').dblclick({force:true})
 
 
-    // cy.wait(2000)
-
-    
-    // cy.get('[title="Currency"]').dblclick({force:true})
-
-
-
-    // cy.wait(2000)
+    cy.wait(2000)
 
     
-    // cy.get('[title="Email"]').dblclick({force:true})
+    cy.get('[title="Text Area"]').dblclick({force:true})
 
 
-    // cy.wait(2000)
-
-    
-    // cy.get('[title="Measure"]').dblclick({force:true})
-
-    // cy.wait(2000)
+    cy.wait(2000)
 
     
-    // cy.get('[title="Address"]').dblclick({force:true})
+    cy.get('[title="Slider"]').dblclick({force:true})
 
 
-    // cy.wait(2000)
+    cy.wait(2000)
 
     
-    // cy.get('[title="Number"]').dblclick({force:true})
-
-    // cy.contains('Date & Time').click({ force: true });
-
-    // cy.wait(2000)
-
-    // cy.get('[title="Time"]').dblclick({force:true})
-
-    // cy.wait(2000)
-
-    // cy.get('[title="Add Date"]').dblclick({force:true})
-
-    // cy.wait(2000)
+    cy.get('[title="Currency"]').dblclick({force:true})
 
 
-    // cy.get('[title="Reminder"]').dblclick({force:true})
 
-    // cy.wait(2000)
+    cy.wait(2000)
 
-
-    // cy.contains('Choice Pickers').click({ force: true });
-
-    // cy.get('[title="Toggle"]').dblclick({force:true})
-
-    // cy.wait(2000)
-
-    // cy.get('[title="Select List"]').dblclick({force:true})
-
-    // cy.wait(2000)
+    
+    cy.get('[title="Email"]').dblclick({force:true})
 
 
-    // cy.get('[title="Radio Select"]').dblclick({force:true})
+    cy.wait(2000)
 
-    // cy.wait(2000)
+    
+    cy.get('[title="Measure"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+    
+    cy.get('[title="Address"]').dblclick({force:true})
 
 
-    // cy.get('[title="Checkbox Select"]').dblclick({force:true})
+    cy.wait(2000)
 
-    // cy.wait(2000)
+    
+    cy.get('[title="Number"]').dblclick({force:true})
+
+    cy.contains('Date & Time').click({ force: true });
+
+    cy.wait(2000)
+
+    cy.get('[title="Time"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+    cy.get('[title="Add Date"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+
+    cy.get('[title="Reminder"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+
+    cy.contains('Choice Pickers').click({ force: true });
+
+    cy.get('[title="Toggle"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+    cy.get('[title="Select List"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+
+    cy.get('[title="Radio Select"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+
+    cy.get('[title="Checkbox Select"]').dblclick({force:true})
+
+    cy.wait(2000)
 
 
     cy.contains('Dynamic Controls').click({ force: true });

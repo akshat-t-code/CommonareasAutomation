@@ -25,6 +25,7 @@ require('cypress-xpath')
 import 'cypress-xpath'
 
 // cypress/support/index.js
+//This custome command is for to get into the iframe of canvas of kit builder
 Cypress.Commands.add('getIframeBody', () => {
     return cy
     .get('.gjs-frame')

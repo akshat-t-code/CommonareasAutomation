@@ -11,6 +11,7 @@
     "Email":"Email",
     "Address":"Address",
     "Number":"Number",
+    "Section":"Section",
     "Time":"Time",
     "Date":"Date",
     "Toggle":"Toggle",
@@ -100,6 +101,7 @@
 
     "RCName":"Reactive Control",
 
+    "RVName":"Reactive Vriable",
     
     "ReminderName":"Reminder"
 

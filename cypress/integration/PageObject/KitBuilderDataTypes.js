@@ -1,6 +1,7 @@
 class KitBuilderDataTypes {
   //getIframeBody()
-  //this is coming from support/index.js from accessing the frame to interact the Data Types on Canvas(Kit Builder)
+  //this above function OR custome command (customize) coming from support/index.js
+  //for accessing the iframe to interact the Data Types on Canvas(Kit Builder)
 
   Url(UrlName) {
     //Click on Url
@@ -365,6 +366,19 @@ class KitBuilderDataTypes {
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
     cy.log("Number Data Type has been Created");
+  }
+
+  Section(Section) {
+    //Click on Section
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-section"]')
+      .click({ force: true });
+    cy.wait(3000);
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(Section);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    cy.log("Section Data Type has been Created");
   }
 
   Time(Time) {
@@ -1987,11 +2001,21 @@ class KitBuilderDataTypes {
     cy.contains("Set Editable").click({ force: true });
   }
 
+  ReactiveVriable(RVName) {
+    //Click on ReactiveVriable
+    cy.getIframeBody().contains("Reactive Variable").click({ force: true });
+    cy.wait(3000);
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RVName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    cy.wait(2000);
+    cy.get('[value="Configure"]').last().click({ force: true });
+  }
+
   Reminder(ReminderName) {
     //Click on Assigning
-    cy.getIframeBody()
-      .contains('Set Reminder')
-      .click({ force: true });
+    cy.getIframeBody().contains("Set Reminder").click({ force: true });
     cy.wait(3000);
     //Click on Lable
     cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(ReminderName);
@@ -1999,9 +2023,6 @@ class KitBuilderDataTypes {
     cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
     //Select a Value
     cy.wait(2000);
-    
-
-    
   }
 }
 
