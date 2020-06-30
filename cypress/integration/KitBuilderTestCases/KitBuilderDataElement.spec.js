@@ -323,7 +323,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(2000);
   });
 
-  it.only("OneToOneRelation Data Type", function () {
+  it("OneToOneRelation Data Type", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
@@ -351,6 +351,7 @@ describe("Kit Builder Data Types Details", function () {
   });
 
   it("OneToManyRelation Data Type", function () {
+    
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
@@ -403,6 +404,23 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
+  it('Reactive Control Data type',function(){
+
+    const DataType = new KitBuilderDataTypes();
+
+    DataType.ReactiveControl(this.DataType.RCName)
+
+  })
+
+  it.only('Reminder Data Type',function(){
+
+    const DataType = new KitBuilderDataTypes();
+    DataType.Reminder(this.DataType.ReminderName)
+
+    
+  })
+
+
   it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
@@ -415,4 +433,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.log("Kit builder(New Form) has been Published");
     cy.wait(2000);
   });
+
+
+  
 });

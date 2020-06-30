@@ -31,9 +31,10 @@ describe("Copy New Form Elements to the Edit View", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.AdminUrl();
+    cy.visit('http://serviceproviders.ca-build.com/ClientAdmin/KitBuilder/?localdev=true')
+   // kb.AdminUrl();
     cy.wait(5000);
-    kb.ClickOnKitBuilder();
+    //kb.ClickOnKitBuilder();
     cy.wait(3000);
     cy.contains(this.data1.KitName).click({ force: true });
     cy.wait(3000);
@@ -45,13 +46,169 @@ describe("Copy New Form Elements to the Edit View", function () {
 
   it("Drag n Drop Demo", function () {
     //Drag n Drop
-    cy.contains('Inputs').click({force:true})
-    cy.wait(2000)
-    cy.getIframeBody().find("#wrapper").should('exist')
-    cy.wait(2000)
-    cy.getIframeBody().find("#wrapper").click().as("Target");
-    cy.get('[title="Url"]').drag("@Target");
+    // cy.contains('Inputs').click({force:true})
+    // cy.wait(2000)
+    // cy.getIframeBody().find("#wrapper").should('exist')
+    // cy.wait(2000)
+    // cy.getIframeBody().find("#wrapper").click().as("Target");
+    // cy.get('[title="Url"]').drag("@Target");
+    // cy.get('[title="Url"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
     
+    // cy.get('[title="Text"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
+    
+    // cy.get('[title="File"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
+    
+    // cy.get('[title="Telephone"]').dblclick({force:true})
+
+
+    // cy.wait(2000)
+
+    
+    // cy.get('[title="Text Area"]').dblclick({force:true})
+
+
+    // cy.wait(2000)
+
+    
+    // cy.get('[title="Slider"]').dblclick({force:true})
+
+
+    // cy.wait(2000)
+
+    
+    // cy.get('[title="Currency"]').dblclick({force:true})
+
+
+
+    // cy.wait(2000)
+
+    
+    // cy.get('[title="Email"]').dblclick({force:true})
+
+
+    // cy.wait(2000)
+
+    
+    // cy.get('[title="Measure"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
+    
+    // cy.get('[title="Address"]').dblclick({force:true})
+
+
+    // cy.wait(2000)
+
+    
+    // cy.get('[title="Number"]').dblclick({force:true})
+
+    // cy.contains('Date & Time').click({ force: true });
+
+    // cy.wait(2000)
+
+    // cy.get('[title="Time"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
+    // cy.get('[title="Add Date"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
+
+    // cy.get('[title="Reminder"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
+
+    // cy.contains('Choice Pickers').click({ force: true });
+
+    // cy.get('[title="Toggle"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
+    // cy.get('[title="Select List"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
+
+    // cy.get('[title="Radio Select"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
+
+    // cy.get('[title="Checkbox Select"]').dblclick({force:true})
+
+    // cy.wait(2000)
+
+
+    cy.contains('Dynamic Controls').click({ force: true });
+    cy.wait(2000)
+
+    cy.get('[title="Reactive Variable"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+    cy.get('[title="Reactive Control"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+
+
+    cy.contains('Content').click({ force: true });
+    cy.wait(2000)
+
+    cy.get('[title="Relation 1-N"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+    cy.get('[title="Stepper"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+    cy.get('[title="Contact Selector"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+
+    cy.get('[title="User Selector"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+    cy.get('[title="Relation 1-1"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+    cy.get('[title="SquareCard"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+
+    cy.get('[title="Icon"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+
+    cy.get('[title="Inspection"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+
+    cy.get('[title="Assigning"]').dblclick({force:true})
+
+    cy.wait(2000)
+
+   
+
+
 
 
 

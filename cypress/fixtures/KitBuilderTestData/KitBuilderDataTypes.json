@@ -96,7 +96,12 @@
     "RelateEle_2":"email",
     "RelateEle_3":"file",
     "RelateEle_4":"currency",
-    "RelateEle_5":"measure"
+    "RelateEle_5":"measure",
+
+    "RCName":"Reactive Control",
+
+    
+    "ReminderName":"Reminder"
 
 
 }

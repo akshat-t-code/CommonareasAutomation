@@ -1,7 +1,7 @@
 import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
 
-describe("Create New Kit type", function () {
+describe("Create New Kit type ", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
     cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");

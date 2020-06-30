@@ -507,6 +507,7 @@ Cypress.Commands.add("SaveSearchList",()=>{
 })
 
 
+
 //TimelineList View details Commands
 Cypress.Commands.add("TimelineListViewLabel",(TimelineListViewLabel)=>{
     cy.get('#tab-list-views > div > div:nth-child(5) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div')

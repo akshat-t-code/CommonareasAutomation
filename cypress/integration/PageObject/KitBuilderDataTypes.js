@@ -1924,13 +1924,84 @@ class KitBuilderDataTypes {
     cy.log("Square Card's Related kittype Elements has been Selected");
     cy.wait(1000);
     cy.contains("Add Selected").click({ force: true });
-    //Save
+    // Save
     cy.get(
       ".v-toolbar__items:nth-child(4) > .justify-end .v-btn__content"
     ).click({ force: true });
     cy.log(
       "Square Card Relation Data Type has been Created with its all Configuration"
     );
+  }
+
+  ReactiveControl(RCName) {
+    //Click on ReactiveControl
+    cy.getIframeBody().contains("Reactive Control").click({ force: true });
+    cy.wait(3000);
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RCName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    cy.wait(2000);
+    cy.get('[value="Configure"]').last().click({ force: true });
+
+    //Click on dropdown
+    cy.get(
+      "div.v-dialog__container.reactive-control-popup > div > div > div > div.container.reactive-control-body > div > div > div > div.v-stepper__items > div:nth-child(1) > div > form > div > div:nth-child(1) > div.row.justify-center.condition-repeater-container > div > div.py-0.pl-0.d-flex.align-center.justify-start.condition-control.col.col-2 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
+    ).click({ force: true });
+
+    cy.contains("URL").click({ force: true });
+
+    cy.get(
+      "div.v-dialog__container.reactive-control-popup > div > div > div > div.container.reactive-control-body > div > div > div > div.v-stepper__items > div:nth-child(1) > div > form > div > div:nth-child(1) > div.row.justify-center.condition-repeater-container > div > div.py-0.pl-0.d-flex.align-center.justify-start.condition-condition.col.col-2 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    ).click({ force: true });
+
+    cy.contains("Not Equal").click({ force: true });
+
+    //Click on Action
+    cy.get(".v-stepper__step--inactive > .v-stepper__step__step").click();
+    cy.contains("Actions").click({ force: true });
+
+    cy.contains("add new action").click({ force: true });
+
+    //cy.get('.font-weight-medium > .v-btn--text > .v-btn__content').click();
+
+    //Action -Click on DropDown
+    cy.get(
+      "div.v-dialog__container.reactive-control-popup > div > div > div > div.container.reactive-control-body > div > div > div > div.v-stepper__items > div:nth-child(2) > div > form > div > div.row.justify-center.action-repeater-container.no-gutters > div > div > div.d-flex.py-0.pl-0.align-top.justify-start.action-type.col.col-2 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
+    ).click({ force: true });
+
+    cy.contains("Control").click({ force: true });
+
+    //DD
+    cy.get(
+      "div.v-dialog__container.reactive-control-popup > div > div > div > div.container.reactive-control-body > div > div > div > div.v-stepper__items > div:nth-child(2) > div > form > div > div.row.justify-center.action-repeater-container.no-gutters > div > div > div.d-flex.py-0.pl-0.align-center.justify-start.col.col-9 > div > div.d-flex.py-0.pl-0.align-center.justify-start.action-control.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    ).click({ force: true });
+
+    cy.contains("URL").click({ force: true });
+
+    //DD
+    cy.get(
+      "div.v-dialog__container.reactive-control-popup > div > div > div > div.container.reactive-control-body > div > div > div > div.v-stepper__items > div:nth-child(2) > div > form > div > div.row.justify-center.action-repeater-container.no-gutters > div > div > div.d-flex.py-0.pl-0.align-center.justify-start.col.col-9 > div > div.d-flex.py-0.pl-0.align-center.justify-start.action-property.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    ).click({ force: true });
+
+    cy.contains("Set Editable").click({ force: true });
+  }
+
+  Reminder(ReminderName) {
+    //Click on Assigning
+    cy.getIframeBody()
+      .contains('Set Reminder')
+      .click({ force: true });
+    cy.wait(3000);
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(ReminderName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    //Select a Value
+    cy.wait(2000);
+    
+
+    
   }
 }
 

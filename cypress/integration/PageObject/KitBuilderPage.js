@@ -77,7 +77,7 @@ class KitBuilder {
     btn.click();
   }
 
-  //List Views
+  //ListViews
 
   ClickOnTableList() {
     const btn = cy.get(

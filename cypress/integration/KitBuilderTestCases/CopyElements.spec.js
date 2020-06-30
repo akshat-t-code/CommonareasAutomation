@@ -43,7 +43,7 @@ describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Emai
     cy.wait(5000);
   });
 
-  it.only("Copy the Elements into Shared View form", function () {
+  it("Copy the Elements into Shared View form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
