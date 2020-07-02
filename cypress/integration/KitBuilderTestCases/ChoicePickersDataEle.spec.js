@@ -59,7 +59,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("SelectList Data Type", function () {
+  it("SelectList Data Type", function() {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Select List"]').dblclick({ force: true });
     cy.wait(1000);

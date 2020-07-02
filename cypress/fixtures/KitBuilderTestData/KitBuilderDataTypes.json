@@ -73,7 +73,7 @@
 
 
     "OneToManyRelation":"1-N Relation",
-    "KitToBeRelated":"AAkit",
+    "KitToBeRelated":"AAKit",
     "OneToManyRelatedNew":"related new",
     "OneToManyRelatedEdit":"RealtedEdit",
     "OneToManyMapView":"MapView",
@@ -89,9 +89,9 @@
     "SquareCardName":"SquareCard",
     "CardKitToBeRelated":"Children",
     "CardRelatedNew":"related new",
-    "CardRelatedEdit":"RealtedEdit",
+    "CardRelatedEdit":"related edit",
     "CardMapView":"MapView",
-    "CardSearchView":"SerachList",
+    "CardSearchView":"SearchList",
     "SquareCardTableView":"Card-TableListView",
     "RelateEle_1":"url",
     "RelateEle_2":"email",

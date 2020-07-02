@@ -26,7 +26,7 @@ describe("Date & Time Section Data Elements Configuration", function () {
     });
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function() {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");

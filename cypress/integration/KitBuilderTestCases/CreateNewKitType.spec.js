@@ -21,7 +21,7 @@ describe("Create New Kit type ", function () {
     });
   });
 
-  it("Create A New Kit Type", function () {
+  it("Create A New Kit Type", function() {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");

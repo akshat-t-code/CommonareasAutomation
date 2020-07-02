@@ -171,6 +171,19 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
+  it("Kit Builder Save and Publish", function () {
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click();
+    cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+    //Click on  Publish
+    cy.contains("Publish").click({ force: true });
+    //cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Kit builder(New Form) has been Published");
+    cy.wait(2000);
+  });
+
   it("Date & Time Section Data Elements", function () {
     cy.contains("Date & Time").click({ force: true });
     cy.wait(2000);
@@ -202,6 +215,19 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(1000);
     const DataType = new KitBuilderDataTypes();
     DataType.Reminder(this.DataType.ReminderName);
+  });
+
+  it("Kit Builder Save and Publish", function () {
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click();
+    cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+    //Click on  Publish
+    cy.contains("Publish").click({ force: true });
+    //cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Kit builder(New Form) has been Published");
+    cy.wait(2000);
   });
 
   it("Choice Pickers Section Data Elements", function () {
@@ -322,18 +348,6 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("Kit Builder Save and Publish", function () {
-    //Kit Builder Save
-    cy.get(".ca-button-green:nth-child(1)").click();
-    cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Saved");
-    //Click on  Publish
-    cy.contains("Publish").click({ force: true });
-    //cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Published");
-    cy.wait(2000);
-  });
-
   it("Stepper Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Stepper"]').dblclick({ force: true });
@@ -397,17 +411,6 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType.OneToOneSearchView
     );
     cy.wait(5000);
-
-    //Kit Builder Save
-    cy.get(".ca-button-green:nth-child(1)").click();
-    cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Saved");
-    cy.wait(3000);
-    //Click on  Publish
-    cy.contains("Publish").click({ force: true });
-    //cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Published");
-    cy.wait(2000);
   });
 
   it("OneToManyRelation Data Type", function () {
@@ -433,15 +436,6 @@ describe("Kit Builder Data Types Details", function () {
     );
 
     cy.wait(5000);
-    // // //Kit Builder Save
-    // cy.get(".ca-button-green:nth-child(1)").click();
-    // cy.get(".v-btn__content > .theme--dark").click();
-    // cy.log("Kit builder(New Form) has been Saved");
-    // //Click on  Publish
-    // cy.contains("Publish").click({ force: true });
-    // //cy.get(".v-btn__content > .theme--dark").click();
-    // cy.log("Kit builder(New Form) has been Published");
-    // cy.wait(2000);
   });
 
   it("SquareCard Data Type", function () {
@@ -469,17 +463,19 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  // it('Dynamic Controls Section Data Elements',function(){
-  //   cy.contains('Dynamic Controls').click({ force: true });
-  //    cy.wait(2000)
-  // })
+  /*
 
-  // it('Reactive Control Data type',function(){
+  it("Dynamic Controls Section Data Elements", function () {
+    cy.contains("Dynamic Controls").click({ force: true });
+    cy.wait(2000);
+  });
 
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.ReactiveControl(this.DataType.RCName)
+  it("Reactive Control Data type", function () {
+    const DataType = new KitBuilderDataTypes();
+    DataType.ReactiveControl(this.DataType.RCName);
+  });
 
-  // })
+  */
 
   it("Kit Builder Save and Publish", function () {
     //Kit Builder Save

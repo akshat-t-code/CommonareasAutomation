@@ -31,7 +31,8 @@ describe("Copy New Form Elements to the Edit View", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    cy.visit('http://serviceproviders.ca-build.com/ClientAdmin/KitBuilder/?localdev=true')
+    kb.KitBuilderUrl()
+    //cy.visit('http://serviceproviders.ca-build.com/ClientAdmin/KitBuilder/?localdev=true')
    // kb.AdminUrl();
     cy.wait(5000);
     //kb.ClickOnKitBuilder();
@@ -44,12 +45,12 @@ describe("Copy New Form Elements to the Edit View", function () {
     cy.wait(5000);
   });
 
-  it.only("Input Section Data Elements", function () {
+  it("Input Section Data Elements", function () {
     cy.contains("Inputs").click({ force: true });
     cy.wait(2000);
   });
 
-  it.only("Url Data Type", function () {
+  it("Url Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Url"]').dblclick({force:true})
     //Page Object
@@ -59,7 +60,7 @@ describe("Copy New Form Elements to the Edit View", function () {
     cy.wait(5000);
   });
 
-  it.only("Section Data Type", function () {
+  it("Section Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Section"]').dblclick({force:true})
     //Page Object
@@ -67,6 +68,25 @@ describe("Copy New Form Elements to the Edit View", function () {
     DataType.Section(this.DataType.Section);
     cy.wait(5000);
   });
+
+  it.only('Dragging',function(){
+
+    cy.getIframeBody().find('[placeholder="URL"]').should('exist')
+    cy.getIframeBody().find('[data-gjs-type="control-section"]').should('exist')
+
+
+    cy.getIframeBody().find('[placeholder="URL"]').as("source")
+    cy.getIframeBody().find('[data-gjs-type="control-section"]').click({force:true})
+
+
+    //cy.getIframeBody().find('[data-gjs-type="control-section"]').as("Target")
+    cy.getIframeBody().find('.v-expansion-panel-content')
+    .as("Target")
+
+
+    cy.get("@source").drag("@Target")
+
+  })
 
   it("Drag n Drop Demo", function () {
     //Drag n Drop
