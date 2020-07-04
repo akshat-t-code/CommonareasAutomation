@@ -71,20 +71,38 @@ describe("Copy New Form Elements to the Edit View", function () {
 
   it.only('Dragging',function(){
 
-    cy.getIframeBody().find('[placeholder="URL"]').should('exist')
-    cy.getIframeBody().find('[data-gjs-type="control-section"]').should('exist')
+
+    // cy.getIframeBody().find('[placeholder="URL"]').as('toMove')
+    //   cy.get('@toMove')
+            
+    //         .trigger('mousedown')
+    //         cy.getIframeBody().find('.v-expansion-panel-content').trigger('mousemove').as('toMovee')
+    //   cy.get('@toMovee')
+    //        .trigger('mouseup')
+
+    cy.getIframeBody().find('[placeholder="URL"]')
+    .trigger("mousedown", { button: 0 }, { force: true })
+    .trigger("mousemove", 200, -200, { force: true })
+  cy.getIframeBody().find('.v-expansion-panel-content')
+    .trigger("mouseup", { force: true });
+    
+           
+  
+    // cy.getIframeBody().find('[placeholder="URL"]').should('exist')
+    // cy.getIframeBody().find('[data-gjs-type="control-section"]').should('exist')
+
+    // cy.getIframeBody().find('[placeholder="URL"]').click({force:true})
+    // //cy.getIframeBody().find('[placeholder="URL"]').as("source")
+    // cy.getIframeBody().find('.v-text-field__slot').as("source")
+    // //cy.getIframeBody().find('[data-gjs-type="control-section"]').click({force:true})
 
 
-    cy.getIframeBody().find('[placeholder="URL"]').as("source")
-    cy.getIframeBody().find('[data-gjs-type="control-section"]').click({force:true})
+    // //cy.getIframeBody().find('[data-gjs-type="control-section"]').as("Target")
+    // cy.getIframeBody().find('.v-expansion-panel-content')
+    // .as("Target")
 
 
-    //cy.getIframeBody().find('[data-gjs-type="control-section"]').as("Target")
-    cy.getIframeBody().find('.v-expansion-panel-content')
-    .as("Target")
-
-
-    cy.get("@source").drag("@Target")
+    // cy.get("@source",{force:true}).drag("@Target",{force:true})
 
   })
 

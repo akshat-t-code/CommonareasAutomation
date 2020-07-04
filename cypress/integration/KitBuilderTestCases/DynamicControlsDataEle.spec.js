@@ -57,7 +57,7 @@ describe("Dynmamic Control Data Elements Configuration", function () {
     DataType.ReactiveControl(this.DataType.RCName);
   });
 
-  it.only("Reactive Vriable Data type", function () {
+  it("Reactive Vriable Data type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Reactive Variable"]').dblclick({ force: true });
     cy.wait(1000);

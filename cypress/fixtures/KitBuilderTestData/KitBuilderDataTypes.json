@@ -79,7 +79,7 @@
     "OneToManyMapView":"MapView",
     "OneToManySearchView":"SerachList",
     "RelatedTableView":"1-N-TableListView",
-    "RelatedEle_1":"url",
+    "RelatedEle_1":"Url",
     "RelatedEle_2":"email",
     "RelatedEle_3":"file",
     "RelatedEle_4":"currency",

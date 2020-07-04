@@ -1571,31 +1571,31 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click();
 
     //Click on Allow Delete
-    cy.get(".gjs-trt-trait__wrp:nth-child(14) input").click({ force: true });
+    cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({ force: true });
 
     //Click on Allow View Details
-    cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
+    cy.get(".gjs-trt-trait__wrp:nth-child(16) .gjs-chk-icon").click({
       force: true,
     });
 
     //CreateView(Related New)
-    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select(RelatedNewName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
     cy.wait(1000);
 
     //DetailView(Related Edit)
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedEditName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
     cy.wait(1000);
 
     //MapView
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(MapViewName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
     cy.wait(1000);
 
     //SearchView
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(SearchViewName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
     cy.wait(1000);
 
     //Click on Configure
@@ -1673,38 +1673,40 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
 
     //Click on Allow Delete
-    cy.get(".gjs-trt-trait__wrp:nth-child(14) .gjs-chk-icon").click({
-      force: true,
-    });
-
-    //Click on Allow View Details
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
       force: true,
     });
 
+
+
+    //Click on Allow View Details
+    cy.get(".gjs-trt-trait__wrp:nth-child(16) .gjs-chk-icon").click({
+      force: true,
+    });
+
     //CreateView(Related New)
-    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select(RelatedNewName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
     cy.wait(1000);
 
     //DetailView(Related Edit)
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedEditName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
     cy.wait(1000);
 
     //MapView
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(MapViewName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
     cy.wait(1000);
 
     //SearchView
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(SearchViewName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
     cy.wait(1000);
 
     //Table View
-    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("New Table View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(21) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(21) select").select("New Table View");
 
     //Creating New Table List View for the Kit(Child Kit) which is to be Related
 
@@ -1839,42 +1841,42 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
 
     //Click on Allow Delete
-    cy.get(".gjs-trt-trait__wrp:nth-child(14) .gjs-chk-icon").click({
-      force: true,
-    });
-
-    //Click on Allow View Details
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
       force: true,
     });
 
+    //Click on Allow View Details
+    cy.get(".gjs-trt-trait__wrp:nth-child(16) .gjs-chk-icon").click({
+      force: true,
+    });
+
     //CreateView(Related New)
-    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(16) select").select(RelatedNewName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
     //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
     cy.wait(1000);
 
     //DetailView(Related Edit)
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedEditName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
     //cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
     cy.wait(1000);
 
     //MapView
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(MapViewName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
     // cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
     cy.wait(1000);
 
     //SearchView
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(SearchViewName);
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
     //cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
     cy.wait(1000);
 
     //Table View
-    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("New Table View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(21) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(21) select").select("New Table View");
 
     //Creating New Table List View for the Kit(Child Kit) which is to be Related
 

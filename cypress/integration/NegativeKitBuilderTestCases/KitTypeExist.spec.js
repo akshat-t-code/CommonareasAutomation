@@ -25,9 +25,10 @@ describe("KitTypeName already exists.", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.AdminUrl();
-    cy.wait(5000);
-    kb.ClickOnKitBuilder();
+    kb.KitBuilderUrl();
+    // kb.AdminUrl();
+    // cy.wait(5000);
+    // kb.ClickOnKitBuilder();
     cy.log('Here we are on Kit Builder')
     kb.ClickOnCreateNewKit();
     cy.wait(5000);

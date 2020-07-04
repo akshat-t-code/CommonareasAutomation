@@ -142,17 +142,6 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType.OneToOneSearchView
     );
     cy.wait(5000);
-
-    //Kit Builder Save
-    cy.get(".ca-button-green:nth-child(1)").click();
-    cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Saved");
-    cy.wait(3000);
-    //Click on  Publish
-    cy.contains("Publish").click({ force: true });
-    //cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Published");
-    cy.wait(2000);
   });
 
   it.only("OneToManyRelation Data Type", function () {
@@ -204,7 +193,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("Kit Builder Save and Publish", function () {
+  it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();
