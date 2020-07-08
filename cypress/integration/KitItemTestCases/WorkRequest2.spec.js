@@ -9,13 +9,13 @@ describe("Basic Test Case for Element interaction for Work Request kit type", fu
     lp.EnterPassword("1234567Aa");
     lp.Submit();
 
-    Cypress.Cookies.preserveOnce(
-      ".AspNet.ApplicationCookie",
-      "ASP.NET_SessionId",
-      "ca-cf-auth",
-      "kit-detail-selected-tab",
-      "jwt"
-    );
+    // Cypress.Cookies.preserveOnce(
+    //   ".AspNet.ApplicationCookie",
+    //   "ASP.NET_SessionId",
+    //   "ca-cf-auth",
+    //   "kit-detail-selected-tab",
+    //   "jwt"
+    // );
   });
 
   this.beforeEach("Fixtures file data", function () {
@@ -58,22 +58,22 @@ describe("Basic Test Case for Element interaction for Work Request kit type", fu
     //  cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content').click({force:true});
     //  cy.get('.btnBorder:nth-child(1) > .v-btn__content').click({force:true});
 
-    //Description
-    cy.get('[placeholder="Description"]').type(this.data.Description);
+    // //Description
+    // cy.get('[placeholder="Description"]').type(this.data.Description);
 
-    cy.get(".v-btn--depressed > .v-btn__content > .inline-svg").scrollIntoView({
-      force: true,
-    });
-    //Icon
-    cy.get(".v-btn--depressed > .v-btn__content > .inline-svg").click({
-      force: true,
-    });
-    cy.get(".thumb-container:nth-child(1) .selected-icon").click({
-      force: true,
-    });
-    cy.get(".button-pop-ups > .v-btn__content").click({ force: true });
+    // cy.get(".v-btn--depressed > .v-btn__content > .inline-svg").scrollIntoView({
+    //   force: true,
+    // });
+    // //Icon
+    // cy.get(".v-btn--depressed > .v-btn__content > .inline-svg").click({
+    //   force: true,
+    // });
+    // cy.get(".thumb-container:nth-child(1) .selected-icon").click({
+    //   force: true,
+    // });
+    // cy.get(".button-pop-ups > .v-btn__content").click({ force: true });
 
-    cy.contains("currency").click({ force: true });
+    // cy.contains("currency").click({ force: true });
     //.type('6767674674')
 
     //Test Date

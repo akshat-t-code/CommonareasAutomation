@@ -1,6 +1,7 @@
 class LoginPage {
   visit() {
-    cy.visit("https://serviceproviders.ca-test.com/");
+    //cy.visit("https://serviceproviders.ca-test.com/");
+    cy.visit("https://serviceproviders.ca-build.com/");
   }
 
   Adminvisit() {
