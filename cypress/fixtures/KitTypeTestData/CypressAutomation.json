@@ -2,10 +2,13 @@
 
     "KitName":"CypressAutomation2",
     "KitName2":"Work Request",
+    "KitName3":"AkshatKitDemo",
 
     "Name":"Cypress Data",
     "Description":"Hello this is form Cypress",
     "Currency":"976766",
+    "Measure":"78878",
+    "Email":"abc@yahoo.in",
     "LocationName":"Nick",
     "Address":"Heree",
     "AddressCount":"US",

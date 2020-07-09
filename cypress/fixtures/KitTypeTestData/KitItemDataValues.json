@@ -1,0 +1,38 @@
+{
+
+    "KitName":"CypressAutomation2",
+    "KitName2":"Work Request",
+    "KitName3":"AkshatKitDemo",
+
+
+    "Text":"Text666",
+    "Url":"https://www.yahoo.com",
+    "Telphone":"3928732435",
+    "TextAera":"Testing the Automation Kit type",
+    "Currency":"878",
+    "Measure":"86",
+    "Email":"Jaadduu@gmail.com",
+    "Address":"Dubai",
+    "AddressCount":"Hawai",
+    "City":"AabuDhabi",
+    "ZipCode":"201002",
+    "Number":"09",
+
+    "SelectListValue":"Value2",
+
+    "CheckboxSelectValue1":"Value222",
+    "CheckboxSelectValue2":"Value333",
+    "CheckboxSelectValue3":"Value444",
+    "CheckboxSelectValue4":"Value111",
+
+    "UserSelectorName":"Deanne Howell",
+
+    "ContactSelectorName":"Vasu Deva",
+
+    "InspectionValue":"Value##2"
+
+
+
+
+
+}

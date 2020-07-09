@@ -54,6 +54,14 @@ class LoginPage {
   AdminUrl() {
     cy.visit("https://starksolutions.ca-test.com/ClientAdmin/Index/#/");
   }
+
+
+  RefreshBtn(){
+
+    cy.get('.button__reset-filters > .v-btn__content').click({force:true})
+    
+  }
+
 }
 
 export default LoginPage;

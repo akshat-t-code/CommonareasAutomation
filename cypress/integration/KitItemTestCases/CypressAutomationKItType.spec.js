@@ -29,7 +29,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       this.KitTypeData = KitTypeData;
     });
 
-    cy.fixture("KitTypeTestData/KitTtypeDataElements").then(function (
+    cy.fixture("KitTypeTestData/KitItemDataValues").then(function (
       KitDataEle
     ) {
       this.KitData = KitDataEle;
@@ -45,52 +45,29 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.Kit.KitName);
-    KTP.OpenKitType(this.Kit.KitName);
+    KTP.SearchKitType(this.Kit.KitName3);
+    KTP.OpenKitType(this.Kit.KitName3);
     //Assertion
     cy.contains("New Item created").should("be.visible");
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only('Time and Date',function(){
-    //Time
-    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
-    cy.wait(3000);
+ 
 
-    cy.get('[placeholder="Add Time"]').first().click({force:true})
-    
-
-    cy.get('#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)')
-    .first().click({force:true})
-
-    cy.wait(5000)
-
-    cy.get('#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)')
-    .last().click({force:true})
-
-    
-    //Click on OK
-    cy.get('.btnBorder:nth-child(1) > .v-btn__content').click({force:true})
-
-   
-
-
-
-    
-  })
-
-  it('Date',function(){
-
-    //Date
-
-    cy.get('[placeholder="Add Date"]').first().click({force:true})
-    cy.get('tr:nth-child(2) > td:nth-child(5) .v-btn__content').click({force:true})
-    cy.get('.dateActions > .btnBorder:nth-child(1) > .v-btn__content').click({force:true})
-
-  })
 
   it("Url Data Type", function () {
     cy.get('[name="Url"]').type(this.KitData.Url);
+    cy.wait(1000);
+    
+    //File
+    cy.get(".link-icon--green > path").click({ force: true });
+    cy.wait(3000);
+    cy.get(".thumb-container:nth-child(5) .selected-icon").click({
+      force: true,
+    });
+    cy.get(
+      ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
+    ).click({ force: true });
     cy.wait(1000);
 
   });
@@ -122,6 +99,38 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(1000);
   });
 
+  it('Slider',function(){
+
+    //cy.get('#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-slider.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div.v-input.theme--light.v-input__slider.col-sm-12.col-md-6.mb-4.px-3 > div > div.v-input__slot > div > div.v-slider__thumb-container > div')
+    cy.get('#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-slider.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div.v-input.v-input--is-label-active.v-input--is-dirty.theme--light.v-input__slider.col-sm-12.col-md-6.mb-4.px-3 > div > div.v-input__slot > div > div.v-slider__thumb-container > div')
+    .click({force:true})
+  
+    })
+
+
+    it('Currency',function(){
+
+      //cy.contains('Currency').last().click({force:true}).type({force:true},'9878')
+
+      cy.get('#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-currency.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-currency--right.ma-0.pa-0.col > div > div > div.v-input__slot > div')
+      .click({force:true}).type(this.KitData.Currency)
+
+    })
+
+    it('Measure',function(){
+
+      //cy.contains('Measure').last().click({force:true}).type({force:true},"76678q2")
+
+      cy.get('#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-measure.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-measure--left.ma-0.pa-0.pr-2.col > div > div > div.v-input__slot > div')
+      .click({force:true}).type(this.KitData.Measure)
+      
+    })
+
+    it('Email',function(){
+      
+      cy.get('[name="Email"]').type(this.KitData.Email)
+    })
+
   it("Address Data Type", function () {
  
     cy.get('[placeholder="Address"]').type(this.KitData.Address);
@@ -151,6 +160,40 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(1000);
   });
 
+
+  
+  it('Time and Date',function(){
+    //Time
+    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    cy.get('[placeholder="Add Time"]').first().click({force:true})
+    
+
+    cy.get('#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)')
+    .first().click({force:true})
+
+    cy.wait(5000)
+
+    cy.get('#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)')
+    .last().click({force:true})
+
+    
+    //Click on OK
+    cy.get('.btnBorder:nth-child(1) > .v-btn__content').click({force:true})
+    
+  })
+
+  it('Date',function(){
+
+    //Date
+
+    cy.get('[placeholder="Add Date"]').first().click({force:true})
+    cy.get('tr:nth-child(2) > td:nth-child(5) .v-btn__content').click({force:true})
+    cy.get('.dateActions > .btnBorder:nth-child(1) > .v-btn__content').click({force:true})
+
+  })
+
   it("Toggle Data type", function () {
 
     cy.get(".sync-switch .v-input--selection-controls__ripple").click({force:true});
@@ -158,22 +201,22 @@ describe("Basic Test Case for Element interaction for common area DT", function 
   });
 
 
-  it("SelectList Data type", function () {
+  it.only("SelectList Data type", function () {
     //Click on DropDown
     cy.get(
-      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div:nth-child(13) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div:nth-child(17) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
     ).click({ force: true });
 
     cy.contains("Value2").click({ force: true });
   });
 
-  it("Radio CheckBox Data type", function () {
+  it.only("Radio CheckBox Data type", function () {
 
     cy.contains("Value22").click({ force: true })
 
   });
 
-  it("CheckBoxSelect Data type", function () {
+  it.only("CheckBoxSelect Data type", function () {
     
     cy.contains("Value222").click({ force: true });
     cy.contains("Value333").click({ force: true });
@@ -190,12 +233,61 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     
   });
 
-  it("Stepper Data Element", function () {
+  it.only("Stepper Data Element", function () {
 
     cy.contains('Stepper').scrollIntoView({ force: true });
     cy.get('.v-stepper__step:nth-child(5) > .v-stepper__step__step').click({ force: true });
 
   });
+
+
+  it.only('UserSelector',function(){
+
+    cy.get('.kit-control-component:nth-child(22) .inline-svg').click({ force: true });
+
+    cy.contains('Deanne Howell').click({ force: true });
+
+
+  })
+
+  it.only('ContactSelector',function(){
+
+    cy.get('.kit-control-component:nth-child(24) .inline-svg').click({ force: true });
+    cy.contains('Vasu Deva').click({ force: true });
+    
+  })
+
+  it.only('Icon',function(){
+
+    cy.get('.v-btn--depressed > .v-btn__content > .inline-svg > path').click({ force: true });
+    cy.get('.thumb-container:nth-child(1) .selected-icon').click({ force: true });
+    cy.get('.button-pop-ups').click({ force: true });
+    
+
+    
+  })
+
+  it.only('Inspection',function(){
+
+ cy.contains('Value##2').click({ force: true });
+
+    
+  })
+
+  it.only('Assigning',function(){
+
+    cy.get('.searchIcon > .inline-svg > path').click({ force: true });
+
+    cy.get('.list-item-search').click({ force: true });
+    cy.get('.button-pop-ups--size > .v-btn__content').click({ force: true });
+    
+    
+  })
+
+
+
+
+
 
   it('One To Many Relation Data Element',function(){
 

@@ -14,6 +14,7 @@
     "Section":"Section",
     "Time":"Time",
     "Date":"Date",
+    "ReminderName":"Reminder",
     "Toggle":"Toggle",
 
     "SelectList":"SelectList",
@@ -101,9 +102,9 @@
 
     "RCName":"Reactive Control",
 
-    "RVName":"Reactive Vriable",
+    "RVName":"Reactive Vriable"
     
-    "ReminderName":"Reminder"
+    
 
 
 }
