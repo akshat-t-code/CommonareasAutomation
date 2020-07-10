@@ -35,7 +35,34 @@ class RandomString {
     };
   }
 
-    getRandomPhoneNo() {
+  OTMRandomAPIName1() {
+    
+    return {
+      APIName: this.generate_random_string(5),
+      RelatedAPIName: this.generate_random_string(5),
+      ReverseEleAPIName: this.generate_random_string(5),
+    };
+  }
+
+  OTORandomAPIName2() {
+    
+    return {
+      OTOAPIName: this.generate_random_string(5),
+      OTORelatedAPIName: this.generate_random_string(5),
+      OTOReverseEleAPIName: this.generate_random_string(5),
+    };
+  }
+
+  SQRandomAPIName3() {
+    
+    return {
+      SQAPIName: this.generate_random_string(5),
+      SQatedAPIName: this.generate_random_string(5),
+      SQReverseEleAPIName: this.generate_random_string(5),
+    };
+  }
+
+  getRandomPhoneNo() {
     return Math.floor(Math.random() * 9000000000) + 1000000000;
   }
 }

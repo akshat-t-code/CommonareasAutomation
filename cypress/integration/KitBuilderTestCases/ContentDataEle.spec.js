@@ -44,38 +44,29 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("Content Section Data Elements", function () {
-    cy.contains("Content").click({ force: true });
-    cy.wait(2000);
-  });
-
-  it("UserSelector Data Type", function () {
+  it.only("OneToManyRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
-    cy.get('[title="User Selector"]').dblclick({ force: true });
+    cy.get('[title="Relation 1-N"]').dblclick({ force: true });
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.UserSelector(this.DataType.UserSelector);
-    cy.wait(5000);
-  });
 
-  it("ContactSelector Data Type", function () {
-    //Double click on Data Element to drag it on Canvas
-    cy.get('[title="Contact Selector"]').dblclick({ force: true });
-    cy.wait(1000);
-    //Page Object
-    const DataType = new KitBuilderDataTypes();
-    DataType.ContactSelector(this.DataType.ContactSelector);
-    cy.wait(5000);
-  });
+    DataType.OneToManyRelation(
+      this.DataType.OneToManyRelation,
+      this.DataType.KitToBeRelated,
+      this.data1.KitName,
+      this.DataType.RelatedTableView,
+      this.DataType.RelatedEle_1,
+      this.DataType.RelatedEle_2,
+      this.DataType.RelatedEle_3,
+      this.DataType.RelatedEle_4,
+      this.DataType.RelatedEle_5,
+      this.DataType.OneToManyRelatedNew,
+      this.DataType.OneToManyRelatedEdit,
+      this.DataType.OneToManyMapView,
+      this.DataType.OneToManySearchView
+    );
 
-  it("Assigning Data Type", function () {
-    //Double click on Data Element to drag it on Canvas
-    cy.get('[title="Assigning"]').dblclick({ force: true });
-    cy.wait(1000);
-    //Page Object
-    const DataType = new KitBuilderDataTypes();
-    DataType.Assigning(this.DataType.Assigning);
     cy.wait(5000);
   });
 
@@ -94,6 +85,72 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType.StepperValue4,
       this.DataType.StepperValue5
     );
+    cy.wait(5000);
+  });
+
+  it("UserSelector Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="User Selector"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.UserSelector(this.DataType.UserSelector);
+    cy.wait(5000);
+  });
+
+  it("OneToOneRelation Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Relation 1-1"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+
+    DataType.OneToOneRelation(
+      this.DataType.OneToOneRelation,
+      this.DataType.KitToBeRelate,
+      this.data1.KitName,
+      this.DataType.ElementToBeRelate,
+      this.DataType.OneToOneRelatedNew,
+      this.DataType.OneToOneRelatedEdit,
+      this.DataType.OneToOneMapView,
+      this.DataType.OneToOneSearchView
+    );
+    cy.wait(5000);
+  });
+
+  it("ContactSelector Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Contact Selector"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.ContactSelector(this.DataType.ContactSelector);
+    cy.wait(5000);
+  });
+
+  it("SquareCard Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="SquareCard"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+
+    DataType.SquareCard(
+      this.DataType.SquareCardName,
+      this.DataType.CardKitToBeRelated,
+      this.data1.KitName,
+      this.DataType.SquareCardTableView,
+      this.DataType.RelateEle_1,
+      this.DataType.RelateEle_2,
+      this.DataType.RelateEle_3,
+      this.DataType.RelateEle_4,
+      this.DataType.RelateEle_5,
+      this.DataType.CardRelatedNew,
+      this.DataType.CardRelatedEdit,
+      this.DataType.CardMapView,
+      this.DataType.CardSearchView
+    );
+
     cy.wait(5000);
   });
 
@@ -125,71 +182,13 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("OneToOneRelation Data Type", function () {
+  it("Assigning Data Type", function () {
     //Double click on Data Element to drag it on Canvas
-    cy.get('[title="Relation 1-1"]').dblclick({ force: true });
+    cy.get('[title="Assigning"]').dblclick({ force: true });
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-
-    DataType.OneToOneRelation(
-      this.DataType.OneToOneRelation,
-      this.DataType.KitToBeRelate,
-      this.DataType.ElementToBeRelate,
-      this.DataType.OneToOneRelatedNew,
-      this.DataType.OneToOneRelatedEdit,
-      this.DataType.OneToOneMapView,
-      this.DataType.OneToOneSearchView
-    );
-    cy.wait(5000);
-  });
-
-  it.only("OneToManyRelation Data Type", function () {
-    //Double click on Data Element to drag it on Canvas
-    cy.get('[title="Relation 1-N"]').dblclick({ force: true });
-    cy.wait(1000);
-    //Page Object
-    const DataType = new KitBuilderDataTypes();
-
-    DataType.OneToManyRelation(
-      this.DataType.OneToManyRelation,
-      this.DataType.KitToBeRelated,
-      this.DataType.RelatedTableView,
-      this.DataType.RelatedEle_1,
-      this.DataType.RelatedEle_2,
-      this.DataType.RelatedEle_3,
-      this.DataType.RelatedEle_4,
-      this.DataType.RelatedEle_5,
-      this.DataType.OneToManyRelatedNew,
-      this.DataType.OneToManyRelatedEdit,
-      this.DataType.OneToManyMapView,
-      this.DataType.OneToManySearchView
-    );
-
-    cy.wait(5000);
-  });
-
-  it("SquareCard Data Type", function () {
-    //Double click on Data Element to drag it on Canvas
-    cy.get('[title="SquareCard"]').dblclick({ force: true });
-    cy.wait(1000);
-    //Page Object
-    const DataType = new KitBuilderDataTypes();
-
-    DataType.SquareCard(
-      this.DataType.SquareCardName,
-      this.DataType.CardKitToBeRelated,
-      this.DataType.SquareCardTableView,
-      this.DataType.RelateEle_1,
-      this.DataType.RelateEle_2,
-      this.DataType.RelateEle_3,
-      this.DataType.RelateEle_4,
-      this.DataType.RelateEle_5,
-      this.DataType.CardRelatedNew,
-      this.DataType.CardRelatedEdit,
-      this.DataType.CardMapView,
-      this.DataType.CardSearchView
-    );
+    DataType.Assigning(this.DataType.Assigning);
     cy.wait(5000);
   });
 

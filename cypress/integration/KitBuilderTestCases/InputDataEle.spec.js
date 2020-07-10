@@ -151,6 +151,16 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
+  it("Section Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Section"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Section(this.DataType.Section);
+    cy.wait(5000);
+  });
+
   it("Number Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Number"]').dblclick({ force: true });
@@ -161,15 +171,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("Section Data Type", function () {
-    //Double click on Data Element to drag it on Canvas
-    cy.get('[title="Section"]').dblclick({ force: true });
-    cy.wait(1000);
-    //Page Object
-    const DataType = new KitBuilderDataTypes();
-    DataType.Section(this.DataType.Section);
-    cy.wait(5000);
-  });
+  
 
   it("Kit Builder Save and Publish", function () {
     //Kit Builder Save

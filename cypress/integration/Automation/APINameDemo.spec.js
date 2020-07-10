@@ -3,26 +3,44 @@ import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 import RandomString from "../PageObject/RandomString";
 
+//One To Many Relation Control Variables
 let APIData;
 let OTMAPIName;
 let OTMRelatedAPIName;
 let OTMReverseEleAPIName;
 
-//Randomly Generated APINames for Relation Control Elements coming from PageObject(RandomString Class)
+//One To One Relation Control Variables
+let APIData1;
+let OTOApiName;
+let OTORelatedApiName;
+let OTOReverseEleApiName;
+
+//Squared Card Relation Control Variables
+let APIData2;
+let SQApiName;
+let SQatedApiName;
+let SQReverseEleApiName;
+
+//Randomly Generated APINames for OneTOMany Relation Control Elements coming from PageObject(RandomString Class)
 const Rs = new RandomString();
 APIData = Rs.OTMRandomAPIName1();
 OTMAPIName = APIData.APIName;
 OTMRelatedAPIName = APIData.RelatedAPIName;
 OTMReverseEleAPIName = APIData.ReverseEleAPIName;
 
+//Randomly Generated APINames for OneToOne Relation Control Elements coming from PageObject(RandomString Class)
+const Rs1 = new RandomString();
+APIData1 = Rs1.OTORandomAPIName2();
+OTOApiName = APIData1.OTOAPIName;
+OTORelatedApiName = APIData1.OTORelatedAPIName;
+OTOReverseEleApiName = APIData1.OTOReverseEleAPIName;
 
-
-
-
-
-
-
-
+//Randomly Generated APINames for SquareCard Relation Control Elements coming from PageObject(RandomString Class)
+const Rs2 = new RandomString();
+APIData2 = Rs2.SQRandomAPIName3();
+SQApiName = APIData2.SQAPIName;
+SQatedApiName = APIData2.SQatedAPIName;
+SQReverseEleApiName = APIData2.SQReverseEleAPIName;
 
 describe("Kit Builder Data Types Details", function () {
   this.beforeAll(function () {
@@ -31,12 +49,32 @@ describe("Kit Builder Data Types Details", function () {
       APIName: OTMAPIName,
       RelatedAPIName: OTMRelatedAPIName,
       ReverseEleAPIName: OTMReverseEleAPIName,
+      OTOAPIName: OTOApiName,
+      OTORelatedAPIName: OTORelatedApiName,
+      OTOReverseEleAPIName: OTOReverseEleApiName,
+      SQAPIName: SQApiName,
+      SQRelatedAPIName: SQatedApiName,
+      SQReverseEleAPIName: SQReverseEleApiName,
     });
 
-    cy.log("Data has been write to json file for API Names");
+    cy.log(
+      "OneToMany API Names Data has been write to json file for API Names"
+    );
     cy.log(OTMAPIName);
     cy.log(OTMRelatedAPIName);
     cy.log(OTMReverseEleAPIName);
+
+    cy.log("OneToOne API Names Data has been write to json file for API Names");
+    cy.log(OTOApiName);
+    cy.log(OTORelatedApiName);
+    cy.log(OTOReverseEleApiName);
+
+    cy.log(
+      "SquareCard API Names Data has been write to json file for API Names"
+    );
+    cy.log(SQApiName);
+    cy.log(SQatedApiName);
+    cy.log(SQReverseEleApiName);
 
     //Page Object
     const lp = new LoginPage();
@@ -67,7 +105,7 @@ describe("Kit Builder Data Types Details", function () {
     });
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -425,9 +463,9 @@ describe("Kit Builder Data Types Details", function () {
     DataType.OneToOneRelation(
       this.DataType.OneToOneRelation,
       this.DataType.KitToBeRelate,
-      this.DataType.OTOAPIName,
-      this.DataType.OTORelatedAPIName,
-      this.DataType.OTOReverseEleAPIName,
+      this.APIData.OTOAPIName,
+      this.APIData.OTORelatedAPIName,
+      this.APIData.OTOReverseEleAPIName,
       this.DataType.ElementToBeRelate,
       this.DataType.OneToOneRelatedNew,
       this.DataType.OneToOneRelatedEdit,
@@ -447,7 +485,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("SquareCard Data Type", function () {
+  it.only("SquareCard Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="SquareCard"]').dblclick({ force: true });
     cy.wait(1000);
@@ -457,7 +495,9 @@ describe("Kit Builder Data Types Details", function () {
     DataType.SquareCard(
       this.DataType.SquareCardName,
       this.DataType.CardKitToBeRelated,
-      this.data1.KitName,
+      this.APIData.SQAPIName,
+      this.APIData.SQRelatedAPIName,
+      this.APIData.SQReverseEleAPIName,
       this.DataType.SquareCardTableView,
       this.DataType.RelateEle_1,
       this.DataType.RelateEle_2,

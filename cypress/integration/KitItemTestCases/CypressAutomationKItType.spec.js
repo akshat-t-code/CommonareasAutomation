@@ -257,6 +257,42 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     
   })
 
+
+  it.only('One To One Relation',function(){
+
+
+    //OneToOne Relation
+    cy.get('.mr-4 > .inline-svg > path').click({ force: true });
+    cy.wait(2000)
+    //Assertion
+    cy.contains("New Item created").should("be.visible");
+
+    //Related New Form Elements Interaction
+    //Name
+    cy.get('[name="Name"]').type(this.KitItemData.Text);
+
+    //Url
+    cy.get('[name="Url"]').first().type(this.KitItemData.Url);
+
+    //Related New Kit Type saved for One TO One Relation Control
+    cy.get('.v-dialog__content:nth-child(5) .fill-height:nth-child(3) .v-btn__content:nth-child(1)')
+    .click({ force: true });
+
+    cy.wait(2000);
+    cy.log('Related New Kit item has been Close')
+
+    cy.wait(5000)
+    cy.log("Related New Kit Type has been saved");
+
+    cy.get('.v-dialog__content:nth-child(5) .navi-bar:nth-child(1) .inline-svg:nth-child(1)')
+    .click({ force: true });
+    cy.wait(2000)
+
+    cy.log('Related New Kit item has been Close')
+
+
+  })
+
   it.only('Icon',function(){
 
     cy.get('.v-btn--depressed > .v-btn__content > .inline-svg > path').click({ force: true });

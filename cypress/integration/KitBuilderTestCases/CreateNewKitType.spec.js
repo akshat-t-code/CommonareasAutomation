@@ -37,6 +37,7 @@ describe("Create New Kit type ", function () {
     cy.KitLabel(this.data1.KitLabel);
     cy.KitName(this.data1.KitName);
     cy.KitDescription(this.data1.KitDescription);
+    cy.ApiName(this.data1.APIName)
     cy.KitIcon();
     cy.CreateKit();
     cy.log('New Kit Type has been Created')

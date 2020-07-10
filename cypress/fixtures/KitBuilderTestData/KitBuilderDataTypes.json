@@ -64,8 +64,11 @@
     "InspectionValue4":"Value##4",
     "InspectionValue5":"Value##5",
 
-    "OneToOneRelation":"1-1 Relation",
+    "OneToOneRelation":"OneToOneRelation",
     "KitToBeRelate":"AAKit",
+    "OTOAPIName":"",
+    "OTORelatedAPIName":"",
+    "OTOReverseEleAPIName":"",
     "OneToOneRelatedNew":"related new",
     "OneToOneRelatedEdit":"RealtedEdit",
     "OneToOneMapView":"MapView",
@@ -73,8 +76,11 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"1-N Relation",
+    "OneToManyRelation":"OneToManyRelation",
     "KitToBeRelated":"AAKit",
+    "APIName":"",
+    "RelatedAPIName":"",
+    "ReverseEleAPIName":"",
     "OneToManyRelatedNew":"related new",
     "OneToManyRelatedEdit":"RealtedEdit",
     "OneToManyMapView":"MapView",
@@ -89,6 +95,9 @@
      
     "SquareCardName":"SquareCard",
     "CardKitToBeRelated":"Children",
+    "SQAPIName":"",
+    "SQRelatedAPIName":"",
+    "SQReverseEleAPIName":"",
     "CardRelatedNew":"related new",
     "CardRelatedEdit":"related edit",
     "CardMapView":"MapView",

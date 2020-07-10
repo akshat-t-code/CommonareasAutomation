@@ -157,9 +157,15 @@ Cypress.Commands.add("KitDescription",(KitDescription)=>{
     .click({force:true}).type(KitDescription)
 })
 
+Cypress.Commands.add("ApiName",(ApiName)=>{
+    cy.get('#app > div.v-dialog__content.v-dialog__content--active > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div')
+    .click({force:true}).type(ApiName)
+})
+
 Cypress.Commands.add("KitIcon",()=>{
 
-    cy.get('#app > div.v-dialog__content.v-dialog__content--active > div > div > div.container > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div.v-select__slot > div > div').click({force:true})
+    cy.get('#app > div.v-dialog__content.v-dialog__content--active > div > div > div.container > div > div > form > div:nth-child(4) > div > div > div > div.v-input__slot > div.v-select__slot > div > div')
+    .click({force:true})
     cy.get('.v-list-item:nth-child(1) .v-list-item__title').click({force:true})
 })
 
@@ -529,8 +535,8 @@ Cypress.Commands.add("TimelineListViewIcon",()=>{
 
 Cypress.Commands.add("SaveTimelineList",()=>{ 
     //Click on Checkbox
-    cy.contains('Default View for Kit').click({force:true})
-    //Click on Save
+    // cy.contains('Default View for Kit').click({force:true})
+    // //Click on Save
    cy.get('.ca-button-green:nth-child(2) > .v-btn__content').click();
    //Click on Assertion msg for save
    cy.get('.v-btn__content > .theme--dark').click();
