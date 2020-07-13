@@ -29,7 +29,25 @@
 
     "ContactSelectorName":"Vasu Deva",
 
-    "InspectionValue":"Value##2"
+    "InspectionValue":"Value##2",
+
+    "ReminderTitle":"Reminder Title",
+    "ReminderTypeOneTime":"One-Time",
+    "ReminderTypeRecurring":"Recurring",
+
+    "ChannelWebApp":"Web App",
+    "ChannelEmail":"E-mail",
+    "ChannelMobileApp":"Mobile App",
+
+    "RepeatDaily":"Daily",
+    "RepeatMonFriday":"Mon-Friday",
+    "RepeatWeekly":"Weekly",
+    "RepeatMonthlyDay":"Monthly - Day",
+    "RepeatMonthlyOfDay":"Monthly - Of Day",
+    "RepeatAnnuallyDate":"Annually - Date",
+    "RepeatAnnuallyOfMonth":"Annually - Of Month"
+    
+
 
 
 
