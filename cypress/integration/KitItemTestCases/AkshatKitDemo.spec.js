@@ -146,8 +146,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //   force: true,
     // });
 
-
-  //----------------------//Reminder One time------------------------------------------------------------
+    //----------------------//Reminder One time------------------------------------------------------------
 
     //Reminder
 
@@ -204,19 +203,17 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     });
      
     */
-    
 
     //----------------------//Repeats-->RepeatDaily Case In Recurring Type------------------------------------------------------------
 
-    /*
     //Click to open Reminder POPUP
     cy.contains("SET REMINDER").click({ force: true });
     cy.log("Reminder has been Opened");
     cy.wait(2000);
 
     //Reminder Tittle
-    cy.get('[items="Recurring,One-Time"]').type(this.KitItemData.ReminderTitle);
-    cy.wait(1000);
+    // cy.get('[items="Recurring,One-Time"]').type(this.KitItemData.ReminderTitle);
+    // cy.wait(1000);
     //Reminder Type-->Click on DropDown
     cy.contains("arrow_drop_down").click({ force: true });
 
@@ -226,16 +223,16 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       .click({ force: true });
 
     //Reminder Start Date
-    cy.contains("Reminder Date").click({ force: true });
-    cy.get("tr:nth-child(3) > td:nth-child(4) .v-btn__content").click({
-      force: true,
-    });
-    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    // cy.contains("Reminder Date").click({ force: true });
+    // cy.get("tr:nth-child(3) > td:nth-child(4) .v-btn__content").click({
+    //   force: true,
+    // });
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
-    //Repeats-->RepeatDaily Case In Recurring Type
-    cy.get('[content-class="reminder-menu "]').click({ force: true });
-    cy.wait(2000);
-    cy.contains(this.KitItemData.RepeatDaily).click({ force: true });
+    // //Repeats-->RepeatDaily Case In Recurring Type
+    // cy.get('[content-class="reminder-menu "]').click({ force: true });
+    // cy.wait(2000);
+    // cy.contains(this.KitItemData.RepeatDaily).click({ force: true });
 
     //Time
     //  cy.get('#inspire > div:nth-child(4) > div > div > div > div.fill-height.pop-up-reminder.v-card.v-sheet.theme--light > div.v-card__text.pop-up-reminder--content > div > div.row.d-flex.repeat-section > div.d-flex.justify-end.col-sm-12.col-md-6.col > div.v-input.reminder--time.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot')
@@ -245,7 +242,14 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //  cy.get('.btnBorder:nth-child(1) > .v-btn__content').click();
 
     //End Date
-    cy.contains("End Date").last().click({ force: true });
+    //cy.get('div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot').last()
+    //.click({ force: true });
+
+   // cy.get('div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-input__append-inner > div')
+   // .last().click({force:true})
+
+    //cy.contains("End Date").last().click({ force: true });
+    cy.wait(3000);
     cy.get("tr:nth-child(3) > td:nth-child(3) .v-btn__content").click({
       force: true,
     });
@@ -258,16 +262,14 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //cy.contains('Never').click({force:true});
 
     //Select Channels
-    cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
-    cy.contains(this.KitItemData.ChannelEmail).click({ force: true });
-    cy.contains(this.KitItemData.ChannelMobileApp).click({ force: true });
+    // cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
+    // cy.contains(this.KitItemData.ChannelEmail).click({ force: true });
+    // cy.contains(this.KitItemData.ChannelMobileApp).click({ force: true });
 
     //Save Reminder for -->RepeatDaily Case In Recurring Type
-    cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
-      force: true,
-    });
-
-    */
+    // cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+    //   force: true,
+    // });
 
     //----------------------//Repeats-->Repeat Mon-Friday Case In Recurring Type------------------------------------------------------------
 
@@ -334,59 +336,68 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //----------------------//Repeats-->Repeat Weekly Case In Recurring Type------------------------------------------------------------
 
-    
-      
-   //Click to open Reminder POPUP
-   cy.contains("SET REMINDER").click({ force: true });
-   cy.log("Reminder has been Opened");
-   cy.wait(2000);
+    /*
 
-   //Reminder Tittle
-   cy.get('[items="Recurring,One-Time"]').type(this.KitItemData.ReminderTitle);
-   cy.wait(1000);
-   //Reminder Type-->Click on DropDown
-   cy.contains("arrow_drop_down").click({ force: true });
+    //Click to open Reminder POPUP
+    cy.contains("SET REMINDER").click({ force: true });
+    cy.log("Reminder has been Opened");
+    cy.wait(2000);
 
-   //Reminder for Recurring
-   cy.contains(this.KitItemData.ReminderTypeRecurring)
-     .first()
-     .click({ force: true });
+    //Reminder Tittle
+    cy.get('[items="Recurring,One-Time"]').type(this.KitItemData.ReminderTitle);
+    cy.wait(1000);
+    //Reminder Type-->Click on DropDown
+    cy.contains("arrow_drop_down").click({ force: true });
 
-   //Reminder Start Date
-   cy.contains("Reminder Date").click({ force: true });
-   cy.get("tr:nth-child(3) > td:nth-child(4) .v-btn__content").click({
-     force: true,
-   });
-   cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    //Reminder for Recurring
+    cy.contains(this.KitItemData.ReminderTypeRecurring)
+      .first()
+      .click({ force: true });
 
-   //Repeats-->Repeat Weekly Case In Recurring Type
-   cy.get('[content-class="reminder-menu "]').click({ force: true });
-   cy.wait(2000);
-   cy.contains(this.KitItemData.RepeatWeekly).click({ force: true });
-   
-   cy.wait(2000)
-   //Select the Day of Week
-   cy.contains('Sun').click({ force: true });
-   cy.wait(1000)
+    //Reminder Start Date
+    cy.contains("Reminder Date").click({ force: true });
+    cy.get("tr:nth-child(3) > td:nth-child(4) .v-btn__content").click({
+      force: true,
+    });
+    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
-  //  cy.contains('Mon').click({ force: true });
-  //  cy.wait(1000)
+    //Repeats-->Repeat Weekly Case In Recurring Type
+    cy.get('[content-class="reminder-menu "]').click({ force: true });
+    cy.wait(2000);
+    cy.contains(this.KitItemData.RepeatWeekly).click({ force: true });
 
-  //  cy.contains('Tue').click({ force: true });
-  //  cy.wait(1000)
+    cy.wait(2000);
+    //Select the Day of Week
+    // cy.contains("Sun").click({ force: true });
+    // cy.wait(1000);
 
-  //  cy.contains('Wed').click({ force: true });
-  //  cy.wait(1000)
+    cy.contains("Sat").click({ force: true });
+    cy.wait(1000);
 
-  //  cy.contains('Thu').click({ force: true });
-  //  cy.wait(1000)
 
-  //  cy.contains('Fri').click({ force: true });
-  //  cy.wait(1000)
+    // cy.contains("Tue").click({ force: true });
+    // cy.wait(1000);
 
-  //  cy.contains('Sat').click({ force: true });
-  //  cy.wait(1000)
-    
+    // cy.contains("Thu").click({ force: true });
+    // cy.wait(1000);
+
+    // //Click on Monday
+    // cy.get(".mr-2:nth-child(2) .v-input--selection-controls__ripple").click({
+    //   force: true,
+    // });
+    // cy.wait(1000);
+
+    //click on  Web
+    cy.get('.v-input:nth-child(4) .v-input--selection-controls__ripple')
+    .click({ force: true });
+    cy.wait(1000);
+
+    // //Click on Friday
+    // cy.get(".v-input:nth-child(6) .v-input--selection-controls__ripple").click({
+    //   force: true,
+    // });
+    // cy.wait(2000);
+
     //Time
     //  cy.get('#inspire > div:nth-child(4) > div > div > div > div.fill-height.pop-up-reminder.v-card.v-sheet.theme--light > div.v-card__text.pop-up-reminder--content > div > div.row.d-flex.repeat-section > div.d-flex.justify-end.col-sm-12.col-md-6.col > div.v-input.reminder--time.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot')
     //  .click({force:true});
@@ -417,7 +428,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       force: true,
     });
 
-    
+    */
 
     //----------------------//Repeats-->Repeat Monthly - Day Case In Recurring Type------------------------------------------------------------
 
@@ -678,7 +689,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     */
 
     //----------------------//Repeats-->Repeat Annually - Of Month Case In Recurring Type------------------------------------------------------------
-   
+
     /*
 
 
@@ -777,10 +788,6 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     });
 
    */
-
-
-
-
 
     // //Scrolling
     // cy.contains("NEW ITEM").first().scrollIntoView({ force: true });

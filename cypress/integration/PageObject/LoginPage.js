@@ -34,6 +34,11 @@ class LoginPage {
     btn.click();
   }
 
+  HMBIcon(){
+    const btn=cy.get('.v-btn__content > .v-icon')
+    btn.click({force:true});
+  }
+
   ConnectionIcon() {
     const btn = cy.get(".new-contact #Layer_1");
     btn.click();
@@ -60,6 +65,12 @@ class LoginPage {
 
     cy.get('.button__reset-filters > .v-btn__content').click({force:true})
     
+  }
+
+  FilterIcon(){
+    const btn=cy.get('.fill-height > .v-btn #Layer_1')
+    btn.click({force:true});
+
   }
 
 }

@@ -76,7 +76,6 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       cy.get('.subheader--button-icon-wrapper .inline-svg').click({force:true});
       cy.get('.subheader--button-icon-wrapper .inline-svg').click({force:true});
 
-
   })
 
   it("Kit Item Saved", function () {
