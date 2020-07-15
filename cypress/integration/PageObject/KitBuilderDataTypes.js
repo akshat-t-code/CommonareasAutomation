@@ -824,6 +824,7 @@ class KitBuilderDataTypes {
 
     //RadioSelect customize name
     //Click on +
+    cy.wait(3000)
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     //write customize RadioSelectName
     cy.get(
@@ -1975,7 +1976,7 @@ class KitBuilderDataTypes {
 
     cy.wait(3000);
     //Click on Edit btn to add Elements
-    cy.get(".editKitElementBtn").click({ force: true });
+    cy.get(".editTableListBtn").click({ force: true });
     //Add List Results
     cy.contains("Add List Results").click({ force: true });
     //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
@@ -2170,7 +2171,7 @@ class KitBuilderDataTypes {
 
     cy.wait(3000);
     //Click on Edit btn to add Elements
-    cy.get(".editKitElementBtn").click({ force: true });
+    cy.get(".editTableListBtn").click({ force: true });
     //Add List Results
     cy.contains("Add List Results").click({ force: true });
     //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})

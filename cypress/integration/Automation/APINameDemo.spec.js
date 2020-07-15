@@ -105,7 +105,7 @@ describe("Kit Builder Data Types Details", function () {
     });
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -380,17 +380,17 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("Kit Builder Save and Publish", function () {
-    //Kit Builder Save
-    cy.get(".ca-button-green:nth-child(1)").click();
-    cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Saved");
-    //Click on  Publish
-    cy.contains("Publish").click({ force: true });
-    //cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Published");
-    cy.wait(2000);
-  });
+  // it("Kit Builder Save and Publish", function () {
+  //   //Kit Builder Save
+  //   cy.get(".ca-button-green:nth-child(1)").click();
+  //   cy.get(".v-btn__content > .theme--dark").click();
+  //   cy.log("Kit builder(New Form) has been Saved");
+  //   //Click on  Publish
+  //   cy.contains("Publish").click({ force: true });
+  //   //cy.get(".v-btn__content > .theme--dark").click();
+  //   cy.log("Kit builder(New Form) has been Published");
+  //   cy.wait(2000);
+  // });
 
   it("Content Section Data Elements", function () {
     cy.contains("Content").click({ force: true });
@@ -485,7 +485,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("SquareCard Data Type", function () {
+  it.only("SquareCard Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="SquareCard"]').dblclick({ force: true });
     cy.wait(1000);
@@ -565,7 +565,7 @@ describe("Kit Builder Data Types Details", function () {
 
   */
 
-  it("Kit Builder Save and Publish", function () {
+  it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();
