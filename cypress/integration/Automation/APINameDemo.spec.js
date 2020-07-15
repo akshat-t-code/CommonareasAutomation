@@ -485,7 +485,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it.only("SquareCard Data Type", function () {
+  it("SquareCard Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="SquareCard"]').dblclick({ force: true });
     cy.wait(1000);
