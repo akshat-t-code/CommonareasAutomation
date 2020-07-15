@@ -76,9 +76,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.get('[name="TextAera"]').type(this.KitItemData.TextAera);
     cy.wait(1000);
 
-    Slider;
+    //Slider;
 
-    Currency;
+    // Currency;
 
     cy.get(
       "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-currency.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-currency--right.ma-0.pa-0.col > div > div > div.v-input__slot > div"
@@ -94,7 +94,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       .click({ force: true })
       .type(this.KitItemData.Measure);
 
-    Email;
+    //Email;
     cy.get('[name="Email"]').type(this.KitItemData.Email);
 
     //Address
@@ -288,7 +288,6 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
 
     //Click on New Item Related New Kit Type for Square Card Relation Control
-
     cy.get(
       ".kit-control-grid:nth-child(25) .ma-2:nth-child(2) > .v-btn__content"
     ).click({ force: true });
@@ -305,18 +304,23 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.get('[name="url"]').type(this.KitItemData.Url);
 
     //Related New Kit Type saved for Square Card Relation Control
-
     cy.get(
-      "#inspire > div:nth-child(4) > div > div > div > div:nth-child(2) > div.navi-bar.fill-height.d-flex.px-6.header-box-border.col.col-12 > div.fill-height.d-flex.align-center.justify-end.px-4.col-md-5.col-lg-7.col-xl-4.col-8 > div.navi-bar-dropdown.fill-height.align-center.overflow-max-width.col-md-9.col-lg-8.col-10 > div > div > div.v-input__slot > div.v-select__slot > div.v-select__selections > button"
+      "#inspire > div:nth-child(1) > div > div > div > div:nth-child(2) > div.navi-bar.fill-height.d-flex.px-6.header-box-border.col.col-12 > div.fill-height.d-flex.align-center.justify-end.px-4.col-md-5.col-lg-7.col-xl-4.col-8 > div.navi-bar-dropdown.fill-height.align-center.overflow-max-width.col-md-9.col-lg-8.col-10 > div > div > div.v-input__slot > div.v-select__slot > div.v-select__selections > button"
     )
-      // cy.get('.v-dialog__content:nth-child(2) .fill-height:nth-child(3) .v-btn__content:nth-child(1)')
+
+      // cy.get(
+      //   "#inspire > div:nth-child(2) > div > div > div > div:nth-child(2) > div.navi-bar.fill-height.d-flex.px-6.header-box-border.col.col-12 > div.fill-height.d-flex.col-md-7.col-lg-5.col-xl-8.col-4 > div.subheader--button-icon-wrapper.fill-height.d-flex.align-center.col > div > button > span > svg"
+      // )
       .click({ force: true });
 
     cy.log("Related New Kit Type has been saved for Square Card'");
     cy.wait(5000);
+    //Close the kit item for square card
     cy.get(
-      ".v-dialog__content:nth-child(2) .navi-bar:nth-child(1) .inline-svg:nth-child(1)"
-    ).click({ force: true });
+      "div.navi-bar.fill-height.d-flex.px-6.header-box-border.col.col-12 > div.fill-height.d-flex.col-md-7.col-lg-5.col-xl-8.col-4 > div.subheader--button-icon-wrapper.fill-height.d-flex.align-center.col > div > button"
+    )
+      .first()
+      .click({ force: true });
     cy.log("Related New Kit item has been Close for Square Card");
 
     //save AkshatKitDemo Kit Type
