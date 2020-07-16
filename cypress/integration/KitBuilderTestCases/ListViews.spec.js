@@ -31,7 +31,7 @@ describe("List Views Elements", function () {
 
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -50,7 +50,7 @@ describe("List Views Elements", function () {
 
   });
 
-  it("Table List", function () {
+  it.only("Table List", function () {
 
     //View Name coming form json file
     cy.contains(this.data.TableView).click({ force: true });
@@ -71,6 +71,7 @@ describe("List Views Elements", function () {
     //Click on Save
     cy.wait(2000);
     cy.get(".mr-2 > .v-btn__content").click();
+    cy.log('Table List "s Element has been saved')
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
 
@@ -83,8 +84,38 @@ describe("List Views Elements", function () {
     cy.contains(this.ListView.AddTableListFilters_1).click({ force: true });
     cy.contains(this.ListView.AddTableListFilters_2).click({ force: true });
     cy.contains(this.ListView.AddTableListFilters_3).click({ force: true });
-    // cy.contains(this.ListView.AddTableListFilters_4).click({ force: true });
-    // cy.contains(this.ListView.AddTableListFilters_5).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_4).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_5).click({ force: true });
+
+    cy.wait(2000);
+    cy.contains(this.ListView.AddTableListFilters_6).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_7).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_8).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_9).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_10).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddTableListFilters_11).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_12).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_13).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_14).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_15).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains('Assigning').scrollIntoView({force:true})
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddTableListFilters_16).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_17).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_18).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_19).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_20).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddTableListFilters_21).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_22).click({ force: true });
+    cy.contains(this.ListView.AddTableListFilters_23).click({ force: true });
+    
     cy.wait(2000);
 
     //Click on Save Selected
@@ -92,6 +123,7 @@ describe("List Views Elements", function () {
     //Click on Save
     cy.wait(2000);
     cy.get(".mr-2 > .v-btn__content").click();
+    cy.log('Table List Filter"s Element has been saved')
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
   });

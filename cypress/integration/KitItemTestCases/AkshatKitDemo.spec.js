@@ -336,13 +336,13 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.log(this.KitItemData.KitName3 + "Kit item has been Close");
   });
 
-  it("Edit form ", function () {
+  it.only("Edit form ", function () {
     const lp = new LoginPage();
     cy.wait(5000);
     lp.RefreshBtn();
     cy.wait(5000);
-    //     cy.get(
-    //       "#action_items_list > div.fill-height.col > div > div > div.fill-height > div:nth-child(1)"
-    //     ).click({ force: true });
+    cy.get(
+      "#action_items_list > div.fill-height.col > div > div > div.fill-height > div:nth-child(1)"
+    ).click({ force: true });
   });
 });

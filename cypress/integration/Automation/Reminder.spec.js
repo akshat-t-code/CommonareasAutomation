@@ -740,9 +740,6 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
    */
 
-    
-     
-
     //save AkshatKitDemo Kit Type
     // cy.get(".v-select__selections .v-btn__content").click({ force: true });
     // cy.log(this.KitItemData.KitName3 + "Kit Type has been Saved");
