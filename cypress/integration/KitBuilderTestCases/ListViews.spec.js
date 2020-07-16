@@ -31,7 +31,7 @@ describe("List Views Elements", function () {
 
   });
 
-  it.only("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -50,7 +50,7 @@ describe("List Views Elements", function () {
 
   });
 
-  it.only("Table List", function () {
+  it("Table List", function () {
 
     //View Name coming form json file
     cy.contains(this.data.TableView).click({ force: true });
@@ -63,8 +63,34 @@ describe("List Views Elements", function () {
     cy.contains(this.ListView.AddTableListResults_1).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_2).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_3).click({ force: true });
-    // cy.contains(this.ListView.AddTableListResults_4).click({ force: true });
-    // cy.contains(this.ListView.AddTableListResults_5).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_4).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_5).click({ force: true });
+    cy.wait(2000);
+    cy.contains(this.ListView.AddTableListResults_6).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_7).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_8).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_9).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_10).click({ force: true });
+    cy.wait(2000);
+    cy.contains(this.ListView.AddTableListResults_11).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_12).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_13).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_14).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_15).click({ force: true });
+    cy.wait(2000);
+    cy.contains('Assigning').scrollIntoView({force:true})
+    cy.wait(2000);
+    cy.contains(this.ListView.AddTableListResults_16).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_17).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_18).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_19).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_20).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddTableListResults_21).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_22).click({ force: true });
+    cy.contains(this.ListView.AddTableListResults_23).click({ force: true });
+    
     cy.wait(2000);
     //Click on Add Select
     cy.contains("Add Selected").click({ force: true });

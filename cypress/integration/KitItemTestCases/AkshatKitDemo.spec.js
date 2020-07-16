@@ -40,8 +40,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.KitItemData.KitName3);
-    KTP.OpenKitType(this.KitItemData.KitName3);
+    KTP.SearchKitType(this.KitItemData.KitName2);
+    KTP.OpenKitType(this.KitItemData.KitName2);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");
@@ -49,12 +49,14 @@ describe("Basic Test Case for Element interaction for common area DT", function 
   });
 
   it.only("Element Interation", function () {
+
+
     //Url
-    cy.get('[name="Url"]').type(this.KitItemData.Url);
+    cy.get('[name="Url"]').last().type(this.KitItemData.Url);
     cy.wait(1000);
 
     //Text
-    cy.get('[name="Text"]').type(this.KitItemData.Text);
+    cy.get('[name="Text"]').last().type(this.KitItemData.Text);
     cy.wait(1000);
 
     //File
@@ -69,17 +71,16 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(1000);
 
     //Telephone
-    cy.get('[name="Telephone"]').type(this.KitItemData.Telphone);
+    cy.get('[name="Telephone"]').last().type(this.KitItemData.Telphone);
     cy.wait(1000);
 
     //TextAera
-    cy.get('[name="TextAera"]').type(this.KitItemData.TextAera);
+    cy.get('[name="TextAera"]').last().type(this.KitItemData.TextAera);
     cy.wait(1000);
 
     //Slider;
 
     // Currency;
-
     cy.get(
       "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-currency.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-currency--right.ma-0.pa-0.col > div > div > div.v-input__slot > div"
     )
@@ -95,18 +96,18 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       .type(this.KitItemData.Measure);
 
     //Email;
-    cy.get('[name="Email"]').type(this.KitItemData.Email);
+    cy.get('[name="Email"]').last().type(this.KitItemData.Email);
 
     //Address
-    cy.get('[placeholder="Address"]').type(this.KitItemData.Address);
-    //Address count
-    cy.get('[name="Address Cont."]').type(this.KitItemData.AddressCount);
+    cy.get('[name="Address"]').last().type(this.KitItemData.Address);
+    //Address line
+    cy.get('[name="Address line 2."]').type(this.KitItemData.AddressCount);
 
     //City
     cy.get('[placeholder="City"]').type(this.KitItemData.City);
     //State
     cy.get(
-      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-check-list.kit-control-address.kit-control--no-fixed-height.pa-3.col.col-12.px-3 > div > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+      "div:nth-child(2) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
     ).click({ force: true });
     cy.contains("Alaska").click({ force: true });
     //ZipCode
@@ -114,37 +115,38 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(1000);
 
     //Number
-    cy.get('[name="Number"]').type(this.KitItemData.Number);
+    cy.get('[name="Number"]').last().scrollIntoView({force:true})
+    cy.get('[name="Number"]').last().type(this.KitItemData.Number);
     cy.wait(1000);
 
-    //Time Data Element
-    cy.get('[placeholder="Add Time"]').first().click({ force: true });
-    //Hour
-    cy.get(
-      "#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)"
-    )
-      .first()
-      .click({ force: true });
+    // //Time Data Element
+    // cy.get('[placeholder="Add Time"]').eq(2).click({ force: true });
+    // //Hour
+    // cy.get(
+    //   "#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)"
+    // )
+    //   .first()
+    //   .click({ force: true });
 
-    cy.wait(5000);
-    //Min
-    cy.get(
-      "#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)"
-    )
-      .last()
-      .click({ force: true });
+    // cy.wait(5000);
+    // //Min
+    // cy.get(
+    //   "#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)"
+    // )
+    //   .last()
+    //   .click({ force: true });
 
-    //Click on OK
-    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    // //Click on OK
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
-    //Date Data Element
-    cy.get('[placeholder="Add Date"]').first().click({ force: true });
-    cy.get("tr:nth-child(2) > td:nth-child(5) .v-btn__content").click({
-      force: true,
-    });
-    cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
-      force: true,
-    });
+    // //Date Data Element
+    // cy.get('[placeholder="Add Date"]').eq(2).click({ force: true });
+    // cy.get("tr:nth-child(2) > td:nth-child(5) .v-btn__content").click({
+    //   force: true,
+    // });
+    // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
+    //   force: true,
+    // });
 
     //Scrolling
     cy.contains("NEW ITEM").first().scrollIntoView({ force: true });
@@ -175,6 +177,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //One TO Many Realtion Control
 
+    
     //Scrolling
     cy.contains("NEW ITEM").first().scrollIntoView({ force: true });
     //New Item Kit(Related New Kit Type)
@@ -186,29 +189,33 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Related New Form Elements Interaction
     //Name
-    cy.get('[name="Name"]').type(this.KitItemData.Text);
+    cy.get('[name="Name"]').last().type(this.KitItemData.Text);
 
     //Url
-    cy.get('[name="Url"]').first().type(this.KitItemData.Url);
+    //cy.get('[name="Url"]').last().type(this.KitItemData.Url);
 
     //Related New Kit Type saved for One to many Relation Control
-    cy.get(
-      ".v-dialog__content:nth-child(1) .fill-height:nth-child(3) .v-btn__content:nth-child(1)"
-    ).click({ force: true });
+
+    cy.get('div.navi-bar-dropdown.fill-height.align-center.overflow-max-width.col-md-9.col-lg-8.col-10 > div > div > div.v-input__slot > div.v-select__slot > div.v-select__selections > button')
+    .last()
+    .click({ force: true });
 
     cy.log("Related New Kit item has been Close");
     cy.wait(5000);
 
     cy.log("Related New Kit Type has been saved");
     cy.get(
-      ".v-dialog__content:nth-child(1) .navi-bar:nth-child(1) .inline-svg:nth-child(1)"
-    ).click({ force: true });
+      " div.fill-height.d-flex.col-md-7.col-lg-5.col-xl-8.col-4 > div.subheader--button-icon-wrapper.fill-height.d-flex.align-center.col > div > button"
+    ).last()
+    .click({ force: true });
 
     cy.log("Related New Kit item has been Close");
     cy.wait(2000);
 
+    
+
     //Stepper
-    cy.contains("Stepper").scrollIntoView({ force: true });
+    cy.contains("Stepper").last().scrollIntoView({ force: true });
     cy.wait(2000);
     cy.get(".v-stepper__step:nth-child(5) > .v-stepper__step__step").click({
       force: true,
@@ -231,6 +238,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.ContactSelectorName).click({ force: true });
     cy.wait(2000);
 
+    /*
     //OneToOne Relation
     cy.get(".mr-4 > .inline-svg > path").click({ force: true });
     cy.log("One to One Related New kit type has been Opened");
@@ -260,9 +268,11 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     cy.log("Related New Kit item has been Close for one to one Realtion");
 
+    */
+
     cy.wait(2000);
     //Icon
-    cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path").click({
+    cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path").last().click({
       force: true,
     });
     cy.wait(2000);
@@ -281,12 +291,14 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.InspectionValue).click({ force: true });
     cy.wait(3000);
     //Assigning
-    cy.get(".searchIcon > .inline-svg > path").click({ force: true });
+    cy.get(".searchIcon > .inline-svg > path").last().click({ force: true });
     cy.wait(2000);
     cy.get(".list-item-search").click({ force: true });
     cy.wait(2000);
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
 
+
+    /*
     //Click on New Item Related New Kit Type for Square Card Relation Control
     cy.get(
       ".kit-control-grid:nth-child(25) .ma-2:nth-child(2) > .v-btn__content"
@@ -298,10 +310,10 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains("New Item created").should("be.visible");
 
     //Name
-    cy.get('[name="Name"]').type(this.KitItemData.Text);
+    cy.get('[name="Name"]').last().type(this.KitItemData.Text);
 
     //Url
-    cy.get('[name="url"]').type(this.KitItemData.Url);
+    cy.get('[name="url"]').last().type(this.KitItemData.Url);
 
     //Related New Kit Type saved for Square Card Relation Control
     cy.get(
@@ -323,6 +335,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       .click({ force: true });
     cy.log("Related New Kit item has been Close for Square Card");
 
+    */
+
     //save AkshatKitDemo Kit Type
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
     cy.log(this.KitItemData.KitName3 + "Kit Type has been Saved");
@@ -336,7 +350,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.log(this.KitItemData.KitName3 + "Kit item has been Close");
   });
 
-  it.only("Edit form ", function () {
+  it("Edit form ", function () {
     const lp = new LoginPage();
     cy.wait(5000);
     lp.RefreshBtn();

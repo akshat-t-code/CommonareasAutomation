@@ -105,7 +105,7 @@ describe("Kit Builder Data Types Details", function () {
     });
   });
 
-  it.only("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -565,7 +565,7 @@ describe("Kit Builder Data Types Details", function () {
 
   */
 
-  it.only("Kit Builder Save and Publish", function () {
+  it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();

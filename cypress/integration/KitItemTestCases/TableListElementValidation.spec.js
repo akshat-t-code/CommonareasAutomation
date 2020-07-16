@@ -35,7 +35,7 @@ describe("Validate TableList Element for Created Kit Type on UI", function () {
     });
   });
 
-  it("Open Created Kit type As List View", function () {
+  it.only("Open Created Kit type As List View", function () {
     //Page Object
     const lp = new LoginPage();
     //Assertion
@@ -48,6 +48,30 @@ describe("Validate TableList Element for Created Kit Type on UI", function () {
     cy.contains(this.KitName.KitName).click({ force: true });
     cy.wait(10000);
   });
+
+  it.only('Validate table View Result Elements',function(){
+
+    cy.contains('Url: https://www.yahoo.com').should('be.visible')
+
+    cy.contains('Text: nairobi').should('be.visible')
+
+    cy.contains('Telephone: (124) 356-7890').should('be.visible')
+ 
+    cy.wait(3000)
+    cy.contains(this.KitData.Url+':'+" "+this.KitItemData.Url ).should('be.visible')
+    cy.log(this.KitData.Url+ "has been Validate for kitItem Results Elements")
+    cy.wait(2000)
+
+    cy.contains(this.KitData.Text+':'+" "+this.KitItemData.Text ).should('be.visible')
+    cy.log(this.KitData.Text+ "has been Validate for kitItem Results Elements")
+    cy.wait(2000)
+
+    cy.contains(this.KitData.Telephone+':'+" "+this.KitItemData.Telphone ).should('be.visible')
+    cy.log(this.KitData.Telephone+ "has been Validate for kitItem Results Elements")
+    cy.wait(2000)
+
+
+  })
 
   it("Validate the Filter Elements", function () {
     //Page Object
