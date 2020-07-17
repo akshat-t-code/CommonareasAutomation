@@ -119,34 +119,34 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.get('[name="Number"]').last().type(this.KitItemData.Number);
     cy.wait(1000);
 
-    // //Time Data Element
-    // cy.get('[placeholder="Add Time"]').eq(2).click({ force: true });
-    // //Hour
-    // cy.get(
-    //   "#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)"
-    // )
-    //   .first()
-    //   .click({ force: true });
+    //Time Data Element
+    cy.get('[placeholder="Add Time"][type="text"]').click({ force: true });
+    //Hour
+    cy.get(
+      "#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)"
+    )
+      .first()
+      .click({ force: true });
 
-    // cy.wait(5000);
-    // //Min
-    // cy.get(
-    //   "#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)"
-    // )
-    //   .last()
-    //   .click({ force: true });
+    cy.wait(5000);
+    //Min
+    cy.get(
+      "#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)"
+    )
+      .last()
+      .click({ force: true });
 
-    // //Click on OK
-    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    //Click on OK
+    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
-    // //Date Data Element
-    // cy.get('[placeholder="Add Date"]').eq(2).click({ force: true });
-    // cy.get("tr:nth-child(2) > td:nth-child(5) .v-btn__content").click({
-    //   force: true,
-    // });
-    // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
-    //   force: true,
-    // });
+    //Date Data Element
+    cy.get('[placeholder="Add Date"][type="text"]').click({ force: true });
+    cy.get("tr:nth-child(2) > td:nth-child(5) .v-btn__content").click({
+      force: true,
+    });
+    cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
+      force: true,
+    });
 
     //Scrolling
     cy.contains("NEW ITEM").first().scrollIntoView({ force: true });
@@ -158,7 +158,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Click on DropDown of SelectList
     cy.get(
-      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div:nth-child(17) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+      ".v-input__icon > .primary--text"
     ).click({ force: true });
 
     //SelectList Value(Values coming form KitItemValues Json File)
