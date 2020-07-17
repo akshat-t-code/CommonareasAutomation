@@ -165,7 +165,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.SelectListValue).click({ force: true });
 
     //RadioSelect
-    cy.contains("Value22").click({ force: true });
+    cy.contains(this.KitItemData.RadioSelect).click({ force: true });
 
     //CheckboxSelect(Values coming form KitItemValues Json File)
     cy.contains(this.KitItemData.CheckboxSelectValue1).click({ force: true });

@@ -3,7 +3,7 @@
     "KitName":"CypressAutomation2",
     "KitName2":"AutomationKit(Don...",
     "KitName3":"AkshatKitDemo",
-
+    
 
     "Text":"Text666",
     "Url":"https://www.yahoo.com",
@@ -11,14 +11,18 @@
     "TextAera":"Testing the Automation Kit type",
     "Currency":"878",
     "Measure":"86",
-    "Email":"Jaadduu@gmail.com",
+    "Email":"jaadduu@gmail.com",
     "Address":"Dubai",
-    "AddressCount":"Hawai",
+    "Addressline":"Hawai",
     "City":"AabuDhabi",
     "ZipCode":"201002",
-    "Number":"09",
+    "Country":"United States",
+    "Number":"9",
 
     "SelectListValue":"Value2",
+    "RadioSelect":"Value22",
+
+
 
     "CheckboxSelectValue1":"Value222",
     "CheckboxSelectValue2":"Value333",
@@ -30,6 +34,8 @@
     "ContactSelectorName":"Vasu Deva",
 
     "InspectionValue":"Value##2",
+
+    
 
     "ReminderTitle":"Reminder Title",
     "ReminderTypeOneTime":"One-Time",
@@ -45,12 +51,12 @@
     "RepeatMonthlyDay":"Monthly - Day",
     "RepeatMonthlyOfDay":"Monthly - Of Day",
     "RepeatAnnuallyDate":"Annually - Date",
-    "RepeatAnnuallyOfMonth":"Annually - Of Month"
+    "RepeatAnnuallyOfMonth":"Annually - Of Month",
+
+    "These values need to add manual for validate Table List View Ele":"true",
+    "AssigningName":"ken Stanley",
+    "StepperValue":"Value#3"
+
+
     
-
-
-
-
-
-
 }

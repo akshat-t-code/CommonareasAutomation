@@ -35,7 +35,7 @@ describe("Validate TableList Element for Created Kit Type on UI", function () {
     });
   });
 
-  it("Open Created Kit type As List View", function () {
+  it.only("Open Created Kit type As List View", function () {
     //Page Object
     const lp = new LoginPage();
     //Assertion
@@ -50,8 +50,6 @@ describe("Validate TableList Element for Created Kit Type on UI", function () {
   });
 
   it("Validate table View Result URL Elements", function () {
-
-    
     cy.wait(3000);
     cy.contains(this.KitData.Url + ":" + " " + this.KitItemData.Url).should(
       "be.visible"
@@ -70,25 +68,185 @@ describe("Validate TableList Element for Created Kit Type on UI", function () {
     cy.wait(2000);
   });
 
-  // it("Validate table View Result Telephone Elements", function () {
-  //   cy.contains(
-  //     this.KitData.Telephone + ":" + " " + this.KitItemData.Telphone
-  //   ).should("exist");
-  //   cy.log(
-  //     this.KitData.Telephone + "has been Validate for kitItem Results Elements"
-  //   );
-  //   cy.wait(2000);
-  // });
+  it("Validate table View Result Telephone Elements", function () {
+    cy.contains(
+      this.KitData.Telephone + ":" + " " + this.KitItemData.Telphone
+    ).should("be.visible");
+    cy.log(
+      this.KitData.Telephone + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
 
   it("Validate table View Result TextAera Elements", function () {
     cy.contains(
       this.KitData.TextAera + ":" + " " + this.KitItemData.TextAera
-    ).should("exist");
+    ).should("be.visible");
     cy.log(
       this.KitData.Text + "has been Validate for kitItem Results Elements"
     );
     cy.wait(2000);
   });
+
+  it("Validate table View Result Currency Elements", function () {
+    cy.contains(
+      this.KitData.Currency + ":" + " " + this.KitItemData.Currency
+    ).should("be.visible");
+    cy.log(
+      this.KitData.Currency + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate table View Result Measure Elements", function () {
+    cy.contains(
+      this.KitData.Measure + ":" + " " + this.KitItemData.Measure
+    ).should("be.visible");
+    cy.log(
+      this.KitData.Measure + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate table View Result Email Elements", function () {
+    cy.contains(this.KitData.Email + ":" + " " + this.KitItemData.Email).should(
+      "be.visible"
+    );
+
+    cy.log(
+      this.KitData.Email + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate table View Result Address Elements", function () {
+    cy.contains(
+      "Address: Dubai, Hawai, AabuDhabi, Alaska, 201002, United States"
+    ).should("be.visible");
+    cy.log(
+      this.KitData.Address + ":" + " " + this.KitItemData.Address,
+      +" " + this.KitItemData.Addressline,
+      +" " + this.KitItemData.City,
+      +" " + this.KitItemData.ZipCode,
+      +" " + this.KitItemData.Country
+    );
+
+    cy.contains(
+      this.KitData.Address + ":" + " " + this.KitItemData.Address,
+      +" " + this.KitItemData.Addressline,
+      +" " + this.KitItemData.City,
+      +" " + this.KitItemData.ZipCode,
+      +" " + this.KitItemData.Country
+    ).should("be.visible");
+
+    cy.log(
+      this.KitData.Address + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate table View Result Number Elements", function () {
+    cy.contains(
+      this.KitData.Number + ":" + " " + this.KitItemData.Number
+    ).should("be.visible");
+    cy.log(
+      this.KitData.Number + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate table View Result SelectList Elements", function () {
+    cy.contains(
+      this.KitData.SelectList + ":" + " " + this.KitItemData.SelectListValue
+    ).should("be.visible");
+    cy.log(
+      this.KitData.SelectList + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate table View Result RadioSelect Elements", function () {
+    cy.contains(
+      this.KitData.RadioSelect + ":" + " " + this.KitItemData.RadioSelect
+    ).should("be.visible");
+    cy.log(
+      this.KitData.RadioSelect + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate table View Result CheckboxSelect Elements", function () {
+    //coz checkbox can have multiple values so modify accordingly
+
+    cy.contains(
+      this.KitData.CheckboxSelect +
+        ":" +
+        " " +
+        this.KitItemData.CheckboxSelectValue2
+    ).should("be.visible");
+    cy.log(
+      this.KitData.CheckboxSelect + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+
+  it("Validate table View Result UserSelector Elements", function () {
+    cy.contains(
+      this.KitData.UserSelector + ":" + " " + this.KitItemData.UserSelectorName
+    ).should("be.visible");
+    cy.log(
+      this.KitData.UserSelector + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate table View Result ContactSelector Elements", function () {
+    cy.contains(
+      this.KitData.ContactSelector + ":" + " " + this.KitItemData.ContactSelectorName
+    ).should("be.visible");
+    cy.log(
+      this.KitData.ContactSelector + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate table View Result Inspection Elements", function () {
+    cy.contains(
+      this.KitData.Inspection + ":" + " " + this.KitItemData.InspectionValue
+    ).should("be.visible");
+    cy.log(
+      this.KitData.Inspection + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it.only("Validate table View Result Stepper Elements", function () {
+    cy.contains(
+      this.KitData.Stepper + ":" + " " + this.KitItemData.StepperValue
+    ).should("be.visible");
+    cy.log(
+      this.KitData.Stepper + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+  it.only("Validate table View Result Assigning Elements", function () {
+    cy.contains(
+      this.KitData.Assigning + ":" + " " + this.KitItemData.AssigningName
+    ).should("be.visible");
+    cy.log(
+      this.KitData.Assigning + "has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+
+
+
+
+
+
+
 
   it("Click on Filter btn", function () {
     //Page Object
@@ -265,12 +423,9 @@ describe("Validate TableList Element for Created Kit Type on UI", function () {
   });
 
   it("Default filter Item Id", function () {
-    cy.get('[placeholder="Item Id"]')
-      .last()
-      .scrollIntoView({ force: true });
+    cy.get('[placeholder="Item Id"]').last().scrollIntoView({ force: true });
     cy.get('[placeholder="Item Id"]').last().should("exist");
     cy.log("Default filter Item Id has been exist in Filters");
     cy.wait(2000);
   });
-
 });
