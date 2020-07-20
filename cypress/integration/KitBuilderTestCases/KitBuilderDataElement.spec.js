@@ -3,41 +3,10 @@ import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 import RandomString from "../PageObject/RandomString";
 
-let APIData;
-let OTMAPIName;
-let OTMRelatedAPIName;
-let OTMReverseEleAPIName;
-
-//Randomly Generated APINames for Relation Control Elements coming from PageObject(RandomString Class)
-const Rs = new RandomString();
-APIData = Rs.OTMRandomAPIName1();
-OTMAPIName = APIData.APIName;
-OTMRelatedAPIName = APIData.RelatedAPIName;
-OTMReverseEleAPIName = APIData.ReverseEleAPIName;
-
-
-
-
-
-
-
-
-
 
 describe("Kit Builder Data Types Details", function () {
+
   this.beforeAll(function () {
-    //Creating Dynamic Json file at RumTime for API Names
-    cy.writeFile("cypress/fixtures/KitBuilderTestData/APINames.json", {
-      APIName: OTMAPIName,
-      RelatedAPIName: OTMRelatedAPIName,
-      ReverseEleAPIName: OTMReverseEleAPIName,
-    });
-
-    cy.log("Data has been write to json file for API Names");
-    cy.log(OTMAPIName);
-    cy.log(OTMRelatedAPIName);
-    cy.log(OTMReverseEleAPIName);
-
     //Page Object
     const lp = new LoginPage();
     cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");

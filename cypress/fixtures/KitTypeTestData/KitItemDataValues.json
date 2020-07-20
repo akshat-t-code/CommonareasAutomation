@@ -12,9 +12,10 @@
     "Currency":"878",
     "Measure":"86",
     "Email":"jaadduu@gmail.com",
-    "Address":"Dubai",
-    "Addressline":"Hawai",
+    "Addressline1":"Dubai",
+    "Addressline2":"Hawai",
     "City":"AabuDhabi",
+    "State":"Alaska",
     "ZipCode":"201002",
     "Country":"United States",
     "Number":"9",
@@ -54,8 +55,17 @@
     "RepeatAnnuallyOfMonth":"Annually - Of Month",
 
     "These values need to add manual for validate Table List View Ele":"true",
+    "Important note for Values":"Pls add value in same format that i did",
     "AssigningName":"ken Stanley",
-    "StepperValue":"Value#3"
+    "StepperValue":"Value#3",
+
+    "TimeValue":"12:15 AM",
+    "DateValue":"07/09/2020",
+    "ToggleStatus":"True",
+    "FileValue":"10344",
+    "SliderValue":"19",
+    "Icon":""
+
 
 
     
