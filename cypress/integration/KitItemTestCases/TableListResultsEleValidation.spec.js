@@ -49,7 +49,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(10000);
   });
 
-  it("Validate table View Result URL Elements", function () {
+  it.only("Validate table View Result URL Elements", function () {
     cy.wait(3000);
     cy.contains(this.KitData.Url + ":" + " " + this.KitItemData.Url).should(
       "be.visible"
@@ -68,7 +68,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it("Validate table View Result Telephone Elements", function () {
+  it.only("Validate table View Result Telephone Elements", function () {
     cy.contains(
       this.KitData.Telephone + ":" + " " + this.KitItemData.Telphone
     ).should("be.visible");
@@ -119,7 +119,9 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it("Validate table View Result Address Elements", function () {
+  it.only("Validate table View Result Address Elements", function () {
+
+
     cy.contains(
       this.KitData.Address +
         ":" +
@@ -140,7 +142,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
         "," +
         " " +
         this.KitItemData.Country
-    ).should("be.visible");
+    ).should("exist");
 
     cy.log(
       this.KitData.Address + " has been Validate for kitItem Results Elements"
@@ -220,6 +222,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
+  
   it("Validate table View Result Inspection Elements", function () {
     cy.contains(
       this.KitData.Inspection + ":" + " " + this.KitItemData.InspectionValue
@@ -300,7 +303,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it.only("Validate table View Result Icon Elements", function () {
+  it("Validate table View Result Icon Elements", function () {
     cy.contains(this.KitData.Icon).should("be.visible");
 
     cy.contains(
@@ -341,5 +344,5 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     );
     cy.wait(2000);
   });
-  
+
 });
