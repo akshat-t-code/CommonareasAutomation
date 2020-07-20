@@ -36,6 +36,8 @@
 
     "InspectionValue":"Value##2",
 
+    "iconSize":"Small",
+    "IconLabel":"AutomationKit",
     
 
     "ReminderTitle":"Reminder Title",
@@ -64,9 +66,8 @@
     "ToggleStatus":"True",
     "FileValue":"10344",
     "SliderValue":"19",
-    "Icon":""
-
-
+    "IconSize":"12px",
+    "IconTittle":"2 wheeled trolly"
 
     
 }

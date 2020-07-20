@@ -26,7 +26,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     });
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -36,7 +36,8 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     //cy.wait(5000);
     //kb.ClickOnKitBuilder();
     cy.wait(3000);
-    cy.contains(this.data1.KitName).click({ force: true });
+   // cy.contains(this.data1.KitName).click({ force: true });
+    cy.contains('airplane').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -97,7 +98,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("CheckboxSelect Data Type", function () {
+  it.only("CheckboxSelect Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Checkbox Select"]').dblclick({ force: true });
     cy.wait(1000);
@@ -115,7 +116,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("Kit Builder Save and Publish", function () {
+  it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();

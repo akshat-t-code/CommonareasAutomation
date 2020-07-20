@@ -49,7 +49,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(10000);
   });
 
-  it.only("Validate table View Result URL Elements", function () {
+  it("Validate table View Result URL Elements", function () {
     cy.wait(3000);
     cy.contains(this.KitData.Url + ":" + " " + this.KitItemData.Url).should(
       "be.visible"
@@ -68,7 +68,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it.only("Validate table View Result Telephone Elements", function () {
+  it("Validate table View Result Telephone Elements", function () {
     cy.contains(
       this.KitData.Telephone + ":" + " " + this.KitItemData.Telphone
     ).should("be.visible");
@@ -119,7 +119,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it.only("Validate table View Result Address Elements", function () {
+  it("Validate table View Result Address Elements", function () {
     cy.contains(
       this.KitData.Address +
         ":" +
@@ -300,5 +300,46 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
+  it.only("Validate table View Result Icon Elements", function () {
+    cy.contains(this.KitData.Icon).should("be.visible");
 
+    cy.contains(
+      '"' +
+        this.KitData.IconLabel +
+        '"' +
+        ":" +
+        "" +
+        '"' +
+        this.KitItemData.IconLabel +
+        '"'
+    ).should("be.visible");
+
+    cy.contains(
+      '"' +
+        this.KitData.IconSize +
+        '"' +
+        ":" +
+        "" +
+        '"' +
+        this.KitItemData.IconSize +
+        '"'
+    ).should("be.visible");
+
+    cy.contains(
+      '"' +
+        this.KitData.Icontitle +
+        '"' +
+        ":" +
+        "" +
+        '"' +
+        this.KitItemData.IconTittle +
+        '"'
+    ).should("be.visible");
+
+    cy.log(
+      this.KitData.Icon + " has been Validate for kitItem Results Elements"
+    );
+    cy.wait(2000);
+  });
+  
 });

@@ -55,6 +55,9 @@
     "StepperValue5":"Value#5",
 
     "Icon":"Icon",
+    "IconSize":"IconSize",
+    "IconLabel":"IconLabel",
+    "Icontitle":"title",
 
     "Inspection":"Inspection",
     "InspectionName":"InspectionName",
@@ -78,9 +81,9 @@
 
     "OneToManyRelation":"OneToManyRelation",
     "KitToBeRelated":"AAKit",
-    "APIName":"OneToManyRelation",
-    "RelatedAPIName":"AAKit",
-    "ReverseEleAPIName":"RevAPI",
+    "APIName":"OneToMany",
+    "RelatedAPIName":"AAKitt",
+    "ReverseEleAPIName":"RevAPI1",
     "OneToManyRelatedNew":"related new",
     "OneToManyRelatedEdit":"RealtedEdit",
     "OneToManyMapView":"MapView",

@@ -51,6 +51,30 @@ describe("Basic Test Case for Element interaction for common area DT", function 
   it.only("Element Interation", function () {
 
 
+
+    cy.wait(2000);
+    //Icon
+    cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path").last().click({
+      force: true,
+    });
+    cy.wait(2000);
+    cy.get(".thumb-container:nth-child(2) .selected-icon").click({
+      force: true,
+    });
+    cy.wait(2000);
+    cy.get(".button-pop-ups").click({ force: true });
+    cy.wait(2000);
+
+    //IcozSize
+    cy.get('div.row.wrapper-kit-control.align-center > div > div.fill-height.border-right.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div')
+    .click({force:true})
+    cy.contains(this.KitItemData.iconSize).click({force:true})
+    cy.wait(2000)
+
+    //IconLable
+    cy.get('[placeholder="Label"]').type(this.KitItemData.IconLabel)
+
+
     //Url
     cy.get('[name="Url"]').last().type(this.KitItemData.Url);
     cy.wait(1000);
@@ -282,6 +306,20 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(2000);
     cy.get(".button-pop-ups").click({ force: true });
     cy.wait(2000);
+
+    //IcozSize
+    cy.get('div.row.wrapper-kit-control.align-center > div > div.fill-height.border-right.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div')
+    .click({force:true})
+    cy.contains('Small').click({force:true})
+    cy.wait(2000)
+
+    //IconLable
+    cy.get('[placeholder="Label"]').type(this.KitItemData.IconLabel)
+
+
+
+
+
 
     //Inspection(Values coming form KitItemValues Json File)
     cy.contains(this.KitItemData.InspectionValue).scrollIntoView({

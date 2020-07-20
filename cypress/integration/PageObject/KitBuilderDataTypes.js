@@ -1841,8 +1841,9 @@ class KitBuilderDataTypes {
   ) {
     //Click on Icon
     cy.getIframeBody().contains("Relation 1-N").click({ force: true });
-    //cy.getIframeBody().contains("1-N Relation").click({ force: true });
+    //cy.getIframeBody().contains("rlas").click({ force: true });
     cy.wait(3000);
+    
     //Click on Lable
     cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RelationName);
     //Click on Name
@@ -1906,6 +1907,8 @@ class KitBuilderDataTypes {
     cy.log("OneToMany Relation Data Type has been Created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
+
+    
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
