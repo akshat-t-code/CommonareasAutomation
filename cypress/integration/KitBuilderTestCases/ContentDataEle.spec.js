@@ -16,8 +16,9 @@ describe("Kit Builder Data Types Details", function () {
     cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
       this.data = data;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
-      this.data1 = data1;
+
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitTypeName) {
+      this.data1 = KitTypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
       datatypes
@@ -44,6 +45,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
+
   it.only("OneToManyRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-N"]').dblclick({ force: true });
@@ -54,7 +56,9 @@ describe("Kit Builder Data Types Details", function () {
     DataType.OneToManyRelation(
       this.DataType.OneToManyRelation,
       this.DataType.KitToBeRelated,
-      this.data1.KitName,
+      this.DataType.APIName,
+      this.DataType.RelatedAPIName,
+      this.DataType.ReverseEleAPIName,
       this.DataType.RelatedTableView,
       this.DataType.RelatedEle_1,
       this.DataType.RelatedEle_2,
@@ -69,6 +73,7 @@ describe("Kit Builder Data Types Details", function () {
 
     cy.wait(5000);
   });
+
 
   it("Stepper Data Type", function () {
     //Double click on Data Element to drag it on Canvas
@@ -97,8 +102,7 @@ describe("Kit Builder Data Types Details", function () {
     DataType.UserSelector(this.DataType.UserSelector);
     cy.wait(5000);
   });
-
-  it("OneToOneRelation Data Type", function () {
+  it.only("OneToOneRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-1"]').dblclick({ force: true });
     cy.wait(1000);
@@ -108,7 +112,9 @@ describe("Kit Builder Data Types Details", function () {
     DataType.OneToOneRelation(
       this.DataType.OneToOneRelation,
       this.DataType.KitToBeRelate,
-      this.data1.KitName,
+      this.DataType.OTOAPIName,
+      this.DataType.OTORelatedAPIName,
+      this.DataType.OTOReverseEleAPIName,
       this.DataType.ElementToBeRelate,
       this.DataType.OneToOneRelatedNew,
       this.DataType.OneToOneRelatedEdit,
@@ -128,7 +134,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("SquareCard Data Type", function () {
+  it.only("SquareCard Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="SquareCard"]').dblclick({ force: true });
     cy.wait(1000);
@@ -138,7 +144,9 @@ describe("Kit Builder Data Types Details", function () {
     DataType.SquareCard(
       this.DataType.SquareCardName,
       this.DataType.CardKitToBeRelated,
-      this.data1.KitName,
+      this.DataType.SQAPIName,
+      this.DataType.SQRelatedAPIName,
+      this.DataType.SQReverseEleAPIName,
       this.DataType.SquareCardTableView,
       this.DataType.RelateEle_1,
       this.DataType.RelateEle_2,

@@ -3,9 +3,7 @@ import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 import RandomString from "../PageObject/RandomString";
 
-
 describe("Kit Builder Data Types Details", function () {
-
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
@@ -26,8 +24,8 @@ describe("Kit Builder Data Types Details", function () {
       this.APIData = APIName;
     });
 
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
-      this.data1 = data1;
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitTypeName) {
+      this.data1 = KitTypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
       datatypes
@@ -338,9 +336,9 @@ describe("Kit Builder Data Types Details", function () {
     DataType.OneToManyRelation(
       this.DataType.OneToManyRelation,
       this.DataType.KitToBeRelated,
-      this.APIData.APIName,
-      this.APIData.RelatedAPIName,
-      this.APIData.ReverseEleAPIName,
+      this.DataType.APIName,
+      this.DataType.RelatedAPIName,
+      this.DataType.ReverseEleAPIName,
       this.DataType.RelatedTableView,
       this.DataType.RelatedEle_1,
       this.DataType.RelatedEle_2,
@@ -426,7 +424,9 @@ describe("Kit Builder Data Types Details", function () {
     DataType.SquareCard(
       this.DataType.SquareCardName,
       this.DataType.CardKitToBeRelated,
-      this.data1.KitName,
+      this.DataType.SQAPIName,
+      this.DataType.SQRelatedAPIName,
+      this.DataType.SQReverseEleAPIName,
       this.DataType.SquareCardTableView,
       this.DataType.RelateEle_1,
       this.DataType.RelateEle_2,
