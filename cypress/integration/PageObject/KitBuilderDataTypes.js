@@ -824,7 +824,7 @@ class KitBuilderDataTypes {
 
     //RadioSelect customize name
     //Click on +
-    cy.wait(3000)
+    cy.wait(3000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     //write customize RadioSelectName
     cy.get(
@@ -1843,7 +1843,7 @@ class KitBuilderDataTypes {
     cy.getIframeBody().contains("Relation 1-N").click({ force: true });
     //cy.getIframeBody().contains("rlas").click({ force: true });
     cy.wait(3000);
-    
+
     //Click on Lable
     cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RelationName);
     //Click on Name
@@ -1907,8 +1907,6 @@ class KitBuilderDataTypes {
     cy.log("OneToMany Relation Data Type has been Created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
-
-    
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
@@ -1980,7 +1978,7 @@ class KitBuilderDataTypes {
     cy.wait(3000);
     //Click on Edit btn to add Elements
     cy.get(".editTableListBtn").click({ force: true });
-    //Add List Results
+    //Add List Results Elements
     cy.contains("Add List Results").click({ force: true });
     //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
 
@@ -2004,8 +2002,35 @@ class KitBuilderDataTypes {
     cy.contains(Ele5).click({ force: true });
     cy.wait(1000);
     cy.log("OneToMany's Related kitTypes Elements has been Selected");
+    cy.log("Table List Results Element has been Added to OneToMany Relation");
     cy.contains("Add Selected").click({ force: true });
-    //Save
+
+    cy.wait(2000);
+
+    ////Add Table List Filters Element
+    cy.contains(" Filters ").click({ force: true });
+    cy.wait(2000);
+    //Add List Filters
+    cy.contains("Add List Filters").click({ force: true });
+    //Add List Filters Values coming from json file
+    // cy.contains(Ele1).click({ force: true });
+    // cy.contains(Ele2).click({ force: true });
+    // cy.contains(Ele3).click({ force: true });
+    // cy.contains(Ele4).click({ force: true });
+    // cy.contains(Ele5).click({ force: true });
+    cy.get(
+      ".row:nth-child(1) > .align-content-center .v-input--selection-controls__ripple"
+    ).click();
+    cy.get(".row:nth-child(2) .v-input--selection-controls__ripple").click();
+    cy.get(".row:nth-child(3) .v-input--selection-controls__ripple").click();
+    cy.get(".row:nth-child(4) .v-input--selection-controls__ripple").click();
+    cy.get(".row:nth-child(5) .v-input--selection-controls__ripple").click();
+
+    cy.wait(2000);
+    //Click on Save Selected
+    cy.contains("Save Selected").click({ force: true });
+    cy.log("Filters Elements has been Added");
+    //Save Table List
     cy.get(
       ".v-toolbar__items:nth-child(4) > .justify-end .v-btn__content"
     ).click({ force: true });

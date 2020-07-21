@@ -27,7 +27,7 @@ describe("Kit Builder Data Types Details", function () {
     });
   });
 
-  it.only("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -37,8 +37,8 @@ describe("Kit Builder Data Types Details", function () {
     // cy.wait(5000);
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
-   //cy.contains(this.data1.KitName).click({ force: true });
-   cy.contains('airplane').click({ force: true });
+    cy.contains(this.data1.KitName).click({ force: true });
+    //cy.contains('airplane').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -76,7 +76,7 @@ describe("Kit Builder Data Types Details", function () {
   });
 
 
-  it.only("Stepper Data Type", function () {
+  it("Stepper Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Stepper"]').dblclick({ force: true });
     cy.wait(1000);
@@ -94,7 +94,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it.only("UserSelector Data Type", function () {
+  it("UserSelector Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="User Selector"]').dblclick({ force: true });
     cy.wait(1000);
@@ -125,7 +125,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it.only("ContactSelector Data Type", function () {
+  it("ContactSelector Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Contact Selector"]').dblclick({ force: true });
     cy.wait(1000);
@@ -163,7 +163,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it.only("Icon Data Type", function () {
+  it("Icon Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Icon"]').dblclick({ force: true });
     cy.wait(1000);
@@ -173,7 +173,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it.only("Inspection Data Type", function () {
+  it("Inspection Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Inspection"]').dblclick({ force: true });
     cy.wait(1000);
@@ -191,7 +191,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it.only("Assigning Data Type", function () {
+  it("Assigning Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Assigning"]').dblclick({ force: true });
     cy.wait(1000);
@@ -201,7 +201,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it.only("Kit Builder Save and Publish", function () {
+  it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();
