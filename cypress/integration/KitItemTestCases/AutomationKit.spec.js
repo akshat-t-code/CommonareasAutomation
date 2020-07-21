@@ -5,7 +5,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
-    lp.visit();
+    lp.visitServiceBuild();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -31,7 +31,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     });
   });
 
-  it.only("AksahtDemo Kit type", function () {
+  it.only("AutomationKit type", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -50,7 +50,6 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
   it.only("Element Interation", function () {
     cy.wait(2000);
-
     //Url
     cy.get('[name="Url"]').last().type(this.KitItemData.Url);
     cy.wait(1000);
@@ -115,7 +114,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //ZipCode
     cy.get('[placeholder="Zip/Postal Code"]').type(this.KitItemData.ZipCode);
     cy.wait(1000);
-     
+
     //Country
     // cy.get(
     //   " div > div:nth-child(2) > div:nth-child(6) > div > div > div.v-input__slot > div.v-select__slot > div > div"
@@ -124,7 +123,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // cy.contains(this.KitItemData.Country).click({ force: true });
 
     //Number
-    cy.get('[placeholder="Zip/Postal Code"]').type(this.KitItemData.ZipCode);
+    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
     cy.get('[name="Number"]').last().type(this.KitItemData.Number);
     cy.wait(1000);
 
@@ -163,10 +162,15 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     });
 
     //Click on DropDown of SelectList
-    cy.get(".v-input__icon > .primary--text").click({ force: true });
+    cy.wait(3000);
+    cy.get(
+      "div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
+    )
+      .eq(4)
+      .click({ force: true });
+    cy.wait(2000);
     //SelectList Value(Values coming form KitItemValues Json File)
     cy.contains(this.KitItemData.SelectListValue).click({ force: true });
-    cy.log(this.KitItemData.SelectListValue)
 
     //RadioSelect
     cy.contains(this.KitItemData.RadioSelect).click({ force: true });
@@ -179,18 +183,19 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     cy.wait(5000);
 
-    /*
-
     //One TO Many Realtion Control
 
     //Scrolling
-    cy.contains("NEW ITEM").first().scrollIntoView({ force: true });
-    //New Item Kit(Related New Kit Type)
-    cy.contains("NEW ITEM").first().click({ force: true });
-    cy.log("One to Many Related New kit type has been Opened");
-    cy.wait(2000);
-    //Assertion
-    cy.contains("New Item created").should("be.visible");
+    // cy.contains("NEW ITEM").first().scrollIntoView({ force: true });
+    // //New Item Kit(Related New Kit Type)
+    // cy.contains("NEW ITEM").first().click({ force: true });
+    // cy.log("One to Many Related New kit type has been Opened");
+    // cy.wait(2000);
+    // //Assertion
+    // cy.contains("New Item created").should("be.visible");
+    // cy.wait(5000)
+
+    /*
 
     //Related New Form Elements Interaction
     //Name
@@ -246,13 +251,15 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.ContactSelectorName).click({ force: true });
     cy.wait(2000);
 
-    /*
     //OneToOne Relation
-    cy.get(".mr-4 > .inline-svg > path").click({ force: true });
-    cy.log("One to One Related New kit type has been Opened");
-    cy.wait(2000);
-    //Assertion
-    cy.contains("New Item created").should("be.visible");
+    // cy.get(".mr-4 > .inline-svg > path").click({ force: true });
+    // cy.log("One to One Related New kit type has been Opened");
+    // cy.wait(2000);
+    // //Assertion
+    // cy.contains("New Item created").should("be.visible");
+    // cy.wait(5000)
+
+    /*
 
     //Related New Form Elements Interaction
     //Name
@@ -280,6 +287,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     cy.wait(2000);
     //Icon
+    cy.get(".searchIcon > .inline-svg > path")
+      .last()
+      .scrollIntoView({ force: true });
     cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
       .last()
       .click({
@@ -301,7 +311,6 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     ).click({ force: true });
     cy.contains(this.KitItemData.iconSize).click({ force: true });
     cy.wait(2000);
-
     //IconLable
     cy.get('[placeholder="Label"]').type(this.KitItemData.IconLabel);
 
@@ -319,16 +328,20 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(2000);
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
 
-    /*
     //Click on New Item Related New Kit Type for Square Card Relation Control
     cy.get(
-      ".kit-control-grid:nth-child(25) .ma-2:nth-child(2) > .v-btn__content"
-    ).click({ force: true });
+      "div.kit-control-grid--header_buttons.d-flex.align-center.col-sm-9.col > button:nth-child(3) > span"
+    )
+      .last()
+      .click({ force: true });
 
     cy.wait(5000);
 
     //Assertion
     cy.contains("New Item created").should("be.visible");
+    cy.wait(5000);
+
+    /*
 
     //Name
     cy.get('[name="Name"]').last().type(this.KitItemData.Text);
