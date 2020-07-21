@@ -19,6 +19,7 @@ describe("Login for new User than Create A new Connection and Accept the request
           cy.log(this.Credentials.Lname);
         }
       );
+      cy.viewport(1000, 600);
     }
   );
 

@@ -5,7 +5,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
-    lp.visit();
+    lp.visitServiceBuild();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -52,7 +52,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result URL Elements", function () {
     cy.wait(3000);
     cy.contains(this.KitData.Url + ":" + " " + this.KitItemData.Url).should(
-      "be.visible"
+      "exist"
     );
     cy.log(this.KitData.Url + "has been Validate for kitItem Results Elements");
     cy.wait(2000);
@@ -60,7 +60,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
 
   it("Validate table View Result Text Elements", function () {
     cy.contains(this.KitData.Text + ":" + " " + this.KitItemData.Text).should(
-      "be.visible"
+      "exist"
     );
     cy.log(
       this.KitData.Text + "has been Validate for kitItem Results Elements"
@@ -68,10 +68,10 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Validate table View Result Telephone Elements", function () {
+  it.only("Validate table View Result Telephone Elements", function () {
     cy.contains(
       this.KitData.Telephone + ":" + " " + this.KitItemData.Telphone
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Telephone + "has been Validate for kitItem Results Elements"
     );
@@ -81,7 +81,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result TextAera Elements", function () {
     cy.contains(
       this.KitData.TextAera + ":" + " " + this.KitItemData.TextAera
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Text + "has been Validate for kitItem Results Elements"
     );
@@ -91,7 +91,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result Currency Elements", function () {
     cy.contains(
       this.KitData.Currency + ":" + " " + this.KitItemData.Currency
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Currency + "has been Validate for kitItem Results Elements"
     );
@@ -101,7 +101,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result Measure Elements", function () {
     cy.contains(
       this.KitData.Measure + ":" + " " + this.KitItemData.Measure
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Measure + "has been Validate for kitItem Results Elements"
     );
@@ -110,7 +110,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
 
   it("Validate table View Result Email Elements", function () {
     cy.contains(this.KitData.Email + ":" + " " + this.KitItemData.Email).should(
-      "be.visible"
+      "exist"
     );
 
     cy.log(
@@ -119,7 +119,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Validate table View Result Address Elements", function () {
+  it.only("Validate table View Result Address Elements", function () {
     cy.contains(
       this.KitData.Address +
         ":" +
@@ -140,7 +140,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
         "," +
         " " +
         this.KitItemData.Country
-    ).should("be.visible");
+    ).should("exist");
 
     cy.log(
       this.KitData.Address + " has been Validate for kitItem Results Elements"
@@ -151,7 +151,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result Number Elements", function () {
     cy.contains(
       this.KitData.Number + ":" + " " + this.KitItemData.Number
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Number + "has been Validate for kitItem Results Elements"
     );
@@ -161,7 +161,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result SelectList Elements", function () {
     cy.contains(
       this.KitData.SelectList + ":" + " " + this.KitItemData.SelectListValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.SelectList + "has been Validate for kitItem Results Elements"
     );
@@ -171,7 +171,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result RadioSelect Elements", function () {
     cy.contains(
       this.KitData.RadioSelect + ":" + " " + this.KitItemData.RadioSelect
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.RadioSelect +
         "has been Validate for kitItem Results Elements"
@@ -187,7 +187,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
         ":" +
         " " +
         this.KitItemData.CheckboxSelectValue2
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.CheckboxSelect +
         "has been Validate for kitItem Results Elements"
@@ -198,7 +198,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result UserSelector Elements", function () {
     cy.contains(
       this.KitData.UserSelector + ":" + " " + this.KitItemData.UserSelectorName
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.UserSelector +
         "has been Validate for kitItem Results Elements"
@@ -212,7 +212,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
         ":" +
         " " +
         this.KitItemData.ContactSelectorName
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.ContactSelector +
         "has been Validate for kitItem Results Elements"
@@ -223,7 +223,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result Inspection Elements", function () {
     cy.contains(
       this.KitData.Inspection + ":" + " " + this.KitItemData.InspectionValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Inspection + "has been Validate for kitItem Results Elements"
     );
@@ -233,7 +233,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result Stepper Elements", function () {
     cy.contains(
       this.KitData.Stepper + ":" + " " + this.KitItemData.StepperValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Stepper + " has been Validate for kitItem Results Elements"
     );
@@ -243,7 +243,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result Assigning Elements", function () {
     cy.contains(
       this.KitData.Assigning + ":" + " " + this.KitItemData.AssigningName
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Assigning + " has been Validate for kitItem Results Elements"
     );
@@ -253,7 +253,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result Time Elements", function () {
     cy.contains(
       this.KitData.Time + ":" + " " + this.KitItemData.TimeValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Time + " has been Validate for kitItem Results Elements"
     );
@@ -263,7 +263,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result Date Elements", function () {
     cy.contains(
       this.KitData.Date + ":" + " " + this.KitItemData.DateValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Date + " has been Validate for kitItem Results Elements"
     );
@@ -273,7 +273,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result Toggle Elements", function () {
     cy.contains(
       this.KitData.Toggle + ":" + " " + this.KitItemData.ToggleStatus
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Toggle + " has been Validate for kitItem Results Elements"
     );
@@ -283,7 +283,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result File Elements", function () {
     cy.contains(
       this.KitData.File + ":" + " " + this.KitItemData.FileValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.File + " has been Validate for kitItem Results Elements"
     );
@@ -293,7 +293,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   it("Validate table View Result Slider Elements", function () {
     cy.contains(
       this.KitData.Slider + ":" + " " + this.KitItemData.SliderValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Slider + " has been Validate for kitItem Results Elements"
     );
@@ -301,7 +301,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   });
 
   it.only("Validate table View Result Icon Elements", function () {
-    cy.contains(this.KitData.Icon).should("be.visible");
+    cy.contains(this.KitData.Icon).should("exist");
 
     cy.contains(
       '"' +
@@ -312,7 +312,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
         '"' +
         this.KitItemData.IconLabel +
         '"'
-    ).should("be.visible");
+    ).should("exist");
 
     cy.contains(
       '"' +
@@ -323,7 +323,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
         '"' +
         this.KitItemData.IconSize +
         '"'
-    ).should("be.visible");
+    ).should("exist");
 
     cy.contains(
       '"' +
@@ -334,7 +334,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
         '"' +
         this.KitItemData.IconTittle +
         '"'
-    ).should("be.visible");
+    ).should("exist");
 
     cy.log(
       this.KitData.Icon + " has been Validate for kitItem Results Elements"
@@ -344,14 +344,14 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
 
   //-------------------------Filter Elements--------------------------------------------------------------------
 
-  it("Click on Filter btn", function () {
+  it.only("Click on Filter btn", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
     cy.wait(3000);
   });
 
-  it("Validate the Filter Url Element", function () {
+  it.only("Validate the Filter Url Element", function () {
     //Validation for Filer Elements
     cy.get('[name="Url"]').last().scrollIntoView({ force: true });
     cy.get('[name="Url"]').last().should("be.visible");
@@ -359,7 +359,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Validate the Filter Text Element", function () {
+  it.only("Validate the Filter Text Element", function () {
     //Validation for Filer Elements
     cy.get('[name="Text"]').last().scrollIntoView({ force: true });
     cy.get('[name="Text"]').last().should("be.visible");
@@ -367,7 +367,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Validate the Filter Telephone Element", function () {
+  it.only("Validate the Filter Telephone Element", function () {
     //Validation for Filer Elements
     cy.get('[name="Telephone"]').last().scrollIntoView({ force: true });
     cy.get('[name="Telephone"]').last().should("be.visible");
@@ -375,7 +375,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Validate the Filter TextAera Element", function () {
+  it.only("Validate the Filter TextAera Element", function () {
     //Validation for Filer Elements
     cy.get('[name="TextAera"]').last().scrollIntoView({ force: true });
     cy.get('[name="TextAera"]').last().should("be.visible");
@@ -383,7 +383,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Validate the Filter Slider, Currency, Measure and Number Element", function () {
+  it.only("Validate the Filter Slider, Currency, Measure and Number Element", function () {
     //Validation for Filer Elements
     //For Slider ,Currency,Measure and Number
     cy.get(".kit-form__control-label").should("exist");
@@ -392,7 +392,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     );
   });
 
-  it("Validate the Filter Email Element", function () {
+  it.only("Validate the Filter Email Element", function () {
     //Validation for Filer Elements
     cy.get('[name="Email"]').last().scrollIntoView({ force: true });
     cy.get('[name="Email"]').last().should("be.visible");
@@ -400,49 +400,49 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Validate the Filter Address Element", function () {
+  it.only("Validate the Filter Address Element", function () {
     cy.get('[name="Address"]').last().scrollIntoView({ force: true });
     cy.get('[name="Address"]').last().should("be.visible");
     cy.log(this.KitData.Address + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Validate the Filter Time Element", function () {
+  it.only("Validate the Filter Time Element", function () {
     //Validation for Filer Elements
     cy.get('[placeholder="Add Time"][type="text"]').should("be.visible");
     cy.log(this.KitData.Time + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Validate the Filter Date Element", function () {
+  it.only("Validate the Filter Date Element", function () {
     //Validation for Filer Elements
     cy.get('[placeholder="Add Date"][type="text"]').should("be.visible");
     cy.log(this.KitData.Date + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Validate the Filter Toggle Element", function () {
+  it.only("Validate the Filter Toggle Element", function () {
     //Validation for Filer Elements
     cy.contains(this.KitData.Toggle).should("exist");
     cy.log(this.KitData.Toggle + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Validate the Filter SelectList Element", function () {
+  it.only("Validate the Filter SelectList Element", function () {
     //Validation for Filer Elements
     cy.contains(this.KitData.SelectList).should("exist");
     cy.log(this.KitData.SelectList + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Validate the Filter RadioSelect Element", function () {
+  it.only("Validate the Filter RadioSelect Element", function () {
     //Validation for Filer Elements
     cy.contains(this.KitData.RadioSelect).should("exist");
     cy.log(this.KitData.RadioSelec + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Validate the Filter CheckboxSelect Element", function () {
+  it.only("Validate the Filter CheckboxSelect Element", function () {
     //Validation for Filer Elements
     cy.contains(this.KitData.CheckboxSelect).should("exist");
     cy.log(
@@ -451,14 +451,14 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Validate the Filter Stepper Element", function () {
+  it.only("Validate the Filter Stepper Element", function () {
     //Validation for Filer Elements
     cy.contains(this.KitData.Stepper).should("exist");
     cy.log(this.KitData.Stepper + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Validate the Filter UserSelector Element", function () {
+  it.only("Validate the Filter UserSelector Element", function () {
     //Validation for Filer Elements
     cy.contains(this.KitData.UserSelector).scrollIntoView({ force: true });
     cy.contains(this.KitData.UserSelector).should("exist");
@@ -468,7 +468,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Validate the Filter ContactSelector Element", function () {
+  it.only("Validate the Filter ContactSelector Element", function () {
     //Validation for Filer Elements
     cy.contains(this.KitData.ContactSelector).should("exist");
     cy.log(
@@ -477,33 +477,33 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Validate the Filter Assigning Element", function () {
+  it.only("Validate the Filter Assigning Element", function () {
     //Validation for Filer Elements
     cy.contains(this.KitData.Assigning).should("exist");
     cy.log(this.KitData.Assigning + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Validate the Filter Inspection Element", function () {
+  it.only("Validate the Filter Inspection Element", function () {
     //Validation for Filer Elements
     cy.contains(this.KitData.Inspection).last().should("exist");
     cy.log(this.KitData.Inspection + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Default filter Created On", function () {
+  it.only("Default filter Created On", function () {
     cy.get('[placeholder="Created On"][type="text"]').should("exist");
     cy.log("Created On Default filter has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Default filter Created By", function () {
+  it.only("Default filter Created By", function () {
     cy.get('[placeholder="Created By"][type="text"]').should("exist");
     cy.log("Created By Default filter has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Default filter Modified By", function () {
+  it.only("Default filter Modified By", function () {
     cy.get('[placeholder="Modified By"][type="text"]').scrollIntoView({
       force: true,
     });
@@ -512,20 +512,20 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(2000);
   });
 
-  it("Default filter Modified On", function () {
+  it.only("Default filter Modified On", function () {
     cy.get('[placeholder="Modified On"][type="text"]').should("exist");
     cy.log("Modified By Default filter has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Default filter Item Id", function () {
+  it.only("Default filter Item Id", function () {
     cy.get('[placeholder="Item Id"]').last().scrollIntoView({ force: true });
     cy.get('[placeholder="Item Id"]').last().should("exist");
     cy.log("Default filter Item Id has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Default filter Distance", function () {
+  it.only("Default filter Distance", function () {
     cy.get('[name="Location(GPS)"][placeholder="Distance"]').should("exist");
     cy.log("Default filter Distance has been exist in Filters");
     cy.wait(2000);

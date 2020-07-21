@@ -18,6 +18,7 @@ describe("Login for new User and Reject the Connection request(Second Flow TC)",
         cy.log(this.Credentials.Fname);
         cy.log(this.Credentials.Lname);
       });
+      cy.viewport(1000, 600);
     }
   );
 

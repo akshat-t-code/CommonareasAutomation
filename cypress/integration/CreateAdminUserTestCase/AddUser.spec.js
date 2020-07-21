@@ -60,7 +60,7 @@ describe("Create user from admin and login with the new user", function () {
       cy.fixture("AddUserDynamicTestData/AdminUserdata").then(function (data) {
         this.data = data;
       });
-      cy.viewport(1280, 720);
+      cy.viewport(1000, 600);
     }
   );
 

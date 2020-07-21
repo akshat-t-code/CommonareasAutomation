@@ -5,7 +5,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
-    lp.visit();
+    lp.visitServiceBuild();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -49,10 +49,10 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(10000);
   });
 
-  it.only("Validate table View Result URL Elements", function () {
+  it("Validate table View Result URL Elements", function () {
     cy.wait(3000);
     cy.contains(this.KitData.Url + ":" + " " + this.KitItemData.Url).should(
-      "be.visible"
+      "exist"
     );
     cy.log(this.KitData.Url + "has been Validate for kitItem Results Elements");
     cy.wait(2000);
@@ -60,7 +60,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
 
   it("Validate table View Result Text Elements", function () {
     cy.contains(this.KitData.Text + ":" + " " + this.KitItemData.Text).should(
-      "be.visible"
+      "exist"
     );
     cy.log(
       this.KitData.Text + "has been Validate for kitItem Results Elements"
@@ -71,7 +71,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it.only("Validate table View Result Telephone Elements", function () {
     cy.contains(
       this.KitData.Telephone + ":" + " " + this.KitItemData.Telphone
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Telephone + "has been Validate for kitItem Results Elements"
     );
@@ -81,7 +81,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result TextAera Elements", function () {
     cy.contains(
       this.KitData.TextAera + ":" + " " + this.KitItemData.TextAera
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Text + "has been Validate for kitItem Results Elements"
     );
@@ -91,7 +91,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result Currency Elements", function () {
     cy.contains(
       this.KitData.Currency + ":" + " " + this.KitItemData.Currency
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Currency + "has been Validate for kitItem Results Elements"
     );
@@ -101,7 +101,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result Measure Elements", function () {
     cy.contains(
       this.KitData.Measure + ":" + " " + this.KitItemData.Measure
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Measure + "has been Validate for kitItem Results Elements"
     );
@@ -110,7 +110,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
 
   it("Validate table View Result Email Elements", function () {
     cy.contains(this.KitData.Email + ":" + " " + this.KitItemData.Email).should(
-      "be.visible"
+      "exist"
     );
 
     cy.log(
@@ -120,8 +120,6 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   });
 
   it.only("Validate table View Result Address Elements", function () {
-
-
     cy.contains(
       this.KitData.Address +
         ":" +
@@ -153,7 +151,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result Number Elements", function () {
     cy.contains(
       this.KitData.Number + ":" + " " + this.KitItemData.Number
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Number + "has been Validate for kitItem Results Elements"
     );
@@ -163,7 +161,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result SelectList Elements", function () {
     cy.contains(
       this.KitData.SelectList + ":" + " " + this.KitItemData.SelectListValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.SelectList + "has been Validate for kitItem Results Elements"
     );
@@ -173,7 +171,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result RadioSelect Elements", function () {
     cy.contains(
       this.KitData.RadioSelect + ":" + " " + this.KitItemData.RadioSelect
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.RadioSelect +
         "has been Validate for kitItem Results Elements"
@@ -189,7 +187,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
         ":" +
         " " +
         this.KitItemData.CheckboxSelectValue2
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.CheckboxSelect +
         "has been Validate for kitItem Results Elements"
@@ -200,7 +198,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result UserSelector Elements", function () {
     cy.contains(
       this.KitData.UserSelector + ":" + " " + this.KitItemData.UserSelectorName
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.UserSelector +
         "has been Validate for kitItem Results Elements"
@@ -214,7 +212,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
         ":" +
         " " +
         this.KitItemData.ContactSelectorName
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.ContactSelector +
         "has been Validate for kitItem Results Elements"
@@ -222,11 +220,10 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  
   it("Validate table View Result Inspection Elements", function () {
     cy.contains(
       this.KitData.Inspection + ":" + " " + this.KitItemData.InspectionValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Inspection + "has been Validate for kitItem Results Elements"
     );
@@ -236,7 +233,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result Stepper Elements", function () {
     cy.contains(
       this.KitData.Stepper + ":" + " " + this.KitItemData.StepperValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Stepper + " has been Validate for kitItem Results Elements"
     );
@@ -246,7 +243,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result Assigning Elements", function () {
     cy.contains(
       this.KitData.Assigning + ":" + " " + this.KitItemData.AssigningName
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Assigning + " has been Validate for kitItem Results Elements"
     );
@@ -256,7 +253,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result Time Elements", function () {
     cy.contains(
       this.KitData.Time + ":" + " " + this.KitItemData.TimeValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Time + " has been Validate for kitItem Results Elements"
     );
@@ -266,7 +263,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result Date Elements", function () {
     cy.contains(
       this.KitData.Date + ":" + " " + this.KitItemData.DateValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Date + " has been Validate for kitItem Results Elements"
     );
@@ -276,7 +273,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result Toggle Elements", function () {
     cy.contains(
       this.KitData.Toggle + ":" + " " + this.KitItemData.ToggleStatus
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Toggle + " has been Validate for kitItem Results Elements"
     );
@@ -286,7 +283,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result File Elements", function () {
     cy.contains(
       this.KitData.File + ":" + " " + this.KitItemData.FileValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.File + " has been Validate for kitItem Results Elements"
     );
@@ -296,14 +293,15 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   it("Validate table View Result Slider Elements", function () {
     cy.contains(
       this.KitData.Slider + ":" + " " + this.KitItemData.SliderValue
-    ).should("be.visible");
+    ).should("exist");
     cy.log(
       this.KitData.Slider + " has been Validate for kitItem Results Elements"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result Icon Elements", function () {
+  it.only("Validate table View Result Icon Elements", function () {
+
     cy.contains(this.KitData.Icon).should("be.visible");
 
     cy.contains(
@@ -344,5 +342,4 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     );
     cy.wait(2000);
   });
-
 });

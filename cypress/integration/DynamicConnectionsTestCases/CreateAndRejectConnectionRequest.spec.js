@@ -18,6 +18,7 @@ describe("Login for new User than Create A new Connection and Reject the Request
           cy.log(this.Credentials.Lname);
         }
       );
+      cy.viewport(1000, 600);
     }
   );
 

@@ -55,6 +55,8 @@
     "StepperValue5":"Value#5",
 
     "Icon":"Icon",
+    
+    "pls dont modified these below three icon values":"IconSize-IconLabel-Icontitle",
     "IconSize":"IconSize",
     "IconLabel":"IconLabel",
     "Icontitle":"title",
