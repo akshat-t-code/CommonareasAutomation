@@ -103,6 +103,7 @@ describe("Kit Builder Data Types Details", function () {
     DataType.UserSelector(this.DataType.UserSelector);
     cy.wait(5000);
   });
+
   it("OneToOneRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-1"]').dblclick({ force: true });

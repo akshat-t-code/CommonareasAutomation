@@ -1812,6 +1812,8 @@ class KitBuilderDataTypes {
     //Click on Configure
     cy.get(".v-size--small:nth-child(1)").click();
 
+    cy.wait(5000);
+
     //Select the Elements for 1-N Realtion
     cy.contains(ElementToBeRelate).click({ force: true });
     cy.log("OneToOne's Related kitType Element has been Selected");
@@ -1841,7 +1843,7 @@ class KitBuilderDataTypes {
   ) {
     //Click on Icon
     cy.getIframeBody().contains("Relation 1-N").click({ force: true });
-    //cy.getIframeBody().contains("rlas").click({ force: true });
+    //cy.getIframeBody().contains("OneToManyRelation").click({ force: true });
     cy.wait(3000);
 
     //Click on Lable
@@ -1992,44 +1994,57 @@ class KitBuilderDataTypes {
     //Click on Add List Results Again
     cy.contains("Add List Results").click({ force: true });
     //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
-
     cy.wait(2000);
+    //Change feature(old)
     //Add List Results Values coming from json file
-    cy.contains(Ele1).click({ force: true });
-    cy.contains(Ele2).click({ force: true });
-    cy.contains(Ele3).click({ force: true });
-    cy.contains(Ele4).click({ force: true });
-    cy.contains(Ele5).click({ force: true });
-    cy.wait(1000);
-    cy.log("OneToMany's Related kitTypes Elements has been Selected");
-    cy.log("Table List Results Element has been Added to OneToMany Relation");
-    cy.contains("Add Selected").click({ force: true });
-
-    cy.wait(2000);
-
-    ////Add Table List Filters Element
-    cy.contains(" Filters ").click({ force: true });
-    cy.wait(2000);
-    //Add List Filters
-    cy.contains("Add List Filters").click({ force: true });
-    //Add List Filters Values coming from json file
     // cy.contains(Ele1).click({ force: true });
     // cy.contains(Ele2).click({ force: true });
     // cy.contains(Ele3).click({ force: true });
     // cy.contains(Ele4).click({ force: true });
     // cy.contains(Ele5).click({ force: true });
-    cy.get(
-      ".row:nth-child(1) > .align-content-center .v-input--selection-controls__ripple"
-    ).click();
-    cy.get(".row:nth-child(2) .v-input--selection-controls__ripple").click();
-    cy.get(".row:nth-child(3) .v-input--selection-controls__ripple").click();
-    cy.get(".row:nth-child(4) .v-input--selection-controls__ripple").click();
-    cy.get(".row:nth-child(5) .v-input--selection-controls__ripple").click();
 
+    //Add table List Results Values index wise
+    cy.get('[role="checkbox"]').eq(0).click({ force: true });
+    cy.get('[role="checkbox"]').eq(1).click({ force: true });
+    cy.get('[role="checkbox"]').eq(2).click({ force: true });
+    cy.get('[role="checkbox"]').eq(3).click({ force: true });
+    cy.get('[role="checkbox"]').eq(4).click({ force: true });
+    cy.get('[role="checkbox"]').eq(5).click({ force: true });
+    cy.wait(2000);
+    cy.contains("Add Selected").click({ force: true });
+    cy.log("OneToMany's Related kitType Elements has been Selected");
+    cy.log("Table List Results Element has been Added to OneToMany Relation");
+    cy.wait(3000);
+    //Click on to select Enabled sort and Default sort
+    //Index 0,2,4,6,8 for Enabled sort elements(for selected elements) and Index 1 for Default sort
+    cy.get('[role="checkbox"]').eq(0).click({ force: true });
+    cy.get('[role="checkbox"]').eq(1).click({ force: true });
+    cy.get('[role="checkbox"]').eq(2).click({ force: true });
+    cy.get('[role="checkbox"]').eq(4).click({ force: true });
+    cy.get('[role="checkbox"]').eq(6).click({ force: true });
+    cy.get('[role="checkbox"]').eq(8).click({ force: true });
+    cy.log(
+      "Enabled sort and Default sort Elements has been Selected for OneToMany Relation"
+    );
+    cy.wait(2000);
+
+    //Add Table List Filters Element
+    cy.contains(" Filters ").click({ force: true });
+    cy.wait(2000);
+    //Add List Filters
+    cy.contains("Add List Filters").click({ force: true });
+    //Add Table List Filters Values index wise
+    cy.get('[role="checkbox"][type="checkbox"]').eq(12).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(13).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(14).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(15).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(16).click({ force: true });
     cy.wait(2000);
     //Click on Save Selected
     cy.contains("Save Selected").click({ force: true });
-    cy.log("Filters Elements has been Added");
+    cy.log(
+      "Table List Filters Element has been Selected for OneToMany Relation"
+    );
     //Save Table List
     cy.get(
       ".v-toolbar__items:nth-child(4) > .justify-end .v-btn__content"
@@ -2215,23 +2230,63 @@ class KitBuilderDataTypes {
     //Click on Add List Results Again
     cy.contains("Add List Results").click({ force: true });
     //cy.get('.v-window-item:nth-child(1) .v-btn__content').click({force:true})
-
     cy.wait(2000);
+    //Change feature(old)
     //Add List Results Values coming from json file
-    cy.contains(Ele1).click({ force: true });
-    cy.contains(Ele2).click({ force: true });
-    cy.contains(Ele3).click({ force: true });
-    cy.contains(Ele4).click({ force: true });
-    cy.contains(Ele5).click({ force: true });
-    cy.log("Square Card's Related kittype Elements has been Selected");
-    cy.wait(1000);
+    // cy.contains(Ele1).click({ force: true });
+    // cy.contains(Ele2).click({ force: true });
+    // cy.contains(Ele3).click({ force: true });
+    // cy.contains(Ele4).click({ force: true });
+    // cy.contains(Ele5).click({ force: true });
+
+    //Add table List Results Values index wise
+    cy.get('[role="checkbox"]').eq(0).click({ force: true });
+    cy.get('[role="checkbox"]').eq(1).click({ force: true });
+    cy.get('[role="checkbox"]').eq(2).click({ force: true });
+    cy.get('[role="checkbox"]').eq(3).click({ force: true });
+    cy.get('[role="checkbox"]').eq(4).click({ force: true });
+    cy.get('[role="checkbox"]').eq(5).click({ force: true });
+    cy.wait(2000);
     cy.contains("Add Selected").click({ force: true });
-    // Save
+    cy.log("SquareCard's Related kitType Elements has been Selected");
+    cy.log("Table List Results Element has been Added to SquareCard Relation");
+    cy.wait(3000);
+    //Click on to select Enabled sort and Default sort
+    //Index 0,2,4,6,8 for Enabled sort elements(for selected elements) and Index 1 for Default sort
+    cy.get('[role="checkbox"]').eq(0).click({ force: true });
+    cy.get('[role="checkbox"]').eq(1).click({ force: true });
+    cy.get('[role="checkbox"]').eq(2).click({ force: true });
+    cy.get('[role="checkbox"]').eq(4).click({ force: true });
+    cy.get('[role="checkbox"]').eq(6).click({ force: true });
+    cy.get('[role="checkbox"]').eq(8).click({ force: true });
+    cy.log(
+      "Enabled sort and Default sort Elements has been Selected for SquareCard Relation"
+    );
+    cy.wait(2000);
+
+    //Add Table List Filters Element
+    cy.contains(" Filters ").click({ force: true });
+    cy.wait(2000);
+    //Add List Filters
+    cy.contains("Add List Filters").click({ force: true });
+    //Add Table List Filters Values index wise
+    cy.get('[role="checkbox"][type="checkbox"]').eq(12).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(13).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(14).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(15).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(16).click({ force: true });
+    cy.wait(2000);
+    //Click on Save Selected
+    cy.contains("Save Selected").click({ force: true });
+    cy.log(
+      "Table List Filters Element has been Selected for SquareCard Relation"
+    );
+    //Save Table List
     cy.get(
       ".v-toolbar__items:nth-child(4) > .justify-end .v-btn__content"
     ).click({ force: true });
     cy.log(
-      "Square Card Relation Data Type has been Created with its all Configuration"
+      "SquareCard Relation Data Type has been created with its Configuration"
     );
   }
 

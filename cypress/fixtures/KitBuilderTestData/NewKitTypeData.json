@@ -1,8 +1,8 @@
 {
 
-    "KitLabel":"AkshatParentKit",
-    "KitName":"AkshatParentKit",
-    "KitDescription":"AkshatParentKit",
-    "APIName":"AkshatParentKit"
+    "KitLabel":"AkshatChildKit",
+    "KitName":"AkshatChildKit",
+    "KitDescription":"AkshatChildKit",
+    "APIName":"AkshatChildKit"
 
 }
