@@ -81,11 +81,11 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"OneToManyRelation",
+    "OneToManyRelation":"OneToNRelation",
     "KitToBeRelated":"AkshatParentKit",
-    "APIName":"iujaj",
-    "RelatedAPIName":"jahsx",
-    "ReverseEleAPIName":"iuhjas",
+    "APIName":"jxjkas",
+    "RelatedAPIName":"huahsds",
+    "ReverseEleAPIName":"oiias",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
@@ -99,10 +99,10 @@
 
      
     "SquareCardName":"SquareCard",
-    "CardKitToBeRelated":"AkshatParentKit",
-    "SQAPIName":"kjasijd",
-    "SQRelatedAPIName":"ouyaha",
-    "SQReverseEleAPIName":"mnxjhs",
+    "CardKitToBeRelated":"AutomationKit(Dont touch)",
+    "SQAPIName":"hagsa",
+    "SQRelatedAPIName":"bnxna",
+    "SQReverseEleAPIName":"kjaks",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",
