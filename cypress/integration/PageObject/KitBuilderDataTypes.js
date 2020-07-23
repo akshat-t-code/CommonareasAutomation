@@ -1778,6 +1778,8 @@ class KitBuilderDataTypes {
     cy.log("OneToOne Relation Data Type has been created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
+    cy.wait(5000)
+
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
@@ -1909,6 +1911,7 @@ class KitBuilderDataTypes {
     cy.log("OneToMany Relation Data Type has been Created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.wait(5000)
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
@@ -2042,6 +2045,7 @@ class KitBuilderDataTypes {
     cy.wait(2000);
     //Click on Save Selected
     cy.contains("Save Selected").click({ force: true });
+    cy.wait(3000)
     cy.log(
       "Table List Filters Element has been Selected for OneToMany Relation"
     );
@@ -2140,6 +2144,7 @@ class KitBuilderDataTypes {
     cy.log("Square Card Relation Data Type has been Created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.wait(5000)
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
@@ -2278,6 +2283,7 @@ class KitBuilderDataTypes {
     cy.wait(2000);
     //Click on Save Selected
     cy.contains("Save Selected").click({ force: true });
+    cy.wait(3000)
     cy.log(
       "Table List Filters Element has been Selected for SquareCard Relation"
     );
