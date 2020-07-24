@@ -105,7 +105,7 @@ describe("Kit Builder Data Types Details", function () {
     });
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -121,6 +121,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(3000);
     cy.contains(this.data.NewView).click({ force: true });
     cy.wait(5000);
+
   });
 
   it("Input Section Data Elements", function () {
@@ -178,6 +179,7 @@ describe("Kit Builder Data Types Details", function () {
     const DataType = new KitBuilderDataTypes();
     DataType.TextAera(this.DataType.TextAera);
     cy.wait(5000);
+
   });
 
   it("Slider Data Type", function () {
@@ -188,6 +190,7 @@ describe("Kit Builder Data Types Details", function () {
     const DataType = new KitBuilderDataTypes();
     DataType.Slider(this.DataType.Slider);
     cy.wait(5000);
+    
   });
 
   it("Currency Data Type", function () {
@@ -248,6 +251,7 @@ describe("Kit Builder Data Types Details", function () {
     const DataType = new KitBuilderDataTypes();
     DataType.Number(this.DataType.Number);
     cy.wait(5000);
+
   });
 
   it("Kit Builder Save and Publish", function () {
@@ -269,6 +273,7 @@ describe("Kit Builder Data Types Details", function () {
   });
 
   it("Time Data Type", function () {
+
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Time"]').dblclick({ force: true });
     cy.wait(1000);
@@ -279,6 +284,7 @@ describe("Kit Builder Data Types Details", function () {
   });
 
   it("Date Data Type", function () {
+
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Add Date"]').dblclick({ force: true });
     cy.wait(1000);
@@ -286,6 +292,7 @@ describe("Kit Builder Data Types Details", function () {
     const DataType = new KitBuilderDataTypes();
     DataType.Date(this.DataType.Date);
     cy.wait(5000);
+
   });
 
   it("Reminder Data Type", function () {
@@ -339,6 +346,7 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType.SelectListValue3,
       this.DataType.SelectListValue4,
       this.DataType.SelectListValue5
+
     );
     cy.wait(5000);
   });
@@ -358,6 +366,7 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType.RadioSelectValue3,
       this.DataType.RadioSelectValue4,
       this.DataType.RadioSelectValue5
+
     );
     cy.wait(5000);
   });
@@ -397,7 +406,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(2000);
   });
 
-  it("OneToManyRelation Data Type", function () {
+  it.only("OneToManyRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-N"]').dblclick({ force: true });
     cy.wait(1000);
@@ -453,7 +462,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("OneToOneRelation Data Type", function () {
+  it.only("OneToOneRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-1"]').dblclick({ force: true });
     cy.wait(1000);
@@ -485,7 +494,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("SquareCard Data Type", function () {
+  it.only("SquareCard Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="SquareCard"]').dblclick({ force: true });
     cy.wait(1000);
