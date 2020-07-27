@@ -1,7 +1,7 @@
 import LoginPage from "../PageObject/LoginPage";
 import KitTypePage from "../PageObject/KitTypePage";
 
-describe("Basic Test Case for Element interaction for common area DT", function () {
+describe("Reminder Test Cases for all Conditions", function () {
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
@@ -31,7 +31,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     });
   });
 
-  it.only("AksahtDemo Kit type", function () {
+  it.only("Creating Reminders for AksahtDemo Kit type", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -72,7 +72,6 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Reminder Start Date
     cy.contains("Reminder Date").click({ force: true });
-
     //Select date
     cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
       .first()
@@ -83,7 +82,6 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.log("Date has been selected for Reminder Start Date");
 
     //this lower code for select Reminder start date also working
-
     // cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content').click({ force: true });
     // //Click on oK to save date
     // cy.get('.btnBorder:nth-child(1) > .v-btn__content').click({ force: true });
@@ -120,9 +118,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.ChannelMobileApp).click({ force: true });
 
     //Save Reminder
-    // cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
-    //   force: true,
-    // });
+    cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+      force: true,
+    });
 
     //  */
 
@@ -150,7 +148,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Reminder Start Date
     cy.contains("Reminder Date").click({ force: true });
 
-    //Select date
+    //Select Reminder Start Date
     cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
       .first()
       .click({ force: true });
@@ -215,9 +213,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.ChannelMobileApp).click({ force: true });
 
     //Save Reminder for -->RepeatDaily Case In Recurring Type
-    // cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
-    //   force: true,
-    // });
+    cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+      force: true,
+    });
 
      */
 
@@ -268,6 +266,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.RepeatMonFriday).click({ force: true });
 
     //Reminder Time
+    //Click on Reminder Time POP up
     cy.get(".reminder--time .v-text-field__slot input").click({ force: true });
     cy.wait(1000);
     //Add Time
@@ -308,9 +307,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.ChannelMobileApp).click({ force: true });
 
     //Save Reminder for -->RepeatDaily Case In Recurring Type
-    // cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
-    //   force: true,
-    // });
+    cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+      force: true,
+    });
 
      */
 
@@ -392,6 +391,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // cy.wait(2000);
 
     //Reminder Time
+    //Click on Reminder Time POP up
     cy.get(
       ".pop-up-reminder--content > div > div:nth-child(5) > div:nth-child(2) > div.v-input.px-2.reminder-text-field.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
     ).click({ force: true });
@@ -432,9 +432,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.ChannelMobileApp).click({ force: true });
 
     //Save Reminder for -->Repeat Weekly Case In Recurring Type
-    // cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
-    //   force: true,
-    // });
+    cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+      force: true,
+    });
 
     */
 
@@ -499,6 +499,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains("3").click({ force: true });
 
     //Reminder Time
+    //Click on Reminder Time POP up
     cy.get(
       ".pop-up-reminder--content > div > div:nth-child(5) > div.d-flex.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
     ).click({ force: true });
@@ -541,9 +542,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.ChannelMobileApp).click({ force: true });
 
     //Save Reminder for -->Repeat Monthly - Day Case In Recurring Type
-    // cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
-    //   force: true,
-    // });
+    cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+      force: true,
+    });
 
     */
 
@@ -631,6 +632,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(5).click({ force: true });
 
     //Reminder Time
+    //Click on Reminder Time POP up
     cy.get(
       ".pop-up-reminder--content > div > div:nth-child(5) > div:nth-child(2) > div.d-flex.month_o.col-sm-12.col-md-8.col > div > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
     ).click({ force: true });
@@ -672,9 +674,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.ChannelMobileApp).click({ force: true });
 
     //Save Reminder for -->Repeat Monthly - Of Day Case In Recurring Type
-    // cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
-    //   force: true,
-    // });
+    cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+      force: true,
+    });
 
     */
 
@@ -741,7 +743,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Choose Date Number
     cy.contains("12").click({ force: true });
 
-    // //Reminder Time
+    //Reminder Time
+    //Click on Reminder Time POP up
     cy.get(
       ".pop-up-reminder--content > div > div:nth-child(5) > div:nth-child(2) > div:nth-child(2) > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
     ).click({ force: true });
@@ -873,7 +876,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(2000);
     cy.contains("April").click({ force: true });
 
-    // Reminder Time
+    //Reminder Time
+    //Click on Reminder Time POP up
     cy.get(
       ".pop-up-reminder--content > div > div:nth-child(5) > div.d-flex.align-center.col-sm-6.col-md-2.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
     ).click({ force: true });
@@ -916,9 +920,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.KitItemData.ChannelMobileApp).click({ force: true });
 
     //Save Reminder for -->Repeat Annually - Of Month Case In Recurring Type
-    // cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
-    //   force: true,
-    // });
+    cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+      force: true,
+    });
 
     */
   });

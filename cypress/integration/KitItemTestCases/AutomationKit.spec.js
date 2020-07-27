@@ -51,6 +51,24 @@ describe("Basic Test Case for Element interaction for common area DT", function 
   it.only("Element Interation", function () {
     cy.wait(2000);
 
+    cy.get('[placeholder="Add Time"][type="text"]').click({ force: true });
+    cy.wait(1000);
+    //Select hour value
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
+    ).click({ force: true });
+    cy.wait(1000);
+    //Select Value of miniutes
+    cy.xpath("//span[contains(text(),'30')]").click({ force: true });
+    cy.wait(1000);
+    //Click on PM
+    cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
+    //Click on OK to save date
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//button[1]"
+    ).click({ force: true });
+
+    cy.wait(3000);
     //Date Data Element
     cy.get('[placeholder="Add Date"][type="text"]').click({ force: true });
     cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
@@ -58,7 +76,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       .click({ force: true });
     cy.wait(2000);
     //Click on OK to save Date
-    cy.xpath("//span[contains(text(),'OK')]").click({force:true})
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+
     //Url
     cy.get('[name="Url"]').last().type(this.KitItemData.Url);
     cy.wait(1000);
@@ -137,44 +156,42 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(1000);
 
     //Time Data Element
+    //Click on Time to appear time pop up
     cy.get('[placeholder="Add Time"][type="text"]').click({ force: true });
-    //Hour
-    cy.get(
-      "#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)"
-    )
-      .first()
-      .click({ force: true });
+    cy.wait(1000);
+    //Select hour value
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
+    ).click({ force: true });
+    cy.wait(1000);
+    //Select Value of miniutes
+    cy.xpath("//span[contains(text(),'30')]").click({ force: true });
+    cy.wait(1000);
+    //Click on PM
+    cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
+    //Click on OK to save date
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//button[1]"
+    ).click({ force: true });
 
-    cy.wait(5000);
-    //Min
-    cy.get(
-      "#inspire > div:nth-child(1) > div > div > div.v-picker__body.theme--light > div > div.v-time-picker-clock.v-time-picker-clock--indeterminate.theme--light > div > span:nth-child(5)"
-    )
-      .last()
-      .click({ force: true });
-
-    //Click on OK
-    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    //Click on OK to save Time(also working)
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    cy.wait(3000);
 
     //Date Data Element
+    //Click on Date to appear Date pop up
     cy.get('[placeholder="Add Date"][type="text"]').click({ force: true });
     cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
       .first()
       .click({ force: true });
     cy.wait(2000);
     //Click on OK to save Date
-    cy.xpath("//span[contains(text(),'OK')]").click({force:true})
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    //Click on OK to save Date(also working)
     // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
     //   force: true,
     // });
-    cy.log("Date has been selected");
-    //Below code also working for select date
-    // cy.get("tr:nth-child(2) > td:nth-child(5) .v-btn__content").click({
-    //   force: true,
-    // });
-    // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
-    //   force: true,
-    // });
+    cy.wait(1000)
 
     //Toggle
     cy.get(".sync-switch .v-input--selection-controls__ripple").click({
