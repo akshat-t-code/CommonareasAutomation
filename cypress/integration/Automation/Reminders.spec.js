@@ -53,7 +53,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Reminder
 
-    /*
+     /*
     //Click to open Reminder POPUP
     cy.contains("SET REMINDER").click({ force: true });
     cy.log("Reminder Pop Up has been Opened for One time");
@@ -72,18 +72,27 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Reminder Start Date
     cy.contains("Reminder Date").click({ force: true });
+
     //Select date
-    cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content').click({ force: true });
-    //Click on oK to save date
-    cy.get('.btnBorder:nth-child(1) > .v-btn__content').click({ force: true });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder Start Date");
+
+    //this lower code for select Reminder start date also working
+
+    // cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content').click({ force: true });
+    // //Click on oK to save date
+    // cy.get('.btnBorder:nth-child(1) > .v-btn__content').click({ force: true });
 
     //Reminder Time
-    cy.get('.pop-up-reminder--content > div > div.row.d-flex > div:nth-child(2) > div > div.v-input.px-2.select--medium.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input')
-    .click({ force: true });
-    cy.wait(1000)
+    // cy.get('.pop-up-reminder--content > div > div.row.d-flex > div:nth-child(2) > div > div.v-input.px-2.select--medium.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input')
+    // .click({ force: true });
+    // cy.wait(1000)
     //Add Time
-
-
 
     //Select Channels
     cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
@@ -94,14 +103,15 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
       force: true,
     });
-     
-    */
 
-    //----------------------//Repeats-->RepeatDaily Case In Recurring Type------------------------------------------------------------
+     */
 
-    /*
+    //----------------------//Repeats-->Repeat Daily Case In Recurring Type------------------------------------------------------------
+
+    ///*
 
     //Click to open Reminder POPUP
+    cy.wait(20000);
     cy.contains("SET REMINDER").click({ force: true });
     cy.log("Reminder has been Opened for Repeat Daily");
     cy.wait(2000);
@@ -119,25 +129,35 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Reminder Start Date
     cy.contains("Reminder Date").click({ force: true });
-    //Select date
-    cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
-      force: true,
-    });
-    //Click on oK to save date
-    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
-     //Repeats-->RepeatDaily Case In Recurring Type
+    //Select date
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder Start Date");
+
+    //this lower code for select Reminder start date also working
+
+    // cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
+    //   force: true,
+    // });
+    // //Click on oK to save date
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+
+    //Repeats-->RepeatDaily Case In Recurring Type
     cy.get('[content-class="reminder-menu "]').click({ force: true });
     cy.wait(2000);
     cy.contains(this.KitItemData.RepeatDaily).click({ force: true });
     cy.wait(3000);
 
     //Reminder Time
-    cy.get(".reminder--time .v-text-field__slot input").click({ force: true });
-    
-    cy.wait(10000);
+    //cy.get(".reminder--time .v-text-field__slot input").click({ force: true });
+
+    // cy.wait(10000);
     //Select Time
-    
 
     //Click on Reminder End Date
     cy.get(
@@ -145,20 +165,19 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     ).click({ force: true });
     cy.wait(1000);
     //Select Date
-    cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content')
-    .click({force:true})
-
-    //Click on Ok
-    cy.get('div > div > div.v-picker__actions.v-card__actions > button:nth-child(1) > span')
-    .click({ force: true });
-
-    
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on oK to save date
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected Reminder End Date");
 
     //---------OR----------------------------
 
     cy.wait(3000);
     //Click or Never
-    cy.contains("Never").click({ force: true });
+    //cy.contains("Never").click({ force: true });
 
     //Select Channels
     cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
@@ -170,15 +189,16 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       force: true,
     });
 
-     */
+    // */
 
     //----------------------//Repeats-->Repeat Mon-Friday Case In Recurring Type------------------------------------------------------------
 
     /*
 
     //Click to open Reminder POPUP
+    cy.wait(20000);
     cy.contains("SET REMINDER").click({ force: true });
-    cy.log("Reminder has been Opened");
+    cy.log("Reminder has been Opened for Mon-Friday");
     cy.wait(2000);
 
     //Reminder Tittle
@@ -194,12 +214,23 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Reminder Start Date
     cy.contains("Reminder Date").click({ force: true });
+
     //Select date
-    cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
-      force: true,
-    });
-    //Click on oK to save date
-    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder Start Date");
+
+    //this lower code for select Reminder start date also working
+
+    // cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
+    //   force: true,
+    // });
+    // //Click on oK to save date
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
     //Repeats-->Repeat Mon-Friday Case In Recurring Type
     cy.get('[content-class="reminder-menu "]').click({ force: true });
@@ -212,22 +243,23 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Add Time
 
     //End Date
-    cy.get('.pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input')
-    .click({ force: true });
+    cy.get(
+      ".pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
+    ).click({ force: true });
     //Select Date
-    cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content').eq(2)
-    .click({force:true})
-
-    //Click on Ok
-    cy.get('div > div > div.v-picker__actions.v-card__actions > button:nth-child(1) > span')
-    .click({ force: true });
-    
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on oK to save date
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder End Date");
 
     //---------OR----------------------------
 
     cy.wait(3000);
     //Click or Never
-    cy.contains("Never").click({ force: true });
+    // cy.contains("Never").click({ force: true });
 
     //Select Channels
     cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
@@ -239,13 +271,14 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       force: true,
     });
 
-     */
+      */
 
     //----------------------//Repeats-->Repeat Weekly Case In Recurring Type------------------------------------------------------------
 
-     ///*
+    /*
 
     //Click to open Reminder POPUP
+    cy.wait(20000);
     cy.contains("SET REMINDER").click({ force: true });
     cy.log("Reminder has been Opened for Weekly");
     cy.wait(2000);
@@ -264,11 +297,21 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Reminder Start Date
     cy.contains("Reminder Date").click({ force: true });
     //Select date
-    cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
-      force: true,
-    });
-    //Click on oK to save date
-    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder Start Date");
+
+    //this lower code for select Reminder start date also working
+
+    // cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
+    //   force: true,
+    // });
+    // //Click on oK to save date
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
     //Repeats-->Repeat Weekly Case In Recurring Type
     cy.get('[content-class="reminder-menu "]').click({ force: true });
@@ -308,30 +351,28 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // cy.wait(2000);
 
     //Reminder Time
-    cy.get(
-      ".pop-up-reminder--content > div > div:nth-child(5) > div:nth-child(2) > div.v-input.px-2.reminder-text-field.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
-    ).click({ force: true });
-    //Add Time
-    cy.wait(10000);
+    // cy.get(
+    //   ".pop-up-reminder--content > div > div:nth-child(5) > div:nth-child(2) > div.v-input.px-2.reminder-text-field.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
+    // ).click({ force: true });
+    // //Add Time
+    // cy.wait(10000);
 
     //Reminder End Date
     cy.get(
       ".pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
     ).click({ force: true });
     //Select Date
-
-    cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content')
-    .click({force:true})
-
-    //Click on Ok
-    cy.get('div > div > div.v-picker__actions.v-card__actions > button:nth-child(1) > span')
-    .click({ force: true });
-
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected Reminder End Date");
     //---------OR----------------------------
 
     cy.wait(3000);
     //Click or Never
-    cy.contains("Never").click({ force: true });
+    //cy.contains("Never").click({ force: true });
 
     //Select Channels
     cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
@@ -343,12 +384,13 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       force: true,
     });
 
-     //*/
+      */
 
     //----------------------//Repeats-->Repeat Monthly - Day Case In Recurring Type------------------------------------------------------------
 
-    /*
+     /*
     //Click to open Reminder POPUP
+    cy.wait(20000);
     cy.contains("SET REMINDER").click({ force: true });
     cy.log("Reminder has been Opened for Monthly - Day");
     cy.wait(2000);
@@ -366,12 +408,23 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Reminder Start Date
     cy.contains("Reminder Date").click({ force: true });
+
     //Select date
-    cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
-      force: true,
-    });
-    //Click on oK to save date
-    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder Start Date");
+
+    //this lower code for select Reminder start date also working
+
+    // cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
+    //   force: true,
+    // });
+    // //Click on oK to save date
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
     //Repeats-->Repeat Monthly - Day Case In Recurring Type
     cy.get('[content-class="reminder-menu "]').click({ force: true });
@@ -394,31 +447,30 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains("3").click({ force: true });
 
     //Reminder Time
-    cy.get(
-      ".pop-up-reminder--content > div > div:nth-child(5) > div.d-flex.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
-    ).click({ force: true });
-    //Add Time
-    cy.wait(10000);
+    // cy.get(
+    //   ".pop-up-reminder--content > div > div:nth-child(5) > div.d-flex.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
+    // ).click({ force: true });
+    // //Add Time
+    // cy.wait(10000);
 
     //Reminder End Date
     cy.get(
       ".pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
     ).click({ force: true });
+
     //Select Date
-    cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content')
-    .click({force:true})
-
-
-    //Click on Ok
-    cy.get('div > div > div.v-picker__actions.v-card__actions > button:nth-child(1) > span')
-    .click({ force: true });
-
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected Reminder End Date");
 
     //---------OR----------------------------
 
     cy.wait(3000);
     //Click or Never
-    cy.contains("Never").click({ force: true });
+    // cy.contains("Never").click({ force: true });
 
     //Select Channels
     cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
@@ -430,13 +482,14 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       force: true,
     });
 
-    */
+     */
 
     //----------------------//Repeats-->Repeat Monthly - Of Day Case In Recurring Type------------------------------------------------------------
 
-    /*
+     /*
 
     //Click to open Reminder POPUP
+    cy.wait(20000);
     cy.contains("SET REMINDER").click({ force: true });
     cy.log("Reminder has been Opened for Monthly - Of Day ");
     cy.wait(2000);
@@ -454,12 +507,22 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Reminder Start Date
     cy.contains("Reminder Date").click({ force: true });
+
     //Select date
-    cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
-      force: true,
-    });
-    //Click on oK to save date
-    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder Start Date");
+
+    //this lower code for select Reminder start date also working
+
+    // cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
+    //   force: true,
+    // });
+    // //Click on oK to save date
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
     //Repeats-->Repeat Monthly - Of Day Case In Recurring Type
     cy.get('[content-class="reminder-menu "]').click({ force: true });
@@ -505,29 +568,29 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(5).click({ force: true });
 
     //Reminder Time
-    cy.get(
-      ".pop-up-reminder--content > div > div:nth-child(5) > div:nth-child(2) > div.d-flex.month_o.col-sm-12.col-md-8.col > div > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
-    ).click({ force: true });
-    //Add Time
-    cy.wait(10000);
+    // cy.get(
+    //   ".pop-up-reminder--content > div > div:nth-child(5) > div:nth-child(2) > div.d-flex.month_o.col-sm-12.col-md-8.col > div > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
+    // ).click({ force: true });
+    // //Add Time
+    // cy.wait(10000);
 
     //Reminder End Date
     cy.get(
       ".pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
     ).click({ force: true });
     //Select Date
-    cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content')
-    .click({force:true})
-
-    //Click on Ok
-    cy.get('div > div > div.v-picker__actions.v-card__actions > button:nth-child(1) > span')
-    .click({ force: true });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder End Date");
 
     //---------OR----------------------------
 
     cy.wait(3000);
     //Click or Never
-    cy.contains("Never").click({ force: true });
+    //cy.contains("Never").click({ force: true });
 
     //Select Channels
     cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
@@ -543,8 +606,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //----------------------//Repeats-->Repeat Annually - Date Case In Recurring Type------------------------------------------------------------
 
-    /*
+     /*
     //Click to open Reminder POPUP
+    cy.wait(20000);
     cy.contains("SET REMINDER").click({ force: true });
     cy.log("Reminder has been Opened Annually - Date");
     cy.wait(2000);
@@ -562,12 +626,22 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Reminder Start Date
     cy.contains("Reminder Date").click({ force: true });
+
     //Select date
-    cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
-      force: true,
-    });
-    //Click on oK to save date
-    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder Start Date");
+
+    //this lower code for select Reminder start date also working
+
+    // cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
+    //   force: true,
+    // });
+    // //Click on oK to save date
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
     //Repeats-->Repeat Annually - Date Case In Recurring Type
     cy.get('[content-class="reminder-menu "]').click({ force: true });
@@ -593,29 +667,29 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Choose Date Number
     cy.contains("12").click({ force: true });
 
-    //Reminder Time
-    cy.get('.pop-up-reminder--content > div > div:nth-child(5) > div:nth-child(2) > div:nth-child(2) > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input')
-    .click({ force: true });
-    //Add Time
-    cy.wait(10000)
+    // //Reminder Time
+    // cy.get('.pop-up-reminder--content > div > div:nth-child(5) > div:nth-child(2) > div:nth-child(2) > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input')
+    // .click({ force: true });
+    // //Add Time
+    // cy.wait(10000)
 
     //Reminder End Date
-    cy.get('.pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input')
-    .click({ force: true });
+    cy.get(
+      ".pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
+    ).click({ force: true });
     //Select Date
-    cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content')
-    .click({force:true})
-
-    //Click on Ok
-    cy.get('div > div > div.v-picker__actions.v-card__actions > button:nth-child(1) > span')
-    .click({ force: true });
-    
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder End Date");
 
     //---------OR----------------------------
 
     cy.wait(3000);
     //Click or Never
-    cy.contains("Never").click({ force: true });
+    // cy.contains("Never").click({ force: true });
 
     //Select Channels
     cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
@@ -627,13 +701,14 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       force: true,
     });
 
-     */
+      */
 
     //----------------------//Repeats-->Repeat Annually - Of Month Case In Recurring Type------------------------------------------------------------
 
-    /*
+     /*
 
     //Click to open Reminder POPUP
+    cy.wait(20000);
     cy.contains("SET REMINDER").click({ force: true });
     cy.log("Reminder has been Opened for Annually - Of Month ");
     cy.wait(2000);
@@ -651,12 +726,22 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Reminder Start Date
     cy.contains("Reminder Date").click({ force: true });
+
     //Select date
-    cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
-      force: true,
-    });
-    //Click on oK to save date
-    cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder Start Date");
+
+    //this lower code for select Reminder start date also working
+
+    // cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
+    //   force: true,
+    // });
+    // //Click on oK to save date
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
 
     //Repeats-->Repeat Annually - Of Month Case In Recurring Type
     cy.get('[content-class="reminder-menu "]').click({ force: true });
@@ -703,32 +788,29 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains("April").click({ force: true });
 
     // Reminder Time
-    cy.get('.pop-up-reminder--content > div > div:nth-child(5) > div.d-flex.align-center.col-sm-6.col-md-2.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input')
-    .click({ force: true });
-    //Add Time
-    cy.wait(10000)
-
-
-
+    // cy.get('.pop-up-reminder--content > div > div:nth-child(5) > div.d-flex.align-center.col-sm-6.col-md-2.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input')
+    // .click({ force: true });
+    // //Add Time
+    // cy.wait(10000)
 
     //Reminder End Date
-    cy.get('.pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input')
-    .click({ force: true });
+    cy.get(
+      ".pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
+    ).click({ force: true });
+
     //Select Date
-
-    cy.get('tr:nth-child(5) > td:nth-child(5) .v-btn__content')
-    .click({force:true})
-
-    //Click on Ok
-    cy.get('div > div > div.v-picker__actions.v-card__actions > button:nth-child(1) > span')
-    .click({ force: true });
-   
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder End Date");
 
     //---------OR----------------------------
 
     cy.wait(3000);
     //Click or Never
-    cy.contains("Never").click({ force: true });
+    //cy.contains("Never").click({ force: true });
 
     //Select Channels
     cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
