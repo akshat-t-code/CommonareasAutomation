@@ -1971,7 +1971,7 @@ class KitBuilderDataTypes {
       force: true,
     });
     //Checkbox
-    cy.contains("Default View for Kit").click({ force: true });
+   // cy.contains("Default View for Kit").click({ force: true });
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2) > .v-btn__content")
@@ -2208,7 +2208,7 @@ class KitBuilderDataTypes {
       force: true,
     });
     //Checkbox
-    cy.contains("Default View for Kit").click({ force: true });
+    //cy.contains("Default View for Kit").click({ force: true });
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2) > .v-btn__content")

@@ -49,34 +49,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
   });
 
   it.only("Element Interation", function () {
-    cy.wait(2000);
 
-    cy.get('[placeholder="Add Time"][type="text"]').click({ force: true });
-    cy.wait(1000);
-    //Select hour value
-    cy.xpath(
-      "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
-    ).click({ force: true });
-    cy.wait(1000);
-    //Select Value of miniutes
-    cy.xpath("//span[contains(text(),'30')]").click({ force: true });
-    cy.wait(1000);
-    //Click on PM
-    cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
-    //Click on OK to save date
-    cy.xpath(
-      "//div[contains(@class,'v-dialog v-dialog--active')]//button[1]"
-    ).click({ force: true });
-
-    cy.wait(3000);
-    //Date Data Element
-    cy.get('[placeholder="Add Date"][type="text"]').click({ force: true });
-    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
-      .first()
-      .click({ force: true });
     cy.wait(2000);
-    //Click on OK to save Date
-    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
 
     //Url
     cy.get('[name="Url"]').last().type(this.KitItemData.Url);
@@ -165,7 +139,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     ).click({ force: true });
     cy.wait(1000);
     //Select Value of miniutes
-    cy.xpath("//span[contains(text(),'30')]").click({ force: true });
+    cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
     cy.wait(1000);
     //Click on PM
     cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
@@ -273,18 +247,19 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     cy.wait(2000);
     //UserSelector(Values coming form KitItemValues Json File)
-    cy.get(".kit-control-component:nth-child(22) .inline-svg").click({
+     cy.get(".kit-control-component:nth-child(21) .inline-svg")
+    .click({
       force: true,
     });
-    cy.wait(2000);
+    cy.wait(1000);
     cy.contains(this.KitItemData.UserSelectorName).click({ force: true });
     cy.wait(2000);
 
     //ContactSelector(Values coming form KitItemValues Json File)
-    cy.get(".kit-control-component:nth-child(24) .inline-svg").click({
+    cy.get(".kit-control-component:nth-child(22) .inline-svg").click({
       force: true,
     });
-    cy.wait(2000);
+    cy.wait(1000);
     cy.contains(this.KitItemData.ContactSelectorName).click({ force: true });
     cy.wait(2000);
 
@@ -365,6 +340,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(2000);
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
 
+    /*
+
     //Click on New Item Related New Kit Type for Square Card Relation Control
     cy.get(
       "div.kit-control-grid--header_buttons.d-flex.align-center.col-sm-9.col > button:nth-child(3) > span"
@@ -378,7 +355,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains("New Item created").should("be.visible");
     cy.wait(5000);
 
-    /*
+    
 
     //Name
     cy.get('[name="Name"]').last().type(this.KitItemData.Text);

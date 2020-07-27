@@ -53,7 +53,7 @@ describe("Reminder Test Cases for all Conditions", function () {
 
     //Reminder
 
-    // /*
+     /*
     //Click to open Reminder POPUP
     cy.contains("SET REMINDER").click({ force: true });
     cy.log("Reminder Pop Up has been Opened for One time");
@@ -122,11 +122,11 @@ describe("Reminder Test Cases for all Conditions", function () {
       force: true,
     });
 
-    //  */
+      */
 
     //----------------------//Repeats-->Repeat Daily Case In Recurring Type------------------------------------------------------------
 
-    /*
+   // /*
 
     //Click to open Reminder POPUP
     cy.wait(20000);
@@ -180,7 +180,10 @@ describe("Reminder Test Cases for all Conditions", function () {
     ).click({ force: true });
     cy.wait(1000);
     cy.xpath("//span[contains(text(),'30')]").click({ force: true });
-    //Click on Ok
+    //Click on PM
+    cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
+    cy.wait(1000);
+    //Click on Ok to save Time
     cy.xpath(
       "//div[@class='v-dialog v-dialog--active v-dialog--persistent']//button[1]"
     ).click({ force: true });
@@ -217,7 +220,7 @@ describe("Reminder Test Cases for all Conditions", function () {
       force: true,
     });
 
-     */
+    // */
 
     //----------------------//Repeats-->Repeat Mon-Friday Case In Recurring Type------------------------------------------------------------
 
