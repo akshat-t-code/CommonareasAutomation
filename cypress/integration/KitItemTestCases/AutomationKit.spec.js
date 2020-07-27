@@ -50,6 +50,15 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
   it.only("Element Interation", function () {
     cy.wait(2000);
+
+    //Date Data Element
+    cy.get('[placeholder="Add Date"][type="text"]').click({ force: true });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'OK')]").click({force:true})
     //Url
     cy.get('[name="Url"]').last().type(this.KitItemData.Url);
     cy.wait(1000);
@@ -149,12 +158,23 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     //Date Data Element
     cy.get('[placeholder="Add Date"][type="text"]').click({ force: true });
-    cy.get("tr:nth-child(2) > td:nth-child(5) .v-btn__content").click({
-      force: true,
-    });
-    cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
-      force: true,
-    });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'OK')]").click({force:true})
+    // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
+    //   force: true,
+    // });
+    cy.log("Date has been selected");
+    //Below code also working for select date
+    // cy.get("tr:nth-child(2) > td:nth-child(5) .v-btn__content").click({
+    //   force: true,
+    // });
+    // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
+    //   force: true,
+    // });
 
     //Toggle
     cy.get(".sync-switch .v-input--selection-controls__ripple").click({
