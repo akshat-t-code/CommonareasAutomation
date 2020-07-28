@@ -39,7 +39,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(3000);
     //Open Craeted Kit Type
    // cy.contains(this.data1.KitName).click({ force: true });
-    cy.contains('AkshatParentKit').click({ force: true });
+    cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
