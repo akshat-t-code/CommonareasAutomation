@@ -26,7 +26,7 @@ describe("Input Section Data Elements Configuration", function () {
     });
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -36,8 +36,9 @@ describe("Input Section Data Elements Configuration", function () {
     // cy.wait(5000);
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
-    cy.contains(this.data1.KitName).click({ force: true });
-    //cy.contains('airplane').click({ force: true });
+    //Open Craeted Kit Type
+    //cy.contains(this.data1.KitName).click({ force: true });
+    cy.contains('AksahtValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -45,7 +46,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("Input Section Data Elements", function () {
+  it.only("Input Section Data Elements", function () {
     cy.contains("Inputs").click({ force: true });
     cy.wait(2000);
   });
@@ -142,7 +143,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("Address Data Type", function () {
+  it.only("Address Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Address"]').dblclick({ force: true });
     cy.wait(1000);
@@ -152,7 +153,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("Section Data Type", function () {
+  it.only("Section Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Section"]').dblclick({ force: true });
     cy.wait(1000);
@@ -162,7 +163,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("Number Data Type", function () {
+  it.only("Number Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Number"]').dblclick({ force: true });
     cy.wait(1000);
@@ -174,7 +175,7 @@ describe("Input Section Data Elements Configuration", function () {
 
   
 
-  it("Kit Builder Save and Publish", function () {
+  it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();

@@ -36,6 +36,7 @@ describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Emai
     // cy.wait(5000);
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
+    //Open Craeted Kit Type
     cy.contains(this.data1.KitName).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });

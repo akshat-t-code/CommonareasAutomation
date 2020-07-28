@@ -36,8 +36,9 @@ describe("Date & Time Section Data Elements Configuration", function () {
     // cy.wait(5000);
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
-    cy.contains(this.data1.KitName).click({ force: true });
-    //cy.contains('airplane').click({ force: true });
+    //Open Craeted Kit Type
+    //cy.contains(this.data1.KitName).click({ force: true });
+    cy.contains('AksahtValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);

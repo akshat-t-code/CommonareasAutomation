@@ -36,6 +36,7 @@ describe("Copy New Form Elements in All Forms", function () {
     // kb.AdminUrl();
     // cy.wait(5000);
     // kb.ClickOnKitBuilder();
+    //Open Craeted Kit Type
     cy.wait(3000);
     cy.contains(this.data1.KitName).click({ force: true });
     cy.wait(3000);

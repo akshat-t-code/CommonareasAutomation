@@ -26,6 +26,12 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       this.KitTypeData = KitTypeData;
     });
 
+    cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
+      DataEleValues
+    ) {
+      this.KitData = DataEleValues;
+    });
+
     cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
       this.KitItemData = KitDataEle;
     });
@@ -51,9 +57,10 @@ describe("Basic Test Case for Element interaction for common area DT", function 
   it.only("Element Interation", function () {
 
     cy.wait(2000);
-
     //Url
     cy.get('[name="Url"]').last().type(this.KitItemData.Url);
+    //Working
+    //cy.get('[name'+'='+this.KitData.Url+']').last().type(this.KitItemData.Url);
     cy.wait(1000);
 
     //Text
