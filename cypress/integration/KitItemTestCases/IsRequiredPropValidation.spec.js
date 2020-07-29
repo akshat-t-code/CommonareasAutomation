@@ -39,6 +39,7 @@ describe("KitBuilder's Element Is Required Property Validation", function () {
     ) {
       this.DataType = datatypes;
     });
+    
   });
 
   it.only("Navigating to Created KitType New Form", function () {
@@ -331,6 +332,7 @@ describe("KitBuilder's Element Is Required Property Validation", function () {
     cy.get('[type="checkbox"]').eq(2).should("be.checked");
     cy.log("IsRequired Has been Checked for UserSelector(Assertion Passed)");
     cy.wait(2000);
+
   });
 
   it.only("OneToOne Data Type Is Required Prop Validation", function () {
@@ -349,6 +351,7 @@ describe("KitBuilder's Element Is Required Property Validation", function () {
   });
 
   it.only("ContactSelector Data Type Is Required Prop Validation", function () {
+
     //Click on ContactSelector
     cy.getIframeBody()
       .contains(this.DataType.ContactSelector)
@@ -361,6 +364,7 @@ describe("KitBuilder's Element Is Required Property Validation", function () {
     cy.get('[type="checkbox"]').eq(2).should("be.checked");
     cy.log("IsRequired Has been Checked for ContactSelector(Assertion Passed)");
     cy.wait(2000);
+
   });
 
   it.only("SquareCard Data Type Is Required Prop Validation", function () {
@@ -433,6 +437,7 @@ describe("KitBuilder's Element Is Required Property Validation", function () {
 });
 
 describe("Validation On UI for Element's Is Required Property", function () {
+
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
@@ -440,7 +445,9 @@ describe("Validation On UI for Element's Is Required Property", function () {
 
     //Handling Alert
     cy.on("window:confirm", () => {
+
       cy.log("Alert has been Handled");
+
     });
 
     lp.EnterEmail("kstanley@commonareas.work.dev");
@@ -479,10 +486,13 @@ describe("Validation On UI for Element's Is Required Property", function () {
     ) {
       this.DataType = datatypes;
     });
+
   });
 
   it.only("Navigating to UI for KitType New Form for Is Required Property Validation", function () {
+
     //cy.wait(5000)
+
     const lp = new LoginPage();
     const KTP = new KitTypePage();
     //Assertion
@@ -497,4 +507,7 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.contains("New Item created").should("be.visible");
     cy.log("New Item created and Kit Type has been Opened");
   });
+
+
+
 });

@@ -57,7 +57,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.wait(5000);
   });
 
-  it("Url Data Type Read Prop Validation", function () {
+  it.only("Url Data Type Read Prop Validation", function () {
     //Click on Url
     cy.getIframeBody().find('[placeholder="Url"]').click({ force: true });
     cy.wait(2000);
@@ -177,6 +177,7 @@ describe("KitBuilder's Element Property Validation", function () {
   });
 
   it("Address Data Type Read Prop Validation", function () {
+
     //Click on Address
     cy.getIframeBody().find('[placeholder="Address"]').click({ force: true });
     cy.wait(2000);
@@ -200,6 +201,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.get('[type="checkbox"]').eq(1).should("be.checked");
     cy.log("ReadOnly Has been Checked for Number(Assertion Passed)");
     cy.wait(1000);
+    
   });
 
   it("Time Data Type Read Prop Validation", function () {
@@ -286,7 +288,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.wait(1000);
   });
 
-  it.only("Stepper Data Type Read Prop Validation", function () {
+  it("Stepper Data Type Read Prop Validation", function () {
     //Click on Add Stepper
     cy.getIframeBody()
       .find('[data-gjs-type="control-stepper"]')
@@ -301,7 +303,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.wait(1000);
   });
 
-  it.only("UserSelector Data Type Read Prop Validation", function () {
+  it("UserSelector Data Type Read Prop Validation", function () {
     //Click on UserSelector
     cy.getIframeBody()
       .contains(this.DataType.UserSelector)
@@ -316,7 +318,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.wait(1000);
   });
 
-  it.only("ContactSelector Data Type Read Prop Validation", function () {
+  it("ContactSelector Data Type Read Prop Validation", function () {
     //Click on ContactSelector
     cy.getIframeBody()
       .contains(this.DataType.ContactSelector)
@@ -331,7 +333,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.wait(1000);
   });
 
-  it.only("Icon Data Type Read Prop Validation", function () {
+  it("Icon Data Type Read Prop Validation", function () {
     //Click on Icon
     cy.getIframeBody().contains(this.DataType.Icon).click({ force: true });
     cy.wait(2000);
@@ -344,7 +346,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.wait(1000);
   });
 
-  it.only("Inspection Data Type Read Prop Validation", function () {
+  it("Inspection Data Type Read Prop Validation", function () {
     //Click on Inspection
     cy.getIframeBody()
       .contains(this.DataType.Inspection)
@@ -359,7 +361,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.wait(1000);
   });
 
-  it.only("Assigning Data Type Read Prop Validation", function () {
+  it("Assigning Data Type Read Prop Validation", function () {
     //Click on Assigning
     cy.getIframeBody().contains(this.DataType.Assigning).click({ force: true });
     cy.wait(2000);

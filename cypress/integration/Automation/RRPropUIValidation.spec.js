@@ -178,7 +178,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Email Read only Property Validated on UI");
   });
 
-  it.only("Address Read only Property Validation on UI", function () {
+  it("Address Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Address
     cy.get(
@@ -195,7 +195,7 @@ describe("Validation On UI for Element's Read Property", function () {
 
   it("Number Read only Property Validation on UI", function () {
     cy.wait(1000);
-    //Url
+    //Number
     cy.get('[name="Number"]').last().should("have.attr", "readonly");
 
     cy.get('[name="Number"]')
@@ -208,7 +208,7 @@ describe("Validation On UI for Element's Read Property", function () {
 
   it("Time Read only Property Validation on UI", function () {
     cy.wait(1000);
-    //Url
+    //Time
     cy.get('[placeholder="Add Time"][type="text"]').should(
       "have.attr",
       "readonly"
@@ -222,7 +222,7 @@ describe("Validation On UI for Element's Read Property", function () {
 
   it("Date Read only Property Validation on UI", function () {
     cy.wait(1000);
-    //Url
+    //Date
     cy.get('[placeholder="Add Date"][type="text"]').should(
       "have.attr",
       "readonly"
@@ -234,87 +234,84 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Date Read only Property Validated on UI");
   });
 
-  it("URL Read only Property Validation on UI", function () {
+  it("Toggle Read only Property Validation on UI", function () {
     cy.wait(1000);
-    //Url
-    cy.get('[name="Url"]').last().should("have.attr", "readonly");
+    //Toggle
+    //cy.get('[disabled="disabled"]').eq(3).should("have.attr", "disabled");
 
-    cy.get('[name="Url"]')
-      .last()
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    cy.get('[name="Toggle"]').should("have.attr", "readonly");
+    cy.log("Toggle Read only Property Validated on UI");
   });
 
-  it("URL Read only Property Validation on UI", function () {
+  it("SelectList Read only Property Validation on UI", function () {
     cy.wait(1000);
-    //Url
-    cy.get('[name="Url"]').last().should("have.attr", "readonly");
+    //SelectList
+    //cy.get('[disabled="disabled"]').eq(4).should("have.attr", "disabled");
 
-    cy.get('[name="Url"]')
-      .last()
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    cy.get('[name="SelectList"]').should("have.attr", "readonly");
+    cy.log("SelectList Read only Property Validated on UI");
   });
 
-  it("URL Read only Property Validation on UI", function () {
+  it("RadioSelect Read only Property Validation on UI", function () {
     cy.wait(1000);
-    //Url
-    cy.get('[name="Url"]').last().should("have.attr", "readonly");
-
-    cy.get('[name="Url"]')
-      .last()
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    //RadioSelect
+    cy.get('[name="RadioSelect"]').should("have.attr", "readonly");
+    cy.log("RadioSelect Read only Property Validated on UI");
   });
 
-  it("URL Read only Property Validation on UI", function () {
+  it("CheckboxSelect Read only Property Validation on UI", function () {
     cy.wait(1000);
-    //Url
-    cy.get('[name="Url"]').last().should("have.attr", "readonly");
-
-    cy.get('[name="Url"]')
-      .last()
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    //CheckboxSelect
+    //cy.get('[disabled="disabled"]').eq(5).should("have.attr", "disabled");
+    cy.get('[name="CheckboxSelect"]').should("have.attr", "readonly");
+    cy.log("CheckboxSelect Read only Property Validated on UI");
   });
 
-  it("URL Read only Property Validation on UI", function () {
+  it("UserSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
-    //Url
-    cy.get('[name="Url"]').last().should("have.attr", "readonly");
-
-    cy.get('[name="Url"]')
-      .last()
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    //UserSelector
+    cy.get('.v-select__selections').eq(5)
+    .should("have.attr", "readonly");
+    cy.log("UserSelector Read only Property Validated on UI");
   });
 
-  it("URL Read only Property Validation on UI", function () {
+  it("ContactSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
-    //Url
-    cy.get('[name="Url"]').last().should("have.attr", "readonly");
-
-    cy.get('[name="Url"]')
-      .last()
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    //ContactSelector
+    cy.get('.v-select__selections').eq(6)
+    .should("have.attr", "readonly");
+    cy.log("ContactSelector Read only Property Validated on UI");
+  });
+  it("Assigning Read only Property Validation on UI", function () {
+    cy.wait(1000);
+    //Assigning
+    cy.get('.v-select__selections').eq(8)
+    .should("have.attr", "readonly");
+    cy.log("Assigning Read only Property Validated on UI");
   });
 
-  it("URL Read only Property Validation on UI", function () {
+  it.only("Icon Read only Property Validation on UI", function () {
     cy.wait(1000);
-    //Url
-    cy.get('[name="Url"]').last().should("have.attr", "readonly");
-
-    cy.get('[name="Url"]')
-      .last()
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    //Icon
+    cy.get('[placeholder="Label"]')
+    .should("have.attr", "readonly");
+    cy.log("Icon Read only Property Validated on UI");
   });
+
+  it.only("Stepper Read only Property Validation on UI", function () {
+    cy.wait(1000);
+    //Stepper
+    cy.get('[name="Stepper"]')
+    .should("have.attr", "readonly");
+    cy.log("Stepper Read only Property Validated on UI");
+  });
+
+  it("Inspection Read only Property Validation on UI", function () {
+    cy.wait(1000);
+    //Inspection
+    cy.get('.v-select__selections').eq(8)
+    .should("have.attr", "readonly");
+    cy.log("Inspection Read only Property Validated on UI");
+  });
+ 
 });
