@@ -101,7 +101,7 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("Text Is Required Property Validated on UI");
   });
 
-  it.only("File Is Required Property Validation on UI", function () {
+  it("File Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //File
     cy.get('[type="text"]').eq(3).should("have.attr", "readonly");
@@ -268,7 +268,7 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("CheckboxSelect Is Required Property Validated on UI");
   });
 
-  it("UserSelector Is Required Property Validation on UI", function () {
+  it.only("UserSelector Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //UserSelector
     cy.get('.v-select__selections').eq(5)
@@ -276,14 +276,14 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("UserSelector Is Required Property Validated on UI");
   });
 
-  it("ContactSelector Is Required Property Validation on UI", function () {
+  it.only("ContactSelector Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //ContactSelector
     cy.get('.v-select__selections').eq(6)
     .should("have.attr", "readonly");
     cy.log("ContactSelector Is Required Property Validated on UI");
   });
-  it("Assigning Is Required Property Validation on UI", function () {
+  it.only("Assigning Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Assigning
     cy.get('.v-select__selections').eq(8)
@@ -291,7 +291,7 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("Assigning Is Required Property Validated on UI");
   });
 
-  it.only("Icon Is Required Property Validation on UI", function () {
+  it("Icon Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Icon
     cy.get('[placeholder="Label"]')
@@ -299,7 +299,7 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("Icon Is Required Property Validated on UI");
   });
 
-  it.only("Stepper Is Required Property Validation on UI", function () {
+  it("Stepper Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Stepper
     cy.get('[name="Stepper"]')
@@ -307,7 +307,7 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("Stepper Is Required Property Validated on UI");
   });
 
-  it("Inspection Is Required Property Validation on UI", function () {
+  it.only("Inspection Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Inspection
     cy.get('.v-select__selections').eq(8)

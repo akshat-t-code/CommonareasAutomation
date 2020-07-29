@@ -139,7 +139,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("TextAera Read only Property Validated on UI");
   });
 
-  it.only("Currency Read only Property Validation on UI", function () {
+  it("Currency Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Currency
     cy.get('[type="text"]').eq(5).should("have.attr", "readonly");
@@ -152,7 +152,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Currency Read only Property Validated on UI");
   });
 
-  it.only("Measure Read only Property Validation on UI", function () {
+  it("Measure Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Measure
     cy.get('[type="number"]').eq(3).should("have.attr", "readonly");
@@ -267,7 +267,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("CheckboxSelect Read only Property Validated on UI");
   });
 
-  it("UserSelector Read only Property Validation on UI", function () {
+  it.only("UserSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
     //UserSelector
     cy.get('.v-select__selections').eq(5)
@@ -275,14 +275,15 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("UserSelector Read only Property Validated on UI");
   });
 
-  it("ContactSelector Read only Property Validation on UI", function () {
+  it.only("ContactSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
     //ContactSelector
     cy.get('.v-select__selections').eq(6)
     .should("have.attr", "readonly");
     cy.log("ContactSelector Read only Property Validated on UI");
   });
-  it("Assigning Read only Property Validation on UI", function () {
+
+  it.only("Assigning Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Assigning
     cy.get('.v-select__selections').eq(8)
@@ -290,7 +291,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Assigning Read only Property Validated on UI");
   });
 
-  it.only("Icon Read only Property Validation on UI", function () {
+  it("Icon Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Icon
     cy.get('[placeholder="Label"]')
@@ -298,7 +299,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Icon Read only Property Validated on UI");
   });
 
-  it.only("Stepper Read only Property Validation on UI", function () {
+  it("Stepper Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Stepper
     cy.get('[name="Stepper"]')
@@ -306,7 +307,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Stepper Read only Property Validated on UI");
   });
 
-  it("Inspection Read only Property Validation on UI", function () {
+  it.only("Inspection Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Inspection
     cy.get('.v-select__selections').eq(8)
