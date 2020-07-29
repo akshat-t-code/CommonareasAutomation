@@ -467,7 +467,7 @@ describe("Validation On UI for Element's Read and Required Property", function (
     });
   });
 
-  it.only("Navigating to UI for KitType New Form for Read and Required Property Validation", function () {
+  it.only("Navigating to UI for KitType New Form for Read and Required  Property Validation", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();

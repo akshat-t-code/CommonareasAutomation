@@ -4,7 +4,7 @@ import KitTypePage from "../PageObject/KitTypePage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 import RandomString from "../PageObject/RandomString";
 
-describe("KitBuilder's Element Required Property Validation", function () {
+describe("KitBuilder's Element Is Required Property Validation", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
@@ -57,7 +57,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(5000);
   });
 
-  it("Url Data Type Required Prop Validation", function () {
+  it("Url Data Type Is Required Prop Validation", function () {
     //Click on Url
     cy.getIframeBody().find('[placeholder="Url"]').click({ force: true });
     cy.wait(2000);
@@ -70,7 +70,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Text Data Type Required Prop Validation", function () {
+  it("Text Data Type Is Required Prop Validation", function () {
     //Click on  Text
     cy.getIframeBody().find('[placeholder="Text"]').click({ force: true });
     cy.wait(2000);
@@ -83,7 +83,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("File Data Type Required Prop Validation", function () {
+  it("File Data Type Is Required Prop Validation", function () {
     //Click on File
     cy.getIframeBody()
       .find('[placeholder="Tooltip for File"]')
@@ -98,7 +98,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Telephone Data Type Required Prop Validation", function () {
+  it("Telephone Data Type Is Required Prop Validation", function () {
     //Click on Telephone
     cy.getIframeBody().find('[placeholder="Telephone"]').click({ force: true });
     cy.wait(2000);
@@ -111,7 +111,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it.only("TextAera Data Type Required Prop Validation", function () {
+  it("TextAera Data Type Is Required Prop Validation", function () {
     //Click on TextAera
     cy.getIframeBody().contains(this.DataType.TextAera).click({ force: true });
     cy.wait(2000);
@@ -124,7 +124,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Slider Data Type Required Prop Validation", function () {
+  it("Slider Data Type Is Required Prop Validation", function () {
     //Click on Slider
     cy.getIframeBody().contains("Slider").click({ force: true });
     cy.wait(2000);
@@ -137,7 +137,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Currency Data Type Required Prop Validation", function () {
+  it("Currency Data Type Is Required Prop Validation", function () {
     //Click on Currency
     cy.getIframeBody().find('[placeholder="Currency"]').click({ force: true });
     cy.wait(2000);
@@ -150,7 +150,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Measure Data Type Required Prop Validation", function () {
+  it("Measure Data Type Is Required Prop Validation", function () {
     //Click on Measure
     cy.getIframeBody().find('[placeholder="Measure"]').click({ force: true });
     cy.wait(3000);
@@ -163,7 +163,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Email Data Type Required Prop Validation", function () {
+  it("Email Data Type Is Required Prop Validation", function () {
     //Click on Email
     cy.getIframeBody().find('[placeholder="Email"]').click({ force: true });
     cy.wait(2000);
@@ -176,7 +176,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Address Data Type Required Prop Validation", function () {
+  it("Address Data Type Is Required Prop Validation", function () {
     //Click on Address
     cy.getIframeBody().find('[placeholder="Address"]').click({ force: true });
     cy.wait(2000);
@@ -189,7 +189,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Number Data Type Required Prop Validation", function () {
+  it("Number Data Type Is Required Prop Validation", function () {
     //Click on Number
     cy.getIframeBody().find('[placeholder="Number"]').click({ force: true });
     cy.wait(2000);
@@ -202,7 +202,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Time Data Type Required Prop Validation", function () {
+  it("Time Data Type Is Required Prop Validation", function () {
     //Click on Time
     cy.getIframeBody().find('[placeholder="Time"]').click({ force: true });
     cy.wait(2000);
@@ -215,7 +215,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Date Data Type Required Prop Validation", function () {
+  it("Date Data Type Is Required Prop Validation", function () {
     //Click on Add Date
     cy.getIframeBody().find('[placeholder="Date"]').click({ force: true });
     cy.wait(2000);
@@ -228,7 +228,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("Toggle Data Type Required Prop Validation", function () {
+  it("Toggle Data Type Is Required Prop Validation", function () {
     //Click on Add Toggle
     cy.getIframeBody().contains("Toggle").click({ force: true });
     cy.wait(2000);
@@ -241,7 +241,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("SelectList Data Type Required Prop Validation", function () {
+  it("SelectList Data Type Is Required Prop Validation", function () {
     //Click on Add SelectList
     cy.getIframeBody()
       .contains(this.DataType.SelectList)
@@ -256,7 +256,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("RadioSelect Data Type Required Prop Validation", function () {
+  it("RadioSelect Data Type Is Required Prop Validation", function () {
     //Click on Add RadioSelect
     cy.getIframeBody()
       .contains(this.DataType.RadioSelect)
@@ -271,7 +271,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
     cy.wait(2000);
   });
 
-  it("CheckboxSelect Data Type Required Prop Validation", function () {
+  it("CheckboxSelect Data Type Is Required Prop Validation", function () {
     //Click on Add Checkbox
     cy.getIframeBody()
       .contains(this.DataType.CheckboxSelect)
@@ -283,6 +283,139 @@ describe("KitBuilder's Element Required Property Validation", function () {
     //Assertion for if it is checked or not
     cy.get('[type="checkbox"]').eq(2).should("be.checked");
     cy.log("IsRequired Has been Checked for CheckboxSelect(Assertion Passed)");
+    cy.wait(2000);
+  });
+
+  it.only("OneToMany Data Type Is Required Prop Validation", function () {
+    //Click on Add Stepper
+    cy.getIframeBody()
+      .contains(this.DataType.OneToManyRelation)
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on IsRequired to Check
+    cy.get('[type="checkbox"]').eq(2).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(2).should("be.checked");
+    cy.log(
+      "IsRequired Has been Checked for OneToManyRelation(Assertion Passed)"
+    );
+    cy.wait(2000);
+  });
+
+  it.only("Stepper Data Type Is Required Prop Validation", function () {
+    //Click on Add Stepper
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-stepper"]')
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on IsRequired to Check
+    cy.get('[type="checkbox"]').eq(2).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(2).should("be.checked");
+    cy.log("IsRequired Has been Checked for Stepper(Assertion Passed)");
+    cy.wait(2000);
+  });
+
+  it.only("UserSelector Data Type Is Required Prop Validation", function () {
+    //Click on UserSelector
+    cy.getIframeBody()
+      .contains(this.DataType.UserSelector)
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on IsRequired to Check
+    cy.get('[type="checkbox"]').eq(2).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(2).should("be.checked");
+    cy.log("IsRequired Has been Checked for UserSelector(Assertion Passed)");
+    cy.wait(2000);
+  });
+
+  it.only("OneToOne Data Type Is Required Prop Validation", function () {
+    //Click on Add Stepper
+    cy.getIframeBody()
+      .contains(this.DataType.OneToOneRelation)
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on IsRequired to Check
+    cy.get('[type="checkbox"]').eq(2).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(2).should("be.checked");
+    cy.log("IsRequired Has been Checked for OneToOne(Assertion Passed)");
+    cy.wait(2000);
+  });
+
+  it.only("ContactSelector Data Type Is Required Prop Validation", function () {
+    //Click on ContactSelector
+    cy.getIframeBody()
+      .contains(this.DataType.ContactSelector)
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on IsRequired to Check
+    cy.get('[type="checkbox"]').eq(2).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(2).should("be.checked");
+    cy.log("IsRequired Has been Checked for ContactSelector(Assertion Passed)");
+    cy.wait(2000);
+  });
+
+  it.only("SquareCard Data Type Is Required Prop Validation", function () {
+    //Click on Add Stepper
+    cy.getIframeBody()
+      .contains(this.DataType.SquareCardName)
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on IsRequired to Check
+    cy.get('[type="checkbox"]').eq(2).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(2).should("be.checked");
+    cy.log("IsRequired Has been Checked for SquareCard(Assertion Passed)");
+    cy.wait(2000);
+  });
+
+  it.only("Icon Data Type Is Required Prop Validation", function () {
+    //Click on Icon
+    cy.getIframeBody().contains(this.DataType.Icon).click({ force: true });
+    cy.wait(2000);
+
+    //Click on IsRequired to Check
+    cy.get('[type="checkbox"]').eq(2).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(2).should("be.checked");
+    cy.log("IsRequired Has been Checked for Icon(Assertion Passed)");
+    cy.wait(2000);
+  });
+
+  it.only("Inspection Data Type Is Required Prop Validation", function () {
+    //Click on Inspection
+    cy.getIframeBody()
+      .contains(this.DataType.Inspection)
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on IsRequired to Check
+    cy.get('[type="checkbox"]').eq(2).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(2).should("be.checked");
+    cy.log("IsRequired Has been Checked for Inspection(Assertion Passed)");
+    cy.wait(2000);
+  });
+
+  it.only("Assigning Data Type Is Required Prop Validation", function () {
+    //Click on Assigning
+    cy.getIframeBody().contains(this.DataType.Assigning).click({ force: true });
+    cy.wait(2000);
+
+    //Click on IsRequired to Check
+    cy.get('[type="checkbox"]').eq(2).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(2).should("be.checked");
+    cy.log("IsRequired Has been Checked for Assigning(Assertion Passed)");
     cy.wait(2000);
   });
 
@@ -299,7 +432,7 @@ describe("KitBuilder's Element Required Property Validation", function () {
   });
 });
 
-describe("Validation On UI for Element's Required Property", function () {
+describe("Validation On UI for Element's Is Required Property", function () {
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
@@ -348,7 +481,7 @@ describe("Validation On UI for Element's Required Property", function () {
     });
   });
 
-  it.only("Navigating to UI for KitType New Form for Required Property Validation", function () {
+  it.only("Navigating to UI for KitType New Form for Is Required Property Validation", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();

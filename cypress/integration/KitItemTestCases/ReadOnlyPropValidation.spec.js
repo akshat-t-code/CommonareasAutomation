@@ -57,7 +57,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.wait(5000);
   });
 
-  it.only("Url Data Type Read Prop Validation", function () {
+  it("Url Data Type Read Prop Validation", function () {
     //Click on Url
     cy.getIframeBody().find('[placeholder="Url"]').click({ force: true });
     cy.wait(2000);
@@ -276,13 +276,99 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.getIframeBody()
       .contains(this.DataType.CheckboxSelect)
       .click({ force: true });
-    cy.wait(3000);
+    cy.wait(2000);
 
     //Click on ReadOnly to Check
     cy.get('[type="checkbox"]').eq(1).check();
     //Assertion for if it is checked or not
     cy.get('[type="checkbox"]').eq(1).should("be.checked");
     cy.log("ReadOnly Has been Checked for CheckboxSelect(Assertion Passed)");
+    cy.wait(1000);
+  });
+
+  it.only("Stepper Data Type Read Prop Validation", function () {
+    //Click on Add Stepper
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-stepper"]')
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on ReadOnly to Check
+    cy.get('[type="checkbox"]').eq(1).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(1).should("be.checked");
+    cy.log("ReadOnly Has been Checked for Stepper(Assertion Passed)");
+    cy.wait(1000);
+  });
+
+  it.only("UserSelector Data Type Read Prop Validation", function () {
+    //Click on UserSelector
+    cy.getIframeBody()
+      .contains(this.DataType.UserSelector)
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on ReadOnly to Check
+    cy.get('[type="checkbox"]').eq(1).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(1).should("be.checked");
+    cy.log("ReadOnly Has been Checked for UserSelector(Assertion Passed)");
+    cy.wait(1000);
+  });
+
+  it.only("ContactSelector Data Type Read Prop Validation", function () {
+    //Click on ContactSelector
+    cy.getIframeBody()
+      .contains(this.DataType.ContactSelector)
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on ReadOnly to Check
+    cy.get('[type="checkbox"]').eq(1).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(1).should("be.checked");
+    cy.log("ReadOnly Has been Checked for ContactSelector(Assertion Passed)");
+    cy.wait(1000);
+  });
+
+  it.only("Icon Data Type Read Prop Validation", function () {
+    //Click on Icon
+    cy.getIframeBody().contains(this.DataType.Icon).click({ force: true });
+    cy.wait(2000);
+
+    //Click on ReadOnly to Check
+    cy.get('[type="checkbox"]').eq(1).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(1).should("be.checked");
+    cy.log("ReadOnly Has been Checked for Icon(Assertion Passed)");
+    cy.wait(1000);
+  });
+
+  it.only("Inspection Data Type Read Prop Validation", function () {
+    //Click on Inspection
+    cy.getIframeBody()
+      .contains(this.DataType.Inspection)
+      .click({ force: true });
+    cy.wait(2000);
+
+    //Click on ReadOnly to Check
+    cy.get('[type="checkbox"]').eq(1).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(1).should("be.checked");
+    cy.log("ReadOnly Has been Checked for Inspection(Assertion Passed)");
+    cy.wait(1000);
+  });
+
+  it.only("Assigning Data Type Read Prop Validation", function () {
+    //Click on Assigning
+    cy.getIframeBody().contains(this.DataType.Assigning).click({ force: true });
+    cy.wait(2000);
+
+    //Click on ReadOnly to Check
+    cy.get('[type="checkbox"]').eq(1).check();
+    //Assertion for if it is checked or not
+    cy.get('[type="checkbox"]').eq(1).should("be.checked");
+    cy.log("ReadOnly Has been Checked for Assigning(Assertion Passed)");
     cy.wait(1000);
   });
 
