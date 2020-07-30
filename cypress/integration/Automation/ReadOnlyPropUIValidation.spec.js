@@ -56,7 +56,7 @@ describe("Validation On UI for Element's Read Property", function () {
     });
   });
 
-  it("Navigating to UI for KitType New Form for Read Property Validation", function () {
+  it.only("Navigating to UI for KitType New Form for Read Property Validation", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -73,7 +73,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it("URL Read only Property Validation on UI", function () {
+  it.only("URL Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Url
     cy.get('[name="Url"]').last().should("have.attr", "readonly");
@@ -205,7 +205,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Number Read only Property Validated on UI");
   });
 
-  it("Time Read only Property Validation on UI", function () {
+  it.only("Time Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Time
     cy.get('[placeholder="Add Time"][type="text"]').should(
@@ -219,7 +219,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Time Read only Property Validated on UI");
   });
 
-  it("Date Read only Property Validation on UI", function () {
+  it.only("Date Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Date
     cy.get('[placeholder="Add Date"][type="text"]').should(
@@ -273,7 +273,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("UserSelector Read only Property Validated on UI");
   });
 
-  it("ContactSelector Read only Property Validation on UI", function () {
+  it.only("ContactSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
     //ContactSelector
     cy.get('[name="ContactSelector"]').should("have.attr", "readonly");

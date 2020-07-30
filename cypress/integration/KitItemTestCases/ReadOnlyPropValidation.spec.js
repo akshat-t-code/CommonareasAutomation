@@ -58,7 +58,8 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("Url Data Type Read Prop Validation", function () {
     //Click on Url
-    cy.getIframeBody().find('[placeholder="Url"]').click({ force: true });
+    // cy.getIframeBody().find('[placeholder="Url"]').click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Url).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -71,7 +72,8 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("Text Data Type Read Prop Validation", function () {
     //Click on  Text
-    cy.getIframeBody().find('[placeholder="Text"]').click({ force: true });
+    // cy.getIframeBody().find('[placeholder="Text"]').click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Text).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -84,9 +86,10 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("File Data Type Read Prop Validation", function () {
     //Click on File
-    cy.getIframeBody()
-      .find('[placeholder="Tooltip for File"]')
-      .click({ force: true });
+    // cy.getIframeBody()
+    //   .find('[placeholder="Tooltip for File"]')
+    //   .click({ force: true });
+    cy.getIframeBody().contains(this.DataType.File).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -99,7 +102,8 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("Telephone Data Type Read Prop Validation", function () {
     //Click on Telephone
-    cy.getIframeBody().find('[placeholder="Telephone"]').click({ force: true });
+    // cy.getIframeBody().find('[placeholder="Telephone"]').click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Telephone).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -138,7 +142,8 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("Currency Data Type Read Prop Validation", function () {
     //Click on Currency
-    cy.getIframeBody().find('[placeholder="Currency"]').click({ force: true });
+    // cy.getIframeBody().find('[placeholder="Currency"]').click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Currency).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -151,8 +156,9 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("Measure Data Type Read Prop Validation", function () {
     //Click on Measure
-    cy.getIframeBody().find('[placeholder="Measure"]').click({ force: true });
-    cy.wait(3000);
+    // cy.getIframeBody().find('[placeholder="Measure"]').click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Measure).click({ force: true });
+    cy.wait(2000);
 
     //Click on ReadOnly to Check
     cy.get('[type="checkbox"]').eq(1).check();
@@ -164,7 +170,8 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("Email Data Type Read Prop Validation", function () {
     //Click on Email
-    cy.getIframeBody().find('[placeholder="Email"]').click({ force: true });
+    //cy.getIframeBody().find('[placeholder="Email"]').click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Email).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -176,9 +183,9 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
   });
 
   it("Address Data Type Read Prop Validation", function () {
-
     //Click on Address
-    cy.getIframeBody().find('[placeholder="Address"]').click({ force: true });
+    //cy.getIframeBody().find('[placeholder="Address"]').click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Address).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -191,7 +198,8 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("Number Data Type Read Prop Validation", function () {
     //Click on Number
-    cy.getIframeBody().find('[placeholder="Number"]').click({ force: true });
+    // cy.getIframeBody().find('[placeholder="Number"]').click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Number).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -200,12 +208,12 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
     cy.get('[type="checkbox"]').eq(1).should("be.checked");
     cy.log("ReadOnly Has been Checked for Number(Assertion Passed)");
     cy.wait(1000);
-    
   });
 
   it("Time Data Type Read Prop Validation", function () {
     //Click on Time
-    cy.getIframeBody().find('[placeholder="Time"]').click({ force: true });
+    //cy.getIframeBody().find('[placeholder="Time"]').click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Time).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -218,7 +226,8 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("Date Data Type Read Prop Validation", function () {
     //Click on Add Date
-    cy.getIframeBody().find('[placeholder="Date"]').click({ force: true });
+    //cy.getIframeBody().find('[placeholder="Date"]').click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Date).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -231,7 +240,7 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("Toggle Data Type Read Prop Validation", function () {
     //Click on Add Toggle
-    cy.getIframeBody().contains("Toggle").click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Toggle).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
