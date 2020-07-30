@@ -2,7 +2,6 @@ import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitTypePage from "../PageObject/KitTypePage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
-import RandomString from "../PageObject/RandomString";
 
 describe("Validation On UI for Element's Read Property", function () {
   this.beforeAll(function () {
@@ -57,7 +56,7 @@ describe("Validation On UI for Element's Read Property", function () {
     });
   });
 
-  it.only("Navigating to UI for KitType New Form for Read Property Validation", function () {
+  it("Navigating to UI for KitType New Form for Read Property Validation", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -100,16 +99,11 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Text Read only Property Validated on UI");
   });
 
-  it.only("File Read only Property Validation on UI", function () {
+  it("File Read only Property Validation on UI", function () {
     cy.wait(1000);
     //File
-    cy.get('[type="text"]').eq(3).should("have.attr", "readonly");
-
-    cy.get('[type="text"]')
-      .eq(3)
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    //cy.get('[type="text"]').eq(3).should("have.attr", "readonly");
+    cy.get('[name="File"][label="File"]').should("have.attr", "readonly");
     cy.log("File Read only Property Validated on UI");
   });
 
@@ -139,29 +133,30 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("TextAera Read only Property Validated on UI");
   });
 
+  it("Slider Read only Property Validation on UI", function () {
+    cy.wait(1000);
+    //TextAera
+    cy.get('[name="Slider"]').should("have.attr", "readonly");
+
+    cy.get('[name="Slider"]').then(($el) => {
+      expect($el.attr("readonly")).to.equal("readonly");
+    });
+    cy.log("Slider Read only Property Validated on UI");
+  });
+
   it("Currency Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Currency
-    cy.get('[type="text"]').eq(5).should("have.attr", "readonly");
-
-    cy.get('[type="text"]')
-      .eq(5)
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    // cy.get('[type="text"]').eq(5).should("have.attr", "readonly");
+    cy.get('[name="Currency"][type="number"]').should("have.attr", "readonly");
     cy.log("Currency Read only Property Validated on UI");
   });
 
   it("Measure Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Measure
-    cy.get('[type="number"]').eq(3).should("have.attr", "readonly");
-
-    cy.get('[type="number"]')
-      .eq(3)
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    //cy.get('[type="number"]').eq(3).should("have.attr", "readonly");
+    cy.get('[name="Measure"][type="number"]').should("have.attr", "readonly");
     cy.log("Measure Read only Property Validated on UI");
   });
 
@@ -185,12 +180,16 @@ describe("Validation On UI for Element's Read Property", function () {
       '[placeholder="Street address, bulding, company ... "][name="Address"]'
     ).should("have.attr", "readonly");
 
-    cy.get(
-      '[placeholder="Street address, bulding, company ... "][name="Address"]'
-    ).then(($el) => {
-      expect($el.attr("readonly")).to.equal("readonly");
-    });
-    cy.log("Address Read only Property Validated on UI");
+    //Address line 2.
+    cy.get('[name="Address line 2."]').should("have.attr", "readonly");
+
+    //City
+    cy.get('[placeholder="City"]').should("have.attr", "readonly");
+
+    //Zip/Postal Code
+    cy.get('[placeholder="Zip/Postal Code"]').should("have.attr", "readonly");
+
+    cy.log("All Address fields Read only Property Validated on UI");
   });
 
   it("Number Read only Property Validation on UI", function () {
@@ -267,52 +266,45 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("CheckboxSelect Read only Property Validated on UI");
   });
 
-  it.only("UserSelector Read only Property Validation on UI", function () {
+  it("UserSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
     //UserSelector
-    cy.get('.v-select__selections').eq(5)
-    .should("have.attr", "readonly");
+    cy.get('[pickername="Users"]').should("have.attr", "readonly");
     cy.log("UserSelector Read only Property Validated on UI");
   });
 
-  it.only("ContactSelector Read only Property Validation on UI", function () {
+  it("ContactSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
     //ContactSelector
-    cy.get('.v-select__selections').eq(6)
-    .should("have.attr", "readonly");
+    cy.get('[name="ContactSelector"]').should("have.attr", "readonly");
     cy.log("ContactSelector Read only Property Validated on UI");
   });
 
-  it.only("Assigning Read only Property Validation on UI", function () {
+  it("Assigning Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Assigning
-    cy.get('.v-select__selections').eq(8)
-    .should("have.attr", "readonly");
+    cy.get('[name="Assigning"]').should("have.attr", "readonly");
     cy.log("Assigning Read only Property Validated on UI");
   });
 
   it("Icon Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Icon
-    cy.get('[placeholder="Label"]')
-    .should("have.attr", "readonly");
+    cy.get('[placeholder="Label"]').should("have.attr", "readonly");
     cy.log("Icon Read only Property Validated on UI");
   });
 
   it("Stepper Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Stepper
-    cy.get('[name="Stepper"]')
-    .should("have.attr", "readonly");
+    cy.get('[name="Stepper"]').should("have.attr", "readonly");
     cy.log("Stepper Read only Property Validated on UI");
   });
 
-  it.only("Inspection Read only Property Validation on UI", function () {
+  it("Inspection Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Inspection
-    cy.get('.v-select__selections').eq(8)
-    .should("have.attr", "readonly");
+    cy.get('[placeholder="Please Choose"]').should("have.attr", "readonly");
     cy.log("Inspection Read only Property Validated on UI");
   });
- 
 });

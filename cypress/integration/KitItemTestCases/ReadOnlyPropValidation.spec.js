@@ -2,9 +2,8 @@ import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitTypePage from "../PageObject/KitTypePage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
-import RandomString from "../PageObject/RandomString";
 
-describe("KitBuilder's Element Property Validation", function () {
+describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
@@ -41,7 +40,7 @@ describe("KitBuilder's Element Property Validation", function () {
     });
   });
 
-  it.only("Navigating to Created KitType New Form", function () {
+  it("Navigating to Created KitType New Form", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -57,7 +56,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.wait(5000);
   });
 
-  it.only("Url Data Type Read Prop Validation", function () {
+  it("Url Data Type Read Prop Validation", function () {
     //Click on Url
     cy.getIframeBody().find('[placeholder="Url"]').click({ force: true });
     cy.wait(2000);
@@ -126,7 +125,7 @@ describe("KitBuilder's Element Property Validation", function () {
 
   it("Slider Data Type Read Prop Validation", function () {
     //Click on Slider
-    cy.getIframeBody().contains("Slider").click({ force: true });
+    cy.getIframeBody().contains(this.DataType.Slider).click({ force: true });
     cy.wait(2000);
 
     //Click on ReadOnly to Check
@@ -374,7 +373,7 @@ describe("KitBuilder's Element Property Validation", function () {
     cy.wait(1000);
   });
 
-  it.only("Kit Builder Save and Publish", function () {
+  it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();
@@ -436,7 +435,7 @@ describe("Validation On UI for Element's Read Property", function () {
     });
   });
 
-  it.only("Navigating to UI for KitType New Form for Read Property Validation", function () {
+  it("Navigating to UI for KitType New Form for Read Property Validation", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();
