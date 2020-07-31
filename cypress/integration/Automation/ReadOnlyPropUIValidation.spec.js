@@ -266,7 +266,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("CheckboxSelect Read only Property Validated on UI");
   });
 
-  it("UserSelector Read only Property Validation on UI", function () {
+  it.only("UserSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
     //UserSelector
     cy.get('[pickername="Users"]').should("have.attr", "readonly");
@@ -280,7 +280,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("ContactSelector Read only Property Validated on UI");
   });
 
-  it("Assigning Read only Property Validation on UI", function () {
+  it.only("Assigning Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Assigning
     cy.get('[name="Assigning"]').should("have.attr", "readonly");

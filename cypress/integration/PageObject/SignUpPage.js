@@ -3,6 +3,10 @@ class SignUpPage {
     cy.visit("https://app.ca-test.com/Public/Login?ReturnUrl=%2F");
   }
 
+  visitBaseVuild() {
+    cy.visit("https://app.ca-build.com/Public/Login?ReturnUrl=%2F");
+  }
+
   SignUpbtn() {
     const sb = cy.get(".button-sign-up > a");
     sb.click();

@@ -460,4 +460,5 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.contains("New Item created").should("be.visible");
     cy.log("New Item created and Kit Type has been Opened");
   });
+
 });
