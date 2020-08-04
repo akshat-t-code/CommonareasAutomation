@@ -132,7 +132,11 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // cy.contains(this.KitItemData.Country).click({ force: true });
 
     //Number
-    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
+    cy.get(
+      "div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
+    )
+    .eq(4).scrollIntoView({ force: true });
+
     cy.get('[name="Number"]').last().type(this.KitItemData.Number);
     cy.wait(1000);
 
@@ -172,7 +176,106 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
     //   force: true,
     // });
-    cy.wait(1000)
+    cy.wait(2000)
+
+    //Reminder
+    //Click to open Reminder POPUP
+    cy.wait(2000);
+    cy.contains("SET REMINDER").click({ force: true });
+    cy.log("Reminder has been Opened for Repeat Daily");
+    cy.wait(2000);
+
+    //Reminder Tittle
+    cy.get('[items="Recurring,One-Time"]').type(this.KitItemData.ReminderTitle);
+    cy.wait(1000);
+    //Reminder Type-->Click on DropDown
+    cy.contains("arrow_drop_down").click({ force: true });
+
+    //Reminder for Recurring
+    cy.contains(this.KitItemData.ReminderTypeRecurring)
+      .first()
+      .click({ force: true });
+
+    //Reminder Start Date
+    cy.contains("Reminder Date").click({ force: true });
+
+    //Select Reminder Start Date
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected for Reminder Start Date");
+
+    //this lower code for select Reminder start date also working
+    // cy.get("tr:nth-child(5) > td:nth-child(5) .v-btn__content").click({
+    //   force: true,
+    // });
+    // //Click on oK to save date
+    // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
+
+    //Repeats-->RepeatDaily Case In Recurring Type
+    cy.get('[content-class="reminder-menu "]').click({ force: true });
+    cy.wait(2000);
+    cy.contains(this.KitItemData.RepeatDaily).click({ force: true });
+    cy.wait(3000);
+
+    //Reminder Time
+    //Click on to appear Time pop up
+    cy.get(".reminder--time .v-text-field__slot input").click({ force: true });
+    cy.wait(2000);
+    //Select Time
+    cy.xpath(
+      "//span[@class='v-time-picker-clock__item']//span[contains(text(),'3')]"
+    ).first()
+    .click({ force: true });
+    cy.wait(1000);
+    cy.xpath("//span[contains(text(),'30')]")
+    .first()
+    .click({ force: true });
+    //Click on PM
+    cy.xpath("//div[contains(text(),'PM')]")
+    .first().click({ force: true });
+    cy.wait(1000);
+    //Click on Ok to save Time
+    cy.xpath(
+      "//div[@class='v-dialog v-dialog--active v-dialog--persistent']//button[1]"
+    ).click({ force: true });
+    cy.log("Time has been Selected for Reminder");
+    cy.wait(2000);
+
+    //Click on Reminder End Date
+    cy.get(
+      ".pop-up-reminder.v-card.v-sheet.theme--light > div.v-card__text.pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
+    ).click({ force: true });
+    cy.wait(1000);
+    //Select Date
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on oK to save date
+    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
+    cy.log("Date has been selected Reminder End Date");
+
+    //---------OR----------------------------
+
+    cy.wait(3000);
+    //Click or Never
+    //cy.contains("Never").click({ force: true });
+
+    //Select Channels
+    cy.contains(this.KitItemData.ChannelWebApp).click({ force: true });
+    cy.contains(this.KitItemData.ChannelEmail).click({ force: true });
+    cy.contains(this.KitItemData.ChannelMobileApp).click({ force: true });
+
+    //Save Reminder for -->RepeatDaily Case In Recurring Type
+    cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+      force: true,
+    });
+
+    cy.wait(2000)
 
     //Toggle
     cy.get(".sync-switch .v-input--selection-controls__ripple").click({
@@ -343,7 +446,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Assigning
     cy.get(".searchIcon > .inline-svg > path").last().click({ force: true });
     cy.wait(2000);
-    cy.get(".list-item-search").click({ force: true });
+    cy.get(".list-item-search").first().click({ force: true });
     cy.wait(2000);
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
 
@@ -398,7 +501,10 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //close the Kit Item
     cy.wait(5000);
     //Close Kit type
-    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+    cy.get('.subheader--button-icon-wrapper path')
+
+   // cy.get(".subheader--button-icon-wrapper .inline-svg")
+    .click({
       force: true,
     });
 

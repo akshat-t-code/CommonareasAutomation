@@ -56,7 +56,7 @@ describe("Validation On UI for Element's Read Property", function () {
     });
   });
 
-  it.only("Navigating to UI for KitType New Form for Read Property Validation", function () {
+  it("Navigating to UI for KitType New Form for Read Property Validation", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -73,7 +73,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only("URL Read only Property Validation on UI", function () {
+  it("URL Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Url
     cy.get('[name="Url"]').last().should("have.attr", "readonly");
@@ -205,7 +205,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Number Read only Property Validated on UI");
   });
 
-  it.only("Time Read only Property Validation on UI", function () {
+  it("Time Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Time
     cy.get('[placeholder="Add Time"][type="text"]').should(
@@ -219,7 +219,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("Time Read only Property Validated on UI");
   });
 
-  it.only("Date Read only Property Validation on UI", function () {
+  it("Date Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Date
     cy.get('[placeholder="Add Date"][type="text"]').should(
@@ -266,21 +266,21 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log("CheckboxSelect Read only Property Validated on UI");
   });
 
-  it.only("UserSelector Read only Property Validation on UI", function () {
+  it("UserSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
     //UserSelector
     cy.get('[pickername="Users"]').should("have.attr", "readonly");
     cy.log("UserSelector Read only Property Validated on UI");
   });
 
-  it.only("ContactSelector Read only Property Validation on UI", function () {
+  it("ContactSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
     //ContactSelector
     cy.get('[name="ContactSelector"]').should("have.attr", "readonly");
     cy.log("ContactSelector Read only Property Validated on UI");
   });
 
-  it.only("Assigning Read only Property Validation on UI", function () {
+  it("Assigning Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Assigning
     cy.get('[name="Assigning"]').should("have.attr", "readonly");
