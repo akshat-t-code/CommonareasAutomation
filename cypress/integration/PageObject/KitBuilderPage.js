@@ -104,6 +104,15 @@ class KitBuilder {
     );
     btn.click();
   }
+
+  KBSearchBox(KitTypeName){
+    cy.get('[placeholder="Search"]').type(KitTypeName)
+  }
+
+  ClickOnCrossIcon(){
+    const btn =cy.xpath("//button[@class='v-btn v-btn--fab v-btn--flat v-btn--icon v-btn--round v-btn--text theme--light v-size--default']//i[@class='v-icon notranslate material-icons theme--light'][contains(text(),'close')]")
+    btn.click({force:true})
+  }
 }
 
 export default KitBuilder;

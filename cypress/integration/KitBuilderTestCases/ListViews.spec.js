@@ -2,7 +2,7 @@ import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 
-describe("List Views Elements", function () {
+describe("Adding Results and Filters Element to List Views", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
     cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
@@ -25,13 +25,14 @@ describe("List Views Elements", function () {
       this.DataType = datatypes;
     });
 
-    cy.fixture("KitBuilderTestData/ListViewElementsData").then(function (ListViews) {
+    cy.fixture("KitBuilderTestData/ListViewElementsData").then(function (
+      ListViews
+    ) {
       this.ListView = ListViews;
     });
-
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to List Views of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -41,17 +42,20 @@ describe("List Views Elements", function () {
     // cy.wait(5000);
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
-    cy.contains(this.data1.KitName).click({ force: true });
-    cy.wait(3000);
+    //Enter created kit type name into search box
+    kb.KBSearchBox(this.data1.ListKitName);
+    cy.wait(5000);
+    //Open created kit type for adding List view elements
+    //cy.contains(this.data1.KitName).click({ force: true });
+    //Click to open kit type for adding List view elements
+    cy.contains(this.data1.ListKitName).click({ force: true });
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains("List Views").click({ force: true });
     cy.wait(5000);
-
   });
 
-  it("Table List", function () {
-
+  it("Adding Results and Filters Element to Table List View", function () {
     //View Name coming form json file
     cy.contains(this.data.TableView).click({ force: true });
     cy.wait(3000);
@@ -78,7 +82,7 @@ describe("List Views Elements", function () {
     cy.contains(this.ListView.AddTableListResults_14).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_15).click({ force: true });
     cy.wait(2000);
-    cy.contains('Assigning').scrollIntoView({force:true})
+    cy.contains("Assigning").scrollIntoView({ force: true });
     cy.wait(2000);
     cy.contains(this.ListView.AddTableListResults_16).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_17).click({ force: true });
@@ -90,17 +94,16 @@ describe("List Views Elements", function () {
     cy.contains(this.ListView.AddTableListResults_21).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_22).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_23).click({ force: true });
-    
+
     cy.wait(2000);
     //Click on Add Select
     cy.contains("Add Selected").click({ force: true });
     //Click on Save
     cy.wait(2000);
     cy.get(".mr-2 > .v-btn__content").click();
-    cy.log('Table List "s Element has been saved')
+    cy.log('Table List "s Element has been saved');
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
-
 
     cy.contains("Filters").click({ force: true });
     cy.wait(2000);
@@ -128,7 +131,7 @@ describe("List Views Elements", function () {
     cy.contains(this.ListView.AddTableListFilters_15).click({ force: true });
     cy.wait(2000);
 
-    cy.contains('Assigning').scrollIntoView({force:true})
+    cy.contains("Assigning").scrollIntoView({ force: true });
     cy.wait(2000);
 
     cy.contains(this.ListView.AddTableListFilters_16).click({ force: true });
@@ -141,7 +144,7 @@ describe("List Views Elements", function () {
     cy.contains(this.ListView.AddTableListFilters_21).click({ force: true });
     cy.contains(this.ListView.AddTableListFilters_22).click({ force: true });
     cy.contains(this.ListView.AddTableListFilters_23).click({ force: true });
-    
+
     cy.wait(2000);
 
     //Click on Save Selected
@@ -149,19 +152,23 @@ describe("List Views Elements", function () {
     //Click on Save
     cy.wait(2000);
     cy.get(".mr-2 > .v-btn__content").click();
-    cy.log('Table List Filter"s Element has been saved')
+    cy.log('Table List Filter"s Element has been saved');
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
+    cy.wait(3000);
   });
 
-  it("Search List", function () {
-    cy.wait(5000);
+  it("Adding Results and Filters Element to Search List View", function () {
+    //Page object
+    const kb = new KitBuilderPage();
+    cy.wait(3000);
     //Click on Forms Drop down
-    cy.get(
-      "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    ).click({ force: true });
+    // cy.get(
+    //   "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
+    // ).click({ force: true });
+
+    kb.ClickOnCrossIcon();
     cy.wait(2000);
-    
     //View Name coming form json file
     cy.contains(this.data.SearchView).click({ force: true });
     cy.wait(3000);
@@ -173,9 +180,38 @@ describe("List Views Elements", function () {
     cy.contains(this.ListView.AddSearchListResults_1).click({ force: true });
     cy.contains(this.ListView.AddSearchListResults_2).click({ force: true });
     cy.contains(this.ListView.AddSearchListResults_3).click({ force: true });
-    // cy.contains(this.ListView.AddSearchListResults_4).click({ force: true });
-    // cy.contains(this.ListView.AddSearchListResults_5).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_4).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_5).click({ force: true });
     cy.wait(2000);
+
+    cy.contains(this.ListView.AddSearchListResults_6).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_7).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_8).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_9).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_10).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddSearchListResults_11).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_12).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_13).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_14).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_15).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains("Assigning").scrollIntoView({ force: true });
+
+    cy.contains(this.ListView.AddSearchListResults_16).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_17).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_18).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_19).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_20).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddSearchListResults_21).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_22).click({ force: true });
+    cy.contains(this.ListView.AddSearchListResults_23).click({ force: true });
+    cy.wait(2000);
+
     //Click on Add Select
     cy.contains("Add Selected").click({ force: true });
     //Click on Save
@@ -183,7 +219,6 @@ describe("List Views Elements", function () {
     cy.get(".mr-2 > .v-btn__content").click();
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
-
 
     cy.contains("Filters").click({ force: true });
     cy.wait(2000);
@@ -193,8 +228,36 @@ describe("List Views Elements", function () {
     cy.contains(this.ListView.AddSearchListFilters_1).click({ force: true });
     cy.contains(this.ListView.AddSearchListFilters_2).click({ force: true });
     cy.contains(this.ListView.AddSearchListFilters_3).click({ force: true });
-    // cy.contains(this.ListView.AddSearchListFilters_4).click({ force: true });
-    // cy.contains(this.ListView.AddSearchListFilters_5).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_4).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_5).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddSearchListFilters_6).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_7).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_8).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_9).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_10).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddSearchListFilters_11).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_12).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_13).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_14).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_15).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains("Assigning").scrollIntoView({ force: true });
+
+    cy.contains(this.ListView.AddSearchListFilters_16).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_17).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_18).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_19).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_20).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddSearchListFilters_21).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_22).click({ force: true });
+    cy.contains(this.ListView.AddSearchListFilters_23).click({ force: true });
     cy.wait(2000);
 
     //Click on Save Selected
@@ -204,21 +267,22 @@ describe("List Views Elements", function () {
     cy.get(".mr-2 > .v-btn__content").click();
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
-
-    
+    cy.wait(3000);
   });
 
-  it("Timeline List", function () {
-    cy.wait(5000);
+  it("Adding Results and Filters Element to Timeline List View", function () {
+    //Page object
+    const kb = new KitBuilderPage();
+    cy.wait(3000);
     //Click on Forms Drop down
-    cy.get(
-      "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    ).click({ force: true });
-    cy.wait(2000);
+    // cy.get(
+    //   "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
+    // ).click({ force: true });
+    kb.ClickOnCrossIcon();
+    cy.wait(3000);
     //View Name coming form json file
     cy.contains(this.data.TimelineView).click({ force: true });
     cy.wait(3000);
-
     //Add List Results
     cy.contains("Add List Results").click({ force: true });
     cy.wait(2000);
@@ -255,6 +319,5 @@ describe("List Views Elements", function () {
     cy.get(".mr-2 > .v-btn__content").click();
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
-    
   });
 });
