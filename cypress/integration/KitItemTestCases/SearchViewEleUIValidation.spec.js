@@ -216,14 +216,7 @@ describe("Search View Elements Validation On UI for created kit type", function 
     cy.wait(2000);
   });
 
-  it("Validate the Filter Assigning Element", function () {
-    //Validation for Filer Elements
-    cy.contains(this.DataEleName.Assigning).should("exist");
-    cy.log(
-      this.DataEleName.Assigning + " Data Element has been exist in Filters"
-    );
-    cy.wait(2000);
-  });
+  
 
   it("Validate the Filter Inspection Element", function () {
     //Validation for Filer Elements
@@ -233,6 +226,15 @@ describe("Search View Elements Validation On UI for created kit type", function 
     cy.contains(this.DataEleName.Inspection).first().should("exist");
     cy.log(
       this.DataEleName.Inspection + " Data Element has been exist in Filters"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate the Filter Assigning Element", function () {
+    //Validation for Filer Elements
+    cy.contains(this.DataEleName.Assigning).should("exist");
+    cy.log(
+      this.DataEleName.Assigning + " Data Element has been exist in Filters"
     );
     cy.wait(2000);
   });
@@ -249,6 +251,12 @@ describe("Search View Elements Validation On UI for created kit type", function 
     cy.wait(2000);
   });
 
+  it("Default filter Modified On", function () {
+    cy.get('[placeholder="Modified On"][type="text"]').should("exist");
+    cy.log("Modified By Default filter has been exist in Filters");
+    cy.wait(2000);
+  });
+
   it("Default filter Modified By", function () {
     cy.get('[placeholder="Modified By"][type="text"]').scrollIntoView({
       force: true,
@@ -258,11 +266,7 @@ describe("Search View Elements Validation On UI for created kit type", function 
     cy.wait(2000);
   });
 
-  it("Default filter Modified On", function () {
-    cy.get('[placeholder="Modified On"][type="text"]').should("exist");
-    cy.log("Modified By Default filter has been exist in Filters");
-    cy.wait(2000);
-  });
+  
 
   it("Default filter Item Id", function () {
     cy.get('[placeholder="Item Id"]').last().scrollIntoView({ force: true });

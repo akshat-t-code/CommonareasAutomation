@@ -2,7 +2,7 @@ import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 
-describe("Adding Results and Filters Element to Timeline List View", function () {
+describe("Adding Results and Filters Element to Search List View", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
     cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
@@ -57,19 +57,13 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
   it("Adding Results and Filters Element to Search List View", function () {
     //Page object
     const kb = new KitBuilderPage();
-    cy.wait(5000);
-    //Click on Forms Drop down
-
-    // cy.get(
-    //   "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    // ).click({ force: true });
-
-    //Click on cross icon
-    //kb.ClickOnCrossIcon();
-
+    cy.wait(3000);
     //View Name coming form json file
     cy.contains(this.data.SearchView).click({ force: true });
     cy.wait(3000);
+    cy.log(this.data.SearchView + " has been Opened");
+
+    ///*
 
     //Add List Results
     cy.contains("Add List Results").click({ force: true });
@@ -109,15 +103,38 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.contains(this.ListView.AddSearchListResults_22).click({ force: true });
     cy.contains(this.ListView.AddSearchListResults_23).click({ force: true });
     cy.wait(2000);
-
+    cy.log("Search List View Results Element has been Checked");
     //Click on Add Select
     cy.contains("Add Selected").click({ force: true });
+    cy.log("Search List View Results Element has been Selected");
+
+    //*/
+
+    //Click on Checkbox to make Elements Enabled Sort and Default sort for Results Elements of Search View
+    //NOTE-Even number(index)(0,2,4,6,8.....46) for make element Enabled Sort
+    //NOTE-odd number(index)(1,3,5,7.......46) for make element Default sort
+    //add eq(index) as per requirement to make Elements Enabled Sort and Default sort
+    cy.get('[role="checkbox"][type="checkbox"]').eq(0).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(1).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(2).click({ force: true });
+    cy.get('[role="checkbox"][type="checkbox"]').eq(4).click({ force: true });
+    cy.wait(1000);
+    cy.log(
+      "Elements has been made Enabled Sort and Default sort for Results Elements of Search View"
+    );
+
     //Click on Save
     cy.wait(2000);
     cy.get(".mr-2 > .v-btn__content").click();
+    cy.log("Search List View's Results Element has been saved");
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
+    cy.wait(1000);
+    cy.log("Assertion closed");
 
+    ///*
+
+    //add Filter Elements
     cy.contains("Filters").click({ force: true });
     cy.wait(2000);
     //Add List Filters
@@ -157,16 +174,20 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.contains(this.ListView.AddSearchListFilters_22).click({ force: true });
     cy.contains(this.ListView.AddSearchListFilters_23).click({ force: true });
     cy.wait(2000);
-
+    cy.log("Search List View Filters Element has been Checked");
     //Click on Save Selected
     cy.contains("Save Selected").click({ force: true });
+    cy.log("Search List View Filters Element has been Selected");
+
+    //*/
+
     //Click on Save
     cy.wait(2000);
     cy.get(".mr-2 > .v-btn__content").click();
+    cy.log("Search List View  Filter's Element has been saved");
     //Assertion close
     cy.get(".closeBtn .v-icon").click();
     cy.wait(3000);
+    cy.log("Assertion closed");
   });
-
-  
 });
