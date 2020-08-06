@@ -45,7 +45,7 @@ describe("Search View Elements Validation On UI for created kit type", function 
     });
   });
 
-  it("Navigating to UI for KitType's New Form", function () {
+  it.only("Navigating to UI for KitType's New Form", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -63,41 +63,41 @@ describe("Search View Elements Validation On UI for created kit type", function 
     cy.wait(5000);
   });
 
-  it("Open Search View(LINK ITEM) Elements Validation", function () {
+  it.only("Open Search View(LINK ITEM) Elements Validation", function () {
     cy.contains("LINK ITEM").first().click({ force: true });
     cy.wait(3000);
   });
 
-  it("Validate the Filter Url Element", function () {
+  it.only("Validate the Filter Url Element", function () {
     //Validation for Filer Elements
     cy.get('[name="Url"]').eq(1).scrollIntoView({ force: true });
-    cy.get('[name="Url"]').eq(1).should("exist");
+    cy.get('[name="Url"]').eq(1).should("be.visible");
     cy.log(this.DataEleName.Url + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Validate the Filter Text Element", function () {
+  it.only("Validate the Filter Text Element", function () {
     //Validation for Filer Elements
     cy.get('[name="Text"]').eq(2).scrollIntoView({ force: true });
-    cy.get('[name="Text"]').eq(2).should("exist");
+    cy.get('[name="Text"]').eq(2).should("be.visible");
     cy.log(this.DataEleName.Text + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
-  it("Validate the Filter Telephone Element", function () {
+  it.only("Validate the Filter Telephone Element", function () {
     //Validation for Filer Elements
     cy.get('[name="Telephone"]').eq(2).scrollIntoView({ force: true });
-    cy.get('[name="Telephone"]').eq(2).should("exist");
+    cy.get('[name="Telephone"]').eq(2).should("be.visible");
     cy.log(
       this.DataEleName.Telephone + " Data Element has been exist in Filters"
     );
     cy.wait(2000);
   });
 
-  it("Validate the Filter TextAera Element", function () {
+  it.only("Validate the Filter TextAera Element", function () {
     //Validation for Filer Elements
     cy.get('[name="TextAera"]').eq(2).scrollIntoView({ force: true });
-    cy.get('[name="TextAera"]').eq(2).should("exist");
+    cy.get('[name="TextAera"]').eq(2).should("be.visible");
     cy.log(
       this.DataEleName.TextAera + " Data Element has been exist in Filters"
     );
