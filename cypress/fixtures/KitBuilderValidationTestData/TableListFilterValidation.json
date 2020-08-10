@@ -1,5 +1,6 @@
 {
     "TableListEleValidation":"AutomationKit(Dont touch)",
     "TableListResultEleValidation":"AutomationKit(Dont touch)",
-    "TableListValidation":"AutomationKit(Dont touch)"
+    "TableListValidation":"AutomationKit(Dont touch)",
+    "TLKitName":"AkshatKitDemo"
 }

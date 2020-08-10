@@ -13,11 +13,18 @@ describe("Adding Results and Filters Element to Table List View", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
+
+    cy.fixture(
+      "KitBuilderValidationTestData/TimelineListFilterValidation"
+    ).then(function (TLKitName) {
+      this.TableListKitName = TLKitName;
+    });
+
     cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
       this.data = data;
     });
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
-      this.data1 = data1;
+      this.KitName = KitName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
       datatypes
@@ -43,12 +50,14 @@ describe("Adding Results and Filters Element to Table List View", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Enter created kit type name into search box
-    kb.KBSearchBox(this.data1.ListKitName);
+    //kb.KBSearchBox(this.KitName.KitName);
+    kb.KBSearchBox(this.TableListKitName.TLKitName);
     cy.wait(5000);
     //Open created kit type for adding List view elements
     //cy.contains(this.data1.KitName).click({ force: true });
     //Click to open kit type for adding List view elements
-    cy.contains(this.data1.ListKitName).click({ force: true });
+    //cy.contains(this.KitName.KitName).click({ force: true });
+    cy.contains(this.TableListKitName.TLKitName).click({ force: true });
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains("List Views").click({ force: true });
