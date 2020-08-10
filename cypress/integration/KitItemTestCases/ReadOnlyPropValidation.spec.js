@@ -40,7 +40,7 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
     });
   });
 
-  it("Navigating to Created KitType New Form", function () {
+  it.only("Navigating to Created KitType New Form", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -48,7 +48,7 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
     kb.KitBuilderUrl();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.RRProp.KitName).click({ force: true });
+    cy.contains(this.RRProp.ReadOnlyKitName).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -56,7 +56,7 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
     cy.wait(5000);
   });
 
-  it("Url Data Type Read Prop Validation", function () {
+  it.only("Url Data Type Read Prop Validation", function () {
     //Click on Url
     // cy.getIframeBody().find('[placeholder="Url"]').click({ force: true });
     cy.getIframeBody().contains(this.DataType.Url).click({ force: true });
@@ -444,7 +444,7 @@ describe("Validation On UI for Element's Read Property", function () {
     });
   });
 
-  it("Navigating to UI for KitType New Form for Read Property Validation", function () {
+  it.only("Navigating to UI for KitType New Form for Read Property Validation", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -453,12 +453,11 @@ describe("Validation On UI for Element's Read Property", function () {
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.RRProp.KitName);
-    KTP.OpenKitType(this.RRProp.KitName);
+    KTP.SearchKitType(this.RRProp.ReadOnlyKitName);
+    KTP.OpenKitType(this.RRProp.ReadOnlyKitName);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");
     cy.log("New Item created and Kit Type has been Opened");
   });
-
 });

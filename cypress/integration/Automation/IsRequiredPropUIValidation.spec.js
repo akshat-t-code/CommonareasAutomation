@@ -66,8 +66,8 @@ describe("Validation On UI for Element's Is Required Property", function () {
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.RRProp.KitName);
-    KTP.OpenKitType(this.RRProp.KitName);
+    KTP.SearchKitType(this.RRProp.IsRequiredKitName);
+    KTP.OpenKitType(this.RRProp.IsRequiredKitName);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");

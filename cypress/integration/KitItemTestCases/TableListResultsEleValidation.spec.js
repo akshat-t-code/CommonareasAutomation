@@ -24,14 +24,16 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
       this.KitItemData = KitDataEle;
     });
 
+    cy.fixture("KitBuilderValidationTestData/TableListFilterValidation").then(
+      function (KitName) {
+        this.KitName = KitName;
+      }
+    );
+
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
       DataEleValues
     ) {
       this.KitData = DataEleValues;
-    });
-
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitName) {
-      this.KitName = KitName;
     });
   });
 
@@ -43,9 +45,13 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(10000);
     //Click on Hamburger Icon
     lp.HMBIcon();
-    cy.contains(this.KitName.KitName).scrollIntoView({ force: true });
+    cy.contains(this.KitName.TableListResultEleValidation).scrollIntoView({
+      force: true,
+    });
     cy.wait(5000);
-    cy.contains(this.KitName.KitName).click({ force: true });
+    cy.contains(this.KitName.TableListResultEleValidation).click({
+      force: true,
+    });
     cy.wait(10000);
   });
 
@@ -301,7 +307,6 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   });
 
   it.only("Validate table View Result Icon Elements", function () {
-
     cy.contains(this.KitData.Icon).should("be.visible");
 
     cy.contains(

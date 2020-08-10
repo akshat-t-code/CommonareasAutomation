@@ -20,6 +20,12 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
   });
 
   this.beforeEach("KitType Data", function () {
+    cy.fixture("KitBuilderValidationTestData/TableListFilterValidation").then(
+      function (KitName) {
+        this.KitName = KitName;
+      }
+    );
+
     cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
       this.KitItemData = KitDataEle;
     });
@@ -28,10 +34,6 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
       DataEleValues
     ) {
       this.KitData = DataEleValues;
-    });
-
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitName) {
-      this.KitName = KitName;
     });
   });
 
@@ -43,13 +45,14 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
     cy.wait(10000);
     //Click on Hamburger Icon
     lp.HMBIcon();
-    cy.contains(this.KitItemData.TableListKitValidation).scrollIntoView({ force: true });
+    cy.contains(this.KitName.TableListEleValidation).scrollIntoView({
+      force: true,
+    });
     cy.wait(5000);
-    cy.contains(this.KitItemData.TableListKitValidation).click({ force: true });
+    cy.contains(this.KitName.TableListEleValidation).click({ force: true });
     cy.wait(10000);
   });
 
-  
   it("Click on Filter btn", function () {
     //Page Object
     const lp = new LoginPage();
@@ -192,8 +195,8 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
 
   it("Validate the Filter Inspection Element", function () {
     //Validation for Filer Elements
-   //cy.get('[name="Inspection"]').should("be.visible");
-    cy.get('[name'+'='+this.KitData.Inspection+']').should("be.visible");
+    //cy.get('[name="Inspection"]').should("be.visible");
+    cy.get("[name" + "=" + this.KitData.Inspection + "]").should("be.visible");
     //cy.contains(this.KitData.Inspection).last().should("exist");
     cy.log(this.KitData.Inspection + " Data Element has been exist in Filters");
     cy.wait(2000);
@@ -234,10 +237,8 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
   });
 
   it("Default filter Distance", function () {
-    
     cy.get('[name="Location(GPS)"][placeholder="Distance"]').should("exist");
     cy.log("Default filter Distance has been exist in Filters");
     cy.wait(2000);
   });
-
 });

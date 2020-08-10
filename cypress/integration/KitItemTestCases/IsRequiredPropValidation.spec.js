@@ -48,7 +48,7 @@ describe("KitBuilder's Element Is Required Property Validation on Kit Builder", 
     kb.KitBuilderUrl();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.RRProp.KitName).click({ force: true });
+    cy.contains(this.RRProp.IsRequiredKitName).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);

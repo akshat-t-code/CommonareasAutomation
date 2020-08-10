@@ -1,7 +1,8 @@
 {
 
     
-    "KitName":"AkshatValidationKit"
+    "ReadOnlyKitName":"AkshatValidationKit",
+    "IsRequiredKitName":"AkshatValidationKit"
     
 
 }

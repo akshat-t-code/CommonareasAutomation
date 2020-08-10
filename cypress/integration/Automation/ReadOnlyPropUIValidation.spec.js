@@ -65,8 +65,8 @@ describe("Validation On UI for Element's Read Property", function () {
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.RRProp.KitName);
-    KTP.OpenKitType(this.RRProp.KitName);
+    KTP.SearchKitType(this.RRProp.ReadOnlyKitName);
+    KTP.OpenKitType(this.RRProp.ReadOnlyKitName);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");

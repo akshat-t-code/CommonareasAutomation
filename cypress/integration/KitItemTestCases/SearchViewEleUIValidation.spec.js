@@ -28,9 +28,11 @@ describe("Search View Elements Validation On UI for created kit type", function 
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
-      this.KitItemData = KitDataEle;
-    });
+    cy.fixture("KitBuilderValidationTestData/SearchListFilterValidation").then(
+      function (KitName) {
+        this.KitName = KitName;
+      }
+    );
 
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
       KitTypeName
@@ -54,8 +56,8 @@ describe("Search View Elements Validation On UI for created kit type", function 
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.KitItemData.KitName3);
-    KTP.OpenKitType(this.KitItemData.KitName3);
+    KTP.SearchKitType(this.KitName.SearchListEleValidation);
+    KTP.OpenKitType(this.KitName.SearchListEleValidation);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("exist");
@@ -216,8 +218,6 @@ describe("Search View Elements Validation On UI for created kit type", function 
     cy.wait(2000);
   });
 
-  
-
   it("Validate the Filter Inspection Element", function () {
     //Validation for Filer Elements
     cy.contains(this.DataEleName.Inspection)
@@ -266,8 +266,6 @@ describe("Search View Elements Validation On UI for created kit type", function 
     cy.log("Modified By Default filter has been exist in Filters");
     cy.wait(2000);
   });
-
-  
 
   it("Default filter Item Id", function () {
     cy.get('[placeholder="Item Id"]').last().scrollIntoView({ force: true });

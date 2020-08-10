@@ -20,6 +20,12 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
   });
 
   this.beforeEach("KitType Data", function () {
+    cy.fixture("KitBuilderValidationTestData/TableListFilterValidation").then(
+      function (KitName) {
+        this.KitName = KitName;
+      }
+    );
+
     cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
       this.KitItemData = KitDataEle;
     });
@@ -28,10 +34,6 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
       DataEleValues
     ) {
       this.KitData = DataEleValues;
-    });
-
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitName) {
-      this.KitName = KitName;
     });
   });
 
@@ -43,9 +45,11 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
     cy.wait(10000);
     //Click on Hamburger Icon
     lp.HMBIcon();
-    cy.contains(this.KitName.KitName).scrollIntoView({ force: true });
+    cy.contains(this.KitName.TableListValidation).scrollIntoView({
+      force: true,
+    });
     cy.wait(5000);
-    cy.contains(this.KitName.KitName).click({ force: true });
+    cy.contains(this.KitName.TableListValidation).click({ force: true });
     cy.wait(10000);
   });
 
