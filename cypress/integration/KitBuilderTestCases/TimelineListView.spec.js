@@ -70,9 +70,39 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.contains(this.ListView.AddTimelineListResults_1).click({ force: true });
     cy.contains(this.ListView.AddTimelineListResults_2).click({ force: true });
     cy.contains(this.ListView.AddTimelineListResults_3).click({ force: true });
-    // cy.contains(this.ListView.AddTimelineListResults_4).click({ force: true });
-    // cy.contains(this.ListView.AddTimelineListResults_5).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_4).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_5).click({ force: true });
     cy.wait(2000);
+
+    cy.contains(this.ListView.AddTimelineListResults_6).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_7).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_8).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_9).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_10).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddTimelineListResults_11).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_12).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_13).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_14).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_15).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddTimelineListResults_16).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_17).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_18).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_19).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_20).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddTimelineListResults_21).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_22).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListResults_23).click({ force: true });
+    cy.wait(2000);
+
     cy.log("Timeline List View Results Element has been Checkted");
     //Click on Add Select
     cy.contains("Add Selected").click({ force: true });
@@ -108,9 +138,39 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.contains(this.ListView.AddTimelineListFilters_1).click({ force: true });
     cy.contains(this.ListView.AddTimelineListFilters_2).click({ force: true });
     cy.contains(this.ListView.AddTimelineListFilters_3).click({ force: true });
-    // cy.contains(this.ListView.AddTimelineListFilters_4).click({ force: true });
-    // cy.contains(this.ListView.AddTimelineListFilters_5).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_4).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_5).click({ force: true });
     cy.wait(2000);
+
+    cy.contains(this.ListView.AddTimelineListFilters_6).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_7).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_8).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_9).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_10).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddTimelineListFilters_11).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_12).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_13).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_14).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_15).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddTimelineListFilters_16).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_17).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_18).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_19).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_20).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.ListView.AddTimelineListFilters_21).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_22).click({ force: true });
+    cy.contains(this.ListView.AddTimelineListFilters_23).click({ force: true });
+    cy.wait(2000);
+
     cy.log("Timeline List View Filters Element has been Checked");
     //Click on Save Selected
     cy.contains("Save Selected").click({ force: true });

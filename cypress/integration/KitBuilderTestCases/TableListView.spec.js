@@ -73,20 +73,24 @@ describe("Adding Results and Filters Element to Table List View", function () {
     cy.contains(this.ListView.AddTableListResults_4).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_5).click({ force: true });
     cy.wait(2000);
+
     cy.contains(this.ListView.AddTableListResults_6).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_7).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_8).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_9).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_10).click({ force: true });
     cy.wait(2000);
+
     cy.contains(this.ListView.AddTableListResults_11).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_12).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_13).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_14).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_15).click({ force: true });
     cy.wait(2000);
-    cy.contains("Assigning").scrollIntoView({ force: true });
-    cy.wait(2000);
+
+    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
+    cy.wait(2000)
+
     cy.contains(this.ListView.AddTableListResults_16).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_17).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_18).click({ force: true });
@@ -98,6 +102,7 @@ describe("Adding Results and Filters Element to Table List View", function () {
     cy.contains(this.ListView.AddTableListResults_22).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_23).click({ force: true });
     cy.wait(2000);
+    
     cy.log("Table List Results Element has been Checked");
     //Click on Add Select
     cy.contains("Add Selected").click({ force: true });
@@ -156,7 +161,7 @@ describe("Adding Results and Filters Element to Table List View", function () {
     cy.contains(this.ListView.AddTableListFilters_15).click({ force: true });
     cy.wait(2000);
 
-    cy.contains("Assigning").scrollIntoView({ force: true });
+    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
 
     cy.contains(this.ListView.AddTableListFilters_16).click({ force: true });

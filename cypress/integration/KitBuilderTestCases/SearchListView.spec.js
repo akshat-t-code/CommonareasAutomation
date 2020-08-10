@@ -90,7 +90,8 @@ describe("Adding Results and Filters Element to Search List View", function () {
     cy.contains(this.ListView.AddSearchListResults_15).click({ force: true });
     cy.wait(2000);
 
-    cy.contains("Assigning").scrollIntoView({ force: true });
+    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
+    cy.wait(2000)
 
     cy.contains(this.ListView.AddSearchListResults_16).click({ force: true });
     cy.contains(this.ListView.AddSearchListResults_17).click({ force: true });
@@ -161,7 +162,8 @@ describe("Adding Results and Filters Element to Search List View", function () {
     cy.contains(this.ListView.AddSearchListFilters_15).click({ force: true });
     cy.wait(2000);
 
-    cy.contains("Assigning").scrollIntoView({ force: true });
+    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
+    cy.wait(2000)
 
     cy.contains(this.ListView.AddSearchListFilters_16).click({ force: true });
     cy.contains(this.ListView.AddSearchListFilters_17).click({ force: true });

@@ -43,9 +43,9 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
     cy.wait(10000);
     //Click on Hamburger Icon
     lp.HMBIcon();
-    cy.contains(this.KitItemData.KitName4).scrollIntoView({ force: true });
+    cy.contains(this.KitItemData.TableListKitValidation).scrollIntoView({ force: true });
     cy.wait(5000);
-    cy.contains(this.KitItemData.KitName4).click({ force: true });
+    cy.contains(this.KitItemData.TableListKitValidation).click({ force: true });
     cy.wait(10000);
   });
 
