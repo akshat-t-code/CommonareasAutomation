@@ -61,7 +61,7 @@ describe("Validate Timeline List's Filters Element for Created Kit Type on Sched
     cy.wait(5000);
   });
 
-  it("Open Scheduler Tab in Edit View", function () {
+  it("Open Scheduler Tab in Edit View to Validate TimelineList View Filter Elements", function () {
     //Click on First kit item of kit type to open edit view
     cy.get(
       "#action_items_list > div.fill-height.col > div > div > div.left-panel-top-panel-menu > div:nth-child(3) > div:nth-child(1) > div > div.d-flex.kit-item-list.list-item-col-right.col.row-list-item-details"

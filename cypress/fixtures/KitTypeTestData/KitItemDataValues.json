@@ -3,15 +3,19 @@
     "KitName":"CypressAutomation2",
     "KitName2":"AutomationKit(Don...",
     "KitName3":"AkshatValidationKit",
+    "KitName4":"AkshatKitDemo",
     
 
-    "Text":"Money",
-    "Url":"https://www.mkc.com",
+    "Text":"TTListView Ele",
+    "Url":"https://www.hero.com",
     "Telphone":"(876) 987-2435",
-    "TextAera":"Automation Kit type",
+    "TextAera":"Timeline List View",
     "Currency":"90",
     "Measure":"786",
-    "Email":"mahi@gmail.com",
+
+    "Email":"akshat@gmail.com",
+    "Important Note for Email":"should be in small letters",
+
     "Addressline1":"Woho",
     "Addressline2":"hokay",
     "City":"Aabu",
@@ -69,7 +73,15 @@
     "FileValue":"10344",
     "SliderValue":"19",
     "IconSize":"12px",
-    "IconTittle":"2 wheeled trolly"
+    "IconTittle":"2 wheeled trolly",
+
+    "TimelineListFileEleValue":"10769",
+    "TimelineListSliderValue":"19",
+    "TimelineListTimeValue":"12:15 AM",
+    "TimelineListDateValue":"07/09/2020",
+    "TimelineListToggleStatus":"True",
+    "TimelineListIconSize":"12px",
+    "TimelineListIconTittle":"2 wheeled trolly"
 
     
 }

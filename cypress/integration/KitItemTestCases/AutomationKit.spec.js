@@ -46,8 +46,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.KitItemData.KitName2);
-    KTP.OpenKitType(this.KitItemData.KitName2);
+    KTP.SearchKitType(this.KitItemData.KitName4);
+    KTP.OpenKitType(this.KitItemData.KitName4);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");

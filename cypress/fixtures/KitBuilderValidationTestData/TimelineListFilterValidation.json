@@ -1,5 +1,7 @@
 
 {
     "TimelineListEleValidation":"AkshatValidationKit",
-    "TLListKitName":"AkshatKitDemo"
+    "TLListKitName":"AkshatKitDemo",
+    "TimelineListResultsEleValidation":"AkshatValidationKit"
+    
 }

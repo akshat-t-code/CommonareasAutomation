@@ -37,7 +37,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     });
   });
 
-  it.only("Open Created Kit type As List View", function () {
+  it.only("Open Created Kit type As List View for Validate TableList Result Elements", function () {
     //Page Object
     const lp = new LoginPage();
     //Assertion
@@ -55,77 +55,73 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(10000);
   });
 
-  it("Validate table View Result URL Elements", function () {
+  it("Validate TableList View Result URL Element", function () {
     cy.wait(3000);
     cy.contains(this.KitData.Url + ":" + " " + this.KitItemData.Url).should(
       "exist"
     );
-    cy.log(this.KitData.Url + "has been Validate for kitItem Results Elements");
+    cy.log(this.KitData.Url + " has been Validate for kitItem Result Element");
     cy.wait(2000);
   });
 
-  it("Validate table View Result Text Elements", function () {
+  it("Validate TableList View Result Text Element", function () {
     cy.contains(this.KitData.Text + ":" + " " + this.KitItemData.Text).should(
       "exist"
     );
-    cy.log(
-      this.KitData.Text + "has been Validate for kitItem Results Elements"
-    );
+    cy.log(this.KitData.Text + " has been Validate for kitItem Result Element");
     cy.wait(2000);
   });
 
-  it.only("Validate table View Result Telephone Elements", function () {
+  it.only("Validate TableList View Result Telephone Element", function () {
     cy.contains(
       this.KitData.Telephone + ":" + " " + this.KitItemData.Telphone
     ).should("exist");
     cy.log(
-      this.KitData.Telephone + "has been Validate for kitItem Results Elements"
+      this.KitData.Telephone + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result TextAera Elements", function () {
+  it("Validate TableList View Result TextAera Element", function () {
     cy.contains(
       this.KitData.TextAera + ":" + " " + this.KitItemData.TextAera
     ).should("exist");
-    cy.log(
-      this.KitData.Text + "has been Validate for kitItem Results Elements"
-    );
+    cy.log(this.KitData.Text + " has been Validate for kitItem Result Element");
     cy.wait(2000);
   });
 
-  it("Validate table View Result Currency Elements", function () {
+  it("Validate TableList View Result Currency Element", function () {
     cy.contains(
       this.KitData.Currency + ":" + " " + this.KitItemData.Currency
     ).should("exist");
     cy.log(
-      this.KitData.Currency + "has been Validate for kitItem Results Elements"
+      this.KitData.Currency + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result Measure Elements", function () {
+  it("Validate TableList View Result Measure Element", function () {
     cy.contains(
       this.KitData.Measure + ":" + " " + this.KitItemData.Measure
     ).should("exist");
     cy.log(
-      this.KitData.Measure + "has been Validate for kitItem Results Elements"
+      this.KitData.Measure + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result Email Elements", function () {
+  it("Validate TableList View Result Email Element", function () {
     cy.contains(this.KitData.Email + ":" + " " + this.KitItemData.Email).should(
       "exist"
     );
 
     cy.log(
-      this.KitData.Email + "has been Validate for kitItem Results Elements"
+      this.KitData.Email + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it.only("Validate table View Result Address Elements", function () {
+  it.only("Validate TableList View Result Address Element", function () {
     cy.contains(
       this.KitData.Address +
         ":" +
@@ -149,43 +145,42 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     ).should("exist");
 
     cy.log(
-      this.KitData.Address + " has been Validate for kitItem Results Elements"
+      this.KitData.Address + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result Number Elements", function () {
+  it("Validate TableList View Result Number Element", function () {
     cy.contains(
       this.KitData.Number + ":" + " " + this.KitItemData.Number
     ).should("exist");
     cy.log(
-      this.KitData.Number + "has been Validate for kitItem Results Elements"
+      this.KitData.Number + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result SelectList Elements", function () {
+  it("Validate TableList View Result SelectList Element", function () {
     cy.contains(
       this.KitData.SelectList + ":" + " " + this.KitItemData.SelectListValue
     ).should("exist");
     cy.log(
-      this.KitData.SelectList + "has been Validate for kitItem Results Elements"
+      this.KitData.SelectList + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result RadioSelect Elements", function () {
+  it("Validate TableList View Result RadioSelect Element", function () {
     cy.contains(
       this.KitData.RadioSelect + ":" + " " + this.KitItemData.RadioSelect
     ).should("exist");
     cy.log(
-      this.KitData.RadioSelect +
-        "has been Validate for kitItem Results Elements"
+      this.KitData.RadioSelect + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result CheckboxSelect Elements", function () {
+  it("Validate TableList View Result CheckboxSelect Element", function () {
     //coz checkbox can have multiple values so modify accordingly
 
     cy.contains(
@@ -196,23 +191,23 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     ).should("exist");
     cy.log(
       this.KitData.CheckboxSelect +
-        "has been Validate for kitItem Results Elements"
+        " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result UserSelector Elements", function () {
+  it("Validate TableList View Result UserSelector Element", function () {
     cy.contains(
       this.KitData.UserSelector + ":" + " " + this.KitItemData.UserSelectorName
     ).should("exist");
     cy.log(
       this.KitData.UserSelector +
-        "has been Validate for kitItem Results Elements"
+        " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result ContactSelector Elements", function () {
+  it("Validate TableList View Result ContactSelector Element", function () {
     cy.contains(
       this.KitData.ContactSelector +
         ":" +
@@ -221,92 +216,86 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     ).should("exist");
     cy.log(
       this.KitData.ContactSelector +
-        "has been Validate for kitItem Results Elements"
+        " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result Inspection Elements", function () {
+  it("Validate TableList View Result Inspection Element", function () {
     cy.contains(
       this.KitData.Inspection + ":" + " " + this.KitItemData.InspectionValue
     ).should("exist");
     cy.log(
-      this.KitData.Inspection + "has been Validate for kitItem Results Elements"
+      this.KitData.Inspection + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result Stepper Elements", function () {
+  it("Validate TableList View Result Stepper Element", function () {
     cy.contains(
       this.KitData.Stepper + ":" + " " + this.KitItemData.StepperValue
     ).should("exist");
     cy.log(
-      this.KitData.Stepper + " has been Validate for kitItem Results Elements"
+      this.KitData.Stepper + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result Assigning Elements", function () {
+  it("Validate TableList View Result Assigning Element", function () {
     cy.contains(
       this.KitData.Assigning + ":" + " " + this.KitItemData.AssigningName
     ).should("exist");
     cy.log(
-      this.KitData.Assigning + " has been Validate for kitItem Results Elements"
+      this.KitData.Assigning + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result Time Elements", function () {
+  it("Validate TableList View Result Time Element", function () {
     cy.contains(
       this.KitData.Time + ":" + " " + this.KitItemData.TimeValue
     ).should("exist");
-    cy.log(
-      this.KitData.Time + " has been Validate for kitItem Results Elements"
-    );
+    cy.log(this.KitData.Time + " has been Validate for kitItem Result Element");
     cy.wait(2000);
   });
 
-  it("Validate table View Result Date Elements", function () {
+  it("Validate TableList View Result Date Element", function () {
     cy.contains(
       this.KitData.Date + ":" + " " + this.KitItemData.DateValue
     ).should("exist");
-    cy.log(
-      this.KitData.Date + " has been Validate for kitItem Results Elements"
-    );
+    cy.log(this.KitData.Date + " has been Validate for kitItem Result Element");
     cy.wait(2000);
   });
 
-  it("Validate table View Result Toggle Elements", function () {
+  it("Validate TableList View Result Toggle Element", function () {
     cy.contains(
       this.KitData.Toggle + ":" + " " + this.KitItemData.ToggleStatus
     ).should("exist");
     cy.log(
-      this.KitData.Toggle + " has been Validate for kitItem Results Elements"
+      this.KitData.Toggle + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it("Validate table View Result File Elements", function () {
+  it("Validate TableList View Result File Element", function () {
     cy.contains(
       this.KitData.File + ":" + " " + this.KitItemData.FileValue
     ).should("exist");
-    cy.log(
-      this.KitData.File + " has been Validate for kitItem Results Elements"
-    );
+    cy.log(this.KitData.File + " has been Validate for kitItem Result Element");
     cy.wait(2000);
   });
 
-  it("Validate table View Result Slider Elements", function () {
+  it("Validate TableList View Result Slider Element", function () {
     cy.contains(
       this.KitData.Slider + ":" + " " + this.KitItemData.SliderValue
     ).should("exist");
     cy.log(
-      this.KitData.Slider + " has been Validate for kitItem Results Elements"
+      this.KitData.Slider + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it.only("Validate table View Result Icon Elements", function () {
+  it.only("Validate TableList View Result Icon Element", function () {
     cy.contains(this.KitData.Icon).should("be.visible");
 
     cy.contains(
@@ -342,9 +331,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
         '"'
     ).should("be.visible");
 
-    cy.log(
-      this.KitData.Icon + " has been Validate for kitItem Results Elements"
-    );
+    cy.log(this.KitData.Icon + " has been Validate for kitItem Result Element");
     cy.wait(2000);
   });
 });
