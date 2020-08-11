@@ -195,7 +195,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it.only("Validate TimelineList View Result Number Element", function () {
+  it("Validate TimelineList View Result Number Element", function () {
     cy.contains(
       this.EleDataName.Number + ":" + " " + this.KitItemData.Number
     ).should("exist");
@@ -205,7 +205,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it.only("Validate TimelineList View Result Time Element", function () {
+  it("Validate TimelineList View Result Time Element", function () {
     cy.contains(
       this.EleDataName.Time + ":" + " " + this.KitItemData.TimelineListTimeValue
     ).should("exist");
@@ -215,7 +215,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it.only("Validate TimelineList View Result Date Element", function () {
+  it("Validate TimelineList View Result Date Element", function () {
     cy.contains(
       this.EleDataName.Date + ":" + " " + this.KitItemData.TimelineListDateValue
     ).should("exist");
@@ -225,17 +225,17 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it.only("Validate TimelineList View Result Toggle Element", function () {
+  it("Validate TimelineList View Result Toggle Element", function () {
     cy.contains(
-      this.KitData.EleDataName + ":" + " " + this.KitItemData.ToggleStatus
+      this.EleDataName.Toggle + ":" + " " + this.KitItemData.ToggleStatus
     ).should("exist");
     cy.log(
-      this.KitData.EleDataName + " has been Validate for kitItem Result Element"
+      this.EleDataName.Toggle + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
 
-  it.only("Validate TimelineList View Result SelectList Element", function () {
+  it("Validate TimelineList View Result SelectList Element", function () {
     cy.contains(
       this.EleDataName.SelectList + ":" + " " + this.KitItemData.SelectListValue
     ).should("exist");
@@ -246,7 +246,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it.only("Validate TimelineList View Result RadioSelect Element", function () {
+  it("Validate TimelineList View Result RadioSelect Element", function () {
     cy.contains(
       this.EleDataName.RadioSelect + ":" + " " + this.KitItemData.RadioSelect
     ).should("exist");
@@ -257,14 +257,14 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it.only("Validate TimelineList View Result CheckboxSelect Element", function () {
+  it("Validate TimelineList View Result CheckboxSelect Element", function () {
     //coz checkbox can have multiple values so modify accordingly
 
     cy.contains(
       this.EleDataName.CheckboxSelect +
         ":" +
         " " +
-        this.KitItemData.CheckboxSelectValue2
+        this.KitItemData.CheckboxSelectValue1
     ).should("exist");
     cy.log(
       this.EleDataName.CheckboxSelect +
@@ -284,11 +284,12 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
   });
 
   it("Validate TimelineList View Result UserSelector Element", function () {
-    cy.contains(
-      this.EleDataName.UserSelector +
-        ":" +
-        " " +
-        this.KitItemData.UserSelectorName
+
+     
+      cy.contains(this.EleDataName.UserSelector+':'+' Deanne, Howell')
+      .should("exist");
+
+    cy.contains(this.EleDataName.UserSelector+":"+" "+this.KitItemData.UserSelectorName
     ).should("exist");
     cy.log(
       this.EleDataName.UserSelector +
@@ -298,12 +299,13 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
   });
 
   it("Validate TimelineList View Result ContactSelector Element", function () {
-    cy.contains(
-      this.EleDataName.ContactSelector +
-        ":" +
-        " " +
-        this.KitItemData.ContactSelectorName
-    ).should("exist");
+    
+
+    cy.contains(this.EleDataName.ContactSelector+':'+' Vivek, Mahajan')
+    .should("exist");
+
+    cy.contains(this.EleDataName.ContactSelector +":" +" " +this.KitItemData.ContactSelectorName)
+    .should("exist");
     cy.log(
       this.EleDataName.ContactSelector +
         " has been Validate for kitItem Result Element"
@@ -311,41 +313,11 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it.only("Validate TimelineList View Result Icon Element", function () {
-    cy.contains(this.EleDataName.Icon).should("be.visible");
+  it("Validate TimelineList View Result Icon Element", function () {
 
-    cy.contains(
-      '"' +
-        this.EleDataName.IconLabel +
-        '"' +
-        ":" +
-        "" +
-        '"' +
-        this.KitItemData.IconLabel +
-        '"'
-    ).should("be.visible");
-
-    cy.contains(
-      '"' +
-        this.EleDataName.IconSize +
-        '"' +
-        ":" +
-        "" +
-        '"' +
-        this.KitItemData.TimelineListIconSize +
-        '"'
-    ).should("be.visible");
-
-    cy.contains(
-      '"' +
-        this.KitData.Icontitle +
-        '"' +
-        ":" +
-        "" +
-        '"' +
-        this.KitItemData.TimelineListIconTittle +
-        '"'
-    ).should("be.visible");
+    cy.contains('2 wheeled Trolly_solo').should("exist");
+    cy.contains(this.KitItemData.TimelineListIconTittle+'_solo').should("exist");
+    cy.log(this.KitItemData.TimelineListIconTittle+'_solo')
 
     cy.log(
       this.EleDataName.Icon + " has been Validate for kitItem Result Element"
@@ -353,7 +325,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it("Validate TimelineList View Result Inspection Element", function () {
+  it.only("Validate TimelineList View Result Inspection Element", function () {
     cy.contains(
       this.EleDataName.Inspection + ":" + " " + this.KitItemData.InspectionValue
     ).should("exist");
@@ -364,9 +336,9 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it("Validate TimelineList View Result Assigning Element", function () {
+  it.only("Validate TimelineList View Result Assigning Element", function () {
     cy.contains(
-      this.EleDataName.Assigning + ":" + " " + this.KitItemData.AssigningName
+      this.EleDataName.Assigning + ":" + " " + this.KitItemData.TimelineListAssigningName
     ).should("exist");
     cy.log(
       this.EleDataName.Assigning +
