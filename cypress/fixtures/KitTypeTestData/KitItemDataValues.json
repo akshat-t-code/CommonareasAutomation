@@ -39,6 +39,7 @@
     "ContactSelectorName":"Vivek Mahajan",
 
     "InspectionValue":"Value##2",
+    "AssignningName":"Daniel Zhao",
 
     "iconSize":"Small",
     "IconLabel":"AutomationKit",
@@ -74,14 +75,25 @@
     "IconSize":"12px",
     "IconTittle":"2 wheeled trolly",
 
+    "These values need to add manual for validate Table List View Elee":"true",
+    "Important note for (TimelineList View Results Ele)Values":"Pls add value in same format that i did",
+
     "TimelineListFileEleValue":"10769",
-    "TimelineListSliderValue":"19",
+    "TimelineListSliderValue":"17",
     "TimelineListTimeValue":"12:15 AM",
     "TimelineListDateValue":"07/09/2020",
     "TimelineListToggleStatus":"True",
-    "TimelineListIconSize":"12px",
     "TimelineListIconTittle":"2 wheeled Trolly",
-    "TimelineListAssigningName":"Aa Bb"
+    
+    "Add ',' after First Name of UserSelector":"Note-true",
+    "Add ',' after First Name of ContactSelector":"Note-true",
+    "Add ',' after First Name of Assigning":"Note-true",
+
+
+    "TimelineListUserSelector":"Deanne, Howell",
+    "TimelineListContactSelector":"Vivek, Mahajan",
+    "TimelineListAssigningName":"Daniel, Zhao"
+
 
     
 }

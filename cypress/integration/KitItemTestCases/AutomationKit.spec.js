@@ -58,9 +58,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     cy.wait(2000);
     //Url
-    cy.get('[name="Url"]').last().type(this.KitItemData.Url);
+    //cy.get('[name="Url"]').last().type(this.KitItemData.Url);
     //Working
-    //cy.get('[name'+'='+this.KitData.Url+']').last().type(this.KitItemData.Url);
+    cy.get('[name'+'='+this.KitData.Url+']').last().type(this.KitItemData.Url);
     cy.wait(1000);
 
     //Text
@@ -446,7 +446,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Assigning
     cy.get(".searchIcon > .inline-svg > path").last().click({ force: true });
     cy.wait(2000);
-    cy.get(".list-item-search").first().click({ force: true });
+    //cy.get(".list-item-search").first().click({ force: true });
+    cy.contains(this.KitItemData.AssignningName).click({force:true})
     cy.wait(2000);
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
 
