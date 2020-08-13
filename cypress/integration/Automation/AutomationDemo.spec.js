@@ -21,14 +21,19 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
   this.beforeEach("KitType Data", function () {
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
-      KitTypeData
+      KittypeName
     ) {
-      this.KitTypeData = KitTypeData;
+      this.KitTypeName = KittypeName;
     });
 
     cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
       this.KitItemData = KitDataEle;
     });
+
+    cy.fixture("KitTypeTestData/KitItemDataValues2").then(function (KitDataEle) {
+      this.KitItemData2 = KitDataEle;
+    });
+
   });
 
   it.only("CypressAutomation Kit type", function () {
@@ -40,8 +45,11 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.KitItemData.KitName3);
-    KTP.OpenKitType(this.KitItemData.KitName3);
+    // KTP.SearchKitType(this.KitItemData.KitName3);
+    // KTP.OpenKitType(this.KitItemData.KitName3);
+    KTP.SearchKitType(this.KitTypeName.KitName);
+    KTP.OpenKitType(this.KitTypeName.KitName);
+    
     cy.wait(2000)
     //Assertion
     cy.contains("New Item created").should("be.visible");

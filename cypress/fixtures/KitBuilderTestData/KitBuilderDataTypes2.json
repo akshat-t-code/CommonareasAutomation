@@ -1,0 +1,124 @@
+{
+
+    "Url":"Url",
+    "Text":"Text",
+    "File":"File",
+    "Telephone":"Telephone",
+    "TextAera":"TextAera",
+    "Slider":"Slider",
+    "Currency":"Currency",
+    "Measure":"Measure",
+    "Email":"Email",
+    "Address":"Address",
+    "Number":"Number",
+    "Section":"Section",
+    "Time":"Time",
+    "Date":"Date",
+    "ReminderName":"Reminder",
+    "Toggle":"Toggle",
+
+    "SelectList":"SelectList",
+    "SelectListName":"SelectListName",
+    "SelectListValue1":"Value1",
+    "SelectListValue2":"Value2",
+    "SelectListValue3":"Value3",
+    "SelectListValue4":"Value4",
+    "SelectListValue5":"Value5",
+
+    "RadioSelect":"RadioSelect",
+    "RadioSelectName":"RadioSelectName",
+    "RadioSelectValue1":"Value11",
+    "RadioSelectValue2":"Value22",
+    "RadioSelectValue3":"Value33",
+    "RadioSelectValue4":"Value44",
+    "RadioSelectValue5":"Value55",
+
+    "CheckboxSelect":"CheckboxSelect",
+    "CheckboxSelectName":"CheckboxSelectName",
+    "CheckboxSelectValue1":"Value111",
+    "CheckboxSelectValue2":"Value222",
+    "CheckboxSelectValue3":"Value333",
+    "CheckboxSelectValue4":"Value444",
+    "CheckboxSelectValue5":"Value555",
+
+    "UserSelector":"UserSelector",
+    "ContactSelector":"ContactSelector",
+    "Assigning":"Assigning",
+
+
+    "Stepper":"Stepper",
+    "StepperName":"StepperName",
+    "StepperValue1":"Value#1",
+    "StepperValue2":"Value#2",
+    "StepperValue3":"Value#3",
+    "StepperValue4":"Value#4",
+    "StepperValue5":"Value#5",
+
+    "Icon":"Icon",
+    
+    "pls dont modified these below three icon values":"IconSize-IconLabel-Icontitle",
+    "IconSize":"IconSize",
+    "IconLabel":"IconLabel",
+    "Icontitle":"title",
+
+    "Inspection":"Inspection",
+    "InspectionName":"InspectionName",
+    "InspectionValue1":"Value##1",
+    "InspectionValue2":"Value##2",
+    "InspectionValue3":"Value##3",
+    "InspectionValue4":"Value##4",
+    "InspectionValue5":"Value##5",
+
+    "OneToOneRelation":"One2oneRelation",
+    "KitToBeRelate":"AkshatKitDemo",
+    "OTOAPIName":"bbbbb",
+    "OTORelatedAPIName":"bcbcbc",
+    "OTOReverseEleAPIName":"Aaaaa",
+    "OneToOneRelatedNew":"RelatedNewView",
+    "OneToOneRelatedEdit":"RelatedEditView",
+    "OneToOneMapView":"MapView",
+    "OneToOneSearchView":"SearchView",
+    "ElementToBeRelate":"url",
+
+
+    "OneToManyRelation":"ONE2NRelation",
+    "KitToBeRelated":"AkshatKitDemo",
+    "APIName":"dcsdf",
+    "RelatedAPIName":"rdsds",
+    "ReverseEleAPIName":"sdttt",
+    "OneToManyRelatedNew":"RelatedNewView",
+    "OneToManyRelatedEdit":"RelatedEditView",
+    "OneToManyMapView":"MapView",
+    "OneToManySearchView":"SearchView",
+    "RelatedTableView":"TestTableViWE",
+    "RelatedEle_1":"Url",
+    "RelatedEle_2":"Text",
+    "RelatedEle_3":"Telephone",
+    "RelatedEle_4":"Email",
+    "RelatedEle_5":"Currency",
+
+     
+    "SquareCardName":"SQURRCARD",
+    "CardKitToBeRelated":"AkshatKitDemo",
+    "SQAPIName":"cdesw",
+    "SQRelatedAPIName":"vvvcff",
+    "SQReverseEleAPIName":"plssssss",
+    "CardRelatedNew":"RelatedNewView",
+    "CardRelatedEdit":"RelatedEditView",
+    "CardMapView":"MapView",
+    "CardSearchView":"SearchView",
+    "SquareCardTableView":"TestTableView",
+    "RelateEle_1":"Url",
+    "RelateEle_2":"Text",
+    "RelateEle_3":"Telephone",
+    "RelateEle_4":"Email",
+    "RelateEle_5":"Email",
+
+    "RCName":"Reactive Control",
+
+    "RVName":"Reactive Vriable"
+    
+    
+
+
+}

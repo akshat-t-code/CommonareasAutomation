@@ -1,0 +1,99 @@
+{
+
+    "KitName":"CypressAutomation2",
+    "KitName2":"AutomationKit(Don...",
+    "KitName3":"AkshatValidationKit",
+    "KitName4":"AkshatKitDemo",
+    
+
+    "Url":"https://www.TestData.com",
+    "Text":"MyWords I am ",
+    "Telphone":"(878) 908-2495",
+    "TextAera":"Automation Kit Type",
+    "Currency":"343",
+    "Measure":"22434",
+
+    "Email":"akshatking@yahoo.com",
+    "Important Note for Email":"should be in small letters",
+
+    "Addressline1":"Noor",
+    "Addressline2":"Nagr",
+    "City":"Extension",
+    "State":"Arizona",
+    "ZipCode":"201001",
+    "Country":"United States",
+    "Number":"190890",
+
+    "SelectListValue":"Value2",
+    "RadioSelect":"Value22",
+
+
+
+    "CheckboxSelectValue1":"Value222",
+    "CheckboxSelectValue2":"Value333",
+    "CheckboxSelectValue3":"Value444",
+    "CheckboxSelectValue4":"Value111",
+
+    "UserSelectorName":"Ken Stanley",
+
+    "ContactSelectorName":"Vivek Mahajan",
+
+    "InspectionValue":"Value##2",
+    "AssigningName":"Daniel Zhao",
+
+    "iconSize":"Small",
+    "IconLabel":"Make It",
+    
+
+    "ReminderTitle":"Reminder for me",
+    "ReminderTypeOneTime":"One-Time",
+    "ReminderTypeRecurring":"Recurring",
+
+    "ChannelWebApp":"Web App",
+    "ChannelEmail":"E-mail",
+    "ChannelMobileApp":"Mobile App",
+
+    "RepeatDaily":"Daily",
+    "RepeatMonFriday":"Mon-Friday",
+    "RepeatWeekly":"Weekly",
+    "RepeatMonthlyDay":"Monthly - Day",
+    "RepeatMonthlyOfDay":"Monthly - Of Day",
+    "RepeatAnnuallyDate":"Annually - Date",
+    "RepeatAnnuallyOfMonth":"Annually - Of Month",
+    
+
+
+    "These values need to add manual for validate Table List View Ele":"true",
+    "Important note for Values":"Pls add value in same format that i did",
+    "TableListAssigningName":"ken Stanley",
+    "StepperValue":"Value#3",
+    "TimeValue":"12:15 AM",
+    "DateValue":"07/09/2020",
+    "ToggleStatus":"True",
+    "FileValue":"10344",
+    "SliderValue":"19",
+    "IconSize":"12px",
+    "IconTittle":"2 wheeled trolly",
+
+    "These values need to add manual for validate Table List View Elee":"true",
+    "Important note for (TimelineList View Results Ele)Values":"Pls add value in same format that i did",
+
+    "TimelineListFileEleValue":"10769",
+    "TimelineListSliderValue":"17",
+    "TimelineListTimeValue":"12:15 AM",
+    "TimelineListDateValue":"07/09/2020",
+    "TimelineListToggleStatus":"True",
+    "TimelineListIconTittle":"2 wheeled Trolly",
+    
+    "Add ',' after First Name of UserSelector":"Note-true",
+    "Add ',' after First Name of ContactSelector":"Note-true",
+    "Add ',' after First Name of Assigning":"Note-true",
+
+
+    "TimelineListUserSelector":"Deanne, Howell",
+    "TimelineListContactSelector":"Vivek, Mahajan",
+    "TimelineListAssigningName":"Daniel, Zhao"
+
+
+    
+}
