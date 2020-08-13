@@ -13,11 +13,11 @@ describe("Copy New Form Elements to the Edit View", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
-      this.data = data;
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+      this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
-      this.data1 = data1;
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitypeName) {
+      this.KitTypeName = KittypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
       datatypes
@@ -36,7 +36,7 @@ describe("Copy New Form Elements to the Edit View", function () {
     //cy.wait(5000);
     //kb.ClickOnKitBuilder();
     cy.wait(3000);
-    cy.contains(this.data1.KitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);

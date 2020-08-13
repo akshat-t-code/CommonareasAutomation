@@ -30,12 +30,12 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(UrlName);
 
-    //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(UrlName);
+    //API Name Change feature
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(UrlName);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -72,11 +72,11 @@ class KitBuilderDataTypes {
       .type(TextName);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(TextName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(TextName);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -115,11 +115,11 @@ class KitBuilderDataTypes {
       .type(FileName);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(FileName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(FileName);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -156,11 +156,11 @@ class KitBuilderDataTypes {
       .type(Telephone);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Telephone);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Telephone);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -197,11 +197,11 @@ class KitBuilderDataTypes {
       .type(TextAera);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(TextAera);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(TextAera);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -238,11 +238,11 @@ class KitBuilderDataTypes {
       .type(Slider);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Slider);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Slider);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -279,11 +279,11 @@ class KitBuilderDataTypes {
       .type(Currency);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Currency);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Currency);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -320,11 +320,11 @@ class KitBuilderDataTypes {
       .type(Measure);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Measure);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Measure);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -361,11 +361,11 @@ class KitBuilderDataTypes {
       .type(Email);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Email);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Email);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -402,11 +402,11 @@ class KitBuilderDataTypes {
       .type(Address);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Address);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Address);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -443,11 +443,11 @@ class KitBuilderDataTypes {
       .type(Number);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Number);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Number);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -497,11 +497,11 @@ class KitBuilderDataTypes {
       .type(Time);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Time);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Time);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -538,11 +538,11 @@ class KitBuilderDataTypes {
       .type(Date);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Date);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Date);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -579,11 +579,11 @@ class KitBuilderDataTypes {
       .type(Toggle);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Toggle);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Toggle);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -628,11 +628,11 @@ class KitBuilderDataTypes {
       .type(SelectList);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(SelectListName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(SelectListName);
 
     //SelectList customize name
     //Click on +
@@ -816,11 +816,11 @@ class KitBuilderDataTypes {
       .type(RadioSelect);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(RadioSelectName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(RadioSelectName);
 
     //RadioSelect customize name
     //Click on +
@@ -1006,11 +1006,11 @@ class KitBuilderDataTypes {
       .type(CheckboxSelect);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(CheckboxSelectName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(CheckboxSelectName);
 
     //CheckboxSelect customize name
     //Click on +
@@ -1187,11 +1187,11 @@ class KitBuilderDataTypes {
       .type(UserSelector);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(UserSelector);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(UserSelector);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -1232,11 +1232,11 @@ class KitBuilderDataTypes {
       .type(ContactSelector);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(ContactSelector);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(ContactSelector);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -1275,11 +1275,11 @@ class KitBuilderDataTypes {
       .type(Assigning);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Assigning);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Assigning);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -1318,11 +1318,11 @@ class KitBuilderDataTypes {
       .type(Stepper);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(StepperName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(StepperName);
 
     //Stepper customize name
     //Click on +
@@ -1500,11 +1500,11 @@ class KitBuilderDataTypes {
       .type(Icon);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(Icon);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(Icon);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -1550,11 +1550,11 @@ class KitBuilderDataTypes {
       .type(Inspection);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(InspectionName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(InspectionName);
 
     //Inspection customize name
     //Click on +
@@ -1740,11 +1740,11 @@ class KitBuilderDataTypes {
       .type(RelationName);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(OTOAPIName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(OTOAPIName);
 
     //Click on DropDown to Select Kit type to Relate with 1-One Relation
     cy.get(
@@ -1760,18 +1760,18 @@ class KitBuilderDataTypes {
     ).click({ force: true });
 
     //Related API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(OTORelatedAPIName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(OTORelatedAPIName);
 
-    //Reverse API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(OTOReverseEleAPIName);
+    // //Reverse API Name
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(OTOReverseEleAPIName);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -1872,11 +1872,11 @@ class KitBuilderDataTypes {
       .type(RelationName);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(APIName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(APIName);
 
     //Click on DropDown to Select Kit type to Relate with 1-N Relation
     cy.get(
@@ -1893,18 +1893,18 @@ class KitBuilderDataTypes {
     cy.contains("More Than One").click({ force: true });
 
     //Related API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(RelatedAPIName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(RelatedAPIName);
 
-    //ReverseEleAPIName
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(ReverseEleAPIName);
+    // //ReverseEleAPIName
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(ReverseEleAPIName);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
@@ -2105,11 +2105,11 @@ class KitBuilderDataTypes {
       .type(SquareCardName);
 
     //API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(SQAPIName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(SQAPIName);
 
     //Click on DropDown to Select Kit type to Relate with Square Card Relation
     cy.get(
@@ -2126,18 +2126,18 @@ class KitBuilderDataTypes {
     cy.contains("More Than One").click({ force: true });
 
     //Related API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(SQRelatedAPIName);
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(SQRelatedAPIName);
 
-    //Reverse API Name
-    cy.get(
-      "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div"
-    )
-      .click({ force: true })
-      .type(SQReverseEleAPIName);
+    // //Reverse API Name
+    // cy.get(
+    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div"
+    // )
+    //   .click({ force: true })
+    //   .type(SQReverseEleAPIName);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });

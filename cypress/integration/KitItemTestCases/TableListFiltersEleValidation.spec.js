@@ -49,6 +49,7 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
       force: true,
     });
     cy.wait(5000);
+    //Open KitType from left paneal
     cy.contains(this.KitName.TableListEleValidation).click({ force: true });
     cy.wait(10000);
   });

@@ -20,10 +20,10 @@ describe("Adding Results and Filters Element to Table List View", function () {
       this.TableListKitName = TLKitName;
     });
 
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
-      this.data = data;
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+      this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitName) {
       this.KitName = KitName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (

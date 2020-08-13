@@ -13,11 +13,11 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
-      this.data = data;
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+      this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
-      this.data1 = data1;
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KittypeName) {
+      this.KitTypeName = KittypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
       datatypes
@@ -37,8 +37,8 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     //kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-   /// cy.contains(this.data1.KitName).click({ force: true });
-    cy.contains('AkshatValidationKit').click({ force: true });
+    cy.contains(this.KitTypeName.KitName).click({ force: true });
+    //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);

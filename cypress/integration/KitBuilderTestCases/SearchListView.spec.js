@@ -20,8 +20,8 @@ describe("Adding Results and Filters Element to Search List View", function () {
       this.SearchListKitName = SLKitName;
     });
 
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
-      this.data = data;
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+      this.data = KitTypeFormViewsNames;
     });
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitName) {
       this.KitName = KitName;

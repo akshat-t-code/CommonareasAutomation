@@ -13,11 +13,11 @@ describe("Input Section Data Elements Configuration", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
-      this.data = data;
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+      this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
-      this.data1 = data1;
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KittypeName) {
+      this.KitTypeName = KittypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
       datatypes
@@ -26,7 +26,7 @@ describe("Input Section Data Elements Configuration", function () {
     });
   });
 
-  it.only("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -37,8 +37,8 @@ describe("Input Section Data Elements Configuration", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    //cy.contains(this.data1.KitName).click({ force: true });
-    cy.contains('AkshatValidationKit').click({ force: true });
+    cy.contains(this.KitTypeName.KitName).click({ force: true });
+    //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -46,7 +46,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Input Section Data Elements", function () {
+  it("Input Section Data Elements", function () {
     cy.contains("Inputs").click({ force: true });
     cy.wait(2000);
   });
@@ -143,7 +143,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Address Data Type", function () {
+  it("Address Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Address"]').dblclick({ force: true });
     cy.wait(1000);
@@ -153,7 +153,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Section Data Type", function () {
+  it("Section Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Section"]').dblclick({ force: true });
     cy.wait(1000);
@@ -163,7 +163,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Number Data Type", function () {
+  it("Number Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Number"]').dblclick({ force: true });
     cy.wait(1000);
@@ -173,9 +173,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  
-
-  it.only("Kit Builder Save and Publish", function () {
+  it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();

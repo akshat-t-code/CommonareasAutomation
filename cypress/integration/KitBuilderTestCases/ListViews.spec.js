@@ -13,11 +13,11 @@ describe("Adding Results and Filters Element to List Views", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
-      this.data = data;
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+      this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
-      this.data1 = data1;
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KittypeName) {
+      this.KitTypeName = KittypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
       datatypes
@@ -32,7 +32,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     });
   });
 
-  it.only("Navigating to List Views of Created Kit Type", function () {
+  it("Navigating to List Views of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -43,19 +43,19 @@ describe("Adding Results and Filters Element to List Views", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Enter created kit type name into search box
-    kb.KBSearchBox(this.data1.ListKitName);
+    kb.KBSearchBox(this.KitTypeName.KitName);
     cy.wait(5000);
     //Open created kit type for adding List view elements
-    //cy.contains(this.data1.KitName).click({ force: true });
+    //cy.contains(this.KitTypeName.KitName).click({ force: true });
     //Click to open kit type for adding List view elements
-    cy.contains(this.data1.ListKitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName).click({ force: true });
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains("List Views").click({ force: true });
     cy.wait(5000);
   });
 
-  it.only("Adding Results and Filters Element to Table List View", function () {
+  it("Adding Results and Filters Element to Table List View", function () {
     //View Name coming form json file
     cy.contains(this.data.TableView).click({ force: true });
     cy.wait(3000);
@@ -85,7 +85,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.ListView.AddTableListResults_14).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_15).click({ force: true });
     cy.wait(2000);
-    cy.contains("Assigning").scrollIntoView({ force: true });
+    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
     cy.contains(this.ListView.AddTableListResults_16).click({ force: true });
     cy.contains(this.ListView.AddTableListResults_17).click({ force: true });
@@ -156,7 +156,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.ListView.AddTableListFilters_15).click({ force: true });
     cy.wait(2000);
 
-    cy.contains("Assigning").scrollIntoView({ force: true });
+    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
 
     cy.contains(this.ListView.AddTableListFilters_16).click({ force: true });
@@ -187,7 +187,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.log("Assertion close");
   });
 
-  it.only("Adding Results and Filters Element to Search List View", function () {
+  it("Adding Results and Filters Element to Search List View", function () {
     //Page object
     const kb = new KitBuilderPage();
     cy.wait(3000);
@@ -231,7 +231,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.ListView.AddSearchListResults_15).click({ force: true });
     cy.wait(2000);
 
-    cy.contains("Assigning").scrollIntoView({ force: true });
+    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
 
     cy.contains(this.ListView.AddSearchListResults_16).click({ force: true });
     cy.contains(this.ListView.AddSearchListResults_17).click({ force: true });
@@ -302,7 +302,8 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.ListView.AddSearchListFilters_15).click({ force: true });
     cy.wait(2000);
 
-    cy.contains("Assigning").scrollIntoView({ force: true });
+    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
+    cy.wait(2000)
 
     cy.contains(this.ListView.AddSearchListFilters_16).click({ force: true });
     cy.contains(this.ListView.AddSearchListFilters_17).click({ force: true });

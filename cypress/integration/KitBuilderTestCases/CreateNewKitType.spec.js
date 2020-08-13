@@ -13,11 +13,11 @@ describe("Create New Kit type ", function () {
 
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
-      this.data = data;
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+      this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
-      this.data1 = data1;
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KittypeName) {
+      this.KitTypeName = KittypeName;
     });
   });
 
@@ -34,10 +34,10 @@ describe("Create New Kit type ", function () {
     kb.ClickOnCreateNewKit();
     cy.wait(5000);
     //For Creating New Kit type commands coming form Command.js
-    cy.KitLabel(this.data1.KitLabel);
-    cy.KitName(this.data1.KitName);
-    cy.KitDescription(this.data1.KitDescription);
-    cy.ApiName(this.data1.APIName)
+    cy.KitLabel(this.KitTypeName.KitLabel);
+    cy.KitName(this.KitTypeName.KitName);
+    cy.KitDescription(this.KitTypeName.KitDescription);
+    cy.ApiName(this.KitTypeName.APIName)
     cy.KitIcon();
     cy.CreateKit();
     cy.log('New Kit Type has been Created')
@@ -46,7 +46,7 @@ describe("Create New Kit type ", function () {
   it("New View Form", function () {
     cy.wait(5000);
     const kb = new KitBuilderPage();
-    cy.contains(this.data1.KitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName).click({ force: true });
     cy.wait(3000);
 
     cy.contains("Form Views").click({ force: true });

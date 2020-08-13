@@ -55,6 +55,7 @@ describe("Validate Timeline List's Filters Element for Created Kit Type on Sched
       force: true,
     });
     cy.wait(5000);
+    //Open KitType from left paneal
     cy.contains(this.KitName.TimelineListEleValidation).click({
       force: true,
     });

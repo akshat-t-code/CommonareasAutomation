@@ -49,6 +49,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
       force: true,
     });
     cy.wait(5000);
+    //Open KitType from left paneal
     cy.contains(this.KitName.TimelineListResultsEleValidation).click({
       force: true,
     });
@@ -286,9 +287,9 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
 
   it("Validate TimelineList View Result UserSelector Element", function () {
     //Add ',' after First Name of UserSelector
-    cy.contains(this.EleDataName.UserSelector + ":" + " Deanne, Howell").should(
-      "exist"
-    );
+    // cy.contains(this.EleDataName.UserSelector + ":" + " Deanne, Howell").should(
+    //   "exist"
+    // );
 
     cy.contains(
       this.EleDataName.UserSelector +
@@ -304,10 +305,10 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
   });
 
   it("Validate TimelineList View Result ContactSelector Element", function () {
-    //Add ',' after First Name of ContactSelector
-    cy.contains(
-      this.EleDataName.ContactSelector + ":" + " Vivek, Mahajan"
-    ).should("exist");
+    // Add ',' after First Name of ContactSelector
+    // cy.contains(
+    //   this.EleDataName.ContactSelector + ":" + " Vivek, Mahajan"
+    // ).should("exist");
 
     cy.contains(
       this.EleDataName.ContactSelector +
@@ -323,9 +324,11 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
   });
 
   it.only("Validate TimelineList View Result Icon Element", function () {
-    
+
+
     cy.contains("2 wheeled Trolly_solo").should("exist");
-    cy.contains(this.KitItemData.TimelineListIconTittle + "_solo").should(
+
+    cy.contains(this.KitItemData.TimelineListIconTittle +"_solo").should(
       "exist"
     );
     cy.log(this.KitItemData.TimelineListIconTittle + "_solo");

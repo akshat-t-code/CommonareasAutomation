@@ -13,11 +13,11 @@ describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Emai
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
-      this.data = data;
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+      this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (data1) {
-      this.data1 = data1;
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KittypeName) {
+      this.KitTypeName = KittypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
       datatypes
@@ -26,7 +26,7 @@ describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Emai
     });
   });
 
-  it.only("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -37,7 +37,7 @@ describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Emai
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.data1.KitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -78,7 +78,7 @@ describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Emai
     cy.wait(5000);
   });
 
-  it.only("Copy the Elements into MapView form", function () {
+  it("Copy the Elements into MapView form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -111,7 +111,7 @@ describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Emai
     cy.wait(5000);
   });
 
-  it.only("Copy the Elements into CommonPlanView form", function () {
+  it("Copy the Elements into CommonPlanView form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -144,7 +144,7 @@ describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Emai
     cy.wait(5000);
   });
 
-  it.only("Copy the Elements into Schedule View form", function () {
+  it("Copy the Elements into Schedule View form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -177,7 +177,7 @@ describe("Copy New Form Elements to the Shared,Map,CommomPlan, Schedule and Emai
     cy.wait(5000);
   });
 
-  it.only("Copy the Elements into EmailView form", function () {
+  it("Copy the Elements into EmailView form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(

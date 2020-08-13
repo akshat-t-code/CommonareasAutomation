@@ -49,6 +49,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
       force: true,
     });
     cy.wait(5000);
+    //Open KitType from left paneal
     cy.contains(this.KitName.TableListResultEleValidation).click({
       force: true,
     });

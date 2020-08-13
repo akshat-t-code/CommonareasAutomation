@@ -24,8 +24,8 @@ describe("Kit Builder Data Types Details", function () {
       this.APIData = APIName;
     });
 
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitTypeName) {
-      this.data1 = KitTypeName;
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KittypeName) {
+      this.KitTypeName = KittypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
       datatypes
@@ -45,7 +45,7 @@ describe("Kit Builder Data Types Details", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.data1.KitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);

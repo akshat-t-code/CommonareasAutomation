@@ -20,8 +20,8 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
       this.TimelineListKitName = TLLKitName;
     });
 
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
-      this.data = data;
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+      this.data = KitTypeFormViewsNames;
     });
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitName) {
       this.KitName = KitName;

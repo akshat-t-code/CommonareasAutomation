@@ -49,6 +49,7 @@ describe("Validate TableList's Result and Filter Elements for Created Kit Type o
       force: true,
     });
     cy.wait(5000);
+    //Open KitType from left paneal
     cy.contains(this.KitName.TableListValidation).click({ force: true });
     cy.wait(10000);
   });
