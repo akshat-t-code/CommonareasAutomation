@@ -24,6 +24,14 @@ describe("Input Section Data Elements Configuration", function () {
     ) {
       this.DataType = datatypes;
     });
+
+    cy.fixture("KitBuilderTestData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
+
+
   });
 
   it("Navigating to New Form of Created Kit Type", function () {
@@ -37,7 +45,7 @@ describe("Input Section Data Elements Configuration", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.KitTypeName.KitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName2).click({ force: true });
     //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
@@ -58,7 +66,7 @@ describe("Input Section Data Elements Configuration", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
-    DataType.Url(this.DataType.Url);
+    DataType.Url(this.DataType2.Url);
     cy.wait(5000);
   });
 
@@ -69,7 +77,7 @@ describe("Input Section Data Elements Configuration", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
 
-    DataType.Text(this.DataType.Text);
+    DataType.Text(this.DataType2.Text);
     cy.wait(5000);
   });
 
@@ -79,7 +87,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.File(this.DataType.File);
+    DataType.File(this.DataType2.File);
     cy.wait(5000);
   });
 
@@ -89,7 +97,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Telephone(this.DataType.Telephone);
+    DataType.Telephone(this.DataType2.Telephone);
     cy.wait(5000);
   });
 
@@ -99,7 +107,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.TextAera(this.DataType.TextAera);
+    DataType.TextAera(this.DataType2.TextAera);
     cy.wait(5000);
   });
 
@@ -109,7 +117,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Slider(this.DataType.Slider);
+    DataType.Slider(this.DataType2.Slider);
     cy.wait(5000);
   });
 
@@ -119,7 +127,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Currency(this.DataType.Currency);
+    DataType.Currency(this.DataType2.Currency);
     cy.wait(5000);
   });
 
@@ -129,7 +137,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Measure(this.DataType.Measure);
+    DataType.Measure(this.DataType2.Measure);
     cy.wait(5000);
   });
 
@@ -139,7 +147,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Email(this.DataType.Email);
+    DataType.Email(this.DataType2.Email);
     cy.wait(5000);
   });
 
@@ -149,7 +157,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Address(this.DataType.Address);
+    DataType.Address(this.DataType2.Address);
     cy.wait(5000);
   });
 
@@ -159,7 +167,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Section(this.DataType.Section);
+    DataType.Section(this.DataType2.Section);
     cy.wait(5000);
   });
 
@@ -169,7 +177,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Number(this.DataType.Number);
+    DataType.Number(this.DataType2.Number);
     cy.wait(5000);
   });
 

@@ -24,9 +24,16 @@ describe("Date & Time Section Data Elements Configuration", function () {
     ) {
       this.DataType = datatypes;
     });
+
+    cy.fixture("KitBuilderTestData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
+
   });
 
-  it("Navigating to New Form of Created Kit Type", function() {
+  it.only("Navigating to New Form of Created Kit Type", function() {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -37,7 +44,7 @@ describe("Date & Time Section Data Elements Configuration", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.KitTypeName.KitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName2).click({ force: true });
     //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
@@ -57,7 +64,7 @@ describe("Date & Time Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Time(this.DataType.Time);
+    DataType.Time(this.DataType2.Time);
     cy.wait(5000);
   });
 
@@ -67,19 +74,19 @@ describe("Date & Time Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Date(this.DataType.Date);
+    DataType.Date(this.DataType2.Date);
     cy.wait(5000);
   });
 
-  it("Reminder Data Type", function () {
+  it.only("Reminder Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Reminder"]').dblclick({ force: true });
     cy.wait(1000);
     const DataType = new KitBuilderDataTypes();
-    DataType.Reminder(this.DataType.ReminderName);
+    DataType.Reminder(this.DataType2.ReminderName);
   });
 
-  it("Kit Builder Save and Publish", function () {
+  it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click();
     cy.get(".v-btn__content > .theme--dark").click();

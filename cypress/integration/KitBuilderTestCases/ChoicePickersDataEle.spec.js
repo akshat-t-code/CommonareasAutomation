@@ -24,6 +24,13 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     ) {
       this.DataType = datatypes;
     });
+
+    cy.fixture("KitBuilderTestData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
+
   });
 
   it("Navigating to New Form of Created Kit Type", function () {
@@ -37,7 +44,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     //kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.KitTypeName.KitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName2).click({ force: true });
     //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
@@ -57,7 +64,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Toggle(this.DataType.Toggle);
+    DataType.Toggle(this.DataType2.Toggle);
     cy.wait(5000);
   });
 
@@ -69,13 +76,13 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     const DataType = new KitBuilderDataTypes();
 
     DataType.SelectList(
-      this.DataType.SelectList,
-      this.DataType.SelectListName,
-      this.DataType.SelectListValue1,
-      this.DataType.SelectListValue2,
-      this.DataType.SelectListValue3,
-      this.DataType.SelectListValue4,
-      this.DataType.SelectListValue5
+      this.DataType2.SelectList,
+      this.DataType2.SelectListName,
+      this.DataType2.SelectListValue1,
+      this.DataType2.SelectListValue2,
+      this.DataType2.SelectListValue3,
+      this.DataType2.SelectListValue4,
+      this.DataType2.SelectListValue5
     );
     cy.wait(5000);
   });
@@ -88,13 +95,13 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     const DataType = new KitBuilderDataTypes();
 
     DataType.RadioSelect(
-      this.DataType.RadioSelect,
-      this.DataType.RadioSelectName,
-      this.DataType.RadioSelectValue1,
-      this.DataType.RadioSelectValue2,
-      this.DataType.RadioSelectValue3,
-      this.DataType.RadioSelectValue4,
-      this.DataType.RadioSelectValue5
+      this.DataType2.RadioSelect,
+      this.DataType2.RadioSelectName,
+      this.DataType2.RadioSelectValue1,
+      this.DataType2.RadioSelectValue2,
+      this.DataType2.RadioSelectValue3,
+      this.DataType2.RadioSelectValue4,
+      this.DataType2.RadioSelectValue5
     );
     cy.wait(5000);
   });
@@ -106,13 +113,13 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
     DataType.CheckboxSelect(
-      this.DataType.CheckboxSelect,
-      this.DataType.CheckboxSelectName,
-      this.DataType.CheckboxSelectValue1,
-      this.DataType.CheckboxSelectValue2,
-      this.DataType.CheckboxSelectValue3,
-      this.DataType.CheckboxSelectValue4,
-      this.DataType.CheckboxSelectValue5
+      this.DataType2.CheckboxSelect,
+      this.DataType2.CheckboxSelectName,
+      this.DataType2.CheckboxSelectValue1,
+      this.DataType2.CheckboxSelectValue2,
+      this.DataType2.CheckboxSelectValue3,
+      this.DataType2.CheckboxSelectValue4,
+      this.DataType2.CheckboxSelectValue5
     );
     cy.wait(5000);
   });

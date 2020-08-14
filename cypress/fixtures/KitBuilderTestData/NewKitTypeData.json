@@ -3,7 +3,11 @@
     "KitLabel":"AkshatChildKit2",
     "KitName":"AkshatChildKit2",
     "KitDescription":"AkshatChildKit2",
-    "APIName":"AkshatChildKit2"
-    
+    "APIName":"AkshatChildKit2",
+
+    "KitLabel2":"Property Builder",
+    "KitName2":"Property Builder",
+    "KitDescription2":"Property Builder",
+    "APIName2":"PropertyBuilder"
 
 }

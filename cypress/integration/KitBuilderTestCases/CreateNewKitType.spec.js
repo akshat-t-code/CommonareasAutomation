@@ -34,10 +34,10 @@ describe("Create New Kit type ", function () {
     kb.ClickOnCreateNewKit();
     cy.wait(5000);
     //For Creating New Kit type commands coming form Command.js
-    cy.KitLabel(this.KitTypeName.KitLabel);
-    cy.KitName(this.KitTypeName.KitName);
-    cy.KitDescription(this.KitTypeName.KitDescription);
-    cy.ApiName(this.KitTypeName.APIName)
+    cy.KitLabel(this.KitTypeName.KitLabel2);
+    cy.KitName(this.KitTypeName.KitName2);
+    cy.KitDescription(this.KitTypeName.KitDescription2);
+    cy.ApiName(this.KitTypeName.APIName2)
     cy.KitIcon();
     cy.CreateKit();
     cy.log('New Kit Type has been Created')
@@ -46,7 +46,7 @@ describe("Create New Kit type ", function () {
   it("New View Form", function () {
     cy.wait(5000);
     const kb = new KitBuilderPage();
-    cy.contains(this.KitTypeName.KitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName2).click({ force: true });
     cy.wait(3000);
 
     cy.contains("Form Views").click({ force: true });

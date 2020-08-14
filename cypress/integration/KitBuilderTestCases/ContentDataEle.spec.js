@@ -25,6 +25,13 @@ describe("Kit Builder Data Types Details", function () {
     ) {
       this.DataType = datatypes;
     });
+
+    cy.fixture("KitBuilderTestData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
+
   });
 
   it("Navigating to New Form of Created Kit Type", function () {
@@ -38,7 +45,7 @@ describe("Kit Builder Data Types Details", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.KitTypeName.KitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName2).click({ force: true });
     //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
@@ -49,33 +56,33 @@ describe("Kit Builder Data Types Details", function () {
   });
 
 
-  it("OneToManyRelation Data Type", function () {
-    //Double click on Data Element to drag it on Canvas
-    cy.get('[title="Relation 1-N"]').dblclick({ force: true });
-    cy.wait(1000);
-    //Page Object
-    const DataType = new KitBuilderDataTypes();
+  // it("OneToManyRelation Data Type", function () {
+  //   //Double click on Data Element to drag it on Canvas
+  //   cy.get('[title="Relation 1-N"]').dblclick({ force: true });
+  //   cy.wait(1000);
+  //   //Page Object
+  //   const DataType = new KitBuilderDataTypes();
 
-    DataType.OneToManyRelation(
-      this.DataType.OneToManyRelation,
-      this.DataType.KitToBeRelated,
-      this.DataType.APIName,
-      this.DataType.RelatedAPIName,
-      this.DataType.ReverseEleAPIName,
-      this.DataType.RelatedTableView,
-      this.DataType.RelatedEle_1,
-      this.DataType.RelatedEle_2,
-      this.DataType.RelatedEle_3,
-      this.DataType.RelatedEle_4,
-      this.DataType.RelatedEle_5,
-      this.DataType.OneToManyRelatedNew,
-      this.DataType.OneToManyRelatedEdit,
-      this.DataType.OneToManyMapView,
-      this.DataType.OneToManySearchView
-    );
+  //   DataType.OneToManyRelation(
+  //     this.DataType2.OneToManyRelation,
+  //     this.DataType2.KitToBeRelated,
+  //     this.DataType2.APIName,
+  //     this.DataType2.RelatedAPIName,
+  //     this.DataType2.ReverseEleAPIName,
+  //     this.DataType2.RelatedTableView,
+  //     this.DataType2.RelatedEle_1,
+  //     this.DataType2.RelatedEle_2,
+  //     this.DataType2.RelatedEle_3,
+  //     this.DataType2.RelatedEle_4,
+  //     this.DataType2.RelatedEle_5,
+  //     this.DataType2.OneToManyRelatedNew,
+  //     this.DataType2.OneToManyRelatedEdit,
+  //     this.DataType2.OneToManyMapView,
+  //     this.DataType2.OneToManySearchView
+  //   );
 
-    cy.wait(5000);
-  });
+  //   cy.wait(5000);
+  // });
 
 
   it("Stepper Data Type", function () {
@@ -85,13 +92,13 @@ describe("Kit Builder Data Types Details", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
     DataType.Stepper(
-      this.DataType.Stepper,
-      this.DataType.StepperName,
-      this.DataType.StepperValue1,
-      this.DataType.StepperValue2,
-      this.DataType.StepperValue3,
-      this.DataType.StepperValue4,
-      this.DataType.StepperValue5
+      this.DataType2.Stepper,
+      this.DataType2.StepperName,
+      this.DataType2.StepperValue1,
+      this.DataType2.StepperValue2,
+      this.DataType2.StepperValue3,
+      this.DataType2.StepperValue4,
+      this.DataType2.StepperValue5
     );
     cy.wait(5000);
   });
@@ -102,7 +109,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.UserSelector(this.DataType.UserSelector);
+    DataType.UserSelector(this.DataType2.UserSelector);
     cy.wait(5000);
   });
 
@@ -114,16 +121,16 @@ describe("Kit Builder Data Types Details", function () {
     const DataType = new KitBuilderDataTypes();
 
     DataType.OneToOneRelation(
-      this.DataType.OneToOneRelation,
-      this.DataType.KitToBeRelate,
-      this.DataType.OTOAPIName,
-      this.DataType.OTORelatedAPIName,
-      this.DataType.OTOReverseEleAPIName,
-      this.DataType.ElementToBeRelate,
-      this.DataType.OneToOneRelatedNew,
-      this.DataType.OneToOneRelatedEdit,
-      this.DataType.OneToOneMapView,
-      this.DataType.OneToOneSearchView
+      this.DataType2.OneToOneRelation,
+      this.DataType2.KitToBeRelate,
+      this.DataType2.OTOAPIName,
+      this.DataType2.OTORelatedAPIName,
+      this.DataType2.OTOReverseEleAPIName,
+      this.DataType2.ElementToBeRelate,
+      this.DataType2.OneToOneRelatedNew,
+      this.DataType2.OneToOneRelatedEdit,
+      this.DataType2.OneToOneMapView,
+      this.DataType2.OneToOneSearchView
     );
     cy.wait(5000);
   });
@@ -134,7 +141,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.ContactSelector(this.DataType.ContactSelector);
+    DataType.ContactSelector(this.DataType2.ContactSelector);
     cy.wait(5000);
   });
 
@@ -146,21 +153,21 @@ describe("Kit Builder Data Types Details", function () {
     const DataType = new KitBuilderDataTypes();
 
     DataType.SquareCard(
-      this.DataType.SquareCardName,
-      this.DataType.CardKitToBeRelated,
-      this.DataType.SQAPIName,
-      this.DataType.SQRelatedAPIName,
-      this.DataType.SQReverseEleAPIName,
-      this.DataType.SquareCardTableView,
-      this.DataType.RelateEle_1,
-      this.DataType.RelateEle_2,
-      this.DataType.RelateEle_3,
-      this.DataType.RelateEle_4,
-      this.DataType.RelateEle_5,
-      this.DataType.CardRelatedNew,
-      this.DataType.CardRelatedEdit,
-      this.DataType.CardMapView,
-      this.DataType.CardSearchView
+      this.DataType2.SquareCardName,
+      this.DataType2.CardKitToBeRelated,
+      this.DataType2.SQAPIName,
+      this.DataType2.SQRelatedAPIName,
+      this.DataType2.SQReverseEleAPIName,
+      this.DataType2.SquareCardTableView,
+      this.DataType2.RelateEle_1,
+      this.DataType2.RelateEle_2,
+      this.DataType2.RelateEle_3,
+      this.DataType2.RelateEle_4,
+      this.DataType2.RelateEle_5,
+      this.DataType2.CardRelatedNew,
+      this.DataType2.CardRelatedEdit,
+      this.DataType2.CardMapView,
+      this.DataType2.CardSearchView
     );
 
     cy.wait(5000);
@@ -172,7 +179,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Icon(this.DataType.Icon);
+    DataType.Icon(this.DataType2.Icon);
     cy.wait(5000);
   });
 
@@ -183,13 +190,13 @@ describe("Kit Builder Data Types Details", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
     DataType.Inspection(
-      this.DataType.Inspection,
-      this.DataType.InspectionName,
-      this.DataType.InspectionValue1,
-      this.DataType.InspectionValue2,
-      this.DataType.InspectionValue3,
-      this.DataType.InspectionValue4,
-      this.DataType.InspectionValue5
+      this.DataType2.Inspection,
+      this.DataType2.InspectionName,
+      this.DataType2.InspectionValue1,
+      this.DataType2.InspectionValue2,
+      this.DataType2.InspectionValue3,
+      this.DataType2.InspectionValue4,
+      this.DataType2.InspectionValue5
     );
     cy.wait(5000);
   });
@@ -200,7 +207,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
-    DataType.Assigning(this.DataType.Assigning);
+    DataType.Assigning(this.DataType2.Assigning);
     cy.wait(5000);
   });
 
