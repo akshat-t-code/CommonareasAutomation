@@ -26,7 +26,7 @@ describe("Kit Builder Data Types Details", function () {
       this.DataType = datatypes;
     });
 
-    cy.fixture("KitBuilderTestData/KitBuilderDataTypes2").then(function (
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
       NewDataForElements
     ) {
       this.DataType2 = NewDataForElements;
@@ -45,7 +45,7 @@ describe("Kit Builder Data Types Details", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.KitTypeName.KitName2).click({ force: true });
+    cy.contains(this.KitTypeName.KitName3).click({ force: true });
     //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
@@ -56,33 +56,30 @@ describe("Kit Builder Data Types Details", function () {
   });
 
 
-  // it("OneToManyRelation Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Relation 1-N"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
+  it("OneToManyRelation Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Relation 1-N"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
 
-  //   DataType.OneToManyRelation(
-  //     this.DataType2.OneToManyRelation,
-  //     this.DataType2.KitToBeRelated,
-  //     this.DataType2.APIName,
-  //     this.DataType2.RelatedAPIName,
-  //     this.DataType2.ReverseEleAPIName,
-  //     this.DataType2.RelatedTableView,
-  //     this.DataType2.RelatedEle_1,
-  //     this.DataType2.RelatedEle_2,
-  //     this.DataType2.RelatedEle_3,
-  //     this.DataType2.RelatedEle_4,
-  //     this.DataType2.RelatedEle_5,
-  //     this.DataType2.OneToManyRelatedNew,
-  //     this.DataType2.OneToManyRelatedEdit,
-  //     this.DataType2.OneToManyMapView,
-  //     this.DataType2.OneToManySearchView
-  //   );
+    DataType.OneToManyRelation(
+      this.DataType2.OneToManyRelation,
+      this.DataType2.KitToBeRelated,
+      this.DataType2.RelatedTableView,
+      this.DataType2.RelatedEle_1,
+      this.DataType2.RelatedEle_2,
+      this.DataType2.RelatedEle_3,
+      this.DataType2.RelatedEle_4,
+      this.DataType2.RelatedEle_5,
+      this.DataType2.OneToManyRelatedNew,
+      this.DataType2.OneToManyRelatedEdit,
+      this.DataType2.OneToManyMapView,
+      this.DataType2.OneToManySearchView
+    );
 
-  //   cy.wait(5000);
-  // });
+    cy.wait(5000);
+  });
 
 
   it("Stepper Data Type", function () {
@@ -123,9 +120,6 @@ describe("Kit Builder Data Types Details", function () {
     DataType.OneToOneRelation(
       this.DataType2.OneToOneRelation,
       this.DataType2.KitToBeRelate,
-      this.DataType2.OTOAPIName,
-      this.DataType2.OTORelatedAPIName,
-      this.DataType2.OTOReverseEleAPIName,
       this.DataType2.ElementToBeRelate,
       this.DataType2.OneToOneRelatedNew,
       this.DataType2.OneToOneRelatedEdit,
@@ -155,9 +149,6 @@ describe("Kit Builder Data Types Details", function () {
     DataType.SquareCard(
       this.DataType2.SquareCardName,
       this.DataType2.CardKitToBeRelated,
-      this.DataType2.SQAPIName,
-      this.DataType2.SQRelatedAPIName,
-      this.DataType2.SQReverseEleAPIName,
       this.DataType2.SquareCardTableView,
       this.DataType2.RelateEle_1,
       this.DataType2.RelateEle_2,
@@ -213,8 +204,9 @@ describe("Kit Builder Data Types Details", function () {
 
   it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
-    cy.get(".ca-button-green:nth-child(1)").click();
-    cy.get(".v-btn__content > .theme--dark").click();
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.log("Kit builder(New Form) has been Saved");
     cy.wait(3000);
     //Click on  Publish

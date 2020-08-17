@@ -7,8 +7,14 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    // cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
+
     lp.visitServiceBuild();
+
+    //Handling Alert
+    cy.on("window:confirm", () => {
+      cy.log("Alert has been Handled");
+    });
+
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -33,14 +39,20 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
     ) {
       this.data1 = KitTypeName;
     });
-    cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
-      datatypes
+    // cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
+    //   datatypes
+    // ) {
+    //   this.DataType = datatypes;
+    // });
+
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
     ) {
-      this.DataType = datatypes;
+      this.DataType = NewDataForElements;
     });
   });
 
-  it.only("Navigating to Created KitType New Form", function () {
+  it("Navigating to Created KitType New Form", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -48,7 +60,7 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
     kb.KitBuilderUrl();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.RRProp.ReadOnlyKitName).click({ force: true });
+    cy.contains(this.RRProp.ReadOnlyKitName2).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -56,7 +68,7 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
     cy.wait(5000);
   });
 
-  it.only("Url Data Type Read Prop Validation", function () {
+  it("Url Data Type Read Prop Validation", function () {
     //Click on Url
     // cy.getIframeBody().find('[placeholder="Url"]').click({ force: true });
     cy.getIframeBody().contains(this.DataType.Url).click({ force: true });
@@ -444,7 +456,7 @@ describe("Validation On UI for Element's Read Property", function () {
     });
   });
 
-  it.only("Navigating to UI for KitType New Form for Read Property Validation", function () {
+  it("Navigating to UI for KitType New Form for Read Property Validation", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -453,8 +465,8 @@ describe("Validation On UI for Element's Read Property", function () {
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.RRProp.ReadOnlyKitName);
-    KTP.OpenKitType(this.RRProp.ReadOnlyKitName);
+    KTP.SearchKitType(this.RRProp.ReadOnlyKitName2);
+    KTP.OpenKitType(this.RRProp.ReadOnlyKitName2);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");

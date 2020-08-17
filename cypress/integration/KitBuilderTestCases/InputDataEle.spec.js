@@ -25,7 +25,7 @@ describe("Input Section Data Elements Configuration", function () {
       this.DataType = datatypes;
     });
 
-    cy.fixture("KitBuilderTestData/KitBuilderDataTypes2").then(function (
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
       NewDataForElements
     ) {
       this.DataType2 = NewDataForElements;
@@ -45,7 +45,7 @@ describe("Input Section Data Elements Configuration", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.KitTypeName.KitName2).click({ force: true });
+    cy.contains(this.KitTypeName.KitName3).click({ force: true });
     //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
@@ -182,14 +182,16 @@ describe("Input Section Data Elements Configuration", function () {
   });
 
   it("Kit Builder Save and Publish", function () {
-    //Kit Builder Save
-    cy.get(".ca-button-green:nth-child(1)").click();
-    cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Saved");
-    //Click on  Publish
-    cy.contains("Publish").click({ force: true });
-    //cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Published");
-    cy.wait(2000);
+   //Kit Builder Save
+   cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+   //save assertion closed
+   cy.get(".v-btn__content > .theme--dark").click({ force: true });
+   cy.log("Kit builder(New Form) has been Saved");
+   cy.wait(3000);
+   //Click on  Publish
+   cy.contains("Publish").click({ force: true });
+   //cy.get(".v-btn__content > .theme--dark").click();
+   cy.log("Kit builder(New Form) has been Published");
+   cy.wait(2000);
   });
 });

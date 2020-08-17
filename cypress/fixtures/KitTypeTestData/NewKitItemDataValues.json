@@ -40,7 +40,6 @@
 
     "ContactSelectorName":"Vivek Mahajan",
     
-
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",
     "MediumSmalliconSize":"Medium",
@@ -49,16 +48,18 @@
 
     "IconLabel":"99Acres",
 
-    "InspectionValue1":"Surrounding",
-    "InspectionValue2":"Property Size",
-    "InspectionValue3":"Parking Area",
-    "InspectionValue4":"Distance from City",
-    "InspectionValue5":"Market Aera",
+    "These are the index value of div child":"use according to select inspection value",
+    "1st for 1st value":"2nd for 2nd value and so on...",
+    "InspectionValue1":"1",
+    "InspectionValue2":"2",
+    "InspectionValue3":"3",
+    "InspectionValue4":"4",
+    "InspectionValue5":"5",
 
     "AssigningName":"Daniel Zhao",
     
 
-    "ReminderTitle":"Property Builder",
+    "ReminderTitle":"PropertyBuilder Inspection",
     "ReminderTypeOneTime":"One-Time",
     "ReminderTypeRecurring":"Recurring",
 
@@ -76,17 +77,16 @@
     
 
 
-    "These values need to add manual for validate Table List View Ele":"true",
+    "These values need to add manual for validate Table List View Result Ele UI Validation":"true",
     "Important note for Values":"Pls add value in same format that i did",
-    "TableListAssigningName":"ken Stanley",
-    "StepperValue":"Value#3",
-    "TimeValue":"12:15 AM",
-    "DateValue":"07/09/2020",
+    "FileValue":"10905",
+    "SliderValue":"17",
+    "TimeValue":"04:30 PM",
+    "DateValue":"08/31/2020",
     "ToggleStatus":"True",
-    "FileValue":"10344",
-    "SliderValue":"19",
-    "IconSize":"12px",
-    "IconTittle":"2 wheeled trolly",
+    "StepperValue":"293892",
+    "InspectionName":"DistancefromCity",
+    
 
     "These values need to add manual for validate Table List View Elee":"true",
     "Important note for (TimelineList View Results Ele)Values":"Pls add value in same format that i did",

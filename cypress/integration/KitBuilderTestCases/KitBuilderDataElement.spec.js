@@ -496,15 +496,16 @@ describe("Kit Builder Data Types Details", function () {
   */
 
   it("Kit Builder Save and Publish", function () {
-    //Kit Builder Save
-    cy.get(".ca-button-green:nth-child(1)").click();
-    cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Saved");
-    cy.wait(3000);
-    //Click on  Publish
-    cy.contains("Publish").click({ force: true });
-    //cy.get(".v-btn__content > .theme--dark").click();
-    cy.log("Kit builder(New Form) has been Published");
-    cy.wait(2000);
+   //Kit Builder Save
+   cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+   //save assertion closed
+   cy.get(".v-btn__content > .theme--dark").click({ force: true });
+   cy.log("Kit builder(New Form) has been Saved");
+   cy.wait(3000);
+   //Click on  Publish
+   cy.contains("Publish").click({ force: true });
+   //cy.get(".v-btn__content > .theme--dark").click();
+   cy.log("Kit builder(New Form) has been Published");
+   cy.wait(2000);
   });
 });

@@ -13,14 +13,15 @@ describe("Adding Results and Filters Element to Table List View", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
-
     cy.fixture(
       "KitBuilderValidationTestData/TimelineListFilterValidation"
     ).then(function (TLKitName) {
       this.TableListKitName = TLKitName;
     });
 
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
+      KitTypeFormViewsNames
+    ) {
       this.data = KitTypeFormViewsNames;
     });
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitName) {
@@ -31,30 +32,19 @@ describe("Adding Results and Filters Element to Table List View", function () {
     ) {
       this.DataType = datatypes;
     });
-
-    cy.fixture("KitBuilderTestData/ListViewElementsData").then(function (
-      ListViews
-    ) {
-      this.ListView = ListViews;
-    });
   });
 
-  it("Navigating to List Views of Created Kit Type", function () {
+  it("Navigating to Table List Views of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
     kb.KitBuilderUrl();
-    // kb.AdminUrl();
-    // cy.wait(5000);
-    // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Enter created kit type name into search box
     //kb.KBSearchBox(this.KitName.KitName);
     kb.KBSearchBox(this.TableListKitName.TLKitName);
     cy.wait(5000);
-    //Open created kit type for adding List view elements
-    //cy.contains(this.data1.KitName).click({ force: true });
     //Click to open kit type for adding List view elements
     //cy.contains(this.KitName.KitName).click({ force: true });
     cy.contains(this.TableListKitName.TLKitName).click({ force: true });
@@ -68,7 +58,7 @@ describe("Adding Results and Filters Element to Table List View", function () {
     //View Name coming form json file
     cy.contains(this.data.TableView).click({ force: true });
     cy.wait(3000);
-    cy.log(this.data.TableView + " Table View has been Opened");
+    cy.log(this.data.TableView + " has been Opened");
 
     ///*
 
@@ -76,42 +66,43 @@ describe("Adding Results and Filters Element to Table List View", function () {
     cy.contains("Add List Results").click({ force: true });
     cy.wait(2000);
     //Add List Results Values coming from json file
-    cy.contains(this.ListView.AddTableListResults_1).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_2).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_3).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_4).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_5).click({ force: true });
+    cy.contains(this.DataType2.Url).click({ force: true });
+    cy.contains(this.DataType2.Text).click({ force: true });
+    cy.contains(this.DataType2.File).click({ force: true });
+    cy.contains(this.DataType2.Telephone).click({ force: true });
+    cy.contains(this.DataType2.TextAera).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTableListResults_6).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_7).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_8).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_9).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_10).click({ force: true });
+    cy.contains(this.DataType2.Slider).click({ force: true });
+    cy.contains(this.DataType2.Currency).click({ force: true });
+    cy.contains(this.DataType2.Measure).click({ force: true });
+    cy.contains(this.DataType2.Email).click({ force: true });
+    cy.contains(this.DataType2.Address).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTableListResults_11).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_12).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_13).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_14).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_15).click({ force: true });
+    cy.contains(this.DataType2.Number).click({ force: true });
+    cy.contains(this.DataType2.Time).click({ force: true });
+    cy.contains(this.DataType2.Date).click({ force: true });
+    cy.contains(this.DataType2.Toggle).click({ force: true });
+    cy.contains(this.DataType2.SelectList).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
-    cy.wait(2000)
-
-    cy.contains(this.ListView.AddTableListResults_16).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_17).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_18).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_19).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_20).click({ force: true });
+    cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTableListResults_21).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_22).click({ force: true });
-    cy.contains(this.ListView.AddTableListResults_23).click({ force: true });
+    cy.contains(this.DataType2.RadioSelect).click({ force: true });
+    cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
+    cy.contains(this.DataType2.Stepper).click({ force: true });
+    cy.contains(this.DataType2.UserSelector).click({ force: true });
+    cy.contains(this.DataType2.ContactSelector).click({ force: true });
     cy.wait(2000);
-    
+
+    cy.contains(this.DataType2.Icon).click({ force: true });
+    cy.contains(this.DataType2.Inspection).click({ force: true });
+    cy.contains(this.DataType2.Assigning).click({ force: true });
+
+    cy.wait(2000);
+
     cy.log("Table List Results Element has been Checked");
     //Click on Add Select
     cy.contains("Add Selected").click({ force: true });
@@ -149,40 +140,41 @@ describe("Adding Results and Filters Element to Table List View", function () {
     //Add List Filters
     cy.contains("Add List Filters").click({ force: true });
     //Add List Filters Values coming from json file
-    cy.contains(this.ListView.AddTableListFilters_1).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_2).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_3).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_4).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_5).click({ force: true });
-
-    cy.wait(2000);
-    cy.contains(this.ListView.AddTableListFilters_6).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_7).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_8).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_9).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_10).click({ force: true });
+    cy.contains(this.DataType2.Url).click({ force: true });
+    cy.contains(this.DataType2.Text).click({ force: true });
+    cy.contains(this.DataType2.File).click({ force: true });
+    cy.contains(this.DataType2.Telephone).click({ force: true });
+    cy.contains(this.DataType2.TextAera).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTableListFilters_11).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_12).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_13).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_14).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_15).click({ force: true });
+    cy.contains(this.DataType2.Slider).click({ force: true });
+    cy.contains(this.DataType2.Currency).click({ force: true });
+    cy.contains(this.DataType2.Measure).click({ force: true });
+    cy.contains(this.DataType2.Email).click({ force: true });
+    cy.contains(this.DataType2.Address).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
+    cy.contains(this.DataType2.Number).click({ force: true });
+    cy.contains(this.DataType2.Time).click({ force: true });
+    cy.contains(this.DataType2.Date).click({ force: true });
+    cy.contains(this.DataType2.Toggle).click({ force: true });
+    cy.contains(this.DataType2.SelectList).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTableListFilters_16).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_17).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_18).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_19).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_20).click({ force: true });
+    cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTableListFilters_21).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_22).click({ force: true });
-    cy.contains(this.ListView.AddTableListFilters_23).click({ force: true });
+    cy.contains(this.DataType2.RadioSelect).click({ force: true });
+    cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
+    cy.contains(this.DataType2.Stepper).click({ force: true });
+    cy.contains(this.DataType2.UserSelector).click({ force: true });
+    cy.contains(this.DataType2.ContactSelector).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains(this.DataType2.Icon).click({ force: true });
+    cy.contains(this.DataType2.Inspection).click({ force: true });
+    cy.contains(this.DataType2.Assigning).click({ force: true });
+
     cy.wait(2000);
     cy.log("Table List Filters Element has been Checked");
     //Click on Save Selected

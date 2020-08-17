@@ -7,8 +7,13 @@ describe("KitBuilder's Element Is Required Property Validation on Kit Builder", 
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    // cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
     lp.visitServiceBuild();
+
+    //Handling Alert
+    cy.on("window:confirm", () => {
+      cy.log("Alert has been Handled");
+    });
+
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -33,10 +38,16 @@ describe("KitBuilder's Element Is Required Property Validation on Kit Builder", 
     ) {
       this.data1 = KitTypeName;
     });
-    cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
-      datatypes
+    // cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
+    //   datatypes
+    // ) {
+    //   this.DataType = datatypes;
+    // });
+
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
     ) {
-      this.DataType = datatypes;
+      this.DataType = NewDataForElements;
     });
   });
 
@@ -48,7 +59,7 @@ describe("KitBuilder's Element Is Required Property Validation on Kit Builder", 
     kb.KitBuilderUrl();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.RRProp.IsRequiredKitName).click({ force: true });
+    cy.contains(this.RRProp.IsRequiredKitName2).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -501,8 +512,8 @@ describe("Validation On UI for Element's Is Required Property", function () {
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.RRProp.KitName);
-    KTP.OpenKitType(this.RRProp.KitName);
+    KTP.SearchKitType(this.RRProp.IsRequiredKitName2);
+    KTP.OpenKitType(this.RRProp.IsRequiredKitName2);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");

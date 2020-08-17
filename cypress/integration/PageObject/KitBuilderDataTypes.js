@@ -1704,9 +1704,6 @@ class KitBuilderDataTypes {
   OneToOneRelation(
     RelationName,
     KitToBeRelate,
-    OTOAPIName,
-    OTORelatedAPIName,
-    OTOReverseEleAPIName,
     ElementToBeRelate,
     RelatedNewName,
     RelatedEditName,
@@ -1829,9 +1826,6 @@ class KitBuilderDataTypes {
   OneToManyRelation(
     RelationName,
     KitToBeRelated,
-    APIName,
-    RelatedAPIName,
-    ReverseEleAPIName,
     RelatedTableView,
     Ele1,
     Ele2,
@@ -2061,9 +2055,6 @@ class KitBuilderDataTypes {
   SquareCard(
     SquareCardName,
     CardKitToBeRelated,
-    SQAPIName,
-    SQRelatedAPIName,
-    SQReverseEleAPIName,
     SquareCardTableView,
     Ele1,
     Ele2,

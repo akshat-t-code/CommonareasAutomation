@@ -34,10 +34,10 @@ describe("Create New Kit type ", function () {
     kb.ClickOnCreateNewKit();
     cy.wait(5000);
     //For Creating New Kit type commands coming form Command.js
-    cy.KitLabel(this.KitTypeName.KitLabel2);
-    cy.KitName(this.KitTypeName.KitName2);
-    cy.KitDescription(this.KitTypeName.KitDescription2);
-    cy.ApiName(this.KitTypeName.APIName2)
+    cy.KitLabel(this.KitTypeName.KitLabel3);
+    cy.KitName(this.KitTypeName.KitName3);
+    cy.KitDescription(this.KitTypeName.KitDescription3);
+    cy.ApiName(this.KitTypeName.APIName3)
     cy.KitIcon();
     cy.CreateKit();
     cy.log('New Kit Type has been Created')

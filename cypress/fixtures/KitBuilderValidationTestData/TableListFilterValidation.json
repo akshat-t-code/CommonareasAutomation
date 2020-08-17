@@ -2,5 +2,9 @@
     "TableListEleValidation":"AutomationKit(Dont touch)",
     "TableListResultEleValidation":"AutomationKit(Dont touch)",
     "TableListValidation":"AutomationKit(Dont touch)",
-    "TLKitName":"AkshatKitDemo"
+    "TLKitName":"AkshatKitDemo",
+    "TableListEleValidation2":"Property Builder2",
+    "TableListResultEleValidation2":"Property Builder2",
+    "TableListValidation2":"Property Builder2",
+    "TLKitName2":"Property Builder2"
 }

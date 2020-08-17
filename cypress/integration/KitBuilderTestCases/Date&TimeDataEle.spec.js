@@ -25,7 +25,7 @@ describe("Date & Time Section Data Elements Configuration", function () {
       this.DataType = datatypes;
     });
 
-    cy.fixture("KitBuilderTestData/KitBuilderDataTypes2").then(function (
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
       NewDataForElements
     ) {
       this.DataType2 = NewDataForElements;
@@ -44,7 +44,7 @@ describe("Date & Time Section Data Elements Configuration", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.KitTypeName.KitName2).click({ force: true });
+    cy.contains(this.KitTypeName.KitName3).click({ force: true });
     //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
@@ -53,12 +53,12 @@ describe("Date & Time Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("Date & Time Section Data Elements", function () {
+  it.only("Date & Time Section Data Elements", function () {
     cy.contains("Date & Time").click({ force: true });
     cy.wait(2000);
   });
 
-  it("Time Data Type", function () {
+  it.only("Time Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Time"]').dblclick({ force: true });
     cy.wait(1000);
@@ -68,7 +68,7 @@ describe("Date & Time Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("Date Data Type", function () {
+  it.only("Date Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Add Date"]').dblclick({ force: true });
     cy.wait(1000);
@@ -88,9 +88,11 @@ describe("Date & Time Section Data Elements Configuration", function () {
 
   it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
-    cy.get(".ca-button-green:nth-child(1)").click();
-    cy.get(".v-btn__content > .theme--dark").click();
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
     //Click on  Publish
     cy.contains("Publish").click({ force: true });
     //cy.get(".v-btn__content > .theme--dark").click();

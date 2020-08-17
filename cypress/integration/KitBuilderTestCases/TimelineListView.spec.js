@@ -13,14 +13,15 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
   });
 
   this.beforeEach("Fixtures file data", function () {
-
     cy.fixture(
       "KitBuilderValidationTestData/TimelineListFilterValidation"
     ).then(function (TLLKitName) {
       this.TimelineListKitName = TLLKitName;
     });
 
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
+      KitTypeFormViewsNames
+    ) {
       this.data = KitTypeFormViewsNames;
     });
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitName) {
@@ -32,11 +33,12 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
       this.DataType = datatypes;
     });
 
-    cy.fixture("KitBuilderTestData/ListViewElementsData").then(function (
-      ListViews
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
     ) {
-      this.ListView = ListViews;
+      this.DataType2 = NewDataForElements;
     });
+
   });
 
   it("Navigating to List Views of Created Kit Type", function () {
@@ -45,18 +47,15 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
     kb.KitBuilderUrl();
-    // kb.AdminUrl();
-    // cy.wait(5000);
-    // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Enter created kit type name into search box
-   // kb.KBSearchBox(this.KitName.KitName);
-    kb.KBSearchBox(this.TimelineListKitName.TLListKitName);
+    // kb.KBSearchBox(this.KitName.KitName);
+    //kb.KBSearchBox(this.TimelineListKitName.TLListKitName);
     cy.wait(5000);
     //Open created kit type for adding List view elements
-    //cy.contains(this.KitName.KitName).click({ force: true });
+    cy.contains(this.KitName.KitName3).click({ force: true });
     //Click to open kit type for adding List view elements
-    cy.contains(this.TimelineListKitName.TLListKitName).click({ force: true });
+    //cy.contains(this.TimelineListKitName.TLListKitName).click({ force: true });
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains("List Views").click({ force: true });
@@ -66,49 +65,49 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
   it("Adding Results and Filters Element to Timeline List View", function () {
     //Page object
     const kb = new KitBuilderPage();
-    
+
     //View Name coming form json file
     cy.contains(this.data.TimelineView).click({ force: true });
-    cy.log(this.data.TimelineView+ " Has been Opened")
+    cy.log(this.data.TimelineView + " Has been Opened");
     cy.wait(3000);
     //Add List Results
     cy.contains("Add List Results").click({ force: true });
     cy.wait(2000);
     //Add List Results Values coming from json file
-    cy.contains(this.ListView.AddTimelineListResults_1).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_2).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_3).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_4).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_5).click({ force: true });
+    cy.contains(this.DataType2.Url).click({ force: true });
+    cy.contains(this.DataType2.Text).click({ force: true });
+    cy.contains(this.DataType2.File).click({ force: true });
+    cy.contains(this.DataType2.Telephone).click({ force: true });
+    cy.contains(this.DataType2.TextAera).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTimelineListResults_6).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_7).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_8).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_9).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_10).click({ force: true });
+    cy.contains(this.DataType2.Slider).click({ force: true });
+    cy.contains(this.DataType2.Currency).click({ force: true });
+    cy.contains(this.DataType2.Measure).click({ force: true });
+    cy.contains(this.DataType2.Email).click({ force: true });
+    cy.contains(this.DataType2.Address).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTimelineListResults_11).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_12).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_13).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_14).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_15).click({ force: true });
+    cy.contains(this.DataType2.Number).click({ force: true });
+    cy.contains(this.DataType2.Time).click({ force: true });
+    cy.contains(this.DataType2.Date).click({ force: true });
+    cy.contains(this.DataType2.Toggle).click({ force: true });
+    cy.contains(this.DataType2.SelectList).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
+    cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTimelineListResults_16).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_17).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_18).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_19).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_20).click({ force: true });
+    cy.contains(this.DataType2.RadioSelect).click({ force: true });
+    cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
+    cy.contains(this.DataType2.Stepper).click({ force: true });
+    cy.contains(this.DataType2.UserSelector).click({ force: true });
+    cy.contains(this.DataType2.ContactSelector).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTimelineListResults_21).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_22).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListResults_23).click({ force: true });
+    cy.contains(this.DataType2.Icon).click({ force: true });
+    cy.contains(this.DataType2.Inspection).click({ force: true });
+    cy.contains(this.DataType2.Assigning).click({ force: true });
     cy.wait(2000);
 
     cy.log("Timeline List View Results Element has been Checkted");
@@ -135,7 +134,7 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.log("Timeline List View's Results Element has been saved");
     //Assertion close
     cy.get(".closeBtn .v-icon").click({ force: true });
-    cy.log("Assertion closed")
+    cy.log("Assertion closed");
 
     //Add Filters Elements
     cy.contains("Filters").click({ force: true });
@@ -143,40 +142,40 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     //Add List Filters
     cy.contains("Add List Filters").click({ force: true });
     //Add List Filters Values coming from json file
-    cy.contains(this.ListView.AddTimelineListFilters_1).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_2).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_3).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_4).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_5).click({ force: true });
+    cy.contains(this.DataType2.Url).click({ force: true });
+    cy.contains(this.DataType2.Text).click({ force: true });
+    cy.contains(this.DataType2.File).click({ force: true });
+    cy.contains(this.DataType2.Telephone).click({ force: true });
+    cy.contains(this.DataType2.TextAera).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTimelineListFilters_6).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_7).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_8).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_9).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_10).click({ force: true });
+    cy.contains(this.DataType2.Slider).click({ force: true });
+    cy.contains(this.DataType2.Currency).click({ force: true });
+    cy.contains(this.DataType2.Measure).click({ force: true });
+    cy.contains(this.DataType2.Email).click({ force: true });
+    cy.contains(this.DataType2.Address).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTimelineListFilters_11).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_12).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_13).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_14).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_15).click({ force: true });
+    cy.contains(this.DataType2.Number).click({ force: true });
+    cy.contains(this.DataType2.Time).click({ force: true });
+    cy.contains(this.DataType2.Date).click({ force: true });
+    cy.contains(this.DataType2.Toggle).click({ force: true });
+    cy.contains(this.DataType2.SelectList).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.DataType.Assigning).scrollIntoView({ force: true });
+    cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTimelineListFilters_16).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_17).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_18).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_19).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_20).click({ force: true });
+    cy.contains(this.DataType2.RadioSelect).click({ force: true });
+    cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
+    cy.contains(this.DataType2.Stepper).click({ force: true });
+    cy.contains(this.DataType2.UserSelector).click({ force: true });
+    cy.contains(this.DataType2.ContactSelector).click({ force: true });
     cy.wait(2000);
 
-    cy.contains(this.ListView.AddTimelineListFilters_21).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_22).click({ force: true });
-    cy.contains(this.ListView.AddTimelineListFilters_23).click({ force: true });
+    cy.contains(this.DataType2.Icon).click({ force: true });
+    cy.contains(this.DataType2.Inspection).click({ force: true });
+    cy.contains(this.DataType2.Assigning).click({ force: true });
     cy.wait(2000);
 
     cy.log("Timeline List View Filters Element has been Checked");
@@ -190,6 +189,6 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.log("Timeline List View  Filter's Element has been saved");
     //Assertion close
     cy.get(".closeBtn .v-icon").click({ force: true });
-    cy.log("Assertion closed")
+    cy.log("Assertion closed");
   });
 });

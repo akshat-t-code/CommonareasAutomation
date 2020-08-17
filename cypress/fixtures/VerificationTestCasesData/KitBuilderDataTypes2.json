@@ -1,0 +1,115 @@
+{
+
+    "Url":"WebsiteLink",
+    "Text":"PropertyName",
+    "File":"PersonalDoc",
+    "Telephone":"AgentPhoneNumber",
+    "TextAera":"PropertyDiscription",
+    "Slider":"PropertyRange",
+    "Currency":"PropertyPrice",
+    "Measure":"PropertyPerimeter",
+    "Email":"AgentEmailID",
+    "Address":"AgentAddress",
+    "Number":"PropertyNumber",
+    "Section":"PropertySection",
+    "Time":"VisitingTime",
+    "Date":"AppointmentDate",
+    "ReminderName":"VisitReminder",
+    "Toggle":"AvailablityORUnavailablity",
+
+    "SelectList":"PropertyVendorList",
+    "SelectListName":"PropertyVendorList",
+    "SelectListValue1":"Harshal",
+    "SelectListValue2":"Mack",
+    "SelectListValue3":"PK",
+    "SelectListValue4":"Ronaldo",
+    "SelectListValue5":"Ramose",
+
+    "RadioSelect":"PropertyVendorEmail",
+    "RadioSelectName":"PropertyVendorEmail",
+    "RadioSelectValue1":"Harshal@gmail.com",
+    "RadioSelectValue2":"Mack@yahoo.com",
+    "RadioSelectValue3":"PK@gmail.com",
+    "RadioSelectValue4":"Ronaldo@mailinator.com",
+    "RadioSelectValue5":"Ramose@hotmail.com",
+
+    "CheckboxSelect":"VendorsCountryName",
+    "CheckboxSelectName":"VendorsCountryName",
+    "CheckboxSelectValue1":"USA",
+    "CheckboxSelectValue2":"Spain",
+    "CheckboxSelectValue3":"Japan",
+    "CheckboxSelectValue4":"India",
+    "CheckboxSelectValue5":"UK",
+
+    "UserSelector":"AccountUserName",
+    "ContactSelector":"PropertyConsultantName",
+    "Assigning":"AssignedTo",
+
+
+    "Stepper":"VendorsPinCode",
+    "StepperName":"VendorsPinCode",
+    "StepperValue1":"292923",
+    "StepperValue2":"293892",
+    "StepperValue3":"201001",
+    "StepperValue4":"090191",
+    "StepperValue5":"989213",
+
+    "Icon":"CompanyLogo",
+    
+    "pls dont modified these below three icon values":"IconSize-IconLabel-Icontitle",
+    "IconSize":"IconSize",
+    "IconLabel":"IconLabel",
+    "Icontitle":"title",
+
+    "Inspection":"LocationInspection",
+    "InspectionName":"LocationInspection",
+    "InspectionValue1":"Surrounding",
+    "InspectionValue2":"PropertySize",
+    "InspectionValue3":"ParkingArea",
+    "InspectionValue4":"DistancefromCity",
+    "InspectionValue5":"MarketAera",
+
+    "OneToOneRelation":"MegaOneToOneProject",
+    "KitToBeRelate":"AkshatKitDemo",
+    "OneToOneRelatedNew":"RelatedNewView",
+    "OneToOneRelatedEdit":"RelatedEditView",
+    "OneToOneMapView":"MapView",
+    "OneToOneSearchView":"SearchView",
+    "ElementToBeRelate":"url",
+
+
+    "OneToManyRelation":"EmployeeRelation",
+    "KitToBeRelated":"AkshatKitDemo",
+    "OneToManyRelatedNew":"RelatedNewView",
+    "OneToManyRelatedEdit":"RelatedEditView",
+    "OneToManyMapView":"MapView",
+    "OneToManySearchView":"SearchView",
+    "RelatedTableView":"PropertyBuilder2TableViwe",
+    "RelatedEle_1":"Url",
+    "RelatedEle_2":"Text",
+    "RelatedEle_3":"Telephone",
+    "RelatedEle_4":"Email",
+    "RelatedEle_5":"Currency",
+
+     
+    "SquareCardName":"PropertyManagementCardR",
+    "CardKitToBeRelated":"AkshatKitDemo",
+    "CardRelatedNew":"RelatedNewView",
+    "CardRelatedEdit":"RelatedEditView",
+    "CardMapView":"MapView",
+    "CardSearchView":"SearchView",
+    "SquareCardTableView":"PropertyCardTableView",
+    "RelateEle_1":"Url",
+    "RelateEle_2":"Text",
+    "RelateEle_3":"Telephone",
+    "RelateEle_4":"Email",
+    "RelateEle_5":"Email",
+
+    "RCName":"Reactive Control",
+
+    "RVName":"Reactive Vriable"
+    
+    
+
+
+}

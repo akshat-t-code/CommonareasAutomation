@@ -2,7 +2,9 @@
 
     
     "ReadOnlyKitName":"AkshatValidationKit",
-    "IsRequiredKitName":"AkshatValidationKit"
+    "ReadOnlyKitName2":"Property Builder2",
+    "IsRequiredKitName":"AkshatValidationKit",
+    "IsRequiredKitName2":"Property Builder2"
     
 
 }

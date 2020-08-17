@@ -32,9 +32,15 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       this.KitData = DataEleValues;
     });
 
-    cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
+    // cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
+    //   this.KitItemData = KitDataEle;
+    // });
+
+
+    cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (KitDataEle) {
       this.KitItemData = KitDataEle;
     });
+
   });
 
   it.only("AutomationKit type", function () {
@@ -46,8 +52,12 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.KitItemData.KitName4);
-    KTP.OpenKitType(this.KitItemData.KitName4);
+    // KTP.SearchKitType(this.KitItemData.KitName4);
+    // KTP.OpenKitType(this.KitItemData.KitName4);
+    
+     KTP.SearchKitType('AkshatKitDemo');
+     KTP.OpenKitType('AkshatKitDemo');
+    
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");
@@ -58,7 +68,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     cy.wait(2000);
     //Url
-    //cy.get('[name="Url"]').last().type(this.KitItemData.Url);
+    cy.get('[name="Url"]').last().type(this.KitItemData.Url);
     //Working
     cy.get('[name'+'='+this.KitData.Url+']').last().type(this.KitItemData.Url);
     cy.wait(1000);
@@ -79,7 +89,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(1000);
 
     //Telephone
-    cy.get('[name="Telephone"]').last().type(this.KitItemData.Telphone);
+    cy.get('[name="Telephone"]').last().type(this.KitItemData.Telephone);
     cy.wait(1000);
 
     //TextAera

@@ -13,23 +13,21 @@ describe("Adding Results and Filters Element to List Views", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
+      KitTypeFormViewsNames
+    ) {
       this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KittypeName) {
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
+      KittypeName
+    ) {
       this.KitTypeName = KittypeName;
     });
 
-    cy.fixture("KitBuilderTestData/KitBuilderDataTypes2").then(function (
-        NewDataForElements
-      ) {
-        this.DataType2 = NewDataForElements;
-      });
-
-    cy.fixture("KitBuilderTestData/ListViewElementsData").then(function (
-      ListViews
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
     ) {
-      this.ListView = ListViews;
+      this.DataType2 = NewDataForElements;
     });
   });
 
@@ -44,7 +42,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Enter created kit type name into search box
-    kb.KBSearchBox(this.KitTypeName.KitName2);
+    kb.KBSearchBox(this.KitTypeName.KitName3);
     cy.wait(5000);
     //Open created kit type for adding List view elements
     //cy.contains(this.KitTypeName.KitName).click({ force: true });
@@ -91,7 +89,6 @@ describe("Adding Results and Filters Element to List Views", function () {
 
     cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
-    
 
     cy.contains(this.DataType2.RadioSelect).click({ force: true });
     cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
@@ -103,9 +100,9 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.DataType2.Icon).click({ force: true });
     cy.contains(this.DataType2.Inspection).click({ force: true });
     cy.contains(this.DataType2.Assigning).click({ force: true });
-    
+
     cy.wait(2000);
-    
+
     cy.log("Table List Results Element has been Checked");
     //Click on Add Select
     cy.contains("Add Selected").click({ force: true });
@@ -166,7 +163,6 @@ describe("Adding Results and Filters Element to List Views", function () {
 
     cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
-    
 
     cy.contains(this.DataType2.RadioSelect).click({ force: true });
     cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
@@ -178,7 +174,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.DataType2.Icon).click({ force: true });
     cy.contains(this.DataType2.Inspection).click({ force: true });
     cy.contains(this.DataType2.Assigning).click({ force: true });
-    
+
     cy.wait(2000);
     cy.log("Table List Filters Element has been Checked");
     //Click on Save Selected
@@ -243,7 +239,6 @@ describe("Adding Results and Filters Element to List Views", function () {
 
     cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
-    
 
     cy.contains(this.DataType2.RadioSelect).click({ force: true });
     cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
@@ -255,7 +250,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.DataType2.Icon).click({ force: true });
     cy.contains(this.DataType2.Inspection).click({ force: true });
     cy.contains(this.DataType2.Assigning).click({ force: true });
-    
+
     cy.wait(2000);
     cy.log("Search List View Results Element has been Checked");
     //Click on Add Select
@@ -317,7 +312,6 @@ describe("Adding Results and Filters Element to List Views", function () {
 
     cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
-    
 
     cy.contains(this.DataType2.RadioSelect).click({ force: true });
     cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
@@ -329,7 +323,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.DataType2.Icon).click({ force: true });
     cy.contains(this.DataType2.Inspection).click({ force: true });
     cy.contains(this.DataType2.Assigning).click({ force: true });
-    
+
     cy.wait(2000);
     cy.log("Search List View Filters Element has been Checked");
     //Click on Save Selected
@@ -361,7 +355,7 @@ describe("Adding Results and Filters Element to List Views", function () {
 
     //View Name coming form json file
     cy.contains(this.data.TimelineView).click({ force: true });
-    cy.log(this.data.TimelineView+ " Has been Opened")
+    cy.log(this.data.TimelineView + " Has been Opened");
     cy.wait(3000);
     //Add List Results
     cy.contains("Add List Results").click({ force: true });
@@ -390,7 +384,6 @@ describe("Adding Results and Filters Element to List Views", function () {
 
     cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
-    
 
     cy.contains(this.DataType2.RadioSelect).click({ force: true });
     cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
@@ -402,7 +395,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.DataType2.Icon).click({ force: true });
     cy.contains(this.DataType2.Inspection).click({ force: true });
     cy.contains(this.DataType2.Assigning).click({ force: true });
-    
+
     cy.wait(2000);
 
     cy.log("Timeline List View Results Element has been Checkted");
@@ -429,7 +422,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.log("Timeline List View's Results Element has been saved");
     //Assertion close
     cy.get(".closeBtn .v-icon").click({ force: true });
-    cy.log("Assertion closed")
+    cy.log("Assertion closed");
 
     //Add Filters Elements
     cy.contains("Filters").click({ force: true });
@@ -460,7 +453,6 @@ describe("Adding Results and Filters Element to List Views", function () {
 
     cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
     cy.wait(2000);
-    
 
     cy.contains(this.DataType2.RadioSelect).click({ force: true });
     cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
@@ -472,7 +464,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.DataType2.Icon).click({ force: true });
     cy.contains(this.DataType2.Inspection).click({ force: true });
     cy.contains(this.DataType2.Assigning).click({ force: true });
-    
+
     cy.wait(2000);
 
     cy.log("Timeline List View Filters Element has been Checked");
@@ -486,6 +478,6 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.log("Timeline List View  Filter's Element has been saved");
     //Assertion close
     cy.get(".closeBtn .v-icon").click({ force: true });
-    cy.log("Assertion closed")
+    cy.log("Assertion closed");
   });
 });

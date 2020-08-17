@@ -20,7 +20,13 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   });
 
   this.beforeEach("KitType Data", function () {
-    cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
+    // cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
+    //   this.KitItemData = KitDataEle;
+    // });
+
+    cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
+      KitDataEle
+    ) {
       this.KitItemData = KitDataEle;
     });
 
@@ -30,10 +36,16 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
       }
     );
 
-    cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
-      DataEleValues
+    // cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
+    //   DataEleValues
+    // ) {
+    //   this.KitData = DataEleValues;
+    // });
+
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
     ) {
-      this.KitData = DataEleValues;
+      this.KitData = NewDataForElements;
     });
   });
 
@@ -45,12 +57,12 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(10000);
     //Click on Hamburger Icon
     lp.HMBIcon();
-    cy.contains(this.KitName.TableListResultEleValidation).scrollIntoView({
+    cy.contains(this.KitName.TableListResultEleValidation2).scrollIntoView({
       force: true,
     });
     cy.wait(5000);
     //Open KitType from left paneal
-    cy.contains(this.KitName.TableListResultEleValidation).click({
+    cy.contains(this.KitName.TableListResultEleValidation2).click({
       force: true,
     });
     cy.wait(10000);
@@ -73,9 +85,17 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it.only("Validate TableList View Result Telephone Element", function () {
+  it("Validate TableList View Result File Element", function () {
     cy.contains(
-      this.KitData.Telephone + ":" + " " + this.KitItemData.Telphone
+      this.KitData.File + ":" + " " + this.KitItemData.FileValue
+    ).should("exist");
+    cy.log(this.KitData.File + " has been Validate for kitItem Result Element");
+    cy.wait(2000);
+  });
+
+  it("Validate TableList View Result Telephone Element", function () {
+    cy.contains(
+      this.KitData.Telephone + ":" + " " + this.KitItemData.Telephone
     ).should("exist");
     cy.log(
       this.KitData.Telephone + " has been Validate for kitItem Result Element"
@@ -88,6 +108,16 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
       this.KitData.TextAera + ":" + " " + this.KitItemData.TextAera
     ).should("exist");
     cy.log(this.KitData.Text + " has been Validate for kitItem Result Element");
+    cy.wait(2000);
+  });
+
+  it("Validate TableList View Result Slider Element", function () {
+    cy.contains(
+      this.KitData.Slider + ":" + " " + this.KitItemData.SliderValue
+    ).should("exist");
+    cy.log(
+      this.KitData.Slider + " has been Validate for kitItem Result Element"
+    );
     cy.wait(2000);
   });
 
@@ -122,7 +152,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it.only("Validate TableList View Result Address Element", function () {
+  it("Validate TableList View Result Address Element", function () {
     cy.contains(
       this.KitData.Address +
         ":" +
@@ -161,6 +191,32 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
+  it("Validate TableList View Result Time Element", function () {
+    cy.contains(
+      this.KitData.Time + ":" + " " + this.KitItemData.TimeValue
+    ).should("exist");
+    cy.log(this.KitData.Time + " has been Validate for kitItem Result Element");
+    cy.wait(2000);
+  });
+
+  it("Validate TableList View Result Date Element", function () {
+    cy.contains(
+      this.KitData.Date + ":" + " " + this.KitItemData.DateValue
+    ).should("exist");
+    cy.log(this.KitData.Date + " has been Validate for kitItem Result Element");
+    cy.wait(2000);
+  });
+
+  it("Validate TableList View Result Toggle Element", function () {
+    cy.contains(
+      this.KitData.Toggle + ":" + " " + this.KitItemData.ToggleStatus
+    ).should("exist");
+    cy.log(
+      this.KitData.Toggle + " has been Validate for kitItem Result Element"
+    );
+    cy.wait(2000);
+  });
+
   it("Validate TableList View Result SelectList Element", function () {
     cy.contains(
       this.KitData.SelectList + ":" + " " + this.KitItemData.SelectListValue
@@ -181,18 +237,41 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it("Validate TableList View Result CheckboxSelect Element", function () {
+  it.only("Validate TableList View Result CheckboxSelect Element", function () {
     //coz checkbox can have multiple values so modify accordingly
+    //and we can verify only first inserted value
 
     cy.contains(
       this.KitData.CheckboxSelect +
         ":" +
         " " +
-        this.KitItemData.CheckboxSelectValue2
+        this.KitItemData.CheckboxSelectValue3
     ).should("exist");
+    // cy.contains(
+    //   this.KitData.CheckboxSelect +
+    //     ":" +
+    //     " " +
+    //     this.KitItemData.CheckboxSelectValue1
+    // ).should("exist");
+    // cy.contains(
+    //   this.KitData.CheckboxSelect +
+    //     ":" +
+    //     " " +
+    //     this.KitItemData.CheckboxSelectValue2
+    // ).should("exist");
     cy.log(
       this.KitData.CheckboxSelect +
         " has been Validate for kitItem Result Element"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate TableList View Result Stepper Element", function () {
+    cy.contains(
+      this.KitData.Stepper + ":" + " " + this.KitItemData.StepperValue
+    ).should("exist");
+    cy.log(
+      this.KitData.Stepper + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
@@ -224,20 +303,10 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
 
   it("Validate TableList View Result Inspection Element", function () {
     cy.contains(
-      this.KitData.Inspection + ":" + " " + this.KitItemData.InspectionValue
+      this.KitData.Inspection + ":" + " " + this.KitItemData.InspectionName
     ).should("exist");
     cy.log(
       this.KitData.Inspection + " has been Validate for kitItem Result Element"
-    );
-    cy.wait(2000);
-  });
-
-  it("Validate TableList View Result Stepper Element", function () {
-    cy.contains(
-      this.KitData.Stepper + ":" + " " + this.KitItemData.StepperValue
-    ).should("exist");
-    cy.log(
-      this.KitData.Stepper + " has been Validate for kitItem Result Element"
     );
     cy.wait(2000);
   });
@@ -252,85 +321,8 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it("Validate TableList View Result Time Element", function () {
-    cy.contains(
-      this.KitData.Time + ":" + " " + this.KitItemData.TimeValue
-    ).should("exist");
-    cy.log(this.KitData.Time + " has been Validate for kitItem Result Element");
-    cy.wait(2000);
-  });
-
-  it("Validate TableList View Result Date Element", function () {
-    cy.contains(
-      this.KitData.Date + ":" + " " + this.KitItemData.DateValue
-    ).should("exist");
-    cy.log(this.KitData.Date + " has been Validate for kitItem Result Element");
-    cy.wait(2000);
-  });
-
-  it("Validate TableList View Result Toggle Element", function () {
-    cy.contains(
-      this.KitData.Toggle + ":" + " " + this.KitItemData.ToggleStatus
-    ).should("exist");
-    cy.log(
-      this.KitData.Toggle + " has been Validate for kitItem Result Element"
-    );
-    cy.wait(2000);
-  });
-
-  it("Validate TableList View Result File Element", function () {
-    cy.contains(
-      this.KitData.File + ":" + " " + this.KitItemData.FileValue
-    ).should("exist");
-    cy.log(this.KitData.File + " has been Validate for kitItem Result Element");
-    cy.wait(2000);
-  });
-
-  it("Validate TableList View Result Slider Element", function () {
-    cy.contains(
-      this.KitData.Slider + ":" + " " + this.KitItemData.SliderValue
-    ).should("exist");
-    cy.log(
-      this.KitData.Slider + " has been Validate for kitItem Result Element"
-    );
-    cy.wait(2000);
-  });
-
-  it.only("Validate TableList View Result Icon Element", function () {
-    cy.contains(this.KitData.Icon).should("be.visible");
-
-    cy.contains(
-      '"' +
-        this.KitData.IconLabel +
-        '"' +
-        ":" +
-        "" +
-        '"' +
-        this.KitItemData.IconLabel +
-        '"'
-    ).should("be.visible");
-
-    cy.contains(
-      '"' +
-        this.KitData.IconSize +
-        '"' +
-        ":" +
-        "" +
-        '"' +
-        this.KitItemData.IconSize +
-        '"'
-    ).should("be.visible");
-
-    cy.contains(
-      '"' +
-        this.KitData.Icontitle +
-        '"' +
-        ":" +
-        "" +
-        '"' +
-        this.KitItemData.IconTittle +
-        '"'
-    ).should("be.visible");
+  it("Validate TableList View Result Icon Element", function () {
+    cy.contains(this.KitItemData.IconLabel).first().should("be.visible");
 
     cy.log(this.KitData.Icon + " has been Validate for kitItem Result Element");
     cy.wait(2000);
