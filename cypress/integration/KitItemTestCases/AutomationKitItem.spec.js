@@ -46,12 +46,16 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Assertion
     cy.title().should("eq", "Common Areas");
     lp.PlusIcon();
+    cy.wait(3000)
     //debugger;
     //Click on To open Kit Type
     // KTP.SearchKitType(this.KitItemData.KitName4);
     // KTP.OpenKitType(this.KitItemData.KitName4);
     KTP.SearchKitType(this.KitTypeName.KitName);
-    KTP.OpenKitType(this.KitTypeName.KitName);
+    cy.wait(3000)
+    //This is class to open searched kit type by clicking + iocn
+    cy.get('.truncate-special').first().click({force:true})
+    //KTP.OpenKitType(this.KitTypeName.KitName);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");

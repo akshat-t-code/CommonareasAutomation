@@ -466,7 +466,10 @@ describe("Validation On UI for Element's Read Property", function () {
     //debugger;
     //Click on To open Kit Type
     KTP.SearchKitType(this.RRProp.ReadOnlyKitName2);
-    KTP.OpenKitType(this.RRProp.ReadOnlyKitName2);
+    cy.wait(3000)
+    //This is class to open searched kit type by clicking + iocn
+    cy.get('.truncate-special').first().click({force:true})
+    //KTP.OpenKitType(this.RRProp.ReadOnlyKitName2);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");

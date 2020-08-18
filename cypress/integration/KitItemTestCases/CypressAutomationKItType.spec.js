@@ -5,7 +5,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
-    lp.visit();
+    lp.visitServiceBuild();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -42,10 +42,14 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Assertion
     cy.title().should("eq", "Common Areas");
     lp.PlusIcon();
+    cy.wait(3000)
     //debugger;
     //Click on To open Kit Type
     KTP.SearchKitType(this.Kit.KitName3);
-    KTP.OpenKitType(this.Kit.KitName3);
+    cy.wait(3000)
+    //This is class to open searched kit type by clicking + iocn
+    cy.get('.truncate-special').first().click({force:true})
+   // KTP.OpenKitType(this.Kit.KitName3);
     //Assertion
     cy.contains("New Item created").should("be.visible");
     cy.log("New Item created and Kit Type has been Opened");

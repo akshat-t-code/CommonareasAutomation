@@ -36,11 +36,11 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //   this.KitItemData = KitDataEle;
     // });
 
-
-    cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (KitDataEle) {
+    cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
+      KitDataEle
+    ) {
       this.KitItemData = KitDataEle;
     });
-
   });
 
   it.only("AutomationKit type", function () {
@@ -50,14 +50,15 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Assertion
     cy.title().should("eq", "Common Areas");
     lp.PlusIcon();
+    cy.wait(3000)
     //debugger;
     //Click on To open Kit Type
-    // KTP.SearchKitType(this.KitItemData.KitName4);
+    KTP.SearchKitType(this.KitItemData.KitName4);
+    cy.wait(3000);
+    //This is class to open searched kit type by clicking + iocn
+    cy.get(".truncate-special").first().click({ force: true });
     // KTP.OpenKitType(this.KitItemData.KitName4);
-    
-     KTP.SearchKitType('AkshatKitDemo');
-     KTP.OpenKitType('AkshatKitDemo');
-    
+
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");
@@ -65,12 +66,10 @@ describe("Basic Test Case for Element interaction for common area DT", function 
   });
 
   it.only("Element Interation", function () {
-
     cy.wait(2000);
     //Url
     cy.get('[name="Url"]').last().type(this.KitItemData.Url);
     //Working
-    cy.get('[name'+'='+this.KitData.Url+']').last().type(this.KitItemData.Url);
     cy.wait(1000);
 
     //Text
@@ -145,7 +144,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.get(
       "div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
     )
-    .eq(4).scrollIntoView({ force: true });
+      .eq(4)
+      .scrollIntoView({ force: true });
 
     cy.get('[name="Number"]').last().type(this.KitItemData.Number);
     cy.wait(1000);
@@ -186,7 +186,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
     //   force: true,
     // });
-    cy.wait(2000)
+    cy.wait(2000);
 
     //Reminder
     //Click to open Reminder POPUP
@@ -238,15 +238,13 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Select Time
     cy.xpath(
       "//span[@class='v-time-picker-clock__item']//span[contains(text(),'3')]"
-    ).first()
-    .click({ force: true });
+    )
+      .first()
+      .click({ force: true });
     cy.wait(1000);
-    cy.xpath("//span[contains(text(),'30')]")
-    .first()
-    .click({ force: true });
+    cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
     //Click on PM
-    cy.xpath("//div[contains(text(),'PM')]")
-    .first().click({ force: true });
+    cy.xpath("//div[contains(text(),'PM')]").first().click({ force: true });
     cy.wait(1000);
     //Click on Ok to save Time
     cy.xpath(
@@ -285,7 +283,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       force: true,
     });
 
-    cy.wait(2000)
+    cy.wait(2000);
 
     //Toggle
     cy.get(".sync-switch .v-input--selection-controls__ripple").click({
@@ -367,8 +365,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
 
     cy.wait(2000);
     //UserSelector(Values coming form KitItemValues Json File)
-     cy.get(".kit-control-component:nth-child(21) .inline-svg")
-    .click({
+    cy.get(".kit-control-component:nth-child(21) .inline-svg").click({
       force: true,
     });
     cy.wait(1000);
@@ -457,7 +454,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.get(".searchIcon > .inline-svg > path").last().click({ force: true });
     cy.wait(2000);
     //cy.get(".list-item-search").first().click({ force: true });
-    cy.contains(this.KitItemData.AssignningName).click({force:true})
+    cy.contains(this.KitItemData.AssignningName).click({ force: true });
     cy.wait(2000);
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
 
@@ -512,12 +509,12 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //close the Kit Item
     cy.wait(5000);
     //Close Kit type
-    cy.get('.subheader--button-icon-wrapper path')
+    cy.get(".subheader--button-icon-wrapper path")
 
-   // cy.get(".subheader--button-icon-wrapper .inline-svg")
-    .click({
-      force: true,
-    });
+      // cy.get(".subheader--button-icon-wrapper .inline-svg")
+      .click({
+        force: true,
+      });
 
     cy.log(this.KitItemData.KitName3 + "Kit item has been Close");
 

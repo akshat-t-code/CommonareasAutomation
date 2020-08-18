@@ -5,7 +5,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
-    lp.visit();
+    lp.visitServiceBuild();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -48,7 +48,10 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // KTP.SearchKitType(this.KitItemData.KitName3);
     // KTP.OpenKitType(this.KitItemData.KitName3);
     KTP.SearchKitType(this.KitTypeName.KitName);
-    KTP.OpenKitType(this.KitTypeName.KitName);
+    cy.wait(3000)
+    //This is class to open searched kit type by clicking + iocn
+    cy.get('.truncate-special').first().click({force:true})
+    //KTP.OpenKitType(this.KitTypeName.KitName);
     
     cy.wait(2000)
     //Assertion
@@ -56,7 +59,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only("Element Interation", function () {
+  it("Element Interation", function () {
     //Url
     cy.get('[name="Url"]').type(this.KitItemData.Url);
     cy.wait(1000);
@@ -302,7 +305,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.log(this.KitItemData.KitName3+'Kit item has been Close')
   });
 
-  it.only("Edit form ", function () {
+  it("Edit form ", function () {
     const lp = new LoginPage();
     cy.wait(5000);
     lp.RefreshBtn();
