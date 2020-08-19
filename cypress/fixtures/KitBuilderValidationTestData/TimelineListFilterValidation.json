@@ -2,6 +2,8 @@
 {
     "TimelineListEleValidation":"AkshatValidationKit",
     "TLListKitName":"AkshatKitDemo",
-    "TimelineListResultsEleValidation":"AkshatValidationKit"
+    "TimelineListResultsEleValidation":"AkshatValidationKit",
+    "TimelineListFiltersEleValidation":"Property Builder2",
+    "TimelineListResultsEleValidation2":"Property Builder2"
     
 }

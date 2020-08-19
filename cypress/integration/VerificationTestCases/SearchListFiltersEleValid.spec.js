@@ -3,7 +3,7 @@ import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitTypePage from "../PageObject/KitTypePage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 
-describe("Search View Elements Validation On UI for created kit type", function () {
+describe("Search List View Filters Element Validation On UI for created kit type", function () {
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
@@ -40,10 +40,10 @@ describe("Search View Elements Validation On UI for created kit type", function 
       this.CreateNewKT = KitTypeName;
     });
 
-    cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
-      datatypes
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
     ) {
-      this.DataEleName = datatypes;
+      this.DataType2 = NewDataForElements;
     });
   });
 
@@ -56,8 +56,11 @@ describe("Search View Elements Validation On UI for created kit type", function 
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.KitName.SearchListEleValidation);
-    KTP.OpenKitType(this.KitName.SearchListEleValidation);
+    KTP.SearchKitType(this.KitName.SearchListEleValidation2);
+    cy.wait(3000);
+    //This is class to open searched kit type after clicking + iocn and type kit name in search
+    cy.get(".truncate-special").first().click({ force: true });
+    //KTP.OpenKitType(this.KitName.SearchListEleValidation);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("exist");
@@ -72,37 +75,51 @@ describe("Search View Elements Validation On UI for created kit type", function 
 
   it("Validate the Filter Url Element", function () {
     //Validation for Filer Elements
-    cy.get('[name="Url"]').eq(2).scrollIntoView({ force: true });
-    cy.get('[name="Url"]').eq(2).should("exist");
-    cy.log(this.DataEleName.Url + " Data Element has been exist in Filters");
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .last()
+      .should("be.visible");
+    cy.log(this.DataType2.Url + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Text Element", function () {
     //Validation for Filer Elements
-    cy.get('[name="Text"]').eq(2).scrollIntoView({ force: true });
-    cy.get('[name="Text"]').eq(2).should("exist");
-    cy.log(this.DataEleName.Text + " Data Element has been exist in Filters");
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .last()
+      .should("be.visible");
+    cy.log(this.DataType2.Text + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Telephone Element", function () {
     //Validation for Filer Elements
-    cy.get('[name="Telephone"]').eq(2).scrollIntoView({ force: true });
-    cy.get('[name="Telephone"]').eq(2).should("exist");
+    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
+      .last()
+      .should("be.visible");
     cy.log(
-      this.DataEleName.Telephone + " Data Element has been exist in Filters"
+      this.DataType2.Telephone + " Data Element has been exist in Filters"
     );
     cy.wait(2000);
   });
 
   it("Validate the Filter TextAera Element", function () {
     //Validation for Filer Elements
-    cy.get('[name="TextAera"]').eq(2).scrollIntoView({ force: true });
-    cy.get('[name="TextAera"]').eq(2).should("exist");
-    cy.log(
-      this.DataEleName.TextAera + " Data Element has been exist in Filters"
-    );
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .last()
+      .should("be.visible");
+    cy.log(this.DataType2.TextAera + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
@@ -111,131 +128,134 @@ describe("Search View Elements Validation On UI for created kit type", function 
     //For Slider ,Currency,Measure and Number
     cy.get(".kit-form__control-label").should("exist");
     cy.log(
-      "This class is Validate Slider, Currency, Measure and Number Data Elements in Filters"
+      this.DataType2.Slider +
+        " " +
+        this.DataType2.Currency +
+        " " +
+        this.DataType2.Measure +
+        " " +
+        this.DataType2.Number +
+        " has been exist in DOM and This class is Validate all these four Data Elements in Filters"
     );
   });
 
   it("Validate the Filter Email Element", function () {
     //Validation for Filer Elements
-    cy.get('[name="Email"]').eq(2).scrollIntoView({ force: true });
-    cy.get('[name="Email"]').eq(2).should("exist");
-    cy.log(this.DataEleName.Email + " Data Element has been exist in Filters");
+    cy.get("[name" + "=" + this.DataType2.Email + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.Email + "]")
+      .last()
+      .should("be.visible");
+    cy.log(this.DataType2.Email + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Address Element", function () {
-    cy.get('[name="Address"]').eq(2).scrollIntoView({ force: true });
-    cy.get('[name="Address"]').eq(2).should("exist");
-    cy.log(
-      this.DataEleName.Address + " Data Element has been exist in Filters"
-    );
+    cy.get("[name" + "=" + this.DataType2.Address + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.Address + "]")
+      .last()
+      .should("be.visible");
+    cy.log(this.DataType2.Address + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Time Element", function () {
     //Validation for Filer Elements
-    cy.get('[placeholder="Add Time"][type="text"]')
-      .first()
-      .scrollIntoView({ force: true });
-    cy.wait(2000);
-    cy.get('[placeholder="Add Time"][type="text"]').first().should("exist");
-    cy.log(this.DataEleName.Time + " Data Element has been exist in Filters");
+    cy.get('[placeholder="Add Time"][type="text"]').should("be.visible");
+    cy.log(this.DataType2.Time + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Date Element", function () {
     //Validation for Filer Elements
-    cy.get('[placeholder="Add Date"][type="text"]')
-      .first()
-      .scrollIntoView({ force: true });
-    cy.get('[placeholder="Add Date"][type="text"]').first().should("exist");
-    cy.log(this.DataEleName.Date + " Data Element has been exist in Filters");
+    cy.get('[placeholder="Add Date"][type="text"]').should("be.visible");
+    cy.log(this.DataType2.Date + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Toggle Element", function () {
     //Validation for Filer Elements
-    cy.contains(this.DataEleName.Toggle).should("exist");
-    cy.log(this.DataEleName.Toggle + " Data Element has been exist in Filters");
+    cy.contains(this.DataType2.Toggle).should("exist");
+    cy.log(this.DataType2.Toggle + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter SelectList Element", function () {
     //Validation for Filer Elements
-    cy.contains(this.DataEleName.SelectList).should("exist");
+    cy.contains(this.DataType2.SelectList).should("exist");
     cy.log(
-      this.DataEleName.SelectList + " Data Element has been exist in Filters"
+      this.DataType2.SelectList + " Data Element has been exist in Filters"
     );
     cy.wait(2000);
   });
 
   it("Validate the Filter RadioSelect Element", function () {
     //Validation for Filer Elements
-    cy.contains(this.DataEleName.RadioSelect).scrollIntoView({ force: true });
-    cy.contains(this.DataEleName.RadioSelect).should("exist");
+    cy.contains(this.DataType2.RadioSelect).should("exist");
     cy.log(
-      this.DataEleName.RadioSelec + " Data Element has been exist in Filters"
+      this.DataType2.RadioSelec + " Data Element has been exist in Filters"
     );
     cy.wait(2000);
   });
 
   it("Validate the Filter CheckboxSelect Element", function () {
     //Validation for Filer Elements
-    cy.contains(this.DataEleName.CheckboxSelect).should("exist");
+    cy.contains(this.DataType2.CheckboxSelect).should("exist");
     cy.log(
-      this.DataEleName.CheckboxSelect +
-        " Data Element has been exist in Filters"
+      this.DataType2.CheckboxSelect + " Data Element has been exist in Filters"
     );
     cy.wait(2000);
   });
 
   it("Validate the Filter Stepper Element", function () {
     //Validation for Filer Elements
-    cy.contains(this.DataEleName.Stepper).should("exist");
-    cy.log(
-      this.DataEleName.Stepper + " Data Element has been exist in Filters"
-    );
+    cy.contains(this.DataType2.Stepper).should("exist");
+    cy.log(this.DataType2.Stepper + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter UserSelector Element", function () {
     //Validation for Filer Elements
-    cy.contains(this.DataEleName.UserSelector).scrollIntoView({ force: true });
-    cy.contains(this.DataEleName.UserSelector).should("exist");
+    cy.contains(this.DataType2.UserSelector).scrollIntoView({ force: true });
+    cy.contains(this.DataType2.UserSelector).should("exist");
     cy.log(
-      this.DataEleName.UserSelector + " Data Element has been exist in Filters"
+      this.DataType2.UserSelector + " Data Element has been exist in Filters"
     );
     cy.wait(2000);
   });
 
   it("Validate the Filter ContactSelector Element", function () {
     //Validation for Filer Elements
-    cy.contains(this.DataEleName.ContactSelector).should("exist");
+    cy.contains(this.DataType2.ContactSelector).should("exist");
     cy.log(
-      this.DataEleName.ContactSelector +
-        " Data Element has been exist in Filters"
-    );
-    cy.wait(2000);
-  });
-
-  it("Validate the Filter Inspection Element", function () {
-    //Validation for Filer Elements
-    cy.contains(this.DataEleName.Inspection)
-      .first()
-      .scrollIntoView({ force: true });
-    cy.contains(this.DataEleName.Inspection).first().should("exist");
-    cy.log(
-      this.DataEleName.Inspection + " Data Element has been exist in Filters"
+      this.DataType2.ContactSelector + " Data Element has been exist in Filters"
     );
     cy.wait(2000);
   });
 
   it("Validate the Filter Assigning Element", function () {
     //Validation for Filer Elements
-    cy.get('[name="Assigning"]').should("exist");
-    //cy.contains(this.DataEleName.Assigning).should("exist");
+    cy.contains(this.DataType2.Assigning).should("exist");
     cy.log(
-      this.DataEleName.Assigning + " Data Element has been exist in Filters"
+      this.DataType2.Assigning + " Data Element has been exist in Filters"
+    );
+    cy.wait(2000);
+  });
+
+  it("Validate the Filter Inspection Element", function () {
+    //Validation for Filer Elements
+    
+    cy.get("[name" + "=" + this.DataType2.Inspection + "]").first().scrollIntoView({ force: true });
+
+    cy.get("[name" + "=" + this.DataType2.Inspection + "]").first().should(
+      "exist"
+    );
+    //cy.contains(this.DataType2.Inspection).last().should("exist");
+    cy.log(
+      this.DataType2.Inspection + " Data Element has been exist in Filters"
     );
     cy.wait(2000);
   });
@@ -252,17 +272,17 @@ describe("Search View Elements Validation On UI for created kit type", function 
     cy.wait(2000);
   });
 
-  it("Default filter Modified On", function () {
-    cy.get('[placeholder="Modified On"][type="text"]').should("exist");
-    cy.log("Modified By Default filter has been exist in Filters");
-    cy.wait(2000);
-  });
-
   it("Default filter Modified By", function () {
     cy.get('[placeholder="Modified By"][type="text"]').scrollIntoView({
       force: true,
     });
     cy.get('[placeholder="Modified By"][type="text"]').should("exist");
+    cy.log("Modified By Default filter has been exist in Filters");
+    cy.wait(2000);
+  });
+
+  it("Default filter Modified On", function () {
+    cy.get('[placeholder="Modified On"][type="text"]').should("exist");
     cy.log("Modified By Default filter has been exist in Filters");
     cy.wait(2000);
   });

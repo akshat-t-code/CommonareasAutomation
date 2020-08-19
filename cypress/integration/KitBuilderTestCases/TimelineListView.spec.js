@@ -50,19 +50,20 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.wait(3000);
     //Enter created kit type name into search box
     // kb.KBSearchBox(this.KitName.KitName);
-    //kb.KBSearchBox(this.TimelineListKitName.TLListKitName);
+    kb.KBSearchBox(this.TimelineListKitName.TLListKitName);
+    
     cy.wait(5000);
     //Open created kit type for adding List view elements
-    cy.contains(this.KitName.KitName3).click({ force: true });
+    //cy.contains(this.KitName.KitName3).click({ force: true });
     //Click to open kit type for adding List view elements
-    //cy.contains(this.TimelineListKitName.TLListKitName).click({ force: true });
+    cy.contains(this.TimelineListKitName.TLListKitName).click({ force: true });
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains("List Views").click({ force: true });
     cy.wait(5000);
   });
 
-  it("Adding Results and Filters Element to Timeline List View", function () {
+  it("Adding Results Element to Timeline List View", function () {
     //Page object
     const kb = new KitBuilderPage();
 
@@ -74,6 +75,9 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.contains("Add List Results").click({ force: true });
     cy.wait(2000);
     //Add List Results Values coming from json file
+    cy.contains(this.DataType2.Url).scrollIntoView({ force: true });
+    cy.wait(1000)
+
     cy.contains(this.DataType2.Url).click({ force: true });
     cy.contains(this.DataType2.Text).click({ force: true });
     cy.contains(this.DataType2.File).click({ force: true });
@@ -86,6 +90,8 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.contains(this.DataType2.Measure).click({ force: true });
     cy.contains(this.DataType2.Email).click({ force: true });
     cy.contains(this.DataType2.Address).click({ force: true });
+
+    cy.contains(this.DataType2.Address).scrollIntoView({ force: true });
     cy.wait(2000);
 
     cy.contains(this.DataType2.Number).click({ force: true });
@@ -93,6 +99,8 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.contains(this.DataType2.Date).click({ force: true });
     cy.contains(this.DataType2.Toggle).click({ force: true });
     cy.contains(this.DataType2.SelectList).click({ force: true });
+
+    cy.contains(this.DataType2.SelectList).scrollIntoView({ force: true });
     cy.wait(2000);
 
     cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
@@ -135,13 +143,34 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     //Assertion close
     cy.get(".closeBtn .v-icon").click({ force: true });
     cy.log("Assertion closed");
+    cy.wait(1000);
+    //To close the opened Search List
+    kb.ClickOnCrossIcon();
+    cy.log("Search List has been Closed");
+    cy.wait(3000);
 
-    //Add Filters Elements
+    
+  });
+
+  it('Adding Filters Element to Timeline List View',function(){
+
+     //Page object
+     const kb = new KitBuilderPage();
+
+     //View Name coming form json file
+     cy.contains(this.data.TimelineView).click({ force: true });
+     cy.log(this.data.TimelineView + " Has been Opened");
+     cy.wait(3000);
+
+     //Add Filters Elements
     cy.contains("Filters").click({ force: true });
     cy.wait(2000);
     //Add List Filters
     cy.contains("Add List Filters").click({ force: true });
     //Add List Filters Values coming from json file
+    cy.contains(this.DataType2.Url).scrollIntoView({ force: true });
+    cy.wait(1000)
+
     cy.contains(this.DataType2.Url).click({ force: true });
     cy.contains(this.DataType2.Text).click({ force: true });
     cy.contains(this.DataType2.File).click({ force: true });
@@ -154,6 +183,8 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.contains(this.DataType2.Measure).click({ force: true });
     cy.contains(this.DataType2.Email).click({ force: true });
     cy.contains(this.DataType2.Address).click({ force: true });
+
+    cy.contains(this.DataType2.Address).scrollIntoView({ force: true });
     cy.wait(2000);
 
     cy.contains(this.DataType2.Number).click({ force: true });
@@ -161,6 +192,8 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.contains(this.DataType2.Date).click({ force: true });
     cy.contains(this.DataType2.Toggle).click({ force: true });
     cy.contains(this.DataType2.SelectList).click({ force: true });
+
+    cy.contains(this.DataType2.SelectList).scrollIntoView({ force: true });
     cy.wait(2000);
 
     cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });
@@ -190,5 +223,10 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     //Assertion close
     cy.get(".closeBtn .v-icon").click({ force: true });
     cy.log("Assertion closed");
-  });
+
+
+  })
+
+
+
 });

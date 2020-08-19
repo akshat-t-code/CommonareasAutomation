@@ -40,8 +40,7 @@ describe("Adding Results and Filters Element to Search List View", function () {
     });
   });
 
-  it("Navigating to Search List Views of Created Kit Type", function () {
-
+  it.only("Navigating to Search List Views of Created Kit Type", function () {
     //Page Object
     const kb = new KitBuilderPage();
     cy.wait(5000);
@@ -51,19 +50,20 @@ describe("Adding Results and Filters Element to Search List View", function () {
     cy.wait(3000);
     //Enter created kit type name into search box
     //kb.KBSearchBox(this.KitName.KitName);
-    // kb.KBSearchBox(this.SearchListKitName.AddRelatedSearchListEleValidation);
+    kb.KBSearchBox(this.SearchListKitName.AddRelatedSearchListEleValidation);
     cy.wait(5000);
     //Open created kit type for adding List view elements
-    cy.contains(this.KitName.KitName3).click({ force: true });
-
-    // cy.contains(this.SearchListKitName.AddRelatedSearchListEleValidation).click({ force: true });
+    //cy.contains(this.KitName.KitName3).click({ force: true });
+    cy.contains(
+      this.SearchListKitName.AddRelatedSearchListEleValidation
+    ).click({ force: true });
 
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains("List Views").click({ force: true });
   });
 
-  it("Adding Results and Filters Element to Search List View", function () {
+  it("Adding Results Element to Search List View", function () {
     //Page object
     const kb = new KitBuilderPage();
     cy.wait(3000);
@@ -142,8 +142,22 @@ describe("Adding Results and Filters Element to Search List View", function () {
     cy.get(".closeBtn .v-icon").click();
     cy.wait(1000);
     cy.log("Assertion closed");
+    cy.wait(1000);
+    //To close the opened Search List
+    kb.ClickOnCrossIcon();
+    cy.log("Search List has been Closed");
+    cy.wait(3000);
+  });
 
-    ///*
+  it.only("Adding Filters Element to Search List View", function () {
+    cy.wait(2000);
+    //Page object
+    const kb = new KitBuilderPage();
+    cy.wait(3000);
+    //View Name coming form json file
+    cy.contains(this.data.SearchView).click({ force: true });
+    cy.wait(3000);
+    cy.log(this.data.SearchView + " has been Opened");
 
     //add Filter Elements
     cy.contains("Filters").click({ force: true });
@@ -151,6 +165,9 @@ describe("Adding Results and Filters Element to Search List View", function () {
     //Add List Filters
     cy.contains("Add List Filters").click({ force: true });
     //Add List Filters Values coming from json file
+    cy.contains(this.DataType2.Url).scrollIntoView({ force: true });
+    cy.wait(1000);
+
     cy.contains(this.DataType2.Url).click({ force: true });
     cy.contains(this.DataType2.Text).click({ force: true });
     cy.contains(this.DataType2.File).click({ force: true });
@@ -163,6 +180,7 @@ describe("Adding Results and Filters Element to Search List View", function () {
     cy.contains(this.DataType2.Measure).click({ force: true });
     cy.contains(this.DataType2.Email).click({ force: true });
     cy.contains(this.DataType2.Address).click({ force: true });
+    cy.contains(this.DataType2.Address).scrollIntoView({ force: true });
     cy.wait(2000);
 
     cy.contains(this.DataType2.Number).click({ force: true });
@@ -170,6 +188,7 @@ describe("Adding Results and Filters Element to Search List View", function () {
     cy.contains(this.DataType2.Date).click({ force: true });
     cy.contains(this.DataType2.Toggle).click({ force: true });
     cy.contains(this.DataType2.SelectList).click({ force: true });
+    cy.contains(this.DataType2.SelectList).scrollIntoView({ force: true });
     cy.wait(2000);
 
     cy.contains(this.DataType2.Assigning).scrollIntoView({ force: true });

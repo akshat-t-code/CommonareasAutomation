@@ -51,12 +51,12 @@ describe("Validate Timeline List's Filters Element for Created Kit Type on Sched
     cy.wait(10000);
     //Click on Hamburger Icon
     lp.HMBIcon();
-    cy.contains(this.KitName.TimelineListEleValidation).scrollIntoView({
+    cy.contains(this.KitName.TimelineListFiltersEleValidation).scrollIntoView({
       force: true,
     });
     cy.wait(5000);
     //Open KitType from left paneal
-    cy.contains(this.KitName.TimelineListEleValidation).click({
+    cy.contains(this.KitName.TimelineListFiltersEleValidation).click({
       force: true,
     });
     cy.wait(5000);

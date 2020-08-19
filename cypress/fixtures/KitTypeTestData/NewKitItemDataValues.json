@@ -42,9 +42,9 @@
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",
-    "MediumSmalliconSize":"Medium",
-    "LargeSmalliconSize":"Large",
-    "ExtraLargeSmalliconSize":"Extra Large",
+    "MediumiconSize":"Medium",
+    "LargeiconSize":"Large",
+    "ExtraLargeiconSize":"Extra Large",
 
     "IconLabel":"99Acres",
 
@@ -91,10 +91,10 @@
     "These values need to add manual for validate Table List View Elee":"true",
     "Important note for (TimelineList View Results Ele)Values":"Pls add value in same format that i did",
 
-    "TimelineListFileEleValue":"10769",
-    "TimelineListSliderValue":"17",
-    "TimelineListTimeValue":"12:15 AM",
-    "TimelineListDateValue":"07/09/2020",
+    "TimelineListFileEleValue":"10922",
+    "TimelineListSliderValue":"13",
+    "TimelineListTimeValue":"04:30 PM",
+    "TimelineListDateValue":"08/31/2020",
     "TimelineListToggleStatus":"True",
     "TimelineListIconTittle":"2 wheeled Trolly",
     
@@ -103,7 +103,7 @@
     "Add ',' after First Name of Assigning":"Note-true",
 
 
-    "TimelineListUserSelector":"Deanne, Howell",
+    "TimelineListUserSelector":"Ken, Stanley",
     "TimelineListContactSelector":"Vivek, Mahajan",
     "TimelineListAssigningName":"Daniel, Zhao"
 

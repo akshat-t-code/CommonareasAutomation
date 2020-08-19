@@ -67,7 +67,10 @@ describe("Validation On UI for Element's Is Required Property", function () {
     //debugger;
     //Click on To open Kit Type
     KTP.SearchKitType(this.RRProp.IsRequiredKitName);
-    KTP.OpenKitType(this.RRProp.IsRequiredKitName);
+    cy.wait(3000)
+    //This is class to open searched kit type by clicking + iocn
+    cy.get('.truncate-special').first().click({force:true})
+    //KTP.OpenKitType(this.RRProp.IsRequiredKitName);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");
@@ -75,17 +78,24 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.wait(5000)
   });
 
-  it("URL Is Required Property Validation on UI", function () {
+  it.only("URL Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Url
-    cy.get('[name="Url"]').last().should("have.attr", "readonly");
+    cy.get('[name="Url"]').last().should("have.attr", "required");
 
     cy.get('[name="Url"]')
       .last()
       .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
+        expect($el.attr("required")).to.equal("required");
       });
     cy.log("URL Is Required Property Validated on UI");
+
+    cy.get('div.navi-bar-dropdown.fill-height.align-center.overflow-max-width.col-md-9.col-lg-8.col-10 > div > div > div.v-input__slot > div.v-select__slot > div.v-select__selections > button')
+    .click({force:true})
+    cy.contains('Form is invalid ').should('be.visible');
+    cy.log('Kit item cannt be save.Url is required')
+
+
   });
 
   it("Text Is Required Property Validation on UI", function () {
@@ -117,13 +127,9 @@ describe("Validation On UI for Element's Is Required Property", function () {
   it("Telephone Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Telephone
-    cy.get('[name="Telephone"]').last().should("have.attr", "readonly");
+    cy.get('[name="Telephone"]').last().should("have.attr", "required");
 
-    cy.get('[name="Telephone"]')
-      .last()
-      .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
-      });
+    
     cy.log("Telephone Is Required Property Validated on UI");
   });
 
@@ -140,7 +146,7 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("TextAera Is Required Property Validated on UI");
   });
 
-  it.only("Currency Is Required Property Validation on UI", function () {
+  it("Currency Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Currency
     cy.get('[type="text"]').eq(5).should("have.attr", "readonly");
@@ -153,7 +159,7 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("Currency Is Required Property Validated on UI");
   });
 
-  it.only("Measure Is Required Property Validation on UI", function () {
+  it("Measure Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Measure
     cy.get('[type="number"]').eq(3).should("have.attr", "readonly");
@@ -197,12 +203,12 @@ describe("Validation On UI for Element's Is Required Property", function () {
   it("Number Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Number
-    cy.get('[name="Number"]').last().should("have.attr", "readonly");
+    cy.get('[name="Number"]').last().should("have.attr", "required");
 
     cy.get('[name="Number"]')
       .last()
       .then(($el) => {
-        expect($el.attr("readonly")).to.equal("readonly");
+        expect($el.attr("required")).to.equal("required");
       });
     cy.log("Number Is Required Property Validated on UI");
   });
@@ -268,7 +274,7 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("CheckboxSelect Is Required Property Validated on UI");
   });
 
-  it.only("UserSelector Is Required Property Validation on UI", function () {
+  it("UserSelector Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //UserSelector
     cy.get('.v-select__selections').eq(5)
@@ -276,14 +282,14 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("UserSelector Is Required Property Validated on UI");
   });
 
-  it.only("ContactSelector Is Required Property Validation on UI", function () {
+  it("ContactSelector Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //ContactSelector
     cy.get('.v-select__selections').eq(6)
     .should("have.attr", "readonly");
     cy.log("ContactSelector Is Required Property Validated on UI");
   });
-  it.only("Assigning Is Required Property Validation on UI", function () {
+  it("Assigning Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Assigning
     cy.get('.v-select__selections').eq(8)
@@ -307,7 +313,7 @@ describe("Validation On UI for Element's Is Required Property", function () {
     cy.log("Stepper Is Required Property Validated on UI");
   });
 
-  it.only("Inspection Is Required Property Validation on UI", function () {
+  it("Inspection Is Required Property Validation on UI", function () {
     cy.wait(1000);
     //Inspection
     cy.get('.v-select__selections').eq(8)

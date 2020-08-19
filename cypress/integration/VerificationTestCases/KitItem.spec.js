@@ -39,7 +39,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     });
   });
 
-  it.only("AutomationKit type", function () {
+  it("AutomationKit type", function () {
     //cy.wait(5000)
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -51,7 +51,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // KTP.SearchKitType(this.KitItemData.KitName4);
     // KTP.OpenKitType(this.KitItemData.KitName4);
 
-    KTP.SearchKitType(this.KitTypeName.KitName3);
+    //KTP.SearchKitType(this.KitTypeName.KitName3);
+    KTP.SearchKitType('AkshatKitDemo');
     cy.wait(3000)
     //This is class to open searched kit type by clicking + iocn
     cy.get('.truncate-special').first().click({force:true})
@@ -60,7 +61,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // KTP.SearchKitType('AkshatKitDemo');
     // KTP.OpenKitType('AkshatKitDemo');
 
-    cy.wait(5000);
+    cy.wait(3000);
     //Assertion
     cy.contains("New Item created").should("be.visible");
     cy.log("New Item created and Kit Type has been Opened");
@@ -193,6 +194,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // });
     cy.wait(2000);
 
+
+    /*
+
     //Reminder
     //Click to open Reminder POPUP
     cy.wait(2000);
@@ -282,6 +286,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
       force: true,
     });
+
+    */
 
     cy.wait(2000);
 
@@ -375,8 +381,9 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //IcozSize
     cy.get(
       "div.row.wrapper-kit-control.align-center > div > div.fill-height.border-right.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
-    ).click({ force: true });
-    cy.contains(this.NewKitItemData.LargeSmalliconSize).click({ force: true });
+    ).last()
+    .click({ force: true });
+    cy.contains(this.NewKitItemData.LargeiconSize).click({ force: true });
     cy.wait(2000);
     //IconLable
     cy.get('[placeholder="Label"]').type(this.NewKitItemData.IconLabel);
