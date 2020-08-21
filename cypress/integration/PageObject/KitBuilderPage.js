@@ -1,13 +1,13 @@
 class KitBuilder {
   
   KitBuilderUrl() {
-    cy.visit("http://serviceproviders.ca-build.com/ClientAdmin/KitBuilder#/");
+    cy.visit("https://serviceproviders.ca-build.com/ClientAdmin/KitBuilder#/");
     
   }
 
 
   AdminUrl() {
-    cy.visit("http://serviceproviders.ca-build.com/ClientAdmin/Index/#/");
+    cy.visit("https://serviceproviders.ca-build.com/ClientAdmin/Index/#/");
     
   }
 

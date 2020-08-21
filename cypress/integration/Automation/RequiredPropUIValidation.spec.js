@@ -315,4 +315,13 @@ describe("Elements Is Required Property Validation On UI", function () {
       this.DataType2.InspectionName + " Required Property Validated on UI"
     );
   });
+
+  it("Element Is Required Validation by saving kitItem", function () {
+    cy.wait(2000);
+    cy.get(
+      "div.navi-bar-dropdown.fill-height.align-center.overflow-max-width.col-md-9.col-lg-8.col-10 > div > div > div.v-input__slot > div.v-select__slot > div.v-select__selections > button"
+    ).click({ force: true });
+    cy.contains("Form is invalid ").should("be.visible");
+    cy.log("Kit item cannt be save.Url is required");
+  });
 });

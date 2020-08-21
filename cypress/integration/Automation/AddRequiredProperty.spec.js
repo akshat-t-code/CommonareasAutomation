@@ -1,7 +1,6 @@
 import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
-import KitTypePage from "../PageObject/KitTypePage";
-import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
+
 
 describe("Set KitBuilder Data Elements Is Required", function () {
   this.beforeAll(function () {
@@ -498,7 +497,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.wait(3000);
   });
 
-  it.only("Set OneToManyRelation Data Type As Required Property", function () {
+  it("Set OneToManyRelation Data Type As Required Property", function () {
     //Click on Add Stepper
     cy.getIframeBody()
       .contains(this.DataType.OneToManyRelation)
@@ -581,7 +580,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.wait(3000);
   });
 
-  it.only("Set OneToOneRelation Data Type As Required Property", function () {
+  it("Set OneToOneRelation Data Type As Required Property", function () {
     //Click on Add Stepper
     cy.getIframeBody()
       .contains(this.DataType.OneToOneRelation)
@@ -743,7 +742,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.wait(3000);
   });
 
-  it.only("Kit Builder Save and Publish", function () {
+  it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click({ force: true });
     //save assertion closed
