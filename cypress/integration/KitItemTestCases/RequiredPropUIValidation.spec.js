@@ -34,6 +34,12 @@ describe("Elements Is Required Property Validation On UI", function () {
       }
     );
 
+    cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
+      KitDataEle
+    ) {
+      this.NewKitItemData = KitDataEle;
+    });
+
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
       KitTypeName
     ) {
@@ -51,11 +57,11 @@ describe("Elements Is Required Property Validation On UI", function () {
     const lp = new LoginPage();
     const KTP = new KitTypePage();
     //Assertion
-    cy.title().should("eq", "Common Areas");
+    //cy.title().should("eq", "Common Areas");
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.RRProp.IsRequiredKitName);
+    KTP.SearchKitType(this.RRProp.IsRequiredKitName2);
     cy.wait(3000);
     //Open Created Kit Type
     //KTP.SearchKitType(this.KitName.KitName3);
@@ -169,8 +175,6 @@ describe("Elements Is Required Property Validation On UI", function () {
       '[placeholder="Street address, bulding, company ... "][name="Address"]'
     ).should("have.attr", "required");
 
-    //Address line 2.
-    cy.get('[name="Address line 2."]').should("have.attr", "required");
 
     //City
     cy.get('[placeholder="City"]').should("have.attr", "required");
@@ -293,7 +297,8 @@ describe("Elements Is Required Property Validation On UI", function () {
   it("Icon Required Property Validation on UI", function () {
     cy.wait(1000);
     //Icon
-    cy.get('[placeholder="Label"]').should("have.attr", "required");
+    cy.get('[aria-readonly="true"][readonly="readonly"][type="text"]').eq(4)
+    .should("have.attr", "required");
     cy.log(this.DataType2.Icon + " Required Property Validated on UI");
   });
 
@@ -322,6 +327,6 @@ describe("Elements Is Required Property Validation On UI", function () {
       "div.navi-bar-dropdown.fill-height.align-center.overflow-max-width.col-md-9.col-lg-8.col-10 > div > div > div.v-input__slot > div.v-select__slot > div.v-select__selections > button"
     ).click({ force: true });
     cy.contains("Form is invalid ").should("be.visible");
-    cy.log("Kit item cannt be save.Url is required");
+    cy.log("Kit item cannt be save.Element is required to fill");
   });
 });

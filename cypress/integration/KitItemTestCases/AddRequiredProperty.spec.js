@@ -50,10 +50,10 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     });
   });
 
-  it.only("Navigating to Created KitType New Form to make Element Is Requried", function () {
+  it("Navigating to Created KitType New Form to make Element Is Requried", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
-    cy.title().should("eq", "Common Areas");
+    //cy.title().should("eq", "Common Areas App");
     cy.wait(5000);
     kb.KitBuilderUrl();
     cy.wait(3000);
