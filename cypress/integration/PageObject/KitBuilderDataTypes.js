@@ -1775,8 +1775,7 @@ class KitBuilderDataTypes {
     cy.log("OneToOne Relation Data Type has been created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click();
-    cy.wait(5000)
-
+    cy.wait(5000);
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
@@ -1905,7 +1904,7 @@ class KitBuilderDataTypes {
     cy.log("OneToMany Relation Data Type has been Created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
-    cy.wait(5000)
+    cy.wait(5000);
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
@@ -1965,7 +1964,7 @@ class KitBuilderDataTypes {
       force: true,
     });
     //Checkbox
-   // cy.contains("Default View for Kit").click({ force: true });
+    // cy.contains("Default View for Kit").click({ force: true });
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2) > .v-btn__content")
@@ -2039,7 +2038,7 @@ class KitBuilderDataTypes {
     cy.wait(2000);
     //Click on Save Selected
     cy.contains("Save Selected").click({ force: true });
-    cy.wait(3000)
+    cy.wait(3000);
     cy.log(
       "Table List Filters Element has been Selected for OneToMany Relation"
     );
@@ -2135,7 +2134,7 @@ class KitBuilderDataTypes {
     cy.log("Square Card Relation Data Type has been Created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
-    cy.wait(5000)
+    cy.wait(5000);
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
@@ -2274,7 +2273,7 @@ class KitBuilderDataTypes {
     cy.wait(2000);
     //Click on Save Selected
     cy.contains("Save Selected").click({ force: true });
-    cy.wait(3000)
+    cy.wait(3000);
     cy.log(
       "Table List Filters Element has been Selected for SquareCard Relation"
     );
@@ -2363,6 +2362,87 @@ class KitBuilderDataTypes {
     cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
     //Select a Value
     cy.wait(2000);
+  }
+
+  TextBlock(TextBlockName, TextBlockData) {
+    //Click on TextBlock
+
+
+     cy.getIframeBody()
+      .get('[placeholder="Please type here..."]')
+       .click({ force: true })
+
+    // cy.getIframeBody()
+    //   .get('.text-block-control')
+    //   .click({ force: true })
+      .type(TextBlockData);
+    cy.log("Text Block data has been Entered");
+    cy.wait(3000);
+
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input")
+      .click()
+      .type(TextBlockName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    //Select a Value
+    cy.wait(2000);
+
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+  
+  }
+
+  Button(ButtonName) {
+    //Click on Button
+     cy.getIframeBody()
+    //   .get('.control-button').last()
+    .get('div.control-button.flex.control-container.xs6.validationError.gjs-comp-selected')
+       .click({ force: true });
+     cy.wait(3000);
+
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(ButtonName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    cy.wait(2000);
+
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+   
+  }
+
+  Link(LinkName, EnterUrl) {
+    //Click on Link
+    // cy.getIframeBody()
+    //   .get('[data-gjs-type="link"]')
+    //   .click({ force: true });
+    // cy.wait(3000);
+
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(LinkName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    cy.wait(2000);
+
+    //Enter Url
+    cy.get(".gjs-trt-trait__wrp:nth-child(15) input").click().type(EnterUrl);
+
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+    
   }
 }
 

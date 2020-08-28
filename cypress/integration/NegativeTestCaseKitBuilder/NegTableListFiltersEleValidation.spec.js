@@ -47,7 +47,7 @@ describe("Negative Test Case for Validate TableList Filters Element on UI", func
     //Page Object
     const lp = new LoginPage();
     //Assertion
-    cy.title().should("eq", "Common Areas");
+    //cy.title().should("eq", "Common Areas");
     cy.wait(10000);
     //Click on Hamburger Icon
     lp.HMBIcon();
@@ -71,9 +71,6 @@ describe("Negative Test Case for Validate TableList Filters Element on UI", func
     //Validation for Filer Elements
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .last()
-      .scrollIntoView({ force: true });
-    cy.get("[name" + "=" + this.DataType2.Url + "]")
-      .last()
       .should("not.be.visible");
     cy.log(this.KitData.Url + " Data Element not exist in Filters");
     cy.wait(2000);
@@ -81,9 +78,6 @@ describe("Negative Test Case for Validate TableList Filters Element on UI", func
 
   it("Validate the Filter Text Element(Negative)", function () {
     //Validation for Filer Elements
-    cy.get("[name" + "=" + this.DataType2.Text + "]")
-      .last()
-      .scrollIntoView({ force: true });
     cy.get("[name" + "=" + this.DataType2.Text + "]")
       .last()
       .should("not.be.visible");
@@ -95,9 +89,6 @@ describe("Negative Test Case for Validate TableList Filters Element on UI", func
     //Validation for Filer Elements
     cy.get("[name" + "=" + this.DataType2.Telephone + "]")
       .last()
-      .scrollIntoView({ force: true });
-    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
-      .last()
       .should("not.be.visible");
     cy.log(this.KitData.Telephone + " Data Element not exist in Filters");
     cy.wait(2000);
@@ -105,9 +96,6 @@ describe("Negative Test Case for Validate TableList Filters Element on UI", func
 
   it("Validate the Filter TextAera Element(Negative)", function () {
     //Validation for Filer Elements
-    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
-      .last()
-      .scrollIntoView({ force: true });
     cy.get("[name" + "=" + this.DataType2.TextAera + "]")
       .last()
       .should("not.be.visible");
@@ -126,18 +114,12 @@ describe("Negative Test Case for Validate TableList Filters Element on UI", func
     //Validation for Filer Elements
     cy.get("[name" + "=" + this.DataType2.Email + "]")
       .last()
-      .scrollIntoView({ force: true });
-    cy.get("[name" + "=" + this.DataType2.Email + "]")
-      .last()
       .should("not.be.visible");
     cy.log(this.KitData.Email + " Data Element not exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Address Element(Negative)", function () {
-    cy.get("[name" + "=" + this.DataType2.Address + "]")
-      .last()
-      .scrollIntoView({ force: true });
     cy.get("[name" + "=" + this.DataType2.Address + "]")
       .last()
       .should("not.be.visible");
@@ -196,7 +178,6 @@ describe("Negative Test Case for Validate TableList Filters Element on UI", func
 
   it("Validate the Filter UserSelector Element(Negative)", function () {
     //Validation for Filer Elements
-    cy.contains(this.DataType2.UserSelector).scrollIntoView({ force: true });
     cy.contains(this.DataType2.UserSelector).should("not.exist");
     cy.log(this.KitData.UserSelector + " Data Element not exist in Filters");
     cy.wait(2000);
@@ -218,7 +199,6 @@ describe("Negative Test Case for Validate TableList Filters Element on UI", func
 
   it("Validate the Filter Inspection Element(Negative)", function () {
     //Validation for Filer Elements
-    //cy.get('[name="Inspection"]').should("be.visible");
     cy.get("[name" + "=" + this.DataType2.Inspection + "]").should(
       "not.be.visible"
     );

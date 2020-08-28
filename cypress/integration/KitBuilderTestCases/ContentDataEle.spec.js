@@ -13,11 +13,15 @@ describe("Kit Builder Data Types Details", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
+      KitTypeFormViewsNames
+    ) {
       this.data = KitTypeFormViewsNames;
     });
 
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KitTypeName) {
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
+      KitTypeName
+    ) {
       this.KitTypeName = KitTypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
@@ -31,10 +35,9 @@ describe("Kit Builder Data Types Details", function () {
     ) {
       this.DataType2 = NewDataForElements;
     });
-
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -55,6 +58,10 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
+  it.only("Content Section Data Elements", function () {
+    cy.contains("Content").click({ force: true });
+    cy.wait(2000);
+  });
 
   it("OneToManyRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
@@ -80,7 +87,6 @@ describe("Kit Builder Data Types Details", function () {
 
     cy.wait(5000);
   });
-
 
   it("Stepper Data Type", function () {
     //Double click on Data Element to drag it on Canvas
@@ -195,6 +201,8 @@ describe("Kit Builder Data Types Details", function () {
   it("Assigning Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Assigning"]').dblclick({ force: true });
+    cy.log(this.DataType2.Assigning);
+    cy.log(this.DataType2.TextBlockName);
     cy.wait(1000);
     //Page Object
     const DataType = new KitBuilderDataTypes();
@@ -202,7 +210,40 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it("Kit Builder Save and Publish", function () {
+  it("TextBlock Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.contains("Text Block").dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.TextBlock(
+      this.DataType2.TextBlockName,
+      this.DataType2.TextBlockData
+    );
+    cy.wait(5000);
+  });
+
+  it.only("Button Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[data-component="control-button"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Button(this.DataType2.Button);
+    cy.wait(5000);
+  });
+
+  it("Link Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[data-component="control-link"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Link(this.DataType2.LinkName, this.DataType2.EnterUrl);
+    cy.wait(5000);
+  });
+
+  it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click({ force: true });
     //save assertion closed

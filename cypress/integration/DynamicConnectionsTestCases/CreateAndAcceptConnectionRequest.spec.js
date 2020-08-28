@@ -55,7 +55,7 @@ describe("Login for new User than Create A new Connection and Accept the request
     });
   });
 
-  it("Creating a new Connection ", function () {
+  it.only("Create a new Connection ", function () {
     const lp = new LoginPage();
     lp.visit();
     lp.EnterEmail("kstanley@commonareas.work.dev");
@@ -89,7 +89,7 @@ describe("Login for new User than Create A new Connection and Accept the request
     cy.wait(10000);
   });
 
-  it("Login Again to appLication for Accepting the Request", function () {
+  it.only("Login Again to appLication for Accepting the Request", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();

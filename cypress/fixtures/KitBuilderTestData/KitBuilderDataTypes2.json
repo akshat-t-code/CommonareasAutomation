@@ -116,7 +116,13 @@
 
     "RCName":"Reactive Control",
 
-    "RVName":"Reactive Vriable"
+    "RVName":"Reactive Vriable",
+
+    "TextBlockName":"PropertyInformation",
+    "TextBlockData":"This Property is on Sell",
+    "Button":"Property",
+    "LinkName":"PropertyWebSite",
+    "EnterUrl":"https://www.99acres.com"
     
     
 

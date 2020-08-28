@@ -36,12 +36,15 @@ describe("Reminder Test Cases for all Conditions", function () {
     const lp = new LoginPage();
     const KTP = new KitTypePage();
     //Assertion
-    cy.title().should("eq", "Common Areas");
+    //cy.title().should("eq", "Common Areas");
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
     KTP.SearchKitType(this.KitItemData.KitName3);
-    KTP.OpenKitType(this.KitItemData.KitName3);
+    cy.wait(3000);
+    //This is class to open searched kit type by clicking + iocn
+    cy.get(".truncate-special").first().click({ force: true });
+    //KTP.OpenKitType(this.KitItemData.KitName3);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");
@@ -179,7 +182,7 @@ describe("Reminder Test Cases for all Conditions", function () {
       "//span[@class='v-time-picker-clock__item']//span[contains(text(),'3')]"
     ).click({ force: true });
     cy.wait(1000);
-    cy.xpath("//span[contains(text(),'30')]").click({ force: true });
+    cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
     //Click on PM
     cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
     cy.wait(1000);
