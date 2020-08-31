@@ -29,10 +29,16 @@ describe("Kit Builder All Data Elements Configuration", function () {
     ) {
       this.KitTypeName = KittypeName;
     });
-    cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
-      datatypes
+    // cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
+    //   datatypes
+    // ) {
+    //   this.DataType = datatypes;
+    // });
+
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
     ) {
-      this.DataType = datatypes;
+      this.DataType = NewDataForElements;
     });
   });
 
@@ -42,12 +48,9 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
     kb.KitBuilderUrl();
-    // kb.AdminUrl();
-    // cy.wait(5000);
-    // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
-    cy.contains(this.KitTypeName.KitName).click({ force: true });
+    cy.contains(this.KitTypeName.KitName3).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -475,6 +478,39 @@ describe("Kit Builder All Data Elements Configuration", function () {
     //Page Object
     const DataType = new KitBuilderDataTypes();
     DataType.Assigning(this.DataType.Assigning);
+    cy.wait(5000);
+  });
+
+  it("TextBlock Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.contains("Text Block").dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.TextBlock(
+      this.DataType2.TextBlockName,
+      this.DataType2.TextBlockData
+    );
+    cy.wait(5000);
+  });
+
+  it("Button Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[data-component="control-button"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Button(this.DataType2.Button);
+    cy.wait(5000);
+  });
+
+  it("Link Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[data-component="control-link"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Link(this.DataType2.LinkName, this.DataType2.EnterUrl);
     cy.wait(5000);
   });
 

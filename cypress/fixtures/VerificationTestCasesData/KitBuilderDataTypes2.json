@@ -69,7 +69,7 @@
     "InspectionValue4":"DistancefromCity",
     "InspectionValue5":"MarketAera",
 
-    "OneToOneRelation":"MegaOneToOneProject",
+    "OneToOneRelation":"OneToOneProject",
     "KitToBeRelate":"AkshatKitDemo",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
@@ -78,13 +78,13 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"EmployeeRelation",
-    "KitToBeRelated":"AkshatKitDemo",
+    "OneToManyRelation":"PropertyRelation",
+    "KitToBeRelated":"PropertyBuilder2",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
     "OneToManySearchView":"SearchView",
-    "RelatedTableView":"PropertyBuilder2TableViwe",
+    "RelatedTableView":"PropertyRelationTableViwe",
     "RelatedEle_1":"Url",
     "RelatedEle_2":"Text",
     "RelatedEle_3":"Telephone",
@@ -92,13 +92,13 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"PropertyManagementCardR",
-    "CardKitToBeRelated":"AkshatKitDemo",
+    "SquareCardName":"PropertyRealtionCard",
+    "CardKitToBeRelated":"PropertyBuilder2",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",
     "CardSearchView":"SearchView",
-    "SquareCardTableView":"PropertyCardTableView",
+    "SquareCardTableView":"PropertyRealtionCardView",
     "RelateEle_1":"Url",
     "RelateEle_2":"Text",
     "RelateEle_3":"Telephone",

@@ -1750,6 +1750,7 @@ class KitBuilderDataTypes {
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
     cy.contains(KitToBeRelate).click({ force: true });
+    //cy.wait(5000)
 
     //Select 1-One Realtion
     cy.get(
@@ -1878,6 +1879,7 @@ class KitBuilderDataTypes {
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
     cy.contains(KitToBeRelated).click({ force: true });
+    //cy.wait(5000)
 
     //Select 1-N Realtion
     cy.get(
@@ -2108,6 +2110,7 @@ class KitBuilderDataTypes {
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
     cy.contains(CardKitToBeRelated).click({ force: true });
+    //cy.wait(5000)
 
     //Select Square Card Realtion
     cy.get(
@@ -2367,14 +2370,9 @@ class KitBuilderDataTypes {
   TextBlock(TextBlockName, TextBlockData) {
     //Click on TextBlock
 
-
-     cy.getIframeBody()
-      .get('[placeholder="Please type here..."]')
-       .click({ force: true })
-
-    // cy.getIframeBody()
-    //   .get('.text-block-control')
-    //   .click({ force: true })
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-textblock"]')
+      .click({ force: true })
       .type(TextBlockData);
     cy.log("Text Block data has been Entered");
     cy.wait(3000);
@@ -2394,16 +2392,14 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.log("Kit builder(New Form) has been Saved");
     cy.wait(3000);
-  
   }
 
   Button(ButtonName) {
     //Click on Button
-     cy.getIframeBody()
-    //   .get('.control-button').last()
-    .get('div.control-button.flex.control-container.xs6.validationError.gjs-comp-selected')
-       .click({ force: true });
-     cy.wait(3000);
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-button"]')
+      .click({ force: true });
+    cy.wait(3000);
 
     //Click on Lable
     cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(ButtonName);
@@ -2417,15 +2413,12 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.log("Kit builder(New Form) has been Saved");
     cy.wait(3000);
-   
   }
 
   Link(LinkName, EnterUrl) {
     //Click on Link
-    // cy.getIframeBody()
-    //   .get('[data-gjs-type="link"]')
-    //   .click({ force: true });
-    // cy.wait(3000);
+    cy.getIframeBody().find('[data-gjs-type="link"]').click({ force: true });
+    cy.wait(3000);
 
     //Click on Lable
     cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(LinkName);
@@ -2442,7 +2435,6 @@ class KitBuilderDataTypes {
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.log("Kit builder(New Form) has been Saved");
     cy.wait(3000);
-    
   }
 }
 

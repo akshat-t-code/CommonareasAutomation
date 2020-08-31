@@ -37,15 +37,12 @@ describe("Kit Builder Data Types Details", function () {
     });
   });
 
-  it.only("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
     kb.KitBuilderUrl();
-    // kb.AdminUrl();
-    // cy.wait(5000);
-    // kb.ClickOnKitBuilder();
     cy.wait(3000);
     //Open Craeted Kit Type
     cy.contains(this.KitTypeName.KitName3).click({ force: true });
@@ -58,7 +55,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it.only("Content Section Data Elements", function () {
+  it("Content Section Data Elements", function () {
     cy.contains("Content").click({ force: true });
     cy.wait(2000);
   });
@@ -223,7 +220,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it.only("Button Data Type", function () {
+  it("Button Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[data-component="control-button"]').dblclick({ force: true });
     cy.wait(1000);
@@ -243,7 +240,7 @@ describe("Kit Builder Data Types Details", function () {
     cy.wait(5000);
   });
 
-  it.only("Kit Builder Save and Publish", function () {
+  it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click({ force: true });
     //save assertion closed
