@@ -1,7 +1,7 @@
 import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
-import RandomString from "../PageObject/RandomString";
+
 
 describe("Kit Builder All Data Elements Configuration", function () {
   this.beforeAll(function () {

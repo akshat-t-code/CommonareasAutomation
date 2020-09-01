@@ -2,6 +2,7 @@
 {
     "TimelineListEleValidation":"AkshatValidationKit",
     "TLListKitName":"AkshatKitDemo",
+    "KitName":"Location",
     "TimelineListResultsEleValidation":"AkshatValidationKit",
     "TimelineListFiltersEleValidation":"Property Builder2",
     "TimelineListResultsEleValidation2":"Property Builder2"
