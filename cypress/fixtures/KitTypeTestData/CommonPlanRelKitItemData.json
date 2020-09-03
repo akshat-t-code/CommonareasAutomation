@@ -1,0 +1,111 @@
+{
+
+    
+    "Url":"https://www.99acres.com",
+    "Text":"3BHK Flats",
+    "Telephone":"(972) 000-2495",
+    "TextAera":"Free Hold Hosue With Parking",
+    "Currency":"75000",
+    "Measure":"2000",
+
+    "Email":"johnbuilder@yahoo.com",
+    "Important Note for Email":"should be in small letters",
+
+    "Addressline1":"3860 Romrog Way",
+    "Addressline2":"Oak Way",
+    "City":"Grand Island",
+    "State":"Arizona",
+    "ZipCode":"33025",
+    "Country":"United States",
+    "Number":"443",
+
+    "SelectListValue":"Harshal",
+
+    "RadioSelect":"Harshal@gmail.com",
+
+    "CheckboxSelectValue1":"USA",
+    "CheckboxSelectValue2":"Spain",
+    "CheckboxSelectValue3":"Japan",
+    "CheckboxSelectValue4":"India",
+    "CheckboxSelectValue5":"UK",
+
+    "StepperValue1":"292923",
+    "StepperValue2":"293892",
+    "StepperValue3":"201001",
+    "StepperValue4":"090191",
+    "StepperValue5":"989213",
+
+    "UserSelectorName":"Ken Stanley",
+
+    "ContactSelectorName":"Vivek Mahajan",
+    
+    "ExtraSmalliconSize":"Extra Small",
+    "SmalliconSize":"Small",
+    "MediumiconSize":"Medium",
+    "LargeiconSize":"Large",
+    "ExtraLargeiconSize":"Extra Large",
+
+    "IconLabel":"99Acres",
+
+    "These are the index value of div child":"use according to select inspection value",
+    "1st for 1st value":"2nd for 2nd value and so on...",
+    "InspectionValue1":"1",
+    "InspectionValue2":"2",
+    "InspectionValue3":"3",
+    "InspectionValue4":"4",
+    "InspectionValue5":"5",
+
+    "AssigningName":"Daniel Zhao",
+    
+
+    "ReminderTitle":"PropertyBuilder Inspection",
+    "ReminderTypeOneTime":"One-Time",
+    "ReminderTypeRecurring":"Recurring",
+
+    "ChannelWebApp":"Web App",
+    "ChannelEmail":"E-mail",
+    "ChannelMobileApp":"Mobile App",
+
+    "RepeatDaily":"Daily",
+    "RepeatMonFriday":"Mon-Friday",
+    "RepeatWeekly":"Weekly",
+    "RepeatMonthlyDay":"Monthly - Day",
+    "RepeatMonthlyOfDay":"Monthly - Of Day",
+    "RepeatAnnuallyDate":"Annually - Date",
+    "RepeatAnnuallyOfMonth":"Annually - Of Month",
+    
+
+
+    "These values need to add manual for validate Table List View Result Ele UI Validation":"true",
+    "Important note for Values":"Pls add value in same format that i did",
+    "FileValue":"10905",
+    "SliderValue":"17",
+    "TimeValue":"04:30 PM",
+    "DateValue":"08/31/2020",
+    "ToggleStatus":"True",
+    "StepperValue":"293892",
+    "InspectionName":"DistancefromCity",
+    
+
+    "These values need to add manual for validate Table List View Elee":"true",
+    "Important note for (TimelineList View Results Ele)Values":"Pls add value in same format that i did",
+
+    "TimelineListFileEleValue":"10922",
+    "TimelineListSliderValue":"13",
+    "TimelineListTimeValue":"04:30 PM",
+    "TimelineListDateValue":"08/31/2020",
+    "TimelineListToggleStatus":"True",
+    "TimelineListIconTittle":"2 wheeled Trolly",
+    
+    "Add ',' after First Name of UserSelector":"Note-true",
+    "Add ',' after First Name of ContactSelector":"Note-true",
+    "Add ',' after First Name of Assigning":"Note-true",
+
+
+    "TimelineListUserSelector":"Ken, Stanley",
+    "TimelineListContactSelector":"Vivek, Mahajan",
+    "TimelineListAssigningName":"Daniel, Zhao"
+
+
+    
+}
