@@ -330,7 +330,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.DataType2.StepperValue2).click({ force: true });
 
     cy.wait(2000);
-    //.v-stepper__step:nth-child(1/35/7/9)
+    //.v-stepper__step:nth-child(1/3/5/7/9)
     // cy.get(".v-stepper__step:nth-child(5) > .v-stepper__step__step").click({
     //   force: true,
     // });

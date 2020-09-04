@@ -15,14 +15,15 @@
     "Addressline1":"3860 Romrog Way",
     "Addressline2":"Oak Way",
     "City":"Grand Island",
-    "State":"Arizona",
+    "State":"Alaska",
     "ZipCode":"33025",
     "Country":"United States",
     "Number":"443",
 
     "SelectListValue":"Harshal",
+    
 
-    "RadioSelect":"Harshal@gmail.com",
+    "RadioSelectValue":"Mack@yahoo.com",
 
     "CheckboxSelectValue1":"USA",
     "CheckboxSelectValue2":"Spain",

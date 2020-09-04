@@ -20,8 +20,9 @@
     "Number":"443",
 
     "SelectListValue":"Harshal",
+    "SelectListValueAgain":"Mack",
 
-    "RadioSelect":"Harshal@gmail.com",
+    "RadioSelectValue":"Mack@yahoo.com",
 
     "CheckboxSelectValue1":"USA",
     "CheckboxSelectValue2":"Spain",
@@ -35,7 +36,7 @@
     "StepperValue4":"090191",
     "StepperValue5":"989213",
 
-    "UserSelectorName":"Ken Stanley",
+    "UserSelectorName":"Daniel Zhao",
 
     "ContactSelectorName":"Vivek Mahajan",
     
@@ -45,7 +46,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"99Acres",
+    "IconLabel":"CP99Acres",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",
