@@ -98,50 +98,65 @@ describe("CommonPlan Test Case for Related KitItem", function () {
     cy.log("Common Plan has Opened in LayOut Mode");
     cy.wait(2000);
 
+    //Click on related kitItem name to expend (index wise nth-child(1/3/5))
     cy.get(".group:nth-child(1) > .group-label").click({ force: true });
     cy.wait(2000);
     //DoubleClick on the related Item
     cy.get('[data-tooltip="99Acres"]').dblclick({ force: true });
     cy.wait(3000);
 
-    //File
-    //Click on cross
-    cy.get(".v-icon--link:nth-child(2)").click();
-    cy.wait(1000);
-    cy.contains(" Discard ").click();
-    cy.wait(1000);
+    // //File
+    // //Click on cross
+    // cy.get(".v-icon--link:nth-child(2)").click();
+    // cy.wait(1000);
+    // cy.contains(" Discard ").click();
+    // cy.wait(1000);
 
-    cy.get(".link-icon--green > path").eq(0).click({ force: true });
-    cy.wait(3000);
-    cy.get(".thumb-container:nth-child(5) .selected-icon").click({
-      force: true,
-    });
-    cy.get(
-      ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
-    ).click({ force: true });
-    cy.wait(1000);
+    // cy.get(".link-icon--green > path").eq(0).click({ force: true });
+    // cy.wait(3000);
+    // cy.get(".thumb-container:nth-child(5) .selected-icon").click({
+    //   force: true,
+    // });
+    // cy.get(
+    //   ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
+    // ).click({ force: true });
+    // cy.wait(1000);
 
-    //Stepper
-    cy.get("[name" + "=" + this.DataType2.StepperName + "]")
-      .first()
-      .scrollIntoView({
-        force: true,
-      });
-    cy.wait(2000);
-
-    //Stepper
-    cy.get(".v-stepper__step:nth-child(1) > .v-stepper__step__step")
-      .eq(0)
-      .click({
-        force: true,
-      });
-
-    cy.wait(2000);
-    // //Click on cross of userSelector to add new value
-    // cy.get(".v-input__append-inner > .v-input__icon--clear > .v-icon")
-    //   .eq(2)
-    //   .click();
+    // //Stepper
+    // cy.get("[name" + "=" + this.DataType2.StepperName + "]")
+    //   .first()
+    //   .scrollIntoView({
+    //     force: true,
+    //   });
     // cy.wait(2000);
+
+    // //Stepper
+    // cy.get(".v-stepper__step:nth-child(1) > .v-stepper__step__step")
+    //   .eq(0)
+    //   .click({
+    //     force: true,
+    //   });
+
+    //Time
+    cy.get(".v-input__append-inner > .v-input__icon--clear > .v-icon")
+      .eq(0)
+      .click();
+    cy.wait(2000);
+
+    //Date
+    cy.get(
+      "div.v-input.no-bottom.date-picker-text-field.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-text-field--placeholder > div.v-input__control > div.v-input__slot > div.v-input__append-inner"
+    ).click();
+    cy.wait(2000);
+
+    cy.wait(2000);
+    //Click on cross of userSelector to add new value
+    cy.get(
+      "span > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(3) > div"
+    )
+      .eq(0)
+      .click();
+    cy.wait(2000);
     // //UserSelector(Values coming form KitItemValues Json File)
     // //Click on to open UserSelector Pop up
     // cy.get(".searchIcon").eq(2).click({ force: true });
@@ -149,12 +164,14 @@ describe("CommonPlan Test Case for Related KitItem", function () {
     // cy.contains(this.CPRelKitItemData.UserSelectorName).click({ force: true });
     // cy.wait(3000);
 
-    //ContactSelector(Values coming form KitItemValues Json File)
-    //Click on to open ContactSelector Pop up
-    //Click on cross of ContactSelector to add new value
-    // cy.get(".v-input__append-inner > .v-input__icon--clear > .v-icon")
-    //   .eq(3)
-    //   .click();
+    // ContactSelector(Values coming form KitItemValues Json File)
+    // Click on to open ContactSelector Pop up
+    // Click on cross of ContactSelector to add new value
+    cy.get(
+      "span > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(3) > div"
+    )
+      .eq(1)
+      .click();
     // cy.wait(2000);
     // cy.get(".searchIcon").eq(3).click({ force: true });
 
@@ -169,84 +186,65 @@ describe("CommonPlan Test Case for Related KitItem", function () {
       force: true,
     });
 
-    //Icon
-    //Click on + icon of ICON Element
-    cy.wait(2000);
-    cy.get(".v-btn__content > img").click({
-      force: true,
-    });
+    // //Icon
+    // //Click on + icon of ICON Element
+    // cy.wait(2000);
+    // cy.get(".v-btn__content > img").click({
+    //   force: true,
+    // });
 
-    //Click on Icon Tittle and  select Icon logo
-    //Give numeric no from 1 in child(1,2,3...)
-    cy.get(".thumb-container:nth-child(4) .selected-icon").click({
-      force: true,
-    });
-    cy.wait(2000);
-    //Icon Save
-    cy.get(".button-pop-ups").click({ force: true });
-    cy.wait(2000);
+    // //Click on Icon Tittle and  select Icon logo
+    // //Give numeric no from 1 in child(1,2,3...)
+    // cy.get(".thumb-container:nth-child(4) .selected-icon").click({
+    //   force: true,
+    // });
+    // cy.wait(2000);
+    // //Icon Save
+    // cy.get(".button-pop-ups").click({ force: true });
+    // cy.wait(2000);
 
-    //IcozSize
-    cy.get(
-      "div.row.wrapper-kit-control.align-center > div > div.fill-height.border-right.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
-    )
-      .eq(0)
-      .click({ force: true });
-    cy.contains(this.CPRelKitItemData.ExtraLargeiconSize).click({
-      force: true,
-    });
-    cy.wait(2000);
-    //IconLable
-    cy.get('[placeholder="Label"]')
-      .eq(0)
-      .clear()
-      .type(this.CPRelKitItemData.IconLabel);
+    // //IcozSize
+    // cy.get(
+    //   "div.row.wrapper-kit-control.align-center > div > div.fill-height.border-right.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    // )
+    //   .eq(0)
+    //   .click({ force: true });
+    // cy.contains(this.CPRelKitItemData.ExtraLargeiconSize).click({
+    //   force: true,
+    // });
+    // cy.wait(2000);
+    // //IconLable
+    // cy.get('[placeholder="Label"]')
+    //   .eq(0)
+    //   .clear()
+    //   .type(this.CPRelKitItemData.IconLabel);
 
     cy.wait(3000);
     //child 1 for 1st value &&&& child 2 for 2nd value-child 3 for 3rd value......
     //"These are the index value of div child":"use according to select inspection value",
-    cy.get(
-      "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.CPRelKitItemData.InspectionValue3 +
-        ") > span"
-    ).click({ force: true });
+    // cy.get(
+    //   "div.v-slide-group__wrapper > div > span:nth-child(" +
+    //     this.CPRelKitItemData.InspectionValue3 +
+    //     ") > span"
+    // ).click({ force: true });
+    // cy.log("Inspection Value has been selected");
 
     cy.wait(3000);
     //Assigning
-    //Click on to open Assigning Pop up-Also working
-    //cy.get(".searchIcon > .inline-svg > path").last().click({ force: true });
+    //Click on cross icon to select new Assigning value
+    cy.get(
+      "span > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(3) > div"
+    )
+      .eq(2)
+      .click();
 
-    //Click on to open Assigning Pop up
-    cy.get(".searchIcon").eq(4).click({ force: true });
+    // //Click on to open Assigning Pop up
+    // cy.get(".searchIcon").eq(4).click({ force: true });
+    // cy.wait(3000);
+    // //Click on to select the Assigning
+    // //cy.get(".list-item-search").first().click({ force: true });
+    // cy.contains(this.CPRelKitItemData.AssigningName).click({ force: true });
     cy.wait(3000);
-    //Click on to select the Assigning
-    //cy.get(".list-item-search").first().click({ force: true });
-    cy.contains(this.CPRelKitItemData.AssigningName).click({ force: true });
-    cy.wait(3000);
-    //Click on to save
-    cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
-    cy.wait(4000);
-  });
-
-  it("Open Related KitItem in CommonPlan(LayOut) ", function () {
-    cy.get(".group:nth-child(1) > .group-label").click();
-    cy.wait(2000);
-    cy.get(".group:nth-child(1) > .group-label").click();
-    cy.wait(2000);
-    cy.get(".group:nth-child(3) > .group-label").click();
-    cy.wait(2000);
-    cy.get(".group:nth-child(3) > .group-label").click();
-    cy.wait(2000);
-    cy.get(".group:nth-child(5) > .group-label").click();
-    cy.wait(2000);
-    cy.get(".group:nth-child(5) > .group-label").click();
-    cy.wait(2000);
-
-    cy.get(".group:nth-child(1) > .group-label").click({ force: true });
-    cy.wait(2000);
-    //DoubleClick on the related Item
-    cy.get('[data-tooltip="99Acres"]').dblclick({ force: true });
-    cy.wait(2000);
   });
 
   it("Details View Form Edit", function () {
