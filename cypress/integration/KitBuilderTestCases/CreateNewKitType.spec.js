@@ -4,8 +4,10 @@ import KitBuilderPage from "../PageObject/KitBuilderPage";
 describe("Create New Kit type ", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
-    cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
-    lp.EnterEmail("kstanley@commonareas.work.dev");
+    // cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
+    // lp.EnterEmail("kstanley@commonareas.work.dev");
+    cy.visit("https://marketplaceproperties.ca-build.com/Public/Login?ReturnUrl=%2F");
+    lp.EnterEmail("jcrue@marketplaceproperties.com.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.wait(10000);
@@ -21,15 +23,14 @@ describe("Create New Kit type ", function () {
     });
   });
 
-  it("Create A New Kit Type", function() {
+  it.only("Create A New Kit Type", function() {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.KitBuilderUrl();
-    // kb.AdminUrl();
-    // cy.wait(5000);
-    // kb.ClickOnKitBuilder();
+   // kb.KitBuilderUrl();
+   cy.visit('https://marketplaceproperties.ca-build.com/ClientAdmin/KitBuilder#/')
+
     cy.log('Here we are on Kit Builder')
     kb.ClickOnCreateNewKit();
     cy.wait(5000);
@@ -43,10 +44,10 @@ describe("Create New Kit type ", function () {
     cy.log('New Kit Type has been Created')
   });
 
-  it("New View Form", function () {
+  it.only("New View Form", function () {
     cy.wait(5000);
     const kb = new KitBuilderPage();
-    cy.contains(this.KitTypeName.KitName2).click({ force: true });
+    cy.contains(this.KitTypeName.KitName3).click({ force: true });
     cy.wait(3000);
 
     cy.contains("Form Views").click({ force: true });
@@ -64,7 +65,7 @@ describe("Create New Kit type ", function () {
   });
 
 
-  it("Edit View Form", function () {
+  it.only("Edit View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On Edit Form
@@ -142,7 +143,7 @@ describe("Create New Kit type ", function () {
     cy.log('CommonPlan View Form has been Created')
   });
 
-  it("RelatedNew View Form", function () {
+  it.only("RelatedNew View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On RelatedNew Form
@@ -155,7 +156,7 @@ describe("Create New Kit type ", function () {
     cy.log('RelatedNew View Form has been Created')
   });
 
-  it("RelatedEdit View Form", function () {
+  it.only("RelatedEdit View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On RelatedEdit Form
@@ -170,7 +171,7 @@ describe("Create New Kit type ", function () {
 
   });
 
-  it("List Views(TableList,SearchList,TimelineList)", function () {
+  it.only("List Views(TableList,SearchList,TimelineList)", function () {
 
     const kb = new KitBuilderPage();
     // cy.title().should("eq", "Common Areas");

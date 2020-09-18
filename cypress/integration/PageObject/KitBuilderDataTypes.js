@@ -1317,12 +1317,7 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(Stepper);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(StepperName);
+    
 
     //Stepper customize name
     //Click on +
@@ -1736,40 +1731,20 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(RelationName);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(OTOAPIName);
-
+  
     //Click on DropDown to Select Kit type to Relate with 1-One Relation
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(4) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    cy.contains(KitToBeRelate).click({ force: true });
-    //cy.wait(5000)
+    //cy.contains(KitToBeRelate).click({ force: true });
+    cy.wait(5000)
 
     //Select 1-One Realtion
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(4) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
     ).click({ force: true });
-
-    //Related API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(OTORelatedAPIName);
-
-    // //Reverse API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(OTOReverseEleAPIName);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -1788,36 +1763,38 @@ class KitBuilderDataTypes {
       force: true,
     });
 
-    //CreateView(Related New)
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
-    cy.wait(1000);
+    cy.wait(10000)
 
-    //DetailView(Related Edit)
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
-    cy.wait(1000);
+    // //CreateView(Related New)
+    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
+    // cy.wait(1000);
 
-    //MapView
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
-    cy.wait(1000);
+    // //DetailView(Related Edit)
+    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
+    // cy.wait(1000);
 
-    //SearchView
-    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
-    cy.wait(1000);
+    // //MapView
+    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
+    // cy.wait(1000);
+
+    // //SearchView
+    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
+    // cy.wait(1000);
 
     //Click on Configure
     cy.get(".v-size--small:nth-child(1)").click();
 
-    cy.wait(5000);
+     cy.wait(5000);
 
-    //Select the Elements for 1-N Realtion
-    cy.contains(ElementToBeRelate).click({ force: true });
-    cy.log("OneToOne's Related kitType Element has been Selected");
-    //Save Relation
-    cy.get(".v-btn--text:nth-child(2)").click();
+    // //Select the Elements for 1-N Realtion
+    // cy.contains(ElementToBeRelate).click({ force: true });
+    // cy.log("OneToOne's Related kitType Element has been Selected");
+    // //Save Relation
+    // cy.get(".v-btn--text:nth-child(2)").click();
     cy.log(
       "OneToOne Relation Data Type has been created with its Configuration"
     );
@@ -1865,12 +1842,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(RelationName);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(APIName);
 
     //Click on DropDown to Select Kit type to Relate with 1-N Relation
     cy.get(
@@ -1878,28 +1849,14 @@ class KitBuilderDataTypes {
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    cy.contains(KitToBeRelated).click({ force: true });
-    //cy.wait(5000)
+    //cy.contains(KitToBeRelated).click({ force: true });
+    cy.wait(5000)
 
     //Select 1-N Realtion
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(4) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
     ).click({ force: true });
     cy.contains("More Than One").click({ force: true });
-
-    //Related API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(RelatedAPIName);
-
-    // //ReverseEleAPIName
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(ReverseEleAPIName);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
@@ -1918,25 +1875,25 @@ class KitBuilderDataTypes {
       force: true,
     });
 
-    //CreateView(Related New)
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
-    cy.wait(1000);
+    // //CreateView(Related New)
+    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
+    // cy.wait(1000);
 
-    //DetailView(Related Edit)
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
-    cy.wait(1000);
+    // //DetailView(Related Edit)
+    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
+    // cy.wait(1000);
 
-    //MapView
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
-    cy.wait(1000);
+    // //MapView
+    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
+    // cy.wait(1000);
 
-    //SearchView
-    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
-    cy.wait(1000);
+    // //SearchView
+    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
+    // cy.wait(1000);
 
     //Table View
     cy.get(".gjs-trt-trait__wrp:nth-child(21) select").select("Select View");
@@ -2096,41 +2053,20 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(SquareCardName);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(SQAPIName);
-
     //Click on DropDown to Select Kit type to Relate with Square Card Relation
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(4) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    cy.contains(CardKitToBeRelated).click({ force: true });
-    //cy.wait(5000)
+   // cy.contains(CardKitToBeRelated).click({ force: true });
+    cy.wait(5000)
 
     //Select Square Card Realtion
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(4) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
     ).click({ force: true });
     cy.contains("More Than One").click({ force: true });
-
-    //Related API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pr-2.col.col-6 > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(SQRelatedAPIName);
-
-    // //Reverse API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(5) > div.pa-0.pl-1.col.col-6 > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(SQReverseEleAPIName);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
@@ -2149,29 +2085,29 @@ class KitBuilderDataTypes {
       force: true,
     });
 
-    //CreateView(Related New)
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
-    //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
-    cy.wait(1000);
+    // //CreateView(Related New)
+    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
+    // //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
+    // cy.wait(1000);
 
-    //DetailView(Related Edit)
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
-    //cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
-    cy.wait(1000);
+    // //DetailView(Related Edit)
+    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
+    // //cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
+    // cy.wait(1000);
 
-    //MapView
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
-    // cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
-    cy.wait(1000);
+    // //MapView
+    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
+    // // cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
+    // cy.wait(1000);
 
-    //SearchView
-    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
-    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
-    //cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
-    cy.wait(1000);
+    // //SearchView
+    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
+    // //cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
+    // cy.wait(1000);
 
     //Table View
     cy.get(".gjs-trt-trait__wrp:nth-child(21) select").select("Select View");
