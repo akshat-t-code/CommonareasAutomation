@@ -30,13 +30,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(UrlName);
 
-    //API Name Change feature
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(UrlName);
-
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
@@ -70,13 +63,6 @@ class KitBuilderDataTypes {
     )
       .click({ force: true })
       .type(TextName);
-
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(TextName);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -114,13 +100,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(FileName);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(FileName);
-
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
@@ -154,13 +133,6 @@ class KitBuilderDataTypes {
     )
       .click({ force: true })
       .type(Telephone);
-
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(Telephone);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -196,13 +168,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(TextAera);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(TextAera);
-
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
@@ -236,13 +201,6 @@ class KitBuilderDataTypes {
     )
       .click({ force: true })
       .type(Slider);
-
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(Slider);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -278,13 +236,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(Currency);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(Currency);
-
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
@@ -318,13 +269,6 @@ class KitBuilderDataTypes {
     )
       .click({ force: true })
       .type(Measure);
-
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(Measure);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -360,13 +304,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(Email);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(Email);
-
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
@@ -401,13 +338,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(Address);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(Address);
-
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
@@ -441,13 +371,6 @@ class KitBuilderDataTypes {
     )
       .click({ force: true })
       .type(Number);
-
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(Number);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -496,13 +419,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(Time);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(Time);
-
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
@@ -537,13 +453,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(Date);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(Date);
-
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
     //Assertion to close
@@ -577,13 +486,6 @@ class KitBuilderDataTypes {
     )
       .click({ force: true })
       .type(Toggle);
-
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(Toggle);
 
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -626,13 +528,6 @@ class KitBuilderDataTypes {
     )
       .click({ force: true })
       .type(SelectList);
-
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(SelectListName);
 
     //SelectList customize name
     //Click on +
@@ -815,13 +710,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(RadioSelect);
 
-    //API Name
-    // cy.get(
-    //   "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(3) > div > div > div > div.v-input__slot > div"
-    // )
-    //   .click({ force: true })
-    //   .type(RadioSelectName);
-
     //RadioSelect customize name
     //Click on +
     cy.wait(3000);
@@ -861,11 +749,12 @@ class KitBuilderDataTypes {
     )
       .click()
       .type(Value1);
-    //Icon
+    //Icon dropdown
     cy.get(
       "#result > div > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div > div"
     ).click();
-    cy.get(".v-list-item:nth-child(1) .v-list-item__title").click();
+    //Select Icon
+    cy.get(".v-list-item:nth-child(6) .v-list-item__title").click();
 
     cy.wait(2000);
 
@@ -885,11 +774,12 @@ class KitBuilderDataTypes {
     )
       .click()
       .type(Value2);
-    //Icon
+    //Icon DropDown
     cy.get(
       "#result > div:nth-child(2) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div > div"
     ).click();
-    cy.get(".v-list-item:nth-child(2) .v-list-item__title").first().click();
+    //Select Icon
+    cy.get(".v-list-item:nth-child(7) .v-list-item__title").first().click();
 
     cy.wait(2000);
 
@@ -909,11 +799,12 @@ class KitBuilderDataTypes {
     )
       .click()
       .type(Value3);
-    //Icon
+    //Icon Drop Down
     cy.get(
       "#result > div:nth-child(3) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div > div"
     ).click();
-    cy.get(".v-list-item:nth-child(3) .v-list-item__title").first().click();
+    //Select Icon
+    cy.get(".v-list-item:nth-child(8) .v-list-item__title").first().click();
     cy.wait(2000);
 
     //Click on + to Add 4th Value to RadioSelect
@@ -932,11 +823,12 @@ class KitBuilderDataTypes {
     )
       .click()
       .type(Value4);
-    //Icon
+    //Icon DropDown
     cy.get(
       "#result > div:nth-child(4) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div > div"
     ).click();
-    cy.get(".v-list-item:nth-child(4) .v-list-item__title").first().click();
+    //Select Icon
+    cy.get(".v-list-item:nth-child(9) .v-list-item__title").first().click();
     cy.wait(2000);
 
     //Click on + to Add 5th Value to RadioSelect
@@ -955,11 +847,12 @@ class KitBuilderDataTypes {
     )
       .click()
       .type(Value5);
-    //Icon
+    //Icon Drop Down
     cy.get(
       "#result > div:nth-child(5) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div > div"
     ).click();
-    cy.get(".v-list-item:nth-child(5) .v-list-item__title").first().click();
+    //Select Icon
+    cy.get(".v-list-item:nth-child(10) .v-list-item__title").first().click();
 
     //Save RadioSelect
     cy.get(".col-2 .v-btn__content").click();
@@ -1050,11 +943,12 @@ class KitBuilderDataTypes {
     )
       .click()
       .type(Value1);
-    //Icon
+    //Icon DropDown
     cy.get(
       "#result > div > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div > div"
     ).click();
-    cy.get(".v-list-item:nth-child(1) .v-list-item__title").click();
+    //Select Icon
+    cy.get(".v-list-item:nth-child(11) .v-list-item__title").click();
 
     cy.wait(2000);
 
@@ -1074,11 +968,12 @@ class KitBuilderDataTypes {
     )
       .click()
       .type(Value2);
-    //Icon
+    //Icon Dropdown
     cy.get(
       "#result > div:nth-child(2) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div > div"
     ).click();
-    cy.get(".v-list-item:nth-child(2) .v-list-item__title").first().click();
+    //Select Icon
+    cy.get(".v-list-item:nth-child(12) .v-list-item__title").first().click();
 
     cy.wait(2000);
 
@@ -1102,7 +997,8 @@ class KitBuilderDataTypes {
     cy.get(
       "#result > div:nth-child(3) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div > div"
     ).click();
-    cy.get(".v-list-item:nth-child(3) .v-list-item__title").first().click();
+    //Select Icon
+    cy.get(".v-list-item:nth-child(13) .v-list-item__title").first().click();
     cy.wait(2000);
 
     //Click on + to Add 4th Value to CheckboxSelect
@@ -1125,7 +1021,8 @@ class KitBuilderDataTypes {
     cy.get(
       "#result > div:nth-child(4) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div > div"
     ).click();
-    cy.get(".v-list-item:nth-child(4) .v-list-item__title").first().click();
+    //Select Icon
+    cy.get(".v-list-item:nth-child(14) .v-list-item__title").first().click();
     cy.wait(2000);
 
     //Click on + to Add 5th Value to CheckboxSelect
@@ -1148,7 +1045,8 @@ class KitBuilderDataTypes {
     cy.get(
       "#result > div:nth-child(5) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div > div"
     ).click();
-    cy.get(".v-list-item:nth-child(5) .v-list-item__title").first().click();
+    //Select Icon
+    cy.get(".v-list-item:nth-child(15) .v-list-item__title").first().click();
 
     //Save RadioSelect
     cy.get(".col-2 .v-btn__content").click();
@@ -1316,8 +1214,6 @@ class KitBuilderDataTypes {
     )
       .click({ force: true })
       .type(Stepper);
-
-    
 
     //Stepper customize name
     //Click on +
@@ -1731,7 +1627,6 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(RelationName);
 
-  
     //Click on DropDown to Select Kit type to Relate with 1-One Relation
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(4) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
@@ -1739,7 +1634,7 @@ class KitBuilderDataTypes {
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
     //cy.contains(KitToBeRelate).click({ force: true });
-    cy.wait(5000)
+    cy.wait(5000);
 
     //Select 1-One Realtion
     cy.get(
@@ -1763,7 +1658,7 @@ class KitBuilderDataTypes {
       force: true,
     });
 
-    cy.wait(10000)
+    cy.wait(10000);
 
     // //CreateView(Related New)
     // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
@@ -1788,7 +1683,7 @@ class KitBuilderDataTypes {
     //Click on Configure
     cy.get(".v-size--small:nth-child(1)").click();
 
-     cy.wait(5000);
+    cy.wait(5000);
 
     // //Select the Elements for 1-N Realtion
     // cy.contains(ElementToBeRelate).click({ force: true });
@@ -1842,15 +1737,14 @@ class KitBuilderDataTypes {
       .click({ force: true })
       .type(RelationName);
 
-
     //Click on DropDown to Select Kit type to Relate with 1-N Relation
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(4) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    //cy.contains(KitToBeRelated).click({ force: true });
-    cy.wait(5000)
+    cy.contains(KitToBeRelated).click({ force: true });
+    cy.wait(3000);
 
     //Select 1-N Realtion
     cy.get(
@@ -1875,25 +1769,25 @@ class KitBuilderDataTypes {
       force: true,
     });
 
-    // //CreateView(Related New)
-    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
-    // cy.wait(1000);
+    //CreateView(Related New)
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
+    cy.wait(1000);
 
-    // //DetailView(Related Edit)
-    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
-    // cy.wait(1000);
+    //DetailView(Related Edit)
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
+    cy.wait(1000);
 
-    // //MapView
-    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
-    // cy.wait(1000);
+    //MapView
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
+    cy.wait(1000);
 
-    // //SearchView
-    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
-    // cy.wait(1000);
+    //SearchView
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
+    cy.wait(1000);
 
     //Table View
     cy.get(".gjs-trt-trait__wrp:nth-child(21) select").select("Select View");
@@ -2059,8 +1953,8 @@ class KitBuilderDataTypes {
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-   // cy.contains(CardKitToBeRelated).click({ force: true });
-    cy.wait(5000)
+    cy.contains(CardKitToBeRelated).click({ force: true });
+    cy.wait(5000);
 
     //Select Square Card Realtion
     cy.get(
@@ -2085,29 +1979,29 @@ class KitBuilderDataTypes {
       force: true,
     });
 
-    // //CreateView(Related New)
-    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
-    // //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
-    // cy.wait(1000);
+    //CreateView(Related New)
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
+    //cy.get('.gjs-trt-trait__wrp:nth-child(16) select').select('6079df7a-5f2a-4361-a5b7-fac092b04537');
+    cy.wait(1000);
 
-    // //DetailView(Related Edit)
-    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
-    // //cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
-    // cy.wait(1000);
+    //DetailView(Related Edit)
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
+    //cy.get('.gjs-trt-trait__wrp:nth-child(17) select').select('26df3dc5-f483-4857-8c85-4d61bd0d3b8b');
+    cy.wait(1000);
 
-    // //MapView
-    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
-    // // cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
-    // cy.wait(1000);
+    //MapView
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
+    // cy.get('.gjs-trt-trait__wrp:nth-child(18) select').select('7440b850-515f-40ad-bfd8-f66b53570da1');
+    cy.wait(1000);
 
-    // //SearchView
-    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
-    // //cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
-    // cy.wait(1000);
+    //SearchView
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
+    //cy.get('.gjs-trt-trait__wrp:nth-child(19) select').select('9d2f7838-0074-459c-b3e3-dd35a035118c');
+    cy.wait(1000);
 
     //Table View
     cy.get(".gjs-trt-trait__wrp:nth-child(21) select").select("Select View");
@@ -2364,6 +2258,119 @@ class KitBuilderDataTypes {
 
     //Enter Url
     cy.get(".gjs-trt-trait__wrp:nth-child(15) input").click().type(EnterUrl);
+
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+  }
+
+  CreatedBy(CreatedByName) {
+    //Click on Button
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-createdby"]')
+      .click({ force: true });
+    cy.wait(3000);
+
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input")
+      .click()
+      .type(CreatedByName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    cy.wait(2000);
+
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+  }
+
+  ModifiedBy(ModifiedByName) {
+    //Click on Button
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-modifiedby"]')
+      .click({ force: true });
+    cy.wait(3000);
+
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input")
+      .click()
+      .type(ModifiedByName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    cy.wait(2000);
+
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+  }
+
+  CreatedOn(CreatedOnName) {
+    //Click on Button
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-createdon"]')
+      .click({ force: true });
+    cy.wait(3000);
+
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input")
+      .click()
+      .type(CreatedOnName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    cy.wait(2000);
+
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+  }
+
+  ModifiedOn(ModifiedOnName) {
+    //Click on Button
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-modifiedon"]')
+      .click({ force: true });
+    cy.wait(3000);
+
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input")
+      .click()
+      .type(ModifiedOnName);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    cy.wait(2000);
+
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+  }
+
+  KitItemId(KitItemId) {
+    //Click on Button
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-itemidforaccount"]')
+      .click({ force: true });
+    cy.wait(3000);
+
+    //Click on Lable
+    cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(KitItemId);
+    //Click on Name
+    cy.get(".gjs-trt-trait__wrp:nth-child(2) input").click();
+    cy.wait(2000);
 
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click({ force: true });

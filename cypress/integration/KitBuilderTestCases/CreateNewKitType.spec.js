@@ -4,10 +4,10 @@ import KitBuilderPage from "../PageObject/KitBuilderPage";
 describe("Create New Kit type ", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
-    // cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
-    // lp.EnterEmail("kstanley@commonareas.work.dev");
-    cy.visit("https://marketplaceproperties.ca-build.com/Public/Login?ReturnUrl=%2F");
-    lp.EnterEmail("jcrue@marketplaceproperties.com.dev");
+    cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
+    lp.EnterEmail("kstanley@commonareas.work.dev");
+    //cy.visit("https://marketplaceproperties.ca-build.com/Public/Login?ReturnUrl=%2F");
+    //lp.EnterEmail("jcrue@marketplaceproperties.com.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.wait(10000);
@@ -29,7 +29,7 @@ describe("Create New Kit type ", function () {
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
    // kb.KitBuilderUrl();
-   cy.visit('https://marketplaceproperties.ca-build.com/ClientAdmin/KitBuilder#/')
+   cy.visit('https://serviceproviders.ca-build.com/ClientAdmin/KitBuilder#/')
 
     cy.log('Here we are on Kit Builder')
     kb.ClickOnCreateNewKit();

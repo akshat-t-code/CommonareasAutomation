@@ -19,19 +19,19 @@
 
     "SelectList":"SelectList",
     "SelectListName":"SelectListName",
-    "SelectListValue1":"SelectList1",
-    "SelectListValue2":"SelectList2",
-    "SelectListValue3":"SelectList3",
-    "SelectListValue4":"SelectList4",
-    "SelectListValue5":"SelectList5",
+    "SelectListValue1":"ACB",
+    "SelectListValue2":"BCA",
+    "SelectListValue3":"KKR",
+    "SelectListValue4":"MMN",
+    "SelectListValue5":"VVIP",
     
     "RadioSelect":"RadioSelect",
-    "RadioSelectName":"RadioSelectName",
-    "RadioSelectValue1":"RadioSelect1",
-    "RadioSelectValue2":"RadioSelect2",
-    "RadioSelectValue3":"RadioSelect3",
-    "RadioSelectValue4":"RadioSelect4",
-    "RadioSelectValue5":"RadioSelect5",
+    "RadioSelectName":"IPLName",
+    "RadioSelectValue1":"KKR",
+    "RadioSelectValue2":"MI",
+    "RadioSelectValue3":"CSK",
+    "RadioSelectValue4":"RCB",
+    "RadioSelectValue5":"RR",
 
 
     "CheckboxSelect":"CheckboxSelect",
@@ -49,11 +49,11 @@
 
     "Stepper":"Stepper",
     "StepperName":"StepperName",
-    "StepperValue1":"Stepper1",
-    "StepperValue2":"Stepper2",
-    "StepperValue3":"Stepper3",
-    "StepperValue4":"Stepper4",
-    "StepperValue5":"Stepper5",
+    "StepperValue1":"Moto",
+    "StepperValue2":"Jio",
+    "StepperValue3":"RealMe",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"MArt",
 
     "Icon":"Icon",
     
@@ -63,15 +63,15 @@
     "Icontitle":"title",
 
     "Inspection":"Inspection",
-    "InspectionName":"InspectionName",
-    "InspectionValue1":"Inspection1",
-    "InspectionValue2":"Inspection2",
-    "InspectionValue3":"Inspection3",
-    "InspectionValue4":"Inspection4",
-    "InspectionValue5":"Inspection5",
+    "InspectionName":"TechName",
+    "InspectionValue1":"Java",
+    "InspectionValue2":"C++",
+    "InspectionValue3":"Ruby",
+    "InspectionValue4":"Python",
+    "InspectionValue5":".net",
 
-    "OneToOneRelation":"WorkRequest",
-    "KitToBeRelate":"AkshatKitDemo",
+    "OneToOneRelation":"OneToOne",
+    "KitToBeRelate":"AkshatValidationKit",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
     "OneToOneMapView":"MapView",
@@ -79,13 +79,13 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"WorkRequestNRelation",
-    "KitToBeRelated":"PropertyBuilder2",
+    "OneToManyRelation":"OneToNRelation",
+    "KitToBeRelated":"AkshatValidationKit",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
     "OneToManySearchView":"SearchView",
-    "RelatedTableView":"WorkRequestTableViwe",
+    "RelatedTableView":"TableView",
     "RelatedEle_1":"Url",
     "RelatedEle_2":"Text",
     "RelatedEle_3":"Telephone",
@@ -93,13 +93,13 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"WorkRequestCardR",
-    "CardKitToBeRelated":"PropertyBuilder2",
+    "SquareCardName":"SquareCardRel",
+    "CardKitToBeRelated":"AkshatValidationKit",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",
     "CardSearchView":"SearchView",
-    "SquareCardTableView":"WorkRequestCardViwe",
+    "SquareCardTableView":"PM table View",
     "RelateEle_1":"Url",
     "RelateEle_2":"Text",
     "RelateEle_3":"Telephone",
@@ -111,10 +111,16 @@
     "RVName":"Reactive Vriable",
 
     "TextBlockName":"TextBlockName",
-    "TextBlockData":"TextBlockName for the Market Values",
+    "TextBlockData":"TextBlock for the new Market Values",
     "Button":"Button",
     "LinkName":"Link",
-    "EnterUrl":"https://www.Ca.com"
+    "EnterUrl":"https://www.market.com",
+
+    "CreatedBy":"Created By",
+    "ModifiedBy":"Modified By",
+    "CreatedOn":"Created On",
+    "ModifiedOn":"Modified On",
+    "KitItemId":"KitItem Id"
 
    
 
