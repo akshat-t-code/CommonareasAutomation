@@ -27,12 +27,14 @@ describe("Activation Mailinator Account for New Sign up User", function () {
     cy.url().should("include", "mailinator.com");
     sp.EnterMailinatorEmail(this.Credentials.UserEmail);
     cy.log("User Email has been Entered");
-   // cy.eyesCheckWindow("User Mail");
+    // cy.eyesCheckWindow("User Mail");
     //Click on Go
     sp.Go();
     cy.wait(3000);
     //cy.eyesCheckWindow("Common Aera Mail in the inbox");
-    cy.contains("Common Areas - Account Activation").click();
+    // cy.contains("Common Areas - Account Activation").click();
+    cy.contains("Welcome to Commonareas - Verify Email").click();
+
     //debugger
     cy.wait(5000);
     //cy.eyesCheckWindow();
@@ -40,7 +42,6 @@ describe("Activation Mailinator Account for New Sign up User", function () {
     sp.ActiveAccount();
     cy.wait(5000);
     cy.log("New user Account has been verified successfully on Mailinator");
-    
   });
   // this.afterAll(function () {
   //   cy.eyesClose();

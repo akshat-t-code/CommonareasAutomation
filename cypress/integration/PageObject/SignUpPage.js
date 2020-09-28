@@ -7,8 +7,8 @@ class SignUpPage {
     cy.visit("https://app.ca-build.com/Public/Login?ReturnUrl=%2F");
   }
 
-  SignUpbtn() {
-    const sb = cy.get(".button-sign-up > a");
+  SignUp() {
+    const sb = cy.contains("Start a free account");
     sb.click();
   }
 
@@ -29,9 +29,8 @@ class SignUpPage {
 
   ActiveAccount() {
     cy.get("#msg_body").then(($iframe) => {
-      const $body = $iframe.contents().find("body");
-
-      cy.wrap($body).contains("Activate Account").click();
+      const $a = $iframe.contents().find("a");
+      cy.wrap($a).contains("Activate Account").click();
     });
   }
 }

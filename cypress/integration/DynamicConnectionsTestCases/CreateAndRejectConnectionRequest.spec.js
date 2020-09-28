@@ -54,7 +54,7 @@ describe("Login for new User than Create A new Connection and Reject the Request
     });
   });
 
-  it("Creating a new Connection ", function () {
+  it.only("Creating a new Connection ", function () {
     const lp = new LoginPage();
     lp.visit();
     lp.EnterEmail("kstanley@commonareas.work.dev");
@@ -88,7 +88,7 @@ describe("Login for new User than Create A new Connection and Reject the Request
     cy.wait(10000);
   });
 
-  it("Login Again into the AppLication for Reject the Request", function () {
+  it.only("Login Again into the AppLication for Reject the Request", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();

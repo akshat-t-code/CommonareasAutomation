@@ -27,7 +27,7 @@ describe("Sign up for a New User", function () {
         Password: "1234567Aa",
       }
     );
-    
+
     cy.log("Data has been write to json");
     cy.log(UserEmailID);
     cy.log(UserFirstName);
@@ -41,6 +41,10 @@ describe("Sign up for a New User", function () {
       //   appName: "Common Aera UI Automation",
       //   testName: "Sign Up for a new User",
       // });
+
+      cy.fixture("SignUpTestData/SignUpTestData").then(function (SignUpData) {
+        this.SignUPData = SignUpData;
+      });
 
       //debugger;
       cy.fixture("ConnectionsDynamicTestData/ConnectionUserCredentials").then(
@@ -62,14 +66,16 @@ describe("Sign up for a New User", function () {
     // cy.eyesCheckWindow()
 
     cy.url().should("include", "app.ca-test.com/Public/Login?ReturnUrl=%2F");
-    sp.SignUpbtn();
+    sp.SignUp();
     cy.url().should("include", "Register/Create");
     //cy.eyesCheckWindow('Sign Up Page')
     //Sign Up detalis Custom Commands coming from command.js
     cy.SignUpUserFirstName(this.Credentials.Fname);
     cy.SignUpUserLastName(this.Credentials.Lname);
     cy.SignUpUserEmail(this.Credentials.UserEmail);
-    cy.ConfirmEmailAddress(this.Credentials.UserEmail);
+    cy.CompanyName(this.SignUPData.CompanyName);
+
+    //cy.ConfirmEmailAddress(this.Credentials.UserEmail);
     cy.SignUpUserPassword(this.Credentials.Password);
     cy.ConfirmPassword(this.Credentials.Password);
 
@@ -81,20 +87,22 @@ describe("Sign up for a New User", function () {
       '[name="ContactInformation.CompanyType"]'
     ).select("Facility Management", { force: true });
     //cy.eyesCheckWindow("Getting User Details");
+    cy.wait(2000);
+
+    //Click on Agree Terms and conditions
+    cy.get("#AgreeTermsAndConditions").click({ force: true });
+
     //Click on Submit to Create the user
-    cy.get(".icon:nth-child(1)").click();
+    cy.get("#submitButton").click();
+
     cy.wait(5000);
     cy.log("New User has been signed up successfully");
     //Assertion
-    cy.get(".login-message").should(
-      "have.text",
+    cy.contains(
       "An email has been sent to you to verify the email address you provided with a link to activate your account."
-    );
+    ).should("be.visible");
     // cy.eyesCheckWindow("New user Signed Up");
     cy.wait(5000);
-    cy.get(".icon").click();
-    cy.url().should("include", "/Public/Login");
-    cy.wait(3000);
     //cy.eyesCheckWindow();
   });
 

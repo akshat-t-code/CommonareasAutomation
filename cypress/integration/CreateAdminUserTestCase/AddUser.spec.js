@@ -103,15 +103,20 @@ describe("Create user from admin and login with the new user", function () {
     cy.UserMobilePhone(this.Credentials.UserPhoneNo);
     //cy.eyesCheckWindow("User Details");
 
+    cy.get('.btnSaveDetails').scrollIntoView()
+    .should('be.visible')
+
+
+
     cy.UserAddress1(this.data.UserAddress1);
     cy.UserAddress2(this.data.UserAddress2);
     cy.UserZipCode(this.data.UserZipCode);
     cy.UserCity(this.data.UserCity);
     //cy.eyesCheckWindow("User Details");
     //Select State
-    cy.get('[name="AccountUser.UserContact.Country"]').select("United States");
+    cy.get('[name="AccountUser.UserContact.Country"]').select(this.data.Country);
     //Select State
-    cy.get('[name="AccountUser.UserContact.State"]').select("Alabama");
+    cy.get('[name="AccountUser.UserContact.State"]').select(this.data.State);
     cy.log("All details has been entered for Admin user");
     //cy.eyesCheckWindow("User Details");
 
@@ -147,13 +152,14 @@ describe("Create user from admin and login with the new user", function () {
     cy.wait(3000);
     //First Time login commands
     cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
-    cy.get("#readTerms").click();
+    cy.get("#readTerms").scrollIntoView()
+    .click({force:true});
     //cy.eyesCheckWindow("New User");
     cy.wait(10000);
     cy.log("New User has been logged in successfully");
     //cy.eyesCheckWindow("Logged In");
     //Assertion
-    cy.title().should("eq", "Common Areas");
+    cy.title().should("eq", "Common Areas App");
     cy.wait(5000);
     //Profile Assertion
     cy.get(
