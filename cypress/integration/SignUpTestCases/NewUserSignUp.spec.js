@@ -66,6 +66,7 @@ describe("Sign up for a New User", function () {
     // cy.eyesCheckWindow()
 
     cy.url().should("include", "app.ca-test.com/Public/Login?ReturnUrl=%2F");
+    //Click on Sign up for free
     sp.SignUp();
     cy.url().should("include", "Register/Create");
     //cy.eyesCheckWindow('Sign Up Page')

@@ -1633,8 +1633,8 @@ class KitBuilderDataTypes {
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    //cy.contains(KitToBeRelate).click({ force: true });
-    cy.wait(5000);
+    cy.contains(KitToBeRelate).click({ force: true });
+    cy.wait(3000);
 
     //Select 1-One Realtion
     cy.get(
@@ -1660,36 +1660,36 @@ class KitBuilderDataTypes {
 
     cy.wait(10000);
 
-    // //CreateView(Related New)
-    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
-    // cy.wait(1000);
+    //CreateView(Related New)
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(17) select").select(RelatedNewName);
+    cy.wait(1000);
 
-    // //DetailView(Related Edit)
-    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
-    // cy.wait(1000);
+    //DetailView(Related Edit)
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(18) select").select(RelatedEditName);
+    cy.wait(1000);
 
-    // //MapView
-    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
-    // cy.wait(1000);
+    //MapView
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(19) select").select(MapViewName);
+    cy.wait(1000);
 
-    // //SearchView
-    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
-    // cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
-    // cy.wait(1000);
+    //SearchView
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select("Select View");
+    cy.get(".gjs-trt-trait__wrp:nth-child(20) select").select(SearchViewName);
+    cy.wait(1000);
 
     //Click on Configure
     cy.get(".v-size--small:nth-child(1)").click();
 
     cy.wait(5000);
 
-    // //Select the Elements for 1-N Realtion
-    // cy.contains(ElementToBeRelate).click({ force: true });
-    // cy.log("OneToOne's Related kitType Element has been Selected");
-    // //Save Relation
-    // cy.get(".v-btn--text:nth-child(2)").click();
+    //Select the Elements for 1-N Realtion
+    cy.contains(ElementToBeRelate).click({ force: true });
+    cy.log("OneToOne's Related kitType Element has been Selected");
+    //Save Relation
+    cy.get(".v-btn--text:nth-child(2)").click();
     cy.log(
       "OneToOne Relation Data Type has been created with its Configuration"
     );

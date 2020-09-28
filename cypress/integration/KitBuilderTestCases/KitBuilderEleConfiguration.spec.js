@@ -412,7 +412,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  it.only("OneToManyRelation Data Type", function () {
+  it("OneToManyRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-N"]').dblclick({ force: true });
     cy.wait(1000);

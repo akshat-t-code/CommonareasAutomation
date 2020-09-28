@@ -106,8 +106,6 @@ describe("Create user from admin and login with the new user", function () {
     cy.get('.btnSaveDetails').scrollIntoView()
     .should('be.visible')
 
-
-
     cy.UserAddress1(this.data.UserAddress1);
     cy.UserAddress2(this.data.UserAddress2);
     cy.UserZipCode(this.data.UserZipCode);
