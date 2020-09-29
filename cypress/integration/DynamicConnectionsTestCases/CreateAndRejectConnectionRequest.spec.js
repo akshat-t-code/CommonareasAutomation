@@ -32,8 +32,8 @@ describe("Login for new User than Create A new Connection and Reject the Request
     //cy.eyesCheckWindow("First time user logging into the application");
     lp.Submit();
     //First Time login commands
-    cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
-    cy.get("#readTerms").click();
+    // cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
+    // cy.get("#readTerms").click();
     //cy.eyesCheckWindow();
     cy.wait(15000);
     cy.log("New Users has been logged in first time successfully");

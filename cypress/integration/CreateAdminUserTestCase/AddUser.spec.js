@@ -67,7 +67,11 @@ describe("Create user from admin and login with the new user", function () {
   it("Create user form admin", function () {
     //PageObject
     const lp = new LoginPage();
-    lp.Adminvisit();
+    lp.AdminBuildvisit();
+
+    //Login Page assertion
+    cy.get(".page-main-title").should("be.visible");
+
     lp.EnterEmail("starksolutions@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("Logging into the Application");
@@ -77,7 +81,8 @@ describe("Create user from admin and login with the new user", function () {
     //cy.eyesCheckWindow("Logged In");
     cy.title().should("eq", "Common Areas");
     cy.wait(10000);
-    lp.AdminUrl();
+    //cy.visit('https://starksolutions.ca-build.com/ClientAdmin/AddUser')
+    lp.AdminBuildStartUrl();
     //cy.eyesCheckWindow();
     cy.ClickOnAddUser();
     //Assertion
@@ -103,8 +108,7 @@ describe("Create user from admin and login with the new user", function () {
     cy.UserMobilePhone(this.Credentials.UserPhoneNo);
     //cy.eyesCheckWindow("User Details");
 
-    cy.get('.btnSaveDetails').scrollIntoView()
-    .should('be.visible')
+    cy.get(".btnSaveDetails").scrollIntoView().should("be.visible");
 
     cy.UserAddress1(this.data.UserAddress1);
     cy.UserAddress2(this.data.UserAddress2);
@@ -112,7 +116,9 @@ describe("Create user from admin and login with the new user", function () {
     cy.UserCity(this.data.UserCity);
     //cy.eyesCheckWindow("User Details");
     //Select State
-    cy.get('[name="AccountUser.UserContact.Country"]').select(this.data.Country);
+    cy.get('[name="AccountUser.UserContact.Country"]').select(
+      this.data.Country
+    );
     //Select State
     cy.get('[name="AccountUser.UserContact.State"]').select(this.data.State);
     cy.log("All details has been entered for Admin user");
@@ -138,20 +144,21 @@ describe("Create user from admin and login with the new user", function () {
     cy.wait(10000);
   });
 
-  it("First time New Add user login into the appliction", function () {
+  it("New Add user login into the appliction", function () {
     //PageObject
     const lp = new LoginPage();
-    lp.Adminvisit();
+    lp.AdminBuildvisit();
+    //Login Page assertion
+    cy.get(".page-main-title").should("be.visible");
     //fixtures file(1)
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.data.UserPassword);
-    //cy.eyesCheckWindow("First time user logging into the application");
+    //cy.eyesCheckWindow("user logging into the application");
     lp.Submit();
     cy.wait(3000);
     //First Time login commands
     cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
-    cy.get("#readTerms").scrollIntoView()
-    .click({force:true});
+    cy.get("#readTerms").scrollIntoView().click({ force: true });
     //cy.eyesCheckWindow("New User");
     cy.wait(10000);
     cy.log("New User has been logged in successfully");
@@ -165,10 +172,6 @@ describe("Create user from admin and login with the new user", function () {
     ).then(function ($WelEle) {
       const WelcomeTxt = $WelEle.text();
       cy.log(WelcomeTxt);
-      const username = this.Credentials.FirstName;
-      cy.log(username);
-      expect(username).eq(this.Credentials.FirstName);
-      cy.wait(3000);
     });
   });
 

@@ -1,6 +1,6 @@
 import SignUpPage from "../PageObject/SignUpPage";
 import LoginPage from "../PageObject/LoginPage";
-import RandomString from "../PageObject/RandomString";
+
 
 describe("Login into the application for a new User ", function () {
   this.beforeEach(function () {

@@ -23,19 +23,19 @@ describe("Login for new User than Create A new Connection and Accept the request
     }
   );
 
-  it("First Time Login into the appLication for New User", function () {
+  it.only("First Time Login into the appLication for New User", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visit();
+    sp.visitBaseBuild();
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("First time user logging into the application");
     lp.Submit();
     //First Time login commands
-    cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
-    cy.get("#readTerms").click();
-    //cy.eyesCheckWindow();
+    // cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
+    // cy.get("#readTerms").click();
+    // //cy.eyesCheckWindow();
     cy.wait(15000);
     cy.log("New Users has been logged in first time successfully");
     //cy.eyesCheckWindow("Logged In");
@@ -48,10 +48,6 @@ describe("Login for new User than Create A new Connection and Accept the request
     ).then(function ($WelEle) {
       const WelcomeTxt = $WelEle.text();
       cy.log(WelcomeTxt);
-      const username = this.Credentials.Fname;
-      cy.log(username);
-      expect(username).eq(this.Credentials.Fname);
-      cy.wait(3000);
     });
   });
 

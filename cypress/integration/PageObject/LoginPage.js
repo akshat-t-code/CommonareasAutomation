@@ -13,6 +13,10 @@ class LoginPage {
     cy.visit("http://starksolutions.ca-test.com/");
   }
 
+  AdminBuildvisit() {
+    cy.visit("http://starksolutions.ca-build.com/");
+  }
+
   EnterEmail(value) {
     const field = cy.get("#UserName");
     field.clear();
@@ -61,8 +65,8 @@ class LoginPage {
     button.click();
   }
 
-  AdminUrl() {
-    cy.visit("https://starksolutions.ca-test.com/ClientAdmin/Index/#/");
+  AdminBuildStartUrl() {
+    cy.visit("https://starksolutions.ca-build.com/ClientAdmin/Index/#/");
   }
 
 

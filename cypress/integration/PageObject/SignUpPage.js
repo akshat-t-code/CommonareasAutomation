@@ -1,9 +1,9 @@
 class SignUpPage {
-  visit() {
+  visitBaseTest() {
     cy.visit("https://app.ca-test.com/Public/Login?ReturnUrl=%2F");
   }
 
-  visitBaseVuild() {
+  visitBaseBuild() {
     cy.visit("https://app.ca-build.com/Public/Login?ReturnUrl=%2F");
   }
 

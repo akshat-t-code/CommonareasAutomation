@@ -58,14 +58,14 @@ describe("Sign up for a New User", function () {
     }
   );
 
-  it.only("New User Sign up", function () {
+  it("New User Sign up", function () {
     //PageObject
     const sp = new SignUpPage();
-    sp.visit();
+    sp.visitBaseBuild();
     cy.wait(3000);
     // cy.eyesCheckWindow()
 
-    cy.url().should("include", "app.ca-test.com/Public/Login?ReturnUrl=%2F");
+    cy.url().should("include", "/Public/Login?ReturnUrl=%2F");
     //Click on Sign up for free
     sp.SignUp();
     cy.url().should("include", "Register/Create");
