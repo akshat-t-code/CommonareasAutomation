@@ -2,19 +2,18 @@ import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
 import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 
-
 describe("Kit Builder All Data Elements Configuration", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-     cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
-     lp.EnterEmail("kstanley@commonareas.work.dev");
-    // cy.visit("https://marketplaceproperties.ca-test.com/Public/Login?ReturnUrl=%2F");
-    // lp.EnterEmail("jcrue@marketplaceproperties.com.dev");
-    // cy.visit("https://cxco.ca-test.com/Public/Login?ReturnUrl=%2F");
-    // lp.EnterEmail("tombarnes@commonareas.work.dev");
+    lp.visitServiceBuild()
+    //Login Assertions
+    cy.get('.page-main-title').should('be.visible')
+    //Enter credentials
+    lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log('User has been Logged In into the application')
     cy.wait(10000);
   });
 
@@ -48,91 +47,24 @@ describe("Kit Builder All Data Elements Configuration", function () {
 
   it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
+    const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    //kb.KitBuilderUrl();
-    cy.visit('https://serviceproviders.ca-build.com/ClientAdmin/KitBuilder#/')
-    //cy.visit('https://marketplaceproperties.ca-test.com/ClientAdmin/KitBuilder#/')
+    lp.visitKitBuilderServiceBuild();
+    cy.log('User entered in kit builder')
     cy.wait(3000);
     //Open Craeted Kit Type
+    kb.KBSearchBox(this.KitTypeName.KitName3)
+    cy.wait(5000)
     cy.contains(this.KitTypeName.KitName3).click({ force: true });
     cy.wait(3000);
+    cy.log('Created Kit type has been opened')
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains(this.data.NewView).click({ force: true });
     cy.wait(5000);
   });
-
-  // it("OneToManyRelation Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Relation 1-N"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-
-  //   DataType.OneToManyRelation(
-  //     this.DataType.OneToManyRelation,
-  //     this.DataType.KitToBeRelated,
-  //     this.DataType.RelatedTableView,
-  //     this.DataType.RelatedEle_1,
-  //     this.DataType.RelatedEle_2,
-  //     this.DataType.RelatedEle_3,
-  //     this.DataType.RelatedEle_4,
-  //     this.DataType.RelatedEle_5,
-  //     this.DataType.OneToManyRelatedNew,
-  //     this.DataType.OneToManyRelatedEdit,
-  //     this.DataType.OneToManyMapView,
-  //     this.DataType.OneToManySearchView
-  //   );
-
-  //   cy.wait(5000);
-  // });
-
-  // it("OneToOneRelation Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Relation 1-1"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-
-  //   DataType.OneToOneRelation(
-  //     this.DataType.OneToOneRelation,
-  //     this.DataType.KitToBeRelate,
-  //     this.DataType.ElementToBeRelate,
-  //     this.DataType.OneToOneRelatedNew,
-  //     this.DataType.OneToOneRelatedEdit,
-  //     this.DataType.OneToOneMapView,
-  //     this.DataType.OneToOneSearchView
-  //   );
-  //   cy.wait(5000);
-  // });
-
-
-  // it("SquareCard Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="SquareCard"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-
-  //   DataType.SquareCard(
-  //     this.DataType.SquareCardName,
-  //     this.DataType.CardKitToBeRelated,
-  //     this.DataType.SquareCardTableView,
-  //     this.DataType.RelateEle_1,
-  //     this.DataType.RelateEle_2,
-  //     this.DataType.RelateEle_3,
-  //     this.DataType.RelateEle_4,
-  //     this.DataType.RelateEle_5,
-  //     this.DataType.CardRelatedNew,
-  //     this.DataType.CardRelatedEdit,
-  //     this.DataType.CardMapView,
-  //     this.DataType.CardSearchView
-  //   );
-
-  //   cy.wait(5000);
-  // });
 
   it("Input Section Data Elements", function () {
     cy.contains("Inputs").click({ force: true });
@@ -412,7 +344,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  it("OneToManyRelation Data Type", function () {
+  it.only("OneToManyRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-N"]').dblclick({ force: true });
     cy.wait(1000);
@@ -465,7 +397,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("OneToOneRelation Data Type", function () {
+  it("OneToOneRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-1"]').dblclick({ force: true });
     cy.wait(1000);
@@ -580,7 +512,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("Link Data Type", function () {
+  it.only("Link Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[data-component="control-link"]').dblclick({ force: true });
     cy.wait(1000);
@@ -589,7 +521,6 @@ describe("Kit Builder All Data Elements Configuration", function () {
     DataType.Link(this.DataType.LinkName, this.DataType.EnterUrl);
     cy.wait(5000);
   });
-
 
   it("Created By Data Type", function () {
     //Double click on Data Element to drag it on Canvas
@@ -641,28 +572,44 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-
-  
-
-  /*
+  it("Kit Builder Save and Publish", function () {
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    // cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+    //Click on  Publish
+    cy.contains("Publish").click({ force: true });
+    //cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Kit builder(New Form) has been Published");
+    cy.wait(2000);
+  });
 
   it("Dynamic Controls Section Data Elements", function () {
     cy.contains("Dynamic Controls").click({ force: true });
     cy.wait(2000);
   });
 
-  it("Reactive Control Data type", function () {
+  it.only("Reactive Variable Data type", function () {
+     //Double click on Data Element to drag it on Canvas
+     cy.get('[data-component="control-variable"]').dblclick({ force: true });
     const DataType = new KitBuilderDataTypes();
-    DataType.ReactiveControl(this.DataType.RCName);
+    DataType.ReactiveVriable(this.DataType.RVName);
   });
 
-  */
+  it.only("Reactive Control Data type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[data-component="control-reaction"]').dblclick({ force: true });
+   const DataType = new KitBuilderDataTypes();
+   DataType.ReactiveControl(this.DataType.RCName);
+ });
 
   it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click({ force: true });
     //save assertion closed
-   // cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    // cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.log("Kit builder(New Form) has been Saved");
     cy.wait(3000);
     //Click on  Publish

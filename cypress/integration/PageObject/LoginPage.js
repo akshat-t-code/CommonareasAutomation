@@ -1,20 +1,34 @@
 class LoginPage {
-  visit() {
+  visitServiceTest() {
     cy.visit("https://serviceproviders.ca-test.com/");
-    //cy.visit("https://serviceproviders.ca-build.com/");
+  }
+
+  visitKitBuilderServiceTest() {
+    cy.visit("https://serviceproviders.ca-test.com/ClientAdmin/KitBuilder#/");
   }
 
   visitServiceBuild() {
-    
     cy.visit("https://serviceproviders.ca-build.com/");
   }
 
-  Adminvisit() {
+  visitKitBuilderServiceBuild() {
+    cy.visit("https://serviceproviders.ca-build.com/ClientAdmin/KitBuilder#/");
+  }
+
+  visitStarksTest() {
     cy.visit("http://starksolutions.ca-test.com/");
   }
 
-  AdminBuildvisit() {
+  AdminStarksTest() {
+    cy.visit("https://starksolutions.ca-test.com/ClientAdmin/Index/#/");
+  }
+
+  visitStarksBuild() {
     cy.visit("http://starksolutions.ca-build.com/");
+  }
+
+  AdminStarksBuild() {
+    cy.visit("https://starksolutions.ca-build.com/ClientAdmin/Index/#/");
   }
 
   EnterEmail(value) {
@@ -43,9 +57,9 @@ class LoginPage {
     btn.click();
   }
 
-  HMBIcon(){
-    const btn=cy.get('.v-btn__content > .v-icon')
-    btn.click({force:true});
+  HMBIcon() {
+    const btn = cy.get(".v-btn__content > .v-icon");
+    btn.click({ force: true });
   }
 
   ConnectionIcon() {
@@ -65,23 +79,14 @@ class LoginPage {
     button.click();
   }
 
-  AdminBuildStartUrl() {
-    cy.visit("https://starksolutions.ca-build.com/ClientAdmin/Index/#/");
+  RefreshBtn() {
+    cy.get(".button__reset-filters > .v-btn__content").click({ force: true });
   }
 
-
-  RefreshBtn(){
-
-    cy.get('.button__reset-filters > .v-btn__content').click({force:true})
-    
+  FilterIcon() {
+    const btn = cy.get(".fill-height > .v-btn #Layer_1");
+    btn.click({ force: true });
   }
-
-  FilterIcon(){
-    const btn=cy.get('.fill-height > .v-btn #Layer_1')
-    btn.click({force:true});
-
-  }
-
 }
 
 export default LoginPage;

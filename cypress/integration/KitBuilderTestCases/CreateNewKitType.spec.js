@@ -23,7 +23,7 @@ describe("Create New Kit type ", function () {
     });
   });
 
-  it.only("Create A New Kit Type", function() {
+  it("Create A New Kit Type", function() {
     const kb = new KitBuilderPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
@@ -44,7 +44,7 @@ describe("Create New Kit type ", function () {
     cy.log('New Kit Type has been Created')
   });
 
-  it.only("New View Form", function () {
+  it("New View Form", function () {
     cy.wait(5000);
     const kb = new KitBuilderPage();
     cy.contains(this.KitTypeName.KitName3).click({ force: true });
@@ -65,7 +65,7 @@ describe("Create New Kit type ", function () {
   });
 
 
-  it.only("Edit View Form", function () {
+  it("Edit View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On Edit Form
@@ -143,7 +143,7 @@ describe("Create New Kit type ", function () {
     cy.log('CommonPlan View Form has been Created')
   });
 
-  it.only("RelatedNew View Form", function () {
+  it("RelatedNew View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On RelatedNew Form
@@ -156,7 +156,7 @@ describe("Create New Kit type ", function () {
     cy.log('RelatedNew View Form has been Created')
   });
 
-  it.only("RelatedEdit View Form", function () {
+  it("RelatedEdit View Form", function () {
     cy.wait(3000)
     const kb = new KitBuilderPage();
     //Click On RelatedEdit Form
@@ -171,7 +171,7 @@ describe("Create New Kit type ", function () {
 
   });
 
-  it.only("List Views(TableList,SearchList,TimelineList)", function () {
+  it("List Views(TableList,SearchList,TimelineList)", function () {
 
     const kb = new KitBuilderPage();
     // cy.title().should("eq", "Common Areas");

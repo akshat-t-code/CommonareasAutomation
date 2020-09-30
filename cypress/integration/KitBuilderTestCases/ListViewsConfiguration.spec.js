@@ -5,10 +5,14 @@ import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 describe("Adding Results and Filters Element to List Views", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
-    cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
+    lp.visitServiceBuild();
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
     cy.wait(10000);
   });
 
@@ -33,13 +37,13 @@ describe("Adding Results and Filters Element to List Views", function () {
 
   it("Navigating to List Views of Created Kit Type", function () {
     const kb = new KitBuilderPage();
+    const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.KitBuilderUrl();
-    // kb.AdminUrl();
-    // cy.wait(5000);
-    // kb.ClickOnKitBuilder();
+    lp.visitKitBuilderServiceBuild();
+    cy.log("User entered in kit builder");
+
     cy.wait(3000);
     //Enter created kit type name into search box
     kb.KBSearchBox(this.KitTypeName.KitName3);
@@ -47,7 +51,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     //Open created kit type for adding List view elements
     //cy.contains(this.KitTypeName.KitName).click({ force: true });
     //Click to open kit type for adding List view elements
-    cy.contains(this.KitTypeName.KitName2).click({ force: true });
+    cy.contains(this.KitTypeName.KitName3).click({ force: true });
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains("List Views").click({ force: true });
@@ -101,6 +105,11 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.DataType2.Inspection).click({ force: true });
     cy.contains(this.DataType2.Assigning).click({ force: true });
 
+    cy.contains("Created On").click({ force: true });
+    cy.contains("Modified On").click({ force: true });
+    cy.contains("Created By").click({ force: true });
+    cy.contains("Modified By").click({ force: true });
+    cy.contains("ItemId For Account").click({ force: true });
     cy.wait(2000);
 
     cy.log("Table List Results Element has been Checked");
@@ -251,6 +260,12 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.DataType2.Inspection).click({ force: true });
     cy.contains(this.DataType2.Assigning).click({ force: true });
 
+    cy.contains("Created On").click({ force: true });
+    cy.contains("Modified On").click({ force: true });
+    cy.contains("Created By").click({ force: true });
+    cy.contains("Modified By").click({ force: true });
+    cy.contains("ItemId For Account").click({ force: true });
+
     cy.wait(2000);
     cy.log("Search List View Results Element has been Checked");
     //Click on Add Select
@@ -395,6 +410,12 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.contains(this.DataType2.Icon).click({ force: true });
     cy.contains(this.DataType2.Inspection).click({ force: true });
     cy.contains(this.DataType2.Assigning).click({ force: true });
+
+    cy.contains("Created On").click({ force: true });
+    cy.contains("Modified On").click({ force: true });
+    cy.contains("Created By").click({ force: true });
+    cy.contains("Modified By").click({ force: true });
+    cy.contains("ItemId For Account").click({ force: true });
 
     cy.wait(2000);
 

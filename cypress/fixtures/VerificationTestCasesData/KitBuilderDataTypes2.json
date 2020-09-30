@@ -70,7 +70,7 @@
     "InspectionValue4":"Python",
     "InspectionValue5":".net",
 
-    "OneToOneRelation":"AkshatOneTo",
+    "OneToOneRelation":"BaseOne",
     "KitToBeRelate":"AkshatValidationKit",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
@@ -79,13 +79,13 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"OneToNRelation",
+    "OneToManyRelation":"BaseNNRelation",
     "KitToBeRelated":"AkshatValidationKit",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
     "OneToManySearchView":"SearchView",
-    "RelatedTableView":"TableView",
+    "RelatedTableView":"BaseTableView",
     "RelatedEle_1":"Url",
     "RelatedEle_2":"Text",
     "RelatedEle_3":"Telephone",
@@ -93,13 +93,13 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"SquareCardRel",
+    "SquareCardName":"SquareCardBase",
     "CardKitToBeRelated":"AkshatValidationKit",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",
     "CardSearchView":"SearchView",
-    "SquareCardTableView":"PM table View",
+    "SquareCardTableView":"Base table View",
     "RelateEle_1":"Url",
     "RelateEle_2":"Text",
     "RelateEle_3":"Telephone",

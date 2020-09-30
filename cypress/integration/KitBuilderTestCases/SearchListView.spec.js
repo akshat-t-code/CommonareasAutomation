@@ -5,7 +5,7 @@ import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 describe("Adding Results and Filters Element to Search List View", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
-    cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
+    lp.visitServiceBuild();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -43,10 +43,11 @@ describe("Adding Results and Filters Element to Search List View", function () {
   it.only("Navigating to Search List Views of Created Kit Type", function () {
     //Page Object
     const kb = new KitBuilderPage();
+    const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.KitBuilderUrl();
+    lp.visitKitBuilderServiceBuild();
     cy.wait(3000);
     //Enter created kit type name into search box
     //kb.KBSearchBox(this.KitName.KitName);
@@ -112,6 +113,12 @@ describe("Adding Results and Filters Element to Search List View", function () {
     cy.contains(this.DataType2.Icon).click({ force: true });
     cy.contains(this.DataType2.Inspection).click({ force: true });
     cy.contains(this.DataType2.Assigning).click({ force: true });
+
+    cy.contains("Created On").click({ force: true });
+    cy.contains("Modified On").click({ force: true });
+    cy.contains("Created By").click({ force: true });
+    cy.contains("Modified By").click({ force: true });
+    cy.contains("ItemId For Account").click({ force: true });
 
     cy.wait(2000);
     cy.log("Search List View Results Element has been Checked");
