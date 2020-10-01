@@ -9,13 +9,16 @@ describe("User Admin has already been Exist", function () {
         this.Credentials = data;
       }
     );
-    cy.viewport(1280, 720);
+    //cy.viewport(1280, 720);
   });
 
   it("Already Added Admin User", function () {
     //PageObject
     const lp = new LoginPage();
-    lp.Adminvisit();
+    lp.visitStarksBuild();
+     //Login Assertions
+     cy.get('.page-main-title').should('be.visible')
+
     lp.EnterEmail("starksolutions@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -23,7 +26,7 @@ describe("User Admin has already been Exist", function () {
     cy.log("User has been Logged in successfully");
     cy.title().should("eq", "Common Areas");
     cy.wait(10000);
-    lp.AdminUrl();
+    lp.AdminStarksBuild()
     cy.ClickOnAddUser();
     //Assertion
     cy.get("#content > div.right > h2")
@@ -45,14 +48,16 @@ describe("User Admin has already been Exist", function () {
     cy.UserTelephone(this.Credentials.UserTelephone);
     cy.UserMobilePhone(this.Credentials.UserMobilePhone);
 
+    cy.get(".btnSaveDetails").scrollIntoView().should("be.visible");
+
     cy.UserAddress1(this.Credentials.UserAddress1);
     cy.UserAddress2(this.Credentials.UserAddress2);
     cy.UserZipCode(this.Credentials.UserZipCode);
     cy.UserCity(this.Credentials.UserCity);
     //Select State
-    cy.get('[name="AccountUser.UserContact.Country"]').select("United States");
+    cy.get('[name="AccountUser.UserContact.Country"]').select(this.Credentials.Country);
     //Select State
-    cy.get('[name="AccountUser.UserContact.State"]').select("Alabama");
+    cy.get('[name="AccountUser.UserContact.State"]').select(this.Credentials.State);
     cy.log("All details has been entered for Admin user");
 
     cy.AddUser();

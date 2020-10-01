@@ -67,7 +67,7 @@ describe("Create user from admin and login with the new user", function () {
   it("Create user form admin", function () {
     //PageObject
     const lp = new LoginPage();
-    lp.AdminBuildvisit();
+    lp.visitStarksBuild();
 
     //Login Page assertion
     cy.get(".page-main-title").should("be.visible");
@@ -81,8 +81,7 @@ describe("Create user from admin and login with the new user", function () {
     //cy.eyesCheckWindow("Logged In");
     cy.title().should("eq", "Common Areas");
     cy.wait(10000);
-    //cy.visit('https://starksolutions.ca-build.com/ClientAdmin/AddUser')
-    lp.AdminBuildStartUrl();
+    lp.AdminStarksBuild();
     //cy.eyesCheckWindow();
     cy.ClickOnAddUser();
     //Assertion
@@ -147,7 +146,7 @@ describe("Create user from admin and login with the new user", function () {
   it("New Add user login into the appliction", function () {
     //PageObject
     const lp = new LoginPage();
-    lp.AdminBuildvisit();
+    lp.visitStarksBuild();
     //Login Page assertion
     cy.get(".page-main-title").should("be.visible");
     //fixtures file(1)

@@ -1,7 +1,8 @@
 {
 
-    "KitLabel":"CypressAutomation",
-    "KitName":"CypressAutomation",
-    "KitDescription":"CypressAutomation"
+    "KitLabel":"Base",
+    "KitName":"Base",
+    "KitDescription":"Base",
+    "APIName":"Base"
 
 }

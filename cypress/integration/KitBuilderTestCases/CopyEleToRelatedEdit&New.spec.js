@@ -5,18 +5,26 @@ import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 describe("Copy New Form Elements to the RelatedNew and RelatedEdit form View", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
-    cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
+    lp.visitServiceBuild();
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
     cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
+      KitTypeFormViewsNames
+    ) {
       this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KittypeName) {
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
+      KittypeName
+    ) {
       this.KitTypeName = KittypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
@@ -28,14 +36,15 @@ describe("Copy New Form Elements to the RelatedNew and RelatedEdit form View", f
 
   it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
+    const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.KitBuilderUrl();
-    //kb.AdminUrl();
-    //cy.wait(5000);
-    //kb.ClickOnKitBuilder();
-    cy.wait(3000);
+    lp.visitKitBuilderServiceBuild();
+    cy.log("User entered in kit builder");
+    //Open Craeted Kit Type
+    kb.KBSearchBox(this.KitTypeName.KitName3);
+    cy.wait(5000);
     cy.contains(this.KitTypeName.KitName).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
@@ -55,13 +64,16 @@ describe("Copy New Form Elements to the RelatedNew and RelatedEdit form View", f
     cy.contains(this.data.RelatedNewView).click({ force: true });
     cy.wait(5000);
     //Copy from
-    cy.get(".align-content-center > .mr-2").click({ force: true });;
+    cy.get(".align-content-center > .mr-2").click({ force: true });
     cy.get(
       "#app > div.v-application--wrap > div > div:nth-child(1) > div.v-dialog__container.copy-from-modal > div > div > div > div.container.new-detailview-container > div > div > form > div.row.align-center.justify-center > div:nth-child(8) > div > div > div.col.col-10 > p"
     ).scrollIntoView();
 
     //Click on New Form to copy
-    cy.get(".col:nth-child(8) .mr-2").click({ force: true });
+    //cy.get(".col:nth-child(8) .mr-2").click({ force: true });
+    cy.get(
+      "div.row.align-center.justify-center > div:nth-child(8) > div > div > div.pt-6.col.col-12 > p"
+    ).click({ force: true });
     cy.wait(2000);
     cy.log("New Form View Elements has been Copied into RelatedNew Form");
 
@@ -109,15 +121,4 @@ describe("Copy New Form Elements to the RelatedNew and RelatedEdit form View", f
     cy.log("Kit builder(RelatedEdit Form) has been Published");
     cy.wait(2000);
   });
-
-  
-
-  
-
-  
-
-  
-
- 
- 
 });

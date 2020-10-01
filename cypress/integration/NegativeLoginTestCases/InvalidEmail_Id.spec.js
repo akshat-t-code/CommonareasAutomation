@@ -23,7 +23,7 @@ describe("TestCase For Invalid Email Id", function () {
   });
 
   this.beforeEach(function () {
-    debugger;
+    //debugger;
     cy.fixture("NegativeLoginTestData/InvalidEmailId").then(function (
       LoginData
     ) {
@@ -35,7 +35,10 @@ describe("TestCase For Invalid Email Id", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visit();
+    sp.visitBaseBuild();
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.Credentials.Password);
     lp.Submit();

@@ -15,7 +15,10 @@ describe("TestCase For Invalid Password", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visit();
+    sp.visitBaseBuild();
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.Credentials.Password);
     //log Password

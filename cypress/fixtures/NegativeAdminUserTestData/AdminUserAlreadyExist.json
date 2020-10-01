@@ -10,5 +10,7 @@
     "UserAddress1":"USA",
     "UserAddress2":"USA",
     "UserZipCode":"22313",
-    "UserCity":"Los Angeles"
+    "UserCity":"Los Angeles",
+    "State":"Alabama",
+    "Country":"United States"
  }

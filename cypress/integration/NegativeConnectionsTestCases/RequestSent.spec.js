@@ -15,7 +15,10 @@ describe("Connection Request has Already been Sent for this User", function () {
 
   it("This User Already Sent Connection Request", function () {
     const lp = new LoginPage();
-    lp.visit();
+    lp.visitServiceTest();
+     //Login Assertions
+     cy.get(".page-main-title").should("be.visible");
+
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
