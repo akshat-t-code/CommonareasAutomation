@@ -14,20 +14,38 @@ describe("Validation On UI for Element's Read Property", function () {
       cy.log("Alert has been Handled");
     });
 
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
 
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
       "ASP.NET_SessionId",
       "ca-cf-auth",
       "kit-detail-selected-tab",
-      "jwt"
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
     );
+    cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
+
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitBuilderValidationTestData/Read&RequiredValidation").then(
       function (Validationdata) {
         this.RRProp = Validationdata;
@@ -66,7 +84,10 @@ describe("Validation On UI for Element's Read Property", function () {
     //debugger;
     //Click on To open Kit Type
     KTP.SearchKitType(this.RRProp.ReadOnlyKitName);
-    KTP.OpenKitType(this.RRProp.ReadOnlyKitName);
+    cy.wait(3000);
+    //This is class to open searched kit type by clicking + iocn
+    cy.get(".truncate-special").first().click({ force: true });
+    //KTP.OpenKitType(this.RRProp.ReadOnlyKitName);
     cy.wait(2000);
     //Assertion
     cy.contains("New Item created").should("be.visible");
@@ -136,9 +157,9 @@ describe("Validation On UI for Element's Read Property", function () {
   it("Slider Read only Property Validation on UI", function () {
     cy.wait(1000);
     //TextAera
-    cy.get('[name="Slider"]').should("have.attr", "readonly");
+    cy.get('[name="Slider"]').eq(1).should("have.attr", "readonly");
 
-    cy.get('[name="Slider"]').then(($el) => {
+    cy.get('[name="Slider"]').eq(1).then(($el) => {
       expect($el.attr("readonly")).to.equal("readonly");
     });
     cy.log("Slider Read only Property Validated on UI");

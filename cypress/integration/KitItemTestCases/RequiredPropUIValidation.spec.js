@@ -14,17 +14,25 @@ describe("Elements Is Required Property Validation On UI", function () {
       cy.log("Alert has been Handled");
     });
 
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
 
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
       "ASP.NET_SessionId",
       "ca-cf-auth",
       "kit-detail-selected-tab",
-      "jwt"
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
     );
+
+    cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
@@ -61,7 +69,7 @@ describe("Elements Is Required Property Validation On UI", function () {
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.RRProp.IsRequiredKitName2);
+    KTP.SearchKitType(this.RRProp.IsRequiredKitName);
     cy.wait(3000);
     //Open Created Kit Type
     //KTP.SearchKitType(this.KitName.KitName3);
@@ -174,7 +182,6 @@ describe("Elements Is Required Property Validation On UI", function () {
     cy.get(
       '[placeholder="Street address, bulding, company ... "][name="Address"]'
     ).should("have.attr", "required");
-
 
     //City
     cy.get('[placeholder="City"]').should("have.attr", "required");
@@ -297,8 +304,9 @@ describe("Elements Is Required Property Validation On UI", function () {
   it("Icon Required Property Validation on UI", function () {
     cy.wait(1000);
     //Icon
-    cy.get('[aria-readonly="true"][readonly="readonly"][type="text"]').eq(4)
-    .should("have.attr", "required");
+    cy.get('[aria-readonly="true"][readonly="readonly"][type="text"]')
+      .eq(4)
+      .should("have.attr", "required");
     cy.log(this.DataType2.Icon + " Required Property Validated on UI");
   });
 

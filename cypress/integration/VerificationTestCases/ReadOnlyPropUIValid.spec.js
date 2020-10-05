@@ -14,20 +14,35 @@ describe("Validation On UI for Element's Read Property", function () {
       cy.log("Alert has been Handled");
     });
 
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
-
+    cy.log("User has been Logged In into the application");
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
       "ASP.NET_SessionId",
       "ca-cf-auth",
       "kit-detail-selected-tab",
-      "jwt"
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
     );
   });
 
   this.beforeEach("Fixtures file data", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitBuilderValidationTestData/Read&RequiredValidation").then(
       function (Validationdata) {
         this.RRProp = Validationdata;
@@ -63,7 +78,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.wait(3000);
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.RRProp.ReadOnlyKitName2);
+    KTP.SearchKitType(this.RRProp.ReadOnlyKitName);
     cy.wait(3000);
     //Open Created Kit Type
     //KTP.SearchKitType(this.KitName.KitName3);

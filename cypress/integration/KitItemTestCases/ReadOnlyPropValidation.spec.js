@@ -15,9 +15,13 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
       cy.log("Alert has been Handled");
     });
 
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
     cy.wait(10000);
   });
 
@@ -54,13 +58,17 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
 
   it("Navigating to Created KitType New Form", function () {
     const kb = new KitBuilderPage();
+    const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.KitBuilderUrl();
-    cy.wait(3000);
+    lp.visitKitBuilderServiceBuild();
+    cy.wait(10000);
+    cy.log("User entered in kit builder");
     //Open Craeted Kit Type
-    cy.contains(this.RRProp.ReadOnlyKitName2).click({ force: true });
+    kb.KBSearchBox(this.RRProp.ReadOnlyKitName);
+    cy.wait(5000);
+    cy.contains(this.RRProp.ReadOnlyKitName).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -418,9 +426,13 @@ describe("Validation On UI for Element's Read Property", function () {
       cy.log("Alert has been Handled");
     });
 
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
 
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
@@ -429,6 +441,7 @@ describe("Validation On UI for Element's Read Property", function () {
       "kit-detail-selected-tab",
       "jwt"
     );
+    cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
@@ -465,10 +478,10 @@ describe("Validation On UI for Element's Read Property", function () {
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.RRProp.ReadOnlyKitName2);
-    cy.wait(3000)
+    KTP.SearchKitType(this.RRProp.ReadOnlyKitName);
+    cy.wait(3000);
     //This is class to open searched kit type by clicking + iocn
-    cy.get('.truncate-special').first().click({force:true})
+    cy.get(".truncate-special").first().click({ force: true });
     //KTP.OpenKitType(this.RRProp.ReadOnlyKitName2);
     cy.wait(2000);
     //Assertion

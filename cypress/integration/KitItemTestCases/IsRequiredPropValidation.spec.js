@@ -13,10 +13,14 @@ describe("KitBuilder's Element Is Required Property Validation on Kit Builder", 
     cy.on("window:confirm", () => {
       cy.log("Alert has been Handled");
     });
-
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
+
     cy.wait(10000);
   });
 
@@ -53,13 +57,19 @@ describe("KitBuilder's Element Is Required Property Validation on Kit Builder", 
 
   it("Navigating to Created KitType New Form", function () {
     const kb = new KitBuilderPage();
+    const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.KitBuilderUrl();
+    lp.visitKitBuilderServiceBuild();
     cy.wait(3000);
+    cy.wait(10000);
+    cy.log("User entered in kit builder");
     //Open Craeted Kit Type
-    cy.contains(this.RRProp.IsRequiredKitName2).click({ force: true });
+    kb.KBSearchBox(this.RRProp.IsRequiredKitName);
+    cy.wait(5000);
+    //Open Craeted Kit Type
+    cy.contains(this.RRProp.IsRequiredKitName).click({ force: true });
     cy.wait(3000);
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
@@ -508,13 +518,15 @@ describe("Validation On UI for Element's Is Required Property", function () {
     const lp = new LoginPage();
     const KTP = new KitTypePage();
     //Assertion
-    cy.title().should("eq", "Common Areas");
+    //cy.title().should("eq", "Common Areas");
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
+    //This is class to open searched kit type by clicking + iocn
+    cy.get(".truncate-special").first().click({ force: true });
     KTP.SearchKitType(this.RRProp.IsRequiredKitName2);
-    KTP.OpenKitType(this.RRProp.IsRequiredKitName2);
-    cy.wait(2000);
+    //KTP.OpenKitType(this.RRProp.IsRequiredKitName2);
+    cy.wait(70000);
     //Assertion
     cy.contains("New Item created").should("be.visible");
     cy.log("New Item created and Kit Type has been Opened");
