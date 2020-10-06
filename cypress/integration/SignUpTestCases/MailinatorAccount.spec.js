@@ -10,7 +10,7 @@ describe("Activation Mailinator Account for New Sign up User", function () {
       //   testName: "Mailinator Account Verification",
       // });
 
-      debugger;
+      //debugger;
       cy.fixture("ConnectionsDynamicTestData/ConnectionUserCredentials").then(
         function (JsonData) {
           this.Credentials = JsonData;

@@ -14,20 +14,37 @@ describe("Search List View Filters Element Validation On UI for created kit type
       cy.log("Alert has been Handled");
     });
 
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
 
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
       "ASP.NET_SessionId",
       "ca-cf-auth",
       "kit-detail-selected-tab",
-      "jwt"
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
     );
+    cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitBuilderValidationTestData/SearchListFilterValidation").then(
       function (KitName) {
         this.KitName = KitName;
@@ -56,7 +73,7 @@ describe("Search List View Filters Element Validation On UI for created kit type
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
-    KTP.SearchKitType(this.KitName.SearchListEleValidation2);
+    KTP.SearchKitType(this.KitName.SearchListEleValidation);
     cy.wait(3000);
     //This is class to open searched kit type after clicking + iocn and type kit name in search
     cy.get(".truncate-special").first().click({ force: true });
@@ -247,12 +264,14 @@ describe("Search List View Filters Element Validation On UI for created kit type
 
   it("Validate the Filter Inspection Element", function () {
     //Validation for Filer Elements
-    
-    cy.get("[name" + "=" + this.DataType2.Inspection + "]").first().scrollIntoView({ force: true });
 
-    cy.get("[name" + "=" + this.DataType2.Inspection + "]").first().should(
-      "exist"
-    );
+    cy.get("[name" + "=" + this.DataType2.Inspection + "]")
+      .first()
+      .scrollIntoView({ force: true });
+
+    cy.get("[name" + "=" + this.DataType2.Inspection + "]")
+      .first()
+      .should("exist");
     //cy.contains(this.DataType2.Inspection).last().should("exist");
     cy.log(
       this.DataType2.Inspection + " Data Element has been exist in Filters"

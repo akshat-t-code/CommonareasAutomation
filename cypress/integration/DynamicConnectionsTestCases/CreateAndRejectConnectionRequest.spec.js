@@ -5,6 +5,16 @@ describe("Login for new User than Create A new Connection and Reject the Request
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
+      Cypress.Cookies.preserveOnce(
+        ".AspNet.ApplicationCookie",
+        "ASP.NET_SessionId",
+        "ca-cf-auth",
+        "kit-detail-selected-tab",
+        "jwt",
+        "refreshToken",
+        "jwtAccessToken"
+      );
+
       // cy.eyesOpen({
       //   appName: "Common Aera UI Automation",
       //   testName: "Reject the New User Connection Request",
@@ -26,7 +36,7 @@ describe("Login for new User than Create A new Connection and Reject the Request
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visit();
+    sp.visitBaseTest();
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("First time user logging into the application");
@@ -56,7 +66,7 @@ describe("Login for new User than Create A new Connection and Reject the Request
 
   it.only("Creating a new Connection ", function () {
     const lp = new LoginPage();
-    lp.visit();
+    lp.visitServiceBuild();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("Logging into the application");
@@ -125,7 +135,7 @@ describe("Login for new User than Create A new Connection and Reject the Request
     //Click On Connections
     cy.get(".v-list-item:nth-child(3) .v-list-item__title").click();
     //Assertion
-    cy.wait(3000)
+    cy.wait(3000);
     //cy.eyesCheckWindow("NO Connections here");
     cy.contains("Kali Stanley").should("not.be.visible");
     cy.contains(

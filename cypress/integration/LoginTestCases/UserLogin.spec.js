@@ -3,23 +3,50 @@ import LoginPage from "../PageObject/LoginPage";
 
 describe("Login into the application for a new User ", function () {
   this.beforeEach(function () {
-    debugger;
-    cy.fixture("LoginTestData/UserLogin").then(function (LoginData) {
-      this.Credentials = LoginData;
-    });
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
+    //debugger;
+    // cy.fixture("LoginTestData/UserLogin").then(function (LoginData) {
+    //   this.Credentials = LoginData;
+    // });
+
+    cy.fixture("ConnectionsDynamicTestData/ConnectionUserCredentials").then(
+      function (LoginData) {
+        this.Credentials = LoginData;
+      }
+    );
   });
 
   it("Login into the appLication for New User", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseBuild();
+    sp.visitBaseTest();
     //Login Assertions
-    cy.get('.page-main-title').should('be.visible')
+    cy.get(".page-main-title").should("be.visible");
 
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.Credentials.Password);
     lp.Submit();
+
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.wait(10000);
     cy.title().should("eq", "Common Areas");
     cy.log("New Users has been logged in successfully");

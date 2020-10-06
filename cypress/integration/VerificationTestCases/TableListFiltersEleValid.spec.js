@@ -6,20 +6,42 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     lp.visitServiceBuild();
+
+    //Handling Alert
+    cy.on("window:confirm", () => {
+      cy.log("Alert has been Handled");
+    });
+
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
-
+    cy.log("User has been Logged In into the application");
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
       "ASP.NET_SessionId",
       "ca-cf-auth",
       "kit-detail-selected-tab",
-      "jwt"
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
     );
+    cy.wait(10000);
   });
 
   this.beforeEach("KitType Data", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitBuilderValidationTestData/TableListFilterValidation").then(
       function (KitName) {
         this.KitName = KitName;
@@ -41,7 +63,6 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
     ) {
       this.KitData = DataEleValues;
     });
-
   });
 
   it("Open Created Kit type As List View", function () {
@@ -52,12 +73,13 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
     cy.wait(10000);
     //Click on Hamburger Icon
     lp.HMBIcon();
-    cy.contains(this.KitName.TableListEleValidation2).scrollIntoView({
+    cy.contains(this.KitName.TableListEleValidation).scrollIntoView({
       force: true,
     });
     cy.wait(5000);
     //Open KitType from left paneal
-    cy.contains(this.KitName.TableListEleValidation2).click({ force: true });
+    cy.contains(this.KitName.TableListEleValidation).click({ force: true });
+    cy.log("Kit type opened from left pannel");
     cy.wait(10000);
   });
 
@@ -65,37 +87,54 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
     cy.wait(3000);
   });
 
   it("Validate the Filter Url Element", function () {
     //Validation for Filer Elements
-    cy.get("[name" + "=" + this.DataType2.Url + "]").last().scrollIntoView({ force: true });
-    cy.get("[name" + "=" + this.DataType2.Url + "]").last().should("be.visible");
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .last()
+      .should("be.visible");
     cy.log(this.KitData.Url + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Text Element", function () {
     //Validation for Filer Elements
-    cy.get("[name" + "=" + this.DataType2.Text + "]").last().scrollIntoView({ force: true });
-    cy.get("[name" + "=" + this.DataType2.Text + "]").last().should("be.visible");
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .last()
+      .should("be.visible");
     cy.log(this.KitData.Text + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Telephone Element", function () {
     //Validation for Filer Elements
-    cy.get("[name" + "=" + this.DataType2.Telephone + "]").last().scrollIntoView({ force: true });
-    cy.get("[name" + "=" + this.DataType2.Telephone + "]").last().should("be.visible");
+    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
+      .last()
+      .should("be.visible");
     cy.log(this.KitData.Telephone + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter TextAera Element", function () {
     //Validation for Filer Elements
-    cy.get("[name" + "=" + this.DataType2.TextAera + "]").last().scrollIntoView({ force: true });
-    cy.get("[name" + "=" + this.DataType2.TextAera + "]").last().should("be.visible");
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .last()
+      .should("be.visible");
     cy.log(this.KitData.TextAera + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
@@ -111,15 +150,23 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
 
   it("Validate the Filter Email Element", function () {
     //Validation for Filer Elements
-    cy.get("[name" + "=" + this.DataType2.Email + "]").last().scrollIntoView({ force: true });
-    cy.get("[name" + "=" + this.DataType2.Email + "]").last().should("be.visible");
+    cy.get("[name" + "=" + this.DataType2.Email + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.Email + "]")
+      .last()
+      .should("be.visible");
     cy.log(this.KitData.Email + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Address Element", function () {
-    cy.get("[name" + "=" + this.DataType2.Address + "]").last().scrollIntoView({ force: true });
-    cy.get("[name" + "=" + this.DataType2.Address + "]").last().should("be.visible");
+    cy.get("[name" + "=" + this.DataType2.Address + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.get("[name" + "=" + this.DataType2.Address + "]")
+      .last()
+      .should("be.visible");
     cy.log(this.KitData.Address + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
@@ -204,7 +251,9 @@ describe("Validate TableList's Filters Element for Created Kit Type on UI", func
   it("Validate the Filter Inspection Element", function () {
     //Validation for Filer Elements
     //cy.get('[name="Inspection"]').should("be.visible");
-    cy.get("[name" + "=" + this.DataType2.Inspection + "]").should("be.visible");
+    cy.get("[name" + "=" + this.DataType2.Inspection + "]").should(
+      "be.visible"
+    );
     //cy.contains(this.KitData.Inspection).last().should("exist");
     cy.log(this.KitData.Inspection + " Data Element has been exist in Filters");
     cy.wait(2000);

@@ -5,6 +5,16 @@ describe("Login for new User and Reject the Connection request(Second Flow TC)",
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
+      Cypress.Cookies.preserveOnce(
+        ".AspNet.ApplicationCookie",
+        "ASP.NET_SessionId",
+        "ca-cf-auth",
+        "kit-detail-selected-tab",
+        "jwt",
+        "refreshToken",
+        "jwtAccessToken"
+      );
+
       // cy.eyesOpen({
       //   appName: "Common Aera UI Automation",
       //   testName: "Reject the New User Connection Request",
@@ -54,11 +64,11 @@ describe("Login for new User and Reject the Connection request(Second Flow TC)",
     });
   });
 
-  it("Login Again into the AppLication for Reject the Request", function () {
+  it.only("Login Again into the AppLication for Reject the Request", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visit();
+    lp.visitServiceTest();
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("Logging into the application for new User");

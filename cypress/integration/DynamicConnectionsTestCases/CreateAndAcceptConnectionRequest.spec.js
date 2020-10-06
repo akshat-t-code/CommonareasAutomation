@@ -5,13 +5,23 @@ describe("Login for new User than Create A new Connection and Accept the request
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
+      Cypress.Cookies.preserveOnce(
+        ".AspNet.ApplicationCookie",
+        "ASP.NET_SessionId",
+        "ca-cf-auth",
+        "kit-detail-selected-tab",
+        "jwt",
+        "refreshToken",
+        "jwtAccessToken"
+      );
+
       // cy.eyesOpen({
       //   appName: "Common Aera UI Automation",
       //   testName: "Accept the New User Connection Request",
       // });
       //debugger;
       cy.fixture("ConnectionsDynamicTestData/ConnectionUserCredentials").then(
-      //cy.fixture("VerificationTestCasesData/AcceptRequestUserData").then(
+        //cy.fixture("VerificationTestCasesData/AcceptRequestUserData").then(
         function (JsonData) {
           this.Credentials = JsonData;
           cy.log(this.Credentials.UserEmail);
@@ -27,7 +37,7 @@ describe("Login for new User than Create A new Connection and Accept the request
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseBuild();
+    sp.visitBaseTest();
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("First time user logging into the application");
@@ -53,7 +63,7 @@ describe("Login for new User than Create A new Connection and Accept the request
 
   it.only("Create a new Connection ", function () {
     const lp = new LoginPage();
-    lp.visit();
+    lp.visitServiceTest();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("Logging into the application");

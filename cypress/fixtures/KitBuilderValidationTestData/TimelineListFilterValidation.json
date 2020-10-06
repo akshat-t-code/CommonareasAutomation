@@ -1,10 +1,10 @@
 
 {
-    "TimelineListEleValidation":"AkshatValidationKit",
+    "TimelineListEleValidation":"Base",
     "TLListKitName":"AkshatKitDemo",
     "KitName":"Location",
     "TimelineListResultsEleValidation":"AkshatValidationKit",
-    "TimelineListFiltersEleValidation":"Property Builder2",
+    "TimelineListFiltersEleValidation":"Base",
     "TimelineListResultsEleValidation2":"Property Builder2"
     
 }

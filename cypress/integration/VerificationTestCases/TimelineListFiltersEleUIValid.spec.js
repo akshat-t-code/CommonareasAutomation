@@ -6,20 +6,43 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     lp.visitServiceBuild();
+
+    //Handling Alert
+    cy.on("window:confirm", () => {
+      cy.log("Alert has been Handled");
+    });
+
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
 
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
       "ASP.NET_SessionId",
       "ca-cf-auth",
       "kit-detail-selected-tab",
-      "jwt"
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
     );
+    cy.wait(10000);
   });
 
   this.beforeEach("KitType Data", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
       this.KitItemData = KitDataEle;
     });
@@ -49,7 +72,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
       force: true,
     });
     cy.wait(5000);
-    //Open KitType from left paneal
+    //Open KitType from left pannel
     cy.contains(this.KitName.TimelineListFiltersEleValidation).click({
       force: true,
     });
@@ -61,9 +84,11 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.get(
       "#action_items_list > div.fill-height.col > div > div > div.left-panel-top-panel-menu > div:nth-child(3) > div:nth-child(1) > div > div.d-flex.kit-item-list.list-item-col-right.col.row-list-item-details"
     ).click({ force: true });
+    cy.log("Edit View has been opened of created Kit type");
     cy.wait(5000);
     //Click on Scheduler Tab
     cy.contains("Scheduler").click({ force: true });
+    cy.log("Scheduler tab Opened");
     cy.wait(5000);
     //Click on Filters Icon
     cy.get(".px-0 #Layer_1").click({ force: true });

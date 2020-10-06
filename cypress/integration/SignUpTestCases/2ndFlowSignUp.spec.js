@@ -36,12 +36,27 @@ describe("Create Connection(Second Flow of Accept and Reject Request and Sign up
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
-        // cy.eyesOpen({
-        //     appName: "Common Aera UI Automation",
-        //     testName: "Sign Up for a new User for Second Flow",
-        //   });
+      Cypress.Cookies.preserveOnce(
+        ".AspNet.ApplicationCookie",
+        "ASP.NET_SessionId",
+        "ca-cf-auth",
+        "kit-detail-selected-tab",
+        "jwt",
+        "refreshToken",
+        "jwtAccessToken"
+      );
 
-     // debugger;
+      // cy.eyesOpen({
+      //     appName: "Common Aera UI Automation",
+      //     testName: "Sign Up for a new User for Second Flow",
+      //   });
+
+      // debugger;
+
+      cy.fixture("SignUpTestData/SignUpTestData").then(function (SignUpData) {
+        this.SignUPData = SignUpData;
+      });
+
       cy.fixture(
         "ConnectionsDynamicTestData/Connection2ndFlowUserCredentials"
       ).then(function (JsonData) {
@@ -55,10 +70,14 @@ describe("Create Connection(Second Flow of Accept and Reject Request and Sign up
 
   it("Creating a new Connection ", function () {
     const lp = new LoginPage();
-    lp.visit();
+    lp.visitServiceTest();
+
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
-   //cy.eyesCheckWindow('Logging into the application')
+    //cy.eyesCheckWindow('Logging into the application')
     lp.Submit();
     cy.wait(10000);
     cy.log("Users has been logged in successfully");
@@ -90,45 +109,52 @@ describe("Create Connection(Second Flow of Accept and Reject Request and Sign up
   it("New User Sign up", function () {
     //PageObject
     const sp = new SignUpPage();
-    sp.visit();
+    sp.visitBaseTest();
     cy.wait(3000);
-    //cy.eyesCheckWindow()
-    cy.url().should("include", "app.ca-test.com/Public/Login?ReturnUrl=%2F");
-    sp.SignUpbtn();
+    // cy.eyesCheckWindow()
+
+    cy.url().should("include", "/Public/Login?ReturnUrl=%2F");
+    //Click on Sign up for free
+    sp.SignUp();
     cy.url().should("include", "Register/Create");
     //cy.eyesCheckWindow('Sign Up Page')
     //Sign Up detalis Custom Commands coming from command.js
     cy.SignUpUserFirstName(this.Credentials.Fname);
     cy.SignUpUserLastName(this.Credentials.Lname);
     cy.SignUpUserEmail(this.Credentials.UserEmail);
-    cy.ConfirmEmailAddress(this.Credentials.UserEmail);
+    cy.CompanyName(this.SignUPData.CompanyName);
+
+    //cy.ConfirmEmailAddress(this.Credentials.UserEmail);
     cy.SignUpUserPassword(this.Credentials.Password);
     cy.ConfirmPassword(this.Credentials.Password);
+
     cy.get('[name="ContactInformation.CompanyType"]').scrollIntoView({
       force: true,
     });
     cy.wait(3000);
-    cy.get('[name="ContactInformation.CompanyType"]').select(
-      "Facility Management"
-    );
+    cy.get(
+      '[name="ContactInformation.CompanyType"]'
+    ).select("Facility Management", { force: true });
     //cy.eyesCheckWindow("Getting User Details");
+    cy.wait(2000);
+
+    //Click on Agree Terms and conditions
+    cy.get("#AgreeTermsAndConditions").click({ force: true });
+
     //Click on Submit to Create the user
-    cy.get(".icon:nth-child(1)").click();
+    cy.get("#submitButton").click();
+
     cy.wait(5000);
     cy.log("New User has been signed up successfully");
     //Assertion
-    cy.get(".login-message").should(
-      "have.text",
+    cy.contains(
       "An email has been sent to you to verify the email address you provided with a link to activate your account."
-    );
-    //cy.eyesCheckWindow("New user Signed Up");
+    ).should("be.visible");
+    // cy.eyesCheckWindow("New user Signed Up");
     cy.wait(5000);
-    cy.get(".icon").click();
-    cy.url().should("include", "/Public/Login");
-    cy.wait(3000);
-    //cy.eyesCheckWindow()
+    //cy.eyesCheckWindow();
   });
-  
+
   // this.afterAll(function () {
   //   cy.eyesClose();
   // });
