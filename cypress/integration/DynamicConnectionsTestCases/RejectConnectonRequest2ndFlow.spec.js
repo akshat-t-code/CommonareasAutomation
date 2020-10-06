@@ -68,7 +68,11 @@ describe("Login for new User and Reject the Connection request(Second Flow TC)",
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    lp.visitServiceTest();
+    sp.visitBaseTest();
+
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("Logging into the application for new User");

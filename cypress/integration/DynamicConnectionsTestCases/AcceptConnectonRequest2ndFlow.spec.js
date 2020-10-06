@@ -1,12 +1,10 @@
 import SignUpPage from "../PageObject/SignUpPage";
 import LoginPage from "../PageObject/LoginPage";
 
-
 describe("Login for new User and Accept the Connection request(Second Flow TC)", function () {
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
-
       Cypress.Cookies.preserveOnce(
         ".AspNet.ApplicationCookie",
         "ASP.NET_SessionId",
@@ -70,7 +68,11 @@ describe("Login for new User and Accept the Connection request(Second Flow TC)",
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    lp.visitServiceTest();
+    sp.visitBaseTest();
+
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("Logging into the application for new User");
@@ -80,7 +82,7 @@ describe("Login for new User and Accept the Connection request(Second Flow TC)",
     //cy.eyesCheckWindow("Getting connection Request");
     //Click On Connection Request notification Icon
     cy.get(".menu-items-icon:nth-child(2) > path").click();
-   //cy.eyesCheckWindow("Connection Request");
+    //cy.eyesCheckWindow("Connection Request");
     cy.wait(5000);
     //click to Accept the Request
     cy.get(".green--text").click();

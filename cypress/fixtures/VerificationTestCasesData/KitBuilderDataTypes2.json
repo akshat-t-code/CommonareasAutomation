@@ -70,8 +70,8 @@
     "InspectionValue4":"Python",
     "InspectionValue5":".net",
 
-    "OneToOneRelation":"BaseOne",
-    "KitToBeRelate":"AkshatValidationKit",
+    "OneToOneRelation":"Base2OneTo",
+    "KitToBeRelate":"Base",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
     "OneToOneMapView":"MapView",
@@ -80,7 +80,7 @@
 
 
     "OneToManyRelation":"BaseNNRelation",
-    "KitToBeRelated":"AkshatValidationKit",
+    "KitToBeRelated":"Base",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
@@ -94,7 +94,7 @@
 
      
     "SquareCardName":"SquareCardBase",
-    "CardKitToBeRelated":"AkshatValidationKit",
+    "CardKitToBeRelated":"Base",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",

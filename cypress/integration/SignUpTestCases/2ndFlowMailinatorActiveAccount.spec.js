@@ -5,10 +5,10 @@ describe("Activation Mailinator Account(Second Flow TC) for Random New Sign up U
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
-        // cy.eyesOpen({
-        //     appName: "Common Aera UI Automation",
-        //     testName: "Mailinator Account Verification for Second Flow",
-        //   });
+      // cy.eyesOpen({
+      //     appName: "Common Aera UI Automation",
+      //     testName: "Mailinator Account Verification for Second Flow",
+      //   });
       //debugger;
       cy.fixture(
         "ConnectionsDynamicTestData/Connection2ndFlowUserCredentials"
@@ -26,12 +26,14 @@ describe("Activation Mailinator Account(Second Flow TC) for Random New Sign up U
     cy.url().should("include", "mailinator.com");
     sp.EnterMailinatorEmail(this.Credentials.UserEmail);
     cy.log("User Email has been Entered");
-    //cy.eyesCheckWindow("User Mail");
+    // cy.eyesCheckWindow("User Mail");
     //Click on Go
     sp.Go();
     cy.wait(3000);
     //cy.eyesCheckWindow("Common Aera Mail in the inbox");
-    cy.contains("Common Areas - Account Activation").click();
+    // cy.contains("Common Areas - Account Activation").click();
+    cy.contains("Welcome to Commonareas - Verify Email").click();
+
     //debugger
     cy.wait(5000);
     //cy.eyesCheckWindow();
@@ -39,7 +41,6 @@ describe("Activation Mailinator Account(Second Flow TC) for Random New Sign up U
     sp.ActiveAccount();
     cy.wait(5000);
     cy.log("New user Account has been verified successfully on Mailinator");
-    
   });
 
   // this.afterAll(function () {

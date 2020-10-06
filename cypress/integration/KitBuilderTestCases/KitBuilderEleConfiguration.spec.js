@@ -18,6 +18,17 @@ describe("Kit Builder All Data Elements Configuration", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
+
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (data) {
       this.data = data;
     });
@@ -45,7 +56,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     });
   });
 
-  it.only("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     const lp = new LoginPage();
     cy.wait(5000);
@@ -344,7 +355,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  it.only("OneToManyRelation Data Type", function () {
+  it("OneToManyRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-N"]').dblclick({ force: true });
     cy.wait(1000);
@@ -512,7 +523,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Link Data Type", function () {
+  it("Link Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[data-component="control-link"]').dblclick({ force: true });
     cy.wait(1000);
@@ -591,21 +602,21 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  it.only("Reactive Variable Data type", function () {
+  it("Reactive Variable Data type", function () {
      //Double click on Data Element to drag it on Canvas
      cy.get('[data-component="control-variable"]').dblclick({ force: true });
     const DataType = new KitBuilderDataTypes();
     DataType.ReactiveVriable(this.DataType.RVName);
   });
 
-  it.only("Reactive Control Data type", function () {
+  it("Reactive Control Data type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[data-component="control-reaction"]').dblclick({ force: true });
    const DataType = new KitBuilderDataTypes();
    DataType.ReactiveControl(this.DataType.RCName);
  });
 
-  it.only("Kit Builder Save and Publish", function () {
+  it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click({ force: true });
     //save assertion closed

@@ -93,10 +93,10 @@ describe("Search List View Filters Element Validation On UI for created kit type
   it("Validate the Filter Url Element", function () {
     //Validation for Filer Elements
     cy.get("[name" + "=" + this.DataType2.Url + "]")
-      .last()
+      .eq(1)
       .scrollIntoView({ force: true });
     cy.get("[name" + "=" + this.DataType2.Url + "]")
-      .last()
+      .eq(1)
       .should("be.visible");
     cy.log(this.DataType2.Url + " Data Element has been exist in Filters");
     cy.wait(2000);
@@ -105,10 +105,10 @@ describe("Search List View Filters Element Validation On UI for created kit type
   it("Validate the Filter Text Element", function () {
     //Validation for Filer Elements
     cy.get("[name" + "=" + this.DataType2.Text + "]")
-      .last()
+      .eq(1)
       .scrollIntoView({ force: true });
     cy.get("[name" + "=" + this.DataType2.Text + "]")
-      .last()
+      .eq(1)
       .should("be.visible");
     cy.log(this.DataType2.Text + " Data Element has been exist in Filters");
     cy.wait(2000);
@@ -117,10 +117,10 @@ describe("Search List View Filters Element Validation On UI for created kit type
   it("Validate the Filter Telephone Element", function () {
     //Validation for Filer Elements
     cy.get("[name" + "=" + this.DataType2.Telephone + "]")
-      .last()
+      .eq(1)
       .scrollIntoView({ force: true });
     cy.get("[name" + "=" + this.DataType2.Telephone + "]")
-      .last()
+      .eq(1)
       .should("be.visible");
     cy.log(
       this.DataType2.Telephone + " Data Element has been exist in Filters"
@@ -131,10 +131,10 @@ describe("Search List View Filters Element Validation On UI for created kit type
   it("Validate the Filter TextAera Element", function () {
     //Validation for Filer Elements
     cy.get("[name" + "=" + this.DataType2.TextAera + "]")
-      .last()
+      .eq(1)
       .scrollIntoView({ force: true });
     cy.get("[name" + "=" + this.DataType2.TextAera + "]")
-      .last()
+      .eq(1)
       .should("be.visible");
     cy.log(this.DataType2.TextAera + " Data Element has been exist in Filters");
     cy.wait(2000);
@@ -159,10 +159,10 @@ describe("Search List View Filters Element Validation On UI for created kit type
   it("Validate the Filter Email Element", function () {
     //Validation for Filer Elements
     cy.get("[name" + "=" + this.DataType2.Email + "]")
-      .last()
+      .eq(1)
       .scrollIntoView({ force: true });
     cy.get("[name" + "=" + this.DataType2.Email + "]")
-      .last()
+      .eq(1)
       .should("be.visible");
     cy.log(this.DataType2.Email + " Data Element has been exist in Filters");
     cy.wait(2000);
@@ -170,10 +170,10 @@ describe("Search List View Filters Element Validation On UI for created kit type
 
   it("Validate the Filter Address Element", function () {
     cy.get("[name" + "=" + this.DataType2.Address + "]")
-      .last()
+      .eq(1)
       .scrollIntoView({ force: true });
     cy.get("[name" + "=" + this.DataType2.Address + "]")
-      .last()
+      .eq(1)
       .should("be.visible");
     cy.log(this.DataType2.Address + " Data Element has been exist in Filters");
     cy.wait(2000);
@@ -181,14 +181,14 @@ describe("Search List View Filters Element Validation On UI for created kit type
 
   it("Validate the Filter Time Element", function () {
     //Validation for Filer Elements
-    cy.get('[placeholder="Add Time"][type="text"]').should("be.visible");
+    cy.get('[placeholder="Add Time"][type="text"]').eq(0).should("be.visible");
     cy.log(this.DataType2.Time + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
 
   it("Validate the Filter Date Element", function () {
     //Validation for Filer Elements
-    cy.get('[placeholder="Add Date"][type="text"]').should("be.visible");
+    cy.get('[placeholder="Add Date"][type="text"]').eq(0).should("be.visible");
     cy.log(this.DataType2.Date + " Data Element has been exist in Filters");
     cy.wait(2000);
   });
