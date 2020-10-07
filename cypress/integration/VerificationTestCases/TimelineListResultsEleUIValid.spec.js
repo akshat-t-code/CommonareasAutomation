@@ -78,7 +78,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     });
   });
 
-  it("Open Created Kit type form left Panel", function () {
+  it.only("Open Created Kit type form left Panel", function () {
     //Page Object
     const lp = new LoginPage();
     //Assertion
@@ -86,18 +86,18 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(10000);
     //Click on Hamburger Icon
     lp.HMBIcon();
-    cy.contains(this.KitName.TimelineListResultsEleValidation2).scrollIntoView({
+    cy.contains(this.KitName.TimelineListResultsEleValidation).scrollIntoView({
       force: true,
     });
     cy.wait(5000);
     //Open KitType from left paneal
-    cy.contains(this.KitName.TimelineListResultsEleValidation2).click({
+    cy.contains(this.KitName.TimelineListResultsEleValidation).click({
       force: true,
     });
     cy.wait(5000);
   });
 
-  it("Open Scheduler Tab in Edit View to Validate TimelineList View Result Elements", function () {
+  it.only("Open Scheduler Tab in Edit View to Validate TimelineList View Result Elements", function () {
     //Click on First kit item of kit type to open edit view
     cy.get(
       "#action_items_list > div.fill-height.col > div > div > div.left-panel-top-panel-menu > div:nth-child(3) > div:nth-child(1) > div > div.d-flex.kit-item-list.list-item-col-right.col.row-list-item-details"
@@ -293,7 +293,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
 
   it("Validate TableList View Result RadioSelect Element", function () {
     cy.contains(
-      this.DataType2.RadioSelect + ":" + " " + this.KitItemData.RadioSelect
+      this.DataType2.RadioSelect + ":" + " " + this.KitItemData.RadioSelectValue
     ).should("exist");
     cy.log(
       this.DataType2.RadioSelect +
@@ -380,7 +380,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it("Validate TableList View Result Assigning Element", function () {
+  it.only("Validate TableList View Result Assigning Element", function () {
     cy.contains(
       this.DataType2.Assigning +
         ":" +
@@ -393,7 +393,7 @@ describe("Validate Timeline List's Results Element for Created Kit Type on Sched
     cy.wait(2000);
   });
 
-  it("Validate TableList View Result Icon Element", function () {
+  it.only("Validate TableList View Result Icon Element", function () {
     cy.contains(this.KitItemData.IconLabel).first().should("be.visible");
 
     cy.log(

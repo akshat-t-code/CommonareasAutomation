@@ -6,6 +6,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     lp.visitServiceBuild();
+
     //Handling Alert
     cy.on("window:confirm", () => {
       cy.log("Alert has been Handled");
@@ -79,12 +80,12 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(10000);
     //Click on Hamburger Icon
     lp.HMBIcon();
-    cy.contains(this.KitName.TableListResultEleValidation).scrollIntoView({
+    cy.contains(this.KitName.TableListResultEleValidation2).scrollIntoView({
       force: true,
     });
     cy.wait(5000);
     //Open KitType from left paneal
-    cy.contains(this.KitName.TableListResultEleValidation).click({
+    cy.contains(this.KitName.TableListResultEleValidation2).click({
       force: true,
     });
     cy.wait(10000);
@@ -249,9 +250,9 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it("Validate TableList View Result RadioSelect Element", function () {
+  it.only("Validate TableList View Result RadioSelect Element", function () {
     cy.contains(
-      this.KitData.RadioSelect + ":" + " " + this.KitItemData.RadioSelect
+      this.KitData.RadioSelect + ":" + " " + this.KitItemData.RadioSelectValue
     ).should("exist");
     cy.log(
       this.KitData.RadioSelect + " has been Validate for kitItem Result Element"
@@ -323,7 +324,14 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it("Validate TableList View Result Inspection Element", function () {
+  it("Validate TableList View Result Icon Element", function () {
+    cy.contains(this.KitItemData.IconLabel).first().should("be.visible");
+
+    cy.log(this.KitData.Icon + " has been Validate for kitItem Result Element");
+    cy.wait(2000);
+  });
+
+  it.only("Validate TableList View Result Inspection Element", function () {
     cy.contains(
       this.KitData.Inspection + ":" + " " + this.KitItemData.InspectionName
     ).should("exist");
@@ -333,20 +341,13 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     cy.wait(2000);
   });
 
-  it("Validate TableList View Result Assigning Element", function () {
+  it.only("Validate TableList View Result Assigning Element", function () {
     cy.contains(
       this.KitData.Assigning + ":" + " " + this.KitItemData.AssigningName
     ).should("exist");
     cy.log(
       this.KitData.Assigning + " has been Validate for kitItem Result Element"
     );
-    cy.wait(2000);
-  });
-
-  it("Validate TableList View Result Icon Element", function () {
-    cy.contains(this.KitItemData.IconLabel).first().should("be.visible");
-
-    cy.log(this.KitData.Icon + " has been Validate for kitItem Result Element");
     cy.wait(2000);
   });
 });

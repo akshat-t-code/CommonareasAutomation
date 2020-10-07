@@ -1,6 +1,6 @@
 {
 
-    "KitName":"Property Builder2",
+    "KitName":"Base2",
     
     "Url":"https://www.99acres.com",
     "Text":"3BHK Flats",
@@ -20,24 +20,24 @@
     "Country":"United States",
     "Number":"443",
 
-    "SelectListValue":"Harshal",
+    "SelectListValue":"KKR",
     
 
-    "RadioSelectValue":"Mack@yahoo.com",
+    "RadioSelectValue":"CSK",
 
-    "CheckboxSelectValue1":"USA",
-    "CheckboxSelectValue2":"Spain",
-    "CheckboxSelectValue3":"Japan",
-    "CheckboxSelectValue4":"India",
-    "CheckboxSelectValue5":"UK",
+    "CheckboxSelectValue1":"CheckboxSelect1",
+    "CheckboxSelectValue2":"CheckboxSelect2",
+    "CheckboxSelectValue3":"CheckboxSelect3",
+    "CheckboxSelectValue4":"CheckboxSelect4",
+    "CheckboxSelectValue5":"CheckboxSelect5",
 
-    "StepperValue1":"292923",
-    "StepperValue2":"293892",
-    "StepperValue3":"201001",
-    "StepperValue4":"090191",
-    "StepperValue5":"989213",
+    "StepperValue1":"Moto",
+    "StepperValue2":"Jio",
+    "StepperValue3":"RealMe",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"MArt",
 
-    "UserSelectorName":"Ken Stanley",
+    "UserSelectorName":"Deanne Howell",
 
     "ContactSelectorName":"Vivek Mahajan",
     
@@ -80,22 +80,22 @@
 
     "These values need to add manual for validate Table List View Result Ele UI Validation":"true",
     "Important note for Values":"Pls add value in same format that i did",
-    "FileValue":"10905",
-    "SliderValue":"17",
+    "FileValue":"11615",
+    "SliderValue":"46",
     "TimeValue":"04:30 PM",
-    "DateValue":"08/31/2020",
+    "DateValue":"10/31/2020",
     "ToggleStatus":"True",
-    "StepperValue":"293892",
-    "InspectionName":"DistancefromCity",
+    "StepperValue":"Oppo",
+    "InspectionName":"C++",
     
 
     "These values need to add manual for validate Table List View Elee":"true",
     "Important note for (TimelineList View Results Ele)Values":"Pls add value in same format that i did",
 
-    "TimelineListFileEleValue":"10922",
-    "TimelineListSliderValue":"13",
+    "TimelineListFileEleValue":"11615",
+    "TimelineListSliderValue":"46",
     "TimelineListTimeValue":"04:30 PM",
-    "TimelineListDateValue":"08/31/2020",
+    "TimelineListDateValue":"10/31/2020",
     "TimelineListToggleStatus":"True",
     "TimelineListIconTittle":"2 wheeled Trolly",
     
@@ -104,7 +104,7 @@
     "Add ',' after First Name of Assigning":"Note-true",
 
 
-    "TimelineListUserSelector":"Ken, Stanley",
+    "TimelineListUserSelector":"Deanne, Howell",
     "TimelineListContactSelector":"Vivek, Mahajan",
     "TimelineListAssigningName":"Daniel, Zhao"
 

@@ -6,20 +6,43 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     lp.visitServiceBuild();
+
+    //Handling Alert
+    cy.on("window:confirm", () => {
+      cy.log("Alert has been Handled");
+    });
+
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
-
+    cy.log("User has been Logged In into the application");
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
       "ASP.NET_SessionId",
       "ca-cf-auth",
       "kit-detail-selected-tab",
-      "jwt"
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
     );
+
+    cy.wait(10000);
   });
 
   this.beforeEach("KitType Data", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
       KittypeName
     ) {
@@ -39,7 +62,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     });
   });
 
-  it("AutomationKit type", function () {
+  it("Automation Kit type", function () {
     cy.wait(10000);
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -194,7 +217,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // });
     cy.wait(2000);
 
-    ///*
+    /*
 
     //Reminder
     //Click to open Reminder POPUP
@@ -286,7 +309,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       force: true,
     });
 
-    //*/
+    */
 
     cy.wait(2000);
 
@@ -307,7 +330,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.contains(this.NewKitItemData.SelectListValue).click({ force: true });
 
     //RadioSelect
-    cy.contains(this.NewKitItemData.RadioSelect).click({ force: true });
+    cy.contains(this.NewKitItemData.RadioSelectValue).click({ force: true });
 
     //CheckboxSelect(Values coming form KitItemValues Json File)
     cy.contains(this.NewKitItemData.CheckboxSelectValue1).click({
@@ -323,11 +346,12 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(5000);
 
     //Stepper
-    cy.get("[name" + "=" + this.DataType2.StepperName + "]").scrollIntoView({
+    //getting value form different json file
+    cy.get("[name" + "=" + this.DataType2.Stepper + "]").scrollIntoView({
       force: true,
     });
 
-    cy.contains(this.DataType2.StepperValue2).click({ force: true });
+    cy.contains(this.NewKitItemData.StepperValue4).click({ force: true });
 
     cy.wait(2000);
     //.v-stepper__step:nth-child(1/3/5/7/9)
@@ -352,7 +376,8 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(4000);
 
     //Inspection
-    cy.contains(this.DataType2.InspectionName).scrollIntoView({
+    //getting value form different json file
+    cy.contains(this.DataType2.Inspection).scrollIntoView({
       force: true,
     });
     cy.wait(2000);
@@ -389,7 +414,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.get('[placeholder="Label"]').type(this.NewKitItemData.IconLabel);
 
     //Inspection(Values coming form KitItemValues Json File)
-    cy.contains(this.DataType2.InspectionName).scrollIntoView({
+    cy.contains(this.DataType2.Inspection).scrollIntoView({
       force: true,
     });
     cy.wait(3000);
@@ -397,7 +422,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.NewKitItemData.InspectionValue4 +
+        this.NewKitItemData.InspectionValue2 +
         ") > span"
     ).click({ force: true });
 
@@ -415,7 +440,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     cy.wait(3000);
     //Click on to save
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
-    cy.wait(4000)
+    cy.wait(4000);
 
     // //save Kit Type
     // cy.get(".v-select__selections .v-btn__content").click({ force: true });
