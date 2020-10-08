@@ -4,19 +4,49 @@ import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 
 describe("Choice Pickers Section Data Elements Configuration", function () {
   this.beforeAll(function () {
+    //Page Object
     const lp = new LoginPage();
-    cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
+    lp.visitServiceBuild();
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
+
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
+      KitTypeFormViewsNames
+    ) {
       this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KittypeName) {
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
+      KittypeName
+    ) {
       this.KitTypeName = KittypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
@@ -30,23 +60,23 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     ) {
       this.DataType2 = NewDataForElements;
     });
-
   });
 
   it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
+    const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.KitBuilderUrl();
-    //kb.AdminUrl();
-    //cy.wait(5000);
-    //kb.ClickOnKitBuilder();
+    lp.visitKitBuilderServiceBuild();
+    cy.log("User entered in kit builder");
     cy.wait(3000);
     //Open Craeted Kit Type
+    kb.KBSearchBox(this.KitTypeName.KitName3);
+    cy.wait(5000);
     cy.contains(this.KitTypeName.KitName3).click({ force: true });
-    //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
+    cy.log("Created Kit type has been opened");
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains(this.data.NewView).click({ force: true });
@@ -68,7 +98,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("SelectList Data Type", function() {
+  it("SelectList Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Select List"]').dblclick({ force: true });
     cy.wait(1000);
@@ -125,16 +155,16 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
   });
 
   it("Kit Builder Save and Publish", function () {
-   //Kit Builder Save
-   cy.get(".ca-button-green:nth-child(1)").click({ force: true });
-   //save assertion closed
-   cy.get(".v-btn__content > .theme--dark").click({ force: true });
-   cy.log("Kit builder(New Form) has been Saved");
-   cy.wait(3000);
-   //Click on  Publish
-   cy.contains("Publish").click({ force: true });
-   //cy.get(".v-btn__content > .theme--dark").click();
-   cy.log("Kit builder(New Form) has been Published");
-   cy.wait(2000);
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+    //Click on  Publish
+    cy.contains("Publish").click({ force: true });
+    //cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Kit builder(New Form) has been Published");
+    cy.wait(2000);
   });
 });

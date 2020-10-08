@@ -1633,6 +1633,7 @@ class KitBuilderDataTypes {
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
+    cy.wait(20000);
     cy.contains(KitToBeRelate).click({ force: true });
     cy.wait(3000);
 
@@ -1740,11 +1741,12 @@ class KitBuilderDataTypes {
     //Click on DropDown to Select Kit type to Relate with 1-N Relation
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(4) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
-    ).click({ force: true })
-    
-    cy.wait(20000)
+    ).click({ force: true });
+
+    cy.wait(20000);
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
+    cy.wait(20000);
     cy.contains(KitToBeRelated).click({ force: true });
     cy.wait(3000);
 
@@ -1955,6 +1957,7 @@ class KitBuilderDataTypes {
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
+    cy.wait(20000);
     cy.contains(CardKitToBeRelated).click({ force: true });
     cy.wait(5000);
 
@@ -2123,7 +2126,9 @@ class KitBuilderDataTypes {
 
   ReactiveControl(RCName) {
     //Click on ReactiveControl
-    cy.getIframeBody().find('[data-gjs-type="control-reaction"]').click({ force: true });
+    cy.getIframeBody()
+      .find('[data-gjs-type="control-reaction"]')
+      .click({ force: true });
     cy.wait(3000);
     //Click on Lable
     cy.get(".gjs-trt-trait__wrp:nth-child(1) input").click().type(RCName);

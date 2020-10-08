@@ -26,7 +26,7 @@
     "SelectListValue5":"VVIP",
     
     "RadioSelect":"RadioSelect",
-    "RadioSelectName":"IPLName",
+    "RadioSelectName":"IPLTeams",
     "RadioSelectValue1":"KKR",
     "RadioSelectValue2":"MI",
     "RadioSelectValue3":"CSK",
@@ -70,8 +70,8 @@
     "InspectionValue4":"Python",
     "InspectionValue5":".net",
 
-    "OneToOneRelation":"Base2OneTo",
-    "KitToBeRelate":"Base",
+    "OneToOneRelation":"Account1ToOne",
+    "KitToBeRelate":"AccountManager",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
     "OneToOneMapView":"MapView",
@@ -79,13 +79,13 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"BaseNNRelation",
-    "KitToBeRelated":"Base",
+    "OneToManyRelation":"AccountNNRelation",
+    "KitToBeRelated":"AccountManager",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
     "OneToManySearchView":"SearchView",
-    "RelatedTableView":"BaseTableView",
+    "RelatedTableView":"AccountManagerTableView",
     "RelatedEle_1":"Url",
     "RelatedEle_2":"Text",
     "RelatedEle_3":"Telephone",
@@ -93,13 +93,13 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"SquareCardBase",
-    "CardKitToBeRelated":"Base",
+    "SquareCardName":"SquareCardAccount",
+    "CardKitToBeRelated":"AccountManager",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",
     "CardSearchView":"SearchView",
-    "SquareCardTableView":"Base table View",
+    "SquareCardTableView":"AccountManager table View",
     "RelateEle_1":"Url",
     "RelateEle_2":"Text",
     "RelateEle_3":"Telephone",
@@ -111,10 +111,10 @@
     "RVName":"Reactive Vriable",
 
     "TextBlockName":"TextBlockName",
-    "TextBlockData":"TextBlock for the new Market Values",
+    "TextBlockData":"TextBlock for the new testing ",
     "Button":"Button",
     "LinkName":"Link",
-    "EnterUrl":"https://www.market.com",
+    "EnterUrl":"https://www.makemytrip.com",
 
     "CreatedBy":"Created By",
     "ModifiedBy":"Modified By",

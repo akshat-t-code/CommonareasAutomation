@@ -6,19 +6,29 @@ describe("Kit Builder All Data Elements Configuration", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    lp.visitServiceBuild()
+    lp.visitServiceBuild();
     //Login Assertions
-    cy.get('.page-main-title').should('be.visible')
+    cy.get(".page-main-title").should("be.visible");
     //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
-    cy.log('User has been Logged In into the application')
+    cy.log("User has been Logged In into the application");
+
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
-
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
       "ASP.NET_SessionId",
@@ -63,14 +73,14 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
     lp.visitKitBuilderServiceBuild();
-    cy.log('User entered in kit builder')
+    cy.log("User entered in kit builder");
     cy.wait(3000);
     //Open Craeted Kit Type
-    kb.KBSearchBox(this.KitTypeName.KitName3)
-    cy.wait(5000)
+    kb.KBSearchBox(this.KitTypeName.KitName3);
+    cy.wait(5000);
     cy.contains(this.KitTypeName.KitName3).click({ force: true });
     cy.wait(3000);
-    cy.log('Created Kit type has been opened')
+    cy.log("Created Kit type has been opened");
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains(this.data.NewView).click({ force: true });
@@ -603,8 +613,8 @@ describe("Kit Builder All Data Elements Configuration", function () {
   });
 
   it("Reactive Variable Data type", function () {
-     //Double click on Data Element to drag it on Canvas
-     cy.get('[data-component="control-variable"]').dblclick({ force: true });
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[data-component="control-variable"]').dblclick({ force: true });
     const DataType = new KitBuilderDataTypes();
     DataType.ReactiveVriable(this.DataType.RVName);
   });
@@ -612,9 +622,9 @@ describe("Kit Builder All Data Elements Configuration", function () {
   it("Reactive Control Data type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[data-component="control-reaction"]').dblclick({ force: true });
-   const DataType = new KitBuilderDataTypes();
-   DataType.ReactiveControl(this.DataType.RCName);
- });
+    const DataType = new KitBuilderDataTypes();
+    DataType.ReactiveControl(this.DataType.RCName);
+  });
 
   it("Kit Builder Save and Publish", function () {
     //Kit Builder Save

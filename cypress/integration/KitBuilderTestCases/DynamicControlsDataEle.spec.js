@@ -4,19 +4,49 @@ import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 
 describe("Dynmamic Control Data Elements Configuration", function () {
   this.beforeAll(function () {
+    //Page Object
     const lp = new LoginPage();
-    cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
+    lp.visitServiceBuild();
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
+
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (KitTypeFormViewsNames) {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
+      KitTypeFormViewsNames
+    ) {
       this.data = KitTypeFormViewsNames;
     });
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (KittypeName) {
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
+      KittypeName
+    ) {
       this.KitTypeName = KittypeName;
     });
     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
@@ -28,16 +58,19 @@ describe("Dynmamic Control Data Elements Configuration", function () {
 
   it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
+    const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.KitBuilderUrl();
-    //kb.AdminUrl();
-    //cy.wait(5000);
-    //kb.ClickOnKitBuilder();
+    lp.visitKitBuilderServiceBuild();
+    cy.log("User entered in kit builder");
     cy.wait(3000);
-    cy.contains(this.KitTypeName.KitName).click({ force: true });
+    //Open Craeted Kit Type
+    kb.KBSearchBox(this.KitTypeName.KitName3);
+    cy.wait(5000);
+    cy.contains(this.KitTypeName.KitName3).click({ force: true });
     cy.wait(3000);
+    cy.log("Created Kit type has been opened");
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains(this.data.NewView).click({ force: true });

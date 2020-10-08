@@ -4,15 +4,41 @@ import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 
 describe("Kit Builder Data Types Details", function () {
   this.beforeAll(function () {
+    //Page Object
     const lp = new LoginPage();
-    cy.visit("http://serviceproviders.ca-build.com/Public/Login?ReturnUrl=%2F");
+    lp.visitServiceBuild();
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+    cy.log("User has been Logged In into the application");
+
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
       KitTypeFormViewsNames
     ) {
@@ -39,19 +65,22 @@ describe("Kit Builder Data Types Details", function () {
 
   it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
+    const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    kb.KitBuilderUrl();
+    lp.visitKitBuilderServiceBuild();
+    cy.log("User entered in kit builder");
     cy.wait(3000);
     //Open Craeted Kit Type
+    kb.KBSearchBox(this.KitTypeName.KitName3);
+    cy.wait(5000);
     cy.contains(this.KitTypeName.KitName3).click({ force: true });
-    //cy.contains('AkshatValidationKit').click({ force: true });
     cy.wait(3000);
+    cy.log("Created Kit type has been opened");
     cy.contains("Form Views").click({ force: true });
     cy.wait(3000);
     cy.contains(this.data.NewView).click({ force: true });
-    //cy.contains(this.data.EditView).click({ force: true });
     cy.wait(5000);
   });
 
