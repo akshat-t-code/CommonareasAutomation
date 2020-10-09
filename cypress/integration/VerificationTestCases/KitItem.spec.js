@@ -217,7 +217,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     // });
     cy.wait(2000);
 
-   // /*
+    // /*
 
     //Reminder
     //Click to open Reminder POPUP
@@ -309,7 +309,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       force: true,
     });
 
-   // */
+    // */
 
     cy.wait(2000);
 
@@ -364,6 +364,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
     //Click on to open UserSelector Pop up
     cy.get(".searchIcon").eq(0).click({ force: true });
     cy.wait(3000);
+
     cy.contains(this.NewKitItemData.UserSelectorName).click({ force: true });
     cy.wait(3000);
 

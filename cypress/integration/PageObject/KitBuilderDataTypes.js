@@ -1712,7 +1712,7 @@ class KitBuilderDataTypes {
   ) {
     //Click on Icon
     cy.getIframeBody().contains("Relation 1-N").click({ force: true });
-    //cy.getIframeBody().contains("OneToManyRelation").click({ force: true });
+    //cy.getIframeBody().contains("AccountNNRelation").click({ force: true });
     cy.wait(3000);
 
     //Click on Lable
@@ -1743,10 +1743,9 @@ class KitBuilderDataTypes {
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div:nth-child(4) > div.pr-2.pa-0.pr-1.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(4) > div"
     ).click({ force: true });
 
-    cy.wait(20000);
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    cy.wait(20000);
+    cy.wait(10000);
     cy.contains(KitToBeRelated).click({ force: true });
     cy.wait(3000);
 
@@ -1850,8 +1849,8 @@ class KitBuilderDataTypes {
     cy.wait(2000);
     //Change feature(old)
     //Add List Results Values coming from json file
-    // cy.contains(Ele1).click({ force: true });
-    // cy.contains(Ele2).click({ force: true });
+    // cy.contains('Url').click({ force: true });
+    // cy.contains("Text").click({ force: true });
     // cy.contains(Ele3).click({ force: true });
     // cy.contains(Ele4).click({ force: true });
     // cy.contains(Ele5).click({ force: true });
@@ -1957,7 +1956,7 @@ class KitBuilderDataTypes {
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    cy.wait(20000);
+    cy.wait(10000);
     cy.contains(CardKitToBeRelated).click({ force: true });
     cy.wait(5000);
 

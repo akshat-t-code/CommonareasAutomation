@@ -66,7 +66,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     });
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     const lp = new LoginPage();
     cy.wait(5000);
@@ -365,7 +365,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  it("OneToManyRelation Data Type", function () {
+  it.only("OneToManyRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-N"]').dblclick({ force: true });
     cy.wait(1000);
