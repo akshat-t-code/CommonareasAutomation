@@ -70,7 +70,7 @@
     "InspectionValue4":"Python",
     "InspectionValue5":".net",
 
-    "OneToOneRelation":"Account1ToOne",
+    "OneToOneRelation":"ValiToOne",
     "KitToBeRelate":"AccountManager",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
@@ -79,13 +79,13 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"AccountNNRelation",
+    "OneToManyRelation":"ValiNNRelation",
     "KitToBeRelated":"AccountManager",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
     "OneToManySearchView":"SearchView",
-    "RelatedTableView":"AccountManagerTableView",
+    "RelatedTableView":"ValiTableView",
     "RelatedEle_1":"Url",
     "RelatedEle_2":"Text",
     "RelatedEle_3":"Telephone",
@@ -93,13 +93,13 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"SquareCardAccount",
+    "SquareCardName":"SquareCard",
     "CardKitToBeRelated":"AccountManager",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",
     "CardSearchView":"SearchView",
-    "SquareCardTableView":"AccountManager table View",
+    "SquareCardTableView":"Vali table View",
     "RelateEle_1":"Url",
     "RelateEle_2":"Text",
     "RelateEle_3":"Telephone",

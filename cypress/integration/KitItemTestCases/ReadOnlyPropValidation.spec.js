@@ -22,10 +22,31 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
+
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitBuilderValidationTestData/Read&RequiredValidation").then(
       function (Validationdata) {
         this.RRProp = Validationdata;
@@ -56,11 +77,11 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
     });
   });
 
-  it("Navigating to Created KitType New Form", function () {
+  it.only("Navigating to Created KitType New Form", function () {
     const kb = new KitBuilderPage();
     const lp = new LoginPage();
     cy.wait(5000);
-    cy.title().should("eq", "Common Areas");
+    //cy.title().should("eq", "Common Areas");
     cy.wait(5000);
     lp.visitKitBuilderServiceBuild();
     cy.wait(10000);
@@ -402,90 +423,100 @@ describe("KitBuilder's Element ReadOnly Property Validation on Kit Builder", fun
     cy.wait(1000);
   });
 
-  it("Kit Builder Save and Publish", function () {
+  it.only("Kit Builder Save and Publish", function () {
     //Kit Builder Save
-    cy.get(".ca-button-green:nth-child(1)").click();
-    cy.get(".v-btn__content > .theme--dark").click();
+    cy.get(".ca-button-green:nth-child(1)").click({force:true});
+    cy.get(".v-btn__content > .theme--dark").click({force:true});
     cy.log("Kit builder(New Form) has been Saved");
     //Click on  Publish
     cy.contains("Publish").click({ force: true });
-    //cy.get(".v-btn__content > .theme--dark").click();
+    cy.get(".v-btn__content > .theme--dark").click({force:true});
     cy.log("Kit builder(New Form) has been Published");
     cy.wait(2000);
   });
 });
 
-describe("Validation On UI for Element's Read Property", function () {
-  this.beforeAll(function () {
-    // cy.viewport(1280, 720);
-    const lp = new LoginPage();
-    lp.visitServiceBuild();
+// describe("Validation On UI for Element's Read Property", function () {
+//   this.beforeAll(function () {
+//     // cy.viewport(1280, 720);
+//     const lp = new LoginPage();
+//     lp.visitServiceBuild();
 
-    //Handling Alert
-    cy.on("window:confirm", () => {
-      cy.log("Alert has been Handled");
-    });
+//     //Handling Alert
+//     cy.on("window:confirm", () => {
+//       cy.log("Alert has been Handled");
+//     });
 
-    //Login Assertions
-    cy.get(".page-main-title").should("be.visible");
-    //Enter credentials
-    lp.EnterEmail("kstanley@commonareas.work.dev");
-    lp.EnterPassword("1234567Aa");
-    lp.Submit();
-    cy.log("User has been Logged In into the application");
+//     //Login Assertions
+//     cy.get(".page-main-title").should("be.visible");
+//     //Enter credentials
+//     lp.EnterEmail("kstanley@commonareas.work.dev");
+//     lp.EnterPassword("1234567Aa");
+//     lp.Submit();
+//     cy.log("User has been Logged In into the application");
 
-    Cypress.Cookies.preserveOnce(
-      ".AspNet.ApplicationCookie",
-      "ASP.NET_SessionId",
-      "ca-cf-auth",
-      "kit-detail-selected-tab",
-      "jwt"
-    );
-    cy.wait(10000);
-  });
+//     Cypress.Cookies.preserveOnce(
+//       ".AspNet.ApplicationCookie",
+//       "ASP.NET_SessionId",
+//       "ca-cf-auth",
+//       "kit-detail-selected-tab",
+//       "jwt"
+//     );
+//     cy.wait(10000);
+//   });
 
-  this.beforeEach("Fixtures file data", function () {
-    cy.fixture("KitBuilderValidationTestData/Read&RequiredValidation").then(
-      function (Validationdata) {
-        this.RRProp = Validationdata;
-      }
-    );
+//   this.beforeEach("Fixtures file data", function () {
+//     Cypress.Cookies.preserveOnce(
+//       ".AspNet.ApplicationCookie",
+//       "ASP.NET_SessionId",
+//       "ca-cf-auth",
+//       "kit-detail-selected-tab",
+//       "jwt",
+//       "refreshToken",
+//       "jwtAccessToken"
+//     );
 
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
-      FormViewsNames
-    ) {
-      this.Data = FormViewsNames;
-    });
+//     cy.fixture("KitBuilderValidationTestData/Read&RequiredValidation").then(
+//       function (Validationdata) {
+//         this.RRProp = Validationdata;
+//       }
+//     );
 
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
-      KitTypeName
-    ) {
-      this.data1 = KitTypeName;
-    });
-    cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
-      datatypes
-    ) {
-      this.DataType = datatypes;
-    });
-  });
+//     cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
+//       FormViewsNames
+//     ) {
+//       this.Data = FormViewsNames;
+//     });
 
-  it("Navigating to UI for KitType New Form for ReadOnly Property Validation", function () {
-    //cy.wait(5000)
-    const lp = new LoginPage();
-    const KTP = new KitTypePage();
-    //Assertion
-    cy.title().should("eq", "Common Areas");
-    lp.PlusIcon();
-    //debugger;
-    //Click on To open Kit Type
-    KTP.SearchKitType(this.RRProp.ReadOnlyKitName);
-    cy.wait(3000);
-    //This is class to open searched kit type by clicking + iocn
-    cy.get(".truncate-special").first().click({ force: true });
-    //KTP.OpenKitType(this.RRProp.ReadOnlyKitName2);
-    cy.wait(2000);
-    //Assertion
-    cy.contains("New Item created").should("be.visible");
-    cy.log("New Item created and Kit Type has been Opened");
-  });
-});
+//     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
+//       KitTypeName
+//     ) {
+//       this.data1 = KitTypeName;
+//     });
+//     cy.fixture("KitBuilderTestData/KitBuilderDataTypes").then(function (
+//       datatypes
+//     ) {
+//       this.DataType = datatypes;
+//     });
+//   });
+
+//   it("Navigating to UI for KitType New Form for ReadOnly Property Validation", function () {
+//     //cy.wait(5000)
+//     const lp = new LoginPage();
+//     const KTP = new KitTypePage();
+//     //Assertion
+//     cy.title().should("eq", "Common Areas");
+//     lp.PlusIcon();
+//     //debugger;
+//     //Click on To open Kit Type
+//     KTP.SearchKitType(this.RRProp.ReadOnlyKitName);
+//     cy.wait(3000);
+//     //This is class to open searched kit type by clicking + iocn
+//     cy.get(".truncate-special").first().click({ force: true });
+//     //KTP.OpenKitType(this.RRProp.ReadOnlyKitName2);
+//     cy.wait(2000);
+//     //Assertion
+//     cy.contains("New Item created").should("be.visible");
+//     cy.log("New Item created and Kit Type has been Opened");
+//   });
+// });

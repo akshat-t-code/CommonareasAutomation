@@ -64,7 +64,7 @@ describe("Login for new User and Accept the Connection request(Second Flow TC)",
     });
   });
 
-  it.only("Login Again to appLication for Accepting the Request", function () {
+  it.only("Login to appLication for Accepting the Request", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();

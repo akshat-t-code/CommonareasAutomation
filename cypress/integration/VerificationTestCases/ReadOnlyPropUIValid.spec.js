@@ -30,19 +30,19 @@ describe("Validation On UI for Element's Read Property", function () {
       "refreshToken",
       "jwtAccessToken"
     );
-    cy.wait(10000)
+    cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
-    // Cypress.Cookies.preserveOnce(
-    //   ".AspNet.ApplicationCookie",
-    //   "ASP.NET_SessionId",
-    //   "ca-cf-auth",
-    //   "kit-detail-selected-tab",
-    //   "jwt",
-    //   "refreshToken",
-    //   "jwtAccessToken"
-    // );
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
 
     cy.fixture("KitBuilderValidationTestData/Read&RequiredValidation").then(
       function (Validationdata) {
@@ -318,18 +318,18 @@ describe("Validation On UI for Element's Read Property", function () {
     );
   });
 
-  it.only("UserSelector Read only Property Validation on UI", function () {
+  it("UserSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
     //UserSelector
-    cy.contains('UserSelector').should("have.attr", "readonly");
+    cy.contains("UserSelector").should("have.attr", "readonly");
     cy.get('[pickername="Users"]').should("have.attr", "readonly");
     cy.log(this.DataType2.UserSelector + " Read only Property Validated on UI");
   });
 
-  it.only("ContactSelector Read only Property Validation on UI", function () {
+  it("ContactSelector Read only Property Validation on UI", function () {
     cy.wait(1000);
     //ContactSelector
-    cy.contains('ContactSelector').should("have.attr", "readonly");
+    cy.contains("ContactSelector").should("have.attr", "readonly");
     cy.get("[name" + "=" + this.DataType2.ContactSelector + "]").should(
       "have.attr",
       "readonly"
@@ -339,13 +339,20 @@ describe("Validation On UI for Element's Read Property", function () {
     );
   });
 
-  it("Assigning Read only Property Validation on UI", function () {
+  it.only("Assigning Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Assigning
-    cy.get("[name" + "=" + this.DataType2.Assigning + "]").should(
+
+    cy.get('[slot="activator"]').should(
       "have.attr",
       "readonly"
     );
+
+    // cy.get("[name" + "=" + this.DataType2.Assigning + "]").should(
+    //   "have.attr",
+    //   "readonly"
+    // );
+
     cy.log(this.DataType2.Assigning + " Read only Property Validated on UI");
   });
 
@@ -356,7 +363,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log(this.DataType2.Icon + " Read only Property Validated on UI");
   });
 
-  it.only("Stepper Read only Property Validation on UI", function () {
+  it("Stepper Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Stepper
     cy.get("[name" + "=" + this.DataType2.Stepper + "]").should(
@@ -366,7 +373,7 @@ describe("Validation On UI for Element's Read Property", function () {
     cy.log(this.DataType2.Stepper + " Read only Property Validated on UI");
   });
 
-  it.only("Inspection Read only Property Validation on UI", function () {
+  it("Inspection Read only Property Validation on UI", function () {
     cy.wait(1000);
     //Inspection
     cy.get('[placeholder="Please Choose"]').should("not.have.attr", "readonly");

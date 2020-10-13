@@ -1,10 +1,10 @@
 {
 
     
-    "ReadOnlyKitName":"Base",
-    "ReadOnlyKitName2":"Property Builder2",
-    "IsRequiredKitName":"Base",
-    "IsRequiredKitName2":"Property Builder2"
+    "ReadOnlyKitName":"Validation",
+    "ReadOnlyKitName2":"Validation",
+    "IsRequiredKitName":"Validation",
+    "IsRequiredKitName2":"Validation"
     
 
 }

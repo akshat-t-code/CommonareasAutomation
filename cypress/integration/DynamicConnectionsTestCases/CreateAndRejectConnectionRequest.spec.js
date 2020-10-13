@@ -98,11 +98,11 @@ describe("Login for new User than Create A new Connection and Reject the Request
     cy.wait(10000);
   });
 
-  it.only("Login Again into the AppLication for Reject the Request", function () {
+  it.only("Login into the AppLication for Reject the Request", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visit();
+    sp.visitBaseTest();
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("Logging into the application for new User");

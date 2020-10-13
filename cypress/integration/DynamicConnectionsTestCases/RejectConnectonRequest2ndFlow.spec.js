@@ -36,14 +36,14 @@ describe("Login for new User and Reject the Connection request(Second Flow TC)",
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visit();
+    sp.visitBaseBuild();
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("First time user logging into the application");
     lp.Submit();
     //First Time login commands
-    cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
-    cy.get("#readTerms").click();
+    // cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
+    // cy.get("#readTerms").click();
     //cy.eyesCheckWindow();
     cy.wait(15000);
     cy.log("New Users has been logged in first time successfully");
@@ -64,11 +64,11 @@ describe("Login for new User and Reject the Connection request(Second Flow TC)",
     });
   });
 
-  it.only("Login Again into the AppLication for Reject the Request", function () {
+  it.only("Login into the AppLication for Reject the Request", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseTest();
+    sp.visitBaseBuild();
 
     //Login Assertions
     cy.get(".page-main-title").should("be.visible");

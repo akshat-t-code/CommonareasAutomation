@@ -33,7 +33,7 @@ describe("Login for new User than Create A new Connection and Accept the request
     }
   );
 
-  it.only("First Time Login into the appLication for New User", function () {
+  it("First Time Login into the appLication for New User", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
@@ -61,7 +61,7 @@ describe("Login for new User than Create A new Connection and Accept the request
     });
   });
 
-  it.only("Create a new Connection ", function () {
+  it("Create a new Connection ", function () {
     const lp = new LoginPage();
     lp.visitServiceTest();
     lp.EnterEmail("kstanley@commonareas.work.dev");
@@ -95,11 +95,11 @@ describe("Login for new User than Create A new Connection and Accept the request
     cy.wait(10000);
   });
 
-  it.only("Login Again to appLication for Accepting the Request", function () {
+  it.only("Login to appLication for Accepting the Request", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visit();
+    sp.visitBaseTest();
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("Logging into the application for new User");

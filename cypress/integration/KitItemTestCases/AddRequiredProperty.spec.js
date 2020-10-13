@@ -1,7 +1,6 @@
 import LoginPage from "../PageObject/LoginPage";
 import KitBuilderPage from "../PageObject/KitBuilderPage";
 
-
 describe("Set KitBuilder Data Elements Is Required", function () {
   this.beforeAll(function () {
     //Page Object
@@ -16,10 +15,33 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
+
+    cy.log("User has been Logged In into the application");
+
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.wait(10000);
   });
 
   this.beforeEach("Fixtures file data", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitBuilderValidationTestData/Read&RequiredValidation").then(
       function (Validationdata) {
         this.RRProp = Validationdata;
@@ -50,12 +72,13 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     });
   });
 
-  it("Navigating to Created KitType New Form to make Element Is Requried", function () {
+  it.only("Navigating to Created KitType New Form to make Element Is Requried", function () {
     const kb = new KitBuilderPage();
+    const lp = new LoginPage();
     cy.wait(5000);
     //cy.title().should("eq", "Common Areas App");
     cy.wait(5000);
-    kb.KitBuilderUrl();
+    lp.visitKitBuilderServiceBuild();
     cy.wait(3000);
     //Open Craeted Kit Type
     cy.contains(this.RRProp.IsRequiredKitName2).click({ force: true });
@@ -87,6 +110,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Url + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -112,6 +136,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Text + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -137,6 +162,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.File + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -162,6 +188,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Telephone + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -187,6 +214,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.TextAera + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -212,6 +240,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Slider + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -237,6 +266,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Currency + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -262,6 +292,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Measure + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -287,6 +318,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Email + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -312,6 +344,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Address + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -337,6 +370,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Number + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -362,6 +396,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Time + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -387,6 +422,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Date + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -412,6 +448,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Toggle + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -439,6 +476,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.SelectList + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -466,6 +504,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.RadioSelect + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -493,6 +532,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.CheckboxSelect + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -522,6 +562,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
       this.DataType.OneToManyRelation + " has been set as Required Property"
     );
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -549,6 +590,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Stepper + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -576,6 +618,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.UserSelector + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -605,6 +648,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
       this.DataType.OneToOneRelation + " has been set as Required Property"
     );
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -634,6 +678,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
       this.DataType.ContactSelector + " has been set as Required Property"
     );
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -661,6 +706,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.SquareCardName + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -686,6 +732,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Icon + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -713,6 +760,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Inspection + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });
@@ -738,6 +786,7 @@ describe("Set KitBuilder Data Elements Is Required", function () {
     cy.get(".v-btn--text:nth-child(2)").click({ force: true });
     cy.log(this.DataType.Assigning + " has been set as Required Property");
     //Assertion to close
+    cy.wait(2000);
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     cy.wait(3000);
   });

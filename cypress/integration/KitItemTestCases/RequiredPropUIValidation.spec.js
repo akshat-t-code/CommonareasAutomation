@@ -36,6 +36,16 @@ describe("Elements Is Required Property Validation On UI", function () {
   });
 
   this.beforeEach("Fixtures file data", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitBuilderValidationTestData/Read&RequiredValidation").then(
       function (Validationdata) {
         this.RRProp = Validationdata;
@@ -294,10 +304,12 @@ describe("Elements Is Required Property Validation On UI", function () {
   it("Assigning Required Property Validation on UI", function () {
     cy.wait(1000);
     //Assigning
-    cy.get("[name" + "=" + this.DataType2.Assigning + "]").should(
-      "have.attr",
-      "required"
-    );
+    cy.get('[[slot="activator"]]').should("have.attr", "required");
+
+    // cy.get("[name" + "=" + this.DataType2.Assigning + "]").should(
+    //   "have.attr",
+    //   "required"
+    // );
     cy.log(this.DataType2.Assigning + " Required Property Validated on UI");
   });
 
