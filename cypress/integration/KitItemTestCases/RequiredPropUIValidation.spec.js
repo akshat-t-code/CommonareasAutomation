@@ -248,10 +248,14 @@ describe("Elements Is Required Property Validation On UI", function () {
   it("SelectList Required Property Validation on UI", function () {
     cy.wait(1000);
     //SelectList
-    cy.get("[name" + "=" + this.DataType2.SelectListName + "]").should(
-      "have.attr",
-      "required"
-    );
+
+    cy.get('[controlname="selectList"]').should("have.attr", "required");
+
+    // cy.get("[name" + "=" + this.DataType2.SelectListName + "]").should(
+    //   "have.attr",
+    //   "required"
+    // );
+
     cy.log(
       this.DataType2.SelectListName + " Required Property Validated on UI"
     );

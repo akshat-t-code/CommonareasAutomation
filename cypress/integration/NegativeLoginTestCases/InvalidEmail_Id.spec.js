@@ -23,6 +23,16 @@ describe("TestCase For Invalid Email Id", function () {
   });
 
   this.beforeEach(function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     //debugger;
     cy.fixture("NegativeLoginTestData/InvalidEmailId").then(function (
       LoginData

@@ -5,6 +5,16 @@ describe("CommonPlan Test Case for Dragging KitItems on Layout", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     lp.visitServiceBuild();
+
+    //Handling Alert
+    cy.on("window:confirm", () => {
+      cy.log("Alert has been Handled");
+    });
+
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
+
+    //Enter credentials
     lp.EnterEmail("dzhao@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -14,11 +24,24 @@ describe("CommonPlan Test Case for Dragging KitItems on Layout", function () {
       "ASP.NET_SessionId",
       "ca-cf-auth",
       "kit-detail-selected-tab",
-      "jwt"
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
     );
+    cy.wait(10000);
   });
 
   this.beforeEach("KitType Data", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("KitTypeTestData/CommonPlanKitType").then(function (KitName) {
       this.KitName = KitName;
     });

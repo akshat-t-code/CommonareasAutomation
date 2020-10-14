@@ -3,6 +3,16 @@ import LoginPage from "../PageObject/LoginPage";
 
 describe("User Admin has already been Exist", function () {
   this.beforeEach("Getting data from Fixtures file", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     //Fixture file(Static) for Adding User
     cy.fixture("NegativeAdminUserTestData/AdminUserAlreadyExist").then(
       function (data) {
@@ -16,8 +26,8 @@ describe("User Admin has already been Exist", function () {
     //PageObject
     const lp = new LoginPage();
     lp.visitStarksBuild();
-     //Login Assertions
-     cy.get('.page-main-title').should('be.visible')
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
 
     lp.EnterEmail("starksolutions@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
@@ -26,7 +36,7 @@ describe("User Admin has already been Exist", function () {
     cy.log("User has been Logged in successfully");
     cy.title().should("eq", "Common Areas");
     cy.wait(10000);
-    lp.AdminStarksBuild()
+    lp.AdminStarksBuild();
     cy.ClickOnAddUser();
     //Assertion
     cy.get("#content > div.right > h2")
@@ -55,9 +65,13 @@ describe("User Admin has already been Exist", function () {
     cy.UserZipCode(this.Credentials.UserZipCode);
     cy.UserCity(this.Credentials.UserCity);
     //Select State
-    cy.get('[name="AccountUser.UserContact.Country"]').select(this.Credentials.Country);
+    cy.get('[name="AccountUser.UserContact.Country"]').select(
+      this.Credentials.Country
+    );
     //Select State
-    cy.get('[name="AccountUser.UserContact.State"]').select(this.Credentials.State);
+    cy.get('[name="AccountUser.UserContact.State"]').select(
+      this.Credentials.State
+    );
     cy.log("All details has been entered for Admin user");
 
     cy.AddUser();

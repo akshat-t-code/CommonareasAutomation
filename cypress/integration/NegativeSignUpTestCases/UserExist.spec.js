@@ -3,6 +3,16 @@ import LoginPage from "../PageObject/LoginPage";
 
 describe("User has already been Exist for this Email Id", function () {
   this.beforeEach("Getting data from Fixtures file", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     //debugger;
     cy.fixture("NegativeSignUpTestData/UserAlreadyExist").then(function (
       JsonData

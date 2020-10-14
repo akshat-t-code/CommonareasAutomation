@@ -3,6 +3,16 @@ import LoginPage from "../PageObject/LoginPage";
 
 describe("Connection Request has Already been Sent for this User", function () {
   this.beforeEach("Getting data from Fixtures file", function () {
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
     cy.fixture("NegativeConnectionTestData/RequestAlreadySent").then(function (
       JsonData
     ) {
@@ -16,8 +26,8 @@ describe("Connection Request has Already been Sent for this User", function () {
   it("This User Already Sent Connection Request", function () {
     const lp = new LoginPage();
     lp.visitServiceTest();
-     //Login Assertions
-     cy.get(".page-main-title").should("be.visible");
+    //Login Assertions
+    cy.get(".page-main-title").should("be.visible");
 
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
@@ -47,6 +57,5 @@ describe("Connection Request has Already been Sent for this User", function () {
     ).should("be.visible");
     cy.log("Connection Request has Already been sent with this user");
     cy.wait(5000);
-    
   });
 });

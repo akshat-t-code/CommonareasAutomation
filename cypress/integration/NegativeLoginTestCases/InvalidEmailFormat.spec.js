@@ -3,7 +3,17 @@ import LoginPage from "../PageObject/LoginPage";
 
 describe("TestCase For Invalid Email Format", function () {
   this.beforeEach(function () {
-    debugger;
+    Cypress.Cookies.preserveOnce(
+      ".AspNet.ApplicationCookie",
+      "ASP.NET_SessionId",
+      "ca-cf-auth",
+      "kit-detail-selected-tab",
+      "jwt",
+      "refreshToken",
+      "jwtAccessToken"
+    );
+
+    //debugger;
     cy.fixture("NegativeLoginTestData/Invalid_Email_Format").then(function (
       LoginData
     ) {
