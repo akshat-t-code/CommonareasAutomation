@@ -1,24 +1,24 @@
 {
 
-    "KitName":"AccountManager2",
+    "KitName":"Validation",
     
-    "Url":"https://www.99acres.com",
-    "Text":"3BHK Flats",
-    "Telephone":"(972) 000-2495",
-    "TextAera":"Free Hold Hosue With Parking",
-    "Currency":"75000",
-    "Measure":"2000",
+    "Url":"https://www.facebook.com",
+    "Text":"facebook",
+    "Telephone":"(982) 999-2495",
+    "TextAera":"Facebook account for marketing",
+    "Currency":"9092",
+    "Measure":"8923",
 
-    "Email":"johnbuilder@yahoo.com",
+    "Email":"tjMax@yahoo.com",
     "Important Note for Email":"should be in small letters",
 
-    "Addressline1":"3860 Romrog Way",
+    "Addressline1":"Romrog Way",
     "Addressline2":"Oak Way",
     "City":"Grand Island",
     "State":"Alaska",
-    "ZipCode":"33025",
+    "ZipCode":"31002",
     "Country":"United States",
-    "Number":"443",
+    "Number":"0902",
 
     "SelectListValue":"KKR",
     
@@ -47,7 +47,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"99Acres",
+    "IconLabel":"fb",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",
