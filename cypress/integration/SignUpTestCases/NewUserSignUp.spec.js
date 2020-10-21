@@ -61,7 +61,7 @@ describe("Sign up for a New User", function () {
   it("New User Sign up", function () {
     //PageObject
     const sp = new SignUpPage();
-    sp.visitBaseTest();
+    sp.visitBaseBuild();
     cy.wait(3000);
     // cy.eyesCheckWindow()
 
@@ -92,6 +92,8 @@ describe("Sign up for a New User", function () {
 
     //Click on Agree Terms and conditions
     cy.get("#AgreeTermsAndConditions").click({ force: true });
+    cy.screenshot("User details");
+    cy.wait(10000);
 
     //Click on Submit to Create the user
     cy.get("#submitButton").click();
@@ -102,6 +104,8 @@ describe("Sign up for a New User", function () {
     cy.contains(
       "An email has been sent to you to verify the email address you provided with a link to activate your account."
     ).should("be.visible");
+
+    cy.screenshot("Capturing the screenshot after successful signup");
     // cy.eyesCheckWindow("New user Signed Up");
     cy.wait(5000);
     //cy.eyesCheckWindow();

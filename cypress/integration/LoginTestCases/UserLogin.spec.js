@@ -29,12 +29,14 @@ describe("Login into the application for a new User ", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseTest();
+    sp.visitBaseBuild();
     //Login Assertions
     cy.get(".page-main-title").should("be.visible");
 
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.Credentials.Password);
+    cy.screenshot('User logged In Details')
+    cy.wait(7000)
     lp.Submit();
 
     Cypress.Cookies.preserveOnce(
@@ -60,5 +62,7 @@ describe("Login into the application for a new User ", function () {
       const WelcomeTxt = $WelEle.text();
       cy.log(WelcomeTxt);
     });
+    cy.screenshot('New Users has been logged in successfully')
+    cy.wait(10000)
   });
 });

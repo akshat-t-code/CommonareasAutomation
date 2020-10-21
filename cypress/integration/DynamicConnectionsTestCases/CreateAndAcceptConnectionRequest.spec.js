@@ -63,9 +63,11 @@ describe("Login for new User than Create A new Connection and Accept the request
 
   it("Create a new Connection ", function () {
     const lp = new LoginPage();
-    lp.visitServiceTest();
+    lp.visitServiceBuild();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
+    cy.screenshot("User Details-(To Create Connection Request");
+    cy.wait(10000);
     //cy.eyesCheckWindow("Logging into the application");
     lp.Submit();
     cy.wait(10000);
@@ -79,6 +81,8 @@ describe("Login for new User than Create A new Connection and Accept the request
     cy.ConnectionFirstName(this.Credentials.Fname);
     cy.ConnectionLastName(this.Credentials.Lname);
     cy.ConnectionEmail(this.Credentials.UserEmail);
+    cy.screenshot("User Connection Details");
+    cy.wait(7000);
     //cy.eyesCheckWindow("Connection Details");
     cy.log("Connection detalis has been Entered");
     //click on DropDown(This DropDown feature has be removed from this connection module)
@@ -92,6 +96,7 @@ describe("Login for new User than Create A new Connection and Accept the request
     //Click on Save btn
     cy.get(".button-pop-ups--size").click();
     cy.log("Connection Request has been sent successfully");
+    cy.screenshot("Connection Request has been sent successfully");
     cy.wait(10000);
   });
 
@@ -99,9 +104,11 @@ describe("Login for new User than Create A new Connection and Accept the request
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseTest();
+    sp.visitBaseBuild();
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
+    cy.screenshot("User Details-To Logged In(Accepting Connection Request");
+    cy.wait(10000);
     //cy.eyesCheckWindow("Logging into the application for new User");
     lp.Submit();
     cy.wait(10000);
@@ -110,7 +117,8 @@ describe("Login for new User than Create A new Connection and Accept the request
     //Click On Connection Request notification Icon
     cy.get(".menu-items-icon:nth-child(2) > path").click();
     //cy.eyesCheckWindow("Connection Request");
-    cy.wait(5000);
+    cy.screenshot("Connection Request");
+    cy.wait(10000);
     //click to Accept the Request
     cy.get(".green--text").click();
     //cy.get(':nth-child(4) > .v-btn > .v-btn__content > .v-icon').click()
@@ -125,6 +133,7 @@ describe("Login for new User than Create A new Connection and Accept the request
     //Assertion and Click On Created Connection
     cy.contains("Kali Stanley").should("be.visible").click({ force: true });
     cy.log("Connection Created");
+    cy.screenshot("Connection Created");
     //cy.eyesCheckWindow();
     cy.wait(7000);
   });
