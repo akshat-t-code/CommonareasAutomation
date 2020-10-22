@@ -1,8 +1,8 @@
 {
   
   "$schema": "https://on.cypress.io/cypress.schema.json",
-  "pageLoadTimeout": 800000,
-  "defaultCommandTimeout": 50000,
+  "pageLoadTimeout": 1000000,
+  "defaultCommandTimeout": 90000,
   "chromeWebSecurity": false,
   "trashAssetsBeforeRuns": false,
   "video": true,

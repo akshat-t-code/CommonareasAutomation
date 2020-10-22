@@ -64,7 +64,7 @@ describe("Create user from admin and login with the new user", function () {
     }
   );
 
-  it("Create user form admin", function () {
+  it.only("Create user form admin", function () {
     //PageObject
     const lp = new LoginPage();
     lp.visitStarksBuild();
@@ -74,6 +74,8 @@ describe("Create user from admin and login with the new user", function () {
 
     lp.EnterEmail("starksolutions@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
+    cy.screenshot("Create User Admin Details");
+    cy.wait(5000);
     //cy.eyesCheckWindow("Logging into the Application");
     lp.Submit();
     cy.wait(5000);
@@ -85,10 +87,9 @@ describe("Create user from admin and login with the new user", function () {
     //cy.eyesCheckWindow();
     cy.ClickOnAddUser();
     //Assertion
-    cy.get("#content > div.right > h2")
-      .contains("Add User")
-      .should("be.visible");
+    cy.get(".admin--header").contains("Add User").should("be.visible");
     //cy.eyesCheckWindow();
+    cy.screenshot("Add User Admin Form");
     cy.wait(10000);
 
     //Adding User form Admin Custom Commands coming from command.js
@@ -107,7 +108,9 @@ describe("Create user from admin and login with the new user", function () {
     cy.UserMobilePhone(this.Credentials.UserPhoneNo);
     //cy.eyesCheckWindow("User Details");
 
-    cy.get(".btnSaveDetails").scrollIntoView().should("be.visible");
+    cy.get('[name="AccountUser.UserContact.State"]')
+      .scrollIntoView()
+      .should("be.visible");
 
     cy.UserAddress1(this.data.UserAddress1);
     cy.UserAddress2(this.data.UserAddress2);
@@ -122,16 +125,16 @@ describe("Create user from admin and login with the new user", function () {
     cy.get('[name="AccountUser.UserContact.State"]').select(this.data.State);
     cy.log("All details has been entered for Admin user");
     //cy.eyesCheckWindow("User Details");
-
-    cy.AddUser();
-    cy.log("user has been add successfully");
+    cy.screenshot("Admin User Details");
+    cy.SaveUserDetails();
+    cy.log("User Details has been add successfully");
     //cy.eyesCheckWindow();
     cy.wait(5000);
     //Assertion
     cy.url().should("include", "ClientAdmin/UserDetails/");
     //cy.wait(2000).eyesCheckWindow();
-    cy.SaveUserDetails();
-    cy.log("users's Detalis has been saved successfully");
+    cy.SaveUser();
+    cy.log("Admin User has been saved successfully");
 
     //Assertion
     cy.get(
@@ -140,10 +143,11 @@ describe("Create user from admin and login with the new user", function () {
       .contains("User details updated successfully.")
       .should("be.visible");
     //cy.eyesCheckWindow();
+    cy.screenshot("Admin User saved successfully");
     cy.wait(10000);
   });
 
-  it("New Add user login into the appliction", function () {
+  it("New Add user login into the appliction First time", function () {
     //PageObject
     const lp = new LoginPage();
     lp.visitStarksBuild();
@@ -153,6 +157,7 @@ describe("Create user from admin and login with the new user", function () {
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.data.UserPassword);
     //cy.eyesCheckWindow("user logging into the application");
+    cy.screenshot("New Admin User LogIn Details");
     lp.Submit();
     cy.wait(3000);
     //First Time login commands
@@ -163,7 +168,7 @@ describe("Create user from admin and login with the new user", function () {
     cy.log("New User has been logged in successfully");
     //cy.eyesCheckWindow("Logged In");
     //Assertion
-    cy.title().should("eq", "Common Areas App");
+    cy.title().should("eq", "Common Areas");
     cy.wait(5000);
     //Profile Assertion
     cy.get(
@@ -172,6 +177,8 @@ describe("Create user from admin and login with the new user", function () {
       const WelcomeTxt = $WelEle.text();
       cy.log(WelcomeTxt);
     });
+    cy.screenshot("Admin User Logged In");
+    cy.wait(5000);
   });
 
   // this.afterAll(function () {

@@ -118,11 +118,11 @@ Cypress.Commands.add("UserCity", (UserCity) => {
 });
 
 Cypress.Commands.add("UserState", () => {
-  cy.get('[name="AccountUser.UserContact.State"]').click();
+  cy.get('[name="AccountUser.UserContact.State"]').click({ force: true });
 });
 
 Cypress.Commands.add("UserCountry", () => {
-  cy.get('[name="AccountUser.UserContact.Country"]').click();
+  cy.get('[name="AccountUser.UserContact.Country"]').click({ force: true });
 });
 
 Cypress.Commands.add("AddUser", () => {
@@ -130,7 +130,13 @@ Cypress.Commands.add("AddUser", () => {
 });
 
 Cypress.Commands.add("SaveUserDetails", () => {
-  cy.get(".btnSaveDetails").scrollIntoView().click({ force: true });
+  cy.get(".btnSaveDetails").click({ force: true });
+});
+
+Cypress.Commands.add("SaveUser", () => {
+  cy.get(".btnSaveDetails")
+    .scrollIntoView({ force: true })
+    .click({ force: true });
 });
 
 //Kit Builder Commands
@@ -179,14 +185,14 @@ Cypress.Commands.add("KitIcon", () => {
 
 Cypress.Commands.add("CreateKit", () => {
   //Create btn
-  cy.get(".ca-button-green > .v-btn__content").click();
+  cy.get(".ca-button-green > .v-btn__content").click({ force: true });
   //Assertion msg close
-  cy.get(".v-btn__content > .theme--dark").click();
+  cy.get(".v-btn__content > .theme--dark").click({ force: true });
 });
 
 Cypress.Commands.add("CreateKitType", () => {
   //Create btn
-  cy.get(".ca-button-green > .v-btn__content").click();
+  cy.get(".ca-button-green > .v-btn__content").click({ force: true });
 });
 
 //New View Form Detalis
@@ -217,9 +223,11 @@ Cypress.Commands.add("NewViewDescription", (NewViewDescription) => {
 
 Cypress.Commands.add("SaveNewForm", () => {
   //Click on Save btn
-  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click();
+  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+    force: true,
+  });
   //Click on Assertion to close msg
-  cy.get(".v-btn__content > .theme--dark").click();
+  cy.get(".v-btn__content > .theme--dark").click({ force: true });
 });
 
 //Edit View Form
@@ -250,7 +258,9 @@ Cypress.Commands.add("EditViewDescription", (EditViewDescription) => {
 
 Cypress.Commands.add("SaveEditForm", () => {
   //Click on Save btn
-  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click();
+  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+    force: true,
+  });
   //Click on Assertion to close msg
   cy.get(".v-btn__content > .theme--dark").click();
 });
@@ -283,9 +293,11 @@ Cypress.Commands.add("SharedViewDescription", (SharedViewDescription) => {
 
 Cypress.Commands.add("SaveSharedForm", () => {
   //Click on Save btn
-  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click();
+  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+    force: true,
+  });
   //Click on Assertion to close msg
-  cy.get(".v-btn__content > .theme--dark").click();
+  cy.get(".v-btn__content > .theme--dark").click({ force: true });
 });
 
 //Email View Form
@@ -316,9 +328,11 @@ Cypress.Commands.add("EmailViewDescription", (EmailViewDescription) => {
 
 Cypress.Commands.add("SaveEmailForm", () => {
   //Click on Save btn
-  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click();
+  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+    force: true,
+  });
   //Click on Assertion to close msg
-  cy.get(".v-btn__content > .theme--dark").click();
+  cy.get(".v-btn__content > .theme--dark").click({ force: true });
 });
 
 //Map View Form
@@ -349,9 +363,11 @@ Cypress.Commands.add("MapViewDescription", (MapViewDescription) => {
 
 Cypress.Commands.add("SaveMapForm", () => {
   //Click on Save btn
-  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click();
+  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+    force: true,
+  });
   //Click on Assertion to close msg
-  cy.get(".v-btn__content > .theme--dark").click();
+  cy.get(".v-btn__content > .theme--dark").click({ force: true });
 });
 
 //Schedule View Form
@@ -382,9 +398,11 @@ Cypress.Commands.add("ScheduleViewDescription", (ScheduleViewDescription) => {
 
 Cypress.Commands.add("SaveScheduleForm", () => {
   //Click on Save btn
-  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click();
+  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+    force: true,
+  });
   //Click on Assertion to close msg
-  cy.get(".v-btn__content > .theme--dark").click();
+  cy.get(".v-btn__content > .theme--dark").click({ force: true });
 });
 
 //CommonPlan View Form
@@ -418,9 +436,11 @@ Cypress.Commands.add(
 
 Cypress.Commands.add("SaveCommonPlanForm", () => {
   //Click on Save btn
-  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click();
+  cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
+    force: true,
+  });
   //Click on Assertion to close msg
-  cy.get(".v-btn__content > .theme--dark").click();
+  cy.get(".v-btn__content > .theme--dark").click({ force: true });
 });
 
 //RelatedNew View Form

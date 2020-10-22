@@ -36,7 +36,7 @@ describe("Reject new Connection Request for a User", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseTest();
+    sp.visitBaseBuild();
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword("1234567Aa");
     cy.screenshot("User Details-To Logged In(Reject Connection Request");
