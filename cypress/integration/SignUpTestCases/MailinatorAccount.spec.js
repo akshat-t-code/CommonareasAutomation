@@ -34,7 +34,7 @@ describe("Activation Mailinator Account for New Sign up User", function () {
     //cy.eyesCheckWindow("Common Aera Mail in the inbox");
     // cy.contains("Common Areas - Account Activation").click();
     cy.screenshot("Verifying for getting common aera email");
-    cy.wait(5000);
+    cy.wait(10000);
     cy.contains("Welcome to Commonareas - Verify Email").click();
 
     //debugger
@@ -45,7 +45,7 @@ describe("Activation Mailinator Account for New Sign up User", function () {
     cy.wait(5000);
     cy.log("New user Account has been verified successfully on Mailinator");
     cy.screenshot("successfully Account has been verified on Mailinator");
-    cy.wait(4000);
+    cy.wait(10000);
   });
   // this.afterAll(function () {
   //   cy.eyesClose();

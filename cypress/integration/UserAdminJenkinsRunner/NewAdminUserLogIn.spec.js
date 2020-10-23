@@ -2,7 +2,7 @@ import SignUpPage from "../PageObject/SignUpPage";
 import LoginPage from "../PageObject/LoginPage";
 import RandomString from "../PageObject/RandomString";
 
-describe("New Admin User Login into", function () {
+describe("New Admin User Login into thr application", function () {
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
@@ -43,6 +43,8 @@ describe("New Admin User Login into", function () {
     cy.wait(3000);
     //First Time login commands
     cy.url().should("include", "Public/TermsAndConditions?acceptTerms=True");
+    cy.screenshot("ReadTerms Page");
+    cy.wait(7000);
     cy.get("#readTerms").scrollIntoView().click({ force: true });
     //cy.eyesCheckWindow("New User");
     cy.wait(10000);
