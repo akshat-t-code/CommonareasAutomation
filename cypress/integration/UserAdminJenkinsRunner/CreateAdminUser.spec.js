@@ -83,9 +83,7 @@ describe("Create new User admin", function () {
     //cy.eyesCheckWindow("Logged In");
     cy.title().should("eq", "Common Areas");
     cy.wait(10000);
-    cy.visit('https://starksolutions.ca-build.com/ClientAdmin/AddUser')
-
-    //lp.AdminStarksBuild();
+    lp.AddUserStarksBuild();
     //cy.eyesCheckWindow();
     //cy.ClickOnAddUser();
     //Assertion

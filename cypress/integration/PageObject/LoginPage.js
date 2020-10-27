@@ -27,8 +27,8 @@ class LoginPage {
     cy.visit("http://starksolutions.ca-build.com/");
   }
 
-  AdminStarksBuild() {
-    cy.visit("https://starksolutions.ca-build.com/ClientAdmin/Index/#/");
+  AddUserStarksBuild() {
+    cy.visit("https://starksolutions.ca-build.com/ClientAdmin/AddUser");
   }
 
   EnterEmail(value) {

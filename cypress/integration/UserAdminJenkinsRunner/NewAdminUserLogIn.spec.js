@@ -2,7 +2,7 @@ import SignUpPage from "../PageObject/SignUpPage";
 import LoginPage from "../PageObject/LoginPage";
 import RandomString from "../PageObject/RandomString";
 
-describe("New Admin User Login into thr application", function () {
+describe("New Admin User Login into the application", function () {
   this.beforeEach(
     "Getting the Dynmaically Generated data through Fixtures file",
     function () {
@@ -61,7 +61,7 @@ describe("New Admin User Login into thr application", function () {
       cy.log(WelcomeTxt);
     });
     cy.screenshot("Admin User Logged In");
-    cy.wait(5000);
+    cy.wait(10000);
   });
 
   // this.afterAll(function () {

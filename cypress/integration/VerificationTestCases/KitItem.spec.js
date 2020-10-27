@@ -2,6 +2,7 @@ import LoginPage from "../PageObject/LoginPage";
 import KitTypePage from "../PageObject/KitTypePage";
 
 describe("Basic Test Case for Element interaction for common area DT", function () {
+  
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
