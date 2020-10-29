@@ -151,7 +151,7 @@ describe("Basic Test Case for Element interaction for common area DT", function 
       .type(this.NewKitItemData.Email);
     cy.wait(1000);
 
-    cy.get('[placeholder="City"]').scrollIntoView({ force: true });
+    cy.get('[placeholder="City"]').scrollIntoView({force:true})
     cy.wait(1000);
 
     //Address
