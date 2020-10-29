@@ -1,10 +1,10 @@
 {
-    "TableListEleValidation":"Base",
+    "TableListEleValidation":"Validation",
     "TableListResultEleValidation":"AutomationKit(Dont touch)",
     "TableListValidation":"AutomationKit(Dont touch)",
     "TLKitName":"AkshatKitDemo",
     "TableListEleValidation2":"Property Builder2",
-    "TableListResultEleValidation2":"Base2",
+    "TableListResultEleValidation2":"Validation",
     "TableListValidation2":"Property Builder2",
     "TLKitName2":"Property Builder2"
 }

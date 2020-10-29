@@ -13,7 +13,7 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
     });
 
     //Login Assertions
-    cy.get(".page-main-title").should("be.visible");
+    cy.contains(" Log In ").should("be.visible");
     //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
@@ -33,15 +33,6 @@ describe("Validate TableList's Results Element for Created Kit Type on UI", func
   });
 
   this.beforeEach("KitType Data", function () {
-    Cypress.Cookies.preserveOnce(
-      ".AspNet.ApplicationCookie",
-      "ASP.NET_SessionId",
-      "ca-cf-auth",
-      "kit-detail-selected-tab",
-      "jwt",
-      "refreshToken",
-      "jwtAccessToken"
-    );
 
     // cy.fixture("KitTypeTestData/KitItemDataValues").then(function (KitDataEle) {
     //   this.KitItemData = KitDataEle;
