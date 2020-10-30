@@ -21,6 +21,7 @@ describe("To Test creation of new kit item", function () {
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
+
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
       "ASP.NET_SessionId",
@@ -54,7 +55,7 @@ describe("To Test creation of new kit item", function () {
     });
   });
 
-  it.only("Navigating to created Kit type ", function () {
+  it("Navigating to created Kit type ", function () {
     cy.wait(10000);
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -82,7 +83,7 @@ describe("To Test creation of new kit item", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only("Create New Kit Item with all the fields", function () {
+  it("Create New Kit Item with all the fields", function () {
     const lp = new LoginPage();
 
     cy.wait(2000);
@@ -177,24 +178,24 @@ describe("To Test creation of new kit item", function () {
     //   .type(this.NewKitItemData.Number);
     // cy.wait(1000);
 
-    // //Time Data Element
-    // //Click on Time to appear time pop up
-    // cy.get('[placeholder="Add Time"][type="text"]').click({ force: true });
-    // cy.wait(1000);
-    // //Select hour value
-    // cy.xpath(
-    //   "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
-    // ).click({ force: true });
-    // cy.wait(1000);
-    // //Select Value of miniutes
-    // cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
-    // cy.wait(1000);
-    // //Click on PM
-    // cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
-    // //Click on OK to save date
-    // cy.xpath(
-    //   "//div[contains(@class,'v-dialog v-dialog--active')]//button[1]"
-    // ).click({ force: true });
+    //Time Data Element
+    //Click on Time to appear time pop up
+    cy.get('[placeholder="Add Time"][type="text"]').click({ force: true });
+    cy.wait(1000);
+    //Select hour value
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
+    ).click({ force: true });
+    cy.wait(1000);
+    //Select Value of miniutes
+    cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
+    cy.wait(1000);
+    //Click on PM
+    cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
+    //Click on OK to save date
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//button[1]"
+    ).click({ force: true });
 
     // //Click on OK to save Time(also working)
     // // cy.get(".btnBorder:nth-child(1) > .v-btn__content").click({ force: true });
@@ -202,13 +203,13 @@ describe("To Test creation of new kit item", function () {
 
     //Date Data Element
     //Click on Date to appear Date pop up
-    cy.get(".v-input__prepend-inner").first().click({ force: true });
-    cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
-      .first()
-      .click({ force: true });
-    cy.wait(2000);
-    //Click on OK to save Date
-    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    // cy.get(".v-input__prepend-inner").eq(1).click({ force: true });
+    // cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
+    //   .first()
+    //   .click({ force: true });
+    // cy.wait(2000);
+    // //Click on OK to save Date
+    // cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
     //Click on OK to save Date(also working)
     // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
     //   force: true,
