@@ -6,8 +6,12 @@ describe("Adding Results and Filters Element to Search List View", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
     lp.visitServiceBuild();
+    //Login Assertions
+    cy.contains(" Log In ").should("be.visible")
+    //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
+    
     lp.Submit();
     cy.wait(10000);
   });

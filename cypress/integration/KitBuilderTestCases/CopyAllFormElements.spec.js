@@ -7,7 +7,7 @@ describe("Copy New Form Elements in All Forms", function () {
     const lp = new LoginPage();
     lp.visitServiceBuild();
     //Login Assertions
-    cy.get(".page-main-title").should("be.visible");
+    cy.contains(" Log In ").should("be.visible")
     //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");

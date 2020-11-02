@@ -5,9 +5,9 @@ describe("Create New Kit type ", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    lp.visitServiceBuild();
+    lp.visitServiceTest();
     //Login Assertions
-    cy.get(".page-main-title").should("be.visible");
+    cy.contains(" Log In ").should("be.visible")
     //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
@@ -55,7 +55,7 @@ describe("Create New Kit type ", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    lp.visitKitBuilderServiceBuild();
+    lp.visitKitBuilderServiceTest();
     cy.log("User in Kit Builder");
     kb.ClickOnCreateNewKit();
     cy.wait(5000);

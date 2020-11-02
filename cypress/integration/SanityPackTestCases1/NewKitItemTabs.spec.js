@@ -88,36 +88,59 @@ describe("New kit item all tab details", function () {
 
     //Files Tab
     cy.contains("Files").click({ force: true });
-    // cy.wait(2000);
-    // //Click on Library
-    // cy.contains("Choose From Library").click({ force: true });
-    // cy.wait(2000);
-    // //Click on the file
-    // cy.get(".thumb-container:nth-child(2) .item-check").click({ force: true });
-    // cy.wait(2000);
-    // //Click on save file
-    // cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
-    // //Assertion validation
-    // cy.contains("File saved").should("be.visible");
+    cy.wait(2000);
+    //Click on Library
+    cy.contains("Choose From Library").click({ force: true });
+    cy.wait(2000);
+    //Click on the file
+    cy.get(".thumb-container:nth-child(2) .item-check").click({ force: true });
+    cy.wait(2000);
+    //Click on save file
+    cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
+    //Assertion validation
+    cy.contains("File saved").should("be.visible");
+    cy.log("File uploaded");
+    cy.wait(3000);
+
+    cy.contains("Upload From Drive").click({ force: true });
+    cy.wait(7000)
+
+    cy.get(".dropzone-area-button:nth-child(3) > .flex").click({ force: true });
+
+    cy.wait(4000)
+
+    cy.get('.dropzone-area-button:nth-child(3) > .wrapper-img').click({ force: true });
+
+
+
+    // const fileName = "Fixtures.png";
+    // cy.readFile("C:/Users/akash/Desktop/ScreenShots/Fixtures.png").then(
+    //   function (fileContent) {
+    //     cy.get(".dropzone-area-button:nth-child(3) > .flex").attachFile({
+    //       fileContent,
+    //       fileName,
+    //       mimeType: "image/png",
+    //     });
+    //     cy.log("File Uploaded!");
+    //   }
+    // );
+
+    // const imagefile = "Fixtures.png";
+    // cy.contains("Upload From Drive").attachFile("Fixtures.png");
     // cy.log("File uploaded");
-    // cy.wait(3000);
 
-    // const fileName = 'Fixtures erro.png'
-    // cy.readFile('C:/Users/akash/Desktop/ScreenShots/Fixtures erro.png').then(function(fileContent){
-    //     cy.contains('Upload From Drive').upload({ fileContent, fileName, mimeType: 'image/png' })
-    //     cy.contains('File Uploaded!')
-    // })
-
-    const imagefile = "Fixtures.png";
-    cy.get('.dropzone-area-button:nth-child(3) > .flex').attachFile(imagefile)
+    
 
     // //Map Tab
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
-    // cy.get('.vue-map-container:nth-child(2) .gm-style > div:nth-child(1) > div:nth-child(3)')
-    // .click({force:true});
-    // cy.contains('Add a Pin').click({force:true})
-    // cy.contains('Add ValiNNRelation').click({force:true})
+    // cy.get(
+    //   ".vue-map-container:nth-child(2) .gm-style > div:nth-child(1) > div:nth-child(3)"
+    // ).click({ force: true });
+    // cy.contains("Add a Pin").click({ force: true });
+    // cy.contains(" Location created ").should("be.visible");
+    // //cy.contains("Add ValiNNRelation").click({ force: true });
+    // cy.wait(15000);
 
     // //Contributors Tab
     // cy.contains(" Contributors ").click({ force: true });
@@ -164,7 +187,7 @@ describe("New kit item all tab details", function () {
     // //Click on select date
     // cy.get('[name="startdate"]').click({ force: true });
     // //Select Date
-    // cy.xpath("//div[contains(text(),'31')]").eq(0).click({ force: true });
+    // cy.xpath("//div[contains(text(),'30')]").eq(0).click({ force: true });
     // //Click on OK
     // cy.xpath("//span[contains(text(),'OK')]").click({ force: true });
     // cy.wait(2000);
