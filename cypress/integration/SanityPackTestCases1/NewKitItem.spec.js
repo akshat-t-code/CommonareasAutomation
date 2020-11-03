@@ -55,7 +55,7 @@ describe("To Test creation of new kit item", function () {
     });
   });
 
-  it("Navigating to created Kit type ", function () {
+  it.only("Navigating to created Kit type ", function () {
     cy.wait(10000);
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -83,15 +83,15 @@ describe("To Test creation of new kit item", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it("Create New Kit Item with all the fields", function () {
+  it.only("Create New Kit Item with all the fields", function () {
     const lp = new LoginPage();
 
     cy.wait(2000);
-    //Url
-    cy.get("[name" + "=" + this.DataType2.Url + "]")
-      .last()
-      .type(this.NewKitItemData.Url);
-    cy.wait(1000);
+    // //Url
+    // cy.get("[name" + "=" + this.DataType2.Url + "]")
+    //   .last()
+    //   .type(this.NewKitItemData.Url);
+    // cy.wait(1000);
 
     // //Text
     // cy.get("[name" + "=" + this.DataType2.Text + "]")
@@ -99,18 +99,22 @@ describe("To Test creation of new kit item", function () {
     //   .type(this.NewKitItemData.Text);
     // cy.wait(1000);
 
-    // //File
-    // cy.get(".link-icon--green > path").click({ force: true });
-    // cy.wait(3000);
+    //File
+    cy.get(".link-icon--green > path").click({ force: true });
+    cy.wait(3000);
     // cy.get(".thumb-container:nth-child(5) .selected-icon").click({
     //   force: true,
     // });
+    cy.wait(4000)
+    cy.contains('Screenshot_1 - Copy').first().click({force:true})
+    cy.wait(10000)
     // cy.get(
     //   ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
     // ).click({ force: true });
-    // cy.contains("File saved").should("be.visible");
-    // cy.log("File Saved");
-    // cy.wait(1000);
+    
+    cy.contains("File saved").should("be.visible");
+    cy.log("File Saved");
+    cy.wait(10000);
 
     // //Telephone
     // cy.get("[name" + "=" + this.DataType2.Telephone + "]")

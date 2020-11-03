@@ -77,7 +77,7 @@ describe("New kit item Map tab", function () {
     });
   });
 
-  it.only("Navigating to created Kit type ", function () {
+  it("Navigating to created Kit type ", function () {
     cy.wait(10000);
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -140,7 +140,7 @@ describe("New kit item Map tab", function () {
     cy.wait(5000);
   });
 
-  it.only("Link Existing Relation On Map", function () {
+  it("Link Existing Relation On Map", function () {
     //Click on Map tab
     cy.contains(" Map ").click({ force: true });
     cy.wait(2000);
@@ -174,7 +174,12 @@ describe("New kit item Map tab", function () {
     cy.contains(this.NewKitItemData.KitName + " has been saved").should(
       "be.visible"
     );
-    cy.wait(5000);
+    cy.wait(3000);
+    // //Close the tab
+    // cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+    //   force: true,
+    // });
+    cy.wait(3000);
   });
 
   it("Add Relation On Map", function () {
