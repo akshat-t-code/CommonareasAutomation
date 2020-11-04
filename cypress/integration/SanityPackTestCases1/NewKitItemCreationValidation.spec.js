@@ -1,5 +1,4 @@
 import LoginPage from "../PageObject/LoginPage";
-import KitTypePage from "../PageObject/KitTypePage";
 import SanityLoginPage from "../PageObject/SanityLoginPage";
 
 describe("New created kit item creation Validation test case", function () {
@@ -95,7 +94,13 @@ describe("New created kit item creation Validation test case", function () {
     //Click on First kit item of kit type to open edit view
     cy.log("Kit Item Detail View has been Opened");
     cy.wait(3000);
+    //Validation assertion for details view
+    cy.get(".kits-landing--header-title").should(
+      "have.text",
+      " Recently Viewed "
+    );
 
+    //Created kit type existance assertion
     cy.contains(
       this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
     ).should("exist");
@@ -105,12 +110,48 @@ describe("New created kit item creation Validation test case", function () {
       this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
     ).click({ force: true });
     cy.wait(5000);
-
-    //Url
-    //cy.get("[name" + "=" + this.DataType2.Url + "]").should('have.text', this.NewKitItemData.Url)
   });
 
-  it("Group tab data Validation in details view", function () {
+  it("Details View(Edit form) Data validation", function () {
+
+    cy.get('[name="Text"]').last().should('have.text','sanity')
+
+    cy.get('[name="Url"]').last().should('have.text','https://www.sanity.com')
+
+    //Url
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(0).then(function ($EleData) {
+        const Data = $EleData.text();
+        cy.log(Data);
+        
+      });
+
+      cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(1).then(function ($EleData) {
+        const Data = $EleData.text();
+        cy.log(Data);
+        
+      });
+
+      cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(2).then(function ($EleData) {
+        const Data = $EleData.text();
+        cy.log(Data);
+        
+      });
+
+      cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(2).then(function ($EleData) {
+        const Data = $EleData.text();
+        cy.log(Data);
+        
+      });
+
+      cy.get("[name" + "=" + this.DataType2.Url + "]").should('exist')
+      //.should("have.text", this.NewKitItemData.Url);
+  });
+
+  it.only("Group tab data Validation in details view", function () {
     //Click on group
     cy.contains("Groups").click({ force: true });
     cy.wait(3000);
@@ -120,7 +161,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000);
   });
 
-  it("Comments tab data Validation in details view", function () {
+  it.only("Comments tab data Validation in details view", function () {
     cy.contains("Comments").click({ force: true });
     cy.wait(3000);
     cy.contains(this.SData.AddComments).should("be.visible");
@@ -128,7 +169,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000);
   });
 
-  it("Time Entries tab data Validation in details view", function () {
+  it.only("Time Entries tab data Validation in details view", function () {
     cy.contains("Time Entries").click({ force: true });
     // cy.contains(this.SData.TimeEntryConnection).should("be.visible");
     // cy.wait(2000);
@@ -152,7 +193,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000);
   });
 
-  it("Contributors tab data Validation in details view", function () {
+  it.only("Contributors tab data Validation in details view", function () {
     cy.contains("Contributors").click({ force: true });
     cy.wait(3000);
 
@@ -161,7 +202,7 @@ describe("New created kit item creation Validation test case", function () {
       .should("have.text", this.SData.ContributorsName);
     cy.wait(2000);
     cy.get(".contributor__name")
-      .eq(2)
+      .eq(1)
       .should("have.text", this.NewKitItemData.AssigningName);
 
     // cy.contains(this.SData.ContributorsName).should("be.visible");
@@ -175,5 +216,8 @@ describe("New created kit item creation Validation test case", function () {
   it.only("Files tab data Validation in details view", function () {
     cy.contains("Files").click({ force: true });
     cy.wait(2000);
+    cy.contains(this.SData.FileTabFileName).should("be.visible");
+    cy.contains(this.SData.NewFormLibFileName).should("be.visible");
+    cy.log("Uploaded files exist");
   });
 });
