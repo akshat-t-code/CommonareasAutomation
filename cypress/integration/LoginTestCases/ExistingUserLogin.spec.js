@@ -1,31 +1,15 @@
 import SignUpPage from "../PageObject/SignUpPage";
 import LoginPage from "../PageObject/LoginPage";
 
-describe("Login into the application for a new User ", function () {
+describe("Existing User logged In Test Case", function () {
   this.beforeEach(function () {
-    Cypress.Cookies.preserveOnce(
-      ".AspNet.ApplicationCookie",
-      "ASP.NET_SessionId",
-      "ca-cf-auth",
-      "kit-detail-selected-tab",
-      "jwt",
-      "refreshToken",
-      "jwtAccessToken"
-    );
-
-    //debugger;
-    // cy.fixture("LoginTestData/UserLogin").then(function (LoginData) {
-    //   this.Credentials = LoginData;
-    // });
-
-    cy.fixture("ConnectionsDynamicTestData/ConnectionUserCredentials").then(
-      function (LoginData) {
-        this.Credentials = LoginData;
-      }
-    );
+    debugger;
+    cy.fixture("LoginTestData/NewUserLogin").then(function (LoginData) {
+      this.Credentials = LoginData;
+    });
   });
 
-  it("Login into the appLication for New User", function () {
+  it("Exist User Logged In", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
@@ -35,8 +19,8 @@ describe("Login into the application for a new User ", function () {
 
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.Credentials.Password);
-    cy.screenshot('User logged In Details')
-    cy.wait(7000)
+    cy.screenshot("User logged In Details");
+    cy.wait(7000);
     lp.Submit();
 
     Cypress.Cookies.preserveOnce(
@@ -62,7 +46,7 @@ describe("Login into the application for a new User ", function () {
       const WelcomeTxt = $WelEle.text();
       cy.log(WelcomeTxt);
     });
-    cy.screenshot('New Users has been logged in successfully')
-    cy.wait(10000)
+    cy.screenshot("Existing Users has been logged in successfully");
+    cy.wait(10000);
   });
 });

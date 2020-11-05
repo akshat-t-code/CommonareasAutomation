@@ -82,7 +82,7 @@ describe("New kit item complete creation test case", function () {
     const lp = new LoginPage();
     const KTP = new KitTypePage();
     //Assertion
-    //cy.title().should("eq", "Common Areas");
+    cy.title().should("eq", "Common Areas");
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
@@ -227,101 +227,6 @@ describe("New kit item complete creation test case", function () {
     // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
     //   force: true,
     // });
-    cy.wait(2000);
-
-    //Reminder
-    //Click to open Reminder POPUP
-    cy.wait(2000);
-    cy.contains("SET REMINDER").click({ force: true });
-    cy.log("Reminder has been Opened for Repeat Daily");
-    cy.wait(2000);
-
-    //Reminder Tittle
-    cy.get('[items="Recurring,One-Time"]').type(
-      this.NewKitItemData.ReminderTitle
-    );
-    cy.wait(1000);
-    //Reminder Type-->Click on DropDown
-    cy.contains("arrow_drop_down").click({ force: true });
-
-    //Reminder for Recurring
-    cy.contains(this.NewKitItemData.ReminderTypeRecurring)
-      .first()
-      .click({ force: true });
-
-    //Reminder Start Date
-    cy.contains("Reminder Date").click({ force: true });
-
-    //Select Reminder Start Date
-    cy.xpath("//div[@class='v-btn__content'][contains(text(),'30')]")
-      .first()
-      .click({ force: true });
-    cy.wait(2000);
-    //Click on OK to save Date
-    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
-    cy.log("Date has been selected for Reminder Start Date");
-
-    //Repeats-->RepeatDaily Case In Recurring Type
-    cy.get('[content-class="reminder-menu "]').click({ force: true });
-    cy.wait(2000);
-    cy.contains(this.NewKitItemData.RepeatDaily).click({ force: true });
-    cy.wait(3000);
-
-    //Reminder Time
-    //Click on to appear Time pop up
-    cy.get(".reminder--time .v-text-field__slot input").click({ force: true });
-    cy.wait(2000);
-    //Select Time
-    cy.xpath(
-      "//span[@class='v-time-picker-clock__item']//span[contains(text(),'3')]"
-    )
-      .first()
-      .click({ force: true });
-    cy.wait(1000);
-    cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
-    //Click on PM
-    cy.xpath("//div[contains(text(),'PM')]").first().click({ force: true });
-    cy.wait(1000);
-    //Click on Ok to save Time
-    cy.xpath(
-      "//div[@class='v-dialog v-dialog--active v-dialog--persistent']//button[1]"
-    ).click({ force: true });
-    cy.log("Time has been Selected for Reminder");
-    cy.wait(2000);
-
-    //Click on Reminder End Date
-    cy.get(
-      ".pop-up-reminder.v-card.v-sheet.theme--light > div.v-card__text.pop-up-reminder--content > div > div.pt-4.d-flex.col > div.d-flex.pt-1.col-sm-6.col-md-3.col > div.v-input.px-2.v-input--is-readonly.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined > div > div.v-input__slot > div.v-text-field__slot input"
-    ).click({ force: true });
-    cy.wait(1000);
-    //Select Date
-    cy.xpath("//div[@class='v-btn__content'][contains(text(),'30')]")
-      .first()
-      .click({ force: true });
-    cy.wait(2000);
-    //Click on oK to save date
-    cy.xpath("//span[contains(text(),'Ok')]").first().click({ force: true });
-    cy.log("Date has been selected Reminder End Date");
-
-    //---------OR----------------------------
-
-    cy.wait(3000);
-    //Click or Never
-    //cy.contains("Never").click({ force: true });
-
-    //Select Channels
-    cy.contains(this.NewKitItemData.ChannelWebApp).click({ force: true });
-    cy.contains(this.NewKitItemData.ChannelEmail).click({ force: true });
-    cy.contains(this.NewKitItemData.ChannelMobileApp).click({ force: true });
-
-    //Save Reminder for -->RepeatDaily Case In Recurring Type
-    cy.get(".ca-button-green:nth-child(2) > .v-btn__content").click({
-      force: true,
-    });
-    //Reminder creation assertion
-    cy.contains(" Reminder created ").should("be.visible");
-    cy.log("Reminder created");
-
     cy.wait(2000);
 
     //Toggle
@@ -785,9 +690,7 @@ describe("New kit item complete creation test case", function () {
 
     //save Kit Item
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
-    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
-      "be.visible"
-    );
+    //cy.contains(this.NewKitItemData.KitName + " has been saved").should("be.visible");
     cy.log(this.NewKitItemData.KitName + "Kit Type has been Saved");
 
     //close the Kit Item

@@ -113,42 +113,41 @@ describe("New created kit item creation Validation test case", function () {
   });
 
   it("Details View(Edit form) Data validation", function () {
+    //cy.get('[name="Text"]').last().should("have.text", "sanity");
 
-    cy.get('[name="Text"]').last().should('have.text','sanity')
-
-    cy.get('[name="Url"]').last().should('have.text','https://www.sanity.com')
+    cy.get('[name="Url"]').last().should("have.value", "https://good.com");
 
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
-      .eq(0).then(function ($EleData) {
+      .eq(0)
+      .then(function ($EleData) {
         const Data = $EleData.text();
         cy.log(Data);
-        
       });
 
-      cy.get("[name" + "=" + this.DataType2.Url + "]")
-      .eq(1).then(function ($EleData) {
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(1)
+      .then(function ($EleData) {
         const Data = $EleData.text();
         cy.log(Data);
-        
       });
 
-      cy.get("[name" + "=" + this.DataType2.Url + "]")
-      .eq(2).then(function ($EleData) {
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(2)
+      .then(function ($EleData) {
         const Data = $EleData.text();
         cy.log(Data);
-        
       });
 
-      cy.get("[name" + "=" + this.DataType2.Url + "]")
-      .eq(2).then(function ($EleData) {
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(2)
+      .then(function ($EleData) {
         const Data = $EleData.text();
         cy.log(Data);
-        
       });
 
-      cy.get("[name" + "=" + this.DataType2.Url + "]").should('exist')
-      //.should("have.text", this.NewKitItemData.Url);
+    cy.get("[name" + "=" + this.DataType2.Url + "]").should("exist");
+    //.should("have.text", this.NewKitItemData.Url);
   });
 
   it.only("Group tab data Validation in details view", function () {

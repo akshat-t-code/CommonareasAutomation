@@ -6,7 +6,7 @@
 
     "Url":"https://www.updated.com",
     "Text":"updated",
-    "UpdateFileName":"image_2020_11_03_11_54_24_540",
+    "UpdateFileName":"15C2D846-B04F-429D-ACE6-959E0BB39791",
     "Telephone":"(897) 765-2905",
     "TextAera":"sanity automation updated",
     "Currency":"92",
@@ -21,12 +21,12 @@
     "State":"Arizona",
     "ZipCode":"09002",
     "Country":"United States",
-    "Number":"0000",
+    "Number":"40",
 
     "SelectListValue":"VVIP",
     
 
-    "RadioSelectValue":"MI",
+    "RadioSelectValue":"RCB",
 
     "CheckboxSelectValue1":"CheckboxSelect1",
     "CheckboxSelectValue2":"CheckboxSelect2",
@@ -41,8 +41,8 @@
     "StepperValue5":"MArt",
 
     "UserSelectorName":"Daniel Zhao",
-
-    "ContactSelectorName":"Mack Mack",
+    "ContactSelectorName":"Danny Zoho",
+    "AssigningName":"Daniel Zhao",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",
@@ -60,7 +60,7 @@
     "InspectionValue4":"4",
     "InspectionValue5":"5",
 
-    "AssigningName":"Daniel Zhao",
+    
     
 
     "ReminderTitle":"PropertyBuilder Inspection",

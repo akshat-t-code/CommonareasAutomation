@@ -82,7 +82,7 @@ describe("Update created kit item test case", function () {
     });
   });
 
-  it.only("Click on list view and select kit type to Update", function () {
+  it.only("Navigating to kit item listView and select kit type to Update", function () {
     const lp = new LoginPage();
     //Click on Hamburger Icon
     lp.HMBIcon();
@@ -118,7 +118,7 @@ describe("Update created kit item test case", function () {
     cy.wait(5000);
   });
 
-  it.only("Updation in Edit View", function () {
+  it.only("Updation in DetailView(EditView)", function () {
     cy.wait(2000);
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
@@ -193,7 +193,6 @@ describe("Update created kit item test case", function () {
       "div.kit-control-measure--left.ma-0.pa-0.pr-2.col > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
-
       .type(this.UpdateKitItemData.Measure);
     cy.log("Measure Updated");
     cy.wait(2000);
@@ -296,9 +295,12 @@ describe("Update created kit item test case", function () {
     cy.contains(this.UpdateKitItemData.SelectListValue).click({ force: true });
     cy.log("SelectList Value has been Updated.");
 
+    cy.wait(4000);
+
     //RadioSelect
     cy.contains(this.UpdateKitItemData.RadioSelectValue).click({ force: true });
     cy.log("RadioSelect Value has been set.");
+    cy.wait(3000);
 
     //CheckboxSelect(Values coming form KitItemValues Json File)
     cy.contains(this.UpdateKitItemData.CheckboxSelectValue1).click({
@@ -331,32 +333,24 @@ describe("Update created kit item test case", function () {
     cy.contains(this.UpdateKitItemData.StepperValue3).click({ force: true });
     cy.wait(10000);
 
-    //Click on cross to delete user selector
+    //Click on cross to user selector
     cy.get(
-      "span > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(3) > div"
-    )
-      .eq(5)
-      .click({ force: true });
-    cy.wait(1000);
+      "div.v-window.tab-content-wrapper.v-item-group.theme--light.v-tabs-items div.v-window__container div.v-window-item.v-window-item--active:nth-child(1) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(22) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot div.v-select__slot:nth-child(2) div.v-select__selections:nth-child(2) div.imageContent:nth-child(1) > div.row.control-item-picker"
+    ).click({ force: true });
+    cy.wait(4000);
     //Click on to open UserSelector Pop up
     //cy.get(".searchIcon").eq(7).click({ force: true });
-    cy.wait(3000);
-
     cy.contains(this.UpdateKitItemData.UserSelectorName).click({ force: true });
     cy.log("UserSelect Updated");
     cy.wait(3000);
 
-    //Click on cross to delete contact selector
+    //Click on cross to contact selector
     cy.get(
-      "span > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(3) > div"
-    )
-      .eq(6)
-      .click({ force: true });
-    cy.wait(1000);
+      "div.tab--content.col div.v-window.tab-content-wrapper.v-item-group.theme--light.v-tabs-items div.v-window__container div.v-window-item.v-window-item--active:nth-child(1) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(24) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot div.v-select__slot:nth-child(2) div.v-select__selections:nth-child(2) div.imageContent:nth-child(1) > div.row.control-item-picker"
+    ).click({ force: true });
+    cy.wait(4000);
     // //Click on to open ContactSelector Pop up
     // cy.get(".searchIcon").eq(8).click({ force: true });
-
-    cy.wait(4000);
     cy.contains(this.UpdateKitItemData.ContactSelectorName).click({
       force: true,
     });
@@ -407,20 +401,42 @@ describe("Update created kit item test case", function () {
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       ".v-chip:nth-child(" +
-        this.NewKitItemData.InspectionValue4 +
+        this.UpdateKitItemData.InspectionValue4 +
         ") > .v-chip__content"
     ).click({ force: true });
     cy.wait(2000);
 
     //Click on cross to delete Assigning
-    cy.get(
-      "span > div > div > div.v-input__slot > div.v-select__slot > div:nth-child(3) > div"
-    )
-      .eq(7)
-      .click({ force: true });
-    cy.wait(1000);
-
+    // cy.get(
+    //   " div.v-window-item.v-window-item--active:nth-child(1) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-assigning.pr-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(28) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot div.v-select__slot:nth-child(2) > div.v-select__selections:nth-child(2)"
+    // ).click({ force: true });
     //Click on to open Assigning
+    cy.wait(5000);
+    //cy.contains(this.UpdateKitItemData.AssigningName).click({ force: true });
+    cy.wait(3000);
+    //Click on to save
+    //cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
+    //Assigning creation assertion
+    //cy.contains("Item shared").should("be.visible");
+    cy.log("Assigning added");
+    cy.wait(5000);
+
+    //Click to save
+    cy.get(".navi-bar-dropdown:nth-child(2) .v-btn").click({ force: true });
+    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+      "be.visible"
+    );
+    cy.log(
+      this.NewKitItemData.KitName + "Kit Type has been Saved with updation"
+    );
+    cy.wait(10000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
     cy.wait(5000);
   });
 });
