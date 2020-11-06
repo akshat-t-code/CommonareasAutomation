@@ -31,13 +31,14 @@ describe("Login into the application for a new User ", function () {
     const lp = new LoginPage();
     sp.visitBaseBuild();
     //Login Assertions
-    cy.get(".page-main-title").should("be.visible");
-
+    cy.contains(" Log In ").should("be.visible");
+    //Enter credentials
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.Credentials.Password);
-    cy.screenshot('User logged In Details')
-    cy.wait(7000)
+    cy.screenshot("User logged In Details");
+    cy.wait(7000);
     lp.Submit();
+    cy.log("User has been Logged In into the application");
 
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
@@ -62,7 +63,8 @@ describe("Login into the application for a new User ", function () {
       const WelcomeTxt = $WelEle.text();
       cy.log(WelcomeTxt);
     });
-    cy.screenshot('New Users has been logged in successfully')
-    cy.wait(10000)
+    cy.log("New Users has been logged in successfully");
+    cy.screenshot("New Users has been logged in successfully");
+    cy.wait(10000);
   });
 });

@@ -33,6 +33,13 @@ class SignUpPage {
       cy.wrap($a).contains("Activate Account").click();
     });
   }
+
+  ResetPassword() {
+    cy.get("#msg_body").then(($iframe) => {
+      const $a = $iframe.contents().find("a");
+      cy.wrap($a).contains("Reset your password").click();
+    });
+  }
 }
 
 export default SignUpPage;
