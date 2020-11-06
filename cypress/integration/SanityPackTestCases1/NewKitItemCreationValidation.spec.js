@@ -112,10 +112,11 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(5000);
   });
 
-  it("Details View(Edit form) Data validation", function () {
-    //cy.get('[name="Text"]').last().should("have.text", "sanity");
+  it.only("Details View(Edit form) Data validation", function () {
 
-    cy.get('[name="Url"]').last().should("have.value", "https://good.com");
+    // //cy.get('[name="Text"]').last().should("have.text", "sanity");
+
+    //cy.get('[name="Url"]').last().should("have.data", "https://www.sanity.com");
 
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
@@ -140,7 +141,7 @@ describe("New created kit item creation Validation test case", function () {
       });
 
     cy.get("[name" + "=" + this.DataType2.Url + "]")
-      .eq(2)
+      .eq(3)
       .then(function ($EleData) {
         const Data = $EleData.text();
         cy.log(Data);
@@ -150,7 +151,7 @@ describe("New created kit item creation Validation test case", function () {
     //.should("have.text", this.NewKitItemData.Url);
   });
 
-  it.only("Group tab data Validation in details view", function () {
+  it("Group tab data Validation in details view", function () {
     //Click on group
     cy.contains("Groups").click({ force: true });
     cy.wait(3000);
@@ -160,7 +161,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000);
   });
 
-  it.only("Comments tab data Validation in details view", function () {
+  it("Comments tab data Validation in details view", function () {
     cy.contains("Comments").click({ force: true });
     cy.wait(3000);
     cy.contains(this.SData.AddComments).should("be.visible");
@@ -168,7 +169,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000);
   });
 
-  it.only("Time Entries tab data Validation in details view", function () {
+  it("Time Entries tab data Validation in details view", function () {
     cy.contains("Time Entries").click({ force: true });
     // cy.contains(this.SData.TimeEntryConnection).should("be.visible");
     // cy.wait(2000);
@@ -192,7 +193,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000);
   });
 
-  it.only("Contributors tab data Validation in details view", function () {
+  it("Contributors tab data Validation in details view", function () {
     cy.contains("Contributors").click({ force: true });
     cy.wait(3000);
 
@@ -212,7 +213,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000);
   });
 
-  it.only("Files tab data Validation in details view", function () {
+  it("Files tab data Validation in details view", function () {
     cy.contains("Files").click({ force: true });
     cy.wait(2000);
     cy.contains(this.SData.FileTabFileName).should("be.visible");
