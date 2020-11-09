@@ -277,7 +277,19 @@ describe("Update created kit item test case", function () {
     cy.log("Time has been Updated");
     cy.wait(2000);
 
-    // //Date and Remider skipping
+    //Date Data Element
+    //Click on Date to appear Date pop up
+    cy.get(
+      "div.v-input.no-bottom.date-picker-text-field.date-picker-text-field-direct.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-text-field--placeholder > div > div.v-input__slot > div.v-input__prepend-inner > i"
+    ).click({ force: true });
+    //Select Date
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'25')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    cy.wait(2000);
 
     //Toggle
     cy.get(".sync-switch .v-input--selection-controls__ripple").click({

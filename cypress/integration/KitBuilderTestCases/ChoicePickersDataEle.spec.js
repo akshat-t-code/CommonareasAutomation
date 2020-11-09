@@ -6,7 +6,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    lp.visitServiceBuild();
+    lp.visitServiceTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible")
     //Enter credentials
@@ -68,7 +68,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    lp.visitKitBuilderServiceBuild();
+    lp.visitKitBuilderServiceTest();
     cy.log("User entered in kit builder");
     cy.wait(3000);
     //Open Craeted Kit Type

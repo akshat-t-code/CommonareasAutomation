@@ -13,7 +13,7 @@ class KitBuilder {
   }
 
   ClickOnCreateNewKit() {
-    const btn = cy.get(".v-btn--depressed");
+    const btn = cy.contains(' Create New ');
     btn.click();
   }
 
@@ -102,8 +102,12 @@ class KitBuilder {
   }
 
   KBSearchBox(KitTypeName) {
-    cy.get('[placeholder="Search"]').type(KitTypeName);
+    cy.get('.v-text-field__slot').click().type(KitTypeName);
   }
+
+  // KBSearchBox(KitTypeName) {
+  //   cy.get('[placeholder="Search"]').type(KitTypeName);
+  // }
 
   ClickOnCrossIcon() {
     const btn = cy.xpath(

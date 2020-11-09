@@ -1,5 +1,5 @@
 import "@percy/cypress";
-import 'cypress-file-upload';
+import "cypress-file-upload";
 import "@applitools/eyes-cypress/commands";
 import "@4tw/cypress-drag-drop";
 import "cypress-iframe";
@@ -185,7 +185,7 @@ Cypress.Commands.add("KitIcon", () => {
 
 Cypress.Commands.add("CreateKit", () => {
   //Create btn
-  cy.get(".ca-button-green > .v-btn__content").click({ force: true });
+  cy.get(".ca-button-green").eq(0).click({ force: true });
   //Assertion msg close
   cy.get(".v-btn__content > .theme--dark").click({ force: true });
 });

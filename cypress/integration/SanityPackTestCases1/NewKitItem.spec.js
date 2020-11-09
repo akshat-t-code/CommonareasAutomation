@@ -105,13 +105,13 @@ describe("To Test creation of new kit item", function () {
     // cy.get(".thumb-container:nth-child(5) .selected-icon").click({
     //   force: true,
     // });
-    cy.wait(4000)
-    cy.contains('Screenshot_1 - Copy').first().click({force:true})
-    cy.wait(10000)
-    // cy.get(
-    //   ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
-    // ).click({ force: true });
-    
+    cy.wait(4000);
+    cy.contains("Screenshot_1 - Copy").first().click({ force: true });
+    cy.wait(300);
+    cy.get(
+      ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
+    ).click({ force: true });
+
     cy.contains("File saved").should("be.visible");
     cy.log("File Saved");
     cy.wait(10000);
@@ -207,18 +207,20 @@ describe("To Test creation of new kit item", function () {
 
     //Date Data Element
     //Click on Date to appear Date pop up
-    // cy.get(".v-input__prepend-inner").eq(1).click({ force: true });
-    // cy.xpath("//div[@class='v-btn__content'][contains(text(),'31')]")
-    //   .first()
-    //   .click({ force: true });
-    // cy.wait(2000);
-    // //Click on OK to save Date
-    // cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    cy.get(
+      "div.v-input.no-bottom.date-picker-text-field.date-picker-text-field-direct.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-text-field--placeholder > div > div.v-input__slot > div.v-input__prepend-inner > i"
+    ).click({ force: true });
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'30')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
     //Click on OK to save Date(also working)
     // cy.get(".dateActions > .btnBorder:nth-child(1) > .v-btn__content").click({
     //   force: true,
     // });
-    cy.wait(2000);
+    cy.wait(3000);
 
     // /*
 

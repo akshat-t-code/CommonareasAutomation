@@ -7,7 +7,7 @@ describe("Create New Kit type ", function () {
     const lp = new LoginPage();
     lp.visitServiceTest();
     //Login Assertions
-    cy.contains(" Log In ").should("be.visible")
+    cy.contains(" Log In ").should("be.visible");
     //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
@@ -58,6 +58,8 @@ describe("Create New Kit type ", function () {
     lp.visitKitBuilderServiceTest();
     cy.log("User in Kit Builder");
     kb.ClickOnCreateNewKit();
+    //Create Kit type Pop Up Window Assertion
+    cy.contains("Create New Kit").should("be.visible");
     cy.wait(5000);
     //For Creating New Kit type commands coming form Command.js
     cy.KitLabel(this.KitTypeName.KitLabel3);
@@ -66,6 +68,8 @@ describe("Create New Kit type ", function () {
     cy.ApiName(this.KitTypeName.APIName3);
     cy.KitIcon();
     cy.CreateKit();
+    //Create Kit type Assertion
+    cy.contains("Kit Type Saved Successfully").should("be.visible");
     cy.log("New Kit Type has been Created");
   });
 

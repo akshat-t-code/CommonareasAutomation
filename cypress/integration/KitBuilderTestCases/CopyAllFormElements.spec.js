@@ -5,9 +5,9 @@ import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 describe("Copy New Form Elements in All Forms", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
-    lp.visitServiceBuild();
+    lp.visitServiceTest();
     //Login Assertions
-    cy.contains(" Log In ").should("be.visible")
+    cy.contains(" Log In ").should("be.visible");
     //Enter credentials
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
@@ -55,13 +55,13 @@ describe("Copy New Form Elements in All Forms", function () {
     });
   });
 
-  it.only("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    lp.visitKitBuilderServiceBuild();
+    lp.visitKitBuilderServiceTest();
     cy.log("User entered in kit builder");
     //Open Craeted Kit Type
     kb.KBSearchBox(this.KitTypeName.KitName3);
@@ -74,7 +74,7 @@ describe("Copy New Form Elements in All Forms", function () {
     cy.wait(5000);
   });
 
-  it.only("Copy the Elements into Related New form", function () {
+  it("Copy the Elements into Related New form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -110,7 +110,7 @@ describe("Copy New Form Elements in All Forms", function () {
     cy.wait(5000);
   });
 
-  it.only("Copy the Elements into Related Edit form", function () {
+  it("Copy the Elements into Related Edit form", function () {
     cy.wait(5000);
     //Click on Forms Drop down
     cy.get(
@@ -326,7 +326,7 @@ describe("Copy New Form Elements in All Forms", function () {
     cy.wait(5000);
   });
 
-  it.only("Copy the Elements into Edit form", function () {
+  it("Copy the Elements into Edit form", function () {
     //Close the Kit forms
     cy.get(".v-btn--text .v-icon").first().click({ force: true });
     //cy.get('div:nth-child(1) > div > button > span > i').click({force:true})
