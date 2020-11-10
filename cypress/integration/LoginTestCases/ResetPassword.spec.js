@@ -22,7 +22,7 @@ describe("Reset password OR Update Password", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseBuild();
+    sp.visitBaseTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     cy.contains("Forgot Password?").click({ force: true });
@@ -126,7 +126,7 @@ describe("Reset/Creating New Password", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseBuild();
+    sp.visitBaseTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials

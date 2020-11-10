@@ -24,7 +24,7 @@ describe("Sign Out for logged User Test case ", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseBuild();
+    sp.visitBaseTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials

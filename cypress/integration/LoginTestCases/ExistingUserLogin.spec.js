@@ -19,13 +19,13 @@ describe("Existing User logged In Test Case", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseBuild();
+    sp.visitBaseTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.Credentials.Password);
-    cy.screenshot("User logged In Details");
+    //cy.screenshot("User logged In Details");
     cy.wait(7000);
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -54,7 +54,7 @@ describe("Existing User logged In Test Case", function () {
       cy.log(WelcomeTxt);
     });
     cy.log("Existing Users has been logged in successfully");
-    cy.screenshot("Existing Users has been logged in successfully");
+    //cy.screenshot("Existing Users has been logged in successfully");
     cy.wait(10000);
   });
 });

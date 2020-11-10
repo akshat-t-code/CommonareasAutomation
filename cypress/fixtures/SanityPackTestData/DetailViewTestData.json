@@ -1,0 +1,16 @@
+{
+    "UrlData":"https://detailsview.com",
+    "TextData":"Details View",
+    "DetailViewFileName":"Adding a User to a Group",
+    "ContributorsName":"Deanne Howell",
+    "AddTimeEntryLable":"Details View form",
+    "AddTimeEntryDescription":"Automating the details view aka edit form tabs",
+    "TotalHours":"6",
+    "AddDescription":"We are creating time entry fot sanity test cases reminder",
+    "TimeEntryConnection":"Pradeep1 Kumar",
+    "AddComments":"Hi these are the sanity test cses that we are going to automate with cypress tool",
+    "AddGroup":"CA Build",
+    "CommonPlanName":"Sanity Plan",
+    "ScheduleName":"Sanity Pack Reminder"
+    
+}

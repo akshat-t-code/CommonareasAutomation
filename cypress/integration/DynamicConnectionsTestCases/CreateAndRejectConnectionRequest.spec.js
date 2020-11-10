@@ -66,7 +66,7 @@ describe("Login for new User than Create A new Connection and Reject the Request
 
   it.only("Creating a new Connection ", function () {
     const lp = new LoginPage();
-    lp.visitServiceBuild();
+    lp.visitServiceTest();
     lp.EnterEmail("kstanley@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     //cy.eyesCheckWindow("Logging into the application");

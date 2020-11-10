@@ -25,11 +25,11 @@ describe("Login into the application for a new User ", function () {
     );
   });
 
-  it("Login into the appLication for New User", function () {
+  it.only("Login into the appLication for New User", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseBuild();
+    sp.visitBaseTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
@@ -66,5 +66,17 @@ describe("Login into the application for a new User ", function () {
     cy.log("New Users has been logged in successfully");
     cy.screenshot("New Users has been logged in successfully");
     cy.wait(10000);
+  });
+
+  it.only("Sign Out for logged in user", function () {
+    //Click on admin
+    cy.get('[name="your-profile"]').click({ force: true });
+    cy.wait(2000);
+    cy.contains("Sign Out").click({ force: true });
+    cy.wait(5000);
+    //Log out validation assertion
+    cy.contains(" Log In ").should("be.visible");
+    cy.url().should("include", "/Public/Login?");
+    cy.log("User has been sign out");
   });
 });

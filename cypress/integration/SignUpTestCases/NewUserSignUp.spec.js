@@ -61,7 +61,7 @@ describe("Sign up for a New User", function () {
   it("New User Sign up", function () {
     //PageObject
     const sp = new SignUpPage();
-    sp.visitBaseBuild();
+    sp.visitBaseTest();
     cy.wait(3000);
     // cy.eyesCheckWindow()
 
