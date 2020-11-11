@@ -468,22 +468,10 @@ describe("Details View tabs test case", function () {
     cy.get(".button-w-new-borders > .v-btn__content").click({ force: true });
     cy.wait(3000);
     //Scheduler pop assertion
-    //cy.get("[name" + "=" + this.DataType2.Text + "]").eq(0).type(this.DetailViewData.ScheduleName)
-    //Clear dates fields
-    //Start Date
     cy.get(
-      ".px-3:nth-child(1) > .row > .pr-3 .v-input__control .v-icon"
-    ).click({ force: true });
-
-    //Click on date pop
-    cy.get('[placeholder="Select Start Date"]').click({ force: true });
-    cy.wait(1000);
-    //Select Date
-    cy.xpath("//div[contains(text(),'28')]").click({ force: true });
-    cy.wait(1000);
-    //Click on Ok
-    cy.xpath("//span[contains(text(),'OK')]").last().click({ force: true });
-    cy.wait(3000);
+      "div.kit-details-form-wrapper.fill-height.col div.col.col-12 div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.row-component.kit-control-text.kit-control-text--number.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3 div.v-input.kit-control-text.layout-alignment.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined div.v-input__control div.v-input__slot > div.v-text-field__slot:nth-child(2)"
+    ).type(this.DetailViewData.ScheduleName);
+    //Clear dates fields
 
     //End Date
     cy.get(
@@ -493,7 +481,22 @@ describe("Details View tabs test case", function () {
     //Click on date pop up
     cy.get('[placeholder="Select End Date"]').click({ force: true });
     //Select Date
-    cy.xpath("//div[contains(text(),'29')]").first().click({ force: true });
+    cy.xpath("//div[contains(text(),'20')]").first().click({ force: true });
+    cy.wait(1000);
+    //Click on Ok
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    cy.wait(3000);
+
+    //Start Date
+    cy.get(
+      ".px-3:nth-child(1) > .row > .pr-3 .v-input__control .v-icon"
+    ).click({ force: true });
+
+    //Click on date pop
+    cy.get('[placeholder="Select Start Date"]').click({ force: true });
+    cy.wait(1000);
+    //Select Date
+    cy.xpath("//div[contains(text(),'21')]").first().click({ force: true });
     cy.wait(1000);
     //Click on Ok
     cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
@@ -506,15 +509,15 @@ describe("Details View tabs test case", function () {
     ).click({ force: true });
     cy.wait(1000);
     cy.get('[placeholder="Select Start Time"]').click({ force: true });
-    cy.wait(1000);
+    cy.wait(3000);
     //Select hour value
     cy.xpath(
       "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
     ).click({ force: true });
-    cy.wait(1000);
+    cy.wait(3000);
     //Select Value of miniutes
     cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
-    cy.wait(1000);
+    cy.wait(2000);
     //Click on PM
     cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
     //Click on OK to save date
@@ -526,22 +529,27 @@ describe("Details View tabs test case", function () {
       ".px-3:nth-child(2) > .row > .pl-3 .v-input__control .v-icon"
     ).click({ force: true });
 
-    cy.wait(1000);
-    cy.wait(1000);
+    cy.wait(2000);
     cy.get('[placeholder="Select Start Time"]').click({ force: true });
-    cy.wait(1000);
+    cy.wait(4000);
+    cy.get(
+      "div.v-dialog.v-dialog--active div.v-picker.v-card.v-picker--time.theme--light div.v-picker__title.green.lighten-1 div.v-time-picker-title div.v-time-picker-title__time > div.v-picker__title__btn.v-picker__title__btn--active:nth-child(1)"
+    ).click({ force: true });
+    cy.wait(2000);
     //Select hour value
     cy.xpath(
       "//div[contains(@class,'v-dialog v-dialog--active')]//span[2]"
     ).click({ force: true });
-    cy.wait(1000);
+    cy.wait(3000);
     //Select Value of miniutes
     cy.xpath("//span[contains(text(),'25')]").first().click({ force: true });
-    cy.wait(1000);
+    cy.wait(2000);
     //Click on PM
     //cy.xpath("//div[contains(text(),'AM')]").click({ force: true });
     //Click on OK to save date
-    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    cy.get(
+      "div.timeActions button.btnBorder.v-btn.v-btn--flat.v-btn--text.theme--light.v-size--default.primary--text:nth-child(1) > span.v-btn__content"
+    ).click({ force: true });
     cy.wait(3000);
   });
 });
