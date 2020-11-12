@@ -2,7 +2,7 @@ import LoginPage from "../PageObject/LoginPage";
 import KitTypePage from "../PageObject/KitTypePage";
 import SanityLoginPage from "../PageObject/SanityLoginPage";
 
-describe("Related Control Square Card test case", function () {
+describe("Related Control One to One test case", function () {
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
@@ -76,14 +76,14 @@ describe("Related Control Square Card test case", function () {
       this.SData = SanityTCData;
     });
 
-    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
+    cy.fixture("SanityPackTestData/RelatedOneToOneData").then(function (
       SanityTCData
     ) {
       this.RelatedKitItemData = SanityTCData;
     });
   });
 
-  it.only("Navigating to New form of created Kit type ", function () {
+  it.only("Navigating to New form of created Kit type", function () {
     cy.wait(10000);
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -102,7 +102,7 @@ describe("Related Control Square Card test case", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only("Square Card Related Control to configure Related New form", function () {
+  it.only("One to One Related Control to configure Related New form", function () {
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .last()
@@ -115,10 +115,8 @@ describe("Related Control Square Card test case", function () {
       .type(this.RelatedKitItemData.NewKitItemText);
     cy.wait(3000);
 
-    //Click on New Item for one to Many Related Control
-
-    cy.get(".ca-item")
-      .eq(3)
+    //Click on New Item for one to one Related Control
+    cy.get(".mr-4 > .inline-svg > path")
       .scrollIntoView({ force: true })
       .click({ force: true });
     //New Item Assertion
@@ -142,37 +140,37 @@ describe("Related Control Square Card test case", function () {
       .type(this.RelatedKitItemData.Text);
     cy.wait(1000);
 
-    //File
-    cy.get(".dropzone-icons-content > .clickable path")
-      .eq(0)
-      .click({ force: true });
-    //cy.get(".link-icon--green > path").last().click({ force: true });
-    cy.wait(3000);
-    //give file name to select
-    cy.contains(this.RelatedKitItemData.RelNewFileName).click({
-      force: true,
-    });
-    //Click on save file
-    cy.wait(2000);
+    // //File
+    // cy.get(".dropzone-icons-content > .clickable path")
+    //   .eq(0)
+    //   .click({ force: true });
+    // //cy.get(".link-icon--green > path").last().click({ force: true });
+    // cy.wait(3000);
+    // //give file name to select
+    // cy.contains(this.RelatedKitItemData.RelNewFileName).click({
+    //   force: true,
+    // });
+    // //Click on save file
+    // cy.wait(2000);
 
-    cy.get(
-      ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
-    ).click({ force: true });
-    cy.contains("File saved").should("be.visible");
-    cy.log("File Saved");
-    cy.wait(1000);
+    // cy.get(
+    //   ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
+    // ).click({ force: true });
+    // cy.contains("File saved").should("be.visible");
+    // cy.log("File Saved");
+    // cy.wait(1000);
 
-    //Telephone
-    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
-      .eq(1)
-      .type(this.RelatedKitItemData.Telephone);
-    cy.wait(1000);
+    // //Telephone
+    // cy.get("[name" + "=" + this.DataType2.Telephone + "]")
+    //   .eq(1)
+    //   .type(this.RelatedKitItemData.Telephone);
+    // cy.wait(1000);
 
-    //TextAera
-    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
-      .eq(1)
-      .type(this.RelatedKitItemData.TextAera);
-    cy.wait(1000);
+    // //TextAera
+    // cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+    //   .eq(1)
+    //   .type(this.RelatedKitItemData.TextAera);
+    // cy.wait(1000);
 
     // //Slider;
 
@@ -431,7 +429,7 @@ describe("Related Control Square Card test case", function () {
     //Related kit item created assertion
     cy.contains(
       " Relation on " +
-        this.DataType2.SquareCardName +
+        this.DataType2.OneToOneRelation +
         " for " +
         this.NewKitItemData.KitName +
         " created"
@@ -447,109 +445,34 @@ describe("Related Control Square Card test case", function () {
     cy.log("Related new has been Close");
     cy.wait(5000);
 
-    // //save Kit item(edit form) new
-    // cy.get(".v-select__selections .v-btn__content")
-    //   .first()
-    //   .click({ force: true });
-    // // kit item Save Assertion
-    // cy.contains(this.NewKitItemData.KitName + " has been saved").should(
-    //   "be.visible"
-    // );
-  });
-
-  it.only("Validate Square Card element on new form", function () {
-    cy.wait(5000);
-    //Refresh Sqcard item
-    cy.get(".btn-load .inline-svg").eq(1).click({ force: true });
-    cy.log("Refresh square card");
-    cy.wait(4000);
-
-    //Square card element assetions before kit item saved(new form)
-    cy.contains(
-      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
-    ).should("exist");
-    cy.log("Url data exist");
-    cy.wait(1000);
-
-    cy.contains(
-      this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
-    ).should("exist");
-    cy.log("Text data exist");
-    cy.wait(1000);
-
-    cy.contains(
-      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
-    ).should("exist");
-    cy.wait(1000);
-    cy.log("TextAera data exist");
-
-    cy.log(
-      "Square card added elemets exists(kit item(new form) not saved yet)"
-    );
-
-    cy.wait(4000);
-
     //save Kit item(edit form) new
     cy.get(".v-select__selections .v-btn__content")
       .first()
       .click({ force: true });
-    // kit item Save Assertion
-    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
-      "be.visible"
-    );
-
-    cy.wait(4000);
-
-    cy.contains(
-      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
-    ).scrollIntoView({ force: true });
-    cy.wait(4000);
-
-    //Refresh Sqcard item
-    cy.get(".btn-load .inline-svg").eq(1).click({ force: true });
-    cy.log("Refresh again after save kit item");
-    cy.wait(4000);
-
-    //Square card element assetions before kit item saved(new form)
-    cy.contains(
-      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
-    ).should("exist");
-    cy.log("Url data exist");
-    cy.wait(1000);
-
-    cy.contains(
-      this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
-    ).should("exist");
-    cy.log("Text data exist");
-    cy.wait(1000);
-
-    cy.contains(
-      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
-    ).should("exist");
-    cy.wait(1000);
-    cy.log("TextAera data exist");
-
-    cy.log("Square card added elemets exists after kit item(new form) saved");
-    cy.wait(3000);
+    //kit item Save Assertion
+    // cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+    //   "be.visible"
+    // );
+    cy.wait(5000);
   });
 
-  it.only("Deletion square card elements for new form", function () {
-    //Click on 3dots of square card
-    cy.get(".pr-0").click({ force: true });
-    cy.wait(1000);
-    //Assertion
-    cy.contains(" Edit Item ").should("be.visible");
-    cy.contains(" Delete Item ").should("be.visible");
-    cy.wait(2000);
-    cy.contains(" Delete Item ").click({ force: true });
-    cy.wait(2000);
-    //cy.get('.v-list-item:nth-child(2) > .v-list-item__title').click();
+  it.only("Validate One to One Element", function () {
+    //One to One element assetions(new form)
+    cy.contains(this.RelatedKitItemData.Url).should("exist");
+    cy.log("Url data exist");
+    cy.wait(5000);
+  });
+
+  it.only("Deletion one to one element for new form", function () {
+    //Click on cross to delete value
+    cy.wait(3000);
+    cy.get(".last-updated:nth-child(2) > .v-icon").click({ force: true });
     cy.contains(" Are you sure you want to discard?").should("be.visible");
     cy.wait(2000);
     cy.contains(" Discard ").click({ force: true });
     cy.contains(
       "Relation on " +
-        this.DataType2.SquareCardName +
+        this.DataType2.OneToOneRelation +
         " for " +
         this.NewKitItemData.KitName +
         " Deleted"
@@ -557,27 +480,10 @@ describe("Related Control Square Card test case", function () {
     cy.wait(2000);
   });
 
-  it.only("Deletion Validation of added Square Card elements", function () {
-    //Square card NOT element assetions after delete
-    cy.contains(
-      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
-    ).should("not.exist");
-    cy.log("Url data element DELETED");
-    cy.wait(1000);
-
-    cy.contains(
-      this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
-    ).should("not.exist");
-    cy.log("Text data element DELETED");
-    cy.wait(1000);
-
-    cy.contains(
-      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
-    ).should("not.exist");
-    cy.wait(1000);
-    cy.log("TextAera data element DELETED");
-
-    cy.log("Square card added elemets has been DETETED");
+  it.only("Deletion Validation of added OneToOne element", function () {
+    //One to One element assetions(new form)
+    cy.contains(this.RelatedKitItemData.Url).should("not.exist");
+    cy.log("Data has been deleted");
     cy.wait(3000);
   });
 });

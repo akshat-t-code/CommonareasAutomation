@@ -83,7 +83,7 @@ describe("Related Control One to Many test case", function () {
     });
   });
 
-  it.only("Navigating to created Kit type ", function () {
+  it.only("Navigating to New form of created Kit type", function () {
     cy.wait(10000);
     const lp = new LoginPage();
     const KTP = new KitTypePage();
@@ -102,7 +102,7 @@ describe("Related Control One to Many test case", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only("One to Many Related Control for New Item", function () {
+  it.only("One to Many Related Control to configure Related New form", function () {
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .last()

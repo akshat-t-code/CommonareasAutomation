@@ -1,0 +1,66 @@
+{
+
+    "KitName":"Validation",
+    
+    "UrlNote":"all letters in lower case",
+
+    "NewKitItemUrl":"https://www.onetoonenewform.com",
+    "NewKitItemText":"OneToOne Relation TC",
+    
+    "Url":"https://www.onetoone.com",
+    "Text":"One2One Related New",
+    "RelNewFileName":"Adding a User to a Group",
+    "Telephone":"(345) 909-9765",
+    "TextAera":"One To One Related New automation",
+    "Currency":"873",
+    "Measure":"0983",
+
+    "Email":"onetoNew@gmail.com",
+    "Important Note for Email":"should be in small letters",
+
+    "Addressline1":"Romrog WayOne",
+    "Addressline2":"One Way",
+    "City":"Grand Island One",
+    "State":"Alaska",
+    "ZipCode":"3233",
+    "Country":"United States",
+    "Number":"23224",
+
+    "SelectListValue":"KKR",
+    
+
+    "RadioSelectValue":"CSK",
+
+    "CheckboxSelectValue1":"CheckboxSelect1",
+    "CheckboxSelectValue2":"CheckboxSelect2",
+    "CheckboxSelectValue3":"CheckboxSelect3",
+    "CheckboxSelectValue4":"CheckboxSelect4",
+    "CheckboxSelectValue5":"CheckboxSelect5",
+
+    "StepperValue1":"Moto",
+    "StepperValue2":"Jio",
+    "StepperValue3":"RealMe",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"MArt",
+
+    "UserSelectorName":"Deanne Howell",
+    "ContactSelectorName":"Pradeep1 Kumar",
+    "AssigningName":"Daniel Zhao",
+    
+    "ExtraSmalliconSize":"Extra Small",
+    "SmalliconSize":"Small",
+    "MediumiconSize":"Medium",
+    "LargeiconSize":"Large",
+    "ExtraLargeiconSize":"Extra Large",
+
+    "IconLabel":"Onetoone",
+
+    "These are the index value of div child":"use according to select inspection value",
+    "1st for 1st value":"2nd for 2nd value and so on...",
+    "InspectionValue1":"1",
+    "InspectionValue2":"2",
+    "InspectionValue3":"3",
+    "InspectionValue4":"4",
+    "InspectionValue5":"5"
+    
+}
