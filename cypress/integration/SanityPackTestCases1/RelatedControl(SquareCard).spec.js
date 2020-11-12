@@ -2,7 +2,7 @@ import LoginPage from "../PageObject/LoginPage";
 import KitTypePage from "../PageObject/KitTypePage";
 import SanityLoginPage from "../PageObject/SanityLoginPage";
 
-describe("Related Control One to Many test case", function () {
+describe("Related Control Square Card test case", function () {
   this.beforeAll(function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
@@ -76,7 +76,7 @@ describe("Related Control One to Many test case", function () {
       this.SData = SanityTCData;
     });
 
-    cy.fixture("SanityPackTestData/RelatedOneToNData").then(function (
+    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
       SanityTCData
     ) {
       this.RelatedKitItemData = SanityTCData;
@@ -102,7 +102,7 @@ describe("Related Control One to Many test case", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only("One to Many Related Control for New Item", function () {
+  it.only("Square Card Related Control for New Item", function () {
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .last()
@@ -118,7 +118,7 @@ describe("Related Control One to Many test case", function () {
     //Click on New Item for one to Many Related Control
 
     cy.get(".ca-item")
-      .eq(1)
+      .eq(3)
       .scrollIntoView({ force: true })
       .click({ force: true });
     //New Item Assertion
@@ -431,7 +431,7 @@ describe("Related Control One to Many test case", function () {
     //Related kit item created assertion
     cy.contains(
       " Relation on " +
-        this.DataType2.OneToManyRelation +
+        this.DataType2.SquareCardName +
         " for " +
         this.NewKitItemData.KitName +
         " created"
@@ -455,5 +455,26 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.NewKitItemData.KitName + " has been saved").should(
       "be.visible"
     );
+  });
+
+  it.only("Validate Square Card element on new form", function () {
+    cy.wait(2000);
+
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
+    ).scrollIntoView({ force: true });
+
+    cy.wait(2000);
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
+    ).should("exist");
+
+    cy.contains(
+      this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
+    ).should("exist");
+
+    cy.contains(
+      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
+    ).should("exist");
   });
 });

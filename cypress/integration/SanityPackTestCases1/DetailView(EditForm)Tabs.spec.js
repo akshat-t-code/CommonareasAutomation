@@ -552,4 +552,5 @@ describe("Details View tabs test case", function () {
     ).click({ force: true });
     cy.wait(3000);
   });
+  
 });

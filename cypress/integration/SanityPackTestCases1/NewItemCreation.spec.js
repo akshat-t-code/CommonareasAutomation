@@ -408,7 +408,7 @@ describe("New kit item complete creation test case", function () {
       ".vue-map-container:nth-child(2) .gm-style > div:nth-child(1) > div:nth-child(3)"
     ).click({ force: true });
     cy.contains("Add a Pin").click({ force: true });
-    cy.contains(" Location created ").should("be.visible");
+    cy.contains("  Pin has been created successfully.  ").should("be.visible");
     cy.wait(3000);
   });
 

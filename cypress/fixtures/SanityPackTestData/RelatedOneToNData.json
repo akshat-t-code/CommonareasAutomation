@@ -1,0 +1,69 @@
+{
+
+    "KitName":"Validation",
+    "NewKitItemUrl":"https://www.onetomanyform.com",
+    "NewKitItemText":"One To Many Relation TC",
+
+    
+    "Url":"https://www.related.com",
+    "Text":"One to Many Related New",
+    "RelNewFileName":"superlargedoc",
+    "Telephone":"(982) 999-2495",
+    "TextAera":"Related New automation",
+    "Currency":"9892",
+    "Measure":"0998",
+
+    "Email":"New@gmail.com",
+    "Important Note for Email":"should be in small letters",
+
+    "Addressline1":"Romrog WayRel",
+    "Addressline2":"Oak WayRel",
+    "City":"Grand IslandRel",
+    "State":"Alaska",
+    "ZipCode":"3432",
+    "Country":"United States",
+    "Number":"234",
+
+    "SelectListValue":"KKR",
+    
+
+    "RadioSelectValue":"CSK",
+
+    "CheckboxSelectValue1":"CheckboxSelect1",
+    "CheckboxSelectValue2":"CheckboxSelect2",
+    "CheckboxSelectValue3":"CheckboxSelect3",
+    "CheckboxSelectValue4":"CheckboxSelect4",
+    "CheckboxSelectValue5":"CheckboxSelect5",
+
+    "StepperValue1":"Moto",
+    "StepperValue2":"Jio",
+    "StepperValue3":"RealMe",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"MArt",
+
+    "UserSelectorName":"Deanne Howell",
+    "ContactSelectorName":"Pradeep1 Kumar",
+    "AssigningName":"Daniel Zhao",
+    
+    "ExtraSmalliconSize":"Extra Small",
+    "SmalliconSize":"Small",
+    "MediumiconSize":"Medium",
+    "LargeiconSize":"Large",
+    "ExtraLargeiconSize":"Extra Large",
+
+    "IconLabel":"fb",
+
+    "These are the index value of div child":"use according to select inspection value",
+    "1st for 1st value":"2nd for 2nd value and so on...",
+    "InspectionValue1":"1",
+    "InspectionValue2":"2",
+    "InspectionValue3":"3",
+    "InspectionValue4":"4",
+    "InspectionValue5":"5"
+
+    
+    
+
+
+    
+}
