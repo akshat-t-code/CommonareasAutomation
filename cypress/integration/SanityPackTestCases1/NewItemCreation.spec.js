@@ -359,12 +359,12 @@ describe("New kit item complete creation test case", function () {
     cy.log("Assigning added");
     cy.wait(5000);
 
-    // //save Kit Item
-    // cy.get(".v-select__selections .v-btn__content").click({ force: true });
-    // cy.contains(this.NewKitItemData.KitName + " has been saved").should(
-    //   "be.visible"
-    // );
-    // cy.log(this.NewKitItemData.KitName + "Kit Type has been Saved");
+    //save Kit Item
+    cy.get(".v-select__selections .v-btn__content").click({ force: true });
+    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+      "be.visible"
+    );
+    cy.log(this.NewKitItemData.KitName + "Kit Type has been Saved");
 
     // //close the Kit Item
     // cy.wait(5000);
@@ -408,7 +408,7 @@ describe("New kit item complete creation test case", function () {
       ".vue-map-container:nth-child(2) .gm-style > div:nth-child(1) > div:nth-child(3)"
     ).click({ force: true });
     cy.contains("Add a Pin").click({ force: true });
-    cy.contains("  Pin has been created successfully.  ").should("be.visible");
+    //cy.contains("Pin has been created successfully.").should("be.visible");
     cy.wait(3000);
   });
 

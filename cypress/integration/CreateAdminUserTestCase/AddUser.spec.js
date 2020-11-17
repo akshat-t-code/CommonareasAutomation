@@ -64,13 +64,13 @@ describe("Create user from admin and login with the new user", function () {
     }
   );
 
-  it.only("Create user form admin", function () {
+  it("Create user form admin", function () {
     //PageObject
     const lp = new LoginPage();
-    lp.visitStarksBuild();
+    lp.visitStarksTest();
 
     //Login Page assertion
-    cy.get(".page-main-title").should("be.visible");
+    cy.contains(" Log In ").should("be.visible");
 
     lp.EnterEmail("starksolutions@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
@@ -83,7 +83,7 @@ describe("Create user from admin and login with the new user", function () {
     //cy.eyesCheckWindow("Logged In");
     cy.title().should("eq", "Common Areas");
     cy.wait(10000);
-    lp.AdminStarksBuild();
+    lp.AdminStarksTest();
     //cy.eyesCheckWindow();
     cy.ClickOnAddUser();
     //Assertion
@@ -147,12 +147,12 @@ describe("Create user from admin and login with the new user", function () {
     cy.wait(10000);
   });
 
-  it("New Add user login into the appliction First time", function () {
+  it.only("New Add user login into the appliction First time", function () {
     //PageObject
     const lp = new LoginPage();
-    lp.visitStarksBuild();
-    //Login Page assertion
-    cy.get(".page-main-title").should("be.visible");
+    lp.visitStarksTest();
+   //Login Page assertion
+   cy.contains(" Log In ").should("be.visible");
     //fixtures file(1)
     lp.EnterEmail(this.Credentials.UserEmail);
     lp.EnterPassword(this.data.UserPassword);

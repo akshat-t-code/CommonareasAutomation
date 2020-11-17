@@ -20,7 +20,7 @@ class LoginPage {
   }
 
   AdminStarksTest() {
-    cy.visit("https://starksolutions.ca-test.com/ClientAdmin/Index/#/");
+    cy.visit("https://starksolutions.ca-test.com/ClientAdmin/AddUser");
   }
 
   visitStarksBuild() {

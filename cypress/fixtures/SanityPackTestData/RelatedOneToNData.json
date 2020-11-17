@@ -1,5 +1,7 @@
 {
 
+    "Note":"Url and email all should be in lower case",
+
     "KitName":"Validation",
     "NewKitItemUrl":"https://www.onetomanyform.com",
     "NewKitItemText":"One To Many Relation TC",
@@ -13,7 +15,7 @@
     "Currency":"9892",
     "Measure":"0998",
 
-    "Email":"New@gmail.com",
+    "Email":"new@gmail.com",
     "Important Note for Email":"should be in small letters",
 
     "Addressline1":"Romrog WayRel",

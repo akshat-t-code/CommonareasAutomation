@@ -416,7 +416,7 @@ describe("Related Control Square Card test case", function () {
     // //Assigning creation assertion
     // cy.contains("Item shared").should("be.visible");
     // cy.log("Assigning added");
-    // cy.wait(5000);
+    cy.wait(5000);
 
     //save related new
     cy.get(".v-select__selections .v-btn__content")
@@ -446,24 +446,11 @@ describe("Related Control Square Card test case", function () {
     cy.contains(this.NewKitItemData.KitName).should("be.visible");
     cy.log("Related new has been Close");
     cy.wait(5000);
-
-    // //save Kit item(edit form) new
-    // cy.get(".v-select__selections .v-btn__content")
-    //   .first()
-    //   .click({ force: true });
-    // // kit item Save Assertion
-    // cy.contains(this.NewKitItemData.KitName + " has been saved").should(
-    //   "be.visible"
-    // );
   });
 
   it.only("Validate Square Card element on new form", function () {
+    cy.get(".btn-load .inline-svg").eq(1).scrollIntoView({ force: true });
     cy.wait(5000);
-    //Refresh Sqcard item
-    cy.get(".btn-load .inline-svg").eq(1).click({ force: true });
-    cy.log("Refresh square card");
-    cy.wait(4000);
-
     //Square card element assetions before kit item saved(new form)
     cy.contains(
       this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
@@ -531,6 +518,16 @@ describe("Related Control Square Card test case", function () {
 
     cy.log("Square card added elemets exists after kit item(new form) saved");
     cy.wait(3000);
+
+    //Again save Kit item(new form)
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    // kit item Save Assertion
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
+    cy.log("There is nothing to save for Kit Item");
   });
 
   it.only("Deletion square card elements for new form", function () {
@@ -558,6 +555,13 @@ describe("Related Control Square Card test case", function () {
   });
 
   it.only("Deletion Validation of added Square Card elements", function () {
+    cy.wait(2000);
+    //No added value assertion
+    cy.get(".msg-no-results")
+      .eq(1)
+      .should("have.text", 'warning "There are no results available"');
+    cy.log("Square Card Relation control has no elements");
+
     //Square card NOT element assetions after delete
     cy.contains(
       this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url

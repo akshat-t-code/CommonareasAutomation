@@ -102,7 +102,7 @@ describe("Related Control One to One test case", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only("One to One Related Control to configure Related New form", function () {
+  it("One to One Related Control to configure Related New form", function () {
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .last()
@@ -456,14 +456,14 @@ describe("Related Control One to One test case", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate One to One Element", function () {
+  it("Validate One to One Element", function () {
     //One to One element assetions(new form)
     cy.contains(this.RelatedKitItemData.Url).should("exist");
     cy.log("Url data exist");
     cy.wait(5000);
   });
 
-  it.only("Deletion one to one element for new form", function () {
+  it("Deletion one to one element for new form", function () {
     //Click on cross to delete value
     cy.wait(3000);
     cy.get(".last-updated:nth-child(2) > .v-icon").click({ force: true });
@@ -481,6 +481,10 @@ describe("Related Control One to One test case", function () {
   });
 
   it.only("Deletion Validation of added OneToOne element", function () {
+    //Deletion assertion
+    cy.contains(this.DataType2.OneToOneRelation).should("be.visible");
+    cy.wait(1000);
+
     //One to One element assetions(new form)
     cy.contains(this.RelatedKitItemData.Url).should("not.exist");
     cy.log("Data has been deleted");
