@@ -5,7 +5,7 @@ import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 describe("Adding Results and Filters Element to List Views", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
-    lp.visitServiceBuild();
+    lp.visitServiceTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible")
     //Enter credentials
@@ -62,7 +62,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    lp.visitKitBuilderServiceBuild();
+    lp.visitKitBuilderServiceTest();
     cy.log("User entered in kit builder");
 
     cy.wait(3000);

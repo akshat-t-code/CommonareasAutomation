@@ -64,7 +64,7 @@ describe("Create user from admin and login with the new user", function () {
     }
   );
 
-  it("Create user form admin", function () {
+  it.only("Create user form admin", function () {
     //PageObject
     const lp = new LoginPage();
     lp.visitStarksTest();

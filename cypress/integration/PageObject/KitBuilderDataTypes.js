@@ -531,7 +531,7 @@ class KitBuilderDataTypes {
 
     //SelectList customize name
     //Click on +
-    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.get(".v-btn__content > .theme--dark").first().click({ force: true });
     //write customize SelectList Name
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
@@ -713,7 +713,7 @@ class KitBuilderDataTypes {
     //RadioSelect customize name
     //Click on +
     cy.wait(3000);
-    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.get(".v-btn__content > .theme--dark").first().click({ force: true });
     //write customize RadioSelectName
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
@@ -907,7 +907,7 @@ class KitBuilderDataTypes {
 
     //CheckboxSelect customize name
     //Click on +
-    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.get(".v-btn__content > .theme--dark").first().click({ force: true });
     //write customize CheckboxSelect Name
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
@@ -1217,7 +1217,7 @@ class KitBuilderDataTypes {
 
     //Stepper customize name
     //Click on +
-    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.get(".v-btn__content > .theme--dark").first().click({ force: true });
     //write customize StepperName
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"
@@ -1633,7 +1633,7 @@ class KitBuilderDataTypes {
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    cy.wait(20000);
+    cy.wait(3000);
     cy.contains(KitToBeRelate).click({ force: true });
     cy.wait(3000);
 
@@ -1745,7 +1745,7 @@ class KitBuilderDataTypes {
 
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    cy.wait(10000);
+    cy.wait(5000);
     cy.contains(KitToBeRelated).click({ force: true });
     cy.wait(3000);
 
@@ -1760,7 +1760,7 @@ class KitBuilderDataTypes {
     cy.log("OneToMany Relation Data Type has been Created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
-    cy.wait(5000);
+    cy.wait(3000);
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
@@ -1800,7 +1800,7 @@ class KitBuilderDataTypes {
 
     //ListView Lable
     cy.get(
-      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div"
+      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-2.pa-0.col.col-6 > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(RelatedTableView);
@@ -1814,7 +1814,7 @@ class KitBuilderDataTypes {
 
     //Icon
     cy.get(
-      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(4) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div > div"
+      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(2) > div.pl-2.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div"
     ).click({ force: true });
     cy.get(".v-list-item:nth-child(1) .v-list-item__title").click({
       force: true,
@@ -1823,9 +1823,7 @@ class KitBuilderDataTypes {
     // cy.contains("Default View for Kit").click({ force: true });
 
     //Click on Save
-    cy.get(".v-btn--text:nth-child(2) > .v-btn__content")
-      .first()
-      .click({ force: true });
+    cy.get(".px-4 > .v-btn__content").first().click({ force: true });
     //Assertion Close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
 
@@ -1956,7 +1954,7 @@ class KitBuilderDataTypes {
     ).click({ force: true });
     //Select Kit type
     //Value is comming form KitBuilderDataTypes.json(Fixtures file)
-    cy.wait(10000);
+    cy.wait(5000);
     cy.contains(CardKitToBeRelated).click({ force: true });
     cy.wait(5000);
 
@@ -1971,7 +1969,7 @@ class KitBuilderDataTypes {
     cy.log("Square Card Relation Data Type has been Created");
     //Assertion to close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
-    cy.wait(5000);
+    cy.wait(3000);
 
     //Click on Allow Delete
     cy.get(".gjs-trt-trait__wrp:nth-child(15) .gjs-chk-icon").click({
@@ -2015,7 +2013,7 @@ class KitBuilderDataTypes {
 
     //ListView Lable
     cy.get(
-      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div"
+      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(1) > div.pr-2.pa-0.col.col-6 > div > div > div.v-input__slot > div"
     )
       .click({ force: true })
       .type(SquareCardTableView);
@@ -2029,7 +2027,7 @@ class KitBuilderDataTypes {
 
     //Icon
     cy.get(
-      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(4) > div.pr-4.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div > div"
+      "div:nth-child(4) > div > div > div > div.container > div > div > form > div:nth-child(2) > div.pl-2.pa-0.col.col-6 > div > div > div.v-input__slot > div.v-select__slot > div"
     ).click({ force: true });
     cy.get(".v-list-item:nth-child(1) .v-list-item__title").click({
       force: true,
@@ -2038,9 +2036,7 @@ class KitBuilderDataTypes {
     //cy.contains("Default View for Kit").click({ force: true });
 
     //Click on Save
-    cy.get(".v-btn--text:nth-child(2) > .v-btn__content")
-      .first()
-      .click({ force: true });
+    cy.get(".px-4 > .v-btn__content").first().click({ force: true });
     //Assertion Close
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
 
