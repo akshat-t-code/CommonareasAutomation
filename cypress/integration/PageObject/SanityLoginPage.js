@@ -1,5 +1,4 @@
 class SanityLoginPage {
- 
   visitServiceBuild() {
     cy.visit("https://serviceproviders.ca-build.com/");
   }
@@ -16,6 +15,29 @@ class SanityLoginPage {
     cy.visit("https://serviceproviders.ca-test.com/ClientAdmin/KitBuilder#/");
   }
 
+  visitCityComTest() {
+    cy.visit("https://citycommercial.ca-test.com/#/");
+  }
+
+  visitCityComBuild() {
+    cy.visit("https://citycommercial.ca-build.com/#/");
+  }
+
+  visitCityComTestKitBuilder() {
+    cy.visit("https://citycommercial.ca-test.com/ClientAdmin/KitBuilder#/");
+  }
+
+  visitCityComKBuildKitBuilder() {
+    cy.visit("https://citycommercial.ca-build.com/ClientAdmin/KitBuilder#/");
+  }
+
+  CityComTestAddUser() {
+    cy.visit("https://citycommercial.ca-test.com/ClientAdmin/AddUser");
+  }
+
+  CityComBuildAddUser() {
+    cy.visit("https://citycommercial.ca-build.com/ClientAdmin/AddUser");
+  }
 }
 
 export default SanityLoginPage;

@@ -1,6 +1,6 @@
 {
 
-    "KitName":"Validation2",
+    "KitName":"ResidentialArea",
     
     "Url":"https://www.sanity.com",
     "Text":"sanity",
@@ -35,11 +35,11 @@
     "StepperValue2":"Jio",
     "StepperValue3":"RealMe",
     "StepperValue4":"Oppo",
-    "StepperValue5":"MArt",
+    "StepperValue5":"Mart",
 
-    "UserSelectorName":"Deanne Howell",
-    "ContactSelectorName":"Pradeep1 Kumar",
-    "AssigningName":"Daniel Zhao",
+    "UserSelectorName":"City Com2",
+    "ContactSelectorName":"Carmen Goodin",
+    "AssigningName":"Adrian Osman",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",
@@ -47,7 +47,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"fb",
+    "IconLabel":"sanity",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",
