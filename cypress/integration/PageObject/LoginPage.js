@@ -31,6 +31,30 @@ class LoginPage {
     cy.visit("https://starksolutions.ca-build.com/ClientAdmin/AddUser");
   }
 
+  visitCityComTest() {
+    cy.visit("https://citycommercial.ca-test.com/#/");
+  }
+
+  visitCityComBuild() {
+    cy.visit("https://citycommercial.ca-build.com/#/");
+  }
+
+  visitCityComTestKitBuilder() {
+    cy.visit("https://citycommercial.ca-test.com/ClientAdmin/KitBuilder#/");
+  }
+
+  visitCityComKBuildKitBuilder() {
+    cy.visit("https://citycommercial.ca-build.com/ClientAdmin/KitBuilder#/");
+  }
+
+  CityComTestAddUser() {
+    cy.visit("https://citycommercial.ca-test.com/ClientAdmin/AddUser");
+  }
+
+  CityComBuildAddUser() {
+    cy.visit("https://citycommercial.ca-build.com/ClientAdmin/AddUser");
+  }
+
   EnterEmail(value) {
     const field = cy.get("#UserName");
     field.clear();

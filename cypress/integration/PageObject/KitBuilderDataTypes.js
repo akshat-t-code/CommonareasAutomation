@@ -917,7 +917,7 @@ class KitBuilderDataTypes {
 
     //Click on Save btn of customize CheckboxSelectName
     cy.get(".v-btn--text:nth-child(2) > .v-btn__content").last().click();
-    cy.wait(2000);
+    cy.wait(4000);
     //Click on Assertion to close msg
     cy.get(".closeBtn .v-icon").click();
     cy.wait(1000);

@@ -253,7 +253,9 @@ describe("Update created kit item test case", function () {
     //Click on cross to delete Time
     cy.get(
       ".v-input__slot > .v-input__append-inner > .v-input__icon--clear > .v-icon"
-    ).click({ force: true });
+    )
+      .first()
+      .click({ force: true });
     cy.wait(1000);
     //Click on Time to appear time pop up
     cy.get('[placeholder="Add Time"][type="text"]')
@@ -450,5 +452,12 @@ describe("Update created kit item test case", function () {
     cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
     cy.contains(" Recently Viewed ").should("be.visible");
     cy.wait(5000);
+
+    //Update kit item assertion
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.UpdateKitItemData.Url
+    ).should("be.visible");
+
+    cy.log("updated Kit item updated and exist in Kit Item List View ");
   });
 });

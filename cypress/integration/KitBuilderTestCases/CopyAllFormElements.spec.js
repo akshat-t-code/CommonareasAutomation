@@ -5,11 +5,11 @@ import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 describe("Copy New Form Elements in All Forms", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
-    lp.visitServiceTest();
+    lp.visitCityComTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("kstanley@commonareas.work.dev");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -61,7 +61,7 @@ describe("Copy New Form Elements in All Forms", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    lp.visitKitBuilderServiceTest();
+    lp.visitCityComTestKitBuilder();
     cy.log("User entered in kit builder");
     //Open Craeted Kit Type
     kb.KBSearchBox(this.KitTypeName.KitName3);

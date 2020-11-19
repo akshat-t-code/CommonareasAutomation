@@ -61,11 +61,12 @@ describe("Sign up for a New User", function () {
   it("New User Sign up", function () {
     //PageObject
     const sp = new SignUpPage();
-    sp.visitBaseTest();
+    //sp.visitBaseTest();
+    cy.visit('https://commonareas.io/Public/Login')
     cy.wait(3000);
     // cy.eyesCheckWindow()
 
-    cy.url().should("include", "/Public/Login?ReturnUrl=%2F");
+    cy.url().should("include", "/Public/Login");
     //Click on Sign up for free
     sp.SignUp();
     cy.url().should("include", "Register/Create");

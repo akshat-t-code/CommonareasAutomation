@@ -29,20 +29,19 @@ describe("Login into the application for a new User ", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseTest();
+    //sp.visitBaseTest();
+    cy.visit('https://commonareas.io/Public/Login')
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
     lp.EnterEmail(this.Credentials.UserEmail);
 
-    cy.log('User need to do something').then(()=>{
+    // cy.log('User need to do something').then(()=>{
 
-      alert('Enter Password')
-    })
+    //   alert('Enter Password')
+    // })
 
-    cy.wait(50000)
-
-    ///lp.EnterPassword(this.Credentials.Password);
+    lp.EnterPassword(this.Credentials.Password);
     cy.screenshot("User logged In Details");
     cy.wait(7000);
     lp.Submit();

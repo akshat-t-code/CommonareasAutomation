@@ -115,8 +115,10 @@ describe("Related Control One to Many test case", function () {
       .type(this.RelatedKitItemData.NewKitItemText);
     cy.wait(3000);
 
+    //Scroll
+    cy.get(".ca-item").eq(1).scrollIntoView({ force: true });
+    cy.wait(4000);
     //Click on New Item for one to Many Related Control
-
     cy.get(".ca-item")
       .eq(1)
       .scrollIntoView({ force: true })
@@ -175,6 +177,14 @@ describe("Related Control One to Many test case", function () {
     cy.wait(1000);
 
     //Slider;
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert("Set Slider value by clicking slider Bar");
+    });
+    cy.log(
+      "Firing Alert pop for manual action to Set Slider value by clicking slider Bar"
+    );
+    cy.wait(10000);
 
     // Currency;
     cy.get(
@@ -448,13 +458,30 @@ describe("Related Control One to Many test case", function () {
     cy.wait(5000);
   });
 
-  it("Validate One to Many added Element(Releated New)", function () {
+  it.only("Validate One to Many added Element(Releated New)", function () {
+    //Scroll
+    cy.contains(this.DataType2.OneToManyRelation).scrollIntoView({
+      force: true,
+    });
+    //scroll
+    cy.get(".ca-item").eq(1).scrollIntoView({ force: true });
+
     cy.get(".btn-load .inline-svg").eq(0).scrollIntoView({
       force: true,
     });
     cy.wait(5000);
 
-    //cy.contains("new@gmail.com").scrollTo("right", { duration: 2000 });
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert(
+        "Scroll Horizontal Scroll Bar to look on OneToMany Relation Elements"
+      );
+    });
+    cy.log(
+      "Firing Alert pop for manual action to scroll horizontal scroll Bar"
+    );
+    cy.wait(10000);
+
     //Related element existance asseritons
     cy.contains(this.RelatedKitItemData.Url).should("exist");
     cy.contains(this.RelatedKitItemData.Text).should("exist");
@@ -482,6 +509,25 @@ describe("Related Control One to Many test case", function () {
     cy.log("Refresh one to many");
     cy.wait(6000);
 
+    //Scroll
+    cy.contains(this.DataType2.OneToManyRelation).scrollIntoView({
+      force: true,
+    });
+    //scroll
+    cy.get(".ca-item").eq(1).scrollIntoView({ force: true });
+    cy.wait(2000);
+
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert(
+        "Scroll Horizontal Scroll Bar to look on OneToMany Relation Elements"
+      );
+    });
+    cy.log(
+      "Firing Alert pop for manual action to scroll horizontal scroll Bar"
+    );
+    cy.wait(10000);
+
     //After kit item save
     cy.contains(this.RelatedKitItemData.Url).should("exist");
     cy.contains(this.RelatedKitItemData.Text).should("exist");
@@ -499,7 +545,7 @@ describe("Related Control One to Many test case", function () {
     cy.get(".v-select__selections .v-btn__content")
       .first()
       .click({ force: true });
-    // kit item Save Assertion
+    //kit item Save Assertion for nothing
     cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
       "be.visible"
     );
@@ -544,5 +590,13 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.Email).should("not.exist");
     cy.log("One to many related new elements has been deleted");
     cy.wait(4000);
+
+    //Again save Kit item(new form)
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //kit item Save Assertion after delete elemets
+    cy.log(this.DataType2.KitToBeRelated + " related new has been Saved");
+    cy.log("Save Kit Item after delete relation elements");
   });
 });

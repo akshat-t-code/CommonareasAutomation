@@ -53,7 +53,7 @@
     "StepperValue2":"Jio",
     "StepperValue3":"RealMe",
     "StepperValue4":"Oppo",
-    "StepperValue5":"MArt",
+    "StepperValue5":"Mart",
 
     "Icon":"Icon",
     
@@ -70,8 +70,8 @@
     "InspectionValue4":"Python",
     "InspectionValue5":".net",
 
-    "OneToOneRelation":"OneToOneValidation",
-    "KitToBeRelate":"AccountManager",
+    "OneToOneRelation":"OneToOneCity",
+    "KitToBeRelate":"AkshatCityCom",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
     "OneToOneMapView":"MapView",
@@ -79,8 +79,8 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"OneToManyRelation",
-    "KitToBeRelated":"AccountManager",
+    "OneToManyRelation":"OneToManyCityRel",
+    "KitToBeRelated":"AkshatCityCom",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
@@ -93,8 +93,8 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"ValiSquareCard",
-    "CardKitToBeRelated":"AccountManager",
+    "SquareCardName":"CitySquareCard",
+    "CardKitToBeRelated":"AkshatCityCom",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",
@@ -111,7 +111,7 @@
     "RVName":"Reactive Vriable",
 
     "TextBlockName":"TextBlockName",
-    "TextBlockData":"TextBlock for the new testing ",
+    "TextBlockData":"TextBlock for the sanity automation ",
     "Button":"Button",
     "LinkName":"Link",
     "EnterUrl":"https://www.makemytrip.com",

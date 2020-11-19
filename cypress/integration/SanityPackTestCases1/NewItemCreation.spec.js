@@ -457,7 +457,9 @@ describe("New kit item complete creation test case", function () {
     cy.contains(
       " Relation on " +
         this.DataType2.OneToManyRelation +
-        " for Validation linked "
+        " for " +
+        this.NewKitItemData.KitName +
+        " linked "
     ).should("be.visible");
     //Click on save
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
@@ -561,7 +563,9 @@ describe("New kit item complete creation test case", function () {
     cy.contains(
       " Relation on " +
         this.DataType2.OneToManyRelation +
-        " for Validation created"
+        " for " +
+        this.NewKitItemData.KitName +
+        " created"
     ).should("be.visible");
     //Parent kit type save assertion
     cy.contains(this.NewKitItemData.KitName + " has been saved").should(

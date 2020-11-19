@@ -102,7 +102,7 @@ describe("Related Control One to One test case", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it("One to One Related Control to configure Related New form", function () {
+  it.only("One to One Related Control to configure Related New form", function () {
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .last()
@@ -114,6 +114,10 @@ describe("Related Control One to One test case", function () {
       .last()
       .type(this.RelatedKitItemData.NewKitItemText);
     cy.wait(3000);
+
+    //Scroll
+    cy.get(".mr-4 > .inline-svg > path").scrollIntoView({ force: true });
+    cy.wait(4000);
 
     //Click on New Item for one to one Related Control
     cy.get(".mr-4 > .inline-svg > path")
@@ -172,7 +176,25 @@ describe("Related Control One to One test case", function () {
     //   .type(this.RelatedKitItemData.TextAera);
     // cy.wait(1000);
 
-    // //Slider;
+    //Slider;
+    //Firing Alert pop for manual action
+    // cy.log("User need to do something").then(() => {
+    //   alert("Set Slider value by clicking slider Bar");
+    // });
+    // cy.log(
+    //   "Firing Alert pop for manual action to Set Slider value by clicking slider Bar"
+    // );
+    // cy.wait(10000);
+
+    //Slider;
+    //Firing Alert pop for manual action
+    // cy.log("User need to do something").then(() => {
+    //   alert("Set Slider value by clicking slider Bar");
+    // });
+    // cy.log(
+    //   "Firing Alert pop for manual action to Set Slider value by clicking slider Bar"
+    // );
+    // cy.wait(10000);
 
     // // Currency;
     // cy.get(
@@ -413,8 +435,8 @@ describe("Related Control One to One test case", function () {
     // cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
     // //Assigning creation assertion
     // cy.contains("Item shared").should("be.visible");
-    // cy.log("Assigning added");
-    // cy.wait(5000);
+    cy.log("Assigning added");
+    cy.wait(5000);
 
     //save related new
     cy.get(".v-select__selections .v-btn__content")
@@ -444,29 +466,52 @@ describe("Related Control One to One test case", function () {
     cy.contains(this.NewKitItemData.KitName).should("be.visible");
     cy.log("Related new has been Close");
     cy.wait(5000);
+  });
+
+  it.only("Validate One to One Element", function () {
+    cy.wait(2000);
+    //One to One element assetions(new form) before save kit item
+    cy.contains(this.RelatedKitItemData.Url).should("exist");
+    cy.log("Url data exist before save kit item");
+    cy.wait(5000);
 
     //save Kit item(edit form) new
     cy.get(".v-select__selections .v-btn__content")
       .first()
       .click({ force: true });
     //kit item Save Assertion
-    // cy.contains(this.NewKitItemData.KitName + " has been saved").should(
-    //   "be.visible"
-    // );
+    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+      "be.visible"
+    );
     cy.wait(5000);
-  });
 
-  it("Validate One to One Element", function () {
-    //One to One element assetions(new form)
+    //Scrolling
+    cy.get(".last-updated:nth-child(2) > .v-icon").scrollIntoView({
+      force: true,
+    });
+    cy.wait(2000);
+
+    //One to One element assetions(new form) after save kit item
     cy.contains(this.RelatedKitItemData.Url).should("exist");
-    cy.log("Url data exist");
+    cy.log("Url data exist after save kit item");
     cy.wait(5000);
+
+    //save AGAIN Kit item(edit form) new
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //kit item Save Assertion for nothing
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
+    cy.log("There is nothing to save for Kit Item");
   });
 
-  it("Deletion one to one element for new form", function () {
+  it.only("Deletion one to one element for new form", function () {
     //Click on cross to delete value
     cy.wait(3000);
     cy.get(".last-updated:nth-child(2) > .v-icon").click({ force: true });
+    cy.wait(2000);
     cy.contains(" Are you sure you want to discard?").should("be.visible");
     cy.wait(2000);
     cy.contains(" Discard ").click({ force: true });
@@ -482,12 +527,17 @@ describe("Related Control One to One test case", function () {
 
   it.only("Deletion Validation of added OneToOne element", function () {
     //Deletion assertion
-    cy.contains(this.DataType2.OneToOneRelation).should("be.visible");
     cy.wait(1000);
-
     //One to One element assetions(new form)
     cy.contains(this.RelatedKitItemData.Url).should("not.exist");
     cy.log("Data has been deleted");
     cy.wait(3000);
+    //Again save Kit item(new form)
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //kit item Save Assertion after delete elemets
+    cy.log(this.DataType2.KitToBeRelated + " related new has been Saved");
+    cy.log("Save Kit Item after delete relation elements");
   });
 });
