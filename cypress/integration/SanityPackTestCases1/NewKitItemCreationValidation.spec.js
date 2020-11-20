@@ -6,7 +6,7 @@ describe("New created kit item creation Validation test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitServiceTest();
+    slp.visitCityComTest();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -16,7 +16,7 @@ describe("New created kit item creation Validation test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("kstanley@commonareas.work.dev");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");

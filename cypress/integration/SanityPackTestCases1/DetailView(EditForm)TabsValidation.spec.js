@@ -6,7 +6,7 @@ describe("Validation of Details View tabs test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitServiceTest();
+    slp.visitCityComTest();
 
     //Handling Alert
     cy.on("window:confirm", () => {

@@ -61,8 +61,8 @@ describe("Sign up for a New User", function () {
   it("New User Sign up", function () {
     //PageObject
     const sp = new SignUpPage();
-    //sp.visitBaseTest();
-    cy.visit('https://commonareas.io/Public/Login')
+    sp.visitBaseTest();
+    //cy.visit('https://commonareas.io/Public/Login')
     cy.wait(3000);
     // cy.eyesCheckWindow()
 

@@ -7,15 +7,15 @@
     "NewKitItemText":"One To Many Relation TC",
 
     
-    "Url":"https://www.related.com",
+    "Url":"https://www.onetomany.com",
     "Text":"One to Many Related New",
     "RelNewFileName":"Fixtures",
     "Telephone":"(982) 999-2495",
-    "TextAera":"Related New automation",
+    "TextAera":"One To Many Related New automation",
     "Currency":"9892",
     "Measure":"0998",
 
-    "Email":"new@gmail.com",
+    "Email":"onetomany@gmail.com",
     "Important Note for Email":"should be in small letters",
 
     "Addressline1":"Romrog WayRel",
@@ -43,9 +43,9 @@
     "StepperValue4":"Oppo",
     "StepperValue5":"MArt",
 
-    "UserSelectorName":"Deanne Howell",
-    "ContactSelectorName":"Pradeep1 Kumar",
-    "AssigningName":"Daniel Zhao",
+    "UserSelectorName":"City Com2",
+    "ContactSelectorName":"Carmen Goodin",
+    "AssigningName":"Adrian Osman",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",

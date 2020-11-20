@@ -6,7 +6,7 @@ describe("Update created kit item test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitServiceTest();
+    slp.visitCityComTest();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -16,7 +16,7 @@ describe("Update created kit item test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("kstanley@commonareas.work.dev");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -73,6 +73,12 @@ describe("Update created kit item test case", function () {
       SanityTCData
     ) {
       this.SData = SanityTCData;
+    });
+
+    cy.fixture("SanityPackTestData/RelatedOneToNData").then(function (
+      SanityTCData
+    ) {
+      this.RelatedKitItemData = SanityTCData;
     });
 
     cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
@@ -133,7 +139,7 @@ describe("Update created kit item test case", function () {
       .last()
       .clear()
       .type(this.UpdateKitItemData.Text);
-    cy.log("Url Updated");
+    cy.log("Text Updated");
     cy.wait(1000);
 
     //File
@@ -335,6 +341,226 @@ describe("Update created kit item test case", function () {
       force: true,
     });
     cy.log("Checkbox Values updated.");
+    cy.wait(3000);
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //Scroll
+    cy.get(".ca-item").eq(1).scrollIntoView({ force: true });
+
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert(
+        "Scroll Horizontal Scroll Bar to look on delete icon OneToMany Relation Elements"
+      );
+    });
+    cy.log(
+      "Firing Alert pop for manual action to scroll horizontal scroll Bar"
+    );
+    cy.wait(10000);
+
+    //ONe to Many added deletion
+    cy.wait(3000);
+    //Click on delete icon
+    cy.get(".btn-manage path").eq(0).click({ force: true });
+    cy.wait(2000);
+    //Delete pop up assertion
+    cy.contains(" Are you sure you want to discard?").should("be.visible");
+    cy.wait(2000);
+    cy.get(".mb-4:nth-child(1) .v-btn__content").click({ force: true });
+    //Delete assertion
+    cy.contains(
+      "Relation on " +
+        this.DataType2.OneToManyRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " Deleted"
+    ).should("be.visible");
+    cy.wait(2000);
+
+    cy.wait(3000);
+    //Click on delete icon
+    cy.get(".btn-manage path").eq(0).click({ force: true });
+    cy.wait(2000);
+    //Delete pop up assertion
+    cy.contains(" Are you sure you want to discard?").should("be.visible");
+    cy.wait(2000);
+    cy.get(".mb-4:nth-child(1) .v-btn__content").click({ force: true });
+    //Delete assertion
+    cy.contains(
+      "Relation on " +
+        this.DataType2.OneToManyRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " Deleted"
+    ).should("be.visible");
+    cy.wait(2000);
+
+    cy.wait(3000);
+    //Click on delete icon
+    cy.get(".btn-manage path").eq(0).click({ force: true });
+    cy.wait(2000);
+    //Delete pop up assertion
+    cy.contains(" Are you sure you want to discard?").should("be.visible");
+    cy.wait(2000);
+    cy.get(".mb-4:nth-child(1) .v-btn__content").click({ force: true });
+    //Delete assertion
+    cy.contains(
+      "Relation on " +
+        this.DataType2.OneToManyRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " Deleted"
+    ).should("be.visible");
+    cy.wait(2000);
+
+    //No added value assertion
+    cy.get(".msg-no-results")
+      .eq(0)
+      .should("have.text", 'warning"There are no results available"');
+    cy.log("OneToMany Relation control has no elements");
+
+    //Click on New item(Open related new)
+    cy.get(".ca-item")
+      .eq(1)
+      .scrollIntoView({ force: true })
+      .click({ force: true });
+    //New Item Assertion
+    cy.contains("New Item created").should("be.visible");
+    //Related Kit Assertion
+    cy.contains(this.DataType2.KitToBeRelated).should("be.visible");
+    cy.wait(4000);
+
+    //New form filling
+    cy.wait(2000);
+    //Url
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Url);
+    cy.wait(1000);
+
+    //Text
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Text);
+    cy.wait(1000);
+
+    //File
+    cy.get(".dropzone-icons-content > .clickable path")
+      .eq(0)
+      .click({ force: true });
+    //cy.get(".link-icon--green > path").last().click({ force: true });
+    cy.wait(3000);
+    //give file name to select
+    cy.contains(this.RelatedKitItemData.RelNewFileName).click({
+      force: true,
+    });
+    //Click on save file
+    cy.wait(2000);
+
+    cy.get(
+      ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
+    ).click({ force: true });
+    cy.contains("File saved").should("be.visible");
+    cy.log("File Saved");
+    cy.wait(1000);
+
+    //Telephone
+    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Telephone);
+    cy.wait(1000);
+
+    //TextAera
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.TextAera);
+    cy.wait(1000);
+
+    //Slider;
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert("Set Slider value by clicking slider Bar");
+    });
+    cy.log(
+      "Firing Alert pop for manual action to Set Slider value by clicking slider Bar"
+    );
+    cy.wait(10000);
+
+    // Currency;
+    cy.get(
+      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-currency.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-currency--right.ma-0.pa-0.col > div > div > div.v-input__slot > div"
+    )
+      .eq(0)
+      .click({ force: true })
+      .type(this.RelatedKitItemData.Currency);
+
+    //Measure
+
+    cy.get(
+      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-measure.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-measure--left.ma-0.pa-0.pr-2.col > div > div > div.v-input__slot > div"
+    )
+      .eq(0)
+      .click({ force: true })
+      .type(this.RelatedKitItemData.Measure);
+
+    //Email;
+    cy.get("[name" + "=" + this.DataType2.Email + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Email);
+    cy.wait(1000);
+
+    //save related new
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //Related kit item Save Assertion
+    cy.contains(this.DataType2.KitToBeRelated + " has been saved").should(
+      "be.visible"
+    );
+    cy.log(this.DataType2.KitToBeRelated + " related new has been Saved");
+
+    //Related kit item created assertion
+    cy.contains(
+      " Relation on " +
+        this.DataType2.OneToManyRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " created"
+    ).should("be.visible");
+
+    //close the Kit Item
+    cy.wait(5000);
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper path").first().click({
+      force: true,
+    });
+    cy.contains(this.NewKitItemData.KitName).should("be.visible");
+    cy.log("Related new has been Close");
+    cy.log("Related New kit item create for OneToMany Relation");
+    cy.wait(5000);
+
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert(
+        "Scroll Horizontal Scroll Bar to look on OneToMany Relation Elements"
+      );
+    });
+    cy.log(
+      "Firing Alert pop for manual action to scroll horizontal scroll Bar"
+    );
+    cy.wait(10000);
+
+    //Related element existance asseritons
+    cy.contains(this.RelatedKitItemData.Url).should("exist");
+    cy.contains(this.RelatedKitItemData.Text).should("exist");
+    cy.contains(this.RelatedKitItemData.Telephone).should("exist");
+    cy.wait(1000);
+    cy.contains(this.RelatedKitItemData.TextAera).should("exist");
+    cy.contains(this.RelatedKitItemData.Currency).should("exist");
+    cy.contains(this.RelatedKitItemData.Email).should("exist");
+    cy.log(
+      "One to many related new elements has been exist(before kit item saved)"
+    );
 
     cy.wait(3000);
     cy.get("[name" + "=" + this.DataType2.Stepper + "]")
@@ -346,6 +572,136 @@ describe("Update created kit item test case", function () {
     //Stepper
     cy.contains(this.UpdateKitItemData.StepperValue3).click({ force: true });
     cy.wait(10000);
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //One To One Relation
+
+    //Click on New Item for one to one Related Control
+    cy.get(".mr-4 > .inline-svg > path")
+      .scrollIntoView({ force: true })
+      .click({ force: true });
+    //New Item Assertion
+    cy.contains("New Item created").should("be.visible");
+    //Related Kit Assertion
+    cy.contains(this.DataType2.KitToBeRelated).should("be.visible");
+    cy.wait(4000);
+
+    //New form filling
+
+    cy.wait(2000);
+    //Url
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Url);
+    cy.wait(1000);
+
+    //Text
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Text);
+    cy.wait(1000);
+
+    //File
+    cy.get(".dropzone-icons-content > .clickable path")
+      .eq(0)
+      .click({ force: true });
+    //cy.get(".link-icon--green > path").last().click({ force: true });
+    cy.wait(3000);
+    //give file name to select
+    cy.contains(this.RelatedKitItemData.RelNewFileName).click({
+      force: true,
+    });
+    //Click on save file
+    cy.wait(2000);
+
+    cy.get(
+      ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
+    ).click({ force: true });
+    cy.contains("File saved").should("be.visible");
+    cy.log("File Saved");
+    cy.wait(1000);
+
+    //Telephone
+    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Telephone);
+    cy.wait(1000);
+
+    //TextAera
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.TextAera);
+    cy.wait(1000);
+
+    //Slider;
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert("Set Slider value by clicking slider Bar");
+    });
+    cy.log(
+      "Firing Alert pop for manual action to Set Slider value by clicking slider Bar"
+    );
+    cy.wait(10000);
+
+    // Currency;
+    cy.get(
+      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-currency.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-currency--right.ma-0.pa-0.col > div > div > div.v-input__slot > div"
+    )
+      .eq(0)
+      .click({ force: true })
+      .type(this.RelatedKitItemData.Currency);
+
+    //Measure
+
+    cy.get(
+      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-measure.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-measure--left.ma-0.pa-0.pr-2.col > div > div > div.v-input__slot > div"
+    )
+      .eq(0)
+      .click({ force: true })
+      .type(this.RelatedKitItemData.Measure);
+
+    //Email;
+    cy.get("[name" + "=" + this.DataType2.Email + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Email);
+    cy.wait(1000);
+
+    //save related new
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //Related kit item Save Assertion
+    cy.contains(this.DataType2.KitToBeRelated + " has been saved").should(
+      "be.visible"
+    );
+    cy.log(this.DataType2.KitToBeRelated + " related new has been Saved");
+
+    //Related kit item created assertion
+    cy.contains(
+      " Relation on " +
+        this.DataType2.OneToOneRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " created"
+    ).should("be.visible");
+
+    //close the Kit Item
+    cy.wait(5000);
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper path").first().click({
+      force: true,
+    });
+    cy.contains(this.NewKitItemData.KitName).should("be.visible");
+    cy.log("Related new has been Close");
+    cy.wait(5000);
+
+    //One to One element assetions(new form) before save kit item
+    cy.contains(this.RelatedKitItemData.Url).should("exist");
+    cy.log("Url data exist before save kit item");
+    cy.wait(5000);
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //Click on cross to user selector
     cy.get(
@@ -371,6 +727,153 @@ describe("Update created kit item test case", function () {
     cy.log("ContactSelecto Updated");
     cy.wait(4000);
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //Click on New Item for osquare caed Related Control
+    cy.get(".ca-item")
+      .eq(3)
+      .scrollIntoView({ force: true })
+      .click({ force: true });
+    //New Item Assertion
+    cy.contains("New Item created").should("be.visible");
+    //Related Kit Assertion
+    cy.contains(this.DataType2.KitToBeRelated).should("be.visible");
+    cy.wait(4000);
+
+    //New form filling
+
+    cy.wait(2000);
+    //Url
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Url);
+    cy.wait(1000);
+
+    //Text
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Text);
+    cy.wait(1000);
+
+    //File
+    cy.get(".dropzone-icons-content > .clickable path")
+      .eq(0)
+      .click({ force: true });
+    //cy.get(".link-icon--green > path").last().click({ force: true });
+    cy.wait(3000);
+    //give file name to select
+    cy.contains(this.RelatedKitItemData.RelNewFileName).click({
+      force: true,
+    });
+    //Click on save file
+    cy.wait(2000);
+
+    cy.get(
+      ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
+    ).click({ force: true });
+    cy.contains("File saved").should("be.visible");
+    cy.log("File Saved");
+    cy.wait(1000);
+
+    //Telephone
+    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Telephone);
+    cy.wait(1000);
+
+    //TextAera
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.TextAera);
+    cy.wait(1000);
+
+    //Slider;
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert("Set Slider value by clicking slider Bar");
+    });
+    cy.log(
+      "Firing Alert pop for manual action to Set Slider value by clicking slider Bar"
+    );
+    cy.wait(10000);
+
+    // Currency;
+    cy.get(
+      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-currency.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-currency--right.ma-0.pa-0.col > div > div > div.v-input__slot > div"
+    )
+      .eq(0)
+      .click({ force: true })
+      .type(this.RelatedKitItemData.Currency);
+
+    //Measure
+
+    cy.get(
+      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-measure.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-measure--left.ma-0.pa-0.pr-2.col > div > div > div.v-input__slot > div"
+    )
+      .eq(0)
+      .click({ force: true })
+      .type(this.RelatedKitItemData.Measure);
+
+    //Email;
+    cy.get("[name" + "=" + this.DataType2.Email + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Email);
+    cy.wait(1000);
+
+    //save related new
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //Related kit item Save Assertion
+    cy.contains(this.DataType2.KitToBeRelated + " has been saved").should(
+      "be.visible"
+    );
+    cy.log(this.DataType2.KitToBeRelated + " related new has been Saved");
+
+    //Related kit item created assertion
+    cy.contains(
+      " Relation on " +
+        this.DataType2.SquareCardName +
+        " for " +
+        this.NewKitItemData.KitName +
+        " created"
+    ).should("be.visible");
+
+    //close the Kit Item
+    cy.wait(5000);
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper path").first().click({
+      force: true,
+    });
+    cy.contains(this.NewKitItemData.KitName).should("be.visible");
+    cy.log("Related new has been Close");
+    cy.wait(5000);
+
+    //Added elements assetions
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
+    ).should("exist");
+    cy.log("Url data exist");
+    cy.wait(1000);
+
+    cy.contains(
+      this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
+    ).should("exist");
+    cy.log("Text data exist");
+    cy.wait(1000);
+
+    cy.contains(
+      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
+    ).should("exist");
+    cy.wait(1000);
+    cy.log("TextAera data exist");
+
+    cy.log(
+      "Square card added elemets exists(kit item(new form) not saved yet)"
+    );
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     cy.wait(2000);
     //Icon
     //Click on + icon of ICON Element
@@ -385,7 +888,7 @@ describe("Update created kit item test case", function () {
     });
     cy.wait(2000);
     //Icon Save
-    cy.get(".button-pop-ups").click({ force: true });
+    cy.get(".button-pop-ups").first().click({ force: true });
     cy.wait(2000);
 
     //IcozSize
@@ -421,17 +924,17 @@ describe("Update created kit item test case", function () {
     cy.wait(2000);
 
     //Click on cross to delete Assigning
-    // cy.get(
-    //   " div.v-window-item.v-window-item--active:nth-child(1) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-assigning.pr-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(28) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot div.v-select__slot:nth-child(2) > div.v-select__selections:nth-child(2)"
-    // ).click({ force: true });
+    cy.get(
+      " div.v-window-item.v-window-item--active:nth-child(1) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-assigning.pr-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(28) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot div.v-select__slot:nth-child(2) > div.v-select__selections:nth-child(2)"
+    ).click({ force: true });
     //Click on to open Assigning
     cy.wait(5000);
-    //cy.contains(this.UpdateKitItemData.AssigningName).click({ force: true });
+    cy.contains(this.UpdateKitItemData.AssigningName).click({ force: true });
     cy.wait(3000);
     //Click on to save
-    //cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
+    cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
     //Assigning creation assertion
-    //cy.contains("Item shared").should("be.visible");
+    cy.contains("Item shared").should("be.visible");
     cy.log("Assigning added");
     cy.wait(5000);
 

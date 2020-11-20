@@ -1,12 +1,12 @@
 {
     "NewFormLibFileName":"BBC",
     "FileTabFileName":"Screenshot_1",
-    "ContributorsName":"Deanne Howell",
+    "ContributorsName":"Carmen Goodin",
     "AddTimeEntryLable":"Sanity",
     "AddTimeEntryDescription":"Sanity Test Cases Automation Work",
     "TotalHours":"8",
     "AddDescription":"We are saving time entry now",
-    "TimeEntryConnection":"Pradeep1 Kumar",
+    "TimeEntryConnection":"Reporting User",
     "AddComments":"Hi these are the sanity test cses that we are going to automate with cypress tool",
     "AddGroup":"Mike Bailey's Portfolio"
 }

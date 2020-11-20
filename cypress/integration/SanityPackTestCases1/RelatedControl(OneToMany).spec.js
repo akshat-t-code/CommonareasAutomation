@@ -7,7 +7,7 @@ describe("Related Control One to Many test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitServiceTest();
+    slp.visitCityComTest();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -17,7 +17,7 @@ describe("Related Control One to Many test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("kstanley@commonareas.work.dev");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -598,5 +598,123 @@ describe("Related Control One to Many test case", function () {
     //kit item Save Assertion after delete elemets
     cy.log(this.DataType2.KitToBeRelated + " related new has been Saved");
     cy.log("Save Kit Item after delete relation elements");
+  });
+
+  it.only("Link Existing Item for OneToMany Related Control", function () {
+    cy.wait(3000);
+    //Click on New Item for one to Many Related Control
+    cy.get(".ca-item")
+      .eq(0)
+      .scrollIntoView({ force: true })
+      .click({ force: true });
+    //Search List view pop up assertion
+    cy.contains(this.ViewName.SearchView).should("be.visible");
+    //Selct the to be linked kit item
+    cy.get(".thumb-selected-icon").eq(0).click();
+    cy.get(".thumb-selected-icon").eq(1).click();
+    cy.wait(2000);
+    //Click on select btn
+    cy.get(".button-pop-ups > .v-btn__content").click({ force: true });
+
+    cy.contains(
+      "Relation on " +
+        this.DataType2.OneToManyRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " linked "
+    ).should("be.visible");
+
+    cy.log("Existing item linked");
+    cy.wait(3000);
+  });
+
+  it.only("Validate Link Item elements for OneToMany Related Control", function () {
+    //Scroll
+    cy.contains(this.DataType2.OneToManyRelation).scrollIntoView({
+      force: true,
+    });
+    //scroll
+    cy.get(".ca-item").eq(1).scrollIntoView({ force: true });
+
+    cy.get(".btn-load .inline-svg").eq(0).scrollIntoView({
+      force: true,
+    });
+    cy.wait(5000);
+
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert(
+        "Scroll Horizontal Scroll Bar to look on OneToMany Relation Elements"
+      );
+    });
+    cy.log(
+      "Firing Alert pop for manual action to scroll horizontal scroll Bar"
+    );
+    cy.wait(10000);
+
+    //Related element existance asseritons
+    cy.contains(this.RelatedKitItemData.Url).should("exist");
+    cy.contains(this.RelatedKitItemData.Text).should("exist");
+    cy.contains(this.RelatedKitItemData.Telephone).should("exist");
+    cy.wait(1000);
+    cy.contains(this.RelatedKitItemData.TextAera).should("exist");
+    cy.contains(this.RelatedKitItemData.Currency).should("exist");
+    cy.contains(this.RelatedKitItemData.Email).should("exist");
+    cy.log("Existing linked related item has been exist");
+    cy.wait(4000);
+
+    //save Kit item  (new form)
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    // kit item Save Assertion
+    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+      "be.visible"
+    );
+    cy.log("Kit Item has been saved");
+    //Refresh one to many elements
+    cy.get(".btn-load .inline-svg").eq(0).click({ force: true });
+    cy.log("Refresh one to many");
+    cy.wait(6000);
+
+    //Scroll
+    cy.contains(this.DataType2.OneToManyRelation).scrollIntoView({
+      force: true,
+    });
+    //scroll
+    cy.get(".ca-item").eq(1).scrollIntoView({ force: true });
+    cy.wait(2000);
+
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert(
+        "Scroll Horizontal Scroll Bar to look on OneToMany Relation Elements"
+      );
+    });
+    cy.log(
+      "Firing Alert pop for manual action to scroll horizontal scroll Bar"
+    );
+    cy.wait(10000);
+
+    //After kit item save
+    cy.contains(this.RelatedKitItemData.Url).should("exist");
+    cy.contains(this.RelatedKitItemData.Text).should("exist");
+    cy.contains(this.RelatedKitItemData.Telephone).should("exist");
+    cy.wait(1000);
+    cy.contains(this.RelatedKitItemData.TextAera).should("exist");
+    cy.contains(this.RelatedKitItemData.Currency).should("exist");
+    cy.contains(this.RelatedKitItemData.Email).should("exist");
+    cy.log("Existing linked related item has been exist(after kit item saved)");
+    cy.wait(4000);
+
+    //Again save Kit item(new form)
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //kit item Save Assertion for nothing
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
+    cy.log("There is nothing to save for Kit Item");
   });
 });

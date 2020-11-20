@@ -7,7 +7,7 @@ describe("Related Control One to One test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitServiceTest();
+    slp.visitCityComTest();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -17,7 +17,7 @@ describe("Related Control One to One test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("kstanley@commonareas.work.dev");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -144,80 +144,70 @@ describe("Related Control One to One test case", function () {
       .type(this.RelatedKitItemData.Text);
     cy.wait(1000);
 
-    // //File
-    // cy.get(".dropzone-icons-content > .clickable path")
-    //   .eq(0)
-    //   .click({ force: true });
-    // //cy.get(".link-icon--green > path").last().click({ force: true });
-    // cy.wait(3000);
-    // //give file name to select
-    // cy.contains(this.RelatedKitItemData.RelNewFileName).click({
-    //   force: true,
-    // });
-    // //Click on save file
-    // cy.wait(2000);
+    //File
+    cy.get(".dropzone-icons-content > .clickable path")
+      .eq(0)
+      .click({ force: true });
+    //cy.get(".link-icon--green > path").last().click({ force: true });
+    cy.wait(3000);
+    //give file name to select
+    cy.contains(this.RelatedKitItemData.RelNewFileName).click({
+      force: true,
+    });
+    //Click on save file
+    cy.wait(2000);
 
-    // cy.get(
-    //   ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
-    // ).click({ force: true });
-    // cy.contains("File saved").should("be.visible");
-    // cy.log("File Saved");
-    // cy.wait(1000);
+    cy.get(
+      ".container-search > .pop-up--header > .pop-up--header--right > .button-pop-ups--size > .v-btn__content"
+    ).click({ force: true });
+    cy.contains("File saved").should("be.visible");
+    cy.log("File Saved");
+    cy.wait(1000);
 
-    // //Telephone
-    // cy.get("[name" + "=" + this.DataType2.Telephone + "]")
-    //   .eq(1)
-    //   .type(this.RelatedKitItemData.Telephone);
-    // cy.wait(1000);
+    //Telephone
+    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Telephone);
+    cy.wait(1000);
 
-    // //TextAera
-    // cy.get("[name" + "=" + this.DataType2.TextAera + "]")
-    //   .eq(1)
-    //   .type(this.RelatedKitItemData.TextAera);
-    // cy.wait(1000);
-
-    //Slider;
-    //Firing Alert pop for manual action
-    // cy.log("User need to do something").then(() => {
-    //   alert("Set Slider value by clicking slider Bar");
-    // });
-    // cy.log(
-    //   "Firing Alert pop for manual action to Set Slider value by clicking slider Bar"
-    // );
-    // cy.wait(10000);
+    //TextAera
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.TextAera);
+    cy.wait(1000);
 
     //Slider;
     //Firing Alert pop for manual action
-    // cy.log("User need to do something").then(() => {
-    //   alert("Set Slider value by clicking slider Bar");
-    // });
-    // cy.log(
-    //   "Firing Alert pop for manual action to Set Slider value by clicking slider Bar"
-    // );
-    // cy.wait(10000);
+    cy.log("User need to do something").then(() => {
+      alert("Set Slider value by clicking slider Bar");
+    });
+    cy.log(
+      "Firing Alert pop for manual action to Set Slider value by clicking slider Bar"
+    );
+    cy.wait(10000);
 
-    // // Currency;
-    // cy.get(
-    //   "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-currency.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-currency--right.ma-0.pa-0.col > div > div > div.v-input__slot > div"
-    // )
-    //   .eq(0)
-    //   .click({ force: true })
-    //   .type(this.RelatedKitItemData.Currency);
+    // Currency;
+    cy.get(
+      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-currency.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-currency--right.ma-0.pa-0.col > div > div > div.v-input__slot > div"
+    )
+      .eq(0)
+      .click({ force: true })
+      .type(this.RelatedKitItemData.Currency);
 
-    // //Measure
+    //Measure
 
-    // cy.get(
-    //   "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-measure.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-measure--left.ma-0.pa-0.pr-2.col > div > div > div.v-input__slot > div"
-    // )
-    //   .eq(0)
-    //   .click({ force: true })
-    //   .type(this.RelatedKitItemData.Measure);
+    cy.get(
+      "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-measure.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-measure--left.ma-0.pa-0.pr-2.col > div > div > div.v-input__slot > div"
+    )
+      .eq(0)
+      .click({ force: true })
+      .type(this.RelatedKitItemData.Measure);
 
-    // //Email;
-    // cy.get("[name" + "=" + this.DataType2.Email + "]")
-    //   .eq(1)
-    //   .type(this.RelatedKitItemData.Email);
-    // cy.wait(1000);
+    //Email;
+    cy.get("[name" + "=" + this.DataType2.Email + "]")
+      .eq(1)
+      .type(this.RelatedKitItemData.Email);
+    cy.wait(1000);
 
     // //Address
     // cy.get(
@@ -527,7 +517,10 @@ describe("Related Control One to One test case", function () {
 
   it.only("Deletion Validation of added OneToOne element", function () {
     //Deletion assertion
-    cy.wait(1000);
+    cy.get(".action-icon:nth-child(2) > .inline-svg").scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
     //One to One element assetions(new form)
     cy.contains(this.RelatedKitItemData.Url).should("not.exist");
     cy.log("Data has been deleted");
@@ -539,5 +532,100 @@ describe("Related Control One to One test case", function () {
     //kit item Save Assertion after delete elemets
     cy.log(this.DataType2.KitToBeRelated + " related new has been Saved");
     cy.log("Save Kit Item after delete relation elements");
+    cy.wait(2000);
+  });
+
+  it.only("Link Existing Item for OneToOne Related Control", function () {
+    cy.wait(2000);
+    //Click on to link existing item
+    cy.get(".action-icon:nth-child(2) > .inline-svg")
+      .scrollIntoView({ force: true })
+      .click({ force: true });
+
+    //Search List view pop up assertion
+    cy.contains(" Related Items ").should("be.visible");
+    //Select item to be linked kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
+    ).click({ force: true });
+    //Scroll
+    cy.get(".last-updated:nth-child(2) > .v-icon").scrollIntoView({
+      force: true,
+    });
+    //Linking assertion
+    cy.contains(
+      "Relation on " +
+        this.DataType2.OneToOneRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " linked "
+    ).should("be.visible");
+
+    cy.wait(2000);
+  });
+
+  it.only("Validate Link Item elements for OneToOne", function () {
+    //Scroll
+    cy.get(".last-updated:nth-child(2) > .v-icon").scrollIntoView({
+      force: true,
+    });
+
+    //One to one link item assetion
+    cy.wait(2000);
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
+    ).should("exist");
+
+    cy.contains(
+      this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
+    ).should("exist");
+
+    cy.contains(
+      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
+    ).should("exist");
+
+    cy.log("Linked item exist for one to one related control");
+
+    //save Kit item(edit form) new
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //kit item Save Assertion
+    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+      "be.visible"
+    );
+    cy.wait(5000);
+
+    //Scroll
+    cy.get(".last-updated:nth-child(2) > .v-icon").scrollIntoView({
+      force: true,
+    });
+
+    //One to one link item assetion after kit item save
+    cy.wait(2000);
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
+    ).should("exist");
+
+    cy.contains(
+      this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
+    ).should("exist");
+
+    cy.contains(
+      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
+    ).should("exist");
+    cy.log(
+      "Linked item exist for one to one related control after kit item saved"
+    );
+
+    //save AGAIN Kit item(edit form) new
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //kit item Save Assertion for nothing
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
+    cy.log("There is nothing to save for Kit Item");
   });
 });
