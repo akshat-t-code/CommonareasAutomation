@@ -536,6 +536,8 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.TextAera).should("exist");
     cy.contains(this.RelatedKitItemData.Currency).should("exist");
     cy.contains(this.RelatedKitItemData.Email).should("exist");
+    cy.contains(this.RelatedKitItemData.Measure).should("exist");
+    cy.contains(this.RelatedKitItemData.Slider).should("exist");
     cy.log(
       "One to many related new elements has been exist(after kit item saved)"
     );
@@ -588,6 +590,8 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.TextAera).should("not.exist");
     cy.contains(this.RelatedKitItemData.Currency).should("not.exist");
     cy.contains(this.RelatedKitItemData.Email).should("not.exist");
+    cy.contains(this.RelatedKitItemData.Measure).should("not.exist");
+    cy.contains(this.RelatedKitItemData.Slider).should("not.exist");
     cy.log("One to many related new elements has been deleted");
     cy.wait(4000);
 
@@ -660,6 +664,8 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.TextAera).should("exist");
     cy.contains(this.RelatedKitItemData.Currency).should("exist");
     cy.contains(this.RelatedKitItemData.Email).should("exist");
+    cy.contains(this.RelatedKitItemData.Measure).should("exist");
+    cy.contains(this.RelatedKitItemData.Slider).should("exist");
     cy.log("Existing linked related item has been exist");
     cy.wait(4000);
 
@@ -704,6 +710,8 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.TextAera).should("exist");
     cy.contains(this.RelatedKitItemData.Currency).should("exist");
     cy.contains(this.RelatedKitItemData.Email).should("exist");
+    cy.contains(this.RelatedKitItemData.Measure).should("exist");
+    cy.contains(this.RelatedKitItemData.Slider).should("exist");
     cy.log("Existing linked related item has been exist(after kit item saved)");
     cy.wait(4000);
 

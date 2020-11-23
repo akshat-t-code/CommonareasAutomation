@@ -43,7 +43,7 @@ class LoginPage {
     cy.visit("https://citycommercial.ca-test.com/ClientAdmin/KitBuilder#/");
   }
 
-  visitCityComKBuildKitBuilder() {
+  visitCityComBuildKitBuilder() {
     cy.visit("https://citycommercial.ca-build.com/ClientAdmin/KitBuilder#/");
   }
 

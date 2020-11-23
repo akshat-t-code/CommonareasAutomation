@@ -6,11 +6,11 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    lp.visitServiceTest();
+    lp.visitCityComBuild();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible")
     //Enter credentials
-    lp.EnterEmail("kstanley@commonareas.work.dev");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -68,7 +68,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    lp.visitKitBuilderServiceTest();
+    lp.visitCityComKBuildKitBuilder();
     cy.log("User entered in kit builder");
     cy.wait(3000);
     //Open Craeted Kit Type
@@ -158,7 +158,7 @@ describe("Choice Pickers Section Data Elements Configuration", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click({ force: true });
     //save assertion closed
-    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.get(".v-btn__content > .theme--dark").click({ multiple: true });
     cy.log("Kit builder(New Form) has been Saved");
     cy.wait(3000);
     //Click on  Publish

@@ -465,19 +465,19 @@ describe("Related Control Square Card test case", function () {
     //Square card element assetions before kit item saved(new form)
     cy.contains(
       this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
-    ).should("exist");
+    ).should("be.visible");
     cy.log("Url data exist");
     cy.wait(1000);
 
     cy.contains(
       this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
-    ).should("exist");
+    ).should("be.visible");
     cy.log("Text data exist");
     cy.wait(1000);
 
     cy.contains(
       this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
-    ).should("exist");
+    ).should("be.visible");
     cy.wait(1000);
     cy.log("TextAera data exist");
 

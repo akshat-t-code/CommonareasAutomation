@@ -1227,9 +1227,9 @@ class KitBuilderDataTypes {
 
     //Click on Save btn of customize StepperName
     cy.get(".v-btn--text:nth-child(2) > .v-btn__content").last().click();
-    cy.wait(2000);
+    cy.wait(5000);
     //Click on Assertion to close msg
-    cy.get(".closeBtn .v-icon").click();
+    //cy.get(".closeBtn .v-icon").click();
     cy.wait(1000);
     //Click on Save
     cy.get(".v-btn--text:nth-child(2)").click();
@@ -1449,7 +1449,7 @@ class KitBuilderDataTypes {
 
     //Inspection customize name
     //Click on +
-    cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.get(".v-btn__content > .theme--dark").first().click({ force: true });
     //write customize Inspection Name
     cy.get(
       "div.v-dialog__container.new-element-header > div > div > div.container.new-element-body > div > div > form > div.v-dialog__container > div > div > form > div > div.pr-2.col.col-6 > div > div > div.v-input__slot > div"

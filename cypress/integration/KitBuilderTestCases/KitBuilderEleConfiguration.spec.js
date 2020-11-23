@@ -87,7 +87,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it("Input Section Data Elements", function () {
+  it.only("Input Section Data Elements", function () {
     cy.contains("Inputs").click({ force: true });
     cy.wait(2000);
   });
@@ -360,7 +360,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  it.only("Content Section Data Elements", function () {
+  it("Content Section Data Elements", function () {
     cy.contains("Content").click({ force: true });
     cy.wait(2000);
   });

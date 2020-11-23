@@ -82,7 +82,7 @@ describe("New kit item complete creation test case", function () {
     const lp = new LoginPage();
     const KTP = new KitTypePage();
     //Assertion
-    cy.title().should("eq", "Common Areas");
+    //cy.title().should("eq", "Common Areas");
     lp.PlusIcon();
     //debugger;
     //Click on To open Kit Type
