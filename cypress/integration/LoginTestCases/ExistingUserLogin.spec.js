@@ -23,8 +23,8 @@ describe("Existing User logged In Test Case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail(this.Credentials.UserEmail);
-    lp.EnterPassword(this.Credentials.Password);
+    lp.EnterEmail(this.userCredentials.UserEmail);
+    lp.EnterPassword(this.userCredentials.Password);
     //cy.screenshot("User logged In Details");
     cy.wait(7000);
     lp.Submit();

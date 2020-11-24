@@ -75,6 +75,18 @@ describe("Update created kit item test case", function () {
       this.SData = SanityTCData;
     });
 
+    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
+      SanityTCData
+    ) {
+      this.RelatedKitItemData3 = SanityTCData;
+    });
+
+    cy.fixture("SanityPackTestData/RelatedOneToOneData").then(function (
+      SanityTCData
+    ) {
+      this.RelatedKitItemData2 = SanityTCData;
+    });
+
     cy.fixture("SanityPackTestData/RelatedOneToNData").then(function (
       SanityTCData
     ) {
@@ -182,7 +194,21 @@ describe("Update created kit item test case", function () {
       .clear()
       .type(this.UpdateKitItemData.TextAera);
     cy.log("TextAera Updated");
-    cy.wait(1000);
+    cy.wait(3000);
+
+    //Click to save
+    cy.get(".navi-bar-dropdown:nth-child(2) .v-btn").click({ force: true });
+    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+      "be.visible"
+    );
+    cy.log("Paritally saved deatils views");
+    cy.wait(2000);
+
+    //Email scrolling
+    cy.get("[name" + "=" + this.DataType2.Email + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(2000);
 
     //Currency;
     cy.get(
@@ -253,7 +279,22 @@ describe("Update created kit item test case", function () {
       .clear()
       .type(this.UpdateKitItemData.Number);
     cy.log("Number Updated");
-    cy.wait(1000);
+    cy.wait(3000);
+
+    //Click to save
+    cy.get(".navi-bar-dropdown:nth-child(2) .v-btn").click({ force: true });
+    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+      "be.visible"
+    );
+    cy.log("Paritally saved deatils views");
+    cy.wait(2000);
+
+    //Time to scrolling
+    cy.get("[name" + "=" + this.DataType2.Number + "]")
+      .last()
+      .scrollIntoView({
+        force: true,
+      });
 
     //Time Data Element
     //Click on cross to delete Time
@@ -342,6 +383,14 @@ describe("Update created kit item test case", function () {
     });
     cy.log("Checkbox Values updated.");
     cy.wait(3000);
+
+    //Click to save
+    cy.get(".navi-bar-dropdown:nth-child(2) .v-btn").click({ force: true });
+    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+      "be.visible"
+    );
+    cy.log("Paritally saved deatils views");
+    cy.wait(2000);
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //Scroll
@@ -556,7 +605,7 @@ describe("Update created kit item test case", function () {
     cy.contains(this.RelatedKitItemData.Telephone).should("exist");
     cy.wait(1000);
     cy.contains(this.RelatedKitItemData.TextAera).should("exist");
-    cy.contains(this.RelatedKitItemData.Currency).should("exist");
+    //cy.contains(this.RelatedKitItemData.Currency).should("exist");
     cy.contains(this.RelatedKitItemData.Email).should("exist");
     cy.log(
       "One to many related new elements has been exist(before kit item saved)"
@@ -593,13 +642,13 @@ describe("Update created kit item test case", function () {
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .eq(1)
-      .type(this.RelatedKitItemData.Url);
+      .type(this.RelatedKitItemData2.Url);
     cy.wait(1000);
 
     //Text
     cy.get("[name" + "=" + this.DataType2.Text + "]")
       .eq(1)
-      .type(this.RelatedKitItemData.Text);
+      .type(this.RelatedKitItemData2.Text);
     cy.wait(1000);
 
     //File
@@ -609,7 +658,7 @@ describe("Update created kit item test case", function () {
     //cy.get(".link-icon--green > path").last().click({ force: true });
     cy.wait(3000);
     //give file name to select
-    cy.contains(this.RelatedKitItemData.RelNewFileName).click({
+    cy.contains(this.RelatedKitItemData2.RelNewFileName).click({
       force: true,
     });
     //Click on save file
@@ -625,13 +674,13 @@ describe("Update created kit item test case", function () {
     //Telephone
     cy.get("[name" + "=" + this.DataType2.Telephone + "]")
       .eq(1)
-      .type(this.RelatedKitItemData.Telephone);
+      .type(this.RelatedKitItemData2.Telephone);
     cy.wait(1000);
 
     //TextAera
     cy.get("[name" + "=" + this.DataType2.TextAera + "]")
       .eq(1)
-      .type(this.RelatedKitItemData.TextAera);
+      .type(this.RelatedKitItemData2.TextAera);
     cy.wait(1000);
 
     //Slider;
@@ -650,7 +699,7 @@ describe("Update created kit item test case", function () {
     )
       .eq(0)
       .click({ force: true })
-      .type(this.RelatedKitItemData.Currency);
+      .type(this.RelatedKitItemData2.Currency);
 
     //Measure
 
@@ -659,12 +708,12 @@ describe("Update created kit item test case", function () {
     )
       .eq(0)
       .click({ force: true })
-      .type(this.RelatedKitItemData.Measure);
+      .type(this.RelatedKitItemData2.Measure);
 
     //Email;
     cy.get("[name" + "=" + this.DataType2.Email + "]")
       .eq(1)
-      .type(this.RelatedKitItemData.Email);
+      .type(this.RelatedKitItemData2.Email);
     cy.wait(1000);
 
     //save related new
@@ -697,7 +746,7 @@ describe("Update created kit item test case", function () {
     cy.wait(5000);
 
     //One to One element assetions(new form) before save kit item
-    cy.contains(this.RelatedKitItemData.Url).should("exist");
+    cy.contains(this.RelatedKitItemData2.Url).should("exist");
     cy.log("Url data exist before save kit item");
     cy.wait(5000);
 
@@ -729,7 +778,7 @@ describe("Update created kit item test case", function () {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //Click on New Item for osquare caed Related Control
+    //Click on New Item for square caed Related Control
     cy.get(".ca-item")
       .eq(3)
       .scrollIntoView({ force: true })
@@ -746,13 +795,13 @@ describe("Update created kit item test case", function () {
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .eq(1)
-      .type(this.RelatedKitItemData.Url);
+      .type(this.RelatedKitItemData3.Url);
     cy.wait(1000);
 
     //Text
     cy.get("[name" + "=" + this.DataType2.Text + "]")
       .eq(1)
-      .type(this.RelatedKitItemData.Text);
+      .type(this.RelatedKitItemData3.Text);
     cy.wait(1000);
 
     //File
@@ -762,7 +811,7 @@ describe("Update created kit item test case", function () {
     //cy.get(".link-icon--green > path").last().click({ force: true });
     cy.wait(3000);
     //give file name to select
-    cy.contains(this.RelatedKitItemData.RelNewFileName).click({
+    cy.contains(this.RelatedKitItemData3.RelNewFileName).click({
       force: true,
     });
     //Click on save file
@@ -778,13 +827,13 @@ describe("Update created kit item test case", function () {
     //Telephone
     cy.get("[name" + "=" + this.DataType2.Telephone + "]")
       .eq(1)
-      .type(this.RelatedKitItemData.Telephone);
+      .type(this.RelatedKitItemData3.Telephone);
     cy.wait(1000);
 
     //TextAera
     cy.get("[name" + "=" + this.DataType2.TextAera + "]")
       .eq(1)
-      .type(this.RelatedKitItemData.TextAera);
+      .type(this.RelatedKitItemData3.TextAera);
     cy.wait(1000);
 
     //Slider;
@@ -803,7 +852,7 @@ describe("Update created kit item test case", function () {
     )
       .eq(0)
       .click({ force: true })
-      .type(this.RelatedKitItemData.Currency);
+      .type(this.RelatedKitItemData3.Currency);
 
     //Measure
 
@@ -812,12 +861,12 @@ describe("Update created kit item test case", function () {
     )
       .eq(0)
       .click({ force: true })
-      .type(this.RelatedKitItemData.Measure);
+      .type(this.RelatedKitItemData3.Measure);
 
     //Email;
     cy.get("[name" + "=" + this.DataType2.Email + "]")
       .eq(1)
-      .type(this.RelatedKitItemData.Email);
+      .type(this.RelatedKitItemData3.Email);
     cy.wait(1000);
 
     //save related new
@@ -851,19 +900,19 @@ describe("Update created kit item test case", function () {
 
     //Added elements assetions
     cy.contains(
-      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
+      this.DataType2.Url + ":" + " " + this.RelatedKitItemData3.Url
     ).should("exist");
     cy.log("Url data exist");
     cy.wait(1000);
 
     cy.contains(
-      this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
+      this.DataType2.Text + ":" + " " + this.RelatedKitItemData3.Text
     ).should("exist");
     cy.log("Text data exist");
     cy.wait(1000);
 
     cy.contains(
-      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
+      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData3.TextAera
     ).should("exist");
     cy.wait(1000);
     cy.log("TextAera data exist");

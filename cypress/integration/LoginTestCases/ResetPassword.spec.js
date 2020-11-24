@@ -122,7 +122,7 @@ describe("Reset/Creating New Password", function () {
     cy.wait(2000);
   });
 
-  it.only("Login Aagin for Change Credentials", function () {
+  it("Login Aagin for Change Credentials", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
