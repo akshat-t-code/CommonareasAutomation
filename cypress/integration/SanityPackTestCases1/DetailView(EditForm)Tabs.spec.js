@@ -112,7 +112,7 @@ describe("Details View tabs test case", function () {
     cy.wait(5000);
   });
 
-  it("File Tab", function () {
+  it.only("File Tab", function () {
     cy.wait(3000);
 
     //Files Tab
@@ -135,7 +135,7 @@ describe("Details View tabs test case", function () {
     cy.wait(3000);
   });
 
-  it("Add a pin on Map", function () {
+  it.only("Add a pin on Map", function () {
     //Map Tab
     cy.contains(" Map ").click({ force: true });
     cy.wait(4000);
@@ -148,7 +148,7 @@ describe("Details View tabs test case", function () {
     cy.wait(3000);
   });
 
-  it('Set to "Address" control on Map', function () {
+  it.only('Set to "Address" control on Map', function () {
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
     //Click on Map
@@ -166,7 +166,7 @@ describe("Details View tabs test case", function () {
     cy.wait(5000);
   });
 
-  it("Link Existing Relation On Map", function () {
+  it.only("Link Existing Relation On Map", function () {
     //Click on Map tab
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
@@ -183,17 +183,28 @@ describe("Details View tabs test case", function () {
     //Search List view pop up assertion
     //cy.contains(this.ViewName.SearchView).should("be.visible");
     //Selct the to be linked kit item
-    cy.get(".thumb-selected-icon").eq(0).click();
-    cy.get(".thumb-selected-icon").eq(1).click();
+
+    cy.get("div:nth-child(3) > div > .row:nth-child(1) .item-check").click({
+      force: true,
+    });
+    cy.get("div:nth-child(3) > div > .row:nth-child(2) .item-check").click({
+      force: true,
+    });
+
+    // cy.get(".thumb-selected-icon").eq(0).click();
+    // cy.get(".thumb-selected-icon").eq(1).click();
     // cy.get(".thumb-selected-icon").eq(2).click();
     // cy.get(".thumb-selected-icon").eq(3).click();
     cy.wait(2000);
     //Click on select btn
     cy.get(".button-pop-ups > .v-btn__content").click({ force: true });
+    //Link existing item assertion
     cy.contains(
       " Relation on " +
         this.DataType2.OneToManyRelation +
-        " for Validation linked "
+        " for " +
+        this.NewKitItemData.KitName +
+        " linked"
     ).should("be.visible");
     cy.contains(this.NewKitItemData.KitName + " has been saved").should(
       "be.visible"
@@ -201,7 +212,7 @@ describe("Details View tabs test case", function () {
     cy.wait(3000);
   });
 
-  it("Add Relation On Map", function () {
+  it.only("Add New Item (Relation) On Map", function () {
     //Click on Map tab
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
@@ -223,6 +234,20 @@ describe("Details View tabs test case", function () {
     //Related New Kit Item assertion
     cy.contains(this.DataType2.KitToBeRelated).should("be.visible");
     cy.wait(3000);
+
+    //save related new with no data
+    //Click on save
+    cy.get(
+      ".v-dialog__content:nth-child(1) .fill-height:nth-child(3) .v-btn__content:nth-child(1)"
+    ).click({ force: true });
+    //kit item Save Assertion for no data
+    cy.contains("Nothing to save for " + this.DataType2.KitToBeRelated).should(
+      "be.visible"
+    );
+    cy.wait(3000);
+    cy.log("With No data Related New kit item saved successfully ");
+    cy.wait(2000);
+
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .eq(1)
@@ -236,8 +261,11 @@ describe("Details View tabs test case", function () {
     cy.wait(1000);
 
     cy.wait(2000);
-    //Click on Library
-    cy.contains("Choose From Library").click({ force: true });
+
+    //File
+    cy.get(".dropzone-icons-content > .clickable path")
+      .eq(0)
+      .click({ force: true });
     cy.wait(3000);
     //give file name to select
     cy.contains(this.DetailViewData.DetailViewFileName).click({ force: true });
@@ -298,7 +326,9 @@ describe("Details View tabs test case", function () {
     cy.contains(
       " Relation on " +
         this.DataType2.OneToManyRelation +
-        " for Validation created"
+        " for " +
+        this.NewKitItemData.KitName +
+        " created"
     ).should("be.visible");
     //Parent kit type save assertion
     cy.contains(this.NewKitItemData.KitName + " has been saved").should(
@@ -313,7 +343,7 @@ describe("Details View tabs test case", function () {
     cy.wait(3000);
   });
 
-  it("Contributors Tab", function () {
+  it.only("Contributors Tab", function () {
     //Contributors Tab
     cy.contains(" Contributors ").click({ force: true });
     cy.wait(3000);
@@ -337,7 +367,7 @@ describe("Details View tabs test case", function () {
     cy.wait(4000);
   });
 
-  it("Time Entries Tab", function () {
+  it.only("Time Entries Tab", function () {
     //Time Entries Tab
     cy.contains(" Time Entries ").click({ force: true });
     cy.wait(2000);
@@ -395,7 +425,7 @@ describe("Details View tabs test case", function () {
     cy.wait(4000);
   });
 
-  it("Comments Tab", function () {
+  it.only("Comments Tab", function () {
     //Comments Tab
     cy.contains("Comments ").click({ force: true });
     cy.wait(2000);
@@ -408,7 +438,7 @@ describe("Details View tabs test case", function () {
     cy.wait(4000);
   });
 
-  it("Groups Tab", function () {
+  it.only("Groups Tab", function () {
     //Groups Tab
     cy.contains(" Groups ").click({ force: true });
     cy.wait(2000);
@@ -425,12 +455,14 @@ describe("Details View tabs test case", function () {
     cy.wait(2000);
   });
 
-  it("Common Plan", function () {
+  it.only("Common Plan", function () {
     //Click on common plan tab
     cy.contains(" Common Plans ").click({ force: true });
 
     //Click on Add Icon
-    cy.get(".ml-4 > .v-btn__content").click({ force: true });
+    cy.get(
+      " div.tab--content.col div.v-window.tab-content-wrapper.v-item-group.theme--light.v-tabs-items div.v-window__container div.v-window-item.v-window-item--active:nth-child(7) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details.fluid.fill-height.kit-details-space-planner.pa-8 div.details-wrapper.fill-height.col div.pr-4.col-sm-12.col:nth-child(2) div.fill-height div.container.xs12.mt-2.container--fluid.grid-list-lg div.row.justify-space-between:nth-child(1) div.col-md-5.col-lg-3.col-12 div.space-planner-card--add-new.hidden-sm-and-down.mb-2.v-card.v-sheet.v-sheet--tile.theme--light div.row.space-planner-card-container.pa-2.card-align.align-center div.d-flex.col.col-12 button.button-w-borders.ml-4.addBtn.v-btn.v-btn--flat.v-btn--text.theme--light.v-size--default > span.v-btn__content"
+    ).click({ force: true });
     cy.log("Common Plan Board has been Opened");
     cy.wait(2000);
     //Common plan board assertion
@@ -467,27 +499,61 @@ describe("Details View tabs test case", function () {
     //Click on Add
     cy.get(".button-w-new-borders > .v-btn__content").click({ force: true });
     cy.wait(3000);
-    //Scheduler pop assertion
-    cy.get(
-      "div.kit-details-form-wrapper.fill-height.col div.col.col-12 div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.row-component.kit-control-text.kit-control-text--number.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3 div.v-input.kit-control-text.layout-alignment.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined div.v-input__control div.v-input__slot > div.v-text-field__slot:nth-child(2)"
-    ).type(this.DetailViewData.ScheduleName);
 
     //Clear dates fields
 
+    //Start Date
+    cy.get(
+      ".px-3:nth-child(1) > .row > .pr-3 .v-input__control .v-icon"
+    ).click({ force: true });
+    cy.wait(4000);
+
+    //Click on date pop
+    cy.get('[placeholder="Select Start Date"]').click({ force: true });
+    cy.wait(3000);
+    //Select Date
+    cy.xpath("//div[contains(text(),'18')]").first().click({ force: true });
+    cy.wait(3000);
+    //Click on Ok
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    cy.wait(3000);
+
     //End Date
-    // cy.get(
-    //   ".px-3:nth-child(2) > .row > .pr-3 .v-input__control .v-icon"
-    // ).click({ force: true });
-    // cy.wait(4000)
-    // //Click on date pop up
-    // cy.get('[placeholder="Select End Date"]').click({ force: true });
-    // cy.wait(3000)
-    // //Select Date
-    // cy.xpath("//div[contains(text(),'30')]").first().click({ force: true });
-    // cy.wait(3000)
-    // //Click on Ok
-    // cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
-    // cy.wait(3000);
+    cy.get(
+      ".px-3:nth-child(2) > .row > .pr-3 .v-input__control .v-icon"
+    ).click({ force: true });
+    cy.wait(4000);
+    //Click on date pop up
+    cy.get('[placeholder="Select End Date"]').click({ force: true });
+    cy.wait(3000);
+    //Select Date
+    cy.xpath("//div[contains(text(),'30')]").first().click({ force: true });
+    cy.wait(3000);
+    //Click on Ok
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    cy.wait(3000);
+
+    cy.wait(2000);
+    //Start Time
+    cy.get(
+      ".px-3:nth-child(1) > .row > .pl-3 .v-input__control .v-icon"
+    ).click({ force: true });
+    cy.wait(1000);
+    cy.get('[placeholder="Select Start Time"]').click({ force: true });
+    cy.wait(3000);
+    //Select hour value
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
+    ).click({ force: true });
+    cy.wait(3000);
+    //Select Value of miniutes
+    cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
+    cy.wait(4000);
+    //Click on PM
+    // cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
+    //Click on OK to save date
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    cy.wait(3000);
 
     //End Time
     cy.get(
@@ -516,42 +582,16 @@ describe("Details View tabs test case", function () {
       .click({ force: true });
     cy.wait(3000);
 
-    //Start Date
-    // cy.get(
-    //   ".px-3:nth-child(1) > .row > .pr-3 .v-input__control .v-icon"
-    // ).click({ force: true });
-    // cy.wait(4000)
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert("Set the END Date here");
+    });
+    cy.log("Firing Alert pop for manual action to Set the Dates and time");
+    cy.wait(10000);
 
-    // //Click on date pop
-    // cy.get('[placeholder="Select Start Date"]').click({ force: true });
-    // cy.wait(3000);
-    // //Select Date
-    // cy.xpath("//div[contains(text(),'30')]").first().click({ force: true });
-    // cy.wait(3000);
-    // //Click on Ok
-    // cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
-    // cy.wait(3000);
-
-    cy.wait(2000);
-    //Start Time
-    cy.get(
-      ".px-3:nth-child(1) > .row > .pl-3 .v-input__control .v-icon"
-    ).click({ force: true });
-    cy.wait(1000);
-    cy.get('[placeholder="Select Start Time"]').click({ force: true });
-    cy.wait(3000);
-    //Select hour value
-    cy.xpath(
-      "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
-    ).click({ force: true });
-    cy.wait(3000);
-    //Select Value of miniutes
-    cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
-    cy.wait(4000);
-    //Click on PM
-    // cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
-    //Click on OK to save date
-    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
-    cy.wait(3000);
+    //Save the schedule
+    cy.get(".ca-button-green > .v-btn__content").first().click({ force: true });
   });
 });
+
+

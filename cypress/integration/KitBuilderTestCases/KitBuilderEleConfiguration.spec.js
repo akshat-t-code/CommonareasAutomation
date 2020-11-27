@@ -6,11 +6,12 @@ describe("Kit Builder All Data Elements Configuration", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    lp.visitCityComTest();
+    //lp.visitCityComTest();
+    cy.visit('https://tm.ca-build.com:54072/Public/Login?ReturnUrl=%2F')
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("citycom@commonareas.work.dev");
+    lp.EnterEmail("hgriffin@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -72,7 +73,8 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    lp.visitCityComTestKitBuilder();
+    //lp.visitCityComTestKitBuilder();
+    cy.visit('https://tm.ca-build.com:54072/ClientAdmin/KitBuilder#/')
     cy.log("User entered in kit builder");
     cy.wait(3000);
     //Open Craeted Kit Type
@@ -365,7 +367,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  it.only("OneToManyRelation Data Type", function () {
+  it("OneToManyRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-N"]').dblclick({ force: true });
     cy.wait(1000);
@@ -418,7 +420,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("OneToOneRelation Data Type", function () {
+  it("OneToOneRelation Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Relation 1-1"]').dblclick({ force: true });
     cy.wait(1000);
@@ -447,7 +449,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("SquareCard Data Type", function () {
+  it("SquareCard Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="SquareCard"]').dblclick({ force: true });
     cy.wait(1000);
@@ -510,7 +512,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("TextBlock Data Type", function () {
+  it("TextBlock Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.contains("Text Block").dblclick({ force: true });
     cy.wait(1000);
@@ -523,7 +525,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Button Data Type", function () {
+  it("Button Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[data-component="control-button"]').dblclick({ force: true });
     cy.wait(1000);
@@ -533,7 +535,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Link Data Type", function () {
+  it("Link Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[data-component="control-link"]').dblclick({ force: true });
     cy.wait(1000);
@@ -543,7 +545,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Created By Data Type", function () {
+  it("Created By Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Created By"]').dblclick({ force: true });
     cy.wait(1000);
@@ -553,7 +555,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Modified By Data Type", function () {
+  it("Modified By Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Modified By"]').dblclick({ force: true });
     cy.wait(1000);
@@ -563,7 +565,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Created On Data Type", function () {
+  it("Created On Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Created On"]').dblclick({ force: true });
     cy.wait(1000);
@@ -573,7 +575,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Modified On Data Type", function () {
+  it("Modified On Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Modified On"]').dblclick({ force: true });
     cy.wait(1000);
@@ -583,7 +585,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Kit Item Id Data Type", function () {
+  it("Kit Item Id Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Kit Item Id"]').dblclick({ force: true });
     cy.wait(1000);

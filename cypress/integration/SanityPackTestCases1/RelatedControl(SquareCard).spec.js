@@ -103,6 +103,17 @@ describe("Related Control Square Card test case", function () {
   });
 
   it.only("Square Card Related Control to configure Related New form", function () {
+    cy.wait(1000);
+    //save Kit Item for empty form
+    cy.get(".v-select__selections .v-btn__content").click({ force: true });
+    //kit item Save Assertion for no data
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
+    cy.wait(3000);
+    cy.log("With No data new kit item saved successfully ");
+    cy.wait(2000);
+
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .last()
@@ -130,8 +141,19 @@ describe("Related Control Square Card test case", function () {
     cy.contains(this.DataType2.KitToBeRelated).should("be.visible");
     cy.wait(4000);
 
-    //New form filling
+    //save related new with no data
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //kit item Save Assertion for no data
+    cy.contains("Nothing to save for " + this.DataType2.KitToBeRelated).should(
+      "be.visible"
+    );
+    cy.wait(3000);
+    cy.log("With No data Related New kit item saved successfully ");
+    cy.wait(2000);
 
+    //Enter data in Related New form
     cy.wait(2000);
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")

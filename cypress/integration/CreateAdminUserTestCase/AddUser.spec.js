@@ -168,11 +168,11 @@ describe("Create user from admin and login with the new user", function () {
     cy.log("New User has been logged in successfully");
     //cy.eyesCheckWindow("Logged In");
     //Assertion
-    //cy.title().should("eq", "Common Areas");
+    cy.title().should("eq", "Common Areas App");
     cy.wait(5000);
     //Profile Assertion
     cy.get(
-      "#inspire > div.v-application--wrap > div:nth-child(1) > div.root-container.fill-height.fill-width > div.base-layout-main-content.box > div > div.fill-height.body-right-wrapper.col-sm-12.col.col-xs-12.col-md-7.col-lg-8.col-xl-9 > div > div > div > div.px-4.col.col-12 > div"
+      ".welcome-wrapper--header"
     ).then(function ($WelEle) {
       const WelcomeTxt = $WelEle.text();
       cy.log(WelcomeTxt);

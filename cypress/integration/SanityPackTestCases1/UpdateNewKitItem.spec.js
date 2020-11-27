@@ -104,6 +104,15 @@ describe("New kit item complete creation test case", function () {
 
   it.only("Create New Kit Item with all the fields", function () {
     const lp = new LoginPage();
+    cy.wait(2000);
+    //save Kit Item for empty form
+    cy.get(".v-select__selections .v-btn__content").click({ force: true });
+    //kit item Save Assertion for no data
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
+    cy.wait(3000);
+    cy.log("With No data new kit item saved successfully ");
 
     cy.wait(2000);
     //Url
@@ -508,6 +517,10 @@ describe("New kit item complete creation test case", function () {
     cy.log("Paritally saved deatils views");
     cy.wait(2000);
 
+    //Email scrolling
+    cy.get("[name" + "=" + this.DataType2.Email + "]")
+      .last()
+      .scrollIntoView({ force: true });
 
     //Currency;
     cy.get(

@@ -103,6 +103,17 @@ describe("Related Control One to Many test case", function () {
   });
 
   it.only("One to Many Related Control to configure (Related New form)", function () {
+    cy.wait(1000);
+    //save Kit Item for empty form
+    cy.get(".v-select__selections .v-btn__content").click({ force: true });
+    //kit item Save Assertion for no data
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
+    cy.wait(3000);
+    cy.log("With No data new kit item saved successfully ");
+    cy.wait(2000);
+
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .last()
@@ -129,8 +140,19 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.DataType2.KitToBeRelated).should("be.visible");
     cy.wait(4000);
 
-    //New form filling
+    //save related new with no data
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //kit item Save Assertion for no data
+    cy.contains("Nothing to save for " + this.DataType2.KitToBeRelated).should(
+      "be.visible"
+    );
+    cy.wait(3000);
+    cy.log("With No data Related New kit item saved successfully ");
+    cy.wait(2000);
 
+    //Enter data in Related New
     cy.wait(2000);
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
@@ -195,7 +217,6 @@ describe("Related Control One to Many test case", function () {
       .type(this.RelatedKitItemData.Currency);
 
     //Measure
-
     cy.get(
       "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-measure.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-measure--left.ma-0.pa-0.pr-2.col > div > div > div.v-input__slot > div"
     )
@@ -489,6 +510,7 @@ describe("Related Control One to Many test case", function () {
     cy.wait(1000);
     cy.contains(this.RelatedKitItemData.TextAera).should("exist");
     cy.contains(this.RelatedKitItemData.Currency).should("exist");
+    cy.contains(this.RelatedKitItemData.Measure).should("exist");
     cy.contains(this.RelatedKitItemData.Email).should("exist");
     cy.log(
       "One to many related new elements has been exist(before kit item saved)"
@@ -537,7 +559,6 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.Currency).should("exist");
     cy.contains(this.RelatedKitItemData.Email).should("exist");
     cy.contains(this.RelatedKitItemData.Measure).should("exist");
-    cy.contains(this.RelatedKitItemData.Slider).should("exist");
     cy.log(
       "One to many related new elements has been exist(after kit item saved)"
     );
@@ -591,7 +612,6 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.Currency).should("not.exist");
     cy.contains(this.RelatedKitItemData.Email).should("not.exist");
     cy.contains(this.RelatedKitItemData.Measure).should("not.exist");
-    cy.contains(this.RelatedKitItemData.Slider).should("not.exist");
     cy.log("One to many related new elements has been deleted");
     cy.wait(4000);
 
@@ -665,7 +685,6 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.Currency).should("exist");
     cy.contains(this.RelatedKitItemData.Email).should("exist");
     cy.contains(this.RelatedKitItemData.Measure).should("exist");
-    cy.contains(this.RelatedKitItemData.Slider).should("exist");
     cy.log("Existing linked related item has been exist");
     cy.wait(4000);
 
@@ -711,7 +730,6 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.Currency).should("exist");
     cy.contains(this.RelatedKitItemData.Email).should("exist");
     cy.contains(this.RelatedKitItemData.Measure).should("exist");
-    cy.contains(this.RelatedKitItemData.Slider).should("exist");
     cy.log("Existing linked related item has been exist(after kit item saved)");
     cy.wait(4000);
 
