@@ -197,11 +197,11 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000);
 
     cy.get(".contributor__name")
-      .eq(1)
+      .eq(0)
       .should("have.text", this.SData.ContributorsName);
     cy.wait(2000);
     cy.get(".contributor__name")
-      .eq(0)
+      .eq(1)
       .should("have.text", this.NewKitItemData.AssigningName);
 
     // cy.contains(this.SData.ContributorsName).should("be.visible");

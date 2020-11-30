@@ -232,223 +232,223 @@ describe("Related Control Square Card test case", function () {
       .type(this.RelatedKitItemData.Email);
     cy.wait(1000);
 
-    // //Address
-    // cy.get(
-    //   '[placeholder="Street address, bulding, company ... "][name="Address"]'
-    // )
-    //   .eq(0)
-    //   .type(this.RelatedKitItemData.Addressline1);
-    // //Address line
-    // cy.get('[name="Address line 2."]')
-    //   .eq(0)
-    //   .type(this.RelatedKitItemData.Addressline2);
+    //Address
+    cy.get(
+      '[placeholder="Street address, bulding, company ... "][name="Address"]'
+    )
+      .eq(0)
+      .type(this.RelatedKitItemData.Addressline1);
+    //Address line
+    cy.get('[name="Address line 2."]')
+      .eq(0)
+      .type(this.RelatedKitItemData.Addressline2);
 
-    // cy.get('[placeholder="City"]').eq(0).scrollIntoView({ force: true });
-    // cy.wait(1000);
+    cy.get('[placeholder="City"]').eq(0).scrollIntoView({ force: true });
+    cy.wait(1000);
 
-    // //City
-    // cy.get('[placeholder="City"]').eq(0).type(this.RelatedKitItemData.City);
-    // //State
-    // cy.get(
-    //   "div:nth-child(2) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
-    // )
-    //   .eq(0)
-    //   .click({ force: true });
-    // cy.contains(this.RelatedKitItemData.State).click({ force: true });
+    //City
+    cy.get('[placeholder="City"]').eq(0).type(this.RelatedKitItemData.City);
+    //State
+    cy.get(
+      "div:nth-child(2) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    )
+      .eq(0)
+      .click({ force: true });
+    cy.contains(this.RelatedKitItemData.State).click({ force: true });
 
-    // cy.get('[placeholder="Zip/Postal Code"]')
-    //   .eq(0)
-    //   .scrollIntoView({ force: true });
-    // cy.wait(1000);
+    cy.get('[placeholder="Zip/Postal Code"]')
+      .eq(0)
+      .scrollIntoView({ force: true });
+    cy.wait(1000);
 
-    // //ZipCode
-    // cy.get('[placeholder="Zip/Postal Code"]')
-    //   .eq(0)
-    //   .type(this.RelatedKitItemData.ZipCode);
-    // cy.wait(1000);
+    //ZipCode
+    cy.get('[placeholder="Zip/Postal Code"]')
+      .eq(0)
+      .type(this.RelatedKitItemData.ZipCode);
+    cy.wait(1000);
 
-    // //Number
-    // cy.get("[name" + "=" + this.DataType2.Number + "]")
-    //   .eq(0)
-    //   .type(this.RelatedKitItemData.Number);
-    // cy.wait(1000);
+    //Number
+    cy.get("[name" + "=" + this.DataType2.Number + "]")
+      .eq(0)
+      .type(this.RelatedKitItemData.Number);
+    cy.wait(1000);
 
-    // //Time Data Element
-    // //Click on Time to appear time pop up
-    // cy.get('[placeholder="Add Time"][type="text"]')
-    //   .eq(0)
-    //   .click({ force: true });
-    // cy.wait(1000);
-    // //Select hour value
-    // cy.xpath(
-    //   "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
-    // ).click({ force: true });
-    // cy.wait(1000);
-    // //Select Value of miniutes
-    // cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
-    // cy.wait(1000);
-    // //Click on PM
-    // cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
-    // //Click on OK to save date
-    // cy.xpath(
-    //   "//div[contains(@class,'v-dialog v-dialog--active')]//button[1]"
-    // ).click({ force: true });
+    //Time Data Element
+    //Click on Time to appear time pop up
+    cy.get('[placeholder="Add Time"][type="text"]')
+      .eq(0)
+      .click({ force: true });
+    cy.wait(1000);
+    //Select hour value
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
+    ).click({ force: true });
+    cy.wait(1000);
+    //Select Value of miniutes
+    cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
+    cy.wait(1000);
+    //Click on PM
+    cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
+    //Click on OK to save date
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//button[1]"
+    ).click({ force: true });
 
-    // //Date Data Element
-    // //Click on Date to appear Date pop up
-    // cy.get(
-    //   "div.v-input.no-bottom.date-picker-text-field.date-picker-text-field-direct.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-text-field--placeholder > div > div.v-input__slot > div.v-input__prepend-inner > i"
-    // )
-    //   .eq(0)
-    //   .click({ force: true });
-    // //Select Date
-    // cy.xpath("//div[@class='v-btn__content'][contains(text(),'30')]")
-    //   .first()
-    //   .click({ force: true });
-    // cy.wait(2000);
-    // //Click on OK to save Date
-    // cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
-    // cy.wait(2000);
+    //Date Data Element
+    //Click on Date to appear Date pop up
+    cy.get(
+      "div.v-input.no-bottom.date-picker-text-field.date-picker-text-field-direct.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-text-field--placeholder > div > div.v-input__slot > div.v-input__prepend-inner > i"
+    )
+      .eq(0)
+      .click({ force: true });
+    //Select Date
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'30')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    cy.wait(2000);
 
-    // //Toggle
-    // cy.get(".sync-switch .v-input--selection-controls__ripple").eq(0).click({
+    //Toggle
+    cy.get(".sync-switch .v-input--selection-controls__ripple").eq(0).click({
+      force: true,
+    });
+
+    //Click on DropDown of SelectList
+    cy.wait(3000);
+    cy.get(
+      "div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
+    )
+      .eq(4)
+      .click({ force: true });
+    cy.wait(2000);
+    //SelectList Value(Values coming form KitItemValues Json File)
+    cy.contains(this.RelatedKitItemData.SelectListValue).click({ force: true });
+    cy.log("SelectList Value has been set.");
+
+    //RadioSelect
+    cy.contains(this.RelatedKitItemData.RadioSelectValue).click({
+      force: true,
+    });
+    cy.log("RadioSelect Value has been set.");
+
+    //CheckboxSelect(Values coming form KitItemValues Json File)
+    cy.contains(this.RelatedKitItemData.CheckboxSelectValue1).click({
+      force: true,
+    });
+    cy.contains(this.RelatedKitItemData.CheckboxSelectValue2).click({
+      force: true,
+    });
+    cy.contains(this.RelatedKitItemData.CheckboxSelectValue3).click({
+      force: true,
+    });
+    cy.log("Checkbox Values has been set.");
+
+    cy.wait(5000);
+    cy.get(".searchIcon").eq(1).scrollIntoView({ force: true });
+
+    //Stepper
+    //getting value form different json file
+    cy.contains(this.RelatedKitItemData.StepperValue4).click({ force: true });
+    cy.log("Stepper Value has been set.");
+
+    cy.wait(2000);
+    //.v-stepper__step:nth-child(1/3/5/7/9)
+    // cy.get(".v-stepper__step:nth-child(5) > .v-stepper__step__step").click({
     //   force: true,
     // });
 
-    // //Click on DropDown of SelectList
-    // cy.wait(3000);
-    // cy.get(
-    //   "div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
-    // )
-    //   .eq(4)
-    //   .click({ force: true });
-    // cy.wait(2000);
-    // //SelectList Value(Values coming form KitItemValues Json File)
-    // cy.contains(this.RelatedKitItemData.SelectListValue).click({ force: true });
-    // cy.log("SelectList Value has been set.");
+    cy.wait(2000);
+    //UserSelector(Values coming form KitItemValues Json File)
+    //Click on to open UserSelector Pop up
+    cy.get(".searchIcon").eq(0).click({ force: true });
+    cy.wait(3000);
 
-    // //RadioSelect
-    // cy.contains(this.RelatedKitItemData.RadioSelectValue).click({
-    //   force: true,
-    // });
-    // cy.log("RadioSelect Value has been set.");
+    cy.contains(this.RelatedKitItemData.UserSelectorName).click({
+      force: true,
+    });
+    cy.log("UserSelect added");
+    cy.wait(3000);
 
-    // //CheckboxSelect(Values coming form KitItemValues Json File)
-    // cy.contains(this.RelatedKitItemData.CheckboxSelectValue1).click({
-    //   force: true,
-    // });
-    // cy.contains(this.RelatedKitItemData.CheckboxSelectValue2).click({
-    //   force: true,
-    // });
-    // cy.contains(this.RelatedKitItemData.CheckboxSelectValue3).click({
-    //   force: true,
-    // });
-    // cy.log("Checkbox Values has been set.");
+    //ContactSelector(Values coming form KitItemValues Json File)
+    //Click on to open ContactSelector Pop up
+    cy.get(".searchIcon").eq(1).click({ force: true });
 
-    // cy.wait(5000);
-    // cy.get(".searchIcon").eq(1).scrollIntoView({ force: true });
+    cy.wait(4000);
+    cy.contains(this.RelatedKitItemData.ContactSelectorName).click({
+      force: true,
+    });
+    cy.log("ContactSelecto added");
+    cy.wait(4000);
 
-    // //Stepper
-    // //getting value form different json file
-    // cy.contains(this.RelatedKitItemData.StepperValue4).click({ force: true });
-    // cy.log("Stepper Value has been set.");
+    //getting value form different json file
+    cy.wait(2000);
+    //Icon
+    //Click on + icon of ICON Element
+    cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
+      .eq(0)
+      .click({
+        force: true,
+      });
+    cy.wait(2000);
+    //Click on Icon Tittle and  select Icon logo
+    //Give numeric no from 1 in child(1,2,3...)
+    cy.get(".thumb-container:nth-child(4) .selected-icon").click({
+      force: true,
+    });
+    cy.wait(2000);
+    //Icon Save
+    cy.get(".button-pop-ups").click({ force: true });
+    cy.wait(2000);
 
-    // cy.wait(2000);
-    // //.v-stepper__step:nth-child(1/3/5/7/9)
-    // // cy.get(".v-stepper__step:nth-child(5) > .v-stepper__step__step").click({
-    // //   force: true,
-    // // });
+    //IcozSize
+    cy.get(
+      "div.row.wrapper-kit-control.align-center > div > div.fill-height.border-right.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    )
+      .eq(0)
+      .click({ force: true });
+    cy.wait(2000);
+    cy.contains(this.RelatedKitItemData.LargeiconSize).click({ force: true });
+    cy.wait(2000);
+    //IconLable
+    cy.get('[placeholder="Label"]')
+      .eq(0)
+      .type(this.RelatedKitItemData.IconLabel);
 
-    // cy.wait(2000);
-    // //UserSelector(Values coming form KitItemValues Json File)
-    // //Click on to open UserSelector Pop up
-    // cy.get(".searchIcon").eq(0).click({ force: true });
-    // cy.wait(3000);
+    //Inspection(Values coming form KitItemValues Json File)
+    //Inspection
+    cy.contains(this.DataType2.Inspection).scrollIntoView({
+      force: true,
+    });
 
-    // cy.contains(this.RelatedKitItemData.UserSelectorName).click({
-    //   force: true,
-    // });
-    // cy.log("UserSelect added");
-    // cy.wait(3000);
+    cy.wait(3000);
+    //child 1 for 1st value &&&& child 2 for 2nd value-child 3 for 3rd value......
+    //"These are the index value of div child":"use according to select inspection value",
+    cy.get(
+      "div.v-slide-group__wrapper > div > span:nth-child(" +
+        this.RelatedKitItemData.InspectionValue2 +
+        ") > span"
+    )
+      .eq(0)
+      .click({ force: true });
 
-    // //ContactSelector(Values coming form KitItemValues Json File)
-    // //Click on to open ContactSelector Pop up
-    // cy.get(".searchIcon").eq(1).click({ force: true });
+    cy.wait(3000);
+    //Assigning
+    //Click on to open Assigning Pop up-Also working
 
-    // cy.wait(4000);
-    // cy.contains(this.RelatedKitItemData.ContactSelectorName).click({
-    //   force: true,
-    // });
-    // cy.log("ContactSelecto added");
-    // cy.wait(4000);
-
-    // //getting value form different json file
-    // cy.wait(2000);
-    // //Icon
-    // //Click on + icon of ICON Element
-    // cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
-    //   .eq(0)
-    //   .click({
-    //     force: true,
-    //   });
-    // cy.wait(2000);
-    // //Click on Icon Tittle and  select Icon logo
-    // //Give numeric no from 1 in child(1,2,3...)
-    // cy.get(".thumb-container:nth-child(4) .selected-icon").click({
-    //   force: true,
-    // });
-    // cy.wait(2000);
-    // //Icon Save
-    // cy.get(".button-pop-ups").click({ force: true });
-    // cy.wait(2000);
-
-    // //IcozSize
-    // cy.get(
-    //   "div.row.wrapper-kit-control.align-center > div > div.fill-height.border-right.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
-    // )
-    //   .eq(0)
-    //   .click({ force: true });
-    // cy.wait(2000);
-    // cy.contains(this.RelatedKitItemData.LargeiconSize).click({ force: true });
-    // cy.wait(2000);
-    // //IconLable
-    // cy.get('[placeholder="Label"]')
-    //   .eq(0)
-    //   .type(this.RelatedKitItemData.IconLabel);
-
-    // //Inspection(Values coming form KitItemValues Json File)
-    // //Inspection
-    // cy.contains(this.DataType2.Inspection).scrollIntoView({
-    //   force: true,
-    // });
-
-    // cy.wait(3000);
-    // //child 1 for 1st value &&&& child 2 for 2nd value-child 3 for 3rd value......
-    // //"These are the index value of div child":"use according to select inspection value",
-    // cy.get(
-    //   "div.v-slide-group__wrapper > div > span:nth-child(" +
-    //     this.RelatedKitItemData.InspectionValue2 +
-    //     ") > span"
-    // )
-    //   .eq(0)
-    //   .click({ force: true });
-
-    // cy.wait(3000);
-    // //Assigning
-    // //Click on to open Assigning Pop up-Also working
-
-    // //Click on to open Assigning Pop up
-    // cy.get(".searchIcon").eq(2).click({ force: true });
-    // cy.wait(7000);
-    // //Click on to select the Assigning
-    // //cy.get(".list-item-search").first().click({ force: true });
-    // cy.contains(this.RelatedKitItemData.AssigningName).click({ force: true });
-    // cy.wait(3000);
-    // //Click on to save
-    // cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
-    // //Assigning creation assertion
-    // cy.contains("Item shared").should("be.visible");
-    // cy.log("Assigning added");
+    //Click on to open Assigning Pop up
+    cy.get(".searchIcon").eq(2).click({ force: true });
+    cy.wait(7000);
+    //Click on to select the Assigning
+    //cy.get(".list-item-search").first().click({ force: true });
+    cy.contains(this.RelatedKitItemData.AssigningName).click({ force: true });
+    cy.wait(3000);
+    //Click on to save
+    cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
+    //Assigning creation assertion
+    cy.contains("Item shared").should("be.visible");
+    cy.log("Assigning added");
     cy.wait(5000);
 
     //save related new

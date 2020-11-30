@@ -6,8 +6,8 @@ describe("Kit Builder All Data Elements Configuration", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    //lp.visitCityComTest();
-    cy.visit('https://tm.ca-build.com:54072/Public/Login?ReturnUrl=%2F')
+    lp.visitCityComTest();
+    //cy.visit('https://tm.ca-build.com:54072/Public/Login?ReturnUrl=%2F')
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
@@ -73,8 +73,8 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    //lp.visitCityComTestKitBuilder();
-    cy.visit('https://tm.ca-build.com:54072/ClientAdmin/KitBuilder#/')
+    lp.visitCityComTestKitBuilder();
+    //cy.visit('https://tm.ca-build.com:54072/ClientAdmin/KitBuilder#/')
     cy.log("User entered in kit builder");
     cy.wait(3000);
     //Open Craeted Kit Type

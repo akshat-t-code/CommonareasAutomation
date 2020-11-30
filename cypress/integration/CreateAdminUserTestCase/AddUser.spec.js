@@ -171,12 +171,12 @@ describe("Create user from admin and login with the new user", function () {
     cy.title().should("eq", "Common Areas App");
     cy.wait(5000);
     //Profile Assertion
-    cy.get(
-      ".welcome-wrapper--header"
-    ).then(function ($WelEle) {
-      const WelcomeTxt = $WelEle.text();
-      cy.log(WelcomeTxt);
-    });
+    // cy.get(
+    //   ".welcome-wrapper--header"
+    // ).then(function ($WelEle) {
+    //   const WelcomeTxt = $WelEle.text();
+    //   cy.log(WelcomeTxt);
+    // });
     cy.screenshot("Admin User Logged In");
     cy.wait(5000);
   });
