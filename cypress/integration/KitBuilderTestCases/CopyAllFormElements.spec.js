@@ -79,7 +79,9 @@ describe("Copy New Form Elements in All Forms", function () {
     //Click on Forms Drop down
     cy.get(
       "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    ).click({ force: true });
+    )
+      .last()
+      .click({ force: true });
     cy.wait(2000);
     //View Name coming form json file
     cy.contains(this.data.RelatedNewView).click({ force: true });
@@ -115,7 +117,9 @@ describe("Copy New Form Elements in All Forms", function () {
     //Click on Forms Drop down
     cy.get(
       "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    ).click({ force: true });
+    )
+      .last()
+      .click({ force: true });
     cy.wait(2000);
     //View Name coming form json file
     cy.contains(this.data.RelatedEditView).click({ force: true });
@@ -151,7 +155,9 @@ describe("Copy New Form Elements in All Forms", function () {
     //Click on Forms Drop down
     cy.get(
       "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    ).click({ force: true });
+    )
+      .last()
+      .click({ force: true });
     cy.wait(2000);
     //View Name coming form json file
     cy.contains(this.data.SharedView).click({ force: true });
@@ -187,7 +193,9 @@ describe("Copy New Form Elements in All Forms", function () {
     //Click on Forms Drop down
     cy.get(
       "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    ).click({ force: true });
+    )
+      .last()
+      .click({ force: true });
     cy.wait(2000);
     //View Name coming form json file
     cy.contains(this.data.MapView).click({ force: true });
@@ -223,7 +231,9 @@ describe("Copy New Form Elements in All Forms", function () {
     //Click on Forms Drop down
     cy.get(
       "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    ).click({ force: true });
+    )
+      .last()
+      .click({ force: true });
     cy.wait(2000);
     //View Name coming form json file
     cy.contains(this.data.CommonPlanView).click({ force: true });
@@ -259,7 +269,9 @@ describe("Copy New Form Elements in All Forms", function () {
     //Click on Forms Drop down
     cy.get(
       "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    ).click({ force: true });
+    )
+      .last()
+      .click({ force: true });
     cy.wait(2000);
     //View Name coming form json file
     cy.contains(this.data.ScheduleView).click({ force: true });
@@ -295,7 +307,9 @@ describe("Copy New Form Elements in All Forms", function () {
     //Click on Forms Drop down
     cy.get(
       "#app > div > div > div:nth-child(1) > header > div > div:nth-child(3) > div > div > div > div > div.v-select__slot > div > div"
-    ).click({ force: true });
+    )
+      .last()
+      .click({ force: true });
     cy.wait(2000);
     //View Name coming form json file
     cy.contains(this.data.EmailView).click({ force: true });

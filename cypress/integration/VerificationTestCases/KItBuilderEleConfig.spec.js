@@ -6,7 +6,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    lp.visitCityComBuild();
+    lp.visitCityComTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
@@ -66,13 +66,13 @@ describe("Kit Builder All Data Elements Configuration", function () {
     });
   });
 
-  it.only("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    lp.visitCityComBuildKitBuilder();
+    lp.visitCityComTestKitBuilder();
     cy.log("User entered in kit builder");
     cy.wait(3000);
     //Open Craeted Kit Type
@@ -92,7 +92,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  it.only("Url Data Type", function () {
+  it("Url Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Url"]').dblclick({ force: true });
     cy.wait(1000);
@@ -103,7 +103,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Text Data Type", function () {
+  it("Text Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Text"]').dblclick({ force: true });
     cy.wait(1000);
@@ -114,7 +114,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("File Data Type", function () {
+  it("File Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="File"]').dblclick({ force: true });
     cy.wait(1000);
@@ -124,7 +124,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Telephone Data Type", function () {
+  it("Telephone Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Telephone"]').dblclick({ force: true });
     cy.wait(1000);
@@ -134,7 +134,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("TextAera Data Type", function () {
+  it("TextAera Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Text Area"]').dblclick({ force: true });
     cy.wait(1000);
@@ -144,7 +144,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Slider Data Type", function () {
+  it("Slider Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Slider"]').dblclick({ force: true });
     cy.wait(1000);
@@ -154,7 +154,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Currency Data Type", function () {
+  it("Currency Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Currency"]').dblclick({ force: true });
     cy.wait(1000);
@@ -164,7 +164,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Measure Data Type", function () {
+  it("Measure Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Measure"]').dblclick({ force: true });
     cy.wait(1000);
@@ -174,7 +174,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Email Data Type", function () {
+  it("Email Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Email"]').dblclick({ force: true });
     cy.wait(1000);
@@ -184,7 +184,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Address Data Type", function () {
+  it("Address Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Address"]').dblclick({ force: true });
     cy.wait(1000);
@@ -194,7 +194,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Section Data Type", function () {
+  it("Section Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Section"]').dblclick({ force: true });
     cy.wait(1000);
@@ -204,7 +204,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Number Data Type", function () {
+  it("Number Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Number"]').dblclick({ force: true });
     cy.wait(1000);
@@ -214,7 +214,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(5000);
   });
 
-  it.only("Kit Builder Save and Publish", function () {
+  it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
     cy.get(".ca-button-green:nth-child(1)").click({ force: true });
     //save assertion closed
@@ -360,10 +360,10 @@ describe("Kit Builder All Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  // it("Content Section Data Elements", function () {
-  //   cy.contains("Content").click({ force: true });
-  //   cy.wait(2000);
-  // });
+  it("Content Section Data Elements", function () {
+    cy.contains("Content").click({ force: true });
+    cy.wait(2000);
+  });
 
   // it("OneToManyRelation Data Type", function () {
   //   //Double click on Data Element to drag it on Canvas
@@ -390,33 +390,33 @@ describe("Kit Builder All Data Elements Configuration", function () {
   //   cy.wait(5000);
   // });
 
-  // it("Stepper Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Stepper"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.Stepper(
-  //     this.DataType.Stepper,
-  //     this.DataType.StepperName,
-  //     this.DataType.StepperValue1,
-  //     this.DataType.StepperValue2,
-  //     this.DataType.StepperValue3,
-  //     this.DataType.StepperValue4,
-  //     this.DataType.StepperValue5
-  //   );
-  //   cy.wait(5000);
-  // });
+  it("Stepper Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Stepper"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Stepper(
+      this.DataType.Stepper,
+      this.DataType.StepperName,
+      this.DataType.StepperValue1,
+      this.DataType.StepperValue2,
+      this.DataType.StepperValue3,
+      this.DataType.StepperValue4,
+      this.DataType.StepperValue5
+    );
+    cy.wait(5000);
+  });
 
-  // it("UserSelector Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="User Selector"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.UserSelector(this.DataType.UserSelector);
-  //   cy.wait(5000);
-  // });
+  it("UserSelector Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="User Selector"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.UserSelector(this.DataType.UserSelector);
+    cy.wait(5000);
+  });
 
   // it("OneToOneRelation Data Type", function () {
   //   //Double click on Data Element to drag it on Canvas
@@ -437,15 +437,15 @@ describe("Kit Builder All Data Elements Configuration", function () {
   //   cy.wait(5000);
   // });
 
-  // it("ContactSelector Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Contact Selector"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.ContactSelector(this.DataType.ContactSelector);
-  //   cy.wait(5000);
-  // });
+  it("ContactSelector Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Contact Selector"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.ContactSelector(this.DataType.ContactSelector);
+    cy.wait(5000);
+  });
 
   // it("SquareCard Data Type", function () {
   //   //Double click on Data Element to drag it on Canvas
@@ -472,145 +472,145 @@ describe("Kit Builder All Data Elements Configuration", function () {
   //   cy.wait(5000);
   // });
 
-  // it("Icon Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Icon"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.Icon(this.DataType.Icon);
-  //   cy.wait(5000);
-  // });
+  it("Icon Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Icon"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Icon(this.DataType.Icon);
+    cy.wait(5000);
+  });
 
-  // it("Inspection Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Inspection"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.Inspection(
-  //     this.DataType.Inspection,
-  //     this.DataType.InspectionName,
-  //     this.DataType.InspectionValue1,
-  //     this.DataType.InspectionValue2,
-  //     this.DataType.InspectionValue3,
-  //     this.DataType.InspectionValue4,
-  //     this.DataType.InspectionValue5
-  //   );
-  //   cy.wait(5000);
-  // });
+  it("Inspection Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Inspection"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Inspection(
+      this.DataType.Inspection,
+      this.DataType.InspectionName,
+      this.DataType.InspectionValue1,
+      this.DataType.InspectionValue2,
+      this.DataType.InspectionValue3,
+      this.DataType.InspectionValue4,
+      this.DataType.InspectionValue5
+    );
+    cy.wait(5000);
+  });
 
-  // it("Assigning Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Assigning"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.Assigning(this.DataType.Assigning);
-  //   cy.wait(5000);
-  // });
+  it("Assigning Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Assigning"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Assigning(this.DataType.Assigning);
+    cy.wait(5000);
+  });
 
-  // it("TextBlock Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.contains("Text Block").dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.TextBlock(
-  //     this.DataType.TextBlockName,
-  //     this.DataType.TextBlockData
-  //   );
-  //   cy.wait(5000);
-  // });
+  it("TextBlock Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.contains("Text Block").dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.TextBlock(
+      this.DataType.TextBlockName,
+      this.DataType.TextBlockData
+    );
+    cy.wait(5000);
+  });
 
-  // it("Button Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[data-component="control-button"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.Button(this.DataType.Button);
-  //   cy.wait(5000);
-  // });
+  it("Button Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[data-component="control-button"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Button(this.DataType.Button);
+    cy.wait(5000);
+  });
 
-  // it("Link Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[data-component="control-link"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.Link(this.DataType.LinkName, this.DataType.EnterUrl);
-  //   cy.wait(5000);
-  // });
+  it("Link Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[data-component="control-link"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Link(this.DataType.LinkName, this.DataType.EnterUrl);
+    cy.wait(5000);
+  });
 
-  // it("Created By Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Created By"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.CreatedBy(this.DataType.CreatedBy);
-  //   cy.wait(5000);
-  // });
+  it("Created By Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Created By"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.CreatedBy(this.DataType.CreatedBy);
+    cy.wait(5000);
+  });
 
-  // it("Modified By Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Modified By"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.ModifiedBy(this.DataType.ModifiedBy);
-  //   cy.wait(5000);
-  // });
+  it("Modified By Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Modified By"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.ModifiedBy(this.DataType.ModifiedBy);
+    cy.wait(5000);
+  });
 
-  // it("Created On Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Created On"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.CreatedOn(this.DataType.CreatedOn);
-  //   cy.wait(5000);
-  // });
+  it("Created On Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Created On"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.CreatedOn(this.DataType.CreatedOn);
+    cy.wait(5000);
+  });
 
-  // it("Modified On Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Modified On"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.ModifiedOn(this.DataType.ModifiedOn);
-  //   cy.wait(5000);
-  // });
+  it("Modified On Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Modified On"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.ModifiedOn(this.DataType.ModifiedOn);
+    cy.wait(5000);
+  });
 
-  // it("Kit Item Id Data Type", function () {
-  //   //Double click on Data Element to drag it on Canvas
-  //   cy.get('[title="Kit Item Id"]').dblclick({ force: true });
-  //   cy.wait(1000);
-  //   //Page Object
-  //   const DataType = new KitBuilderDataTypes();
-  //   DataType.KitItemId(this.DataType.KitItemId);
-  //   cy.wait(5000);
-  // });
+  it("Kit Item Id Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Kit Item Id"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.KitItemId(this.DataType.KitItemId);
+    cy.wait(5000);
+  });
 
-  // it("Kit Builder Save and Publish", function () {
-  //   //Kit Builder Save
-  //   cy.get(".ca-button-green:nth-child(1)").click({ force: true });
-  //   //save assertion closed
-  //   // cy.get(".v-btn__content > .theme--dark").click({ force: true });
-  //   cy.log("Kit builder(New Form) has been Saved");
-  //   cy.wait(3000);
-  //   //Click on  Publish
-  //   cy.contains("Publish").click({ force: true });
-  //   //cy.get(".v-btn__content > .theme--dark").click();
-  //   cy.log("Kit builder(New Form) has been Published");
-  //   cy.wait(2000);
-  // });
+  it("Kit Builder Save and Publish", function () {
+    //Kit Builder Save
+    cy.get(".ca-button-green:nth-child(1)").click({ force: true });
+    //save assertion closed
+    // cy.get(".v-btn__content > .theme--dark").click({ force: true });
+    cy.log("Kit builder(New Form) has been Saved");
+    cy.wait(3000);
+    //Click on  Publish
+    cy.contains("Publish").click({ force: true });
+    //cy.get(".v-btn__content > .theme--dark").click();
+    cy.log("Kit builder(New Form) has been Published");
+    cy.wait(2000);
+  });
 
-  // it("Dynamic Controls Section Data Elements", function () {
-  //   cy.contains("Dynamic Controls").click({ force: true });
-  //   cy.wait(2000);
-  // });
+  it("Dynamic Controls Section Data Elements", function () {
+    cy.contains("Dynamic Controls").click({ force: true });
+    cy.wait(2000);
+  });
 
   // it("Reactive Variable Data type", function () {
   //   //Double click on Data Element to drag it on Canvas

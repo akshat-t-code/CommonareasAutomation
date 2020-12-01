@@ -11,7 +11,7 @@ describe("Kit Builder All Data Elements Configuration", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("hgriffin@commonareas.work.dev");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
