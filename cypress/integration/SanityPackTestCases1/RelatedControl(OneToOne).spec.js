@@ -560,10 +560,12 @@ describe("Related Control One to One test case", function () {
 
   it.only("Link Existing Item for OneToOne Related Control", function () {
     cy.wait(2000);
+    cy.get(".action-icon:nth-child(2) > .inline-svg").scrollIntoView({
+      force: true,
+    });
+
     //Click on to link existing item
-    cy.get(".action-icon:nth-child(2) > .inline-svg")
-      .scrollIntoView({ force: true })
-      .click({ force: true });
+    cy.get(".action-icon:nth-child(2) > .inline-svg").click({ force: true });
 
     //Search List view pop up assertion
     cy.contains(" Related Items ").should("be.visible");

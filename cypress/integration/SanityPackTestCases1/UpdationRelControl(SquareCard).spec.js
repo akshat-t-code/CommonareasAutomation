@@ -234,10 +234,6 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.log("Email Updated");
     cy.wait(1000);
 
-    //scroll
-    cy.get('[placeholder="City"]').first().scrollIntoView({ force: true });
-    cy.wait(1000);
-
     //Address
     cy.get(
       '[placeholder="Street address, bulding, company ... "][name="Address"]'
@@ -432,6 +428,13 @@ describe("Update Related New fot Square Card Related Control", function () {
 
     //getting value form different json file
     cy.wait(2000);
+    //Click on arrow
+    cy.get(
+      "div.fill-height.border-right.col.col-4 div.v-input.v-input--is-label-active.v-input--is-dirty.theme--light.v-text-field.v-text-field--single-line.v-text-field--solo.v-text-field--is-booted.v-text-field--enclosed.v-select div.v-input__control div.v-input__slot div.v-select__slot div.v-input__append-inner:nth-child(2) div.v-input__icon.v-input__icon--append > i.v-icon.notranslate.material-icons.theme--light"
+    )
+      .first()
+      .scrollIntoView({ force: true });
+    cy.wait(4000);
     //Icon
     //Click on + icon of ICON Element
     cy.get(".v-btn__content > img").click({
@@ -455,7 +458,6 @@ describe("Update Related New fot Square Card Related Control", function () {
       "div.fill-height.border-right.col.col-4 div.v-input.v-input--is-label-active.v-input--is-dirty.theme--light.v-text-field.v-text-field--single-line.v-text-field--solo.v-text-field--is-booted.v-text-field--enclosed.v-select div.v-input__control div.v-input__slot div.v-select__slot div.v-input__append-inner:nth-child(2) div.v-input__icon.v-input__icon--append > i.v-icon.notranslate.material-icons.theme--light"
     )
       .first()
-      .scrollIntoView({ force: true })
       .click({ force: true });
     cy.wait(2000);
     cy.contains(this.UpdateKitItemData.ExtraSmalliconSize).click({
@@ -493,8 +495,11 @@ describe("Update Related New fot Square Card Related Control", function () {
       "div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-assigning.pr-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(25) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot div.v-select__slot:nth-child(2) div.v-select__selections:nth-child(2) div.imageContent:nth-child(1) > div.row.control-item-picker"
     ).click({ force: true });
     //Click on to open Assigning
-    cy.wait(5000);
-    cy.contains(this.UpdateKitItemData.RelAssigningName).click({ force: true });
+    cy.wait(7000);
+    cy.get(
+      ".v-list-item:nth-child(1) > .list-item-search > .v-list-item__title"
+    ).click({ force: true });
+    //cy.contains(this.UpdateKitItemData.RelAssigningName).click({ force: true });
     cy.wait(3000);
     //Click on to save
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });

@@ -12,8 +12,8 @@
     "RelNewFileName":"Fixtures",
     "Telephone":"(982) 999-2495",
     "TextAera":"One To Many Related New automation",
-    "Currency":"54321",
-    "Measure":"12345",
+    "Currency":"5",
+    "Measure":"13",
 
     "Email":"onetomany@gmail.com",
     "Important Note for Email":"should be in small letters",
@@ -22,7 +22,7 @@
     "Addressline2":"Oak WayRel",
     "City":"Grand IslandRel",
     "State":"Alaska",
-    "ZipCode":"3432",
+    "ZipCode":"3112",
     "Country":"United States",
     "Number":"234",
 

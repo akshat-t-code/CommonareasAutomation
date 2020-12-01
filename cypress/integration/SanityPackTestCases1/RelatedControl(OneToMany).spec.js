@@ -742,5 +742,25 @@ describe("Related Control One to Many test case", function () {
       "be.visible"
     );
     cy.log("There is nothing to save for Kit Item");
+    cy.wait(2000);
+  });
+
+  it.only("Deletion Link Item", function () {
+    cy.wait(3000);
+    //Click on delete icon
+    cy.get(".btn-manage path").eq(0).click({ force: true });
+    cy.wait(2000);
+    //Delete pop up assertion
+    cy.contains(" Are you sure you want to discard?").should("be.visible");
+    cy.wait(2000);
+    cy.contains(" Discard ").click({ force: true });
+    //Delete assertion
+    cy.contains(
+      "Relation on " +
+        this.DataType2.OneToManyRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " Deleted"
+    ).should("be.visible");
   });
 });
