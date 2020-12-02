@@ -6,8 +6,8 @@
     "Text":"sanity",
     "Telephone":"(982) 999-2495",
     "TextAera":"sanity automation",
-    "Currency":"9092",
-    "Measure":"8923",
+    "Currency":"90",
+    "Measure":"83",
 
     "Email":"tjMax@yahoo.com",
     "Important Note for Email":"should be in small letters",
@@ -18,12 +18,12 @@
     "State":"Alaska",
     "ZipCode":"31002",
     "Country":"United States",
-    "Number":"0902",
+    "Number":"09",
 
-    "SelectListValue":"KKR",
+    "SelectListValue":"VVIP",
     
 
-    "RadioSelectValue":"CSK",
+    "RadioSelectValue":"SR2",
 
     "CheckboxSelectValue1":"CheckboxSelect1",
     "CheckboxSelectValue2":"CheckboxSelect2",
@@ -38,8 +38,8 @@
     "StepperValue5":"Mart",
 
     "UserSelectorName":"City Com2",
-    "ContactSelectorName":"Carmen Goodin",
-    "AssigningName":"Adrian Osman",
+    "ContactSelectorName":"Pranav Test",
+    "AssigningName":"Carmen Goodin",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",

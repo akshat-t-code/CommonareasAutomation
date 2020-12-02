@@ -759,7 +759,7 @@ describe("Update created kit item test case", function () {
     cy.wait(4000);
     //Click on to open UserSelector Pop up
     //cy.get(".searchIcon").eq(7).click({ force: true });
-    cy.contains(this.UpdateKitItemData.UserSelectorName).click({ force: true });
+    cy.contains(this.UpdateKitItemData.DUpUserSelector).click({ force: true });
     cy.log("UserSelect Updated");
     cy.wait(3000);
 
@@ -770,7 +770,7 @@ describe("Update created kit item test case", function () {
     cy.wait(4000);
     // //Click on to open ContactSelector Pop up
     // cy.get(".searchIcon").eq(8).click({ force: true });
-    cy.contains(this.UpdateKitItemData.ContactSelectorName).click({
+    cy.contains(this.UpdateKitItemData.DUpContactSelector).click({
       force: true,
     });
     cy.log("ContactSelecto Updated");
@@ -978,7 +978,7 @@ describe("Update created kit item test case", function () {
     ).click({ force: true });
     //Click on to open Assigning
     cy.wait(5000);
-    cy.contains(this.UpdateKitItemData.AssigningName).click({ force: true });
+    cy.contains(this.UpdateKitItemData.DUpAssigning).click({ force: true });
     cy.wait(3000);
     //Click on to save
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });

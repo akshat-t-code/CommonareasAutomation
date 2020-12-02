@@ -23,10 +23,10 @@
     "Country":"United States",
     "Number":"40",
 
-    "SelectListValue":"VVIP",
+    "SelectListValue":"MNV",
     
 
-    "RadioSelectValue":"RCB",
+    "RadioSelectValue":"SR4",
 
     "CheckboxSelectValue1":"CheckboxSelect1",
     "CheckboxSelectValue2":"CheckboxSelect2",
@@ -40,10 +40,14 @@
     "StepperValue4":"Oppo",
     "StepperValue5":"Mart",
 
-    "UserSelectorName":"Ruomk Qmjgb",
-    "ContactSelectorName":"Victoria Safley",
-    "AssigningName":"Victoria Safley",
+    "UserSelectorName":"Reporting User",
+    "ContactSelectorName":"Reporting User",
+    "AssigningName":"City Com2",
     "RelAssigningName":"Kvhyu Tjrqk",
+
+    "DUpUserSelector":"Carmen Goodin",
+    "DUpContactSelector":"Pranav Test",
+    "DUpAssigning":"Reporting User",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",

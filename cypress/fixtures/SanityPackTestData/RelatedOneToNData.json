@@ -26,10 +26,10 @@
     "Country":"United States",
     "Number":"234",
 
-    "SelectListValue":"KKR",
+    "SelectListValue":"MOP",
     
 
-    "RadioSelectValue":"CSK",
+    "RadioSelectValue":"SR4",
 
     "CheckboxSelectValue1":"CheckboxSelect1",
     "CheckboxSelectValue2":"CheckboxSelect2",
@@ -53,7 +53,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"fb",
+    "IconLabel":"OneN",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",
