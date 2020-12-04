@@ -96,7 +96,7 @@ describe("New kit item complete creation test case", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only("Create New Kit Item with all the fields", function () {
+  it("Create New Kit Item with all the fields", function () {
     const lp = new LoginPage();
     cy.wait(2000);
 
@@ -630,17 +630,20 @@ describe("New kit item complete creation test case", function () {
     cy.wait(3000);
     //Click on Add for Contributors
     cy.get(".addBtn:nth-child(2) > .v-btn__content").click({ force: true });
+    cy.wait(2000);
     //Assertion validation
     cy.contains(" Connections ").should("be.visible");
+    cy.wait(2000);
 
     cy.wait(2000);
+    //Click on contribytors checkbox
     cy.contains("Contributor").click({ force: true });
     cy.wait(4000);
     //Select Name
     cy.contains(this.SData.ContributorsName).click({ force: true });
     //Click on Save
     cy.get(".button-pop-ups--size > .v-btn__content")
-      .first()
+      .eq(0)
       .click({ force: true });
     //creation Assertion validation
     cy.contains("Item shared").should("be.visible");
