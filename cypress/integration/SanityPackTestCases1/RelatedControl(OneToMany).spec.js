@@ -609,7 +609,7 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.Telephone).should("not.exist");
     cy.wait(1000);
     cy.contains(this.RelatedKitItemData.TextAera).should("not.exist");
-    cy.contains(this.RelatedKitItemData.Currency).should("not.exist");
+    //cy.contains(this.RelatedKitItemData.Currency).should("not.exist");
     cy.contains(this.RelatedKitItemData.Email).should("not.exist");
     cy.contains(this.RelatedKitItemData.Measure).should("not.exist");
     cy.log("One to many related new elements has been deleted");

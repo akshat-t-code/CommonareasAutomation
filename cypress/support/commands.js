@@ -626,7 +626,7 @@ Cypress.Commands.add("TimelineListViewIcon", () => {
 
 Cypress.Commands.add("SaveTimelineList", () => {
   //Click on Checkbox
-  // cy.contains('Default View for Kit').click({force:true})
+  cy.contains('Default Timeline List View for Kit').click({force:true})
   // //Click on Save
   cy.get(".px-4 > .v-btn__content").click();
   //Click on Assertion msg for save

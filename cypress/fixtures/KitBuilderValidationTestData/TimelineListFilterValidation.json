@@ -1,10 +1,10 @@
 
 {
-    "TimelineListEleValidation":"Base",
-    "TLListKitName":"AkshatKitDemo",
-    "KitName":"Location",
-    "TimelineListResultsEleValidation":"Base",
-    "TimelineListFiltersEleValidation":"Base",
-    "TimelineListResultsEleValidation2":"Property Builder2"
+    "TimelineListEleValidation":"SanityTesting",
+    "TLListKitName":"SanityTesting",
+    "KitName":"SanityTesting",
+    "TimelineListResultsEleValidation":"SanityTesting",
+    "TimelineListFiltersEleValidation":"SanityTesting",
+    "TimelineListResultsEleValidation2":"SanityTesting"
     
 }

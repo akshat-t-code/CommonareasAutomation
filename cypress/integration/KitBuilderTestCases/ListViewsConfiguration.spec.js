@@ -7,7 +7,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     const lp = new LoginPage();
     lp.visitCityComTest();
     //Login Assertions
-    cy.contains(" Log In ").should("be.visible")
+    cy.contains(" Log In ").should("be.visible");
     //Enter credentials
     lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
@@ -56,7 +56,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     });
   });
 
-  it("Navigating to List Views of Created Kit Type", function () {
+  it.only("Navigating to List Views of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     const lp = new LoginPage();
     cy.wait(5000);
@@ -378,7 +378,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.log("Assertion closed");
   });
 
-  it("Adding Results and Filters Element to Timeline List View", function () {
+  it.only("Adding Results and Filters Element to Timeline List View", function () {
     //Page object
     const kb = new KitBuilderPage();
     cy.wait(3000);
@@ -412,7 +412,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.wait(2000);
 
     cy.contains(this.DataType2.Number).click({ force: true });
-    cy.contains(this.DataType2.Time).click({ force: true });
+    cy.contains(this.DataType2.Time).last().click({ force: true });
     cy.contains(this.DataType2.Date).click({ force: true });
     cy.contains(this.DataType2.Toggle).click({ force: true });
     cy.contains(this.DataType2.SelectList).click({ force: true });
@@ -487,7 +487,7 @@ describe("Adding Results and Filters Element to List Views", function () {
     cy.wait(2000);
 
     cy.contains(this.DataType2.Number).click({ force: true });
-    cy.contains(this.DataType2.Time).click({ force: true });
+    cy.contains(this.DataType2.Time).last().click({ force: true });
     cy.contains(this.DataType2.Date).click({ force: true });
     cy.contains(this.DataType2.Toggle).click({ force: true });
     cy.contains(this.DataType2.SelectList).click({ force: true });

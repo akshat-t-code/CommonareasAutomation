@@ -634,7 +634,7 @@ describe("New kit item complete creation test case", function () {
     cy.contains(" Connections ").should("be.visible");
 
     cy.wait(2000);
-    cy.contains("Coordinator").click({ force: true });
+    cy.contains("Contributor").click({ force: true });
     cy.wait(4000);
     //Select Name
     cy.contains(this.SData.ContributorsName).click({ force: true });
@@ -657,6 +657,7 @@ describe("New kit item complete creation test case", function () {
     //Assertion validation
     cy.contains("Time Entry").should("be.visible");
     //Click on + icon
+    cy.wait(2000);
     cy.get(".add-new--icon").click({ force: true });
     //Assertion validation
     cy.contains(" Add New Time Type ").should("be.visible");
@@ -674,7 +675,7 @@ describe("New kit item complete creation test case", function () {
     cy.get('[name="totalHours"]').type(this.SData.TotalHours);
     //Click on select date
     cy.get('[name="startdate"]').click({ force: true });
-    cy.wait(2000);
+    cy.wait(4000);
     //Select Date
     cy.xpath("//div[contains(text(),'30')]").eq(0).click({ force: true });
     //Click on OK

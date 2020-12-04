@@ -63,8 +63,8 @@ describe("Login for new User than Create A new Connection and Accept the request
 
   it.only("Create a new Connection ", function () {
     const lp = new LoginPage();
-    lp.visitServiceTest();
-    lp.EnterEmail("kstanley@commonareas.work.dev");
+    lp.visitCityComTest();
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
    // cy.screenshot("User Details-(To Create Connection Request");
     cy.wait(10000);

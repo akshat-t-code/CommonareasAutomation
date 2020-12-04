@@ -453,7 +453,7 @@ describe("Update Related New fot OneToOne Related Control", function () {
     cy.wait(4000);
     //Icon
     //Click on + icon of ICON Element
-    cy.get(".v-btn__content > img").click({
+    cy.get(".kit-control-icon__button_wrap").first().click({
       force: true,
     });
     cy.wait(2000);

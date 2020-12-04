@@ -5,11 +5,11 @@ import KitBuilderDataTypes from "../PageObject/KitBuilderDataTypes";
 describe("Adding Results and Filters Element to Timeline List View", function () {
   this.beforeAll(function () {
     const lp = new LoginPage();
-    lp.visitServiceBuild();
+    lp.visitCityComTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible")
     //Enter credentials
-    lp.EnterEmail("kstanley@commonareas.work.dev");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.wait(10000);
@@ -43,13 +43,13 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     });
   });
 
-  it("Navigating to List Views of Created Kit Type", function () {
+  it.only("Navigating to List Views of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    lp.visitKitBuilderServiceBuild();
+    lp.visitCityComTestKitBuilder();
     cy.wait(3000);
     //Enter created kit type name into search box
     // kb.KBSearchBox(this.KitName.KitName);
@@ -98,7 +98,7 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.wait(2000);
 
     cy.contains(this.DataType2.Number).click({ force: true });
-    cy.contains(this.DataType2.Time).click({ force: true });
+    cy.contains(this.DataType2.Time).last().click({ force: true });
     cy.contains(this.DataType2.Date).click({ force: true });
     cy.contains(this.DataType2.Toggle).click({ force: true });
     cy.contains(this.DataType2.SelectList).click({ force: true });
@@ -159,7 +159,7 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.wait(3000);
   });
 
-  it("Adding Filters Element to Timeline List View", function () {
+  it.only("Adding Filters Element to Timeline List View", function () {
     //Page object
     const kb = new KitBuilderPage();
 
@@ -178,26 +178,39 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.wait(1000);
 
     cy.contains(this.DataType2.Url).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Text).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.File).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Telephone).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.TextAera).click({ force: true });
     cy.wait(2000);
 
     cy.contains(this.DataType2.Slider).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Currency).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Measure).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Email).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Address).click({ force: true });
 
     cy.contains(this.DataType2.Address).scrollIntoView({ force: true });
     cy.wait(2000);
 
     cy.contains(this.DataType2.Number).click({ force: true });
-    cy.contains(this.DataType2.Time).click({ force: true });
+    cy.wait(2000)
+    cy.contains(this.DataType2.Time).last().click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Date).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Toggle).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.SelectList).click({ force: true });
+    cy.wait(2000)
 
     cy.contains(this.DataType2.SelectList).scrollIntoView({ force: true });
     cy.wait(2000);
@@ -206,14 +219,20 @@ describe("Adding Results and Filters Element to Timeline List View", function ()
     cy.wait(2000);
 
     cy.contains(this.DataType2.RadioSelect).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.CheckboxSelect).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Stepper).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.UserSelector).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.ContactSelector).click({ force: true });
     cy.wait(2000);
 
     cy.contains(this.DataType2.Icon).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Inspection).click({ force: true });
+    cy.wait(2000)
     cy.contains(this.DataType2.Assigning).click({ force: true });
     cy.wait(2000);
 

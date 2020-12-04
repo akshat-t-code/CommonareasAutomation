@@ -6,11 +6,11 @@ describe("Input Section Data Elements Configuration", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    lp.visitServiceTest();
+    lp.visitCityComTest();
     //Login Assertions
     cy.contains(" Log In ").should("be.visible")
     //Enter credentials
-    lp.EnterEmail("kstanley@commonareas.work.dev");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -62,13 +62,13 @@ describe("Input Section Data Elements Configuration", function () {
     });
   });
 
-  it("Navigating to New Form of Created Kit Type", function () {
+  it.only("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     const lp = new LoginPage();
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    lp.visitKitBuilderServiceTest();
+    lp.visitCityComTestKitBuilder();
     cy.log("User entered in kit builder");
     cy.wait(3000);
     //Open Craeted Kit Type
@@ -88,7 +88,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  it("Url Data Type", function () {
+  it.only("Url Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Url"]').dblclick({ force: true });
     cy.wait(1000);

@@ -437,7 +437,9 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.wait(4000);
     //Icon
     //Click on + icon of ICON Element
-    cy.get(".v-btn__content > img").click({
+    cy.get(
+      " div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.row-component.kit-control-icon.px-3.col.col-sm-12.col-md-6.mb-4.col-sm-12.col-md-6.mb-4:nth-child(23) div.row.wrapper-kit-control.align-center div.fill-height.d-flex.col.col-12 div.kit-control-icon__button_wrap.d-flex.border-right.justify-center.col button.v-btn.v-btn--depressed.v-btn--fab.v-btn--flat.v-btn--outlined.v-btn--round.theme--light.v-size--default.black--text > span.v-btn__content"
+    ).click({
       force: true,
     });
     cy.wait(2000);
