@@ -128,19 +128,19 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.wait(2000);
 
     //Scrolling to one to many
-    cy.get(".ca-item").eq(1).scrollIntoView({ force: true });
+    cy.get(".ca-item").eq(3).scrollIntoView({ force: true });
     cy.wait(3000);
     //Click on created one to many kit item
-    cy.get(
-      ".grid-body:nth-child(1) > td:nth-child(1) > .v-list-item__subtitle"
-    ).click({ force: true });
-
+    cy.get(".px-2:nth-child(1) .inline-svg").click({ force: true });
+    cy.wait(2000);
+    cy.contains(" Edit Item ").click({ force: true });
+    cy.log("Related Edit form has been opened");
     cy.wait(10000);
 
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .eq(1)
-      .clear()
+      .clear({ force: true })
       .type(this.UpdateKitItemData.Url);
     cy.log("Url Updated");
     cy.wait(1000);
@@ -148,7 +148,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Text
     cy.get("[name" + "=" + this.DataType2.Text + "]")
       .eq(1)
-      .clear()
+      .clear({ force: true })
       .type(this.UpdateKitItemData.Text);
     cy.log("Text Updated");
     cy.wait(1000);
@@ -182,7 +182,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Telephone
     cy.get("[name" + "=" + this.DataType2.Telephone + "]")
       .eq(1)
-      .clear()
+      .clear({ force: true })
       .type(this.UpdateKitItemData.Telephone);
     cy.log("Telephone Updated");
     cy.wait(1000);
@@ -190,7 +190,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //TextAera
     cy.get("[name" + "=" + this.DataType2.TextAera + "]")
       .eq(1)
-      .clear()
+      .clear({ force: true })
       .type(this.UpdateKitItemData.TextAera);
     cy.log("TextAera Updated");
     cy.wait(3000);
@@ -229,7 +229,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Email;
     cy.get("[name" + "=" + this.DataType2.Email + "]")
       .eq(1)
-      .clear()
+      .clear({ force: true })
       .type(this.UpdateKitItemData.Email);
     cy.log("Email Updated");
     cy.wait(1000);
@@ -239,13 +239,13 @@ describe("Update Related New fot Square Card Related Control", function () {
       '[placeholder="Street address, bulding, company ... "][name="Address"]'
     )
       .eq(0)
-      .clear()
+      .clear({ force: true })
       .type(this.UpdateKitItemData.Addressline1);
     cy.log("TextAera Updated");
     //Address line
     cy.get('[name="Address line 2."]')
       .eq(0)
-      .clear()
+      .clear({ force: true })
       .type(this.UpdateKitItemData.Addressline2);
     cy.log("Address line1 Updated");
 
@@ -255,7 +255,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //City
     cy.get('[placeholder="City"]')
       .eq(0)
-      .clear()
+      .clear({ force: true })
       .type(this.UpdateKitItemData.City);
     cy.log("City Updated");
     //State
@@ -275,7 +275,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //ZipCode
     cy.get('[placeholder="Zip/Postal Code"]')
       .eq(0)
-      .clear()
+      .clear({ force: true })
       .type(this.UpdateKitItemData.ZipCode);
     cy.log("ZipCode Updated");
     cy.wait(1000);
@@ -283,7 +283,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Number
     cy.get("[name" + "=" + this.DataType2.Number + "]")
       .eq(1)
-      .clear()
+      .clear({ force: true })
       .type(this.UpdateKitItemData.Number);
     cy.log("Number Updated");
     cy.wait(3000);
@@ -437,20 +437,20 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.wait(4000);
     //Icon
     //Click on + icon of ICON Element
-    cy.get(
-      " div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.row-component.kit-control-icon.px-3.col.col-sm-12.col-md-6.mb-4.col-sm-12.col-md-6.mb-4:nth-child(23) div.row.wrapper-kit-control.align-center div.fill-height.d-flex.col.col-12 div.kit-control-icon__button_wrap.d-flex.border-right.justify-center.col button.v-btn.v-btn--depressed.v-btn--fab.v-btn--flat.v-btn--outlined.v-btn--round.theme--light.v-size--default.black--text > span.v-btn__content"
-    ).click({
-      force: true,
-    });
-    cy.wait(2000);
-    //Click on Icon Tittle and  select Icon logo
-    //Give numeric no from 1 in child(1,2,3...)
-    cy.get(".thumb-container:nth-child(5) .selected-icon").click({
-      force: true,
-    });
-    cy.wait(2000);
-    //Icon Save
-    cy.get(".button-pop-ups").first().click({ force: true });
+    // cy.get(
+    //   " div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.row-component.kit-control-icon.px-3.col.col-sm-12.col-md-6.mb-4.col-sm-12.col-md-6.mb-4:nth-child(23) div.row.wrapper-kit-control.align-center div.fill-height.d-flex.col.col-12 div.kit-control-icon__button_wrap.d-flex.border-right.justify-center.col button.v-btn.v-btn--depressed.v-btn--fab.v-btn--flat.v-btn--outlined.v-btn--round.theme--light.v-size--default.black--text > span.v-btn__content"
+    // ).click({
+    //   force: true,
+    // });
+    // cy.wait(2000);
+    // //Click on Icon Tittle and  select Icon logo
+    // //Give numeric no from 1 in child(1,2,3...)
+    // cy.get(".thumb-container:nth-child(5) .selected-icon").click({
+    //   force: true,
+    // });
+    // cy.wait(2000);
+    // //Icon Save
+    // cy.get(".button-pop-ups").first().click({ force: true });
     cy.wait(2000);
 
     //IcozSize
@@ -508,6 +508,29 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Assigning creation assertion
     cy.contains("Item shared").should("be.visible");
     cy.log("Assigning added");
+    cy.wait(5000);
+
+    //save related new
+    cy.get(".v-select__selections .v-btn__content")
+      .first()
+      .click({ force: true });
+    //Related kit item Save Assertion
+    cy.contains(this.DataType2.KitToBeRelated + " has been saved").should(
+      "be.visible"
+    );
+    cy.log(
+      this.DataType2.KitToBeRelated +
+        " related new has been Saved with updation"
+    );
+
+    //close the Kit Item
+    cy.wait(5000);
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper path").first().click({
+      force: true,
+    });
+    cy.contains(this.NewKitItemData.KitName).should("be.visible");
+    cy.log("After updation Related New has been Close");
     cy.wait(5000);
   });
 });

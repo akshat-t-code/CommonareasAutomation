@@ -70,8 +70,8 @@
     "InspectionValue4":"Python",
     "InspectionValue5":".net",
 
-    "OneToOneRelation":"OneTJOneRel",
-    "KitToBeRelate":"AkshatChildKit",
+    "OneToOneRelation":"BaseOneToOne",
+    "KitToBeRelate":"SanityTesting",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
     "OneToOneMapView":"MapView",
@@ -79,8 +79,8 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"ManyTJParentRel",
-    "KitToBeRelated":"AkshatChildKit",
+    "OneToManyRelation":"BaseNRelation",
+    "KitToBeRelated":"SanityTesting",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
@@ -93,8 +93,8 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"CardTJParentRel",
-    "CardKitToBeRelated":"AkshatChildKit",
+    "SquareCardName":"BaseSquareCard",
+    "CardKitToBeRelated":"SanityTesting",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",

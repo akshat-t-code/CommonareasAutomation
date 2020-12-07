@@ -62,7 +62,7 @@ describe("Input Section Data Elements Configuration", function () {
     });
   });
 
-  it.only("Navigating to New Form of Created Kit Type", function () {
+  it("Navigating to New Form of Created Kit Type", function () {
     const kb = new KitBuilderPage();
     const lp = new LoginPage();
     cy.wait(5000);
@@ -88,7 +88,7 @@ describe("Input Section Data Elements Configuration", function () {
     cy.wait(2000);
   });
 
-  it.only("Url Data Type", function () {
+  it("Url Data Type", function () {
     //Double click on Data Element to drag it on Canvas
     cy.get('[title="Url"]').dblclick({ force: true });
     cy.wait(1000);
@@ -209,6 +209,36 @@ describe("Input Section Data Elements Configuration", function () {
     DataType.Number(this.DataType2.Number);
     cy.wait(5000);
   });
+
+  it("Time Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Time"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Time(this.DataType2.Time);
+    cy.wait(5000);
+  });
+
+  it("Date Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Add Date"]').dblclick({ force: true });
+    cy.wait(1000);
+    //Page Object
+    const DataType = new KitBuilderDataTypes();
+    DataType.Date(this.DataType2.Date);
+    cy.wait(5000);
+  });
+
+  it("Reminder Data Type", function () {
+    //Double click on Data Element to drag it on Canvas
+    cy.get('[title="Reminder"]').dblclick({ force: true });
+    cy.wait(1000);
+    const DataType = new KitBuilderDataTypes();
+    DataType.Reminder(this.DataType2.ReminderName);
+  });
+
+  
 
   it("Kit Builder Save and Publish", function () {
     //Kit Builder Save
