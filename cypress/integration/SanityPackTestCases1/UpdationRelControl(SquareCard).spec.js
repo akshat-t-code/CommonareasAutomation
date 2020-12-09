@@ -124,10 +124,10 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.wait(5000);
   });
 
-  it.only("Updation in Square Card Related New", function () {
+  it("Updation in Square Card Related New", function () {
     cy.wait(2000);
 
-    //Scrolling to one to many
+    //Scrolling to square card
     cy.get(".ca-item").eq(3).scrollIntoView({ force: true });
     cy.wait(3000);
     //Click on created one to many kit item
@@ -532,5 +532,40 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.contains(this.NewKitItemData.KitName).should("be.visible");
     cy.log("After updation Related New has been Close");
     cy.wait(5000);
+  });
+
+  it.only("Validate Updated Elements for Square Card", function () {
+    cy.wait(3000);
+    //Click on created one to many kit item
+    cy.get(".px-2:nth-child(1) .inline-svg").scrollIntoView({ force: true });
+    cy.wait(5000);
+    //Square card element assetions before kit item saved(new form)
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.UpdateKitItemData.Url
+    ).should("be.visible");
+    cy.log("Url data exist");
+    cy.wait(1000);
+
+    cy.contains(
+      this.DataType2.Text + ":" + " " + this.UpdateKitItemData.Text
+    ).should("be.visible");
+    cy.log("Text data exist");
+    cy.wait(1000);
+
+    cy.contains(
+      this.DataType2.TextAera + ":" + " " + this.UpdateKitItemData.TextAera
+    ).should("be.visible");
+    cy.wait(1000);
+    cy.log("TextAera data exist");
+
+    cy.log("Square card Updated elemets exists");
+    cy.wait(4000);
+
+    //Click to save kit item
+    cy.get(".navi-bar-dropdown:nth-child(2) .v-btn").click({ force: true });
+    // kit item Save Assertion
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
   });
 });

@@ -533,4 +533,28 @@ describe("Update Related New for OneToMany Related Control", function () {
     cy.log("After updation Related New has been Close");
     cy.wait(5000);
   });
+
+  it.only("Validate Updated elements for OneToMany control", function () {
+    cy.wait(3000);
+
+    //Scrolling to one to many
+    cy.get(".ca-item").eq(1).scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Related element existance asseritons
+    cy.contains(this.UpdateKitItemData.Url).should("exist");
+    cy.contains(this.UpdateKitItemData.Text).should("exist");
+    cy.contains(this.UpdateKitItemData.Telephone).should("exist");
+    cy.wait(1000);
+    cy.contains(this.UpdateKitItemData.TextAera).should("exist");
+    cy.contains(this.UpdateKitItemData.Email).should("exist");
+    cy.log("OneToMany Updated  elements has been exist");
+    cy.wait(4000);
+    //Click to save kit item
+    cy.get(".navi-bar-dropdown:nth-child(2) .v-btn").click({ force: true });
+    // kit item Save Assertion
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
+  });
 });

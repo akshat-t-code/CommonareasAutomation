@@ -1,45 +1,45 @@
 {
 
-    "KitName":"SamTest",
     
-    "Url":"https://www.sanity.com",
-    "Text":"sanity",
+    
+    "Url":"https://www.section.com",
+    "Text":"section control",
     "Telephone":"(982) 999-2495",
-    "TextAera":"sanity automation",
-    "Currency":"90",
-    "Measure":"83",
+    "TextAera":"All elements inside Section",
+    "Currency":"32",
+    "Measure":"22",
 
-    "Email":"newitem@yahoo.com",
+    "Email":"section@yahoo.com",
     "Important Note for Email":"should be in small letters",
 
     "Addressline1":"Romrog Way",
     "Addressline2":"Oak Way",
     "City":"Grand Island",
-    "State":"Alaska",
-    "ZipCode":"2133",
+    "State":"Arizona",
+    "ZipCode":"1234",
     "Country":"United States",
-    "Number":"09",
+    "Number":"10",
 
     "SelectListValue":"VVIP",
     
 
-    "RadioSelectValue":"SR2",
+    "RadioSelectValue":"SR10",
 
-    "CheckboxSelectValue1":"CheckboxSelect1",
-    "CheckboxSelectValue2":"CheckboxSelect2",
-    "CheckboxSelectValue3":"CheckboxSelect3",
-    "CheckboxSelectValue4":"CheckboxSelect4",
-    "CheckboxSelectValue5":"CheckboxSelect5",
+    "CheckboxSelectValue1":"Checkbox11",
+    "CheckboxSelectValue2":"Checkbox22",
+    "CheckboxSelectValue3":"Checkbox33",
+    "CheckboxSelectValue4":"Checkbox44",
+    "CheckboxSelectValue5":"Checkbox55",
 
-    "StepperValue1":"Moto",
-    "StepperValue2":"Jio",
-    "StepperValue3":"RealMe",
-    "StepperValue4":"Oppo",
-    "StepperValue5":"Mart",
+    "StepperValue1":"Mumbai",
+    "StepperValue2":"Agra",
+    "StepperValue3":"Delhi",
+    "StepperValue4":"Ghaziabad",
+    "StepperValue5":"Manali",
 
-    "UserSelectorName":"ravi Negi",
-    "ContactSelectorName":"Sama Ss",
-    "AssigningName":"ravi Negi",
+    "UserSelectorName":"Reporting User",
+    "ContactSelectorName":"Akshat Akshat",
+    "AssigningName":"Akshat Akshat",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",
@@ -47,7 +47,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"sanity",
+    "IconLabel":"section",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",

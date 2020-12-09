@@ -554,5 +554,11 @@ describe("Update Related New fot OneToOne Related Control", function () {
 
     cy.log("Related New(onetoone) kit item has been updated");
     cy.wait(2000);
+    //Click to save kit item
+    cy.get(".navi-bar-dropdown:nth-child(2) .v-btn").click({ force: true });
+    // kit item Save Assertion
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
   });
 });

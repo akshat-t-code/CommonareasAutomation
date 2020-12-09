@@ -654,6 +654,36 @@ describe("Related Control Square Card test case", function () {
     cy.wait(3000);
   });
 
+  it.only("Deletion Link Item", function () {
+    cy.wait(3000);
+
+    cy.get(".btn-load .inline-svg").eq(1).scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Click on three dots on linked square card
+    //Click on created one to many kit item
+    cy.get(".px-2:nth-child(2) .inline-svg").click({ force: true });
+    cy.wait(2000);
+    //Assertion
+    cy.contains(" Edit Item ").should("be.visible");
+    cy.contains(" Delete Item ").should("be.visible");
+    cy.wait(2000);
+    cy.contains(" Delete Item ").click({ force: true });
+    cy.wait(2000);
+    //cy.get('.v-list-item:nth-child(2) > .v-list-item__title').click();
+    cy.contains(" Are you sure you want to discard?").should("be.visible");
+    cy.wait(2000);
+    cy.contains(" Discard ").click({ force: true });
+    cy.contains(
+      "Relation on " +
+        this.DataType2.SquareCardName +
+        " for " +
+        this.NewKitItemData.KitName +
+        " Deleted"
+    ).should("be.visible");
+    cy.wait(2000);
+  });
+
   it.only("Validate Link Item elements for square card", function () {
     cy.wait(3000);
 
