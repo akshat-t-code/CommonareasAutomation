@@ -80,7 +80,7 @@
 
 
     "OneToManyRelation":"BaseNRelation",
-    "KitToBeRelated":"RelatedKit",
+    "KitToBeRelated":"SanityTesting",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
@@ -94,7 +94,7 @@
 
      
     "SquareCardName":"BaseSquareCard",
-    "CardKitToBeRelated":"RelatedKit",
+    "CardKitToBeRelated":"SanityTesting",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",

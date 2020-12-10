@@ -343,7 +343,7 @@ describe("New kit item complete creation test case", function () {
     //Icon
     //Click on + icon of ICON Element
     cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
-      .first()
+      .eq(0)
       .click({
         force: true,
       });
@@ -355,7 +355,7 @@ describe("New kit item complete creation test case", function () {
     });
     cy.wait(2000);
     //Icon Save
-    cy.get(".button-pop-ups").click({ force: true });
+    cy.get(".button-pop-ups").first().click({ force: true });
     cy.wait(2000);
 
     //IcozSize
@@ -606,13 +606,16 @@ describe("New kit item complete creation test case", function () {
     cy.contains(this.SectionEleData.StepperValue4).click({ force: true });
     cy.log("Stepper Value has been set.");
 
-    cy.get("div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.px-3.col.col-12:nth-child(35) div.kit-control-section.mb-3.v-item-group.theme--light.v-expansion-panels div.v-expansion-panel.v-expansion-panel--active.v-item--active div.v-expansion-panel-content div.v-expansion-panel-content__wrap div.v-card.v-sheet.theme--light div.v-card__text div.row div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(21) span.searchRel > i.searchIcon").scrollIntoView({ force: true });
+    cy.get(
+      "div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.px-3.col.col-12:nth-child(35) div.kit-control-section.mb-3.v-item-group.theme--light.v-expansion-panels div.v-expansion-panel.v-expansion-panel--active.v-item--active div.v-expansion-panel-content div.v-expansion-panel-content__wrap div.v-card.v-sheet.theme--light div.v-card__text div.row div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(21) span.searchRel > i.searchIcon"
+    ).scrollIntoView({ force: true });
 
     cy.wait(2000);
     //UserSelector(Values coming form KitItemValues Json File)
     //Click on to open UserSelector Pop up
-    cy.get("div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.px-3.col.col-12:nth-child(35) div.kit-control-section.mb-3.v-item-group.theme--light.v-expansion-panels div.v-expansion-panel.v-expansion-panel--active.v-item--active div.v-expansion-panel-content div.v-expansion-panel-content__wrap div.v-card.v-sheet.theme--light div.v-card__text div.row div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(21) span.searchRel > i.searchIcon")
-    .click({ force: true });
+    cy.get(
+      "div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.px-3.col.col-12:nth-child(35) div.kit-control-section.mb-3.v-item-group.theme--light.v-expansion-panels div.v-expansion-panel.v-expansion-panel--active.v-item--active div.v-expansion-panel-content div.v-expansion-panel-content__wrap div.v-card.v-sheet.theme--light div.v-card__text div.row div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(21) span.searchRel > i.searchIcon"
+    ).click({ force: true });
     cy.wait(3000);
 
     cy.contains(this.SectionEleData.UserSelectorName).click({ force: true });
@@ -645,7 +648,7 @@ describe("New kit item complete creation test case", function () {
     });
     cy.wait(2000);
     //Icon Save
-    cy.get(".button-pop-ups").click({ force: true });
+    cy.get(".button-pop-ups").first().click({ force: true });
     cy.wait(2000);
 
     //IcozSize
