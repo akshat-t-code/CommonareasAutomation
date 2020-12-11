@@ -1,12 +1,12 @@
 {
 
-    
-    "KitName":"BaseTesting",
-    
-    "Url":"https://www.sanity.com",
-    "Text":"sanity",
+    "Change Kit Name":"For Prod , to be automated in Test NewKItItemDataValues.json",
+    "Also Change":"Related Kit Name VerificationTestCasesData-KitBuilderDataTypes2.json",
+    "KitName":"SamTest",
+    "Url":"https://www.prod.com",
+    "Text":"Production",
     "Telephone":"(982) 999-2495",
-    "TextAera":"sanity automation",
+    "TextAera":"Production Testing",
     "Currency":"90",
     "Measure":"83",
 
@@ -38,9 +38,9 @@
     "StepperValue4":"Oppo",
     "StepperValue5":"Mart",
 
-    "UserSelectorName":"City Com2",
-    "ContactSelectorName":"Pranav Test",
-    "AssigningName":"Carmen Goodin",
+    "UserSelectorName":"Hobbs Shaw",
+    "ContactSelectorName":"Ranveer K",
+    "AssigningName":"Sam3 White",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",
@@ -48,7 +48,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"sanity",
+    "IconLabel":"Prod",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",

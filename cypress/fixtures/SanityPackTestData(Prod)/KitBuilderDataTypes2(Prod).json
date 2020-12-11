@@ -70,8 +70,8 @@
     "InspectionValue4":"Python",
     "InspectionValue5":".net",
 
-    "OneToOneRelation":"SectionOneToOne",
-    "KitToBeRelate":"SanityTesting",
+    "OneToOneRelation":"BaseOneToOne",
+    "KitToBeRelate":"RelatedKit",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
     "OneToOneMapView":"MapView",
@@ -79,8 +79,8 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"SectionOneToNRel",
-    "KitToBeRelated":"SanityTesting",
+    "OneToManyRelation":"BaseNRelation",
+    "KitToBeRelated":"RelatedKit",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
@@ -93,8 +93,8 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"SectionSquareCard",
-    "CardKitToBeRelated":"SanityTesting",
+    "SquareCardName":"BaseSquareCard",
+    "CardKitToBeRelated":"SectionControl",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",

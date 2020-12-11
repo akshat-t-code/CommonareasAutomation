@@ -29,8 +29,8 @@ describe("Login into the application for a new User ", function () {
     //PageObject
     const sp = new SignUpPage();
     const lp = new LoginPage();
-    sp.visitBaseTest();
-    //cy.visit('https://commonareas.io/Public/Login')
+    //sp.visitBaseTest();
+    cy.visit('https://app.ca-test.com/Public/Login?ReturnUrl=%2F')
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials

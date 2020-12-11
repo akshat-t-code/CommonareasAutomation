@@ -1,45 +1,53 @@
 {
 
-    
-    "SectionKitName":"AkshatChildKit",
-    "Url":"https://www.section.com",
-    "Text":"section control",
-    "Telephone":"(982) 999-2495",
-    "TextAera":"All elements inside Section",
-    "Currency":"32",
-    "Measure":"22",
+    "KitName":"Validation",
+     
+    "Url Note":"all in small letters",
 
-    "Email":"section@yahoo.com",
+    "Url":"https://www.produpdated.com",
+    "Text":"Prod updated",
+    "UpdateFileName":"Fixtures",
+    "Telephone":"(897) 765-2905",
+    "TextAera":"Production data updated",
+    "Currency":"9",
+    "Measure":"8",
+
+    "Email":"updated@yahoo.com",
     "Important Note for Email":"should be in small letters",
 
-    "Addressline1":"Romrog Way",
-    "Addressline2":"Oak Way",
-    "City":"Grand Island",
+    "Addressline1":"Romrog Updated",
+    "Addressline2":"Oak Way New",
+    "City":"Grand Island New",
     "State":"Arizona",
-    "ZipCode":"1234",
+    "ZipCode":"09002",
     "Country":"United States",
-    "Number":"10",
+    "Number":"40",
 
-    "SelectListValue":"VVIP",
+    "SelectListValue":"MNV",
     
 
-    "RadioSelectValue":"SR10",
+    "RadioSelectValue":"SR4",
 
-    "CheckboxSelectValue1":"Checkbox11",
-    "CheckboxSelectValue2":"Checkbox22",
-    "CheckboxSelectValue3":"Checkbox33",
-    "CheckboxSelectValue4":"Checkbox44",
-    "CheckboxSelectValue5":"Checkbox55",
+    "CheckboxSelectValue1":"CheckboxSelect1",
+    "CheckboxSelectValue2":"CheckboxSelect2",
+    "CheckboxSelectValue3":"CheckboxSelect3",
+    "CheckboxSelectValue4":"CheckboxSelect4",
+    "CheckboxSelectValue5":"CheckboxSelect5",
 
-    "StepperValue1":"Mumbai",
-    "StepperValue2":"Agra",
-    "StepperValue3":"Delhi",
-    "StepperValue4":"Ghaziabad",
-    "StepperValue5":"Manali",
+    "StepperValue1":"Moto",
+    "StepperValue2":"Jio",
+    "StepperValue3":"RealMe",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"Mart",
 
-    "UserSelectorName":"Reporting User",
-    "ContactSelectorName":"Akshat Akshat",
-    "AssigningName":"Akshat Akshat",
+    "UserSelectorName":"ravi Negi",
+    "ContactSelectorName":"etelligens dev",
+    "AssigningName":"Hobbs Shaw",
+    "RelAssigningName":"Kvhyu Tjrqk",
+
+    "DUpUserSelector":"ravi Negi",
+    "DUpContactSelector":"etelligens dev",
+    "DUpAssigning":"Hobbs Shaw",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",
@@ -47,7 +55,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"section",
+    "IconLabel":"update",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",

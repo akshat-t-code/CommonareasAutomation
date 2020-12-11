@@ -5,12 +5,13 @@ describe("Create New Kit type ", function () {
   this.beforeAll(function () {
     //Page Object
     const lp = new LoginPage();
-    //lp.visitCityComTest();
-    cy.visit('https://tm.commonareas.io/Public/Login?ReturnUrl=%2F')
+    lp.visitCityComTest();
+    //cy.visit('https://tm.commonareas.io/Public/Login?ReturnUrl=%2F')
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("sam@armyspy.com");
+    lp.EnterEmail("citycom@commonareas.work.dev");
+    //lp.EnterEmail("sam@armyspy.com");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -56,8 +57,8 @@ describe("Create New Kit type ", function () {
     cy.wait(5000);
     cy.title().should("eq", "Common Areas");
     cy.wait(5000);
-    //lp.visitCityComTestKitBuilder();
-    cy.visit('https://tm.commonareas.io/ClientAdmin/KitBuilder#/')
+    lp.visitCityComTestKitBuilder();
+    //cy.visit('https://tm.commonareas.io/ClientAdmin/KitBuilder#/')
     cy.log("User in Kit Builder");
     kb.ClickOnCreateNewKit();
     //Create Kit type Pop Up Window Assertion
