@@ -6,7 +6,8 @@ describe("Update Related New fot Square Card Related Control", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitCityComTest();
+    //slp.visitCityComTest();
+    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -16,7 +17,8 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("citycom@commonareas.work.dev");
+    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -45,6 +47,44 @@ describe("Update Related New fot Square Card Related Control", function () {
       "jwtAccessToken"
     );
 
+    // cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
+    //   SanityTCData
+    // ) {
+    //   this.RelatedKitItemData3 = SanityTCData;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
+      function (SanityTCData) {
+        this.RelatedKitItemData3 = SanityTCData;
+      }
+    );
+
+    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+    //   NewDataForElements
+    // ) {
+    //   this.DataType2 = NewDataForElements;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+      function (NewDataForElements) {
+        this.DataType2 = NewDataForElements;
+      }
+    );
+
+    // cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
+    //   UpDateKitItemSDTCData
+    // ) {
+    //   this.UpdateKitItemData = UpDateKitItemSDTCData;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/UpdateKItItemData(Prod)").then(
+      function (UpDateKitItemSDTCData) {
+        this.UpdateKitItemData = UpDateKitItemSDTCData;
+      }
+    );
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
       KittypeName
     ) {
@@ -57,34 +97,10 @@ describe("Update Related New fot Square Card Related Control", function () {
       this.NewKitItemData = KitDataEle;
     });
 
-    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-      NewDataForElements
-    ) {
-      this.DataType2 = NewDataForElements;
-    });
-
     cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
       KitTypeFormViewsNames
     ) {
       this.ViewName = KitTypeFormViewsNames;
-    });
-
-    cy.fixture("SanityPackTestData/NewKitItemTabsData").then(function (
-      SanityTCData
-    ) {
-      this.SData = SanityTCData;
-    });
-
-    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
-      SanityTCData
-    ) {
-      this.RelatedKitItemData3 = SanityTCData;
-    });
-
-    cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
-      UpDateKitItemSDTCData
-    ) {
-      this.UpdateKitItemData = UpDateKitItemSDTCData;
     });
   });
 
@@ -124,13 +140,13 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.wait(5000);
   });
 
-  it("Updation in Square Card Related New", function () {
+  it.only("Updation in Square Card Related New", function () {
     cy.wait(2000);
 
     //Scrolling to square card
-    cy.get(".ca-item").eq(3).scrollIntoView({ force: true });
+    cy.get(".px-2:nth-child(1) .inline-svg").scrollIntoView({ force: true });
     cy.wait(3000);
-    //Click on created one to many kit item
+    //Click on square card kit item
     cy.get(".px-2:nth-child(1) .inline-svg").click({ force: true });
     cy.wait(2000);
     cy.contains(" Edit Item ").click({ force: true });
@@ -515,11 +531,11 @@ describe("Update Related New fot Square Card Related Control", function () {
       .first()
       .click({ force: true });
     //Related kit item Save Assertion
-    cy.contains(this.DataType2.KitToBeRelated + " has been saved").should(
+    cy.contains(this.DataType2.CardKitToBeRelated + " has been saved").should(
       "be.visible"
     );
     cy.log(
-      this.DataType2.KitToBeRelated +
+      this.DataType2.CardKitToBeRelated +
         " related new has been Saved with updation"
     );
 

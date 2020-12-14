@@ -6,7 +6,8 @@ describe("Update Related New fot OneToOne Related Control", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitCityComTest();
+    //slp.visitCityComTest();
+    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -16,7 +17,8 @@ describe("Update Related New fot OneToOne Related Control", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("citycom@commonareas.work.dev");
+    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -45,6 +47,44 @@ describe("Update Related New fot OneToOne Related Control", function () {
       "jwtAccessToken"
     );
 
+    // cy.fixture("SanityPackTestData/RelatedOneToOneData").then(function (
+    //   SanityTCData
+    // ) {
+    //   this.RelatedKitItemData2 = SanityTCData;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/RelatedOneToOneData(Prod)").then(
+      function (SanityTCData) {
+        this.RelatedKitItemData2 = SanityTCData;
+      }
+    );
+
+    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+    //   NewDataForElements
+    // ) {
+    //   this.DataType2 = NewDataForElements;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+      function (NewDataForElements) {
+        this.DataType2 = NewDataForElements;
+      }
+    );
+
+    // cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
+    //   UpDateKitItemSDTCData
+    // ) {
+    //   this.UpdateKitItemData = UpDateKitItemSDTCData;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/UpdateKItItemData(Prod)").then(
+      function (UpDateKitItemSDTCData) {
+        this.UpdateKitItemData = UpDateKitItemSDTCData;
+      }
+    );
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
       KittypeName
     ) {
@@ -57,34 +97,10 @@ describe("Update Related New fot OneToOne Related Control", function () {
       this.NewKitItemData = KitDataEle;
     });
 
-    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-      NewDataForElements
-    ) {
-      this.DataType2 = NewDataForElements;
-    });
-
     cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
       KitTypeFormViewsNames
     ) {
       this.ViewName = KitTypeFormViewsNames;
-    });
-
-    cy.fixture("SanityPackTestData/NewKitItemTabsData").then(function (
-      SanityTCData
-    ) {
-      this.SData = SanityTCData;
-    });
-
-    cy.fixture("SanityPackTestData/RelatedOneToOneData").then(function (
-      SanityTCData
-    ) {
-      this.RelatedKitItemData2 = SanityTCData;
-    });
-
-    cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
-      UpDateKitItemSDTCData
-    ) {
-      this.UpdateKitItemData = UpDateKitItemSDTCData;
     });
   });
 
@@ -550,7 +566,7 @@ describe("Update Related New fot OneToOne Related Control", function () {
     //Update kit item assertion
     cy.contains(
       this.DataType2.Url + ":" + " " + this.UpdateKitItemData.Url
-    ).should("be.visible");
+    ).should("exist");
 
     cy.log("Related New(onetoone) kit item has been updated");
     cy.wait(2000);

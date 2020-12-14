@@ -7,7 +7,8 @@ describe("Related Control Square Card test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitCityComTest();
+    //slp.visitCityComTest();
+    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -17,7 +18,8 @@ describe("Related Control Square Card test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("citycom@commonareas.work.dev");
+    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -46,6 +48,32 @@ describe("Related Control Square Card test case", function () {
       "jwtAccessToken"
     );
 
+    // cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
+    //   SanityTCData
+    // ) {
+    //   this.RelatedKitItemData = SanityTCData;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
+      function (SanityTCData) {
+        this.RelatedKitItemData = SanityTCData;
+      }
+    );
+
+    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+    //   NewDataForElements
+    // ) {
+    //   this.DataType2 = NewDataForElements;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+      function (NewDataForElements) {
+        this.DataType2 = NewDataForElements;
+      }
+    );
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
       KittypeName
     ) {
@@ -58,28 +86,10 @@ describe("Related Control Square Card test case", function () {
       this.NewKitItemData = KitDataEle;
     });
 
-    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-      NewDataForElements
-    ) {
-      this.DataType2 = NewDataForElements;
-    });
-
     cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
       KitTypeFormViewsNames
     ) {
       this.ViewName = KitTypeFormViewsNames;
-    });
-
-    cy.fixture("SanityPackTestData/NewKitItemTabsData").then(function (
-      SanityTCData
-    ) {
-      this.SData = SanityTCData;
-    });
-
-    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
-      SanityTCData
-    ) {
-      this.RelatedKitItemData = SanityTCData;
     });
   });
 
@@ -102,7 +112,7 @@ describe("Related Control Square Card test case", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only("Square Card Related Control to configure Related New form", function () {
+  it("Square Card Related Control to configure Related New form", function () {
     cy.wait(1000);
     //save Kit Item for empty form
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
@@ -138,7 +148,7 @@ describe("Related Control Square Card test case", function () {
     //New Item Assertion
     cy.contains("New Item created").should("be.visible");
     //Related Kit Assertion
-    cy.contains(this.DataType2.KitToBeRelated).should("be.visible");
+    cy.contains(this.DataType2.CardKitToBeRelated).should("be.visible");
     cy.wait(4000);
 
     //save related new with no data
@@ -146,9 +156,9 @@ describe("Related Control Square Card test case", function () {
       .first()
       .click({ force: true });
     //kit item Save Assertion for no data
-    cy.contains("Nothing to save for " + this.DataType2.KitToBeRelated).should(
-      "be.visible"
-    );
+    cy.contains(
+      "Nothing to save for " + this.DataType2.CardKitToBeRelated
+    ).should("be.visible");
     cy.wait(3000);
     cy.log("With No data Related New kit item saved successfully ");
     cy.wait(2000);
@@ -456,10 +466,10 @@ describe("Related Control Square Card test case", function () {
       .first()
       .click({ force: true });
     //Related kit item Save Assertion
-    cy.contains(this.DataType2.KitToBeRelated + " has been saved").should(
+    cy.contains(this.DataType2.CardKitToBeRelated + " has been saved").should(
       "be.visible"
     );
-    cy.log(this.DataType2.KitToBeRelated + " related new has been Saved");
+    cy.log(this.DataType2.CardKitToBeRelated + " related new has been Saved");
 
     //Related kit item created assertion
     cy.contains(
@@ -481,7 +491,7 @@ describe("Related Control Square Card test case", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate Square Card element on new form", function () {
+  it("Validate Square Card element on new form", function () {
     cy.get(".btn-load .inline-svg").eq(1).scrollIntoView({ force: true });
     cy.wait(5000);
     //Square card element assetions before kit item saved(new form)
@@ -563,7 +573,7 @@ describe("Related Control Square Card test case", function () {
     cy.log("There is nothing to save for Kit Item");
   });
 
-  it.only("Deletion square card elements for new form", function () {
+  it("Deletion square card elements for new form", function () {
     //Click on 3dots of square card
     cy.get(".pr-0").click({ force: true });
     cy.wait(1000);
@@ -587,7 +597,7 @@ describe("Related Control Square Card test case", function () {
     cy.wait(2000);
   });
 
-  it.only("Deletion Validation of added Square Card elements", function () {
+  it("Deletion Validation of added Square Card elements", function () {
     cy.wait(2000);
     //No added value assertion
     cy.get(".msg-no-results")
@@ -621,7 +631,7 @@ describe("Related Control Square Card test case", function () {
       .first()
       .click({ force: true });
     //kit item Save Assertion after delete elemets
-    cy.log(this.DataType2.KitToBeRelated + " related new has been Saved");
+    cy.log(this.DataType2.CardKitToBeRelated + " related new has been Saved");
     cy.log("Save Kit Item after delete relation elements");
     cy.wait(4000);
   });
@@ -717,55 +727,12 @@ describe("Related Control Square Card test case", function () {
       .first()
       .click({ force: true });
     // kit item Save Assertion
-    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
-      "be.visible"
-    );
-    cy.log("Kit Item has been saved");
-
-    cy.wait(4000);
-
-    cy.contains(
-      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
-    ).scrollIntoView({ force: true });
-    cy.wait(4000);
-
-    //Refresh Sqcard item
-    cy.get(".btn-load .inline-svg").eq(1).click({ force: true });
-    cy.log("Refresh again after save kit item");
-    cy.wait(4000);
-
-    //Square card element assetions before kit item saved(new form)
-    cy.contains(
-      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
-    ).should("exist");
-    cy.log("Url data exist");
-    cy.wait(1000);
-
-    cy.contains(
-      this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
-    ).should("exist");
-    cy.log("Text data exist");
-    cy.wait(1000);
-
-    cy.contains(
-      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
-    ).should("exist");
-    cy.wait(1000);
-    cy.log("TextAera data exist");
-
-    cy.log(
-      "Square card linked item elemets exists after kit item(new form) saved"
-    );
-    cy.wait(3000);
-
-    //Again save Kit item(new form)
-    cy.get(".v-select__selections .v-btn__content")
-      .first()
-      .click({ force: true });
     // kit item Save Assertion
     cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
       "be.visible"
     );
     cy.log("There is nothing to save for Kit Item");
+
+    cy.wait(4000);
   });
 });

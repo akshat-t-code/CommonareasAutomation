@@ -7,8 +7,8 @@ describe("New kit item complete creation test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitCityComTest();
-    //cy.visit("https://commonareas.io/Public/Login");
+    //slp.visitCityComTest();
+    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -18,7 +18,8 @@ describe("New kit item complete creation test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("citycom@commonareas.work.dev");
+    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -53,16 +54,10 @@ describe("New kit item complete creation test case", function () {
       this.KitTypeName = KittypeName;
     });
 
-    cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
-      KitDataEle
+    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
+      KitTypeFormViewsNames
     ) {
-      this.NewKitItemData = KitDataEle;
-    });
-
-    cy.fixture("KitTypeTestData/SectionEleDataValues").then(function (
-      SectionDataEle
-    ) {
-      this.SectionEleData = SectionDataEle;
+      this.ViewName = KitTypeFormViewsNames;
     });
 
     cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
@@ -71,16 +66,10 @@ describe("New kit item complete creation test case", function () {
       this.DataType2 = NewDataForElements;
     });
 
-    cy.fixture("VerificationTestCasesData/SectionKitBuilderDataTypes2").then(
-      function (SectionDataForElements) {
-        this.SectionDataType = SectionDataForElements;
-      }
-    );
-
-    cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
-      KitTypeFormViewsNames
-    ) {
-      this.ViewName = KitTypeFormViewsNames;
+    cy.fixture(
+      "SanityPackTestData(Prod)/SectionKitBuilderDataTypes2(Prod)"
+    ).then(function (SectionDataForElements) {
+      this.SectionDataType = SectionDataForElements;
     });
 
     cy.fixture("SanityPackTestData/NewKitItemTabsData").then(function (
@@ -88,6 +77,30 @@ describe("New kit item complete creation test case", function () {
     ) {
       this.SData = SanityTCData;
     });
+
+    // cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
+    //   KitDataEle
+    // ) {
+    //   this.NewKitItemData = KitDataEle;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/NewKitItemDataValue(Prod)").then(
+      function (KitDataEle) {
+        this.NewKitItemData = KitDataEle;
+      }
+    );
+
+    // cy.fixture("KitTypeTestData/SectionEleDataValues").then(function (
+    //   SectionDataEle
+    // ) {
+    //   this.SectionEleData = SectionDataEle;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/SectionEleDataValues(Prod)").then(
+      function (SectionDataEle) {
+        this.SectionEleData = SectionDataEle;
+      }
+    );
   });
 
   it.only("Navigating to created Kit type ", function () {
@@ -546,7 +559,7 @@ describe("New kit item complete creation test case", function () {
     cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
     cy.wait(1000);
     //Click on PM
-    cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
+    cy.xpath("//div[contains(text(),'PM')]").first().click({ force: true });
     //Click on OK to save date
     cy.xpath(
       "//div[contains(@class,'v-dialog v-dialog--active')]//button[1]"
@@ -654,8 +667,9 @@ describe("New kit item complete creation test case", function () {
 
     //ContactSelector(Values coming form KitItemValues Json File)
     //Click on to open ContactSelector Pop up
-    cy.get(".searchIcon").eq(1).click({ force: true });
-
+    cy.get(
+      " div.tab--content.col div.v-window.tab-content-wrapper.v-item-group.theme--light.v-tabs-items div.v-window__container div.v-window-item.v-window-item--active:nth-child(1) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.px-3.col.col-12:nth-child(27) div.kit-control-section.mb-3.v-item-group.theme--light.v-expansion-panels div.v-expansion-panel.v-expansion-panel--active.v-item--active div.v-expansion-panel-content div.v-expansion-panel-content__wrap div.v-card.v-sheet.theme--light div.v-card__text div.row div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(23) span.searchRel div.v-input.searchSelectNone.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    ).click({ force: true });
     cy.wait(4000);
     cy.contains(this.SectionEleData.ContactSelectorName).click({ force: true });
     cy.log("ContactSelecto added");
@@ -663,7 +677,7 @@ describe("New kit item complete creation test case", function () {
 
     ///////////////////////////////////////////////////////////////////////
 
-    //Click on to link existing item
+    //Click on to link existing item(onetoone)
     cy.get(".action-icon:nth-child(2) > .inline-svg")
       .last()
       .click({ force: true });
@@ -780,5 +794,12 @@ describe("New kit item complete creation test case", function () {
     cy.contains("Item shared").should("be.visible");
     cy.log("Assigning added");
     cy.wait(5000);
+
+    //save Kit Item
+    cy.get(".v-select__selections .v-btn__content").click({ force: true });
+    cy.contains(this.SectionEleData.SectionKitName + " has been saved").should(
+      "be.visible"
+    );
+    cy.log(this.SectionEleData.SectionKitName + "Kit Type has been Saved");
   });
 });

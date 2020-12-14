@@ -1,8 +1,9 @@
 {
 
-    "KitName":"BaseTesting",
+    "KitName":"SamTest",
     "Url":"https://www.sanity.com",
     "Text":"sanity",
+    "NewFormLibFileName":"Screenshot_12",
     "Telephone":"(982) 999-2495",
     "TextAera":"sanity automation",
     "Currency":"90",

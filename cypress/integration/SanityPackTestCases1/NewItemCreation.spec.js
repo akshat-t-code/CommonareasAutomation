@@ -90,6 +90,8 @@ describe("New kit item complete creation test case", function () {
       }
     );
 
+    //////////////////////////////////////////////////////////////////////////////////
+
     cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
       KitTypeFormViewsNames
     ) {
@@ -144,7 +146,7 @@ describe("New kit item complete creation test case", function () {
     cy.get(".link-icon--green > path").click({ force: true });
     cy.wait(3000);
     //give file name to select
-    cy.contains(this.SData.NewFormLibFileName).click({ force: true });
+    cy.contains(this.NewKitItemData.NewFormLibFileName).click({ force: true });
     // cy.get(".thumb-container:nth-child(5) .selected-icon").click({
     //   force: true,
     // });
@@ -440,7 +442,7 @@ describe("New kit item complete creation test case", function () {
     // cy.wait(5000);
   });
 
-  it.only("File Tab", function () {
+  it.only("Files Tab", function () {
     cy.wait(3000);
 
     //Files Tab

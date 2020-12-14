@@ -1,35 +1,35 @@
 {
 
-    "Note":"Url and email all should be in lower case",
-
     "KitName":"Validation",
-    "NewKitItemUrl":"https://www.onetomanyform.com",
-    "NewKitItemText":"One To Many Relation TC",
-
     
-    "Url":"https://www.onetomany.com",
-    "Text":"One to Many Related New",
-    "RelNewFileName":"Fixtures",
-    "Telephone":"(982) 999-2495",
-    "TextAera":"One To Many Related New automation",
-    "Currency":"5",
-    "Measure":"13",
+    "UrlNote":"all letters in lower case",
 
-    "Email":"onetomany@gmail.com",
+    "NewKitItemUrl":"https://www.sqcardnewform.com",
+    "NewKitItemText":"Square Card Relation TC",
+    
+    "Url":"https://www.sqrelated.com",
+    "Text":"Sq card Related New",
+    "RelNewFileName":"sass",
+    "Telephone":"(245) 909-2765",
+    "TextAera":"Sq Card Related New automation",
+    "Currency":"87",
+    "Measure":"098",
+
+    "Email":"sqcardNew@gmail.com",
     "Important Note for Email":"should be in small letters",
 
-    "Addressline1":"Romrog WayRel",
-    "Addressline2":"Oak WayRel",
-    "City":"Grand IslandRel",
+    "Addressline1":"Romrog WaySqRel",
+    "Addressline2":"Oak WayCardRel",
+    "City":"Grand Island Card",
     "State":"Alaska",
-    "ZipCode":"3112",
+    "ZipCode":"83234",
     "Country":"United States",
-    "Number":"234",
+    "Number":"334",
 
-    "SelectListValue":"MOP",
+    "SelectListValue":"MNV",
     
 
-    "RadioSelectValue":"SR4",
+    "RadioSelectValue":"SR1",
 
     "CheckboxSelectValue1":"CheckboxSelect1",
     "CheckboxSelectValue2":"CheckboxSelect2",
@@ -41,11 +41,11 @@
     "StepperValue2":"Jio",
     "StepperValue3":"RealMe",
     "StepperValue4":"Oppo",
-    "StepperValue5":"MArt",
+    "StepperValue5":"Mart",
 
-    "UserSelectorName":"City Com2",
-    "ContactSelectorName":"Carmen Goodin",
-    "AssigningName":"Carmen Goodin",
+    "UserSelectorName":"ravi Negi",
+    "ContactSelectorName":"Ranveer K",
+    "AssigningName":"Hobbs Shaw",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",
@@ -53,7 +53,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"OneN",
+    "IconLabel":"SqCard",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",

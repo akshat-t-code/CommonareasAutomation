@@ -7,7 +7,8 @@ describe("Related Control One to Many test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitCityComTest();
+    //slp.visitCityComTest();
+    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -17,7 +18,8 @@ describe("Related Control One to Many test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("citycom@commonareas.work.dev");
+    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -46,6 +48,31 @@ describe("Related Control One to Many test case", function () {
       "jwtAccessToken"
     );
 
+    // cy.fixture("SanityPackTestData/RelatedOneToNData").then(function (
+    //   SanityTCData
+    // ) {
+    //   this.RelatedKitItemData = SanityTCData;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/RelatedOneToNData(Prod)").then(
+      function (SanityTCData) {
+        this.RelatedKitItemData = SanityTCData;
+      }
+    );
+
+    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+    //   NewDataForElements
+    // ) {
+    //   this.DataType2 = NewDataForElements;
+    // });
+
+    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+      function (NewDataForElements) {
+        this.DataType2 = NewDataForElements;
+      }
+    );
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
       KittypeName
     ) {
@@ -58,28 +85,10 @@ describe("Related Control One to Many test case", function () {
       this.NewKitItemData = KitDataEle;
     });
 
-    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-      NewDataForElements
-    ) {
-      this.DataType2 = NewDataForElements;
-    });
-
     cy.fixture("KitBuilderTestData/FormViewsNameData").then(function (
       KitTypeFormViewsNames
     ) {
       this.ViewName = KitTypeFormViewsNames;
-    });
-
-    cy.fixture("SanityPackTestData/NewKitItemTabsData").then(function (
-      SanityTCData
-    ) {
-      this.SData = SanityTCData;
-    });
-
-    cy.fixture("SanityPackTestData/RelatedOneToNData").then(function (
-      SanityTCData
-    ) {
-      this.RelatedKitItemData = SanityTCData;
     });
   });
 
@@ -693,7 +702,7 @@ describe("Related Control One to Many test case", function () {
       .first()
       .click({ force: true });
     // kit item Save Assertion
-    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
       "be.visible"
     );
     cy.log("Kit Item has been saved");

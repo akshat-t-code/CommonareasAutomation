@@ -71,7 +71,7 @@
     "InspectionValue5":".net",
 
     "OneToOneRelation":"SectionOneToOne",
-    "KitToBeRelate":"SanityTesting",
+    "KitToBeRelate":"RelatedKit",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
     "OneToOneMapView":"MapView",
@@ -80,7 +80,7 @@
 
 
     "OneToManyRelation":"SectionOneToNRel",
-    "KitToBeRelated":"SanityTesting",
+    "KitToBeRelated":"RelatedKit",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
