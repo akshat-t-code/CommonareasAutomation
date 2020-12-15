@@ -52,6 +52,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     // ) {
     //   this.RelatedKitItemData3 = SanityTCData;
     // });
+    
 
     cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
       function (SanityTCData) {

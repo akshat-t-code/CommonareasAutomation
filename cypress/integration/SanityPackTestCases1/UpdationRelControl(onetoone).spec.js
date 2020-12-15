@@ -52,6 +52,7 @@ describe("Update Related New fot OneToOne Related Control", function () {
     // ) {
     //   this.RelatedKitItemData2 = SanityTCData;
     // });
+    
 
     cy.fixture("SanityPackTestData(Prod)/RelatedOneToOneData(Prod)").then(
       function (SanityTCData) {

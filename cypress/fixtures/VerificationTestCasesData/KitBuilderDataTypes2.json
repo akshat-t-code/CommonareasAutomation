@@ -79,7 +79,7 @@
     "ElementToBeRelate":"url",
 
 
-    "OneToManyRelation":"SectionOneToNRel",
+    "OneToManyRelation":"BaseNRelation",
     "KitToBeRelated":"SanityTesting",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
