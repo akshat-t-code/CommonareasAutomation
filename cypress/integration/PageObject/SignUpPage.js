@@ -1,6 +1,7 @@
 class SignUpPage {
   visitBaseTest() {
     cy.visit("https://app.ca-test.com/Public/Login?ReturnUrl=%2F");
+    
   }
 
   visitBaseBuild() {

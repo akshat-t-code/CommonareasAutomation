@@ -112,7 +112,7 @@ describe("Details View tabs test case", function () {
     cy.wait(5000);
   });
 
-  it.only("File Tab", function () {
+  it("File Tab", function () {
     cy.wait(3000);
 
     //Files Tab
@@ -135,7 +135,7 @@ describe("Details View tabs test case", function () {
     cy.wait(3000);
   });
 
-  it.only("Add a pin on Map", function () {
+  it("Add a pin on Map", function () {
     //Map Tab
     cy.contains(" Map ").click({ force: true });
     cy.wait(4000);
@@ -148,7 +148,7 @@ describe("Details View tabs test case", function () {
     cy.wait(3000);
   });
 
-  it.only('Set to "Address" control on Map', function () {
+  it('Set to "Address" control on Map', function () {
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
     //Click on Map
@@ -166,7 +166,7 @@ describe("Details View tabs test case", function () {
     cy.wait(5000);
   });
 
-  it.only("Link Existing Relation On Map", function () {
+  it("Link Existing Relation On Map", function () {
     //Click on Map tab
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
@@ -212,7 +212,7 @@ describe("Details View tabs test case", function () {
     cy.wait(3000);
   });
 
-  it.only("Add New Item (Relation) On Map", function () {
+  it("Add New Item (Relation) On Map", function () {
     //Click on Map tab
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
@@ -343,7 +343,7 @@ describe("Details View tabs test case", function () {
     cy.wait(3000);
   });
 
-  it.only("Contributors Tab", function () {
+  it("Contributors Tab", function () {
     //Contributors Tab
     cy.contains(" Contributors ").click({ force: true });
     cy.wait(3000);
@@ -367,7 +367,7 @@ describe("Details View tabs test case", function () {
     cy.wait(4000);
   });
 
-  it.only("Time Entries Tab", function () {
+  it("Time Entries Tab", function () {
     //Time Entries Tab
     cy.contains(" Time Entries ").click({ force: true });
     cy.wait(2000);
@@ -425,7 +425,7 @@ describe("Details View tabs test case", function () {
     cy.wait(4000);
   });
 
-  it.only("Comments Tab", function () {
+  it("Comments Tab", function () {
     //Comments Tab
     cy.contains("Comments ").click({ force: true });
     cy.wait(2000);
@@ -438,7 +438,7 @@ describe("Details View tabs test case", function () {
     cy.wait(4000);
   });
 
-  it.only("Groups Tab", function () {
+  it("Groups Tab", function () {
     //Groups Tab
     cy.contains(" Groups ").click({ force: true });
     cy.wait(2000);
@@ -485,14 +485,57 @@ describe("Details View tabs test case", function () {
     cy.get(".new-kit-space-planner-wrapper__exit path").click({ force: true });
     cy.log("Taken Exit form Layout Mode");
     cy.wait(2000);
-    cy.get(".space-planner-card--name").should(
-      "have.text",
-      this.DetailViewData.CommonPlanName
-    );
+    cy.contains(this.DetailViewData.CommonPlanName).should("be.visible");
     cy.log("Common Plan Created");
+    cy.wait(3000);
   });
 
-  it.only("Calender Tab(By Add Btn)", function () {
+  it.only("Copy and Delete Common Plan", function () {
+    cy.wait(3000);
+
+    //Click on copy plan
+    cy.get(".space-planner-card--action-icon > .icon").click();
+    cy.contains("Plan created").should("be.visible");
+    cy.wait(2000);
+    cy.contains("Copy of " + this.DetailViewData.CommonPlanName).should(
+      "be.visible"
+    );
+    cy.contains("Copy of " + this.DetailViewData.CommonPlanName).click({
+      force: true,
+    });
+    cy.wait(2000);
+    //Common plan board assertion
+    cy.contains(" Layout ").should("be.visible");
+    cy.contains(" Schedule ").should("be.visible");
+    cy.contains(" View ").should("be.visible");
+    cy.wait(1000);
+
+    cy.contains(" Layout ").click({ force: true });
+    cy.wait(4000);
+    //Exit the Plan
+    cy.get(".new-kit-space-planner-wrapper__exit path").click({ force: true });
+    cy.log("Taken Exit form Layout Mode");
+    cy.wait(2000);
+
+    //Click on delete Icon
+    cy.get(".space-planner-card--action-icon path")
+      .eq(0)
+      .click({ force: true });
+    cy.wait(2000);
+    cy.contains("Are you sure you want to delete this plan?").should(
+      "be.visible"
+    );
+    cy.contains("This action cannot be undone").should("be.visible");
+    cy.wait(2000);
+    //Click on delete
+    cy.get(".mb-4:nth-child(1) .v-btn__content").click({ force: true });
+    cy.contains("Plan deleted").should("be.visible");
+    cy.contains("Copy of " + this.DetailViewData.CommonPlanName).should(
+      "not.be.visible"
+    );
+  });
+
+  it("Calender Tab(By Add Btn)", function () {
     //Note- Add a text file in parent kit schedule view
     cy.contains(" Calendar ").click({ force: true });
     cy.wait(2000);
@@ -593,5 +636,3 @@ describe("Details View tabs test case", function () {
     cy.get(".ca-button-green > .v-btn__content").first().click({ force: true });
   });
 });
-
-

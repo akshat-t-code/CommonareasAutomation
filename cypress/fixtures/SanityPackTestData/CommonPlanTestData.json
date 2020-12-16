@@ -1,4 +1,81 @@
 {
 
-    "CommonPlanName":"TestPlan"
+    "CommonPlanName":"TestPlan",
+
+
+    "Url":"https://www.commonplan.com",
+    "Text":"Common Plan New KitItem",
+    "NewFormLibFileName":"Screenshot_12",
+    "Telephone":"(342) 110-2495",
+    "TextAera":"Create New Kit Item for Common Plan ",
+    "Currency":"9",
+    "Measure":"3",
+
+    "Email":"cplan@yahoo.com",
+    "Important Note for Email":"should be in small letters",
+
+    "Addressline1":"Golden West Avenue",
+    "Addressline2":"Oak Way",
+    "City":"Temple City",
+    "State":"Alaska",
+    "ZipCode":"1234",
+    "Country":"United States",
+    "Number":"10",
+
+    "SelectListValue":"MOP",
+    
+
+    "RadioSelectValue":"SR3",
+
+    "CheckboxSelectValue1":"CheckboxSelect1",
+    "CheckboxSelectValue2":"CheckboxSelect2",
+    "CheckboxSelectValue3":"CheckboxSelect3",
+    "CheckboxSelectValue4":"CheckboxSelect4",
+    "CheckboxSelectValue5":"CheckboxSelect5",
+
+    "StepperValue1":"Moto",
+    "StepperValue2":"Jio",
+    "StepperValue3":"RealMe",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"Mart",
+
+    "UserSelectorName":"City Com2",
+    "ContactSelectorName":"Pranav Test",
+    "AssigningName":"Carmen Goodin",
+    
+    "ExtraSmalliconSize":"Extra Small",
+    "SmalliconSize":"Small",
+    "MediumiconSize":"Medium",
+    "LargeiconSize":"Large",
+    "ExtraLargeiconSize":"Extra Large",
+
+    "IconLabel":"common plan",
+
+    "These are the index value of div child":"use according to select inspection value",
+    "1st for 1st value":"2nd for 2nd value and so on...",
+    "InspectionValue1":"1",
+    "InspectionValue2":"2",
+    "InspectionValue3":"3",
+    "InspectionValue4":"4",
+    "InspectionValue5":"5",
+
+    
+    
+
+    "ReminderTitle":"PropertyBuilder Inspection",
+    "ReminderTypeOneTime":"One-Time",
+    "ReminderTypeRecurring":"Recurring",
+
+    "ChannelWebApp":"Web App",
+    "ChannelEmail":"E-mail",
+    "ChannelMobileApp":"Mobile App",
+
+    "RepeatDaily":"Daily",
+    "RepeatMonFriday":"Mon-Friday",
+    "RepeatWeekly":"Weekly",
+    "RepeatMonthlyDay":"Monthly - Day",
+    "RepeatMonthlyOfDay":"Monthly - Of Day",
+    "RepeatAnnuallyDate":"Annually - Date",
+    "RepeatAnnuallyOfMonth":"Annually - Of Month"
+    
 }

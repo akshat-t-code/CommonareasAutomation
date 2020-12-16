@@ -8,7 +8,7 @@ describe("New kit item complete creation test case", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     slp.visitCityComTest();
-    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -18,8 +18,8 @@ describe("New kit item complete creation test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    //lp.EnterEmail("citycom@commonareas.work.dev");
-    lp.EnterEmail("sam@armyspy.com");
+    lp.EnterEmail("citycom@commonareas.work.dev");
+    //lp.EnterEmail("sam@armyspy.com");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -48,47 +48,41 @@ describe("New kit item complete creation test case", function () {
       "jwtAccessToken"
     );
 
-    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
-      KittypeName
+    cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
+      KitDataEle
     ) {
-      this.KitTypeName = KittypeName;
+      this.NewKitItemData = KitDataEle;
     });
 
-    // cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
-    //   KitDataEle
-    // ) {
-    //   this.NewKitItemData = KitDataEle;
-    // });
+    // cy.fixture("SanityPackTestData(Prod)/NewKitItemDataValue(Prod)").then(
+    //   function (KitDataEle) {
+    //     this.NewKitItemData = KitDataEle;
+    //   }
+    // );
 
-    cy.fixture("SanityPackTestData(Prod)/NewKitItemDataValue(Prod)").then(
-      function (KitDataEle) {
-        this.NewKitItemData = KitDataEle;
-      }
-    );
+    cy.fixture("SanityPackTestData/NewKitItemTabsData").then(function (
+      SanityTCData
+    ) {
+      this.SData = SanityTCData;
+    });
 
-    // cy.fixture("SanityPackTestData/NewKitItemTabsData").then(function (
-    //   SanityTCData
-    // ) {
-    //   this.SData = SanityTCData;
-    // });
+    // cy.fixture("SanityPackTestData(Prod)/NewKitItemTabsData(Prod)").then(
+    //   function (SanityTCData) {
+    //     this.SData = SanityTCData;
+    //   }
+    // );
 
-    cy.fixture("SanityPackTestData(Prod)/NewKitItemTabsData(Prod)").then(
-      function (SanityTCData) {
-        this.SData = SanityTCData;
-      }
-    );
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
 
-    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-    //   NewDataForElements
-    // ) {
-    //   this.DataType2 = NewDataForElements;
-    // });
-
-    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-      function (NewDataForElements) {
-        this.DataType2 = NewDataForElements;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+    //   function (NewDataForElements) {
+    //     this.DataType2 = NewDataForElements;
+    //   }
+    // );
 
     //////////////////////////////////////////////////////////////////////////////////
 
@@ -96,6 +90,12 @@ describe("New kit item complete creation test case", function () {
       KitTypeFormViewsNames
     ) {
       this.ViewName = KitTypeFormViewsNames;
+    });
+
+    cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
+      KittypeName
+    ) {
+      this.KitTypeName = KittypeName;
     });
   });
 

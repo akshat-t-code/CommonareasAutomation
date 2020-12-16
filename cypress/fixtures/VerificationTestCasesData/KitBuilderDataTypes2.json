@@ -70,7 +70,7 @@
     "InspectionValue4":"Python",
     "InspectionValue5":".net",
 
-    "OneToOneRelation":"SectionOneToOne",
+    "OneToOneRelation":"BaseOneToOne",
     "KitToBeRelate":"SanityTesting",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
@@ -93,8 +93,8 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"SectionSquareCard",
-    "CardKitToBeRelated":"SanityTesting",
+    "SquareCardName":"baseSquareCard",
+    "CardKitToBeRelated":"AkshatChildKit",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",

@@ -20,6 +20,7 @@ describe("Existing User logged In Test Case", function () {
     const sp = new SignUpPage();
     const lp = new LoginPage();
     sp.visitBaseTest();
+    cy.visit('https://app.ca-test.com/Public/Login?ReturnUrl=%2F')
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
