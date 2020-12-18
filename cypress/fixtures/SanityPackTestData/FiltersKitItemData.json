@@ -1,0 +1,113 @@
+{
+
+    "KitName":"BaseTesting",
+    "Url":"https://www.filers.com",
+    "Text":"Filer text data",
+    "NewFormLibFileName":"Screenshot_12",
+    "Telephone":"(345) 123-2495",
+    "TextAera":"Filter automation",
+    "Currency":"67",
+    "Measure":"33",
+
+    "Email":"newitem@yahoo.com",
+    "Important Note for Email":"should be in small letters",
+
+    "Addressline1":"Romrog Way",
+    "Addressline2":"Oak Way",
+    "City":"Grand Island",
+    "State":"Alaska",
+    "ZipCode":"2133",
+    "Country":"United States",
+    "Number":"98",
+
+    "SelectListValue":"VCF",
+    
+
+    "RadioSelectValue":"SR5",
+
+    "CheckboxSelectValue1":"CheckboxSelect1",
+    "CheckboxSelectValue2":"CheckboxSelect2",
+    "CheckboxSelectValue3":"CheckboxSelect3",
+    "CheckboxSelectValue4":"CheckboxSelect4",
+    "CheckboxSelectValue5":"CheckboxSelect5",
+
+    "StepperValue1":"Moto",
+    "StepperValue2":"Jio",
+    "StepperValue3":"RealMe",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"Mart",
+
+    "UserSelectorName":"Ranveer K",
+    "ContactSelectorName":"Kk Menon",
+    "AssigningName":"Akshat Akshat",
+    
+    "ExtraSmalliconSize":"Extra Small",
+    "SmalliconSize":"Small",
+    "MediumiconSize":"Medium",
+    "LargeiconSize":"Large",
+    "ExtraLargeiconSize":"Extra Large",
+
+    "IconLabel":"Filers",
+
+    "These are the index value of div child":"use according to select inspection value",
+    "1st for 1st value":"2nd for 2nd value and so on...",
+    "InspectionValue1":"1",
+    "InspectionValue2":"2",
+    "InspectionValue3":"3",
+    "InspectionValue4":"4",
+    "InspectionValue5":"5",
+
+    
+    
+
+    "ReminderTitle":"PropertyBuilder Inspection",
+    "ReminderTypeOneTime":"One-Time",
+    "ReminderTypeRecurring":"Recurring",
+
+    "ChannelWebApp":"Web App",
+    "ChannelEmail":"E-mail",
+    "ChannelMobileApp":"Mobile App",
+
+    "RepeatDaily":"Daily",
+    "RepeatMonFriday":"Mon-Friday",
+    "RepeatWeekly":"Weekly",
+    "RepeatMonthlyDay":"Monthly - Day",
+    "RepeatMonthlyOfDay":"Monthly - Of Day",
+    "RepeatAnnuallyDate":"Annually - Date",
+    "RepeatAnnuallyOfMonth":"Annually - Of Month",
+    
+
+
+    "These values need to add manual for validate Table List View Result Ele UI Validation":"true",
+    "Important note for Values":"Pls add value in same format that i did",
+    "FileValue":"11615",
+    "SliderValue":"46",
+    "TimeValue":"04:30 PM",
+    "DateValue":"10/31/2020",
+    "ToggleStatus":"True",
+    "StepperValue":"Oppo",
+    "InspectionName":"C++",
+    
+
+    "These values need to add manual for validate Table List View Elee":"true",
+    "Important note for (TimelineList View Results Ele)Values":"Pls add value in same format that i did",
+
+    "TimelineListFileEleValue":"11615",
+    "TimelineListSliderValue":"46",
+    "TimelineListTimeValue":"04:30 PM",
+    "TimelineListDateValue":"10/31/2020",
+    "TimelineListToggleStatus":"True",
+    "TimelineListIconTittle":"2 wheeled Trolly",
+    
+    "Add ',' after First Name of UserSelector":"Note-true",
+    "Add ',' after First Name of ContactSelector":"Note-true",
+    "Add ',' after First Name of Assigning":"Note-true",
+
+
+    "TimelineListUserSelector":"Deanne, Howell",
+    "TimelineListContactSelector":"Vivek, Mahajan",
+    "TimelineListAssigningName":"Daniel, Zhao"
+
+
+    
+}

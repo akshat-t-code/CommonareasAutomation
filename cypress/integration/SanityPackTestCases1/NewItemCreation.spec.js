@@ -325,7 +325,6 @@ describe("New kit item complete creation test case", function () {
     );
     cy.log(this.NewKitItemData.KitName + "Kit Type has been Saved");
     cy.log("Partially saving new form");
-    cy.wait(5000);
 
     cy.wait(5000);
     cy.get(".searchIcon").eq(1).scrollIntoView({ force: true });
@@ -377,7 +376,7 @@ describe("New kit item complete creation test case", function () {
     });
     cy.wait(2000);
     //Icon Save
-    cy.get(".button-pop-ups").click({ force: true });
+    cy.get(".button-pop-ups").first().click({ force: true });
     cy.wait(2000);
 
     //IcozSize
