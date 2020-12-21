@@ -304,6 +304,105 @@ describe("New kit item creation test case", function () {
     cy.log("Checkbox Values has been set.");
     cy.wait(2000);
 
+    cy.wait(5000);
+    cy.get(".searchIcon").eq(1).scrollIntoView({ force: true });
+
+    //Stepper
+    //getting value form different json file
+    cy.contains(this.NewKitItemData.StepperValue1).click({ force: true });
+    cy.log("Stepper Value has been set.");
+
+    cy.wait(2000);
+    //.v-stepper__step:nth-child(1/3/5/7/9)
+    // cy.get(".v-stepper__step:nth-child(5) > .v-stepper__step__step").click({
+    //   force: true,
+    // });
+
+    cy.wait(2000);
+    //UserSelector(Values coming form KitItemValues Json File)
+    //Click on to open UserSelector Pop up
+    cy.get(".searchIcon").eq(0).click({ force: true });
+    cy.wait(3000);
+
+    cy.contains(this.NewKitItemData.UserSelectorName).click({ force: true });
+    cy.log("UserSelect added");
+    cy.wait(3000);
+
+    //ContactSelector(Values coming form KitItemValues Json File)
+    //Click on to open ContactSelector Pop up
+    cy.get(".searchIcon").eq(1).click({ force: true });
+
+    cy.wait(4000);
+
+    cy.contains(this.NewKitItemData.ContactSelectorName).click({ force: true });
+    cy.log("ContactSelecto added");
+    cy.wait(4000);
+
+    //getting value form different json file
+    cy.wait(2000);
+    //Icon
+    //Click on + icon of ICON Element
+    cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
+      .last()
+      .click({
+        force: true,
+      });
+    cy.wait(2000);
+    //Click on Icon Tittle and  select Icon logo
+    //Give numeric no from 1 in child(1,2,3...)
+    cy.get(".thumb-container:nth-child(1) .selected-icon").click({
+      force: true,
+    });
+    cy.wait(2000);
+    //Icon Save
+    cy.get(".button-pop-ups").first().click({ force: true });
+    cy.wait(2000);
+
+    //IcozSize
+    cy.get(
+      "div.row.wrapper-kit-control.align-center > div > div.fill-height.border-right.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    )
+      .last()
+      .click({ force: true });
+    cy.contains(this.NewKitItemData.LargeiconSize).click({ force: true });
+    cy.wait(2000);
+    //IconLable
+    cy.get('[placeholder="Label"]').type(this.NewKitItemData.IconLabel);
+
+    //Inspection(Values coming form KitItemValues Json File)
+    //Inspection
+    cy.contains(this.DataType2.Inspection).scrollIntoView({
+      force: true,
+    });
+
+    cy.wait(3000);
+    //child 1 for 1st value &&&& child 2 for 2nd value-child 3 for 3rd value......
+    //"These are the index value of div child":"use according to select inspection value",
+    cy.get(
+      "div.v-slide-group__wrapper > div > span:nth-child(" +
+        this.NewKitItemData.InspectionValue1 +
+        ") > span"
+    ).click({ force: true });
+
+    cy.wait(3000);
+    //Assigning
+    //Click on to open Assigning Pop up-Also working
+    cy.get(".searchIcon > .inline-svg > path").last().click({ force: true });
+
+    //Click on to open Assigning Pop up
+    cy.get(".searchIcon").eq(2).click({ force: true });
+    cy.wait(7000);
+    //Click on to select the Assigning
+    //cy.get(".list-item-search").first().click({ force: true });
+    cy.contains(this.NewKitItemData.AssigningName).click({ force: true });
+    cy.wait(3000);
+    //Click on to save
+    cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
+    //Assigning creation assertion
+    cy.contains("Item shared").should("be.visible");
+    cy.log("Assigning added");
+    cy.wait(5000);
+
     ///////////////////////////////////////////////////////////////////////////////////////////
 
     //Link Onetomany
@@ -349,47 +448,6 @@ describe("New kit item creation test case", function () {
     cy.log("Existing item linked");
     cy.wait(3000);
     /////////////////////////////////////////////////////////////////////////////////////////////
-
-    cy.wait(5000);
-    cy.get(".searchIcon").eq(1).scrollIntoView({ force: true });
-
-    //Stepper
-    //getting value form different json file
-    cy.contains(this.NewKitItemData.StepperValue1).click({ force: true });
-    cy.log("Stepper Value has been set.");
-
-    cy.wait(2000);
-    //.v-stepper__step:nth-child(1/3/5/7/9)
-    // cy.get(".v-stepper__step:nth-child(5) > .v-stepper__step__step").click({
-    //   force: true,
-    // });
-
-    cy.wait(2000);
-    //UserSelector(Values coming form KitItemValues Json File)
-    //Click on to open UserSelector Pop up
-    cy.get(".searchIcon").eq(0).click({ force: true });
-    cy.wait(3000);
-
-    cy.get(".v-list-item:nth-child(1) > .ml-4 > .v-list-item__title").click({
-      force: true,
-    });
-
-    //cy.contains(this.NewKitItemData.UserSelectorName).click({ force: true });
-    cy.log("UserSelect added");
-    cy.wait(3000);
-
-    //ContactSelector(Values coming form KitItemValues Json File)
-    //Click on to open ContactSelector Pop up
-    cy.get(".searchIcon").eq(1).click({ force: true });
-
-    cy.wait(4000);
-    cy.get(
-      ".v-dialog__content:nth-child(2) .v-list-item:nth-child(1) .action-item-icon:nth-child(1)"
-    ).click({ force: true });
-
-    //cy.contains(this.NewKitItemData.ContactSelectorName).click({ force: true });
-    cy.log("ContactSelecto added");
-    cy.wait(4000);
 
     /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -458,85 +516,20 @@ describe("New kit item creation test case", function () {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //getting value form different json file
-    cy.wait(2000);
-    //Icon
-    //Click on + icon of ICON Element
-    cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
-      .last()
-      .click({
-        force: true,
-      });
-    cy.wait(2000);
-    //Click on Icon Tittle and  select Icon logo
-    //Give numeric no from 1 in child(1,2,3...)
-    cy.get(".thumb-container:nth-child(1) .selected-icon").click({
-      force: true,
-    });
-    cy.wait(2000);
-    //Icon Save
-    cy.get(".button-pop-ups").first().click({ force: true });
-    cy.wait(2000);
+    //save Kit Item
+    cy.get(".v-select__selections .v-btn__content").click({ force: true });
+    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+      "be.visible"
+    );
+    cy.log(this.NewKitItemData.KitName + "Kit Type has been Saved");
 
-    //IcozSize
-    cy.get(
-      "div.row.wrapper-kit-control.align-center > div > div.fill-height.border-right.col.col-4 > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
-    )
-      .last()
-      .click({ force: true });
-    cy.contains(this.NewKitItemData.LargeiconSize).click({ force: true });
-    cy.wait(2000);
-    //IconLable
-    cy.get('[placeholder="Label"]').type(this.NewKitItemData.IconLabel);
-
-    //Inspection(Values coming form KitItemValues Json File)
-    //Inspection
-    cy.contains(this.DataType2.Inspection).scrollIntoView({
-      force: true,
-    });
-
-    cy.wait(3000);
-    //child 1 for 1st value &&&& child 2 for 2nd value-child 3 for 3rd value......
-    //"These are the index value of div child":"use according to select inspection value",
-    cy.get(
-      "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.NewKitItemData.InspectionValue1 +
-        ") > span"
-    ).click({ force: true });
-
-    cy.wait(3000);
-    //Assigning
-    //Click on to open Assigning Pop up-Also working
-    cy.get(".searchIcon > .inline-svg > path").last().click({ force: true });
-
-    //Click on to open Assigning Pop up
-    cy.get(".searchIcon").eq(2).click({ force: true });
-    cy.wait(7000);
-    //Click on to select the Assigning
-    //cy.get(".list-item-search").first().click({ force: true });
-    cy.contains(this.NewKitItemData.AssigningName).click({ force: true });
-    cy.wait(3000);
-    //Click on to save
-    cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
-    //Assigning creation assertion
-    cy.contains("Item shared").should("be.visible");
-    cy.log("Assigning added");
+    //close the Kit Item
     cy.wait(5000);
-
-    // //save Kit Item
-    // cy.get(".v-select__selections .v-btn__content").click({ force: true });
-    // cy.contains(this.NewKitItemData.KitName + " has been saved").should(
-    //   "be.visible"
-    // );
-    // cy.log(this.NewKitItemData.KitName + "Kit Type has been Saved");
-
-    // //close the Kit Item
-    // cy.wait(5000);
-    // //Close Kit type
-    // cy.get(".subheader--button-icon-wrapper path").click({
-    //   force: true,
-    // });
-    // cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
-    // cy.wait(5000);
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper path").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.wait(5000);
   });
 });
