@@ -576,4 +576,195 @@ describe("TableList KitItem Filter", function () {
     cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
     cy.wait(5000);
   });
+
+  it.only("Validate the Filter Time Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get('[placeholder="Add Time"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(2000);
+    cy.get('[placeholder="Add Time"][type="text"]').click({ force: true });
+    cy.wait(1000);
+
+    //Select hour value
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//span[5]"
+    ).click({ force: true });
+    cy.wait(1000);
+    //Select Value of miniutes
+    cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
+    cy.wait(1000);
+    //Click on PM
+    cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
+    //Click on OK to save date
+    cy.xpath(
+      "//div[contains(@class,'v-dialog v-dialog--active')]//button[1]"
+    ).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(5000);
+
+    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Filter Date Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get('[placeholder="Add Date"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(2000);
+    cy.get('[placeholder="Add Date"][type="text"]').click({ force: true });
+    //Select Date
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'30')]")
+      .first()
+      .click({ force: true });
+    cy.wait(2000);
+    //Click on OK to save Date
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(5000);
+
+    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Filter Toggle(True) Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get('[placeholder="Add Date"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(1000);
+    cy.get(".v-input__icon > .primary--text").click({ force: true });
+    cy.wait(2000);
+    //Toggle filter for true
+    cy.contains(" true ").click({ force: true });
+
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(5000);
+
+    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Filter Toggle(False) Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get('[placeholder="Add Date"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(1000);
+    cy.get(".v-input__icon > .primary--text").first().click({ force: true });
+    cy.wait(2000);
+    //Toggle for false
+    cy.contains("  false  ").click({ force: true });
+
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.get(".list-item--title").first().click({ force: true });
+    cy.wait(5000);
+    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
 });
