@@ -105,7 +105,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(10000);
   });
 
-  it.only("Filter Url Element", function () {
+  it("Filter Url Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -123,6 +123,11 @@ describe("TableList KitItem Filter", function () {
     cy.contains("Apply Filters").click({ force: true });
     cy.get(".filter-tag").should("be.visible");
     cy.wait(10000);
+    //Assertion
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).should("be.visible");
+    cy.wait(2000);
     //Click on created kit item
     cy.get(".list-item--title").click({ force: true });
     cy.wait(3000);
@@ -145,7 +150,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Filter Text Element", function () {
+  it("Filter Text Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -187,7 +192,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Filter Telephone Element", function () {
+  it("Filter Telephone Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -229,7 +234,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Filter TextAera Element", function () {
+  it("Filter TextAera Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -271,7 +276,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter Email Element", function () {
+  it("Validate the Filter Email Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -313,7 +318,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter Address Element", function () {
+  it("Validate the Filter Address Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by Addressline1
@@ -357,7 +362,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter for Addressline2 Element", function () {
+  it("Validate the Filter for Addressline2 Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by Addressline2
@@ -401,7 +406,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter for City Element", function () {
+  it("Validate the Filter for City Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by City
@@ -445,7 +450,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter for State Element", function () {
+  it("Validate the Filter for State Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by State
@@ -489,7 +494,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter for ZipCode Element", function () {
+  it("Validate the Filter for ZipCode Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by ZipCode
@@ -533,7 +538,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter for Country Element", function () {
+  it("Validate the Filter for Country Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by Country
@@ -577,7 +582,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter Time Element", function () {
+  it("Validate the Filter Time Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -633,7 +638,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter Date Element", function () {
+  it("Validate the Filter Date Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -681,7 +686,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter Toggle(True) Element", function () {
+  it("Validate the Filter Toggle(True) Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -693,7 +698,10 @@ describe("TableList KitItem Filter", function () {
       force: true,
     });
     cy.wait(1000);
-    cy.get(".v-input__icon > .primary--text").click({ force: true });
+    //Click on toggle dropdown
+    cy.get(
+      " div.v-input.kit-control-select-list.layout-alignment.v-input--is-label-active.v-input--is-dirty.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    ).click({ force: true });
     cy.wait(2000);
     //Toggle filter for true
     cy.contains(" true ").click({ force: true });
@@ -726,7 +734,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter Toggle(False) Element", function () {
+  it("Validate the Filter Toggle(False) Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -738,10 +746,17 @@ describe("TableList KitItem Filter", function () {
       force: true,
     });
     cy.wait(1000);
-    cy.get(".v-input__icon > .primary--text").first().click({ force: true });
+    //Click on toggle dropdown
+    cy.get(
+      " div.v-input.kit-control-select-list.layout-alignment.v-input--is-label-active.v-input--is-dirty.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    ).click({ force: true });
     cy.wait(2000);
     //Toggle for false
-    cy.contains("  false  ").click({ force: true });
+    cy.get(".v-list-item:nth-child(3) .v-list-item__subtitle").click({
+      force: true,
+    });
+
+    //cy.contains("  false  ").click({ force: true });
 
     cy.wait(2000);
 
@@ -765,6 +780,316 @@ describe("TableList KitItem Filter", function () {
 
     //Click on cross icon to remove filer
     cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it("Validate the Filter SelectList Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get('[placeholder="Add Date"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(1000);
+    //Click on SelectList dropdown
+    cy.get(
+      " div.v-input.kit-control-select-list.layout-alignment.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select.v-select--is-multi div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    )
+      .eq(0)
+      .click({ force: true });
+    cy.wait(2000);
+    //SelectList filter value
+    cy.contains(this.NewKitItemData.SelectListValue).click({ force: true });
+
+    cy.wait(2000);
+
+    //Click on Apply filters dropdown
+    cy.get(
+      "div.d-flex.align-center.justify-end.col.app-secondary-header-left--buttons.fill-height.gray-divider div.row.left_panel_menu.filter.row.button-left--border.second-header-left--buton.button-left--border div.sticky-dropdown div.wrapper-content.col:nth-child(2) div.row.full-width.fill-height div.form.tools-padding.left_panel_body.col.left_column.col div.row.flex-nowrap.flex-column.fill-height div.buttons.col.pl-4 div.apply-clear-wrapper.navi-bar div.navi-bar-dropdown.navi-bar__actions.navi-bar-action-dropdown.col div.v-input.ca-button-green.v-input--hide-details.v-input--is-label-active.v-input--is-dirty.theme--light.v-text-field.v-text-field--single-line.v-text-field--is-booted.v-select.v-autocomplete.v-overflow-btn.v-overflow-btn--segmented div.v-input__control div.v-input__slot div.v-select__slot div.v-input__append-inner:nth-child(2) > div.v-input__icon.v-input__icon--append"
+    ).click({
+      force: true,
+    });
+    cy.wait(2000);
+    //Click on apply filters text in dropdown
+    cy.get(
+      " div.v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active.v-autocomplete__content.navi-bar-dropdown-menu.kit-item-filter-actions-dropdown:nth-child(2) div.v-select-list.v-card.theme--light div.v-list.v-sheet.v-sheet--tile.theme--light div.v-list-item.primary--text.v-list-item--active.v-list-item--link.theme--light:nth-child(1) > div.v-list-item__content"
+    ).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.wait(5000);
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.get(".list-item--title").first().click({ force: true });
+    cy.wait(5000);
+    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".filter-tag-content path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it("Validate the Filter RadioSelect Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get('[placeholder="Add Date"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(1000);
+    //Click on RadioSelect dropdown
+    cy.get(
+      " div.v-input.kit-control-select-list.layout-alignment.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select.v-select--is-multi div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    )
+      .eq(1)
+      .click({ force: true });
+    cy.wait(2000);
+    //RadioSelect filter value
+    cy.contains(this.NewKitItemData.RadioSelectValue).click({ force: true });
+
+    cy.wait(2000);
+    //Click on Apply filters dropdown
+    cy.get(
+      "div.d-flex.align-center.justify-end.col.app-secondary-header-left--buttons.fill-height.gray-divider div.row.left_panel_menu.filter.row.button-left--border.second-header-left--buton.button-left--border div.sticky-dropdown div.wrapper-content.col:nth-child(2) div.row.full-width.fill-height div.form.tools-padding.left_panel_body.col.left_column.col div.row.flex-nowrap.flex-column.fill-height div.buttons.col.pl-4 div.apply-clear-wrapper.navi-bar div.navi-bar-dropdown.navi-bar__actions.navi-bar-action-dropdown.col div.v-input.ca-button-green.v-input--hide-details.v-input--is-label-active.v-input--is-dirty.theme--light.v-text-field.v-text-field--single-line.v-text-field--is-booted.v-select.v-autocomplete.v-overflow-btn.v-overflow-btn--segmented div.v-input__control div.v-input__slot div.v-select__slot div.v-input__append-inner:nth-child(2) > div.v-input__icon.v-input__icon--append"
+    ).click({
+      force: true,
+    });
+    cy.wait(2000);
+    //Click on apply filters text in dropdown
+    cy.get(
+      " div.v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active.v-autocomplete__content.navi-bar-dropdown-menu.kit-item-filter-actions-dropdown:nth-child(2) div.v-select-list.v-card.theme--light div.v-list.v-sheet.v-sheet--tile.theme--light div.v-list-item.primary--text.v-list-item--active.v-list-item--link.theme--light:nth-child(1) > div.v-list-item__content"
+    ).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.wait(5000);
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.get(".list-item--title").first().click({ force: true });
+    cy.wait(5000);
+    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".filter-tag-content path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it("Validate the Filter CheckboxSelect Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get('[placeholder="Add Date"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(1000);
+    //Click on Checkbox dropdown
+    cy.get(
+      "div.d-flex.align-center.justify-end.col.app-secondary-header-left--buttons.fill-height.gray-divider div.row.left_panel_menu.filter.row.button-left--border.second-header-left--buton.button-left--border div.sticky-dropdown div.wrapper-content.col:nth-child(2) div.row.full-width.fill-height div.form.tools-padding.left_panel_body.col.left_column.col div.row.flex-nowrap.flex-column.fill-height div.filter-wrapper.col div.container.kit-filter-wrapper.fill-height div.row.kit-filter-container.fill-height div.px-3.pt-4.col.col-12 div.row.fill-height div.wrapper-scroll.col div.container.details-wrapper.fill-height.kit-wrapper-search.col div.row.kit-related-form.pa-6 div.kit-control-component.row-component.px-3.col:nth-child(16) div.v-input.kit-control-select-list.layout-alignment.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select.v-select--is-multi div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    ).click({ force: true });
+    cy.wait(2000);
+    //CheckboxSelect filter value(Values coming form KitItemValues Json File)
+    cy.contains(this.NewKitItemData.CheckboxSelectValue1).click({
+      force: true,
+    });
+
+    cy.wait(2000);
+    //Click on Apply filters dropdown
+    cy.get(
+      "div.d-flex.align-center.justify-end.col.app-secondary-header-left--buttons.fill-height.gray-divider div.row.left_panel_menu.filter.row.button-left--border.second-header-left--buton.button-left--border div.sticky-dropdown div.wrapper-content.col:nth-child(2) div.row.full-width.fill-height div.form.tools-padding.left_panel_body.col.left_column.col div.row.flex-nowrap.flex-column.fill-height div.buttons.col.pl-4 div.apply-clear-wrapper.navi-bar div.navi-bar-dropdown.navi-bar__actions.navi-bar-action-dropdown.col div.v-input.ca-button-green.v-input--hide-details.v-input--is-label-active.v-input--is-dirty.theme--light.v-text-field.v-text-field--single-line.v-text-field--is-booted.v-select.v-autocomplete.v-overflow-btn.v-overflow-btn--segmented div.v-input__control div.v-input__slot div.v-select__slot div.v-input__append-inner:nth-child(2) > div.v-input__icon.v-input__icon--append"
+    ).click({
+      force: true,
+    });
+    cy.wait(2000);
+    //Click on apply filters text in dropdown
+    cy.get(
+      " div.v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active.v-autocomplete__content.navi-bar-dropdown-menu.kit-item-filter-actions-dropdown:nth-child(2) div.v-select-list.v-card.theme--light div.v-list.v-sheet.v-sheet--tile.theme--light div.v-list-item.primary--text.v-list-item--active.v-list-item--link.theme--light:nth-child(1) > div.v-list-item__content"
+    ).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.wait(5000);
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.get(".list-item--title").first().click({ force: true });
+    cy.wait(5000);
+    cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".filter-tag-content path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Filter Stepper Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.contains(this.DataType2.Stepper).scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+    //Click on Stepper dropdown
+    cy.get(
+      " div.v-input.kit-control-select-list.layout-alignment.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select.v-select--is-multi div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    )
+      .eq(3)
+      .click({ force: true });
+    cy.wait(2000);
+    //Stepper filter value
+    cy.contains(this.NewKitItemData.StepperValue1).click({ force: true });
+
+    cy.wait(2000);
+    //Click on Apply filters dropdown
+    // cy.get(
+    //   "div.d-flex.align-center.justify-end.col.app-secondary-header-left--buttons.fill-height.gray-divider div.row.left_panel_menu.filter.row.button-left--border.second-header-left--buton.button-left--border div.sticky-dropdown div.wrapper-content.col:nth-child(2) div.row.full-width.fill-height div.form.tools-padding.left_panel_body.col.left_column.col div.row.flex-nowrap.flex-column.fill-height div.buttons.col.pl-4 div.apply-clear-wrapper.navi-bar div.navi-bar-dropdown.navi-bar__actions.navi-bar-action-dropdown.col div.v-input.ca-button-green.v-input--hide-details.v-input--is-label-active.v-input--is-dirty.theme--light.v-text-field.v-text-field--single-line.v-text-field--is-booted.v-select.v-autocomplete.v-overflow-btn.v-overflow-btn--segmented div.v-input__control div.v-input__slot div.v-select__slot div.v-input__append-inner:nth-child(2) > div.v-input__icon.v-input__icon--append"
+    // ).click({
+    //   force: true,
+    // });
+    // cy.wait(2000);
+    // //Click on apply filters text in dropdown
+    // cy.get(
+    //   " div.v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active.v-autocomplete__content.navi-bar-dropdown-menu.kit-item-filter-actions-dropdown:nth-child(2) div.v-select-list.v-card.theme--light div.v-list.v-sheet.v-sheet--tile.theme--light div.v-list-item.primary--text.v-list-item--active.v-list-item--link.theme--light:nth-child(1) > div.v-list-item__content"
+    // ).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.wait(5000);
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(3000);
+    //Scroll to stepper
+    cy.get(".ca-item").eq(0).scrollIntoView({ force: true });
+    cy.wait(5000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".filter-tag-content path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Filter Inspection Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get('[placeholder="Created On"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+    //Click on Inspection dropdown
+    cy.get(
+      " div.v-input.kit-control-select-list.layout-alignment.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select.v-select--is-multi div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    )
+      .eq(4)
+      .click({ force: true });
+    cy.wait(2000);
+    //Inpection filter value(need to be set in json)
+    cy.contains(this.NewKitItemData.InspectionFilterValue).click({
+      force: true,
+    });
+
+    cy.wait(2000);
+    //Click on Apply filters dropdown
+    // cy.get(
+    //   "div.d-flex.align-center.justify-end.col.app-secondary-header-left--buttons.fill-height.gray-divider div.row.left_panel_menu.filter.row.button-left--border.second-header-left--buton.button-left--border div.sticky-dropdown div.wrapper-content.col:nth-child(2) div.row.full-width.fill-height div.form.tools-padding.left_panel_body.col.left_column.col div.row.flex-nowrap.flex-column.fill-height div.buttons.col.pl-4 div.apply-clear-wrapper.navi-bar div.navi-bar-dropdown.navi-bar__actions.navi-bar-action-dropdown.col div.v-input.ca-button-green.v-input--hide-details.v-input--is-label-active.v-input--is-dirty.theme--light.v-text-field.v-text-field--single-line.v-text-field--is-booted.v-select.v-autocomplete.v-overflow-btn.v-overflow-btn--segmented div.v-input__control div.v-input__slot div.v-select__slot div.v-input__append-inner:nth-child(2) > div.v-input__icon.v-input__icon--append"
+    // ).click({
+    //   force: true,
+    // });
+    // cy.wait(2000);
+    // //Click on apply filters text in dropdown
+    // cy.get(
+    //   " div.v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active.v-autocomplete__content.navi-bar-dropdown-menu.kit-item-filter-actions-dropdown:nth-child(2) div.v-select-list.v-card.theme--light div.v-list.v-sheet.v-sheet--tile.theme--light div.v-list-item.primary--text.v-list-item--active.v-list-item--link.theme--light:nth-child(1) > div.v-list-item__content"
+    // ).click({ force: true });
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.wait(5000);
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(5000);
+    //Scroll to Inspection
+    cy.get(".v-btn:nth-child(1) .v-badge > .inline-svg").scrollIntoView({
+      force: true,
+    });
+    cy.wait(5000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".filter-tag-content path").click({ force: true });
     cy.wait(5000);
   });
 });

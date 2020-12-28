@@ -20,7 +20,7 @@
     "Country":"United States",
     "Number":"09",
 
-    "SelectListValue":"VVIP",
+    "SelectListValue":"India",
     
 
     "RadioSelectValue":"SR2",
@@ -31,11 +31,11 @@
     "CheckboxSelectValue4":"CheckboxSelect4",
     "CheckboxSelectValue5":"CheckboxSelect5",
 
-    "StepperValue1":"Moto",
-    "StepperValue2":"Jio",
-    "StepperValue3":"RealMe",
+    "StepperValue1":"Jio",
+    "StepperValue2":"Moto",
+    "StepperValue3":"Note",
     "StepperValue4":"Oppo",
-    "StepperValue5":"Mart",
+    "StepperValue5":"RealMe",
 
     "UserSelectorName":"City Com2",
     "ContactSelectorName":"Pranav Test",

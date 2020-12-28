@@ -2,16 +2,16 @@
 
     "NewView":"NewView",
     "EditView":"EditView",
-    "TableView":"TableView",
-    "SearchView":"SearchView",
-    "TimelineView":"TimelineView",
     "SharedView":"SharedView",
     "EmailView":"EmailView",
     "MapView":"MapView",
     "ScheduleView":"ScheduleView",
     "CommonPlanView":"CommonPlanView",
     "RelatedNewView":"RelatedNewView",
-    "RelatedEditView":"RelatedEditView"
+    "RelatedEditView":"RelatedEditView",
+    "TableView":"TableView",
+    "SearchView":"SearchView",
+    "TimelineView":"TimelineView"
 
 
 }

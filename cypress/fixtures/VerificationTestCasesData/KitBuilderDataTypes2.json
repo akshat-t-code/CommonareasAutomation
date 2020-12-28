@@ -10,20 +10,20 @@
     "Measure":"Measure",
     "Email":"Email",
     "Address":"Address",
-    "Number":"Number",
     "Section":"Section",
+    "Number":"Number",
     "Time":"Time",
     "Date":"Date",
     "ReminderName":"Reminder",
     "Toggle":"Toggle",
 
     "SelectList":"SelectList",
-    "SelectListName":"SelectListName",
-    "SelectListValue1":"MNV",
-    "SelectListValue2":"KUA",
-    "SelectListValue3":"MOP",
-    "SelectListValue4":"VCF",
-    "SelectListValue5":"VVIP",
+    "SelectListName":"SelectList",
+    "SelectListValue1":"Australia",
+    "SelectListValue2":"Bangla",
+    "SelectListValue3":"India",
+    "SelectListValue4":"Lord",
+    "SelectListValue5":"Venacura",
     
     "RadioSelect":"RadioSelect",
     "RadioSelectName":"RadioSelect",
@@ -35,25 +35,27 @@
 
 
     "CheckboxSelect":"CheckboxSelect",
-    "CheckboxSelectName":"CheckboxSelectName",
+    "CheckboxSelectName":"CheckboxSelect",
     "CheckboxSelectValue1":"CheckboxSelect1",
     "CheckboxSelectValue2":"CheckboxSelect2",
     "CheckboxSelectValue3":"CheckboxSelect3",
     "CheckboxSelectValue4":"CheckboxSelect4",
     "CheckboxSelectValue5":"CheckboxSelect5",
 
+   
+
+    "Stepper":"Stepper",
+    "StepperName":"Stepper",
+    "StepperValue1":"Jio",
+    "StepperValue2":"Moto",
+    "StepperValue3":"Note",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"RealMe",
+
     "UserSelector":"UserSelector",
     "ContactSelector":"ContactSelector",
     "Assigning":"Assigning",
 
-
-    "Stepper":"Stepper",
-    "StepperName":"StepperName",
-    "StepperValue1":"Moto",
-    "StepperValue2":"Jio",
-    "StepperValue3":"RealMe",
-    "StepperValue4":"Oppo",
-    "StepperValue5":"Mart",
 
     "Icon":"Icon",
     
@@ -64,14 +66,14 @@
 
     "Inspection":"Inspection",
     "InspectionName":"Inspection",
-    "InspectionValue1":"Java",
-    "InspectionValue2":"C++",
-    "InspectionValue3":"Ruby",
-    "InspectionValue4":"Python",
-    "InspectionValue5":".net",
+    "InspectionValue1":"Cdot",
+    "InspectionValue2":"Java",
+    "InspectionValue3":"Python",
+    "InspectionValue4":"Ruby",
+    "InspectionValue5":"Zapare",
 
     "OneToOneRelation":"BaseOneToOne",
-    "KitToBeRelate":"SanityTesting",
+    "KitToBeRelate":"RelatedKit",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
     "OneToOneMapView":"MapView",
@@ -80,7 +82,7 @@
 
 
     "OneToManyRelation":"BaseNRelation",
-    "KitToBeRelated":"SanityTesting",
+    "KitToBeRelated":"RelatedKit",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
@@ -93,8 +95,8 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"baseSquareCard",
-    "CardKitToBeRelated":"AkshatChildKit",
+    "SquareCardName":"BaseSquareCard",
+    "CardKitToBeRelated":"CommercialKit",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",
