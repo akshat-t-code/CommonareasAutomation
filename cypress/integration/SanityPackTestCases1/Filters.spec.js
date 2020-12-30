@@ -783,7 +783,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter SelectList Element", function () {
+  it.only("Validate the Filter SelectList Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -807,17 +807,17 @@ describe("TableList KitItem Filter", function () {
 
     cy.wait(2000);
 
+    cy.xpath("//div[@class='row kit-related-form pa-6']").click({force:true})
+
     //Click on Apply filters dropdown
-    cy.get(
-      "div.d-flex.align-center.justify-end.col.app-secondary-header-left--buttons.fill-height.gray-divider div.row.left_panel_menu.filter.row.button-left--border.second-header-left--buton.button-left--border div.sticky-dropdown div.wrapper-content.col:nth-child(2) div.row.full-width.fill-height div.form.tools-padding.left_panel_body.col.left_column.col div.row.flex-nowrap.flex-column.fill-height div.buttons.col.pl-4 div.apply-clear-wrapper.navi-bar div.navi-bar-dropdown.navi-bar__actions.navi-bar-action-dropdown.col div.v-input.ca-button-green.v-input--hide-details.v-input--is-label-active.v-input--is-dirty.theme--light.v-text-field.v-text-field--single-line.v-text-field--is-booted.v-select.v-autocomplete.v-overflow-btn.v-overflow-btn--segmented div.v-input__control div.v-input__slot div.v-select__slot div.v-input__append-inner:nth-child(2) > div.v-input__icon.v-input__icon--append"
-    ).click({
-      force: true,
-    });
+    // cy.xpath(
+    //   "//i[text()='arrow_drop_down' and @class='v-icon notranslate material-icons theme--light primary--text']"
+    // ).click({ force: true });
     cy.wait(2000);
-    //Click on apply filters text in dropdown
-    cy.get(
-      " div.v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active.v-autocomplete__content.navi-bar-dropdown-menu.kit-item-filter-actions-dropdown:nth-child(2) div.v-select-list.v-card.theme--light div.v-list.v-sheet.v-sheet--tile.theme--light div.v-list-item.primary--text.v-list-item--active.v-list-item--link.theme--light:nth-child(1) > div.v-list-item__content"
-    ).click({ force: true });
+
+    // cy.xpath(
+    //   "//div[text()='Apply Filters' and @class='v-list-item__title']"
+    // ).click({ force: true });
     cy.wait(2000);
 
     cy.contains("Apply Filters").click({ force: true });
@@ -1093,7 +1093,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter for UserSelector Element", function () {
+  it("Validate the Filter for UserSelector Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1146,7 +1146,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter for ContactSelector Element", function () {
+  it("Validate the Filter for ContactSelector Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1197,7 +1197,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter for Assigning Element", function () {
+  it("Validate the Filter for Assigning Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1250,7 +1250,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the default Filter for Created By Element", function () {
+  it("Validate the default Filter for Created By Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1284,7 +1284,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Default Filter for Modified By", function () {
+  it("Validate the Default Filter for Modified By", function () {
     //Page Object
     const lp = new LoginPage();
 
