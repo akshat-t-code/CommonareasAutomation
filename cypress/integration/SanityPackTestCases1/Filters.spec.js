@@ -964,7 +964,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter Stepper Element", function () {
+  it("Validate the Filter Stepper Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1026,7 +1026,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter Inspection Element", function () {
+  it("Validate the Filter Inspection Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1090,6 +1090,231 @@ describe("TableList KitItem Filter", function () {
 
     //Click on cross icon to remove filer
     cy.get(".filter-tag-content path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Filter for UserSelector Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    cy.contains(this.DataType2.UserSelector).scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+    //Click on UserSelect link to open userselect list popup
+    cy.get(
+      " div.v-input.searchSelectNone.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    )
+      .eq(0)
+      .click({ force: true });
+    cy.contains(" Users ").should("be.visible");
+    cy.wait(2000);
+
+    //select userselector value
+    cy.contains(this.NewKitItemData.UserSelectorName).click({ force: true });
+
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(3000);
+    //Scroll to stepper
+    cy.get(
+      "div.v-window.tab-content-wrapper.v-item-group.theme--light.v-tabs-items div.v-window__container div.v-window-item.v-window-item--active:nth-child(1) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(22) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot div.v-select__slot:nth-child(2) div.v-select__selections:nth-child(2) div.imageContent:nth-child(1) > div.row.control-item-picker"
+    ).scrollIntoView({ force: true });
+    cy.wait(5000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Filter for ContactSelector Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    cy.contains(this.DataType2.ContactSelector).scrollIntoView({
+      force: true,
+    });
+    cy.wait(4000);
+    //Click on ContactSelector link to open ContactSelector list popup
+    cy.get(
+      " div.v-input.searchSelectNone.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    )
+      .eq(1)
+      .click({ force: true });
+    cy.contains(" Connection ").should("be.visible");
+    cy.wait(2000);
+
+    //select ContactSelector value
+    cy.contains(this.NewKitItemData.ContactSelectorName).click({ force: true });
+
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(3000);
+    //Scroll to stepper
+    cy.get(".btn-load .inline-svg").last().scrollIntoView({ force: true });
+    cy.wait(5000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Filter for Assigning Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    cy.contains(this.DataType2.Assigning).scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+    //Click on Assigning link to open Assigning list popup
+    cy.get(
+      " div.v-input.searchSelectNone.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    )
+      .eq(2)
+      .click({ force: true });
+    cy.contains(" Connection ").should("be.visible");
+    cy.wait(2000);
+
+    //select Assigning value
+    cy.contains(this.NewKitItemData.AssigningName).click({ force: true });
+
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(5000);
+    //Scroll to Assigning
+    cy.get(
+      "div.v-window.tab-content-wrapper.v-item-group.theme--light.v-tabs-items div.v-window__container div.v-window-item.v-window-item--active:nth-child(1) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(22) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot div.v-select__slot:nth-child(2) div.v-select__selections:nth-child(2) div.imageContent:nth-child(1) > div.row.control-item-picker"
+    ).scrollIntoView({ force: true });
+    cy.wait(5000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.log(this.NewKitItemData.KitName + "Kit item has been Close");
+    cy.contains(" Recently Viewed ").should("be.visible");
+    cy.wait(5000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the default Filter for Created By Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    cy.contains(this.DataType2.Assigning).scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+    //Click on CreatedBy link to open CreatedBy list popup
+    cy.get(
+      " div.v-input.searchSelectNone.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    )
+      .eq(3)
+      .click({ force: true });
+    cy.contains(" Users ").should("be.visible");
+    cy.wait(2000);
+
+    //select CreatedBy value
+    cy.contains(this.NewKitItemData.CreatedBy).click({ force: true });
+
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Default Filter for Modified By", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    cy.contains(this.DataType2.Assigning).scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+    //Click on ModifiedBy link to open ModifiedBy list popup
+    cy.get(
+      " div.v-input.searchSelectNone.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    )
+      .eq(4)
+      .click({ force: true });
+    cy.contains(" Users ").should("be.visible");
+    cy.wait(2000);
+
+    //select ModifiedBy value
+    cy.contains(this.NewKitItemData.ModifiedBy).click({ force: true });
+
+    cy.wait(2000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
     cy.wait(5000);
   });
 });
