@@ -264,7 +264,7 @@ describe("New kit item complete creation test case", function () {
     cy.xpath("//span[contains(text(),'30')]").first().click({ force: true });
     cy.wait(1000);
     //Click on PM
-    cy.xpath("//div[contains(text(),'PM')]").click({ force: true });
+    cy.xpath("//div[contains(text(),'PM')]").first().click({ force: true });
     //Click on OK to save date
     cy.xpath(
       "//div[contains(@class,'v-dialog v-dialog--active')]//button[1]"

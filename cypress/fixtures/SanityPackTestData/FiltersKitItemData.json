@@ -6,8 +6,8 @@
     "NewFormLibFileName":"Screenshot_12",
     "Telephone":"(345) 123-2495",
     "TextAera":"Filter automation",
-    "Currency":"67",
-    "Measure":"33",
+    "Currency":"20",
+    "Measure":"25",
 
     "Email":"newitem@yahoo.com",
     "Important Note for Email":"should be in small letters",
@@ -18,7 +18,7 @@
     "State":"Alaska",
     "ZipCode":"2133",
     "Country":"United States",
-    "Number":"98",
+    "Number":"30",
 
     "SelectListValue":"Lord",
     
@@ -62,6 +62,9 @@
     "For Filter value":"change as per user",
     "CreatedBy":"Akshat Akshat",
     "ModifiedBy":"Akshat Akshat",
+    "KitItemID":"54",
+    "SliderrValue":"25",
+    
 
     
     

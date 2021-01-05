@@ -783,7 +783,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it.only("Validate the Filter SelectList Element", function () {
+  it("Validate the Filter SelectList Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -807,7 +807,10 @@ describe("TableList KitItem Filter", function () {
 
     cy.wait(2000);
 
-    cy.xpath("//div[@class='row kit-related-form pa-6']").click({force:true})
+    cy.get("[name" + "=" + this.DataType2.Telephone + "]")
+      .last()
+      .scrollIntoView({ force: true })
+      .click({ force: true });
 
     //Click on Apply filters dropdown
     // cy.xpath(
@@ -1312,6 +1315,296 @@ describe("TableList KitItem Filter", function () {
     cy.contains("Apply Filters").click({ force: true });
     cy.get(".filter-tag").should("be.visible");
     cy.wait(10000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it("Validate the Default Filter for Created On", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    cy.get('[placeholder="Created On"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+    cy.get('[placeholder="Created On"][type="text"]').click({ force: true });
+    cy.wait(2000);
+    //Select date by user
+
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert("Select the Created On Date for kit item");
+    });
+    cy.log("User will select created on date");
+    cy.wait(10000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it("Validate the Default Filter for Modified On", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    cy.get('[placeholder="Created On"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+    cy.get('[placeholder="Modified On"][type="text"]').click({ force: true });
+    cy.wait(2000);
+    //Select date by user
+
+    //Firing Alert pop for manual action
+    cy.log("User need to do something").then(() => {
+      alert("Select the Modified On Date for kit item");
+    });
+    cy.log("User will select Modified on date");
+    cy.wait(10000);
+
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it("Validate the Default Filter for KitItemID", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    cy.get('[placeholder="Created On"][type="text"]').scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+    cy.get('[placeholder="Item Id"]')
+      .first()
+      .type(this.NewKitItemData.KitItemID);
+    cy.wait(2000);
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.get(".list-item--title").click({ force: true });
+    cy.wait(3000);
+
+    //Validation for kit item
+    cy.contains(
+      this.NewKitItemData.KitName + " " + "#" + this.NewKitItemData.KitItemID
+    ).should("be.visible");
+    cy.get(".kitname-account-id").should(
+      "have.text",
+      this.NewKitItemData.KitName + " " + "#" + this.NewKitItemData.KitItemID
+    );
+    cy.wait(5000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.wait(3000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it("Validate the Filter for Slider Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    cy.get('.v-text-field__slot [type="number"]').eq(1).clear();
+    cy.wait(2000);
+
+    cy.get('.v-text-field__slot [type="number"]')
+      .eq(1)
+      .type(this.NewKitItemData.SliderrValue);
+    cy.wait(2000);
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(5000);
+
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.wait(3000);
+
+    //Click on cross icon to remove filer
+    cy.get(".inline-svg:nth-child(3) > path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Filter for Currency Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    cy.get('.v-text-field__slot [type="number"]').eq(3).clear();
+    cy.wait(2000);
+
+    cy.get('.v-text-field__slot [type="number"]')
+      .eq(3)
+      .type(this.NewKitItemData.Currency);
+    cy.wait(2000);
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(5000);
+
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.wait(3000);
+
+    //Click on cross icon to remove filer
+    cy.get(".filter-tag-content path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it.only("Validate the Filter for Measure Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    cy.get('.v-text-field__slot [type="number"]').eq(5).clear();
+    cy.wait(2000);
+
+    cy.get('.v-text-field__slot [type="number"]')
+      .eq(5)
+      .type(this.NewKitItemData.Measure);
+    cy.wait(2000);
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(5000);
+
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.wait(3000);
+
+    //Click on cross icon to remove filer
+    cy.get(".filter-tag-content path").click({ force: true });
+    cy.wait(5000);
+  });
+
+  it("Validate the Filter for Number Element", function () {
+    //Page Object
+    const lp = new LoginPage();
+
+    lp.FilterIcon();
+    cy.log("Kit type filters has been opened");
+    cy.wait(3000);
+    //Validation for Filer Elements
+    cy.get("[name" + "=" + this.DataType2.Text + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    cy.get('.v-text-field__slot [type="number"]').eq(7).clear();
+    cy.wait(2000);
+
+    cy.get('.v-text-field__slot [type="number"]')
+      .eq(7)
+      .type(this.NewKitItemData.Number);
+    cy.wait(2000);
+    cy.contains("Apply Filters").click({ force: true });
+    cy.get(".filter-tag").should("be.visible");
+    cy.wait(10000);
+
+    //Click on created kit item
+    cy.contains(
+      this.DataType2.Url + ":" + " " + this.NewKitItemData.Url
+    ).click({ force: true });
+    cy.wait(5000);
+
+    cy.get("[name" + "=" + this.DataType2.Number + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Close Kit type
+    cy.get(".subheader--button-icon-wrapper .inline-svg").click({
+      force: true,
+    });
+    cy.wait(3000);
 
     //Click on cross icon to remove filer
     cy.get(".inline-svg:nth-child(3) > path").click({ force: true });

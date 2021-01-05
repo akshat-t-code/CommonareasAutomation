@@ -1,0 +1,63 @@
+{
+
+    "KitName":"BaseTesting",
+    
+    "UrlNote":"all letters in lower case",
+    
+    "Url":"https://www.newone.com",
+    "Text":"new kit item",
+    "RelNewFileName":"Screenshot_6",
+    "Telephone":"(123) 333-9111",
+    "TextAera":"One To One Related New kititem",
+    "Currency":"12",
+    "Measure":"10",
+
+    "Email":"onetoone@gmail.com",
+    "Important Note for Email":"should be in small letters",
+
+    "Addressline1":"New way",
+    "Addressline2":"One to one",
+    "City":"Grand Island",
+    "State":"Alaska",
+    "ZipCode":"1234",
+    "Country":"United States",
+    "Number":"24",
+
+    "SelectListValue":"Lord",
+    
+
+    "RadioSelectValue":"SR5",
+
+    "CheckboxSelectValue1":"CheckboxSelect1",
+    "CheckboxSelectValue2":"CheckboxSelect2",
+    "CheckboxSelectValue3":"CheckboxSelect3",
+    "CheckboxSelectValue4":"CheckboxSelect4",
+    "CheckboxSelectValue5":"CheckboxSelect5",
+
+    "StepperValue1":"Jio",
+    "StepperValue2":"Moto",
+    "StepperValue3":"Note",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"RealMe",
+
+    "UserSelectorName":"Carmen Goodin",
+    "ContactSelectorName":"Pranav Testing",
+    "AssigningName":"Akshat Akshat",
+    
+    "ExtraSmalliconSize":"Extra Small",
+    "SmalliconSize":"Small",
+    "MediumiconSize":"Medium",
+    "LargeiconSize":"Large",
+    "ExtraLargeiconSize":"Extra Large",
+
+    "IconLabel":"Icon",
+
+    "These are the index value of div child":"use according to select inspection value",
+    "1st for 1st value":"2nd for 2nd value and so on...",
+    "InspectionValue1":"1",
+    "InspectionValue2":"2",
+    "InspectionValue3":"3",
+    "InspectionValue4":"4",
+    "InspectionValue5":"5"
+    
+}
