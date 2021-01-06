@@ -7,8 +7,8 @@ describe("Related Control Square Card test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    //slp.visitCityComTest();
-    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    slp.visitCityComTest();
+    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -18,8 +18,8 @@ describe("Related Control Square Card test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("sam@armyspy.com");
-    //lp.EnterEmail("citycom@commonareas.work.dev");
+    //lp.EnterEmail("sam@armyspy.com");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -48,29 +48,29 @@ describe("Related Control Square Card test case", function () {
       "jwtAccessToken"
     );
 
-    // cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
-    //   SanityTCData
-    // ) {
-    //   this.RelatedKitItemData = SanityTCData;
-    // });
+    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
+      SanityTCData
+    ) {
+      this.RelatedKitItemData = SanityTCData;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
-      function (SanityTCData) {
-        this.RelatedKitItemData = SanityTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
+    //   function (SanityTCData) {
+    //     this.RelatedKitItemData = SanityTCData;
+    //   }
+    // );
 
-    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-    //   NewDataForElements
-    // ) {
-    //   this.DataType2 = NewDataForElements;
-    // });
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-      function (NewDataForElements) {
-        this.DataType2 = NewDataForElements;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+    //   function (NewDataForElements) {
+    //     this.DataType2 = NewDataForElements;
+    //   }
+    // );
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -110,10 +110,9 @@ describe("Related Control Square Card test case", function () {
     //Assertion
     cy.contains("New Item created").should("be.visible");
     cy.log("New Item created and Kit Type has been Opened");
-    
   });
 
-  it("Square Card Related Control to configure Related New form", function () {
+  it.only("Square Card Related Control to configure Related New form", function () {
     cy.wait(1000);
     //save Kit Item for empty form
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
@@ -492,7 +491,7 @@ describe("Related Control Square Card test case", function () {
     cy.wait(5000);
   });
 
-  it("Validate Square Card element on new form", function () {
+  it.only("Validate Square Card element on new form", function () {
     cy.get(".btn-load .inline-svg").eq(1).scrollIntoView({ force: true });
     cy.wait(5000);
     //Square card element assetions before kit item saved(new form)
@@ -574,7 +573,7 @@ describe("Related Control Square Card test case", function () {
     cy.log("There is nothing to save for Kit Item");
   });
 
-  it("Deletion square card elements for new form", function () {
+  it.only("Deletion square card elements for new form", function () {
     //Click on 3dots of square card
     cy.get(".pr-0").click({ force: true });
     cy.wait(1000);
@@ -598,7 +597,7 @@ describe("Related Control Square Card test case", function () {
     cy.wait(2000);
   });
 
-  it("Deletion Validation of added Square Card elements", function () {
+  it.only("Deletion Validation of added Square Card elements", function () {
     cy.wait(2000);
     //No added value assertion
     cy.get(".msg-no-results")

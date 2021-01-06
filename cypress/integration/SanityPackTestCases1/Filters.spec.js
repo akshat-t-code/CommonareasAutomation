@@ -105,7 +105,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(10000);
   });
 
-  it("Filter Url Element", function () {
+  it.only("Filter Url Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -150,7 +150,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Filter Text Element", function () {
+  it.only("Filter Text Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -192,7 +192,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Filter Telephone Element", function () {
+  it.only("Filter Telephone Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -234,7 +234,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Filter TextAera Element", function () {
+  it.only("Filter TextAera Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -276,7 +276,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter Email Element", function () {
+  it.only("Validate the Filter Email Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -318,7 +318,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter Address Element", function () {
+  it.only("Validate the Filter Address Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by Addressline1
@@ -362,7 +362,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for Addressline2 Element", function () {
+  it.only("Validate the Filter for Addressline2 Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by Addressline2
@@ -406,7 +406,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for City Element", function () {
+  it.only("Validate the Filter for City Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by City
@@ -450,7 +450,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for State Element", function () {
+  it.only("Validate the Filter for State Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by State
@@ -494,7 +494,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for ZipCode Element", function () {
+  it.only("Validate the Filter for ZipCode Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by ZipCode
@@ -538,7 +538,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for Country Element", function () {
+  it.only("Validate the Filter for Country Element", function () {
     //Page Object
     const lp = new LoginPage();
     //Filter Address by Country
@@ -582,7 +582,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter Time Element", function () {
+  it.only("Validate the Filter Time Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -638,7 +638,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter Date Element", function () {
+  it.only("Validate the Filter Date Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -686,7 +686,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter Toggle(True) Element", function () {
+  it.only("Validate the Filter Toggle(True) Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -734,7 +734,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter Toggle(False) Element", function () {
+  it.only("Validate the Filter Toggle(False) Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -783,7 +783,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter SelectList Element", function () {
+  it.only("Validate the Filter SelectList Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -847,7 +847,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter RadioSelect Element", function () {
+  it.only("Validate the Filter RadioSelect Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -877,11 +877,6 @@ describe("TableList KitItem Filter", function () {
       force: true,
     });
     cy.wait(2000);
-    //Click on apply filters text in dropdown
-    cy.get(
-      " div.v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active.v-autocomplete__content.navi-bar-dropdown-menu.kit-item-filter-actions-dropdown:nth-child(2) div.v-select-list.v-card.theme--light div.v-list.v-sheet.v-sheet--tile.theme--light div.v-list-item.primary--text.v-list-item--active.v-list-item--link.theme--light:nth-child(1) > div.v-list-item__content"
-    ).click({ force: true });
-    cy.wait(2000);
 
     cy.contains("Apply Filters").click({ force: true });
     cy.wait(5000);
@@ -907,7 +902,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter CheckboxSelect Element", function () {
+  it.only("Validate the Filter CheckboxSelect Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -937,11 +932,6 @@ describe("TableList KitItem Filter", function () {
       force: true,
     });
     cy.wait(2000);
-    //Click on apply filters text in dropdown
-    cy.get(
-      " div.v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active.v-autocomplete__content.navi-bar-dropdown-menu.kit-item-filter-actions-dropdown:nth-child(2) div.v-select-list.v-card.theme--light div.v-list.v-sheet.v-sheet--tile.theme--light div.v-list-item.primary--text.v-list-item--active.v-list-item--link.theme--light:nth-child(1) > div.v-list-item__content"
-    ).click({ force: true });
-    cy.wait(2000);
 
     cy.contains("Apply Filters").click({ force: true });
     cy.wait(5000);
@@ -967,7 +957,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter Stepper Element", function () {
+  it.only("Validate the Filter Stepper Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1029,7 +1019,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter Inspection Element", function () {
+  it.only("Validate the Filter Inspection Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1096,7 +1086,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for UserSelector Element", function () {
+  it.only("Validate the Filter for UserSelector Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1149,7 +1139,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for ContactSelector Element", function () {
+  it.only("Validate the Filter for ContactSelector Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1200,7 +1190,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for Assigning Element", function () {
+  it.only("Validate the Filter for Assigning Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1253,7 +1243,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the default Filter for Created By Element", function () {
+  it.only("Validate the default Filter for Created By Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1287,7 +1277,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Default Filter for Modified By", function () {
+  it.only("Validate the Default Filter for Modified By", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1321,7 +1311,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Default Filter for Created On", function () {
+  it.only("Validate the Default Filter for Created On", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1352,7 +1342,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Default Filter for Modified On", function () {
+  it.only("Validate the Default Filter for Modified On", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1383,7 +1373,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Default Filter for KitItemID", function () {
+  it.only("Validate the Default Filter for KitItemID", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1427,7 +1417,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for Slider Element", function () {
+  it.only("Validate the Filter for Slider Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -1565,7 +1555,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for Number Element", function () {
+  it.only("Validate the Filter for Number Element", function () {
     //Page Object
     const lp = new LoginPage();
 

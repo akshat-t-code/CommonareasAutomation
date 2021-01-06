@@ -71,7 +71,7 @@ describe("Login into the application for a new User ", function () {
       cy.log(WelcomeTxt);
     });
     cy.log("New Users has been logged in successfully");
-    cy.screenshot("New Users has been logged in successfully");
+    //cy.screenshot("New Users has been logged in successfully");
     cy.wait(10000);
   });
 

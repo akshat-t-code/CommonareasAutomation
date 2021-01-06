@@ -6,8 +6,8 @@ describe("Update Related New fot Square Card Related Control", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    //slp.visitCityComTest();
-    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    slp.visitCityComTest();
+    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -17,8 +17,8 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("sam@armyspy.com");
-    //lp.EnterEmail("citycom@commonareas.work.dev");
+    //lp.EnterEmail("sam@armyspy.com");
+    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -47,42 +47,41 @@ describe("Update Related New fot Square Card Related Control", function () {
       "jwtAccessToken"
     );
 
-    // cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
-    //   SanityTCData
-    // ) {
-    //   this.RelatedKitItemData3 = SanityTCData;
-    // });
-    
+    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
+      SanityTCData
+    ) {
+      this.RelatedKitItemData3 = SanityTCData;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
-      function (SanityTCData) {
-        this.RelatedKitItemData3 = SanityTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
+    //   function (SanityTCData) {
+    //     this.RelatedKitItemData3 = SanityTCData;
+    //   }
+    // );
 
-    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-    //   NewDataForElements
-    // ) {
-    //   this.DataType2 = NewDataForElements;
-    // });
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-      function (NewDataForElements) {
-        this.DataType2 = NewDataForElements;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+    //   function (NewDataForElements) {
+    //     this.DataType2 = NewDataForElements;
+    //   }
+    // );
 
-    // cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
-    //   UpDateKitItemSDTCData
-    // ) {
-    //   this.UpdateKitItemData = UpDateKitItemSDTCData;
-    // });
+    cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
+      UpDateKitItemSDTCData
+    ) {
+      this.UpdateKitItemData = UpDateKitItemSDTCData;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/UpdateKItItemData(Prod)").then(
-      function (UpDateKitItemSDTCData) {
-        this.UpdateKitItemData = UpDateKitItemSDTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/UpdateKItItemData(Prod)").then(
+    //   function (UpDateKitItemSDTCData) {
+    //     this.UpdateKitItemData = UpDateKitItemSDTCData;
+    //   }
+    // );
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -432,7 +431,7 @@ describe("Update Related New fot Square Card Related Control", function () {
 
     //Click on cross to contact selector
     cy.get(
-      "div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(22) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot div.v-select__slot:nth-child(2) > div.v-select__selections:nth-child(2)"
+      " div.row.fill-height.no-gutters div.row.kit-details-wrapper--content.pb-0 div.row.fill-height.justify-center div.col.col-12 div.row.wrapper-content.fill-height div.base-layout-main-content.schedule-details.pa-0.fill-height.col.col-12 div.container.pa-0.ma-0.fill-height.justify div.fill-height.pa-0.ma-0.col.wrapper-tabs-and-content.fill-height.fill-width div.tab--content.col div.v-window.tab-content-wrapper.v-item-group.theme--light.v-tabs-items div.v-window__container div.v-window-item.v-window-item--active:nth-child(1) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-component--item-picker.px-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(23) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
     ).click({ force: true });
     cy.wait(4000);
     // //Click on to open ContactSelector Pop up
@@ -511,7 +510,7 @@ describe("Update Related New fot Square Card Related Control", function () {
 
     //Click on cross to delete Assigning
     cy.get(
-      "div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-assigning.pr-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(25) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot div.v-select__slot:nth-child(2) div.v-select__selections:nth-child(2) div.imageContent:nth-child(1) > div.row.control-item-picker"
+      " div.row.kit-details-wrapper--content.pb-0 div.row.fill-height.justify-center div.col.col-12 div.row.wrapper-content.fill-height div.base-layout-main-content.schedule-details.pa-0.fill-height.col.col-12 div.container.pa-0.ma-0.fill-height.justify div.fill-height.pa-0.ma-0.col.wrapper-tabs-and-content.fill-height.fill-width div.tab--content.col div.v-window.tab-content-wrapper.v-item-group.theme--light.v-tabs-items div.v-window__container div.v-window-item.v-window-item--active:nth-child(1) div.wrapper-tabs-content.v-card.v-sheet.theme--light div.v-card__text.kit-documents.fill-height div.row.container-details div.fill-height.col div.container.details-wrapper.fill-height div.row.kit-related-form.pa-6 div.kit-control-component.kit-control-assigning.pr-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(26) span.searchRel div.v-input.searchSelectNone.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
     ).click({ force: true });
     //Click on to open Assigning
     cy.wait(7000);
@@ -559,7 +558,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Square card element assetions before kit item saved(new form)
     cy.contains(
       this.DataType2.Url + ":" + " " + this.UpdateKitItemData.Url
-    ).should("be.visible");
+    ).should("exist");
     cy.log("Url data exist");
     cy.wait(1000);
 
