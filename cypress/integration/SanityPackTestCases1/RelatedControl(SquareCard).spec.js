@@ -110,6 +110,7 @@ describe("Related Control Square Card test case", function () {
     //Assertion
     cy.contains("New Item created").should("be.visible");
     cy.log("New Item created and Kit Type has been Opened");
+    
   });
 
   it("Square Card Related Control to configure Related New form", function () {
@@ -694,7 +695,7 @@ describe("Related Control Square Card test case", function () {
     cy.wait(2000);
   });
 
-  it.only("Validate Link Item elements for square card", function () {
+  it("Validate Link Item elements for square card", function () {
     cy.wait(3000);
 
     cy.get(".btn-load .inline-svg").eq(1).scrollIntoView({ force: true });

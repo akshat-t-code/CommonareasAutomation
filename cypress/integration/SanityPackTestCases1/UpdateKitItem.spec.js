@@ -874,7 +874,7 @@ describe("Update created kit item test case", function () {
       .first()
       .click({ force: true });
     //Related kit item Save Assertion
-    cy.contains(this.DataType2.KitToBeRelated + " has been saved").should(
+    cy.contains(this.DataType2.CardKitToBeRelated + " has been saved").should(
       "be.visible"
     );
     cy.log(this.DataType2.KitToBeRelated + " related new has been Saved");

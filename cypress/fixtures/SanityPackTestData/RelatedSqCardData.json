@@ -26,10 +26,10 @@
     "Country":"United States",
     "Number":"334",
 
-    "SelectListValue":"MNV",
+    "SelectListValue":"Lord",
     
 
-    "RadioSelectValue":"SR1",
+    "RadioSelectValue":"SR3",
 
     "CheckboxSelectValue1":"CheckboxSelect1",
     "CheckboxSelectValue2":"CheckboxSelect2",
@@ -37,15 +37,15 @@
     "CheckboxSelectValue4":"CheckboxSelect4",
     "CheckboxSelectValue5":"CheckboxSelect5",
 
-    "StepperValue1":"Moto",
-    "StepperValue2":"Jio",
-    "StepperValue3":"RealMe",
+    "StepperValue1":"Jio",
+    "StepperValue2":"Moto",
+    "StepperValue3":"Note",
     "StepperValue4":"Oppo",
-    "StepperValue5":"MArt",
+    "StepperValue5":"RealMe",
 
-    "UserSelectorName":"City Com2",
-    "ContactSelectorName":"Carmen Goodin",
-    "AssigningName":"Carmen Goodin",
+    "UserSelectorName":"Carmen Goodin",
+    "ContactSelectorName":"Pranav Testing",
+    "AssigningName":"Akshat Akshat",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",

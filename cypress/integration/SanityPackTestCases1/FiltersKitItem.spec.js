@@ -479,6 +479,7 @@ describe("New kit item creation test case", function () {
         " linked "
     ).should("be.visible");
     cy.wait(2000);
+    //validation
     cy.get(".last-updated:nth-child(2) > .v-icon").should("exist");
     cy.log("Linked onetoone kit item exist");
 
