@@ -9,7 +9,7 @@
     "AddDescription":"We are creating time entry fot sanity test cases reminder",
     "TimeEntryConnection":"Reporting User",
     "AddComments":"Hi these are the sanity test cses that we are going to automate with cypress tool",
-    "AddGroup":"CA Build",
+    "AddGroup":"Adrian's Portfolio",
     "CommonPlanName":"Sanity Plan",
     "ScheduleName":"Sanity Pack Reminder"
     

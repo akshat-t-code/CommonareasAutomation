@@ -455,7 +455,7 @@ describe("Details View tabs test case", function () {
     cy.wait(2000);
   });
 
-  it.only("Common Plan", function () {
+  it("Common Plan", function () {
     //Click on common plan tab
     cy.contains(" Common Plans ").click({ force: true });
 
@@ -490,7 +490,7 @@ describe("Details View tabs test case", function () {
     cy.wait(3000);
   });
 
-  it.only("Copy and Delete Common Plan", function () {
+  it("Copy and Delete Common Plan", function () {
     cy.wait(3000);
 
     //Click on copy plan

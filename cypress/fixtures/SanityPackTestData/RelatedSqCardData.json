@@ -18,15 +18,15 @@
     "Email":"sqcardNew@gmail.com",
     "Important Note for Email":"should be in small letters",
 
-    "Addressline1":"Romrog WaySqRel",
-    "Addressline2":"Oak WayCardRel",
-    "City":"Grand Island Card",
-    "State":"Alaska",
-    "ZipCode":"83234",
+    "Addressline1":"Card way",
+    "Addressline2":"Oak New",
+    "City":"Grand Card",
+    "State":"Arizona",
+    "ZipCode":"9876",
     "Country":"United States",
-    "Number":"334",
+    "Number":"4",
 
-    "SelectListValue":"Lord",
+    "SelectListValue":"India",
     
 
     "RadioSelectValue":"SR3",
@@ -53,7 +53,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"SqCard",
+    "IconLabel":"SqCard Today",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",

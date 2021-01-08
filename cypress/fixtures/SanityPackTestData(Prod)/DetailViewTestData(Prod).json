@@ -1,0 +1,16 @@
+{
+    "UrlData":"https://detailsview.com",
+    "TextData":"Details View",
+    "DetailViewFileName":"Screenshot_6",
+    "ContributorsName":"Teng Teng",
+    "AddTimeEntryLable":"Prod Details View form",
+    "AddTimeEntryDescription":"details view aka edit form tabs",
+    "TotalHours":"6",
+    "AddDescription":"We are creating time entry",
+    "TimeEntryConnection":"Harryday Harryday",
+    "AddComments":"Hi these are the sanity test cses that we are going to automate with cypress tool",
+    "AddGroup":"CA Prod",
+    "CommonPlanName":"Sanity Plan",
+    "ScheduleName":"Sanity Pack Reminder"
+    
+}

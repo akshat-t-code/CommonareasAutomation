@@ -12,19 +12,19 @@
     "RelNewFileName":"Screenshot_6",
     "Telephone":"(343) 909-9765",
     "TextAera":"One To One Related New automation",
-    "Currency":"73",
+    "Currency":"7",
     "Measure":"09",
 
     "Email":"onetoNew@gmail.com",
     "Important Note for Email":"should be in small letters",
 
-    "Addressline1":"Romrog WayOne",
-    "Addressline2":"One Way",
-    "City":"Grand Island One",
+    "Addressline1":"Romrog One way",
+    "Addressline2":"One Island",
+    "City":"Grand  One",
     "State":"Alaska",
-    "ZipCode":"13233",
+    "ZipCode":"1323",
     "Country":"United States",
-    "Number":"24",
+    "Number":"2",
 
     "SelectListValue":"Bangla",
     
@@ -53,7 +53,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"Onetoone",
+    "IconLabel":"One Today",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",

@@ -18,15 +18,15 @@
     "Email":"onetomany@gmail.com",
     "Important Note for Email":"should be in small letters",
 
-    "Addressline1":"Romrog WayRel",
-    "Addressline2":"Oak WayRel",
+    "Addressline1":"Many Today",
+    "Addressline2":"New Many",
     "City":"Grand IslandRel",
     "State":"Alaska",
-    "ZipCode":"3112",
+    "ZipCode":"1234",
     "Country":"United States",
-    "Number":"234",
+    "Number":"1",
 
-    "SelectListValue":"Lord",
+    "SelectListValue":"Australia",
     
 
     "RadioSelectValue":"SR1",
@@ -53,7 +53,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"OneN",
+    "IconLabel":"Many Today",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",
