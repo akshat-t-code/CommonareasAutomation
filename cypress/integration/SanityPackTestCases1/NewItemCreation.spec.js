@@ -7,7 +7,8 @@ describe("New kit item complete creation test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitCityComTest();
+    //slp.visitCityComTest();
+    cy.visit('https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F')
     //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
@@ -18,7 +19,8 @@ describe("New kit item complete creation test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("citycom@commonareas.work.dev");
+    lp.EnterEmail("propertymanagement@commonareas.work.dev");
+    //lp.EnterEmail("citycom@commonareas.work.dev");
     //lp.EnterEmail("sam@armyspy.com");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -534,7 +536,7 @@ describe("New kit item complete creation test case", function () {
     cy.wait(3000);
   });
 
-  it.only("Add Relation On Map", function () {
+  it("Add Relation On Map", function () {
     //Click on Map tab
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
@@ -740,7 +742,7 @@ describe("New kit item complete creation test case", function () {
     cy.wait(4000);
   });
 
-  it.only("Groups Tab", function () {
+  it("Groups Tab", function () {
     //Groups Tab
     cy.contains(" Groups ").click({ force: true });
     cy.wait(2000);
