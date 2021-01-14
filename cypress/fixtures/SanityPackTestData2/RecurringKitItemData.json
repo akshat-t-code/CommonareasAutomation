@@ -1,35 +1,31 @@
 {
 
-    "KitName":"Validation",
-    
-    "UrlNote":"all letters in lower case",
+    "RecurringitemName":"TodayItem",
 
-    "NewKitItemUrl":"https://www.onetoonenewform.com",
-    "NewKitItemText":"OneToOne Relation TC",
-    
-    "Url":"https://www.onetoone.com",
-    "Text":"One2One Related New",
-    "RelNewFileName":"Screenshot_6",
-    "Telephone":"(343) 909-9765",
-    "TextAera":"One To One Related New automation",
-    "Currency":"7",
-    "Measure":"09",
+    "KitName":"BaseTesting",
+    "Url":"https://www.recurringitem.com",
+    "Text":"Recurring text data",
+    "NewFormLibFileName":"Screenshot_12",
+    "Telephone":"(123) 123-2495",
+    "TextAera":"Recurring kit item",
+    "Currency":"15",
+    "Measure":"2",
 
-    "Email":"onetoNew@gmail.com",
+    "Email":"recurring@yahoo.com",
     "Important Note for Email":"should be in small letters",
 
-    "Addressline1":"Romrog One way",
-    "Addressline2":"One Island",
-    "City":"Grand  One",
+    "Addressline1":"recurring Way",
+    "Addressline2":"Oak recurring",
+    "City":"Grand Island recurring",
     "State":"Alaska",
-    "ZipCode":"1323",
+    "ZipCode":"4877",
     "Country":"United States",
-    "Number":"2",
+    "Number":"3",
 
-    "SelectListValue":"Bangla",
+    "SelectListValue":"Lord",
     
 
-    "RadioSelectValue":"SR2",
+    "RadioSelectValue":"SR5",
 
     "CheckboxSelectValue1":"CheckboxSelect1",
     "CheckboxSelectValue2":"CheckboxSelect2",
@@ -43,9 +39,8 @@
     "StepperValue4":"Oppo",
     "StepperValue5":"RealMe",
 
-    
     "UserSelectorName":"Work Requests",
-    "ContactSelectorName":"Akshat Akshat",
+    "ContactSelectorName":"Sam Ruddy",
     "AssigningName":"Max Max",
     
     "ExtraSmalliconSize":"Extra Small",
@@ -54,7 +49,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"One Today",
+    "IconLabel":"recurring",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",
@@ -63,5 +58,5 @@
     "InspectionValue3":"3",
     "InspectionValue4":"4",
     "InspectionValue5":"5"
-    
+
 }

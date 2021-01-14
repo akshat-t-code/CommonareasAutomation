@@ -63,8 +63,10 @@ describe("Login for new User than Create A new Connection and Accept the request
 
   it.only("Create a new Connection ", function () {
     const lp = new LoginPage();
-    lp.visitCityComTest();
-    lp.EnterEmail("citycom@commonareas.work.dev");
+    //lp.visitCityComTest();
+    cy.visit('https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F')
+    lp.EnterEmail("propertymanagement@commonareas.work.dev");
+    //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
    // cy.screenshot("User Details-(To Create Connection Request");
     cy.wait(10000);

@@ -1,7 +1,7 @@
 class KitTypePage{
 
 SearchKitType(KitName){
-    cy.get('[placeholder="Search Item"]').type(KitName)
+    cy.get('[placeholder="Search Item"]').first().type(KitName)
 }
 
 OpenKitType(KitName){
