@@ -215,7 +215,7 @@ describe("New kit item complete creation test case", function () {
 
     //Address
     cy.get(
-      '[placeholder="Street address, bulding, company ... "][name="Address"]'
+      '[placeholder="Street address, building, company ... "]'
     ).type(this.NewKitItemData.Addressline1);
     //Address line
     cy.get('[name="Address line 2."]').type(this.NewKitItemData.Addressline2);

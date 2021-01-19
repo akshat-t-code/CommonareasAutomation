@@ -241,7 +241,7 @@ describe("Related Control One to Many test case", function () {
 
     //Address
     cy.get(
-      '[placeholder="Street address, bulding, company ... "][name="Address"]'
+      '[placeholder="Street address, building, company ... "]'
     )
       .eq(0)
       .type(this.RelatedKitItemData.Addressline1);

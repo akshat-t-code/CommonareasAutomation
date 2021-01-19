@@ -1,6 +1,9 @@
 {
 
+    "RecurringitemName":"TodayItem",
 
+
+    
     "Recurring kit itmes tabs":"Data",
 
     "RecurringFilesTab":"Fixtures",
@@ -14,9 +17,8 @@
     "RecurringAddGroup":"",
 
 
-    "RecurringitemName":"TodayItem",
 
-    "KitName":"BaseTesting",
+    "KitName":"SamTest",
     "Url":"https://www.recurringitem.com",
     "Text":"Recurring text data",
     "NewFormLibFileName":"Screenshot_12",
@@ -36,7 +38,7 @@
     "Country":"United States",
     "Number":"3",
 
-    "SelectListValue":"Lord",
+    "SelectListValue":"MNV",
     
 
     "RadioSelectValue":"SR5",
@@ -53,9 +55,9 @@
     "StepperValue4":"Oppo",
     "StepperValue5":"RealMe",
 
-    "UserSelectorName":"Work Requests",
-    "ContactSelectorName":"Sam Ruddy",
-    "AssigningName":"Max Max",
+    "UserSelectorName":"Teng Teng",
+    "ContactSelectorName":"Sunny Sunny",
+    "AssigningName":"Mack Ss",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",

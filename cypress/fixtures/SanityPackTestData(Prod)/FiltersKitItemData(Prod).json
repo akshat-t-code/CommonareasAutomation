@@ -1,6 +1,6 @@
 {
 
-    "KitName":"BaseTesting",
+    "KitName":"SamTest",
     "Url":"https://www.filters.com",
     "Text":"Filter text data",
     "NewFormLibFileName":"Screenshot_12",
@@ -15,12 +15,12 @@
     "Addressline1":"Filter Way",
     "Addressline2":"Oak Filter",
     "City":"Grand Island Filter",
-    "State":"Bihar",
+    "State":"Alaska",
     "ZipCode":"2133",
-    "Country":"India",
+    "Country":"United States",
     "Number":"30",
 
-    "SelectListValue":"Lord",
+    "SelectListValue":"MNV",
     
 
     "RadioSelectValue":"SR5",
@@ -37,9 +37,9 @@
     "StepperValue4":"Oppo",
     "StepperValue5":"RealMe",
 
-    "UserSelectorName":"Work Requests",
-    "ContactSelectorName":"Sam Ruddy",
-    "AssigningName":"Max Max",
+    "UserSelectorName":"ravi Negi",
+    "ContactSelectorName":"Sam3 White",
+    "AssigningName":"Mack Ss",
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",
@@ -60,9 +60,9 @@
     "InspectionFilterValue":"Cdot",
 
     "For Filter value":"change as per user",
-    "CreatedBy":"Max Max",
-    "ModifiedBy":"Max Max",
-    "KitItemID":"20",
+    "CreatedBy":"Mack Ss",
+    "ModifiedBy":"Mack Ss",
+    "KitItemID":"127",
     "SliderrValue":"25",
     
 

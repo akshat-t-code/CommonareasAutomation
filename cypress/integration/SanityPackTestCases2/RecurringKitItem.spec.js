@@ -50,6 +50,12 @@ describe("Recurring New kit item creation test case", function () {
       "jwtAccessToken"
     );
 
+    // cy.fixture("SanityPackTestData(Prod)/RecurringKitItemData(Prod)").then(
+    //   function (SanityTCData) {
+    //     this.NewKitItemData = SanityTCData;
+    //   }
+    // );
+
     cy.fixture("SanityPackTestData2/RecurringKitItemData").then(function (
       SanityTCData
     ) {
@@ -89,7 +95,7 @@ describe("Recurring New kit item creation test case", function () {
     });
   });
 
-  it.only("Open Recurring Items", function () {
+  it("Open Recurring Items", function () {
     cy.wait(10000);
     const lp = new LoginPage();
     //Assertion
@@ -136,6 +142,7 @@ describe("Recurring New kit item creation test case", function () {
     //Assertion
     cy.contains("New Item created").should("be.visible");
     cy.log("New Item created and Kit Type has been Opened");
+    cy.wait(3000);
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -231,9 +238,9 @@ describe("Recurring New kit item creation test case", function () {
     cy.wait(1000);
 
     //Address
-    cy.get(
-      '[placeholder="Street address, bulding, company ... "][name="Address"]'
-    ).type(this.NewKitItemData.Addressline1);
+    cy.get('[placeholder="Street address, building, company ... "]').type(
+      this.NewKitItemData.Addressline1
+    );
     //Address line
     cy.get('[name="Address line 2."]').type(this.NewKitItemData.Addressline2);
 
@@ -554,8 +561,212 @@ describe("Recurring New kit item creation test case", function () {
       "be.visible"
     );
     cy.log(this.NewKitItemData.KitName + "Kit Type has been Saved");
+  });
 
-    //close the Kit Item
+  it.only("Files Tab", function () {
+    cy.wait(3000);
+
+    //Files Tab
+    cy.contains("Files").click({ force: true });
+    cy.wait(2000);
+    //Click on Library
+    cy.contains("Choose From Library").click({ force: true });
+    cy.wait(3000);
+    //give file name to select
+    cy.contains(this.NewKitItemData.RecurringFilesTab).click({ force: true });
+    //cy.get(".thumb-container:nth-child(2) .item-check").click({ force: true });
+    cy.wait(2000);
+    //Click on save file
+    cy.get(".button-pop-ups--size > .v-btn__content")
+      .first()
+      .click({ force: true });
+    //Assertion validation
+    cy.contains("File saved").should("be.visible");
+    cy.log("File uploaded");
+    cy.wait(3000);
+  });
+
+  it.only("Add a pin on Map", function () {
+    //Map Tab
+    cy.contains(" Map ").click({ force: true });
+    cy.wait(4000);
+    //Click on Map
+    cy.get(
+      ".vue-map-container:nth-child(2) .gm-style > div:nth-child(1) > div:nth-child(3)"
+    ).click({ force: true });
+    cy.contains("Add a Pin").click({ force: true });
+    //cy.contains("Pin has been created successfully.").should("be.visible");
+    cy.wait(3000);
+  });
+
+  it.only("Link Existing Relation On Map", function () {
+    //Click on Map tab
+    // cy.contains(" Map ").click({ force: true });
+    // cy.wait(2000);
+    //Click on Map
+    cy.get(
+      ".vue-map-container:nth-child(2) .gm-style > div:nth-child(1) > div:nth-child(3)"
+    ).click({ force: true });
+    cy.wait(5000);
+    //Related Kit type
+    cy.contains("Link Existing " + this.DataType2.OneToManyRelation).click({
+      force: true,
+    });
+    cy.wait(3000);
+    //Selct the to be linked kit item
+    cy.get("div:nth-child(3) > div > .row:nth-child(1) .item-check").first().click();
+
+    //cy.get(".thumb-selected-icon").eq(1).click();
+    // cy.get(".thumb-selected-icon").eq(2).click();
+    // cy.get(".thumb-selected-icon").eq(3).click();
+    cy.wait(2000);
+    //Click on select btn
+    cy.get(".button-pop-ups > .v-btn__content").click({ force: true });
+    cy.contains(
+      " Relation on " +
+        this.DataType2.OneToManyRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " linked "
+    ).should("be.visible");
+    //Click on save
+    cy.get(".v-select__selections .v-btn__content").click({ force: true });
+    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
+      "be.visible"
+    );
+    cy.wait(3000);
+  });
+
+  it.only("Contributors Tab", function () {
+    //Contributors Tab
+    cy.contains(" Contributors ").click({ force: true });
+    cy.wait(3000);
+    //Click on Add for Contributors
+    cy.get(".addBtn:nth-child(2) > .v-btn__content").click({ force: true });
+    cy.wait(2000);
+    //Assertion validation
+    cy.contains(" Connections ").should("be.visible");
+    cy.wait(2000);
+
+    cy.wait(2000);
+    //Click on contribytors checkbox
+    cy.contains("Contributor").click({ force: true });
+    cy.wait(4000);
+    //Select Name
+    cy.contains(this.NewKitItemData.RecurringContributorsTab).click({
+      force: true,
+    });
+    //Click on Save
+    cy.get(".button-pop-ups--size > .v-btn__content")
+      .eq(0)
+      .click({ force: true });
+    //creation Assertion validation
+    cy.contains("Item shared").should("be.visible");
+    cy.log("Contributor added");
+    cy.wait(4000);
+  });
+
+  it.only("Time Entries Tab", function () {
+    //Time Entries Tab
+    cy.contains(" Time Entries ").click({ force: true });
+    cy.wait(2000);
+    //Click on Add for Time Entries
+    cy.get(".ml-4 > .v-btn__content").first().click({ force: true });
+    //Assertion validation
+    cy.contains("Time Entry").should("be.visible");
+    //Click on + icon
+    cy.wait(2000);
+    cy.get(".add-new--icon").click({ force: true });
+    //Assertion validation
+    cy.contains(" Add New Time Type ").should("be.visible");
+    cy.wait(2000);
+    cy.get('[placeholder="Label"]')
+      .eq(0)
+      .type(this.NewKitItemData.RecurringAddTimeEntryLable);
+    cy.get('[placeholder="Description"]').type(
+      this.NewKitItemData.RecurringAddTimeEntryDescription
+    );
+    //Click on Save
+    cy.get(".col-4 .v-btn__content").first().click({ force: true });
+    //Assertion validation
+    cy.contains(" New Time Type saved ").should("be.visible");
+    cy.wait(2000);
+    //Click on Total hours
+    cy.get('[name="totalHours"]').type(this.NewKitItemData.RecurringTotalHours);
+    //Click on select date
+    cy.get('[name="startdate"]').click({ force: true });
+    cy.wait(4000);
+    //Select Date
+    cy.xpath("//div[contains(text(),'30')]").eq(0).click({ force: true });
+    //Click on OK
+    cy.wait(1000);
+    cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
+    cy.wait(2000);
+    //Click on Time Entry for
+    cy.get(
+      "div:nth-child(2) > div:nth-child(1) > span > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    ).click({ force: true });
+    cy.wait(4000);
+    //Assertion validation
+    cy.contains("Connection").should("be.visible");
+    cy.wait(2000);
+    cy.contains(this.NewKitItemData.RecurringTimeEntryConnection).click({
+      force: true,
+    });
+    cy.wait(1000);
+    cy.get('[placeholder="Add a Description"]').type(
+      this.NewKitItemData.RecurringAddDescription
+    );
+    //Click on Save
+    cy.get(".col-3 > .ca-button-green > .v-btn__content").click({
+      force: true,
+    });
+    //Assertion validation
+    cy.contains(" Time Entry details saved ").should("be.visible");
+    cy.log("Time Entry details saved");
+    cy.wait(4000);
+  });
+
+  it.only("Comments Tab", function () {
+    //Comments Tab
+    cy.contains("Comments ").click({ force: true });
+    cy.wait(2000);
+    cy.get('[name="addComment"]').type(
+      this.NewKitItemData.RecurringAddComments
+    );
+    cy.wait(2000);
+    cy.contains(" SAVE ").click({ force: true });
+    //Assertion validation
+    cy.contains(" New Comment added ").should("be.visible");
+    cy.log("Comment has been added");
+    cy.wait(4000);
+  });
+
+  it.only("Groups Tab", function () {
+    //Groups Tab
+    cy.contains(" Groups ").click({ force: true });
+    cy.wait(2000);
+    // //Click on Add for Grops
+    // cy.get(".details-wrapper > .col > .ml-0 > .v-btn__content").click({
+    //   force: true,
+    // });
+    // //Assertion validation
+    // cy.contains(" Groups ").should("be.visible");
+    // cy.wait(2000);
+    // cy.contains(this.NewKitItemData.RecurringAddGroup).click({ force: true });
+    // //Assertion validation
+    // cy.contains(this.NewKitItemData.RecurringAddGroup).should("be.visible");
+    // cy.wait(2000);
+    //save Kit Item
+
+    //save Kit Item
+    cy.get(".v-select__selections .v-btn__content").click({ force: true });
+
+    //kit item Save Assertion
+    cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
+      "be.visible"
+    );
+
     cy.wait(5000);
     //Close Kit type
     cy.get(".subheader--button-icon-wrapper path").click({
