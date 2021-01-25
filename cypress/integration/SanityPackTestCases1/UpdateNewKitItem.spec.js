@@ -7,7 +7,8 @@ describe("New kit item complete creation test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitCityComTest();
+    //slp.visitCityComTest();
+    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
     //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
@@ -18,8 +19,9 @@ describe("New kit item complete creation test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
+    lp.EnterEmail("propertymanagement@commonareas.work.dev");
+    //lp.EnterEmail("citycom@commonareas.work.dev");
     //lp.EnterEmail("sam@armyspy.com");
-    lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -221,9 +223,9 @@ describe("New kit item complete creation test case", function () {
     //Scrolling
     cy.get('[placeholder="City"]').scrollIntoView({ force: true });
     //Address
-    cy.get(
-      '[placeholder="Street address, building, company ... "]'
-    ).type(this.NewKitItemData.Addressline1);
+    cy.get('[placeholder="Street address, building, company ... "]').type(
+      this.NewKitItemData.Addressline1
+    );
     //Address line
     cy.get('[name="Address line 2."]').type(this.NewKitItemData.Addressline2);
 
@@ -379,8 +381,13 @@ describe("New kit item complete creation test case", function () {
     cy.log("ContactSelecto added");
     cy.wait(4000);
 
+    //Scroll to Inspection
+    cy.get(".v-btn:nth-child(1) .v-badge > .inline-svg").scrollIntoView({
+      force: true,
+    });
+    cy.wait(5000);
+
     //getting value form different json file
-    cy.wait(2000);
     //Icon
     //Click on + icon of ICON Element
     cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
@@ -531,14 +538,6 @@ describe("New kit item complete creation test case", function () {
     cy.log("TextAera Updated");
     cy.wait(3000);
 
-    //Click to save
-    cy.get(".navi-bar-dropdown:nth-child(2) .v-btn").click({ force: true });
-    cy.contains(this.NewKitItemData.KitName + " has been saved").should(
-      "be.visible"
-    );
-    cy.log("Paritally saved deatils views");
-    cy.wait(2000);
-
     //Email scrolling
     cy.get("[name" + "=" + this.DataType2.Email + "]")
       .last()
@@ -576,9 +575,7 @@ describe("New kit item complete creation test case", function () {
     cy.wait(1000);
 
     //Address
-    cy.get(
-      '[placeholder="Street address, building, company ... "]'
-    )
+    cy.get('[placeholder="Street address, building, company ... "]')
       .clear()
       .type(this.UpdateKitItemData.Addressline1);
     cy.log("TextAera Updated");
@@ -768,8 +765,14 @@ describe("New kit item complete creation test case", function () {
     cy.log("ContactSelecto Updated");
     cy.wait(4000);
 
+    //Scroll to Inspection
+    cy.get(".v-btn:nth-child(1) .v-badge > .inline-svg").scrollIntoView({
+      force: true,
+    });
+    cy.wait(5000);
+
     //getting value form different json file
-    cy.wait(2000);
+
     //Icon
     //Click on + icon of ICON Element
     cy.get(".v-btn__content > img").click({
@@ -832,6 +835,121 @@ describe("New kit item complete creation test case", function () {
     cy.contains("Item shared").should("be.visible");
     cy.log("Assigning added");
     cy.wait(5000);
+    /////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////////////////////////////////////
+
+    //Link Onetomany
+
+    cy.wait(3000);
+    //Click on New Item for one to Many Related Control
+    cy.get(".ca-item").eq(0).scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    cy.get(".ca-item")
+      .eq(0)
+
+      .click({ force: true });
+
+    //Search List view pop up assertion
+    cy.contains(this.ViewName.SearchView).should("be.visible");
+    //Selct the to be linked kit item
+    cy.get(".thumb-selected-icon").eq(0).click();
+    cy.get(".thumb-selected-icon").eq(1).click();
+    cy.wait(2000);
+    //Click on select btn
+    cy.get(".button-pop-ups > .v-btn__content").click({ force: true });
+
+    cy.contains(
+      "Relation on " +
+        this.DataType2.OneToManyRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " linked "
+    ).should("be.visible");
+    cy.wait(3000);
+    cy.get(
+      ".grid-body:nth-child(1) > td:nth-child(1) > .v-list-item__subtitle"
+    ).scrollIntoView({ force: true });
+    cy.wait(2000);
+    cy.get(
+      ".grid-body:nth-child(1) > td:nth-child(1) > .v-list-item__subtitle"
+    ).should("exist");
+    cy.get(
+      ".grid-body:nth-child(2) > td:nth-child(1) > .v-list-item__subtitle"
+    ).should("exist");
+
+    cy.log("Existing item linked");
+    cy.wait(3000);
+    /////////////////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //Link OnetoOne
+    cy.wait(2000);
+    cy.get(".action-icon:nth-child(2) > .inline-svg").scrollIntoView({
+      force: true,
+    });
+
+    //Click on to link existing item
+    cy.get(".action-icon:nth-child(2) > .inline-svg").click({ force: true });
+
+    //Search List view pop up assertion
+    cy.contains(" Related Items ").should("be.visible");
+    //Select item to be linked kit item
+    cy.get(".row:nth-child(2) > .d-flex .v-avatar:nth-child(1) use").click({
+      force: true,
+    });
+    //Scroll
+    cy.get(".last-updated:nth-child(2) > .v-icon").scrollIntoView({
+      force: true,
+    });
+    //Linking assertion
+    cy.contains(
+      "Relation on " +
+        this.DataType2.OneToOneRelation +
+        " for " +
+        this.NewKitItemData.KitName +
+        " linked "
+    ).should("be.visible");
+    cy.wait(2000);
+    //validation
+    cy.get(".last-updated:nth-child(2) > .v-icon").should("exist");
+    cy.log("Linked onetoone kit item exist");
+
+    cy.wait(4000);
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //Link square card
+    cy.wait(3000);
+    //Click on New Item for one to Many Related Control
+    cy.get(".ca-item").eq(2).scrollIntoView({ force: true });
+    cy.wait(3000);
+    cy.get(".ca-item").eq(2).click({ force: true });
+    //Search List view pop up assertion
+    cy.contains(this.ViewName.SearchView).should("be.visible");
+    //Selct the to be linked kit item
+    cy.get(".thumb-selected-icon").eq(0).click();
+    cy.get(".thumb-selected-icon").eq(1).click();
+    cy.wait(2000);
+    //Click on select btn
+    cy.get(".button-pop-ups > .v-btn__content").first().click({ force: true });
+
+    cy.contains(
+      "Relation on " +
+        this.DataType2.SquareCardName +
+        " for " +
+        this.NewKitItemData.KitName +
+        " linked "
+    ).should("be.visible");
+    cy.get(".px-2:nth-child(1) .inline-svg").should("exist");
+    cy.get(".px-2:nth-child(2) .inline-svg").should("exist");
+
+    cy.log("Existing item linked");
+    cy.wait(3000);
+
+    ////////////////////////////////////////////////////////////////////
 
     //save Kit Item
     cy.get(".v-select__selections .v-btn__content").click({ force: true });

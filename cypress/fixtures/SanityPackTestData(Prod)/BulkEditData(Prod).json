@@ -1,0 +1,54 @@
+{
+
+
+    "KitName":"SamTest",
+    "Url":"https://www.akshat.com",
+    "Text":"akshat bulk action",
+  
+    "Telephone":"(999) 999-999",
+    "TextAera":"Performing bulk action",
+    "Currency":"9",
+    "Measure":"9",
+
+    "Email":"bulkedit@yahoo.com",
+    "Important Note for Email":"should be in small letters",
+
+    "Addressline1":"bulk edit",
+    "Addressline2":"Oak bulk action",
+    "City":"Grand Island bulk",
+    "State":"California",
+    "ZipCode":"9090",
+    "Country":"United States",
+    "Number":"9",
+
+    "SelectListValue":" VVIP ",
+    
+
+    "RadioSelectValue":"SR5",
+
+    "CheckboxSelectValue1":"CheckboxSelect1",
+    "CheckboxSelectValue2":"CheckboxSelect2",
+    "CheckboxSelectValue3":"CheckboxSelect3",
+    "CheckboxSelectValue4":"CheckboxSelect4",
+    "CheckboxSelectValue5":"CheckboxSelect5",
+
+    "StepperValue1":"Jio",
+    "StepperValue2":"Moto",
+    "StepperValue3":"Note",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"RealMe",
+
+    "UserSelectorName":"Mack Ss",
+    "ContactSelectorName":"Jason Roy",
+   
+    
+    "ExtraSmalliconSize":"Extra Small",
+    "SmalliconSize":"Small",
+    "MediumiconSize":"Medium",
+    "LargeiconSize":"Large",
+    "ExtraLargeiconSize":"Extra Large",
+
+    "IconLabel":"Bulk Action"
+
+
+}

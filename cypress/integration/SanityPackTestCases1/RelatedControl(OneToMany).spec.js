@@ -8,7 +8,8 @@ describe("Related Control One to Many test case", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
+    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -18,7 +19,8 @@ describe("Related Control One to Many test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("sam@armyspy.com");
+    lp.EnterEmail("propertymanagement@commonareas.work.dev");
     //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -48,29 +50,29 @@ describe("Related Control One to Many test case", function () {
       "jwtAccessToken"
     );
 
-    // cy.fixture("SanityPackTestData/RelatedOneToNData").then(function (
-    //   SanityTCData
-    // ) {
-    //   this.RelatedKitItemData = SanityTCData;
-    // });
+    cy.fixture("SanityPackTestData/RelatedOneToNData").then(function (
+      SanityTCData
+    ) {
+      this.RelatedKitItemData = SanityTCData;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/RelatedOneToNData(Prod)").then(
-      function (SanityTCData) {
-        this.RelatedKitItemData = SanityTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/RelatedOneToNData(Prod)").then(
+    //   function (SanityTCData) {
+    //     this.RelatedKitItemData = SanityTCData;
+    //   }
+    // );
 
-    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-    //   NewDataForElements
-    // ) {
-    //   this.DataType2 = NewDataForElements;
-    // });
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-      function (NewDataForElements) {
-        this.DataType2 = NewDataForElements;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+    //   function (NewDataForElements) {
+    //     this.DataType2 = NewDataForElements;
+    //   }
+    // );
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     cy.fixture("KitBuilderTestData/NewKitTypeData").then(function (
@@ -113,6 +115,9 @@ describe("Related Control One to Many test case", function () {
 
   it.only("One to Many Related Control to configure (Related New form)", function () {
     cy.wait(1000);
+    //Url
+    cy.get("[name" + "=" + this.DataType2.Url + "]").should("be.visible");
+    cy.wait(2000);
     //save Kit Item for empty form
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
     //kit item Save Assertion for no data
@@ -240,9 +245,7 @@ describe("Related Control One to Many test case", function () {
     cy.wait(1000);
 
     //Address
-    cy.get(
-      '[placeholder="Street address, building, company ... "]'
-    )
+    cy.get('[placeholder="Street address, building, company ... "]')
       .eq(0)
       .type(this.RelatedKitItemData.Addressline1);
     //Address line
@@ -458,6 +461,14 @@ describe("Related Control One to Many test case", function () {
     cy.log("Assigning added");
     cy.wait(5000);
 
+    //Onetoone link
+    cy.get(".action-icon:nth-child(2) path").first().click({ force: true });
+    cy.wait(5000);
+    //OneToOne
+    cy.get(
+      ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
+    ).click({ force: true });
+
     //save related new
     cy.get(".v-select__selections .v-btn__content")
       .first()
@@ -500,6 +511,8 @@ describe("Related Control One to Many test case", function () {
       force: true,
     });
     cy.wait(5000);
+    //Assertion
+    cy.contains("Total 1 items").should("be.visible");
 
     //Firing Alert pop for manual action
     cy.log("User need to do something").then(() => {
@@ -519,8 +532,9 @@ describe("Related Control One to Many test case", function () {
     cy.wait(1000);
     cy.contains(this.RelatedKitItemData.TextAera).should("exist");
     cy.contains(this.RelatedKitItemData.Currency).should("exist");
-    cy.contains(this.RelatedKitItemData.Measure).should("exist");
     cy.contains(this.RelatedKitItemData.Email).should("exist");
+    cy.contains(this.RelatedKitItemData.Number).should("exist");
+    cy.contains(this.RelatedKitItemData.Measure).should("exist");
     cy.log(
       "One to many related new elements has been exist(before kit item saved)"
     );
@@ -560,6 +574,7 @@ describe("Related Control One to Many test case", function () {
     cy.wait(10000);
 
     //After kit item save
+    //Related element existance asseritons
     cy.contains(this.RelatedKitItemData.Url).should("exist");
     cy.contains(this.RelatedKitItemData.Text).should("exist");
     cy.contains(this.RelatedKitItemData.Telephone).should("exist");
@@ -567,6 +582,7 @@ describe("Related Control One to Many test case", function () {
     cy.contains(this.RelatedKitItemData.TextAera).should("exist");
     cy.contains(this.RelatedKitItemData.Currency).should("exist");
     cy.contains(this.RelatedKitItemData.Email).should("exist");
+    cy.contains(this.RelatedKitItemData.Number).should("exist");
     cy.contains(this.RelatedKitItemData.Measure).should("exist");
     cy.log(
       "One to many related new elements has been exist(after kit item saved)"
@@ -611,16 +627,11 @@ describe("Related Control One to Many test case", function () {
       .eq(0)
       .should("have.text", 'warning"There are no results available"');
     cy.log("OneToMany Relation control has no elements");
+    cy.wait(2000);
+    cy.get(
+      ".grid-body:nth-child(1) > td:nth-child(1) > .v-list-item__subtitle"
+    ).should("not.exist");
 
-    //Deletion asseriton for added elements
-    cy.contains(this.RelatedKitItemData.Url).should("not.exist");
-    cy.contains(this.RelatedKitItemData.Text).should("not.exist");
-    cy.contains(this.RelatedKitItemData.Telephone).should("not.exist");
-    cy.wait(1000);
-    cy.contains(this.RelatedKitItemData.TextAera).should("not.exist");
-    //cy.contains(this.RelatedKitItemData.Currency).should("not.exist");
-    cy.contains(this.RelatedKitItemData.Email).should("not.exist");
-    cy.contains(this.RelatedKitItemData.Measure).should("not.exist");
     cy.log("One to many related new elements has been deleted");
     cy.wait(4000);
 
@@ -656,6 +667,8 @@ describe("Related Control One to Many test case", function () {
         this.NewKitItemData.KitName +
         " linked "
     ).should("be.visible");
+    //Assertion
+    cy.contains("Total 2 items").should("be.visible");
 
     cy.log("Existing item linked");
     cy.wait(3000);
@@ -685,17 +698,13 @@ describe("Related Control One to Many test case", function () {
     );
     cy.wait(10000);
 
-    //Related element existance asseritons
-    cy.contains(this.RelatedKitItemData.Url).should("exist");
-    cy.contains(this.RelatedKitItemData.Text).should("exist");
-    cy.contains(this.RelatedKitItemData.Telephone).should("exist");
-    cy.wait(1000);
-    cy.contains(this.RelatedKitItemData.TextAera).should("exist");
-    cy.contains(this.RelatedKitItemData.Currency).should("exist");
-    cy.contains(this.RelatedKitItemData.Email).should("exist");
-    cy.contains(this.RelatedKitItemData.Measure).should("exist");
-    cy.log("Existing linked related item has been exist");
-    cy.wait(4000);
+    //Linked item assertion
+    cy.get(
+      ".grid-body:nth-child(1) > td:nth-child(1) > .v-list-item__subtitle"
+    ).should("exist");
+    cy.get(
+      ".grid-body:nth-child(2) > td:nth-child(1) > .v-list-item__subtitle"
+    ).should("exist");
 
     //save Kit item  (new form)
     cy.get(".v-select__selections .v-btn__content")
@@ -730,17 +739,13 @@ describe("Related Control One to Many test case", function () {
     );
     cy.wait(10000);
 
-    //After kit item save
-    cy.contains(this.RelatedKitItemData.Url).should("exist");
-    cy.contains(this.RelatedKitItemData.Text).should("exist");
-    cy.contains(this.RelatedKitItemData.Telephone).should("exist");
-    cy.wait(1000);
-    cy.contains(this.RelatedKitItemData.TextAera).should("exist");
-    cy.contains(this.RelatedKitItemData.Currency).should("exist");
-    cy.contains(this.RelatedKitItemData.Email).should("exist");
-    cy.contains(this.RelatedKitItemData.Measure).should("exist");
-    cy.log("Existing linked related item has been exist(after kit item saved)");
-    cy.wait(4000);
+    //Assertion linked item after save kit item
+    cy.get(
+      ".grid-body:nth-child(1) > td:nth-child(1) > .v-list-item__subtitle"
+    ).should("exist");
+    cy.get(
+      ".grid-body:nth-child(2) > td:nth-child(1) > .v-list-item__subtitle"
+    ).should("exist");
 
     //Again save Kit item(new form)
     cy.get(".v-select__selections .v-btn__content")
@@ -771,5 +776,13 @@ describe("Related Control One to Many test case", function () {
         this.NewKitItemData.KitName +
         " Deleted"
     ).should("be.visible");
+    cy.wait(2000);
+    //Assertion
+    cy.get(
+      ".grid-body:nth-child(1) > td:nth-child(1) > .v-list-item__subtitle"
+    ).should("exist");
+    cy.get(
+      ".grid-body:nth-child(2) > td:nth-child(1) > .v-list-item__subtitle"
+    ).should("not.exist");
   });
 });

@@ -8,7 +8,7 @@ describe("New kit item complete creation test case", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit('https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F')
+    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
     //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
@@ -214,9 +214,9 @@ describe("New kit item complete creation test case", function () {
     cy.wait(1000);
 
     //Address
-    cy.get(
-      '[placeholder="Street address, building, company ... "]'
-    ).type(this.NewKitItemData.Addressline1);
+    cy.get('[placeholder="Street address, building, company ... "]').type(
+      this.NewKitItemData.Addressline1
+    );
     //Address line
     cy.get('[name="Address line 2."]').type(this.NewKitItemData.Addressline2);
 
@@ -361,8 +361,14 @@ describe("New kit item complete creation test case", function () {
     cy.log("ContactSelecto added");
     cy.wait(4000);
 
+    //Scroll to Inspection
+    cy.get(".v-btn:nth-child(1) .v-badge > .inline-svg").scrollIntoView({
+      force: true,
+    });
+    cy.wait(5000);
+
     //getting value form different json file
-    cy.wait(2000);
+    
     //Icon
     //Click on + icon of ICON Element
     cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
@@ -536,7 +542,7 @@ describe("New kit item complete creation test case", function () {
     cy.wait(3000);
   });
 
-  it("Add Relation On Map", function () {
+  it.only("Add Relation On Map", function () {
     //Click on Map tab
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
@@ -709,14 +715,14 @@ describe("New kit item complete creation test case", function () {
     cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
     cy.wait(2000);
     //Click on Time Entry for
-    cy.get(
-      "div:nth-child(2) > div:nth-child(1) > span > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
-    ).click({ force: true });
-    cy.wait(4000);
-    //Assertion validation
-    cy.contains("Connection").should("be.visible");
-    cy.wait(2000);
-    cy.contains(this.SData.TimeEntryConnection).click({ force: true });
+    // cy.get(
+    //   "div:nth-child(2) > div:nth-child(1) > span > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    // ).click({ force: true });
+    // cy.wait(4000);
+    // //Assertion validation
+    // cy.contains("Connection").should("be.visible");
+    // cy.wait(2000);
+    // cy.contains(this.SData.TimeEntryConnection).click({ force: true });
     cy.wait(1000);
     cy.get('[placeholder="Add a Description"]').type(this.SData.AddDescription);
     //Click on Save

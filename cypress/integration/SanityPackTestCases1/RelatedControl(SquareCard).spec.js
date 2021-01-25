@@ -8,8 +8,8 @@ describe("Related Control Square Card test case", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit('https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F')
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    //cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
+    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -19,8 +19,8 @@ describe("Related Control Square Card test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    //lp.EnterEmail("sam@armyspy.com");
-    lp.EnterEmail("propertymanagement@commonareas.work.dev");
+    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("propertymanagement@commonareas.work.dev");
     //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -50,29 +50,29 @@ describe("Related Control Square Card test case", function () {
       "jwtAccessToken"
     );
 
-    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
-      SanityTCData
-    ) {
-      this.RelatedKitItemData = SanityTCData;
-    });
+    // cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
+    //   SanityTCData
+    // ) {
+    //   this.RelatedKitItemData = SanityTCData;
+    // });
 
-    // cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
-    //   function (SanityTCData) {
-    //     this.RelatedKitItemData = SanityTCData;
-    //   }
-    // );
+    cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
+      function (SanityTCData) {
+        this.RelatedKitItemData = SanityTCData;
+      }
+    );
 
-    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-      NewDataForElements
-    ) {
-      this.DataType2 = NewDataForElements;
-    });
+    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+    //   NewDataForElements
+    // ) {
+    //   this.DataType2 = NewDataForElements;
+    // });
 
-    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-    //   function (NewDataForElements) {
-    //     this.DataType2 = NewDataForElements;
-    //   }
-    // );
+    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+      function (NewDataForElements) {
+        this.DataType2 = NewDataForElements;
+      }
+    );
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -245,9 +245,7 @@ describe("Related Control Square Card test case", function () {
     cy.wait(1000);
 
     //Address
-    cy.get(
-      '[placeholder="Street address, building, company ... "]'
-    )
+    cy.get('[placeholder="Street address, building, company ... "]')
       .eq(0)
       .type(this.RelatedKitItemData.Addressline1);
     //Address line
@@ -496,6 +494,12 @@ describe("Related Control Square Card test case", function () {
   it.only("Validate Square Card element on new form", function () {
     cy.get(".btn-load .inline-svg").eq(1).scrollIntoView({ force: true });
     cy.wait(5000);
+    //Assertion
+    cy.get(".px-2:nth-child(1) .inline-svg").should("exist");
+    cy.contains("Total 1 items").should("be.visible");
+
+    cy.log("Existing item linked");
+    cy.wait(3000);
     //Square card element assetions before kit item saved(new form)
     cy.contains(
       this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
@@ -542,7 +546,11 @@ describe("Related Control Square Card test case", function () {
     cy.log("Refresh again after save kit item");
     cy.wait(4000);
 
-    //Square card element assetions before kit item saved(new form)
+    //Square card element assetions After kit item saved(new form)
+    //Assertion
+    cy.get(".px-2:nth-child(1) .inline-svg").should("exist");
+    cy.contains("Total 1 items").should("be.visible");
+    cy.wait(1000);
     cy.contains(
       this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
     ).should("be.visible");
@@ -597,6 +605,9 @@ describe("Related Control Square Card test case", function () {
         " Deleted"
     ).should("be.visible");
     cy.wait(2000);
+    //Delete assertion
+    //cy.contains("Total 0 items").should("be.visible");
+    cy.wait(2000);
   });
 
   it.only("Deletion Validation of added Square Card elements", function () {
@@ -606,6 +617,11 @@ describe("Related Control Square Card test case", function () {
       .eq(1)
       .should("have.text", 'warning "There are no results available"');
     cy.log("Square Card Relation control has no elements");
+    cy.wait(1000);
+
+    //Delete assertion
+    //cy.contains("Total 0 items").should("be.visible");
+    cy.wait(2000);
 
     //Square card NOT element assetions after delete
     cy.contains(
@@ -661,6 +677,13 @@ describe("Related Control Square Card test case", function () {
         this.NewKitItemData.KitName +
         " linked "
     ).should("be.visible");
+    //Assertion for link item
+    cy.get(".px-2:nth-child(1) .inline-svg").should("exist");
+    cy.get(".px-2:nth-child(2) .inline-svg").should("exist");
+
+    //Delete assertion
+    cy.contains("Total 2 items").should("be.visible");
+    cy.wait(2000);
 
     cy.log("Existing item linked");
     cy.wait(3000);
@@ -696,33 +719,17 @@ describe("Related Control Square Card test case", function () {
     cy.wait(2000);
   });
 
-  it("Validate Link Item elements for square card", function () {
+  it.only("Validate Link Item elements for square card", function () {
     cy.wait(3000);
 
     cy.get(".btn-load .inline-svg").eq(1).scrollIntoView({ force: true });
     cy.wait(5000);
-    //Square card element assetions
-    cy.contains(
-      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
-    ).should("exist");
-    cy.log("Url data exist");
+
+    //Assertion
+    //Delete assertion
+    cy.contains("Total 1 items").should("be.visible");
     cy.wait(1000);
-
-    cy.contains(
-      this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
-    ).should("exist");
-    cy.log("Text data exist");
-    cy.wait(1000);
-
-    cy.contains(
-      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
-    ).should("exist");
-    cy.wait(1000);
-    cy.log("TextAera data exist");
-
-    cy.log("Square card linked item elemets exists");
-
-    cy.wait(4000);
+    cy.get(".px-2:nth-child(1) .inline-svg").should("exist");
 
     //save Kit item(edit form) new
     cy.get(".v-select__selections .v-btn__content")

@@ -8,7 +8,8 @@ describe("Related Control One to One test case", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
+    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -18,7 +19,8 @@ describe("Related Control One to One test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("sam@armyspy.com");
+    lp.EnterEmail("propertymanagement@commonareas.work.dev");
     //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -48,29 +50,29 @@ describe("Related Control One to One test case", function () {
       "jwtAccessToken"
     );
 
-    // cy.fixture("SanityPackTestData/RelatedOneToOneData").then(function (
-    //   SanityTCData
-    // ) {
-    //   this.RelatedKitItemData = SanityTCData;
-    // });
+    cy.fixture("SanityPackTestData/RelatedOneToOneData").then(function (
+      SanityTCData
+    ) {
+      this.RelatedKitItemData = SanityTCData;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/RelatedOneToOneData(Prod)").then(
-      function (SanityTCData) {
-        this.RelatedKitItemData = SanityTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/RelatedOneToOneData(Prod)").then(
+    //   function (SanityTCData) {
+    //     this.RelatedKitItemData = SanityTCData;
+    //   }
+    // );
 
-    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-    //   NewDataForElements
-    // ) {
-    //   this.DataType2 = NewDataForElements;
-    // });
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-      function (NewDataForElements) {
-        this.DataType2 = NewDataForElements;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+    //   function (NewDataForElements) {
+    //     this.DataType2 = NewDataForElements;
+    //   }
+    // );
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -243,9 +245,7 @@ describe("Related Control One to One test case", function () {
     cy.wait(1000);
 
     //Address
-    cy.get(
-      '[placeholder="Street address, building, company ... "]'
-    )
+    cy.get('[placeholder="Street address, building, company ... "]')
       .eq(0)
       .type(this.RelatedKitItemData.Addressline1);
     //Address line
@@ -461,6 +461,14 @@ describe("Related Control One to One test case", function () {
     cy.log("Assigning added");
     cy.wait(5000);
 
+    //Onetoone link
+    cy.get(".action-icon:nth-child(2) path").first().click({ force: true });
+    cy.wait(5000);
+    //OneToOne
+    cy.get(
+      ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
+    ).click({ force: true });
+
     //save related new
     cy.get(".v-select__selections .v-btn__content")
       .first()
@@ -646,9 +654,6 @@ describe("Related Control One to One test case", function () {
       this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
     ).should("exist");
 
-    cy.contains(
-      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
-    ).should("exist");
     cy.log(
       "Linked item exist for one to one related control after kit item saved"
     );

@@ -539,6 +539,7 @@ describe("Common Plan New Kit Item test case", function () {
     cy.contains("Item shared").should("be.visible");
     cy.log("Assigning added");
     cy.wait(5000);
+    //Onetoone link
     cy.get(".action-icon:nth-child(2) path").click();
     cy.wait(2000);
     //OneToOne

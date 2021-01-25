@@ -274,9 +274,7 @@ describe("Update created kit item test case", function () {
     cy.wait(1000);
 
     //Address
-    cy.get(
-      '[placeholder="Street address, bulding, company ... "][name="Address"]'
-    )
+    cy.get('[placeholder="Street address, building, company ... "]')
       .clear()
       .type(this.UpdateKitItemData.Addressline1);
     cy.log("TextAera Updated");
@@ -599,9 +597,7 @@ describe("Update created kit item test case", function () {
     cy.wait(1000);
 
     //Address
-    cy.get(
-      '[placeholder="Street address, bulding, company ... "][name="Address"]'
-    )
+    cy.get('[placeholder="Street address, building, company ... "]')
       .eq(0)
       .type(this.RelatedKitItemData.Addressline1);
     //Address line
@@ -1014,9 +1010,7 @@ describe("Update created kit item test case", function () {
     cy.wait(1000);
 
     //Address
-    cy.get(
-      '[placeholder="Street address, bulding, company ... "][name="Address"]'
-    )
+    cy.get('[placeholder="Street address, building, company ... "]')
       .eq(0)
       .type(this.RelatedKitItemData2.Addressline1);
     //Address line
@@ -1382,9 +1376,7 @@ describe("Update created kit item test case", function () {
     cy.wait(1000);
 
     //Address
-    cy.get(
-      '[placeholder="Street address, bulding, company ... "][name="Address"]'
-    )
+    cy.get('[placeholder="Street address, building, company ... "]')
       .eq(0)
       .type(this.RelatedKitItemData3.Addressline1);
     //Address line

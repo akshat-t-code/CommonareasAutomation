@@ -6,8 +6,9 @@ describe("New created kit item creation Validation test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    slp.visitCityComTest();
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    //slp.visitCityComTest();
+    //cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
+    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -18,8 +19,9 @@ describe("New created kit item creation Validation test case", function () {
     cy.contains(" Log In ").should("be.visible");
 
     //Enter credentials
-    //lp.EnterEmail("sam@armyspy.com");
-    lp.EnterEmail("citycom@commonareas.work.dev");
+    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("propertymanagement@commonareas.work.dev");
+    //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -48,29 +50,29 @@ describe("New created kit item creation Validation test case", function () {
       "jwtAccessToken"
     );
 
-    cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
-      KitDataEle
-    ) {
-      this.NewKitItemData = KitDataEle;
-    });
+    // cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
+    //   KitDataEle
+    // ) {
+    //   this.NewKitItemData = KitDataEle;
+    // });
 
-    // cy.fixture("SanityPackTestData(Prod)/NewKitItemDataValue(Prod)").then(
-    //   function (KitDataEle) {
-    //     this.NewKitItemData = KitDataEle;
-    //   }
-    // );
+    cy.fixture("SanityPackTestData(Prod)/NewKitItemDataValue(Prod)").then(
+      function (KitDataEle) {
+        this.NewKitItemData = KitDataEle;
+      }
+    );
 
-    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-      NewDataForElements
-    ) {
-      this.DataType2 = NewDataForElements;
-    });
+    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+    //   NewDataForElements
+    // ) {
+    //   this.DataType2 = NewDataForElements;
+    // });
 
-    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-    //   function (NewDataForElements) {
-    //     this.DataType2 = NewDataForElements;
-    //   }
-    // );
+    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+      function (NewDataForElements) {
+        this.DataType2 = NewDataForElements;
+      }
+    );
 
     // cy.fixture("SanityPackTestData/NewKitItemTabsData").then(function (
     //   SanityTCData
@@ -138,12 +140,12 @@ describe("New created kit item creation Validation test case", function () {
   it.only("Details View(Edit form) Data validation", function () {
     // //cy.get('[name="Text"]').last().should("have.text", "sanity");
 
-    cy.get('[name="Url"]').last().then(function($data) {
-      
-      var data=$data.text()
-      cy.log(data)
-
-    })
+    cy.get('[name="Url"]')
+      .last()
+      .then(function ($data) {
+        var data = $data.text();
+        cy.log(data);
+      });
 
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
@@ -180,15 +182,15 @@ describe("New created kit item creation Validation test case", function () {
     );
   });
 
-  it("A",function(){
+  it.only("A", function () {
     cy.get('[name="Url"]').eq(0).should("have.data", "https://www.sanity.com");
-  })
-  it("B",function(){
+  });
+  it.only("B", function () {
     cy.get('[name="Url"]').eq(1).should("have.data", "https://www.sanity.com");
-  })
-  it("C",function(){
+  });
+  it.only("C", function () {
     cy.get('[name="Url"]').eq(2).should("have.data", "https://www.sanity.com");
-  })
+  });
 
   it("Group tab data Validation in details view", function () {
     //Click on group

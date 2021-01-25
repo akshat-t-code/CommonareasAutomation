@@ -113,7 +113,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(10000);
   });
 
-  it("Filter Url Element", function () {
+  it.only("Filter Url Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -158,7 +158,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Filter Text Element", function () {
+  it.only("Filter Text Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -200,7 +200,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Filter Telephone Element", function () {
+  it.only("Filter Telephone Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -242,7 +242,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Filter TextAera Element", function () {
+  it.only("Filter TextAera Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
@@ -284,7 +284,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for Slider Element", function () {
+  it.only("Validate the Filter for Slider Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -330,7 +330,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for Currency Element", function () {
+  it.only("Validate the Filter for Currency Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -376,7 +376,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter for Measure Element", function () {
+  it.only("Validate the Filter for Measure Element", function () {
     //Page Object
     const lp = new LoginPage();
 
@@ -422,7 +422,7 @@ describe("TableList KitItem Filter", function () {
     cy.wait(5000);
   });
 
-  it("Validate the Filter Email Element", function () {
+  it.only("Validate the Filter Email Element", function () {
     //Page Object
     const lp = new LoginPage();
     lp.FilterIcon();
