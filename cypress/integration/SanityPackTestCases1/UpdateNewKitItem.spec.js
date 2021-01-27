@@ -471,14 +471,14 @@ describe("New kit item complete creation test case", function () {
   it.only("New Kit Item Updation", function () {
     cy.wait(2000);
 
-    // cy.get("[name" + "=" + this.DataType2.Url + "]")
-    //   .last()
-    //   .scrollIntoView({ force: true });
-    // cy.wait(4000);
     cy.get(".dropzone-area-button:nth-child(2)").scrollIntoView({
       force: true,
     });
     cy.wait(2000);
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(4000);
 
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")

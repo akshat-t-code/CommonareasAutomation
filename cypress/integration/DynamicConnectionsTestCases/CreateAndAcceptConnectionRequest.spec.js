@@ -102,7 +102,7 @@ describe("Login for new User than Create A new Connection and Accept the request
     cy.wait(10000);
   });
 
-  it.only("Login to appLication for Accepting the Request", function () {
+  it("Login to appLication for Accepting the Request", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();

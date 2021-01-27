@@ -626,9 +626,79 @@ Cypress.Commands.add("TimelineListViewIcon", () => {
 
 Cypress.Commands.add("SaveTimelineList", () => {
   //Click on Checkbox
-  cy.contains('Default Timeline List View for Kit').click({force:true})
+  cy.contains("Default Timeline List View for Kit").click({ force: true });
   // //Click on Save
   cy.get(".px-4 > .v-btn__content").click();
   //Click on Assertion msg for save
   cy.get(".v-btn__content > .theme--dark").click();
+});
+
+////////////////////////////////////////
+
+//Update Contact details selector
+
+Cypress.Commands.add("CompanyName", (CompanyName) => {
+  cy.get('[name="companyName"]').clear().type(CompanyName);
+});
+
+Cypress.Commands.add("JobTitle", (JobTitle) => {
+  cy.get('[name="jobTitle"]').clear().type(JobTitle);
+});
+
+Cypress.Commands.add("WebSite", (WebSite) => {
+  cy.get('[name="web"]').clear().type(WebSite);
+});
+
+Cypress.Commands.add("PhoneNumber", (PhoneNumber) => {
+  cy.get('[name="telephone"]').clear().type(PhoneNumber);
+});
+
+Cypress.Commands.add("MobilePhone", (MobilePhone) => {
+  cy.get('[name="mobilePhone"]').clear().type(MobilePhone);
+});
+
+Cypress.Commands.add("FaxNumber", (FaxNumber) => {
+  cy.get('[name="fax"]').clear().type(FaxNumber);
+});
+
+Cypress.Commands.add("Address1", (Address1) => {
+  cy.get('[name="address1"]').clear().type(Address1);
+});
+
+Cypress.Commands.add("Address2", (Address2) => {
+  cy.get('[name="address2"]').clear().type(Address2);
+});
+
+Cypress.Commands.add("City", (City) => {
+  cy.get('[name="city"]').clear().type(City);
+});
+
+Cypress.Commands.add("ZipCode", (ZipCode) => {
+  cy.get('[name="zipCode"]').clear().type(ZipCode);
+});
+
+Cypress.Commands.add("Country", (Country) => {
+  cy.get(
+    "div.row.sm-10.mb-5 > div:nth-child(11) > div > div > div.v-input__slot > div.v-select__slot > div"
+  )
+    .click({ force: true })
+    .type(Country);
+
+  //selct country
+  cy.get(".v-list-item__mask").click({ force: true });
+  cy.wait(2000);
+});
+
+Cypress.Commands.add("State", (State) => {
+  cy.get(
+    " div.row.sm-10.mb-5 > div:nth-child(12) > div > div > div.v-input__slot > div.v-select__slot > div"
+  )
+    .click({ force: true })
+    .type(State);
+  cy.get(".v-list-item__mask").click({ force: true });
+  cy.wait(2000);
+});
+
+Cypress.Commands.add("Note", (Note) => {
+  cy.get('[name="notes"]').clear().type(Note);
 });

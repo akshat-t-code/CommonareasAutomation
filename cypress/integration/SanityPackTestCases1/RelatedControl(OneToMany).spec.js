@@ -562,17 +562,6 @@ describe("Related Control One to Many test case", function () {
     cy.get(".ca-item").eq(1).scrollIntoView({ force: true });
     cy.wait(2000);
 
-    //Firing Alert pop for manual action
-    cy.log("User need to do something").then(() => {
-      alert(
-        "Scroll Horizontal Scroll Bar to look on OneToMany Relation Elements"
-      );
-    });
-    cy.log(
-      "Firing Alert pop for manual action to scroll horizontal scroll Bar"
-    );
-    cy.wait(10000);
-
     //After kit item save
     //Related element existance asseritons
     cy.contains(this.RelatedKitItemData.Url).should("exist");
@@ -686,17 +675,8 @@ describe("Related Control One to Many test case", function () {
       force: true,
     });
     cy.wait(5000);
-
-    //Firing Alert pop for manual action
-    cy.log("User need to do something").then(() => {
-      alert(
-        "Scroll Horizontal Scroll Bar to look on OneToMany Relation Elements"
-      );
-    });
-    cy.log(
-      "Firing Alert pop for manual action to scroll horizontal scroll Bar"
-    );
-    cy.wait(10000);
+    //Assertion
+    cy.contains("Total 2 items").should("be.visible");
 
     //Linked item assertion
     cy.get(
@@ -727,17 +707,6 @@ describe("Related Control One to Many test case", function () {
     //scroll
     cy.get(".ca-item").eq(1).scrollIntoView({ force: true });
     cy.wait(2000);
-
-    //Firing Alert pop for manual action
-    cy.log("User need to do something").then(() => {
-      alert(
-        "Scroll Horizontal Scroll Bar to look on OneToMany Relation Elements"
-      );
-    });
-    cy.log(
-      "Firing Alert pop for manual action to scroll horizontal scroll Bar"
-    );
-    cy.wait(10000);
 
     //Assertion linked item after save kit item
     cy.get(
@@ -777,6 +746,8 @@ describe("Related Control One to Many test case", function () {
         " Deleted"
     ).should("be.visible");
     cy.wait(2000);
+    //Assertion
+    cy.contains("Total 1 items").should("be.visible");
     //Assertion
     cy.get(
       ".grid-body:nth-child(1) > td:nth-child(1) > .v-list-item__subtitle"

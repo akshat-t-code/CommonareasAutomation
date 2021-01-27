@@ -7,8 +7,8 @@ describe("Update Related New fot Square Card Related Control", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    //cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
+    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -20,7 +20,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Enter credentials
     lp.EnterEmail("propertymanagement@commonareas.work.dev");
     //lp.EnterEmail("citycom@commonareas.work.dev");
-    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("sam@armyspy.com");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -49,29 +49,29 @@ describe("Update Related New fot Square Card Related Control", function () {
       "jwtAccessToken"
     );
 
-    // cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
-    //   SanityTCData
-    // ) {
-    //   this.RelatedKitItemData3 = SanityTCData;
-    // });
+    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
+      SanityTCData
+    ) {
+      this.RelatedKitItemData3 = SanityTCData;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
-      function (SanityTCData) {
-        this.RelatedKitItemData3 = SanityTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
+    //   function (SanityTCData) {
+    //     this.RelatedKitItemData3 = SanityTCData;
+    //   }
+    // );
 
-    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-    //   NewDataForElements
-    // ) {
-    //   this.DataType2 = NewDataForElements;
-    // });
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-      function (NewDataForElements) {
-        this.DataType2 = NewDataForElements;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+    //   function (NewDataForElements) {
+    //     this.DataType2 = NewDataForElements;
+    //   }
+    // );
 
     cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
       UpDateKitItemSDTCData
@@ -79,23 +79,23 @@ describe("Update Related New fot Square Card Related Control", function () {
       this.UpdateKitItemData = UpDateKitItemSDTCData;
     });
 
-    cy.fixture("SanityPackTestData(Prod)/UpdateKItItemData(Prod)").then(
-      function (UpDateKitItemSDTCData) {
-        this.UpdateKitItemData = UpDateKitItemSDTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/UpdateKItItemData(Prod)").then(
+    //   function (UpDateKitItemSDTCData) {
+    //     this.UpdateKitItemData = UpDateKitItemSDTCData;
+    //   }
+    // );
 
-    // cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
-    //   SanityTCData
-    // ) {
-    //   this.RelatedKitItemData3 = SanityTCData;
-    // });
+    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
+      SanityTCData
+    ) {
+      this.RelatedKitItemData3 = SanityTCData;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
-      function (SanityTCData) {
-        this.RelatedKitItemData = SanityTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
+    //   function (SanityTCData) {
+    //     this.RelatedKitItemData = SanityTCData;
+    //   }
+    // );
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -382,6 +382,11 @@ describe("Update Related New fot Square Card Related Control", function () {
 
     cy.wait(4000);
 
+    cy.contains(this.DataType2.StepperName).scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+
     //RadioSelect
     cy.contains(this.UpdateKitItemData.RadioSelectValue).click({ force: true });
     cy.log("RadioSelect Value has been set.");
@@ -601,6 +606,77 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.contains("Nothing to save for " + this.NewKitItemData.KitName).should(
       "be.visible"
     );
+    cy.wait(4000);
+  });
+
+  it.only("Link Existing Item for Square Card Related Control", function () {
+    cy.wait(3000);
+    //Click on New Item for one to Many Related Control
+    cy.get(".ca-item")
+      .eq(2)
+      .scrollIntoView({ force: true })
+      .click({ force: true });
+    //Search List view pop up assertion
+    cy.contains(this.ViewName.SearchView).should("be.visible");
+    cy.get(".thumb-selected-icon").eq(0).should("be.visible");
+    //Selct the to be linked kit item
+    cy.get(".thumb-selected-icon").eq(0).click({ force: true });
+    cy.get(".thumb-selected-icon").eq(1).click({ force: true });
+    cy.wait(2000);
+    //Click on select btn
+    cy.get(".button-pop-ups > .v-btn__content").first().click({ force: true });
+
+    cy.contains(
+      "Relation on " +
+        this.DataType2.SquareCardName +
+        " for " +
+        this.NewKitItemData.KitName +
+        " linked "
+    ).should("be.visible");
+    //Assertion for link item
+    cy.get(".px-2:nth-child(1) .inline-svg").should("exist");
+    cy.get(".px-2:nth-child(2) .inline-svg").should("exist");
+    cy.get(".px-2:nth-child(3) .inline-svg").should("exist");
+
+    //Link assertion
+    cy.contains("Total 3 items").should("be.visible");
+    cy.wait(2000);
+
+    cy.log("Existing item linked");
+    cy.wait(3000);
+  });
+
+  it.only("Deletion Link Item", function () {
+    cy.wait(3000);
+
+    cy.get(".btn-load .inline-svg").eq(1).scrollIntoView({ force: true });
+    cy.wait(3000);
+
+    //Click on three dots on linked square card
+    //Click on created one to many kit item
+    cy.get(".px-2:nth-child(2) .inline-svg").click({ force: true });
+    cy.wait(2000);
+    //Assertion
+    cy.contains(" Edit Item ").should("be.visible");
+    cy.contains(" Delete Item ").should("be.visible");
+    cy.wait(2000);
+    cy.contains(" Delete Item ").click({ force: true });
+    cy.wait(2000);
+    //cy.get('.v-list-item:nth-child(2) > .v-list-item__title').click();
+    cy.contains(" Are you sure you want to discard?").should("be.visible");
+    cy.wait(2000);
+    cy.contains(" Discard ").click({ force: true });
+    cy.contains(
+      "Relation on " +
+        this.DataType2.SquareCardName +
+        " for " +
+        this.NewKitItemData.KitName +
+        " Deleted"
+    ).should("be.visible");
+    cy.wait(2000);
+    //Link assertion
+    cy.contains("Total 2 items").should("be.visible");
+    cy.wait(2000);
   });
 
   it.only("Square Card Related New", function () {
@@ -790,6 +866,11 @@ describe("Update Related New fot Square Card Related Control", function () {
     });
     cy.log("SelectList Value has been set.");
 
+    cy.contains(this.DataType2.StepperName).scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
+
     //RadioSelect
     cy.contains(this.RelatedKitItemData3.RadioSelectValue).click({
       force: true,
@@ -821,6 +902,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //UserSelector(Values coming form KitItemValues Json File)
     //Click on to open UserSelector Pop up
     cy.get(".searchIcon").eq(0).click({ force: true });
+    cy.contains(" Users ").should("be.visible");
     cy.wait(3000);
 
     cy.contains(this.RelatedKitItemData3.UserSelectorName).click({
@@ -829,24 +911,11 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.log("UserSelect added");
     cy.wait(3000);
 
-    //Click on to link onetoone
-    cy.get(".action-icon:nth-child(2) path").eq(0).click({ force: true });
-    cy.wait(3000);
-    //Link existing kit item for one to one
-    cy.get(
-      ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
-    ).click({ force: true });
-    cy.wait(7000);
-    // //Linking assertion
-    // cy.contains(
-    //   "Relation on  for RelatedOneToOne" +
-    //     this.NewKitItemData.KitName +
-    //     " linked "
-    // ).should("be.visible");
-
     //ContactSelector(Values coming form KitItemValues Json File)
     //Click on to open ContactSelector Pop up
-    cy.get(" span > i > svg > path").eq(4).click({ force: true });
+    cy.get(".searchIcon").eq(1).click({ force: true });
+    //cy.get("span > i > svg > path").eq(2).click({ force: true });
+    cy.contains(" Connection ").should("be.visible");
 
     cy.wait(4000);
     cy.contains(this.RelatedKitItemData3.ContactSelectorName).click({
@@ -872,7 +941,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     });
     cy.wait(2000);
     //Icon Save
-    cy.get(".button-pop-ups").click({ force: true });
+    cy.get(".button-pop-ups").first().click({ force: true });
     cy.wait(2000);
 
     //IcozSize
@@ -882,7 +951,7 @@ describe("Update Related New fot Square Card Related Control", function () {
       .eq(0)
       .click({ force: true });
     cy.wait(2000);
-    cy.contains(this.RelatedKitItemData.LargeiconSize).click({ force: true });
+    cy.contains(this.RelatedKitItemData3.LargeiconSize).click({ force: true });
     cy.wait(2000);
     //IconLable
     cy.get('[placeholder="Label"]')
@@ -900,7 +969,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.RelatedKitItemData.InspectionValue5 +
+        this.RelatedKitItemData3.InspectionValue5 +
         ") > span"
     )
       .eq(0)
@@ -911,13 +980,14 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Click on to open Assigning Pop up-Also working
 
     //Click on to open Assigning Pop up
-    cy.get(
-      " div.kit-control-component.kit-control-assigning.pr-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(26) span.searchRel div.v-input.searchSelectNone.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
-    ).click({ force: true });
+    cy.get(".searchIcon").eq(2).click({ force: true });
+    // cy.get(
+    //   " div.kit-control-component.kit-control-assigning.pr-3.col.col-sm-12.col-md-6.mb-4.px-3.col-sm-12.col-md-6.mb-4.px-3:nth-child(26) span.searchRel div.v-input.searchSelectNone.v-input--is-readonly.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-select div.v-input__control div.v-input__slot > div.v-select__slot:nth-child(2)"
+    // ).click({ force: true });
     cy.wait(7000);
     //Click on to select the Assigning
     //cy.get(".list-item-search").first().click({ force: true });
-    cy.contains(this.RelatedKitItemData.AssigningName).click({ force: true });
+    cy.contains(this.RelatedKitItemData3.AssigningName).click({ force: true });
     cy.wait(3000);
     //Click on to save
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
@@ -925,6 +995,21 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.contains("Item shared").should("be.visible");
     cy.log("Assigning added");
     cy.wait(5000);
+
+    //Click on to link onetoone
+    cy.get(".action-icon:nth-child(2) path").eq(0).click({ force: true });
+    cy.wait(3000);
+    //Link existing kit item for one to one
+
+    cy.get(
+      ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
+    ).should("be.visible");
+    cy.wait(1000);
+
+    cy.get(
+      ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
+    ).click({ force: true });
+    cy.wait(7000);
 
     //save related new
     cy.get(".v-select__selections .v-btn__content")
@@ -955,7 +1040,7 @@ describe("Update Related New fot Square Card Related Control", function () {
     cy.log("Related new has been Close");
     cy.wait(5000);
 
-    cy.contains("Total 2 items").should("be.visible");
+    cy.contains("Total 3 items").should("be.visible");
 
     //Added elements assetions
     cy.contains(

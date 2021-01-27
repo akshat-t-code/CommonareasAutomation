@@ -373,6 +373,7 @@ describe("Related Control One to One test case", function () {
     //UserSelector(Values coming form KitItemValues Json File)
     //Click on to open UserSelector Pop up
     cy.get(".searchIcon").eq(0).click({ force: true });
+    cy.contains(" Users ").should("be.visible");
     cy.wait(3000);
 
     cy.contains(this.RelatedKitItemData.UserSelectorName).click({
@@ -384,6 +385,7 @@ describe("Related Control One to One test case", function () {
     //ContactSelector(Values coming form KitItemValues Json File)
     //Click on to open ContactSelector Pop up
     cy.get(".searchIcon").eq(1).click({ force: true });
+    cy.contains(" Connection ").should("be.visible");
 
     cy.wait(4000);
     cy.contains(this.RelatedKitItemData.ContactSelectorName).click({
@@ -460,7 +462,6 @@ describe("Related Control One to One test case", function () {
     cy.contains("Item shared").should("be.visible");
     cy.log("Assigning added");
     cy.wait(5000);
-
     //Onetoone link
     cy.get(".action-icon:nth-child(2) path").first().click({ force: true });
     cy.wait(5000);
@@ -588,9 +589,9 @@ describe("Related Control One to One test case", function () {
     //Search List view pop up assertion
     cy.contains(" Related Items ").should("be.visible");
     //Select item to be linked kit item
-    cy.contains(
-      this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url
-    ).click({ force: true });
+    cy.contains(this.DataType2.Url + ":" + " " + this.RelatedKitItemData.Url)
+      .scrollIntoView({ force: true })
+      .click({ force: true });
     //Scroll
     cy.get(".last-updated:nth-child(2) > .v-icon").scrollIntoView({
       force: true,
@@ -623,9 +624,9 @@ describe("Related Control One to One test case", function () {
       this.DataType2.Text + ":" + " " + this.RelatedKitItemData.Text
     ).should("exist");
 
-    cy.contains(
-      this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
-    ).should("exist");
+    // cy.contains(
+    //   this.DataType2.TextAera + ":" + " " + this.RelatedKitItemData.TextAera
+    // ).should("exist");
 
     cy.log("Linked item exist for one to one related control");
 
