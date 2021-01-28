@@ -124,6 +124,11 @@ describe("New kit item complete creation test case", function () {
     const lp = new LoginPage();
     cy.wait(2000);
 
+    //new form ele visible assertion
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .last()
+      .should("be.visible");
+
     //save Kit Item for empty form
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
     //kit item Save Assertion for no data
@@ -182,6 +187,11 @@ describe("New kit item complete creation test case", function () {
     cy.log("Partially saving new form");
     cy.wait(5000);
 
+    cy.get("[name" + "=" + this.DataType2.TextAera + "]")
+      .last()
+      .scrollIntoView({ force: true });
+    cy.wait(3000);
+
     //Slider;
     //Firing Alert pop for manual action
     cy.log("User need to do something").then(() => {
@@ -212,6 +222,12 @@ describe("New kit item complete creation test case", function () {
       .last()
       .type(this.NewKitItemData.Email);
     cy.wait(1000);
+
+    //Scroll
+    cy.get(
+      '[placeholder="Street address, building, company ... "]'
+    ).scrollIntoView({ force: true });
+    cy.wait(2000);
 
     //Address
     cy.get('[placeholder="Street address, building, company ... "]').type(
@@ -252,6 +268,10 @@ describe("New kit item complete creation test case", function () {
     cy.log(this.NewKitItemData.KitName + "Kit Type has been Saved");
     cy.log("Partially saving new form");
     cy.wait(5000);
+    //scroll
+    cy.get('[placeholder="Add Time"][type="text"]').scrollIntoView({
+      force: true,
+    });
 
     //Time Data Element
     //Click on Time to appear time pop up
@@ -299,6 +319,12 @@ describe("New kit item complete creation test case", function () {
       .eq(4)
       .click({ force: true });
     cy.wait(2000);
+
+    //scroll
+    cy.contains(this.DataType2.StepperName).scrollIntoView({
+      force: true,
+    });
+    cy.wait(3000);
     //SelectList Value(Values coming form KitItemValues Json File)
     cy.contains(this.NewKitItemData.SelectListValue).click({ force: true });
     cy.log("SelectList Value has been set.");
@@ -368,7 +394,7 @@ describe("New kit item complete creation test case", function () {
     cy.wait(5000);
 
     //getting value form different json file
-    
+
     //Icon
     //Click on + icon of ICON Element
     cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")

@@ -637,7 +637,7 @@ Cypress.Commands.add("SaveTimelineList", () => {
 
 //Update Contact details selector
 
-Cypress.Commands.add("CompanyName", (CompanyName) => {
+Cypress.Commands.add("CompanyName2", (CompanyName) => {
   cy.get('[name="companyName"]').clear().type(CompanyName);
 });
 
@@ -683,6 +683,7 @@ Cypress.Commands.add("Country", (Country) => {
   )
     .click({ force: true })
     .type(Country);
+  cy.wait(1000);
 
   //selct country
   cy.get(".v-list-item__mask").click({ force: true });
@@ -695,6 +696,7 @@ Cypress.Commands.add("State", (State) => {
   )
     .click({ force: true })
     .type(State);
+  cy.wait(1000);
   cy.get(".v-list-item__mask").click({ force: true });
   cy.wait(2000);
 });

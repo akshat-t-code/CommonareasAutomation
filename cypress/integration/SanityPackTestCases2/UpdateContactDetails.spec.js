@@ -76,7 +76,7 @@ describe("Update Connection Details", function () {
     cy.wait(10000);
   });
 
-  it("Accept Connection Request", function () {
+  it.only("Accept Connection Request", function () {
     //PageObjects
     const sp = new SignUpPage();
     const lp = new LoginPage();
@@ -116,7 +116,7 @@ describe("Update Connection Details", function () {
     cy.wait(3000);
     cy.contains("Connection Details").should("be.visible");
     cy.wait(1000);
-    cy.CompanyName(this.ContactData.CompanyName);
+    cy.CompanyName2(this.ContactData.CompanyName);
     cy.wait(1000);
     cy.JobTitle(this.ContactData.JobTitle);
     cy.wait(1000);
@@ -152,25 +152,39 @@ describe("Update Connection Details", function () {
     //Click on connection(contact)
     cy.get(".contact-details__icon-account").click({ force: true });
     cy.wait(5000);
-    cy.get('[name="zipCode"]').scrollIntoView({ force: true });
+    //cy.get('[name="zipCode"]').scrollIntoView({ force: true });
     cy.wait(2000);
   });
 
-  it("Validate updated Conection Details", function () {
+  it.only("Validate updated Conection Details", function () {
     //Click on connection(contact)
-    cy.get(".contact-details__icon-account").click({ force: true });
-    cy.wait(5000);
+    // cy.get(".contact-details__icon-account").click({ force: true });
+    // cy.wait(5000);
+    // cy.wait(2000);
+    // cy.get('[name="companyName"]').scrollIntoView({ force: true });
+
+    // cy.get('[name="companyName"]').then(function ($EleData) {
+    //   const Data = $EleData.text();
+    //   cy.log(Data);
+    // });
+
+    // cy.get('[name="companyName"]').should(
+    //   "have.text",
+    //   this.ContactData.CompanyName
+    // );
+
+    cy.contains(this.ContactData.CompanyName).should("be.visible");
+    cy.contains(this.ContactData.JobTitle).should("be.visible");
+    cy.get('[name="zipCode"]').scrollIntoView({ force: true });
     cy.wait(2000);
-    cy.get('[name="companyName"]').scrollIntoView({ force: true });
-
-    cy.get('[name="companyName"]').then(function ($EleData) {
-      const Data = $EleData.text();
-      cy.log(Data);
-    });
-
-    cy.get('[name="companyName"]').should(
-      "have.text",
-      this.ContactData.CompanyName
-    );
+    cy.contains(this.ContactData.WebSite).should("be.visible");
+    cy.contains(this.ContactData.PhoneNumber).should("be.visible");
+    cy.contains(this.ContactData.MobilePhone).should("be.visible");
+    cy.contains(this.ContactData.FaxNumber).should("be.visible");
+    cy.contains(this.ContactData.Address1).should("be.visible");
+    cy.contains(this.ContactData.Address2).should("be.visible");
+    cy.contains(this.ContactData.City).should("be.visible");
+    cy.contains(this.ContactData.ZipCode).should("be.visible");
+    cy.contains(this.ContactData.Note).should("be.visible");
   });
 });

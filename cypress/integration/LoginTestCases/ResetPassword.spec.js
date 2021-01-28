@@ -162,4 +162,18 @@ describe("Reset/Creating New Password", function () {
     cy.log("Users has been logged in successfully with new Credentials");
     cy.wait(10000);
   });
+
+  it("Sign Out for logged in user", function () {
+    cy.wait(2000);
+    //Click on admin
+    cy.get('[name="your-profile"]').click({ force: true });
+    cy.wait(2000);
+    cy.contains("Sign Out").click({ force: true });
+    cy.wait(5000);
+    //Log out validation assertion
+    cy.contains(" Log In ").should("be.visible");
+    cy.url().should("include", "/Public/Login?");
+    cy.log("User has been sign out");
+    cy.wait(2000);
+  });
 });

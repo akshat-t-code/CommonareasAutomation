@@ -462,6 +462,7 @@ describe("Related Control One to One test case", function () {
     cy.contains("Item shared").should("be.visible");
     cy.log("Assigning added");
     cy.wait(5000);
+
     //Onetoone link
     cy.get(".action-icon:nth-child(2) path").first().click({ force: true });
     cy.wait(5000);
@@ -469,6 +470,7 @@ describe("Related Control One to One test case", function () {
     cy.get(
       ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
     ).click({ force: true });
+    cy.wait(3000);
 
     //save related new
     cy.get(".v-select__selections .v-btn__content")

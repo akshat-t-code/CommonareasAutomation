@@ -427,7 +427,12 @@ describe("Update created kit item test case", function () {
     cy.log("ContactSelecto Updated");
     cy.wait(4000);
 
-    cy.wait(2000);
+    //Scroll to Inspection
+    cy.get(".v-btn:nth-child(1) .v-badge > .inline-svg").scrollIntoView({
+      force: true,
+    });
+    cy.wait(5000);
+
     //Icon
     //Click on + icon of ICON Element
     cy.get(".v-btn__content > img").click({
