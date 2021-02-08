@@ -18,12 +18,12 @@
     "Toggle2":"Toggle2",
 
     "SelectList2":"SelectList2",
-    "SelectListName2":"SelectListName2",
-    "SelectListValue1":"MNV",
-    "SelectListValue2":"KUA",
-    "SelectListValue3":"MOP",
-    "SelectListValue4":"VCF",
-    "SelectListValue5":"VVIP",
+    "SelectListName2":"SelectList2",
+    "SelectListValue1":"Australia",
+    "SelectListValue2":"Bangla",
+    "SelectListValue3":"India",
+    "SelectListValue4":"Lord",
+    "SelectListValue5":"Venacura",
     
     "RadioSelec2t":"RadioSelect2",
     "RadioSelectName2":"RadioSelect2",
@@ -35,7 +35,7 @@
 
 
     "CheckboxSelect2":"CheckboxSelect2",
-    "CheckboxSelectName2":"CheckboxSelectName2",
+    "CheckboxSelectName2":"CheckboxSelect2",
     "CheckboxSelectValue1":"Checkbox11",
     "CheckboxSelectValue2":"Checkbox22",
     "CheckboxSelectValue3":"Checkbox33",
@@ -47,13 +47,13 @@
     "Assigning2":"Assigning2",
 
 
-    "Steppe2r":"Stepper2",
-    "StepperName2":"StepperName2",
-    "StepperValue1":"Mumbai",
-    "StepperValue2":"Agra",
-    "StepperValue3":"Delhi",
-    "StepperValue4":"Ghaziabad",
-    "StepperValue5":"Manali",
+    "Stepper2":"Stepper2",
+    "StepperName2":"Stepper2",
+    "StepperValue1":"Jio",
+    "StepperValue2":"Moto",
+    "StepperValue3":"Note",
+    "StepperValue4":"Oppo",
+    "StepperValue5":"RealMe",
 
     "Icon2":"Icon2",
     
@@ -64,14 +64,14 @@
 
     "Inspection2":"Inspection2",
     "InspectionName2":"Inspection2",
-    "InspectionValue1":"Java",
-    "InspectionValue2":"C++",
-    "InspectionValue3":"Ruby",
-    "InspectionValue4":"Python",
-    "InspectionValue5":".net",
+    "InspectionValue1":"Cdot",
+    "InspectionValue2":"Java",
+    "InspectionValue3":"Python",
+    "InspectionValue4":"Ruby",
+    "InspectionValue5":"Zapare",
 
     "OneToOneRelation":"SectionOneToOne",
-    "KitToBeRelate":"SanityTesting",
+    "KitToBeRelate":"RelatedKit",
     "OneToOneRelatedNew":"RelatedNewView",
     "OneToOneRelatedEdit":"RelatedEditView",
     "OneToOneMapView":"MapView",
@@ -80,7 +80,7 @@
 
 
     "OneToManyRelation":"SectionOneToNRel",
-    "KitToBeRelated":"SanityTesting",
+    "KitToBeRelated":"RelatedKit",
     "OneToManyRelatedNew":"RelatedNewView",
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
@@ -94,12 +94,12 @@
 
      
     "SquareCardName":"SectionSquareCard",
-    "CardKitToBeRelated":"SanityTesting",
+    "CardKitToBeRelated":"RelatedKit",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",
     "CardSearchView":"SearchView",
-    "SquareCardTableView":"TableCard",
+    "SquareCardTableView":"TableCardsection",
     "RelateEle_1":"Url",
     "RelateEle_2":"Text",
     "RelateEle_3":"Telephone",

@@ -7,8 +7,8 @@ describe("Update Related New fot Square Card Related Control", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    //cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
+    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -18,9 +18,9 @@ describe("Update Related New fot Square Card Related Control", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    lp.EnterEmail("propertymanagement@commonareas.work.dev");
+    //lp.EnterEmail("propertymanagement@commonareas.work.dev");
     //lp.EnterEmail("citycom@commonareas.work.dev");
-    //lp.EnterEmail("sam@armyspy.com");
+    lp.EnterEmail("sam@armyspy.com");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -49,53 +49,41 @@ describe("Update Related New fot Square Card Related Control", function () {
       "jwtAccessToken"
     );
 
-    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
-      SanityTCData
-    ) {
-      this.RelatedKitItemData3 = SanityTCData;
-    });
+    // cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
+    //   SanityTCData
+    // ) {
+    //   this.RelatedKitItemData3 = SanityTCData;
+    // });
 
-    // cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
-    //   function (SanityTCData) {
-    //     this.RelatedKitItemData3 = SanityTCData;
-    //   }
-    // );
+    cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
+      function (SanityTCData) {
+        this.RelatedKitItemData3 = SanityTCData;
+      }
+    );
 
-    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-      NewDataForElements
-    ) {
-      this.DataType2 = NewDataForElements;
-    });
+    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+    //   NewDataForElements
+    // ) {
+    //   this.DataType2 = NewDataForElements;
+    // });
 
-    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-    //   function (NewDataForElements) {
-    //     this.DataType2 = NewDataForElements;
-    //   }
-    // );
+    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+      function (NewDataForElements) {
+        this.DataType2 = NewDataForElements;
+      }
+    );
 
-    cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
-      UpDateKitItemSDTCData
-    ) {
-      this.UpdateKitItemData = UpDateKitItemSDTCData;
-    });
+    // cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
+    //   UpDateKitItemSDTCData
+    // ) {
+    //   this.UpdateKitItemData = UpDateKitItemSDTCData;
+    // });
 
-    // cy.fixture("SanityPackTestData(Prod)/UpdateKItItemData(Prod)").then(
-    //   function (UpDateKitItemSDTCData) {
-    //     this.UpdateKitItemData = UpDateKitItemSDTCData;
-    //   }
-    // );
-
-    cy.fixture("SanityPackTestData/RelatedSqCardData").then(function (
-      SanityTCData
-    ) {
-      this.RelatedKitItemData3 = SanityTCData;
-    });
-
-    // cy.fixture("SanityPackTestData(Prod)/RelatedSqCardData(Prod)").then(
-    //   function (SanityTCData) {
-    //     this.RelatedKitItemData = SanityTCData;
-    //   }
-    // );
+    cy.fixture("SanityPackTestData(Prod)/UpdateKItItemData(Prod)").then(
+      function (UpDateKitItemSDTCData) {
+        this.UpdateKitItemData = UpDateKitItemSDTCData;
+      }
+    );
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -29,7 +29,7 @@ class SignUpPage {
   }
 
   ActiveAccount() {
-    cy.get("#msg_body").then(($iframe) => {
+    cy.get("#html_msg_body").then(($iframe) => {
       const $a = $iframe.contents().find("a");
       cy.wrap($a).contains("Activate Account").click();
     });

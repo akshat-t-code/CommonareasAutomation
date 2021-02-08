@@ -36,10 +36,12 @@ describe("Update Connection Details", function () {
     const sp = new SignUpPage();
     const lp = new LoginPage();
     sp.visitBaseTest();
-    //cy.visit('https://app.ca-test.com/Public/Login?ReturnUrl=%2F')
+    //cy.visit("https://nvd.ca-test.com/#/");
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
+    //lp.EnterEmail("propertymanagement@commonareas.work.dev");
+
     lp.EnterEmail(this.Credentials.UserEmail);
 
     lp.EnterPassword(this.Credentials.Password);
@@ -97,14 +99,14 @@ describe("Update Connection Details", function () {
     //Click On HMB icon
     cy.get(".v-btn__content > .theme--dark").click({ force: true });
     //Click on Connection
-    cy.get(".v-list-item:nth-child(3) .v-list-item__title").click({
+    cy.get(".v-list-item:nth-child(3) .v-list-item__title").first().click({
       force: true,
     });
     //cy.eyesCheckWindow("Connection has been added");
     cy.wait(5000);
 
     //Click on contact
-    cy.get(".contact-details__icon-account").click({ force: true });
+    cy.get(".contact-details__icon-account").eq(0).click({ force: true });
     //Assertion
     cy.contains("Details").should("be.visible");
     cy.wait(5000);
@@ -150,13 +152,13 @@ describe("Update Connection Details", function () {
     cy.get(".wrapper--close-icon path").click({ force: true });
     cy.wait(2000);
     //Click on connection(contact)
-    cy.get(".contact-details__icon-account").click({ force: true });
+    cy.get(".contact-details__icon-account").eq(0).click({ force: true });
     cy.wait(5000);
     //cy.get('[name="zipCode"]').scrollIntoView({ force: true });
     cy.wait(2000);
   });
 
-  it.only("Validate updated Conection Details", function () {
+  it("Validate updated Conection Details", function () {
     //Click on connection(contact)
     // cy.get(".contact-details__icon-account").click({ force: true });
     // cy.wait(5000);
