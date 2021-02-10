@@ -71,6 +71,12 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     //     this.DataType2 = NewDataForElements;
     //   }
     // );
+
+    cy.fixture("SanityPackTestData2/UpdateCalendar").then(function (
+      KitDataEle
+    ) {
+      this.UpdateCalendar = KitDataEle;
+    });
   });
 
   it.only("Navigate to kit item list View(Left Panel) to open Calendar", function () {
@@ -311,12 +317,7 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     cy.contains(this.NewKitItemData.CheckboxSelectValue1).click({
       force: true,
     });
-    cy.contains(this.NewKitItemData.CheckboxSelectValue2).click({
-      force: true,
-    });
-    cy.contains(this.NewKitItemData.CheckboxSelectValue3).click({
-      force: true,
-    });
+
     cy.log("Checkbox Values has been set.");
     cy.wait(2000);
 
@@ -399,7 +400,7 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.NewKitItemData.InspectionValue1 +
+        this.NewKitItemData.InspectionValue5 +
         ") > span"
     )
       .first()
@@ -465,33 +466,31 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     //need to change after bug fixed
     //cy.contains('').should('be.visible')
     cy.wait(4000);
-    //Open
-    cy.get(".dhx_cal_event:nth-child(2) > .dhx_title").dblclick({
-      force: true,
-    });
   });
 
   it.only("Update Calnder", function () {
     cy.wait(3000);
+    cy.get(".dhx_event_move").eq(1).scrollIntoView({ force: true });
+    cy.wait(2000);
     cy.get(".dhx_event_move").eq(1).dblclick({ force: true });
-    cy.wait(2000)
-    cy.get('.icon_edit').should('exist')
+    cy.wait(2000);
+    cy.get(".icon_edit").should("exist");
     //click on edit icon
-    cy.get('.icon_edit').click({force:true});
+    cy.get(".icon_edit").click({ force: true });
 
-    
-    cy.wait(3000);
+    cy.wait(10000);
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .eq(1)
       .clear()
-      .type(this.NewKitItemData.Url);
+      .type(this.UpdateCalendar.Url);
     cy.wait(1000);
 
     //Text
     cy.get("[name" + "=" + this.DataType2.Text + "]")
-      .eq(1).clear()
-      .type(this.NewKitItemData.Text);
+      .eq(1)
+      .clear()
+      .type(this.UpdateCalendar.Text);
     cy.wait(1000);
 
     //File
@@ -515,19 +514,22 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
 
     //Telephone
     cy.get("[name" + "=" + this.DataType2.Telephone + "]")
-      .eq(1).clear()
-      .type(this.NewKitItemData.Telephone);
+      .eq(1)
+      .clear()
+      .type(this.UpdateCalendar.Telephone);
     cy.wait(1000);
 
     cy.get("[name" + "=" + this.DataType2.TextAera + "]")
-      .eq(1).clear()
+      .eq(1)
+      .clear()
       .scrollIntoView({ force: true });
     cy.wait(2000);
 
     //TextAera
     cy.get("[name" + "=" + this.DataType2.TextAera + "]")
-      .eq(1).clear()
-      .type(this.NewKitItemData.TextAera);
+      .eq(1)
+      .clear()
+      .type(this.UpdateCalendar.TextAera);
     cy.wait(1000);
 
     //Slider;
@@ -546,7 +548,7 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     )
       .first()
       .click({ force: true })
-      .type(this.NewKitItemData.Currency);
+      .type(this.UpdateCalendar.Currency);
 
     //Measure
 
@@ -555,7 +557,7 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     )
       .first()
       .click({ force: true })
-      .type(this.NewKitItemData.Measure);
+      .type(this.UpdateCalendar.Measure);
 
     cy.get("[name" + "=" + this.DataType2.Email + "]")
       .eq(1)
@@ -564,32 +566,34 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
 
     //Email;
     cy.get("[name" + "=" + this.DataType2.Email + "]")
-      .eq(1).clear()
-      .type(this.NewKitItemData.Email);
+      .eq(1)
+      .clear()
+      .type(this.UpdateCalendar.Email);
     cy.wait(1000);
 
     //Address
     cy.get('[placeholder="Street address, building, company ... "]')
-      .eq(0).clear()
-      .type(this.NewKitItemData.Addressline1);
+      .eq(0)
+      .clear()
+      .type(this.UpdateCalendar.Addressline1);
     //Address line
     cy.get('[name="Address line 2."]')
-      .eq(0).clear()
-      .type(this.NewKitItemData.Addressline2);
+      .eq(0)
+      .clear()
+      .type(this.UpdateCalendar.Addressline2);
 
     cy.get('[placeholder="City"]').eq(0).scrollIntoView({ force: true });
     cy.wait(1000);
 
     //City
-    cy.get('[placeholder="City"]').eq(0).clear()
-    .type(this.NewKitItemData.City);
+    cy.get('[placeholder="City"]').eq(0).clear().type(this.UpdateCalendar.City);
     //State
     cy.get(
       "div:nth-child(2) > div:nth-child(4) > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
     )
       .eq(0)
       .click({ force: true });
-    cy.contains(this.NewKitItemData.State).click({ force: true });
+    cy.contains(this.UpdateCalendar.State).click({ force: true });
 
     cy.get('[placeholder="Zip/Postal Code"]')
       .eq(0)
@@ -598,14 +602,16 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
 
     //ZipCode
     cy.get('[placeholder="Zip/Postal Code"]')
-      .eq(0).clear()
-      .type(this.NewKitItemData.ZipCode);
+      .eq(0)
+      .clear()
+      .type(this.UpdateCalendar.ZipCode);
     cy.wait(1000);
 
     //Number
     cy.get("[name" + "=" + this.DataType2.Number + "]")
-      .eq(1).clear()
-      .type(this.NewKitItemData.Number);
+      .eq(1)
+      .clear()
+      .type(this.UpdateCalendar.Number);
     cy.wait(1000);
 
     //Time Data Element
@@ -666,31 +672,31 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
       .click({ force: true });
     cy.wait(2000);
     //SelectList Value(Values coming form KitItemValues Json File)
-    cy.contains(this.NewKitItemData.SelectListValue).click({ force: true });
+    cy.contains(this.UpdateCalendar.SelectListValue).click({ force: true });
     cy.log("SelectList Value has been set.");
 
     //RadioSelect
-    cy.contains(this.NewKitItemData.RadioSelectValue).click({ force: true });
+    cy.contains(this.UpdateCalendar.RadioSelectValue).click({ force: true });
     cy.log("RadioSelect Value has been set.");
 
     //CheckboxSelect(Values coming form KitItemValues Json File)
-    cy.contains(this.NewKitItemData.CheckboxSelectValue1).click({
+    cy.contains(this.UpdateCalendar.CheckboxSelectValue1).click({
       force: true,
     });
-    cy.contains(this.NewKitItemData.CheckboxSelectValue2).click({
+    cy.contains(this.UpdateCalendar.CheckboxSelectValue2).click({
       force: true,
     });
-   
+
     cy.log("Checkbox Values has been set.");
     cy.wait(2000);
 
-    cy.contains(this.NewKitItemData.StepperValue5).scrollIntoView({
+    cy.contains(this.NewKitItemData.StepperValue1).scrollIntoView({
       force: true,
     });
     cy.wait(3000);
     //Stepper
     //getting value form different json file
-    cy.contains(this.NewKitItemData.StepperValue2).click({ force: true });
+    cy.contains(this.UpdateCalendar.StepperValue2).click({ force: true });
     cy.log("Stepper Value has been set.");
 
     cy.wait(2000);
@@ -704,7 +710,7 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
 
     cy.contains(" Users ").should("be.visible");
     cy.wait(5000);
-    cy.contains(this.NewKitItemData.UserSelectorName).click({ force: true });
+    cy.contains(this.UpdateCalendar.UserSelectorName).click({ force: true });
     cy.wait(4000);
     cy.log("UserSelect added");
     cy.wait(3000);
@@ -721,7 +727,7 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
 
     cy.wait(4000);
 
-    cy.contains(this.NewKitItemData.ContactSelectorName).click({ force: true });
+    cy.contains(this.UpdateCalendar.ContactSelectorName).click({ force: true });
     cy.log("ContactSelecto added");
     cy.wait(4000);
 
@@ -731,15 +737,13 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     cy.wait(3000);
     //Icon
     //Click on + icon of ICON Element
-    cy.get('.v-btn__content > img')
-      .first()
-      .click({
-        force: true,
-      });
+    cy.get(".v-btn__content > img").first().click({
+      force: true,
+    });
     cy.wait(2000);
     //Click on Icon Tittle and  select Icon logo
     //Give numeric no from 1 in child(1,2,3...)
-    cy.get(".thumb-container:nth-child(1) .selected-icon").click({
+    cy.get(".thumb-container:nth-child(5) .selected-icon").click({
       force: true,
     });
     cy.wait(2000);
@@ -753,17 +757,20 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     )
       .first()
       .click({ force: true });
-    cy.contains(this.NewKitItemData.LargeiconSize).click({ force: true });
+    cy.contains(this.UpdateCalendar.SmalliconSize).click({ force: true });
     cy.wait(2000);
     //IconLable
-    cy.get('[placeholder="Label"]').first().type(this.NewKitItemData.IconLabel);
+    cy.get('[placeholder="Label"]')
+      .first()
+      .clear()
+      .type(this.UpdateCalendar.IconLabel);
 
     cy.wait(3000);
     //child 1 for 1st value &&&& child 2 for 2nd value-child 3 for 3rd value......
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.NewKitItemData.InspectionValue1 +
+        this.UpdateCalendar.InspectionValue1 +
         ") > span"
     )
       .first()
@@ -787,25 +794,36 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     //Assigning creation assertion
     cy.contains("Item shared").should("be.visible");
     cy.log("Assigning added");
+    cy.wait(3000);
+    //click on cross to remove onetone
+
+    cy.get(".last-updated:nth-child(2) > .v-icon")
+      .first()
+      .click({ force: true });
+    cy.contains(" Are you sure you want to discard?").should("be.visible");
+    cy.wait(2000);
+    //click on discard
+    cy.get(".mb-4:nth-child(1) .v-btn__content").first().click({ force: true });
+    cy.wait(2000);
 
     //Link onetoone
     cy.get(".action-icon:nth-child(2) path").first().click({ force: true });
     cy.contains(" Related Items ").should("be.visible");
     cy.wait(2000);
     cy.get(
-      ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
+      ".row:nth-child(3) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
     ).click({ force: true });
     //link onetoone assertion
     cy.get(".last-updated:nth-child(2) > .v-icon").should("be.visible");
 
     cy.wait(3000);
     //scheduler end date
-    cy.get('[placeholder="Select End Time"]').click({ force: true });
+    cy.get('[placeholder="Select End Time"]').first().click({ force: true });
     cy.wait(2000);
     cy.wait(3000);
     //Select hour value
     cy.xpath(
-      "//div[contains(@class,'v-dialog v-dialog--active')]//span[12]"
+      "//div[contains(@class,'v-dialog v-dialog--active')]//span[10]"
     ).click({ force: true });
     cy.wait(4000);
     //Select Value of miniutes
@@ -822,17 +840,8 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     cy.wait(3000);
 
     //Click on save
-    cy.get(".row > .pop-up--header--right .v-btn__content").click({
+    cy.get(".row > .pop-up--header--right .v-btn__content").first().click({
       force: true,
     });
-
-
-
-
-
-
-
-
-
   });
 });
