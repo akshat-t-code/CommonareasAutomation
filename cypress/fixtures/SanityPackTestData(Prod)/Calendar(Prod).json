@@ -1,7 +1,7 @@
 {
 
     
-    "KitName":"BaseTesting",
+    "KitName":"SamTest",
     "Url":"https://www.calender.com",
     "Text":"Calender",
     "Telephone":"(123) 123-2495",
@@ -37,9 +37,10 @@
     "StepperValue4":"Oppo",
     "StepperValue5":"RealMe",
 
-    "UserSelectorName":"Sam Ruddy",
-    "ContactSelectorName":"Eric Buhring",
-    "AssigningName":"Max Max",
+   
+    "UserSelectorName":"ravi Negi",
+    "ContactSelectorName":"Aaron Seabaugh",
+    
     
     "ExtraSmalliconSize":"Extra Small",
     "SmalliconSize":"Small",
@@ -47,7 +48,7 @@
     "LargeiconSize":"Large",
     "ExtraLargeiconSize":"Extra Large",
 
-    "IconLabel":"Calender",
+    "IconLabel":"Calender prod",
 
     "These are the index value of div child":"use according to select inspection value",
     "1st for 1st value":"2nd for 2nd value and so on...",
