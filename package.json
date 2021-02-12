@@ -1,14 +1,13 @@
 {
   "name": "cypressautomation",
   "version": "1.0.0",
-  "description": "",
   "author": "Akshat",
   "scripts": {
     "cypress": "npx cypress open",
     "generate-report": "merge mochareports/*.json -f report -o mochareports",
     "merge-report": "mochawesome-merge --reportDir cypress/reports/mocha > mochareports/report",
     "test": "npx cypress run",
-    "Cmd": "node_modules\\.bin\\cypress run"
+    "Cmd": "cypress run"
   },
   "main": "index.js",
   "dependencies": {
@@ -24,7 +23,7 @@
     "@applitools/eyes-cypress": "^3.11.0",
     "@percy/cypress": "^2.3.1",
     "@types/node": "^13.9.3",
-    "cypress": "^4.6.0",
+    "cypress": "^4.12.1",
     "cypress-failed-log": "^2.6.2",
     "cypress-file-upload": "^4.1.1",
     "cypress-iframe": "^1.0.1",
@@ -36,5 +35,17 @@
     "mochawesome-report-generator": "^4.1.0",
     "start-server-and-test": "^1.11.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyagi487/CypressCA.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tyagi487/CypressCA/issues"
+  },
+  "homepage": "https://github.com/tyagi487/CypressCA#readme",
+  "description": ""
 }

@@ -7,8 +7,8 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    //cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
+    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -19,8 +19,8 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     cy.contains(" Log In ").should("be.visible");
 
     //Enter credentials
-    lp.EnterEmail("sam@armyspy.com");
-    //lp.EnterEmail("propertymanagement@commonareas.work.dev");
+    //lp.EnterEmail("sam@armyspy.com");
+    lp.EnterEmail("propertymanagement@commonareas.work.dev");
     //lp.EnterEmail("citycom@commonareas.work.dev");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
@@ -50,41 +50,40 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
       "jwtAccessToken"
     );
 
-    // cy.fixture("SanityPackTestData2/Calendar").then(function (KitDataEle) {
-    //   this.NewKitItemData = KitDataEle;
-    // });
-
-    cy.fixture("SanityPackTestData(Prod)/Calendar(Prod)").then(function (
-      KitDataEle
-    ) {
+    cy.fixture("SanityPackTestData2/Calendar").then(function (KitDataEle) {
       this.NewKitItemData = KitDataEle;
     });
 
-    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-    //   NewDataForElements
-    // ) {
-    //   this.DataType2 = NewDataForElements;
-    // });
-
-    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-      function (NewDataForElements) {
-        this.DataType2 = NewDataForElements;
-      }
-    );
-
-    // cy.fixture("SanityPackTestData2/UpdateCalendar").then(function (
+    // cy.fixture("SanityPackTestData(Prod)/Calendar(Prod)").then(function (
     //   KitDataEle
     // ) {
-    //   this.UpdateCalendar = KitDataEle;
+    //   this.NewKitItemData = KitDataEle;
     // });
 
-    
-    cy.fixture("SanityPackTestData(Prod)/UpdateCalendar").then(function (
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
+
+    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+    //   function (NewDataForElements) {
+    //     this.DataType2 = NewDataForElements;
+    //   }
+    // );
+
+    cy.fixture("SanityPackTestData2/UpdateCalendar").then(function (
       KitDataEle
     ) {
       this.UpdateCalendar = KitDataEle;
     });
 
+    
+    // cy.fixture("SanityPackTestData(Prod)/UpdateCalendar").then(function (
+    //   KitDataEle
+    // ) {
+    //   this.UpdateCalendar = KitDataEle;
+    // });
 
 
   });
