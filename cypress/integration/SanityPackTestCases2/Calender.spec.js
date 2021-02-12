@@ -83,7 +83,6 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     // ) {
     //   this.UpdateCalendar = KitDataEle;
     // });
-
   });
 
   it.only("Navigate to kit item list View(Left Panel) to open Calendar", function () {
