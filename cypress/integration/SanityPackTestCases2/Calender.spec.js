@@ -78,13 +78,11 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
       this.UpdateCalendar = KitDataEle;
     });
 
-    
     // cy.fixture("SanityPackTestData(Prod)/UpdateCalendar").then(function (
     //   KitDataEle
     // ) {
     //   this.UpdateCalendar = KitDataEle;
     // });
-
 
   });
 
