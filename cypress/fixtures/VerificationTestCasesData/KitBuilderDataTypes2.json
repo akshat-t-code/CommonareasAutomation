@@ -52,6 +52,7 @@
     "StepperValue4":"Oppo",
     "StepperValue5":"RealMe",
 
+
     "UserSelector":"UserSelector",
     "ContactSelector":"ContactSelector",
     "Assigning":"Assigning",
@@ -97,7 +98,7 @@
 
      
     "SquareCardName":"BaseSquareCard",
-    "CardKitToBeRelated":"CommercialKit",
+    "CardKitToBeRelated":"RelatedKit",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",

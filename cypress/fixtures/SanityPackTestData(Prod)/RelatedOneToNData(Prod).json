@@ -26,10 +26,11 @@
     "Country":"United States",
     "Number":"234",
 
-    "SelectListValue":"MOP",
+
+    "SelectListValue":"Australia",
     
 
-    "RadioSelectValue":"SR4",
+    "RadioSelectValue":"SR1",
 
     "CheckboxSelectValue1":"CheckboxSelect1",
     "CheckboxSelectValue2":"CheckboxSelect2",
@@ -37,11 +38,11 @@
     "CheckboxSelectValue4":"CheckboxSelect4",
     "CheckboxSelectValue5":"CheckboxSelect5",
 
-    "StepperValue1":"Moto",
-    "StepperValue2":"Jio",
-    "StepperValue3":"RealMe",
+    "StepperValue1":"Jio",
+    "StepperValue2":"Moto",
+    "StepperValue3":"Note",
     "StepperValue4":"Oppo",
-    "StepperValue5":"MArt",
+    "StepperValue5":"RealMe",
 
     "UserSelectorName":"ravi Negi",
     "ContactSelectorName":"Ranveer K",

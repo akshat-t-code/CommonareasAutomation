@@ -12,8 +12,8 @@
     "RelNewFileName":"Screenshot_6",
     "Telephone":"(343) 909-9765",
     "TextAera":"One To One Related New automation",
-    "Currency":"73",
-    "Measure":"09",
+    "Currency":"2",
+    "Measure":"3",
 
     "Email":"onetoNew@gmail.com",
     "Important Note for Email":"should be in small letters",
@@ -24,9 +24,9 @@
     "State":"Alaska",
     "ZipCode":"13233",
     "Country":"United States",
-    "Number":"24",
+    "Number":"4",
 
-    "SelectListValue":"VVIP",
+    "SelectListValue":"Bangla",
     
 
     "RadioSelectValue":"SR2",
@@ -37,11 +37,11 @@
     "CheckboxSelectValue4":"CheckboxSelect4",
     "CheckboxSelectValue5":"CheckboxSelect5",
 
-    "StepperValue1":"Moto",
-    "StepperValue2":"Jio",
-    "StepperValue3":"RealMe",
+    "StepperValue1":"Jio",
+    "StepperValue2":"Moto",
+    "StepperValue3":"Note",
     "StepperValue4":"Oppo",
-    "StepperValue5":"MArt",
+    "StepperValue5":"RealMe",
 
     "UserSelectorName":"ravi Negi",
     "ContactSelectorName":"Ranveer K",

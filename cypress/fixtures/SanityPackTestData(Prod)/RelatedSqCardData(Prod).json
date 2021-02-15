@@ -9,11 +9,11 @@
     
     "Url":"https://www.sqrelated.com",
     "Text":"Sq card Related New",
-    "RelNewFileName":"sass",
+    "RelNewFileName":"Screenshot_6",
     "Telephone":"(245) 909-2765",
     "TextAera":"Sq Card Related New automation",
-    "Currency":"87",
-    "Measure":"098",
+    "Currency":"3",
+    "Measure":"3",
 
     "Email":"sqcardNew@gmail.com",
     "Important Note for Email":"should be in small letters",
@@ -24,12 +24,12 @@
     "State":"Alaska",
     "ZipCode":"83234",
     "Country":"United States",
-    "Number":"334",
+    "Number":"4",
 
-    "SelectListValue":"MNV",
+    "SelectListValue":"India",
     
 
-    "RadioSelectValue":"SR1",
+    "RadioSelectValue":"SR3",
 
     "CheckboxSelectValue1":"CheckboxSelect1",
     "CheckboxSelectValue2":"CheckboxSelect2",
@@ -37,11 +37,11 @@
     "CheckboxSelectValue4":"CheckboxSelect4",
     "CheckboxSelectValue5":"CheckboxSelect5",
 
-    "StepperValue1":"Moto",
-    "StepperValue2":"Jio",
-    "StepperValue3":"RealMe",
+    "StepperValue1":"Jio",
+    "StepperValue2":"Moto",
+    "StepperValue3":"Note",
     "StepperValue4":"Oppo",
-    "StepperValue5":"Mart",
+    "StepperValue5":"RealMe",
 
     "UserSelectorName":"ravi Negi",
     "ContactSelectorName":"Jason Roy",
