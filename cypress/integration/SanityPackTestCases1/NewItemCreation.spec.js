@@ -568,7 +568,7 @@ describe("New kit item complete creation test case", function () {
     cy.wait(3000);
   });
 
-  it("Add Relation On Map", function () {
+  it.only("Add Relation On Map", function () {
     //Click on Map tab
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
@@ -648,6 +648,37 @@ describe("New kit item complete creation test case", function () {
       .eq(1)
       .type(this.NewKitItemData.Email);
     cy.wait(1000);
+
+    //scroll to icon
+    cy.get('[placeholder="Label"]').eq(0).scrollIntoView({ force: true })
+    cy.wait(2000)
+    cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
+      .first().scrollIntoView({ force: true })
+    cy.wait(3000)
+
+    //Icon
+    //Click on + icon of ICON Element
+    cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
+      .first()
+      .click({
+        force: true,
+      });
+    cy.wait(2000);
+    //Click on Icon Tittle and  select Icon logo
+    //Give numeric no from 1 in child(1,2,3...)
+    cy.get(".thumb-container:nth-child(10) .selected-icon").click({
+      force: true,
+    });
+    cy.wait(2000);
+    //Icon Save
+    cy.get(".button-pop-ups").first().click({ force: true });
+    cy.wait(2000);
+
+    cy.wait(2000);
+    //IconLable
+    cy.get('[placeholder="Label"]').eq(0).type(this.NewKitItemData.IconLabel);
+
+
 
     //Click on save
     cy.get(

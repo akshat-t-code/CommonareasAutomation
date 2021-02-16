@@ -763,7 +763,7 @@ describe("New kit item complete creation test case", function () {
         " linked "
     ).should("be.visible");
     //Assertion
-    cy.contains("Total 2 items").should("be.visible");
+    //cy.contains("Total 2 items").should("be.visible");
 
     cy.log("Existing item linked");
     cy.wait(3000);
