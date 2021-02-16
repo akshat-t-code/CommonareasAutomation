@@ -7,9 +7,9 @@ describe("Related Control One to Many test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-    //slp.visitCityComTest();
-    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+     //slp.visitCityComTest();
+     slp.nvdTest()
+     //slp.TmProd();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -244,6 +244,11 @@ describe("Related Control One to Many test case", function () {
       .type(this.RelatedKitItemData.Email);
     cy.wait(1000);
 
+    //scroll
+    cy.get('[placeholder="Street address, building, company ... "]')
+    .eq(0).scrollIntoView({force:true})
+    cy.wait(3000)
+
     //Address
     cy.get('[placeholder="Street address, building, company ... "]')
       .eq(0)
@@ -311,8 +316,9 @@ describe("Related Control One to Many test case", function () {
     )
       .eq(0)
       .click({ force: true });
+      cy.wait(3000)
     //Select Date
-    cy.xpath("//div[@class='v-btn__content'][contains(text(),'30')]")
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'22')]")
       .first()
       .click({ force: true });
     cy.wait(2000);

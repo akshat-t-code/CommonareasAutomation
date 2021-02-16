@@ -8,8 +8,8 @@ describe("New kit item complete creation test case", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    slp.nvdTest()
+    //slp.TmProd();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -129,6 +129,10 @@ describe("New kit item complete creation test case", function () {
   it.only("Create New Kit Item with all the fields", function () {
     const lp = new LoginPage();
     cy.wait(2000);
+    //new form ele visible assertion
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .last()
+      .should("be.visible");
     //save Kit Item for empty form
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
     //kit item Save Assertion for no data
@@ -207,7 +211,6 @@ describe("New kit item complete creation test case", function () {
       .type(this.NewKitItemData.Currency);
 
     //Measure
-
     cy.get(
       "#inspire > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(2) > div.new-kit-item.v-card.v-sheet.theme--light > div > div > div > div > div.row.kit-details-wrapper--content.pb-0 > div > div > div > div > div > div > div.tab--content.col > div > div > div.v-window-item.v-window-item--active > div > div > div.row.container-details > div.fill-height.col > div > div > div.kit-control-component.kit-control-measure.px-3.col.col-sm-12.col-md-6.mb-4.px-3 > div > div.kit-control-measure--left.ma-0.pa-0.pr-2.col > div > div > div.v-input__slot > div"
     )
@@ -221,7 +224,9 @@ describe("New kit item complete creation test case", function () {
     cy.wait(3000);
 
     //Scrolling
-    cy.get('[placeholder="City"]').scrollIntoView({ force: true });
+    cy.get('[placeholder="Street address, building, company ... "]')
+      .scrollIntoView({ force: true });
+    cy.wait(2000)
     //Address
     cy.get('[placeholder="Street address, building, company ... "]').type(
       this.NewKitItemData.Addressline1
@@ -297,7 +302,7 @@ describe("New kit item complete creation test case", function () {
       "div.v-input.no-bottom.date-picker-text-field.date-picker-text-field-direct.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-text-field--placeholder > div > div.v-input__slot > div.v-input__prepend-inner > i"
     ).click({ force: true });
     //Select Date
-    cy.xpath("//div[@class='v-btn__content'][contains(text(),'30')]")
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'25')]")
       .first()
       .click({ force: true });
     cy.wait(2000);
@@ -428,8 +433,8 @@ describe("New kit item complete creation test case", function () {
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.NewKitItemData.InspectionValue2 +
-        ") > span"
+      this.NewKitItemData.InspectionValue2 +
+      ") > span"
     ).click({ force: true });
 
     cy.wait(3000);
@@ -816,8 +821,8 @@ describe("New kit item complete creation test case", function () {
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       ".v-chip:nth-child(" +
-        this.UpdateKitItemData.InspectionValue4 +
-        ") > .v-chip__content"
+      this.UpdateKitItemData.InspectionValue4 +
+      ") > .v-chip__content"
     ).click({ force: true });
     cy.wait(2000);
 
@@ -862,10 +867,10 @@ describe("New kit item complete creation test case", function () {
 
     cy.contains(
       "Relation on " +
-        this.DataType2.OneToManyRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked "
+      this.DataType2.OneToManyRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked "
     ).should("be.visible");
     cy.wait(3000);
     cy.get(
@@ -907,10 +912,10 @@ describe("New kit item complete creation test case", function () {
     //Linking assertion
     cy.contains(
       "Relation on " +
-        this.DataType2.OneToOneRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked "
+      this.DataType2.OneToOneRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked "
     ).should("be.visible");
     cy.wait(2000);
     //validation
@@ -938,10 +943,10 @@ describe("New kit item complete creation test case", function () {
 
     cy.contains(
       "Relation on " +
-        this.DataType2.SquareCardName +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked "
+      this.DataType2.SquareCardName +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked "
     ).should("be.visible");
     cy.get(".px-2:nth-child(1) .inline-svg").should("exist");
     cy.get(".px-2:nth-child(2) .inline-svg").should("exist");
@@ -958,7 +963,7 @@ describe("New kit item complete creation test case", function () {
     );
     cy.log(
       this.NewKitItemData.KitName +
-        "Kit Type has been Saved with updated values"
+      "Kit Type has been Saved with updated values"
     );
 
     //Close Kit type

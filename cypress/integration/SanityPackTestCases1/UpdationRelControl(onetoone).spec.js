@@ -7,8 +7,8 @@ describe("Update Related New fot OneToOne Related Control", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    slp.nvdTest()
+    //slp.TmProd();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -279,6 +279,10 @@ describe("Update Related New fot OneToOne Related Control", function () {
     cy.log("Email Updated");
     cy.wait(1000);
 
+    cy.get('[placeholder="Street address, building, company ... "]')
+      .eq(0).scrollIntoView({ force: true })
+    cy.wait(2000)
+
     //Address
     cy.get('[placeholder="Street address, building, company ... "]')
       .eq(0)
@@ -368,6 +372,7 @@ describe("Update Related New fot OneToOne Related Control", function () {
     )
       .first()
       .click({ force: true });
+    cy.wait(2000)
     //Select Date
     cy.xpath("//div[@class='v-btn__content'][contains(text(),'25')]")
       .first()
@@ -535,8 +540,8 @@ describe("Update Related New fot OneToOne Related Control", function () {
 
     cy.get(
       ".v-chip:nth-child(" +
-        this.UpdateKitItemData.InspectionValue5 +
-        ") > .v-chip__content"
+      this.UpdateKitItemData.InspectionValue5 +
+      ") > .v-chip__content"
     )
       .first()
       .click({ force: true });
@@ -573,7 +578,7 @@ describe("Update Related New fot OneToOne Related Control", function () {
     );
     cy.log(
       this.DataType2.KitToBeRelated +
-        " related new has been Saved with updation"
+      " related new has been Saved with updation"
     );
 
     //close the Kit Item
@@ -614,10 +619,10 @@ describe("Update Related New fot OneToOne Related Control", function () {
     cy.contains(" Discard ").click({ force: true });
     cy.contains(
       "Relation on " +
-        this.DataType2.OneToOneRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " Deleted"
+      this.DataType2.OneToOneRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " Deleted"
     ).should("be.visible");
     cy.wait(2000);
   });
@@ -715,6 +720,10 @@ describe("Update Related New fot OneToOne Related Control", function () {
       .type(this.RelatedKitItemData2.Email);
     cy.wait(1000);
 
+    cy.get('[placeholder="Street address, building, company ... "]')
+      .eq(0).scrollIntoView({ force: true })
+    cy.wait(2000)
+
     //Address
     cy.get('[placeholder="Street address, building, company ... "]')
       .eq(0)
@@ -789,7 +798,7 @@ describe("Update Related New fot OneToOne Related Control", function () {
       .eq(0)
       .click({ force: true });
     //Select Date
-    cy.xpath("//div[@class='v-btn__content'][contains(text(),'26')]")
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'23')]")
       .first()
       .click({ force: true });
     cy.wait(2000);
@@ -916,8 +925,8 @@ describe("Update Related New fot OneToOne Related Control", function () {
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.RelatedKitItemData2.InspectionValue2 +
-        ") > span"
+      this.RelatedKitItemData2.InspectionValue2 +
+      ") > span"
     )
       .eq(0)
       .click({ force: true });
@@ -973,10 +982,10 @@ describe("Update Related New fot OneToOne Related Control", function () {
     //Related kit item created assertion
     cy.contains(
       " Relation on " +
-        this.DataType2.OneToOneRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " created"
+      this.DataType2.OneToOneRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " created"
     ).should("be.visible");
 
     //close the Kit Item

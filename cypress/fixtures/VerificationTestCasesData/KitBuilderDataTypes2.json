@@ -98,7 +98,7 @@
 
      
     "SquareCardName":"BaseSquareCard",
-    "CardKitToBeRelated":"RelatedKit",
+    "CardKitToBeRelated":"CommercialKit",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",
     "CardMapView":"MapView",

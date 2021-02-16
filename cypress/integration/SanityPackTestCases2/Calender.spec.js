@@ -7,8 +7,8 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    slp.nvdTest()
+    //slp.TmProd();
 
     //Handling Alert
     cy.on("window:confirm", () => {

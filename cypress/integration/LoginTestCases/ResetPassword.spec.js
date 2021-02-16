@@ -56,7 +56,7 @@ describe("Reset password OR Update Password", function () {
     cy.contains("Password reset request").click({ force: true });
     cy.wait(3000);
 
-    cy.get("#msg_body").then(($iframe) => {
+    cy.get("#html_msg_body").then(($iframe) => {
       const $a = $iframe.contents().find("a");
       cy.wrap($a)
         .contains("Reset your password")

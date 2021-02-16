@@ -8,8 +8,8 @@ describe("Recurring New kit item creation test case", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    slp.nvdTest()
+    //slp.TmProd();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -62,7 +62,7 @@ describe("Recurring New kit item creation test case", function () {
       this.NewKitItemData = SanityTCData;
     });
 
-    
+
 
     cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
       NewDataForElements
@@ -233,6 +233,11 @@ describe("Recurring New kit item creation test case", function () {
       .type(this.NewKitItemData.Email);
     cy.wait(1000);
 
+    //scroll
+    cy.get('[placeholder="Street address, building, company ... "]')
+      .scrollIntoView({ force: true })
+    cy.wait(3000)
+
     //Address
     cy.get('[placeholder="Street address, building, company ... "]').type(
       this.NewKitItemData.Addressline1
@@ -264,15 +269,6 @@ describe("Recurring New kit item creation test case", function () {
       .type(this.NewKitItemData.Number);
     cy.wait(1000);
 
-    // //save Kit Item
-    // cy.get(".v-select__selections .v-btn__content").click({ force: true });
-    // cy.contains(this.NewKitItemData.KitName + " has been saved").should(
-    //   "be.visible"
-    // );
-    // cy.log(this.NewKitItemData.KitName + "Kit Type has been Saved");
-    // cy.log("Partially saving new form");
-    // cy.wait(5000);
-
     //Time Data Element
     //Click on Time to appear time pop up
     cy.get('[placeholder="Add Time"][type="text"]').click({ force: true });
@@ -298,7 +294,7 @@ describe("Recurring New kit item creation test case", function () {
       "div.v-input.no-bottom.date-picker-text-field.date-picker-text-field-direct.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-text-field--placeholder > div > div.v-input__slot > div.v-input__prepend-inner > i"
     ).click({ force: true });
     //Select Date
-    cy.xpath("//div[@class='v-btn__content'][contains(text(),'30')]")
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'25')]")
       .first()
       .click({ force: true });
     cy.wait(2000);
@@ -331,7 +327,7 @@ describe("Recurring New kit item creation test case", function () {
     cy.contains(this.NewKitItemData.CheckboxSelectValue1).click({
       force: true,
     });
-    
+
 
     cy.log("Checkbox Values has been set.");
     cy.wait(2000);
@@ -412,8 +408,8 @@ describe("Recurring New kit item creation test case", function () {
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.NewKitItemData.InspectionValue1 +
-        ") > span"
+      this.NewKitItemData.InspectionValue1 +
+      ") > span"
     ).click({ force: true });
 
     cy.wait(3000);
@@ -460,10 +456,10 @@ describe("Recurring New kit item creation test case", function () {
 
     cy.contains(
       "Relation on " +
-        this.DataType2.OneToManyRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked "
+      this.DataType2.OneToManyRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked "
     ).should("be.visible");
     cy.wait(3000);
     cy.get(
@@ -505,10 +501,10 @@ describe("Recurring New kit item creation test case", function () {
     //Linking assertion
     cy.contains(
       "Relation on " +
-        this.DataType2.OneToOneRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked "
+      this.DataType2.OneToOneRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked "
     ).should("be.visible");
     cy.wait(2000);
     //validation
@@ -536,10 +532,10 @@ describe("Recurring New kit item creation test case", function () {
 
     cy.contains(
       "Relation on " +
-        this.DataType2.SquareCardName +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked "
+      this.DataType2.SquareCardName +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked "
     ).should("be.visible");
     cy.get(".px-2:nth-child(1) .inline-svg").should("exist");
     cy.get(".px-2:nth-child(2) .inline-svg").should("exist");
@@ -608,8 +604,8 @@ describe("Recurring New kit item creation test case", function () {
     });
     cy.wait(3000);
     //Selct the to be linked kit item
-    cy.get("div:nth-child(3) > div > .row:nth-child(5) .item-check").first().click({force:true});
-    
+    cy.get("div:nth-child(3) > div > .row:nth-child(5) .item-check").first().click({ force: true });
+
 
 
     //cy.get(".thumb-selected-icon").eq(1).click();
@@ -620,10 +616,10 @@ describe("Recurring New kit item creation test case", function () {
     cy.get(".button-pop-ups > .v-btn__content").first().click({ force: true });
     cy.contains(
       " Relation on " +
-        this.DataType2.OneToManyRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked "
+      this.DataType2.OneToManyRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked "
     ).should("be.visible");
     //Click on save
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
@@ -693,7 +689,7 @@ describe("Recurring New kit item creation test case", function () {
     cy.get('[name="startdate"]').click({ force: true });
     cy.wait(4000);
     //Select Date
-    cy.xpath("//div[contains(text(),'30')]").eq(0).click({ force: true });
+    cy.xpath("//div[contains(text(),'25')]").eq(0).click({ force: true });
     //Click on OK
     cy.wait(1000);
     cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });

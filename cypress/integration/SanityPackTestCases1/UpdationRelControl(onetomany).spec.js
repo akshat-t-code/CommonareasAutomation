@@ -7,8 +7,9 @@ describe("Update Related New for OneToMany Related Control", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    //cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    slp.nvdTest()
+    //slp.TmProd();
+
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -18,9 +19,9 @@ describe("Update Related New for OneToMany Related Control", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    //lp.EnterEmail("propertymanagement@commonareas.work.dev");
+    lp.EnterEmail("propertymanagement@commonareas.work.dev");
     //lp.EnterEmail("citycom@commonareas.work.dev");
-    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("sam@armyspy.com");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -49,41 +50,41 @@ describe("Update Related New for OneToMany Related Control", function () {
       "jwtAccessToken"
     );
 
-    // cy.fixture("SanityPackTestData/RelatedOneToNData").then(function (
-    //   SanityTCData
-    // ) {
-    //   this.RelatedKitItemData = SanityTCData;
-    // });
+    cy.fixture("SanityPackTestData/RelatedOneToNData").then(function (
+      SanityTCData
+    ) {
+      this.RelatedKitItemData = SanityTCData;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/RelatedOneToNData(Prod)").then(
-      function (SanityTCData) {
-        this.RelatedKitItemData = SanityTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/RelatedOneToNData(Prod)").then(
+    //   function (SanityTCData) {
+    //     this.RelatedKitItemData = SanityTCData;
+    //   }
+    // );
 
-    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-    //   NewDataForElements
-    // ) {
-    //   this.DataType2 = NewDataForElements;
-    // });
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-      function (NewDataForElements) {
-        this.DataType2 = NewDataForElements;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+    //   function (NewDataForElements) {
+    //     this.DataType2 = NewDataForElements;
+    //   }
+    // );
 
-    // cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
-    //   UpDateKitItemSDTCData
-    // ) {
-    //   this.UpdateKitItemData = UpDateKitItemSDTCData;
-    // });
+    cy.fixture("SanityPackTestData/UpdateKItItemData").then(function (
+      UpDateKitItemSDTCData
+    ) {
+      this.UpdateKitItemData = UpDateKitItemSDTCData;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/UpdateKItItemData(Prod)").then(
-      function (UpDateKitItemSDTCData) {
-        this.UpdateKitItemData = UpDateKitItemSDTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/UpdateKItItemData(Prod)").then(
+    //   function (UpDateKitItemSDTCData) {
+    //     this.UpdateKitItemData = UpDateKitItemSDTCData;
+    //   }
+    // );
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -516,8 +517,8 @@ describe("Update Related New for OneToMany Related Control", function () {
 
     cy.get(
       ".v-chip:nth-child(" +
-        this.UpdateKitItemData.InspectionValue5 +
-        ") > .v-chip__content"
+      this.UpdateKitItemData.InspectionValue5 +
+      ") > .v-chip__content"
     )
       .first()
       .click({ force: true });
@@ -553,7 +554,7 @@ describe("Update Related New for OneToMany Related Control", function () {
     );
     cy.log(
       this.DataType2.KitToBeRelated +
-        " related new has been Saved with updation"
+      " related new has been Saved with updation"
     );
 
     //close the Kit Item
@@ -615,10 +616,10 @@ describe("Update Related New for OneToMany Related Control", function () {
 
     cy.contains(
       "Relation on " +
-        this.DataType2.OneToManyRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked "
+      this.DataType2.OneToManyRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked "
     ).should("be.visible");
     //Assertion
     cy.contains("Total 3 items").should("be.visible");
@@ -656,10 +657,10 @@ describe("Update Related New for OneToMany Related Control", function () {
     //Delete assertion
     cy.contains(
       "Relation on " +
-        this.DataType2.OneToManyRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " Deleted"
+      this.DataType2.OneToManyRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " Deleted"
     ).should("be.visible");
     cy.wait(2000);
 
@@ -953,8 +954,8 @@ describe("Update Related New for OneToMany Related Control", function () {
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.RelatedKitItemData.InspectionValue1 +
-        ") > span"
+      this.RelatedKitItemData.InspectionValue1 +
+      ") > span"
     )
       .eq(0)
       .click({ force: true });
@@ -1007,10 +1008,10 @@ describe("Update Related New for OneToMany Related Control", function () {
     //Related kit item created assertion
     cy.contains(
       " Relation on " +
-        this.DataType2.OneToManyRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " created"
+      this.DataType2.OneToManyRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " created"
     ).should("be.visible");
 
     //close the Kit Item

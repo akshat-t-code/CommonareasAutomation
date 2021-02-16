@@ -7,9 +7,9 @@ describe("New kit item complete creation test case", function () {
     // cy.viewport(1280, 720);
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
-   //slp.visitCityComTest();
-    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    //slp.visitCityComTest();
+    slp.nvdTest()
+    //slp.TmProd();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -125,6 +125,10 @@ describe("New kit item complete creation test case", function () {
     const lp = new LoginPage();
     cy.wait(2000);
 
+    //New kit item elements loading assertion
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .last().should('be.visible')
+      cy.wait(2000)
     //save Kit Item for empty form
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
     //kit item Save Assertion for no data
@@ -208,6 +212,7 @@ describe("New kit item complete creation test case", function () {
     cy.get(
       '[placeholder="Street address, building, company ... "]'
     ).first().scrollIntoView({force:true})
+    cy.wait(3000)
 
     //Address
     cy.get(
@@ -422,6 +427,20 @@ describe("New kit item complete creation test case", function () {
     cy.log("Assigning added");
     cy.wait(5000);
 
+    //Click on to link existing item(onetoone)
+    cy.get(".action-icon:nth-child(2) > .inline-svg")
+      .first()
+      .click({ force: true });
+
+    //Search List view pop up assertion
+    cy.contains(" Related Items ").should("be.visible");
+    //Select item to be linked kit item
+    cy.wait(2000);
+    cy.get(
+      ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
+    ).first().click({ force: true });
+    cy.wait(4000)
+
     //save Kit Item
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
     cy.contains(this.SectionEleData.SectionKitName + " has been saved").should(
@@ -468,6 +487,11 @@ describe("New kit item complete creation test case", function () {
       .last()
       .type(this.SectionEleData.Telephone);
     cy.wait(1000);
+
+    //scroll
+    cy.get("[name" + "=" + this.SectionDataType.TextAera2 + "]")
+      .last().scrollIntoView({force:true})
+      cy.wait(2000)
 
     //TextAera
     cy.get("[name" + "=" + this.SectionDataType.TextAera2 + "]")
@@ -647,6 +671,8 @@ describe("New kit item complete creation test case", function () {
         this.SectionEleData.SectionKitName +
         " linked "
     ).should("be.visible");
+    //Assertion
+    cy.contains("Total 2 items").should("be.visible");
 
     cy.log("Existing item linked");
     cy.wait(3000);
@@ -696,7 +722,7 @@ describe("New kit item complete creation test case", function () {
     cy.wait(2000);
     cy.get(
       ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
-    ).click({ force: true });
+    ).first().click({ force: true });
     //Linking assertion
     cy.contains(
       "Relation on " +
@@ -715,7 +741,7 @@ describe("New kit item complete creation test case", function () {
     /////////////////////////////////////////////////////////////////////
 
     cy.wait(3000);
-    //Click on New Item for one to Many Related Control
+    //Click on link Item for square card Related Control
     cy.get(".ca-item")
       .eq(2)
       .scrollIntoView({ force: true })
@@ -736,6 +762,8 @@ describe("New kit item complete creation test case", function () {
         this.SectionEleData.SectionKitName +
         " linked "
     ).should("be.visible");
+    //Assertion
+    cy.contains("Total 2 items").should("be.visible");
 
     cy.log("Existing item linked");
     cy.wait(3000);

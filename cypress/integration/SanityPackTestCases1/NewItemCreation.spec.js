@@ -8,8 +8,8 @@ describe("New kit item complete creation test case", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    //cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    slp.nvdTest()
+    //slp.TmProd();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -19,9 +19,9 @@ describe("New kit item complete creation test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
-    //lp.EnterEmail("propertymanagement@commonareas.work.dev");
+    lp.EnterEmail("propertymanagement@commonareas.work.dev");
     //lp.EnterEmail("citycom@commonareas.work.dev");
-    lp.EnterEmail("sam@armyspy.com");
+    //lp.EnterEmail("sam@armyspy.com");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
     cy.log("User has been Logged In into the application");
@@ -50,41 +50,41 @@ describe("New kit item complete creation test case", function () {
       "jwtAccessToken"
     );
 
-    // cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
-    //   KitDataEle
-    // ) {
-    //   this.NewKitItemData = KitDataEle;
-    // });
+    cy.fixture("KitTypeTestData/NewKitItemDataValues").then(function (
+      KitDataEle
+    ) {
+      this.NewKitItemData = KitDataEle;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/NewKitItemDataValue(Prod)").then(
-      function (KitDataEle) {
-        this.NewKitItemData = KitDataEle;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/NewKitItemDataValue(Prod)").then(
+    //   function (KitDataEle) {
+    //     this.NewKitItemData = KitDataEle;
+    //   }
+    // );
 
-    // cy.fixture("SanityPackTestData/NewKitItemTabsData").then(function (
-    //   SanityTCData
-    // ) {
-    //   this.SData = SanityTCData;
-    // });
+    cy.fixture("SanityPackTestData/NewKitItemTabsData").then(function (
+      SanityTCData
+    ) {
+      this.SData = SanityTCData;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/NewKitItemTabsData(Prod)").then(
-      function (SanityTCData) {
-        this.SData = SanityTCData;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/NewKitItemTabsData(Prod)").then(
+    //   function (SanityTCData) {
+    //     this.SData = SanityTCData;
+    //   }
+    // );
 
-    // cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
-    //   NewDataForElements
-    // ) {
-    //   this.DataType2 = NewDataForElements;
-    // });
+    cy.fixture("VerificationTestCasesData/KitBuilderDataTypes2").then(function (
+      NewDataForElements
+    ) {
+      this.DataType2 = NewDataForElements;
+    });
 
-    cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
-      function (NewDataForElements) {
-        this.DataType2 = NewDataForElements;
-      }
-    );
+    // cy.fixture("SanityPackTestData(Prod)/KitBuilderDataTypes2(Prod)").then(
+    //   function (NewDataForElements) {
+    //     this.DataType2 = NewDataForElements;
+    //   }
+    // );
 
     //////////////////////////////////////////////////////////////////////////////////
 
@@ -120,7 +120,7 @@ describe("New kit item complete creation test case", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it.only("Create New Kit Item with all the fields", function () {
+  it("Create New Kit Item with all the fields", function () {
     const lp = new LoginPage();
     cy.wait(2000);
 
@@ -435,8 +435,8 @@ describe("New kit item complete creation test case", function () {
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.NewKitItemData.InspectionValue2 +
-        ") > span"
+      this.NewKitItemData.InspectionValue2 +
+      ") > span"
     ).click({ force: true });
 
     cy.wait(3000);
@@ -529,7 +529,7 @@ describe("New kit item complete creation test case", function () {
     cy.wait(5000);
   });
 
-  it.only("Link Existing Relation On Map", function () {
+  it("Link Existing Relation On Map", function () {
     //Click on Map tab
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
@@ -555,10 +555,10 @@ describe("New kit item complete creation test case", function () {
     cy.get(".button-pop-ups > .v-btn__content").click({ force: true });
     cy.contains(
       " Relation on " +
-        this.DataType2.OneToManyRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked "
+      this.DataType2.OneToManyRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked "
     ).should("be.visible");
     //Click on save
     cy.get(".v-select__selections .v-btn__content").click({ force: true });
@@ -568,7 +568,7 @@ describe("New kit item complete creation test case", function () {
     cy.wait(3000);
   });
 
-  it.only("Add Relation On Map", function () {
+  it("Add Relation On Map", function () {
     //Click on Map tab
     // cy.contains(" Map ").click({ force: true });
     // cy.wait(2000);
@@ -661,10 +661,10 @@ describe("New kit item complete creation test case", function () {
     //Related kit item created assertion
     cy.contains(
       " Relation on " +
-        this.DataType2.OneToManyRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " created"
+      this.DataType2.OneToManyRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " created"
     ).should("be.visible");
     //Parent kit type save assertion
     cy.contains(this.NewKitItemData.KitName + " has been saved").should(
@@ -731,11 +731,12 @@ describe("New kit item complete creation test case", function () {
     cy.wait(2000);
     //Click on Total hours
     cy.get('[name="totalHours"]').type(this.SData.TotalHours);
+    cy.wait(3000)
     //Click on select date
     cy.get('[name="startdate"]').click({ force: true });
     cy.wait(4000);
     //Select Date
-    cy.xpath("//div[contains(text(),'30')]").eq(0).click({ force: true });
+    cy.xpath("//div[contains(text(),'25')]").eq(0).click({ force: true });
     //Click on OK
     cy.wait(1000);
     cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
@@ -774,7 +775,7 @@ describe("New kit item complete creation test case", function () {
     cy.wait(4000);
   });
 
-  it("Groups Tab", function () {
+  it.only("Groups Tab", function () {
     //Groups Tab
     cy.contains(" Groups ").click({ force: true });
     cy.wait(2000);

@@ -8,8 +8,8 @@ describe("Related Control One to One test case", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    slp.nvdTest()
+    //slp.TmProd();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -244,6 +244,11 @@ describe("Related Control One to One test case", function () {
       .type(this.RelatedKitItemData.Email);
     cy.wait(1000);
 
+    //scroll
+    cy.get('[placeholder="Street address, building, company ... "]')
+      .eq(0).scrollIntoView({ force: true })
+    cy.wait(3000)
+
     //Address
     cy.get('[placeholder="Street address, building, company ... "]')
       .eq(0)
@@ -311,8 +316,9 @@ describe("Related Control One to One test case", function () {
     )
       .eq(0)
       .click({ force: true });
+    cy.wait(3000)
     //Select Date
-    cy.xpath("//div[@class='v-btn__content'][contains(text(),'30')]")
+    cy.xpath("//div[@class='v-btn__content'][contains(text(),'24')]")
       .first()
       .click({ force: true });
     cy.wait(2000);
@@ -439,8 +445,8 @@ describe("Related Control One to One test case", function () {
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.RelatedKitItemData.InspectionValue2 +
-        ") > span"
+      this.RelatedKitItemData.InspectionValue2 +
+      ") > span"
     )
       .eq(0)
       .click({ force: true });
@@ -485,10 +491,10 @@ describe("Related Control One to One test case", function () {
     //Related kit item created assertion
     cy.contains(
       " Relation on " +
-        this.DataType2.OneToOneRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " created"
+      this.DataType2.OneToOneRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " created"
     ).should("be.visible");
 
     //close the Kit Item
@@ -551,10 +557,10 @@ describe("Related Control One to One test case", function () {
     cy.contains(" Discard ").click({ force: true });
     cy.contains(
       "Relation on " +
-        this.DataType2.OneToOneRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " Deleted"
+      this.DataType2.OneToOneRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " Deleted"
     ).should("be.visible");
     cy.wait(2000);
   });
@@ -601,10 +607,10 @@ describe("Related Control One to One test case", function () {
     //Linking assertion
     cy.contains(
       "Relation on " +
-        this.DataType2.OneToOneRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked "
+      this.DataType2.OneToOneRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked "
     ).should("be.visible");
 
     cy.wait(2000);

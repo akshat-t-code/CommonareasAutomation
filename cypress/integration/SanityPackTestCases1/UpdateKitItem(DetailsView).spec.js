@@ -7,8 +7,8 @@ describe("Update created kit item test case", function () {
     const lp = new LoginPage();
     const slp = new SanityLoginPage();
     //slp.visitCityComTest();
-    cy.visit("https://nvd.ca-test.com/Public/Login?ReturnUrl=%2F");
-    //cy.visit("https://tm.commonareas.io/Public/Login?ReturnUrl=%2F");
+    slp.nvdTest()
+    //slp.TmProd();
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -236,6 +236,11 @@ describe("Update created kit item test case", function () {
       .type(this.UpdateKitItemData.Email);
     cy.log("Email Updated");
     cy.wait(1000);
+
+    //scroll
+    cy.get('[placeholder="Street address, building, company ... "]')
+      .scrollIntoView({ force: true })
+    cy.wait(2000)
 
     //Address
     cy.get('[placeholder="Street address, building, company ... "]')
@@ -476,8 +481,8 @@ describe("Update created kit item test case", function () {
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       ".v-chip:nth-child(" +
-        this.UpdateKitItemData.InspectionValue4 +
-        ") > .v-chip__content"
+      this.UpdateKitItemData.InspectionValue4 +
+      ") > .v-chip__content"
     ).click({ force: true });
     cy.wait(2000);
 
@@ -487,7 +492,10 @@ describe("Update created kit item test case", function () {
       .click({ force: true });
     //Click on to open Assigning
     cy.wait(5000);
-    cy.contains(this.UpdateKitItemData.DUpAssigning).click({ force: true });
+    cy.get('.v-list-item:nth-child(1) .v-input--selection-controls__ripple')
+      .click({ force: true });
+
+    //cy.contains(this.UpdateKitItemData.DUpAssigning).click({ force: true });
     cy.wait(3000);
     //Click on to save
     cy.get(".button-pop-ups--size > .v-btn__content").click({ force: true });
@@ -614,10 +622,10 @@ describe("Update created kit item test case", function () {
     //Link existing item assertion
     cy.contains(
       " Relation on " +
-        this.DataType2.OneToManyRelation +
-        " for " +
-        this.NewKitItemData.KitName +
-        " linked"
+      this.DataType2.OneToManyRelation +
+      " for " +
+      this.NewKitItemData.KitName +
+      " linked"
     ).should("be.visible");
     cy.contains(this.NewKitItemData.KitName + " has been saved").should(
       "be.visible"
@@ -679,11 +687,12 @@ describe("Update created kit item test case", function () {
     cy.wait(2000);
     //Click on Total hours
     cy.get('[name="totalHours"]').type(this.DetailViewData.TotalHours);
+    cy.wait(2000)
     //Click on select date
     cy.get('[name="startdate"]').click({ force: true });
-    cy.wait(2000);
+    cy.wait(4000);
     //Select Date
-    cy.xpath("//div[contains(text(),'30')]").eq(0).click({ force: true });
+    cy.xpath("//div[contains(text(),'25')]").eq(0).click({ force: true });
     //Click on OK
     cy.wait(1000);
     cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
@@ -728,16 +737,16 @@ describe("Update created kit item test case", function () {
     //Groups Tab
     cy.contains(" Groups ").click({ force: true });
     cy.wait(2000);
-    // //Click on Add for Grops
-    // cy.get(".details-wrapper > .col > .ml-0 > .v-btn__content").click({
-    //   force: true,
-    // });
-    // //Assertion validation
-    // cy.contains(" Groups ").should("be.visible");
-    // cy.wait(2000);
-    // cy.contains(this.DetailViewData.AddGroup).click({ force: true });
-    // //Assertion validation
-    // cy.contains(this.DetailViewData.AddGroup).should("be.visible");
+    //Click on Add for Grops
+    cy.get(".details-wrapper > .col > .ml-0 > .v-btn__content").click({
+      force: true,
+    });
+    //Assertion validation
+    cy.contains(" Groups ").should("be.visible");
+    cy.wait(2000);
+    cy.contains(this.DetailViewData.AddGroup).click({ force: true });
+    //Assertion validation
+    cy.contains(this.DetailViewData.AddGroup).should("be.visible");
     cy.wait(2000);
   });
 
@@ -816,9 +825,9 @@ describe("Update created kit item test case", function () {
     //Click on delete
     cy.get(".mb-4:nth-child(1) .v-btn__content").first().click({ force: true });
     cy.contains("Plan deleted").should("be.visible");
-    cy.contains("Copy of " + this.DetailViewData.CommonPlanName).should(
-      "not.be.visible"
-    );
+    // cy.contains("Copy of " + this.DetailViewData.CommonPlanName).should(
+    //   "not.be.visible"
+    // );
 
     //Close Kit type
     cy.get(".subheader--button-icon-wrapper .inline-svg").click({
