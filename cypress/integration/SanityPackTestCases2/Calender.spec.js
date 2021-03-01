@@ -128,6 +128,12 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
 
   it.only("Calender Active Schedule", function () {
     cy.wait(3000);
+
+    //form element visble assertion
+    cy.get("[name" + "=" + this.DataType2.Url + "]")
+      .eq(1).should('be.visible')
+    cy.wait(3000)
+
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .eq(1)
@@ -368,6 +374,17 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     cy.log("ContactSelecto added");
     cy.wait(4000);
 
+    //Link onetoone
+    cy.get(".action-icon:nth-child(2) path").first().click({ force: true });
+    cy.contains(" Related Items ").should("be.visible");
+    cy.wait(2000);
+    cy.get(
+      ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
+    ).click({ force: true });
+    //link onetoone assertion
+    cy.get(".last-updated:nth-child(2) > .v-icon").should("be.visible");
+    cy.wait(3000)
+
     cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
       .first()
       .scrollIntoView({ force: true });
@@ -406,40 +423,34 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.NewKitItemData.InspectionValue5 +
-        ") > span"
+      this.NewKitItemData.InspectionValue5 +
+      ") > span"
     )
       .first()
       .click({ force: true });
 
-    // //Click to open assiging
-    // cy.get(
-    //   "div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
-    // )
-    //   .eq(8)
-    //   .click({ force: true });
-    // cy.wait(5000);
-    // //click on to first node of assginig
+    //Click to open assiging
+    cy.get(
+      "div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
+    )
+      .eq(8)
+      .click({ force: true });
+    cy.wait(5000);
+    //click on to first node of assginig
     // cy.get(
     //   ".v-list-item:nth-child(1) .v-input--selection-controls__ripple"
     // ).click({ force: true });
-    // //click to save
-    // cy.get(
-    //   ".fill-height > .pop-up--header > .pop-up--header--right .v-btn__content"
-    // ).click({ force: true });
-    // //Assigning creation assertion
-    // cy.contains("Item shared").should("be.visible");
-    // cy.log("Assigning added");
-
-    //Link onetoone
-    cy.get(".action-icon:nth-child(2) path").first().click({ force: true });
-    cy.contains(" Related Items ").should("be.visible");
-    cy.wait(2000);
+    cy.contains(this.NewKitItemData.AssigningName).click({ force: true })
+    cy.wait(3000)
+    //click to save
     cy.get(
-      ".row:nth-child(1) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
+      ".fill-height > .pop-up--header > .pop-up--header--right .v-btn__content"
     ).click({ force: true });
-    //link onetoone assertion
-    cy.get(".last-updated:nth-child(2) > .v-icon").should("be.visible");
+    //Assigning creation assertion
+    cy.contains("Item shared").should("be.visible");
+    cy.log("Assigning added");
+
+
 
     cy.wait(3000);
     //scheduler end date
@@ -484,7 +495,10 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     //click on edit icon
     cy.get(".icon_edit").click({ force: true });
 
-    cy.wait(10000);
+    //form element visible assertion
+
+
+    cy.wait(20000);
     //Url
     cy.get("[name" + "=" + this.DataType2.Url + "]")
       .eq(1)
@@ -737,6 +751,29 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     cy.log("ContactSelecto added");
     cy.wait(4000);
 
+    //click on cross to remove onetone
+    cy.get(".last-updated:nth-child(2) > .v-icon")
+      .first()
+      .click({ force: true });
+    cy.contains(" Are you sure you want to discard?").should("be.visible");
+    cy.wait(2000);
+    //click on discard
+    cy.get(".mb-4:nth-child(1) .v-btn__content").first().click({ force: true });
+    cy.wait(2000);
+
+    //Link onetoone
+    cy.get(".action-icon:nth-child(2) path").first().click({ force: true });
+    cy.contains(" Related Items ").should("be.visible");
+    cy.wait(2000);
+    cy.get(
+      ".row:nth-child(3) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
+    ).click({ force: true });
+    //link onetoone assertion
+    cy.get(".last-updated:nth-child(2) > .v-icon").should("be.visible");
+
+    cy.wait(3000)
+
+
     cy.get(".v-btn--depressed > .v-btn__content > .inline-svg > path")
       .first()
       .scrollIntoView({ force: true });
@@ -776,51 +813,35 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     //"These are the index value of div child":"use according to select inspection value",
     cy.get(
       "div.v-slide-group__wrapper > div > span:nth-child(" +
-        this.UpdateCalendar.InspectionValue1 +
-        ") > span"
+      this.UpdateCalendar.InspectionValue1 +
+      ") > span"
     )
       .first()
       .click({ force: true });
 
-    // //Click to open assiging
-    // cy.get(
-    //   "div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
-    // )
-    //   .eq(8)
-    //   .click({ force: true });
-    // cy.wait(5000);
-    // //click on to first node of assginig
+    //Click to open assiging
+    cy.get(
+      "div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner"
+    )
+      .eq(8)
+      .click({ force: true });
+    cy.wait(5000);
+    //click on to first node of assginig
     // cy.get(
     //   ".v-list-item:nth-child(1) .v-input--selection-controls__ripple"
     // ).click({ force: true });
-    // //click to save
-    // cy.get(
-    //   ".fill-height > .pop-up--header > .pop-up--header--right .v-btn__content"
-    // ).click({ force: true });
-    // //Assigning creation assertion
-    // cy.contains("Item shared").should("be.visible");
-    // cy.log("Assigning added");
-    cy.wait(3000);
-    //click on cross to remove onetone
-
-    cy.get(".last-updated:nth-child(2) > .v-icon")
-      .first()
-      .click({ force: true });
-    cy.contains(" Are you sure you want to discard?").should("be.visible");
-    cy.wait(2000);
-    //click on discard
-    cy.get(".mb-4:nth-child(1) .v-btn__content").first().click({ force: true });
-    cy.wait(2000);
-
-    //Link onetoone
-    cy.get(".action-icon:nth-child(2) path").first().click({ force: true });
-    cy.contains(" Related Items ").should("be.visible");
-    cy.wait(2000);
+    cy.contains(this.UpdateCalendar.AssigningName).click({ force: true })
+    cy.wait(2000)
+    //click to save
     cy.get(
-      ".row:nth-child(3) > .d-flex > .list-item-col-left > .v-avatar:nth-child(1) svg"
+      ".fill-height > .pop-up--header > .pop-up--header--right .v-btn__content"
     ).click({ force: true });
-    //link onetoone assertion
-    cy.get(".last-updated:nth-child(2) > .v-icon").should("be.visible");
+    //Assigning creation assertion
+    cy.contains("Item shared").should("be.visible");
+    cy.log("Assigning added");
+    cy.wait(3000);
+
+
 
     cy.wait(3000);
     //scheduler end date
@@ -876,7 +897,7 @@ describe("Create Active schedule for Kit Item through Add button in calendar", f
     cy.contains("You can't recover it once deleted").should("be.visible");
     //Click on delete btn on confirmation pop up
     cy.wait(2000);
-    cy.get(".mb-4:nth-child(1) .v-btn__content").click({ force: true });
+    cy.get(".mb-4:nth-child(1) .v-btn__content").first().click({ force: true });
     cy.contains(" Active Schedule deleted ").should("be.visible");
     //deletion assertion on paper
     //cy.get(".dhx_event_move").eq(1).should("not.exist");

@@ -6,7 +6,7 @@
     "AddTimeEntryDescription":"Sanity Test Cases Automation Work",
     "TotalHours":"8",
     "AddDescription":"We are saving time entry now",
-    "TimeEntryConnection":"Eduardo Castaneda",
+    "TimeEntryConnection":"Work Requests",
     "AddComments":"Hi these are the sanity test cses that we are going to automate with cypress tool",
     "AddGroup":"CA"
 }

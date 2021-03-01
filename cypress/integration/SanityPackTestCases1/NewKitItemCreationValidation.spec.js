@@ -141,6 +141,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(5000);
   });
 
+
   it.only("Url Element data Validation", function () {
 
     cy.wait(2000)
@@ -155,12 +156,12 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000)
     //Validating details view input data
     cy.xpath("//input[@controlname='" + lower + "']").should("have.value", this.NewKitItemData.Url)
-    cy.wait(3000)
+    cy.wait(2000)
 
   });
 
 
-  it("Text Element data Validation", function () {
+  it.only("Text Element data Validation", function () {
     cy.wait(2000)
     var lower = this.DataType2.Text.toLowerCase();
     //logging input data on console
@@ -173,7 +174,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000)
     //Validating details view input data
     cy.xpath("//input[@controlname='" + lower + "']").should("have.value", this.NewKitItemData.Text)
-    cy.wait(3000)
+    cy.wait(2000)
 
   });
 
@@ -192,10 +193,11 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000)
     //cy.contains(this.NewKitItemData.NewFormLibFileName).should('be.visible')
     cy.xpath("//div[@controlname='" + lower + "']").should("have.value", this.NewKitItemData.NewFormLibFileName)
+    cy.wait(2000)
   })
 
 
-  it("Telephone Element data Validation", function () {
+  it.only("Telephone Element data Validation", function () {
     cy.wait(2000)
     var lower = this.DataType2.Telephone.toLowerCase();
     //logging input data on console
@@ -208,12 +210,12 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000)
     //Validating details view input data
     cy.xpath("//input[@controlname='" + lower + "']").should("have.value", this.NewKitItemData.Telephone)
-    cy.wait(3000)
+    cy.wait(2000)
 
   });
 
 
-  it("TextAera Element data Validation", function () {
+  it.only("TextAera Element data Validation", function () {
     cy.wait(2000)
     var lower = this.DataType2.TextAera.toLowerCase();
     //logging input data on console
@@ -226,12 +228,12 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000)
     //Validating details view input data
     cy.get('[name="TextAera"]').eq(3).should("have.value", this.NewKitItemData.TextAera)
-    cy.wait(3000)
+    cy.wait(2000)
 
   });
 
 
-  it.only('Currency Element data Validation', function () {
+  it('Currency Element data Validation', function () {
 
     cy.wait(2000)
     var lower = this.DataType2.Currency.toLowerCase();
@@ -245,35 +247,28 @@ describe("New created kit item creation Validation test case", function () {
       })
 
 
-      cy.wait(2000)
+    cy.wait(2000)
 
-      cy.contains(this.NewKitItemData.ContactSelectorName).should('be.visible')
-      cy.contains(this.NewKitItemData.ContactSelectorName).should('exist')
-      cy.wait(2000)
-      cy.contains(this.NewKitItemData.AssigningName).should('be.visible')
-      cy.contains(this.NewKitItemData.AssigningName).should('exist')
 
-      cy.contains(this.NewKitItemData.UserSelectorName).should('exist')
-      cy.contains(this.NewKitItemData.UserSelectorName).should('be.visible')
-      
-      cy.wait(2000)
-      
 
-      cy.get('.imageContent').eq(0)
+    cy.wait(2000)
+
+
+    cy.get('.imageContent').eq(0)
       .invoke('val')
       .then(text => {
         const currency = text;
         cy.log(currency);
       })
 
-      cy.get('.imageContent').eq(1)
+    cy.get('.imageContent').eq(1)
       .invoke('val')
       .then(text => {
         const currency = text;
         cy.log(currency);
       })
 
-      cy.xpath("//div[contains(text(),'Max Max')]")
+    cy.xpath("//div[contains(text(),'Max Max')]")
       .invoke('val')
       .then(text => {
         const currency = text;
@@ -282,7 +277,7 @@ describe("New created kit item creation Validation test case", function () {
 
   })
 
-  it.only('Measure Element data Validation', function () {
+  it('Measure Element data Validation', function () {
 
     cy.wait(2000)
     //Measure
@@ -301,7 +296,7 @@ describe("New created kit item creation Validation test case", function () {
 
   })
 
-  it("Email Element data Validation", function () {
+  it.only("Email Element data Validation", function () {
     cy.wait(2000)
     var lower = this.DataType2.Email.toLowerCase();
     //logging input data on console
@@ -318,7 +313,7 @@ describe("New created kit item creation Validation test case", function () {
 
   });
 
-  it("Addressline1 Element data Validation", function () {
+  it.only("Addressline1 Element data Validation", function () {
     cy.wait(2000)
     cy.get('[placeholder="Street address, building, company ... "]').scrollIntoView({ force: true })
     cy.wait(3000)
@@ -336,7 +331,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000)
   });
 
-  it("Addressline2 Element data Validation", function () {
+  it.only("Addressline2 Element data Validation", function () {
     cy.wait(2000)
     //logging input data on console
     cy.get('[name="Address line 2."]')
@@ -352,7 +347,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000)
   });
 
-  it("City Element data Validation", function () {
+  it.only("City Element data Validation", function () {
     cy.wait(2000)
     //logging input data on console
     cy.get('[placeholder="City"]')
@@ -368,7 +363,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000)
   });
 
-  it("ZipCode Element data Validation", function () {
+  it.only("ZipCode Element data Validation", function () {
     cy.wait(2000)
     cy.get('[placeholder="Zip/Postal Code"]').scrollIntoView({ force: true })
     cy.wait(3000)
@@ -403,7 +398,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000)
   });
 
-  it("Country Element data Validation", function () {
+  it.only("Country Element data Validation", function () {
     cy.wait(2000)
     //logging input data on console
     cy.get('[placeholder="Country"]')
@@ -419,7 +414,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000)
   });
 
-  it("Number Element data Validation", function () {
+  it.only("Number Element data Validation", function () {
     cy.wait(2000)
     var lower = this.DataType2.Number.toLowerCase();
     //logging input data on console
@@ -436,7 +431,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000)
   });
 
-  it('Time Element data Validation', function () {
+  it.only('Time Element data Validation', function () {
     cy.wait(2000)
 
     cy.get('[placeholder="Add Time"][readonly="readonly"]').eq(1)
@@ -448,7 +443,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000)
   })
 
-  it('Date Element data Validation', function () {
+  it.only('Date Element data Validation', function () {
     cy.wait(2000)
 
     cy.get('[placeholder=" MM / DD / YYYY"]')
@@ -484,7 +479,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000)
   });
 
-  it("CheckboxSelect Element data Validation", function () {
+  it.only("CheckboxSelect Element data Validation", function () {
     cy.wait(2000)
     //CheckboxSelect1
     cy.get('[type="checkbox"]').eq(3).should('be.checked')
@@ -492,8 +487,77 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(3000)
   });
 
+  it.only('UserSelector Element data Validation', function () {
+    cy.wait(2000)
 
-  it("Group tab data Validation in details view", function () {
+    cy.get('.imageContent').eq(0).scrollIntoView({ force: true })
+    cy.wait(4000)
+
+    cy.xpath('//div[@class="col item-label"]').eq(0)
+      .invoke('val')
+      .then(text => {
+        const Date = text;
+        cy.log(Date);
+      })
+
+    cy.wait(2000)
+
+    cy.contains(this.NewKitItemData.UserSelectorName).should('exist')
+    cy.contains(this.NewKitItemData.UserSelectorName).should('be.visible')
+    cy.wait(2000)
+
+
+  })
+
+  it.only('ContactSelector Element data Validation', function () {
+    cy.wait(2000)
+
+    cy.xpath('//div[@class="col item-label"]').eq(1)
+      .invoke('val')
+      .then(text => {
+        const Date = text;
+        cy.log(Date);
+      })
+
+    cy.wait(2000)
+    cy.contains(this.NewKitItemData.ContactSelectorName).should('be.visible')
+    cy.contains(this.NewKitItemData.ContactSelectorName).should('exist')
+    cy.wait(2000)
+  })
+
+  it.only('Assigning Element data Validation', function () {
+
+    cy.wait(2000)
+    cy.get('.v-btn:nth-child(1) .v-badge > .inline-svg').scrollIntoView({ force: true })
+    cy.wait(3000)
+
+    cy.contains(this.NewKitItemData.AssigningName).should('be.visible')
+    cy.contains(this.NewKitItemData.AssigningName).should('exist')
+    cy.wait(2000)
+
+  })
+
+  it.only('Icon Element data Validation', function () {
+    cy.wait(2000)
+
+    cy.get('[placeholder="Label"]')
+      .invoke('val')
+      .then(text => {
+        const IconLabel = text;
+        cy.log(IconLabel);
+      })
+    cy.wait(2000)
+
+    //Validating details view input data
+    cy.get('[placeholder="Label"]')
+      .should("have.value", this.NewKitItemData.IconLabel)
+    cy.wait(3000)
+
+
+  })
+
+
+  it.only("Group tab data Validation in details view", function () {
     //Click on group
     cy.contains("Groups").click({ force: true });
     cy.wait(3000);
@@ -503,7 +567,7 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000);
   });
 
-  it("Comments tab data Validation in details view", function () {
+  it.only("Comments tab data Validation in details view", function () {
     cy.contains("Comments").click({ force: true });
     cy.wait(3000);
     cy.contains(this.SData.AddComments).should("be.visible");
@@ -511,13 +575,8 @@ describe("New created kit item creation Validation test case", function () {
     cy.wait(2000);
   });
 
-  it("Time Entries tab data Validation in details view", function () {
+  it.only("Time Entries tab data Validation in details view", function () {
     cy.contains("Time Entries").click({ force: true });
-    // cy.contains(this.SData.TimeEntryConnection).should("be.visible");
-    // cy.wait(2000);
-    // cy.contains(this.SData.TotalHours + " h").should("be.visible");
-    // cy.wait(2000);
-    // cy.contains(this.SData.AddDescription).should("be.visible");
     cy.wait(2000);
     cy.get(".time-entry-author__name").should(
       "have.text",
@@ -531,35 +590,37 @@ describe("New created kit item creation Validation test case", function () {
       "have.text",
       this.SData.TotalHours + " h"
     );
+
+    cy.wait(1000)
+    cy.contains(this.SData.AddTimeEntryLable).should('be.visible')
     cy.log("Created Time Entries exist");
     cy.wait(3000);
   });
 
-  it("Contributors tab data Validation in details view", function () {
+  it.only("Contributors tab data Validation in details view", function () {
     cy.contains("Contributors").click({ force: true });
     cy.wait(3000);
 
     cy.get(".contributor__name")
-      .eq(0)
+      .eq(1)
       .should("have.text", this.SData.ContributorsName);
     cy.wait(2000);
     cy.get(".contributor__name")
-      .eq(1)
+      .eq(0)
       .should("have.text", this.NewKitItemData.AssigningName);
+    cy.wait(2000)
 
-    // cy.contains(this.SData.ContributorsName).should("be.visible");
-    // cy.wait(2000);
-    // cy.contains(this.DataType2.AssigningName).should("be.visible");
-    // cy.wait(2000);
     cy.log("Added Contributors exist");
     cy.wait(3000);
+
   });
 
-  it("Files tab data Validation in details view", function () {
+  it.only("Files tab data Validation in details view", function () {
     cy.contains("Files").click({ force: true });
     cy.wait(2000);
-    cy.contains(this.NewKitItemData.FileTabFileName).should("be.visible");
-    cy.contains(this.SData.NewFormLibFileName).should("be.visible");
+    cy.contains(this.NewKitItemData.NewFormLibFileName).should("be.visible");
+    cy.contains(this.SData.FileTabFileName).should("be.visible");
     cy.log("Uploaded files exist");
+    cy.wait(2000)
   });
 });

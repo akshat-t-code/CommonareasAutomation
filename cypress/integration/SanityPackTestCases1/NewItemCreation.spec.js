@@ -26,7 +26,7 @@ describe("New kit item complete creation test case", function () {
     //lp.EnterEmail("sam@armyspy.com");
     lp.EnterPassword("1234567Aa");
     lp.Submit();
-    cy.log("User has been Logged In into the application");
+    cy.log("User has been Logged in into the application");
 
     Cypress.Cookies.preserveOnce(
       ".AspNet.ApplicationCookie",
@@ -773,14 +773,14 @@ describe("New kit item complete creation test case", function () {
     cy.xpath("//span[contains(text(),'OK')]").first().click({ force: true });
     cy.wait(2000);
     //Click on Time Entry for
-    // cy.get(
-    //   "div:nth-child(2) > div:nth-child(1) > span > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
-    // ).click({ force: true });
-    // cy.wait(4000);
-    // //Assertion validation
-    // cy.contains("Connection").should("be.visible");
-    // cy.wait(2000);
-    // cy.contains(this.SData.TimeEntryConnection).click({ force: true });
+    cy.get(
+      "div:nth-child(2) > div:nth-child(1) > span > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div"
+    ).click({ force: true });
+    cy.wait(4000);
+    //Assertion validation
+    cy.contains("Connection").should("be.visible");
+    cy.wait(2000);
+    cy.contains(this.SData.TimeEntryConnection).click({ force: true });
     cy.wait(1000);
     cy.get('[placeholder="Add a Description"]').type(this.SData.AddDescription);
     //Click on Save
