@@ -12,9 +12,11 @@
     "Address":"Address",
     "Section":"Section",
     "Number":"Number",
+    
     "Time":"Time",
     "Date":"Date",
     "ReminderName":"Reminder",
+    
     "Toggle":"Toggle",
 
     "SelectList":"SelectList",
@@ -97,7 +99,7 @@
     "RelatedEle_5":"Currency",
 
      
-    "SquareCardName":"BaseSquareCard",
+    "SquareCardName":"BaseSquarecard",
     "CardKitToBeRelated":"CommercialKit",
     "CardRelatedNew":"RelatedNewView",
     "CardRelatedEdit":"RelatedEditView",

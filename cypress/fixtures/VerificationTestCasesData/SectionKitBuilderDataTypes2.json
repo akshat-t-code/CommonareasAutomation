@@ -12,9 +12,11 @@
     "Address2":"Address2",
     "Number2":"Number2",
     "Section2":"Section2",
+
     "Time2":"Time2",
     "Date2":"Date2",
     "ReminderName2":"Reminder2",
+
     "Toggle2":"Toggle2",
 
     "SelectList2":"SelectList2",
@@ -85,7 +87,7 @@
     "OneToManyRelatedEdit":"RelatedEditView",
     "OneToManyMapView":"MapView",
     "OneToManySearchView":"SearchView",
-    "RelatedTableView":"TableOneToN",
+    "RelatedTableView":"SectionableOneToN",
     "RelatedEle_1":"Url",
     "RelatedEle_2":"Text",
     "RelatedEle_3":"Telephone",

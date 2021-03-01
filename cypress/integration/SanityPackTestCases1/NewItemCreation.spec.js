@@ -10,6 +10,7 @@ describe("New kit item complete creation test case", function () {
     //slp.visitCityComTest();
     slp.nvdTest()
     //slp.TmProd();
+    //cy.visit('https://piret.ca-test.com/')
 
     //Handling Alert
     cy.on("window:confirm", () => {
@@ -19,6 +20,7 @@ describe("New kit item complete creation test case", function () {
     //Login Assertions
     cy.contains(" Log In ").should("be.visible");
     //Enter credentials
+    //lp.EnterEmail("smcluckie@piret.ca.dev");
     lp.EnterEmail("propertymanagement@commonareas.work.dev");
     //lp.EnterEmail("citycom@commonareas.work.dev");
     //lp.EnterEmail("sam@armyspy.com");
@@ -120,7 +122,7 @@ describe("New kit item complete creation test case", function () {
     cy.log("New Item created and Kit Type has been Opened");
   });
 
-  it("Create New Kit Item with all the fields", function () {
+  it.only("Create New Kit Item with all the fields", function () {
     const lp = new LoginPage();
     cy.wait(2000);
 
@@ -337,12 +339,10 @@ describe("New kit item complete creation test case", function () {
     cy.contains(this.NewKitItemData.CheckboxSelectValue1).click({
       force: true,
     });
-    cy.contains(this.NewKitItemData.CheckboxSelectValue2).click({
+    cy.contains(this.NewKitItemData.CheckboxSelectValue5).click({
       force: true,
     });
-    cy.contains(this.NewKitItemData.CheckboxSelectValue3).click({
-      force: true,
-    });
+    
     cy.log("Checkbox Values has been set.");
     cy.wait(2000);
 
